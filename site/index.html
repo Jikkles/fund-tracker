@@ -35,7 +35,7 @@
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
   }
-  .wrap { max-width: 1280px; margin: 0 auto; padding: 40px 36px 90px; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 40px 36px 90px; }
 
   .mast { border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 24px; }
   .eyebrow {
@@ -417,7 +417,10 @@
   .mkt { border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2);
          margin: 20px 0; overflow: hidden; }
   .mkt-tabs { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--rule);
-              background: rgba(0,0,0,.15); scrollbar-width: thin; }
+              background: rgba(0,0,0,.15); scrollbar-width: none; -ms-overflow-style: none; }
+  /* The row still scrolls by swipe where it has to; at the page's full width
+     all twelve tabs fit and the bar was pure noise. */
+  .mkt-tabs::-webkit-scrollbar { display: none; }
   .mkt-tabs button { flex: 0 0 auto; background: transparent; border: none; border-bottom: 2px solid transparent;
                      color: var(--ink-soft); font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
                      padding: 11px 16px; cursor: pointer; white-space: nowrap; transition: color .12s, background .12s; }
@@ -445,22 +448,6 @@
   .mkt-tip span { color: var(--ink-soft); font-size: 11px; }
   .mkt-note { padding: 0 20px 16px; font-size: 11px; color: var(--ink-soft); }
   @media(max-width:640px) { .mkt-price { font-size: 24px; } .mkt-head { gap: 12px; } }
-
-  /* market pulse rows */
-  .mp-row { display: grid; grid-template-columns: 128px 1fr; gap: 16px; align-items: start;
-            padding: 13px 20px; border-bottom: 1px solid var(--rule); transition: background .12s; }  .mp-row:last-child { border-bottom: none; }
-  .mp-row:hover { background: var(--hover-bg); }
-  .mp-label { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; font-weight: 600;
-              text-transform: uppercase; letter-spacing: .06em; color: var(--ink); padding-top: 3px;
-              display: flex; align-items: center; gap: 8px; white-space: nowrap; }
-  .mp-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-  .mp-text { font-size: 14px; line-height: 1.65; color: var(--ink-soft); }
-  .mp-text .num { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; font-weight: 600; }
-  .mp-text .up   { color: var(--forest); }
-  .mp-text .down { color: var(--oxblood); }
-  @media (max-width: 720px) {
-    .mp-row { grid-template-columns: 1fr; gap: 6px; }
-  }
 
   /* ---- data health strip ---- */
   .health { margin: 20px 0; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); overflow: hidden; }
@@ -1175,26 +1162,9 @@ function renderIntro(){
     ).join('');
   }
 
-  // Market pulse — rendered from DATA.intro.marketPulse (schema v1.2); box hidden if absent
-  const MP_DOTS = {blue:'--blue', forest:'--forest', amber:'--amber', oxblood:'--oxblood', ink:'--ink-soft'};
-  const mp = DATA.intro && DATA.intro.marketPulse;
-  const mpHtml = (mp && mp.rows && mp.rows.length) ? `
-    <div class="pulse-box" style="border:1px solid var(--rule);border-radius:12px 12px 0 0;border-bottom:none">
-      <div class="pulse-box-head" style="color:var(--blue);border-bottom:2px solid var(--blue)">
-        Market pulse — past month${mp.asAt?` (to ${esc(mp.asAt)})`:''}
-      </div>
-      <div>${mp.rows.map(r => `
-        <div class="mp-row">
-          <div class="mp-label"><span class="mp-dot" style="background:var(${MP_DOTS[r.dot]||'--ink-soft'})"></span>${esc(r.label||'')}</div>
-          <div class="mp-text">${r.html||''}</div>
-        </div>`).join('')}
-      </div>
-    </div>` : '';
-
   el.innerHTML = `
   <div class="tldr" style="margin:20px 0;padding:0">
-    ${mpHtml}
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);overflow:hidden;margin-bottom:0;${mpHtml?'':'border-radius:12px 12px 0 0'}">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);overflow:hidden;margin-bottom:0;border-radius:12px 12px 0 0">
       <div class="pulse-box" style="border:none;border-right:1px solid var(--rule);border-radius:0">
         <div class="pulse-box-head" style="color:var(--forest);border-bottom:2px solid var(--forest);display:flex;align-items:center;gap:10px;flex-wrap:wrap">
           <span>Top 5 ${rel?'vs sector':'performers'} (1yr) — ${ranked.length} funds with data</span>

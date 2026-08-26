@@ -13,8 +13,8 @@
       "Some cumulative 3/5yr figures are derived by compounding discrete annual returns and are approximate — verify against Trustnet/Morningstar for published totals.",
       "As-at dates vary within HL pages: prices are mostly 15–22 Jun 2026; portfolio breakdowns mostly 31 Mar 2026."
     ],
-    "schemaVersion": "1.2",
-    "schemaNotes": "v1.2 (3 Jul 2026): adds intro.marketPulse {asAt, rows[{label, dot, html}]} — regional monthly commentary now lives in the JSON and is overwritten each monthly update cycle; the shell renders it (dot tokens: blue/forest/amber/oxblood/ink). v1.1 (2 Jul 2026): per-fund isin/isinNote/isinSource, performance.perfAsAt (ISO) + perfAsAtSource, perfBasis (HL/FID/FE/DRV), links.fidelity/links.trustnet."
+    "schemaVersion": "1.3",
+    "schemaNotes": "v1.3 (26 Aug 2026): the whole `intro` block is removed. Only intro.marketPulse was ever rendered, and it was hand-written monthly commentary that no automated run refreshed - it had frozen at 30 Jun 2026 while the rest of the page moved on. The index chart at the top of the page now carries live market context instead. The other intro fields (summary, catalystTitle, catalystChips, catalystNote, setups) had no renderer at all. v1.2 (3 Jul 2026): adds intro.marketPulse {asAt, rows[{label, dot, html}]} — regional monthly commentary now lives in the JSON and is overwritten each monthly update cycle; the shell renders it (dot tokens: blue/forest/amber/oxblood/ink). v1.1 (2 Jul 2026): per-fund isin/isinNote/isinSource, performance.perfAsAt (ISO) + perfAsAtSource, perfBasis (HL/FID/FE/DRV), links.fidelity/links.trustnet."
   },
   "categories": [
     {
@@ -46,58 +46,6 @@
       "label": "Multi-Asset"
     }
   ],
-  "intro": {
-    "summary": [
-      "<span class=\"win\">Top performer (Europe):</span> <b>L&G European Index +20.67%</b> (yr to end-May 2026) — cheap tracker beat every active Europe peer in a value-led rally driven by banks and miners.",
-      "<span class=\"lose\">Lagging (Europe):</span> <b>BlackRock Continental European ~+3%</b> — quality-growth style headwinds compounded by the Stefan Gries manager departure (31 Mar 2026); Benjamin Moore now lead.",
-      "<span style=\"color:var(--amber);font-weight:600\">Roster change:</span> <b>CT European Select removed 15 May 2026</b> (Fred Jeanmaire departing); Jupiter European not on the Shortlist. Active Europe roster: BlackRock CE, Fidelity European, Man GLG, Polar Capital Income, BlackRock CE Income.",
-      "<span style=\"color:var(--amber);font-weight:600\">Macro:</span> ECB hiked to 2.25% on 11 Jun 2026 (first hike since Sep 2023); Eurozone CPI 3.2% May 2026; BoE held at 3.75% — rate gap narrowing, modest EUR tailwind for UK investors.",
-      "<span style=\"color:var(--amber);font-weight:600\">Key theme:</span> Value beat growth in Europe by ~10pp (yr to end-May); passive won. Quality-growth funds (Fidelity, Man GLG) are depressed relative to history — watch for style rotation trigger."
-    ],
-    "catalystTitle": "Next catalyst cluster — Europe & Global",
-    "catalystChips": [
-      "ASML ~16 Jul",
-      "TSMC ~16 Jul",
-      "Microsoft ~28 Jul",
-      "Apple ~30 Jul",
-      "Amazon ~30 Jul",
-      "Meta ~29 Jul",
-      "Alphabet ~late Jul",
-      "NVIDIA 26 Aug"
-    ],
-    "catalystNote": "The July earnings season is the next major catalyst cluster. ASML (the anchor holding across Europe funds) reports in mid-July alongside TSMC — their order books and guidance will move European tech/semi funds directly. The US mega-cap reporters follow in late July (Microsoft, Apple, Amazon, Meta, Alphabet) and drive global and US funds. NVIDIA closes the cycle on 26 Aug. For Europe specifically: the ECB meeting post-summer (Sep 2026) and any Eurozone CPI prints above 3.5% would be the trigger to re-assess value vs growth positioning.",
-    "setups": "L&G European Index as core Europe-ex-UK passive; Polar Capital as defensive ballast + yield; Fidelity European / BlackRock CE as quality-growth recovery trades; Man GLG as high-beta growth play (verify stale holdings first); BlackRock CE Income - monitor Moore portfolio rebuild",
-    "marketPulse": {
-      "asAt": "30 Jun 2026",
-      "rows": [
-        {
-          "label": "UK",
-          "dot": "blue",
-          "html": "PM Keir Starmer resigned 22 Jun (Labour leadership contest concludes by 16 Jul, Andy Burnham the frontrunner). FTSE 100 near record highs, <span class=\"num up\">+2.27%</span> over 4 weeks on miners/financials/blue-chips; FTSE 250 edged lower — miners, housebuilders (class-action overhang) and BAT dragged on domestic mid-caps. 10yr gilt yield fell from a May high near <span class=\"num\">5.19%</span> to <span class=\"num\">~4.71–4.85%</span> as political risk eased — a tailwind for gilt/bond funds."
-        },
-        {
-          "label": "US",
-          "dot": "forest",
-          "html": "Choppy — a Fed-hawkish-hold selloff hit tech/Mag7 names hard around 16–24 Jun (memory-chip oversupply fears, OpenAI IPO delay reports), before a late-June AI-trade reassessment rally clawed back much of the move (S&P 500 <span class=\"num up\">+1.18%</span>, Nasdaq <span class=\"num up\">+2.07%</span> on 29 Jun alone)."
-        },
-        {
-          "label": "Europe",
-          "dot": "amber",
-          "html": "STOXX 600 roughly flat — semiconductor/AI-infrastructure names (ASML, Infineon, STMicroelectronics) sold off on valuation concerns and a VW restructuring shock, offset by banks, luxury and utilities."
-        },
-        {
-          "label": "Asia / EM",
-          "dot": "forest",
-          "html": "Mixed — Taiwan (<span class=\"num up\">+2.5%</span>) and Korea (<span class=\"num up\">+1.0%</span>) led on chip-sector strength, China steady, Japan modestly positive (<span class=\"num up\">+0.9%</span>), India and Hong Kong softer."
-        },
-        {
-          "label": "Commodities",
-          "dot": "oxblood",
-          "html": "Gold fell <span class=\"num down\">~10.5–11.6%</span> over the month — its 4th consecutive monthly decline and worst quarter in decades — on Fed-hawkish rate expectations. A real headwind for gold-miner-heavy holdings (e.g. Artemis Global Income's Kinross Gold, Agnico Eagle, Freeport-McMoRan positions)."
-        }
-      ]
-    }
-  },
   "funds": [
     {
       "id": "artemis-global-income",
