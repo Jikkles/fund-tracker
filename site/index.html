@@ -449,8 +449,48 @@
   .mkt-note { padding: 0 20px 16px; font-size: 11px; color: var(--ink-soft); }
   @media(max-width:640px) { .mkt-price { font-size: 24px; } .mkt-head { gap: 12px; } }
 
+  /* ---- top / bottom ranking pair ---- */
+  .rank-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+               border: 1px solid var(--rule); border-radius: 12px 12px 0 0;
+               overflow: hidden; margin-bottom: 0; }
+  /* Heads occupy one grid row and lists the next, so the two coloured rules
+     line up by construction - including at 1Y, where the extra toggle wraps
+     the left head onto a second line and a fixed min-height would not hold. */
+  .rank-grid > .rank-a { border-right: 1px solid var(--rule); }
+  .rank-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+               min-height: 58px; padding-top: 10px; padding-bottom: 10px; }
+  .rank-list { min-width: 0; }
+  .rank-title { flex: 1 1 auto; }
+  .rank-controls { display: flex; align-items: center; gap: 8px;
+                   margin-left: auto; flex: 0 0 auto; }
+  @media (max-width: 900px) {
+    /* Stacked, the two panels are full width, so a shared head height buys
+       nothing and the divider belongs on top rather than at the side. */
+    /* Stacked, the reading order has to become head/list/head/list rather
+       than the two heads first, so the rows are reordered explicitly. */
+    .rank-grid { grid-template-columns: 1fr; }
+    .rank-grid > .rank-a { border-right: none; }
+    .rank-head.rank-a  { order: 1; }
+    .rank-list.rank-a  { order: 2; }
+    .rank-head.rank-b  { order: 3; border-top: 1px solid var(--rule); }
+    .rank-list.rank-b  { order: 4; }
+    .rank-head { min-height: 0; }
+    .rank-controls { margin-left: 0; }
+  }
+
   /* ---- headlines ---- */
-  .news-row .pr-head { display: grid; grid-template-columns: 76px 1fr auto 14px; gap: 14px;
+  .news-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+               min-height: 58px; padding-top: 10px; padding-bottom: 10px; }
+  .news-tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+  .news-tabs button { background: transparent; border: 1px solid var(--rule); border-radius: 20px;
+                      color: var(--ink-soft); font-family: "Inter", sans-serif; font-size: 11px;
+                      font-weight: 600; padding: 5px 12px; cursor: pointer; white-space: nowrap;
+                      transition: color .12s, border-color .12s, background .12s; }
+  .news-tabs button:hover { color: var(--ink); border-color: var(--hover-border); }
+  .news-tabs button.on { color: var(--paper); background: var(--amber); border-color: var(--amber); }
+  .news-src { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px;
+              color: var(--ink-soft); white-space: nowrap; }
+  .news-row .pr-head { display: grid; grid-template-columns: 76px 1fr auto auto 14px; gap: 14px;
                        align-items: baseline; padding: 12px 20px; }
   .news-when { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px;
                color: var(--ink-soft); white-space: nowrap; }
@@ -472,9 +512,10 @@
     .news-row .pr-head { display: flex; flex-wrap: wrap; align-items: center;
                          gap: 8px; padding: 12px 16px; }
     .news-when { order: 1; }
-    .news-link { order: 2; margin-left: auto; }
-    .news-row .pr-chev, .news-nochev { order: 3; }
-    .news-title { order: 4; flex: 1 0 100%; }
+    .news-src { order: 2; }
+    .news-link { order: 3; margin-left: auto; }
+    .news-row .pr-chev, .news-nochev { order: 4; }
+    .news-title { order: 5; flex: 1 0 100%; }
     .news-row .pr-note { padding-left: 16px; }
   }
 
@@ -576,7 +617,7 @@
       <div id="intelPanels"></div>
     </div>
 
-    <h2 style="margin-top:36px">6&#8211;12 month watchlist &#8212; top 5 from all research</h2>
+    <h2 style="margin-top:36px">6&#8211;12 month watchlist &#8212; top 8 from all research</h2>
     <div class="h2-rule"></div>
     <p style="font-size:15px;color:var(--ink-soft);margin:0 0 14px">Scored on 1yr performance vs sector, badge signal, and quality of <em>whyNow</em> thesis. Not advice &#8212; do your own due diligence before acting.</p>
     <div class="rec-grid" id="recGrid"></div>
@@ -954,7 +995,7 @@ function mktWireHover(idx, ser){
 
 function newsToggle(head){ head.parentElement.classList.toggle('open'); }
 
-function mktPick(id){ mktId = id; renderChart(); renderNews(); }
+function mktPick(id){ mktId = id; renderChart(); }
 function mktSetRange(k){ mktRange = k; renderChart(); }
 
 window.addEventListener('resize', function(){
@@ -1196,57 +1237,120 @@ function renderIntro(){
 
   el.innerHTML = `
   <div class="tldr" style="margin:20px 0;padding:0">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);overflow:hidden;margin-bottom:0;border-radius:12px 12px 0 0">
-      <div class="pulse-box" style="border:none;border-right:1px solid var(--rule);border-radius:0">
-        <div class="pulse-box-head" style="color:var(--forest);border-bottom:2px solid var(--forest);display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span>Top 5 ${rel?'vs sector':'performers'} (${esc(period.full)}) — ${ranked.length} priced</span>
-          <span class="seg" style="margin-left:auto">
-            ${RANK_PERIODS.map(x=>`<button ${x.k===period.k?'class="on"':''} onclick="setRankPeriod('${x.k}')">${x.label}</button>`).join('')}
+    <div class="rank-grid">
+      <div class="pulse-box-head rank-head rank-a" style="color:var(--forest);border-bottom:2px solid var(--forest)">
+          <span class="rank-title">Top 5 ${rel?'vs sector':'performers'} (${esc(period.full)}) — ${ranked.length} priced</span>
+          <span class="rank-controls">
+            <span class="seg">
+              ${RANK_PERIODS.map(x=>`<button ${x.k===period.k?'class="on"':''} onclick="setRankPeriod('${x.k}')">${x.label}</button>`).join('')}
+            </span>
+            ${period.k==='nav1yr' ? `<span class="seg">
+              <button ${rankMode==='abs'?'class="on"':''} onclick="rankMode='abs';renderIntro()">Absolute</button>
+              <button ${rankMode==='rel'?'class="on"':''} onclick="rankMode='rel';renderIntro()">vs sector</button>
+            </span>` : ''}
           </span>
-          ${period.k==='nav1yr' ? `<span class="seg">
-            <button ${rankMode==='abs'?'class="on"':''} onclick="rankMode='abs';renderIntro()">Absolute</button>
-            <button ${rankMode==='rel'?'class="on"':''} onclick="rankMode='rel';renderIntro()">vs sector</button>
-          </span>` : ''}
-        </div>
-        ${top5Items}
       </div>
-      <div class="pulse-box" style="border:none;border-radius:0">
-        <div class="pulse-box-head" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
-          Bottom 5 ${rel?'vs sector':''} (${esc(period.full)}) — ${rel?'biggest category laggards':'weakest over this period'}
-        </div>
-        ${bot5Items}
+      <div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
+        <span class="rank-title">Bottom 5 ${rel?'vs sector':''} (${esc(period.full)}) — ${rel?'biggest category laggards':'weakest over this period'}</span>
       </div>
+      <div class="rank-list rank-a">${top5Items}</div>
+      <div class="rank-list rank-b">${bot5Items}</div>
     </div>
     <div class="pulse-box" id="newsbox" style="border:1px solid var(--rule);border-top:none;border-radius:0 0 12px 12px"></div>
   </div>`;
   renderNews();
 }
 
-/* ---------- render: headlines for the selected index ----------
-   Yahoo's feed is per-symbol, so this follows whichever tab the chart is on
-   rather than being a general business wire. Rendered into its own box so
-   switching index tabs does not rebuild the whole intro block. */
+/* ---------- render: headlines by market ----------
+   Yahoo's feed is per-symbol, so a single index tab gave six variations on
+   one story - GBP/USD returned six "US Dollar Price Forecast" pieces from the
+   same desk. Pooling several related symbols per market and capping repeated
+   headline stems gives each market a spread instead.
+
+   The groups mirror DATA.categories, so the news splits the way the funds do. */
+const NEWS_MARKETS = [
+  { key:'uk',     label:'UK',                ids:['ftse-100','ftse-250'] },
+  { key:'us',     label:'US',                ids:['s-p-500','nasdaq-composite','dow-jones'] },
+  { key:'europe', label:'Europe',            ids:['euro-stoxx-50'] },
+  { key:'asia',   label:'Asia / EM / Japan', ids:['nikkei-225','hang-seng'] },
+  { key:'global', label:'Global',            ids:['s-p-500','euro-stoxx-50','nikkei-225'] },
+  { key:'bonds',  label:'Bonds',             ids:['us-10yr-yield'] },
+  { key:'mixed',  label:'Multi-Asset',       ids:['gold-usd-oz','brent-crude','gbp-usd'] },
+];
+let newsMarket = 'uk';
+const NEWS_SHOWN = 6;
+const NEWS_PER_STEM = 2;
+
+/* Publishers run the same column every session ("US Dollar Price Forecast:
+   ...", "European Stocks Close Mostly Lower in Monday Trading"). Splitting on
+   the colon is not enough - the weekday sits before it, so each day reads as a
+   different story. Taking the first few words instead collapses the whole
+   series, and the cap then keeps only the newest of them. */
+function newsStem(title){
+  return String(title || '')
+    .toLowerCase().replace(/[^a-z0-9 ]+/g, ' ')
+    // Three words, not four: "European Stocks Close Mostly/Higher/Mixed"
+    // varies at the fourth and would slip the cap.
+    .split(/\s+/).filter(Boolean).slice(0, 3).join(' ');
+}
+
+function marketNews(market){
+  if(!MKT || !MKT.indices) return [];
+  // Round-robin across the market's indices rather than a straight recency
+  // sort: gold simply has a busier feed than Brent or GBP/USD, and sorting by
+  // date alone let it fill the whole Multi-Asset panel on its own.
+  const lanes = market.ids.map(id => {
+    const idx = MKT.indices.find(x => x.id === id);
+    return (idx && idx.news ? idx.news : [])
+      .map(n => Object.assign({src: idx.label}, n))
+      .sort((a, b) => (b.d || 0) - (a.d || 0));
+  }).filter(lane => lane.length);
+
+  const pool = [];
+  for(let i = 0; lanes.some(l => i < l.length); i++){
+    lanes.forEach(lane => { if(i < lane.length) pool.push(lane[i]); });
+  }
+
+  const out = [], seenTitle = new Set(), stemCount = {};
+  for(const n of pool){
+    const key = String(n.t || '').toLowerCase();
+    if(!key || seenTitle.has(key)) continue;      // same story carried by two feeds
+    const stem = newsStem(n.t);
+    if((stemCount[stem] || 0) >= NEWS_PER_STEM) continue;
+    seenTitle.add(key);
+    stemCount[stem] = (stemCount[stem] || 0) + 1;
+    out.push(n);
+    if(out.length >= NEWS_SHOWN) break;
+  }
+  return out;
+}
+
+function setNewsMarket(k){ newsMarket = k; renderNews(); }
+
 function renderNews(){
   const box = document.getElementById('newsbox');
   if(!box) return;
-  const idx = mktCurrent();
-  const head = (label, body) =>
-    `<div class="pulse-box-head" style="color:var(--amber);border-bottom:2px solid var(--amber)">${label}</div>${body}`;
-  const empty = msg => `<div class="news-empty">${esc(msg)}</div>`;
+  const market = NEWS_MARKETS.find(m => m.key === newsMarket) || NEWS_MARKETS[0];
+  const tabs = NEWS_MARKETS.map(m =>
+    `<button class="${m.key === market.key ? 'on' : ''}" onclick="setNewsMarket('${m.key}')">${esc(m.label)}</button>`
+  ).join('');
+  const head = `<div class="pulse-box-head news-head" style="color:var(--amber);border-bottom:2px solid var(--amber)">
+      <span class="rank-title">In the markets</span>
+      <span class="news-tabs">${tabs}</span>
+    </div>`;
 
-  if(!idx){ box.innerHTML = head('In the markets', empty('Market data not loaded.')); return; }
-
-  const items = idx.news || [];
-  if(!items.length){
-    box.innerHTML = head('In the markets — ' + esc(idx.label),
-      empty('No headlines published for this index. Not every symbol has a feed — try another tab.'));
+  if(!MKT){
+    box.innerHTML = head + `<div class="news-empty">Market data not loaded.</div>`;
     return;
   }
-  box.innerHTML = head('In the markets — ' + esc(idx.label), items.map(n => {
+  const items = marketNews(market);
+  if(!items.length){
+    box.innerHTML = head + `<div class="news-empty">No headlines published for ${esc(market.label)} right now — not every index has a feed.</div>`;
+    return;
+  }
+  box.innerHTML = head + items.map(n => {
     const ago = n.d ? mktAgo(new Date(n.d * 1000)) : '';
     const summary = (n.s || '').trim();
-    // Only rows that actually have something to show are made expandable -
-    // a chevron that opens an empty box is worse than no chevron.
     const link = n.u
       ? `<a class="news-link" href="${esc(n.u)}" target="_blank" rel="noopener noreferrer"
             onclick="event.stopPropagation()" title="Open the full story on the publisher's site">Full story ↗</a>`
@@ -1255,12 +1359,13 @@ function renderNews(){
       <div class="pr-head"${summary ? ' onclick="newsToggle(this)"' : ''}>
         <span class="news-when">${esc(ago)}</span>
         <span class="news-title">${esc(n.t || '')}</span>
+        <span class="news-src">${esc(n.src || '')}</span>
         ${link}
         ${summary ? '<span class="pr-chev">▸</span>' : '<span class="news-nochev"></span>'}
       </div>
       ${summary ? `<div class="pr-note"><div class="pr-note-box"><div class="pr-note-lab">Summary</div>${esc(summary)}</div></div>` : ''}
     </div>`;
-  }).join(''));
+  }).join('');
 }
 
 /* Relative age, because an absolute stamp on an hourly-refreshed feed just
@@ -1520,7 +1625,7 @@ function renderRecommendations(funds){
   const scored = funds.map(f=>({ f, score: scoreForRec(f) }))
     .filter(x => parsePerf(getPerf1(x.f)) !== null)
     .sort((a,b)=>b.score-a.score)
-    .slice(0,5);
+    .slice(0,8);
 
   const catLabel = key => { const c = (DATA.categories||[]).find(c=>c.key===key); return c?c.label:key; };
 

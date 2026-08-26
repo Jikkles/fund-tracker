@@ -84,11 +84,16 @@ rather than silent. "vs sector" is offered on 1Y alone: the sector averages
 are researched figures on a different basis, and comparing a NAV return
 against one would not be like-for-like.
 
-**Headlines follow the chart.** The panel under the fund tables shows news
-for whichever index tab is selected — click Nikkei, get Nikkei news. Yahoo's
-headline feed is per-symbol, which is what makes the panel relevant *by
-construction*: there is no editorial call about what "affects markets", and no
-model deciding. It refreshes hourly with the chart.
+**Headlines are split by market.** UK, US, Europe, Asia/EM/Japan, Global,
+Bonds and Multi-Asset — the same groups the funds use. Yahoo's headline feed
+is per-symbol, which is what makes the panel relevant *by construction*: there
+is no editorial call about what "affects markets", and no model deciding. Each
+market pools several related symbols, round-robin rather than by date, because
+gold simply has a busier feed than Brent and would otherwise fill Multi-Asset
+on its own. Repeated headline series are capped at two — publishers run the
+same column every session ("European Stocks Close ... in Monday Trading"), and
+without the cap one series crowds out a whole market. It refreshes hourly with
+the chart.
 
 Rows expand in place to show the feed's own summary rather than navigating
 away; the **Full story** link on the right is the only part that leaves the
