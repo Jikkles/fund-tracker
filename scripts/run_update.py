@@ -3,16 +3,20 @@ Daily fund desk update - deterministic, no LLM, no API key, no cost.
 
 What this claims and what it does not
 -------------------------------------
-For the ~17 INDEX TRACKER funds it computes a real figure from a real priced
-instrument: a London-listed GBP ETF tracking the same index. That is not an
-estimate, it is arithmetic on market data, and it beats a model guess because
+Where fund_nav.py resolved the fund's OWN published NAV series, that figure
+wins - it is the fund's actual return rather than a stand-in. That script runs
+ahead of this one in the workflow, so its numbers are already on disk here.
+
+Failing that, for an INDEX TRACKER fund it computes a real figure from a real
+priced instrument: a London-listed GBP ETF tracking the same index. That is not
+an estimate, it is arithmetic on market data, and it beats a model guess because
 it embeds the currency effect a UK holder actually experiences.
 
-For every ACTIVE fund it writes "not yet verified" and attaches the real index
-moves for that fund's market. It does not invent a fund-level figure, because
-no free source publishes one and a plausible guess is worse than an honest gap.
+Only when neither is available does a fund get "not yet verified", with the real
+index moves for its market attached. It does not invent a fund-level figure,
+because a plausible guess is worse than an honest gap.
 
-That split is the design. The desk stays honest by construction rather than by
+That ladder is the design. The desk stays honest by construction rather than by
 instruction - there is no prompt to disregard and no model to drift.
 """
 
@@ -35,6 +39,11 @@ REPORT = ROOT / "data" / "last_run.md"
 
 WINDOW_DAYS = 30
 
+# How stale a stored NAV figure may be before it stops counting as today's
+# number. NAV series lag by a day or two normally; 8 covers a long weekend
+# plus a bank holiday without ever letting last month's figure pose as fresh.
+NAV_MAX_AGE_DAYS = 8
+
 CONF_TEXT = {
     "exact": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
     "close": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
@@ -51,11 +60,52 @@ def context_line(quotes: dict[str, md.Quote], labels: list[str]) -> str:
                      for lbl in labels if lbl in quotes)
 
 
+def nav_entry(fund: dict, today: date, ctx: str) -> dict | None:
+    """The fund's own NAV return, when fund_nav.py left a fresh one on disk.
+
+    A published NAV is the fund's actual result, so it outranks a proxy. The
+    page already prefers performance.nav1m when rendering; leaving oneMonth
+    saying "not yet verified" underneath it made the audit report contradict
+    the page it describes. Returns None when there is no figure or it has aged
+    out, dropping the fund through to the proxy rung below.
+    """
+    perf = fund.get("performance") or {}
+    value, as_at = perf.get("nav1m"), perf.get("navAsAt")
+    if not value or not as_at:
+        return None
+    try:
+        priced = date.fromisoformat(as_at)
+    except ValueError:
+        return None
+    if not 0 <= (today - priced).days <= NAV_MAX_AGE_DAYS:
+        return None
+
+    # Share-class and redenomination caveats travel with the figure - they are
+    # the reason a reader might not want to take it at face value.
+    caveats = " ".join(fund[k] for k in ("navClassNote", "navNote")
+                       if fund.get(k))
+    return {
+        "value": value,
+        "note": (
+            f"Total return over the 31 days to {stamp(priced)}, computed from "
+            f"this fund's own published NAV series - not a proxy and not an "
+            f"estimate. "
+            + (f"{caveats} " if caveats else "")
+            + (f"Market context: {ctx}." if ctx else "")
+        ).strip(),
+        "confidence": "computed from the fund's own published NAV",
+        "asAt": stamp(priced),
+        "basis": f"nav:{fund.get('navSymbol', '')}",
+        "source": "Yahoo Finance (fund NAV series)",
+    }
+
+
 def build_one_month(doc: dict, quotes: dict[str, md.Quote],
                     proxy_quotes: dict[str, md.Quote],
                     today: date, window_start: date) -> tuple[dict, dict]:
     entries: dict[str, dict] = {}
-    stats = {"computed": 0, "unverified": 0, "proxy_failed": 0}
+    stats = {"nav": 0, "nav_stale": 0,
+             "computed": 0, "unverified": 0, "proxy_failed": 0}
     window = f"{stamp(window_start)} to {stamp(today)}"
 
     for fund in doc["funds"]:
@@ -63,6 +113,16 @@ def build_one_month(doc: dict, quotes: dict[str, md.Quote],
         proxy = FUND_PROXIES.get(fid)
         quote = proxy_quotes.get(fid) if proxy else None
         ctx = context_line(quotes, GROUP_CONTEXT.get(group, []))
+
+        own = nav_entry(fund, today, ctx)
+        if own:
+            entries[fid] = own
+            stats["nav"] += 1
+            continue
+
+        if (fund.get("performance") or {}).get("nav1m"):
+            # A NAV figure exists but is too old to stand as today's number.
+            stats["nav_stale"] += 1
 
         if proxy and quote:
             entries[fid] = {
@@ -134,20 +194,28 @@ def refresh_catalysts(doc: dict, today: date) -> dict:
     return stats
 
 
-def write_report(stats, cat_stats, quotes, proxy_quotes, warnings,
+def write_report(stats, cat_stats, quotes, proxy_quotes, entries, warnings,
                  today, window_start) -> None:
     lines = [
         f"# Fund tracker - automated run {today.isoformat()}",
         "",
         f"Window: {stamp(window_start)} to {stamp(today)}",
         "",
-        f"- **{stats['computed']}** tracker funds priced from GBP ETF proxies",
-        f"- **{stats['unverified']}** active funds marked not-yet-verified "
-        f"(by design - no free source publishes active fund NAVs)",
+        f"- **{stats['nav']}** funds priced from their own published NAV",
+        f"- **{stats['computed']}** tracker funds priced from GBP ETF proxies "
+        f"(no NAV series resolved for them)",
+        f"- **{stats['unverified']}** funds marked not-yet-verified "
+        f"(by design - nothing free publishes a figure for them)",
         f"- **{cat_stats['refreshed']}** catalyst dates refreshed "
         f"({cat_stats['confirmed']} confirmed, {cat_stats['estimated']} estimated)",
         "",
     ]
+    if stats["nav_stale"]:
+        # Sits with the other pricing counts, above the catalyst line.
+        lines.insert(-2, f"- **{stats['nav_stale']}** stored NAV figures were "
+                         f"older than {NAV_MAX_AGE_DAYS} days and were not "
+                         f"used - those funds fell back to a proxy or to "
+                         f"not-yet-verified")
     if warnings:
         lines += ["## Maintenance needed", ""]
         lines += [f"- {w}" for w in warnings]
@@ -156,19 +224,31 @@ def write_report(stats, cat_stats, quotes, proxy_quotes, warnings,
         lines += ["## Market context", "", "| Index | Change |", "|---|---|"]
         lines += [f"| {lbl} | {q.format_pct()} |" for lbl, q in quotes.items()]
         lines.append("")
-    if proxy_quotes:
-        lines += ["## Computed tracker figures", "",
+    nav_rows = sorted((fid, e) for fid, e in entries.items()
+                      if e.get("basis", "").startswith("nav:"))
+    if nav_rows:
+        lines += ["## Fund NAV figures (1 month)", "",
+                  "| Fund | Symbol | Change | Priced |", "|---|---|---|---|"]
+        lines += [f"| {fid} | {e['basis'].split(':', 1)[1]} | {e['value']} "
+                  f"| {e['asAt']} |" for fid, e in nav_rows]
+        lines.append("")
+
+    used = {fid: q for fid, q in proxy_quotes.items()
+            if (entries.get(fid) or {}).get("basis", "").startswith("proxy:")}
+    if used:
+        lines += ["## Computed tracker figures (ETF proxy)", "",
                   "| Fund | Proxy | Change |", "|---|---|---|"]
         lines += [f"| {fid} | {q.symbol} | {q.format_pct()} |"
-                  for fid, q in sorted(proxy_quotes.items())]
+                  for fid, q in sorted(used.items())]
         lines.append("")
     lines += [
         "---",
         "",
-        "*Automated. Tracker figures come from proxy ETFs tracking the same "
-        "index, not from fund NAVs - check the live factsheet before acting. "
-        "1yr figures are NOT refreshed by this run and continue to age. "
-        "Not investment advice.*",
+        "*Automated. NAV figures are computed from each fund's own published "
+        "NAV series; proxy figures come from an ETF tracking the same index "
+        "and are not the fund itself - check the live factsheet before acting. "
+        "Hand-entered discrete and cumulative factsheet tables are NOT "
+        "refreshed by this run and continue to age. Not investment advice.*",
     ]
     REPORT.write_text("\n".join(lines), encoding="utf-8")
 
@@ -207,9 +287,11 @@ def main() -> int:
 
     entries, stats = build_one_month(doc, quotes, proxy_quotes,
                                      today, window_start)
-    print(f"\n[oneMonth] {stats['computed']} computed, "
+    print(f"\n[oneMonth] {stats['nav']} from own NAV, "
+          f"{stats['computed']} from ETF proxies, "
           f"{stats['unverified']} unverified "
-          f"({stats['proxy_failed']} proxy failures)")
+          f"({stats['proxy_failed']} proxy failures, "
+          f"{stats['nav_stale']} NAV figures too stale to use)")
 
     cat_stats = refresh_catalysts(doc, today)
     print(f"[catalysts] {cat_stats['refreshed']} entries updated - "
@@ -231,9 +313,10 @@ def main() -> int:
     audit = doc.setdefault("auditLog", {"findings": []})
     audit["runDate"] = stamp(today)
     audit["summary"] = (
-        f"{stamp(today)} automated run (deterministic, no LLM). Computed real "
-        f"figures for {stats['computed']} tracker funds from GBP ETF proxies; "
-        f"{stats['unverified']} active funds marked 'not yet verified' with "
+        f"{stamp(today)} automated run (deterministic, no LLM). Priced "
+        f"{stats['nav']} funds from their own published NAV series and "
+        f"{stats['computed']} tracker funds from GBP ETF proxies; "
+        f"{stats['unverified']} funds marked 'not yet verified' with "
         f"market context attached - no fund-level figure was estimated for "
         f"them. Refreshed {cat_stats['refreshed']} catalyst entries "
         f"({cat_stats['confirmed']} confirmed dates, {cat_stats['estimated']} "
@@ -248,9 +331,10 @@ def main() -> int:
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": (
-            f"Computed {stats['computed']} tracker figures from priced GBP ETF "
-            f"proxies over a {args.days}-day window; {stats['unverified']} "
-            f"active funds left unverified by design. "
+            f"Priced {stats['nav']} funds from their own NAV series and "
+            f"{stats['computed']} tracker figures from GBP ETF proxies over a "
+            f"{args.days}-day window; {stats['unverified']} funds left "
+            f"unverified by design. "
             f"{cat_stats['refreshed']} catalyst dates refreshed."),
         "status": "corrected",
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed "
@@ -281,7 +365,7 @@ def main() -> int:
 
     FUNDS.write_text(json.dumps(doc, indent=2, ensure_ascii=False),
                      encoding="utf-8")
-    write_report(stats, cat_stats, quotes, proxy_quotes, warnings,
+    write_report(stats, cat_stats, quotes, proxy_quotes, entries, warnings,
                  today, window_start)
     print("\n[done] funds.json updated")
     return 0

@@ -2,8 +2,9 @@
 
 Window: 27 Jul 2026 to 26 Aug 2026
 
-- **12** tracker funds priced from GBP ETF proxies
-- **38** active funds marked not-yet-verified (by design - no free source publishes active fund NAVs)
+- **46** funds priced from their own published NAV
+- **1** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
+- **3** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **48** catalyst dates refreshed (2 confirmed, 19 estimated)
 
 ## Maintenance needed
@@ -14,40 +15,75 @@ Window: 27 Jul 2026 to 26 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +0.99% |
-| FTSE 250 | +4.22% |
-| S&P 500 | +3.58% |
-| Nasdaq Composite | +4.75% |
-| Euro STOXX 50 | +3.05% |
+| FTSE 100 | +0.89% |
+| FTSE 250 | +4.18% |
+| S&P 500 | +3.54% |
+| Nasdaq Composite | +4.81% |
+| Euro STOXX 50 | +3.00% |
 | Nikkei 225 | +1.42% |
-| Hang Seng | +1.77% |
-| Gold (USD/oz) | +14.22% |
-| Brent crude | -1.17% |
-| US 10yr yield | +0.32% |
-| GBP/USD | +1.84% |
+| Hang Seng | +1.21% |
+| Gold (USD/oz) | +14.00% |
+| Brent crude | -2.13% |
+| US 10yr yield | +0.50% |
+| GBP/USD | +1.81% |
 
-## Computed tracker figures
+## Fund NAV figures (1 month)
+
+| Fund | Symbol | Change | Priced |
+|---|---|---|---|
+| artemis-corporate-bond | 0P0001IAS1.L | +0.37% | 25 Aug 2026 |
+| artemis-global-income | 0P0000W36K.L | +2.97% | 25 Aug 2026 |
+| artemis-high-income | 0P0001GZXO.L | +0.74% | 25 Aug 2026 |
+| artemis-income | 0P0000KKC3.L | -0.03% | 25 Aug 2026 |
+| artemis-uk-smaller-companies | 0P0000W36H.L | +2.70% | 25 Aug 2026 |
+| artemis-us-select | 0P00013YAO.L | -2.51% | 25 Aug 2026 |
+| artemis-us-smaller-companies | 0P0001HDDZ.L | +2.43% | 25 Aug 2026 |
+| baillie-gifford-japanese | 0P00000QWA.L | +3.55% | 25 Aug 2026 |
+| baillie-gifford-monthly-income | 0P0001K0NY.L | +1.23% | 25 Aug 2026 |
+| baillie-gifford-strategic-bond | 0P00000QX1.L | +0.04% | 25 Aug 2026 |
+| bny-mellon-long-term-global-equity | 0P0000X2GC.L | +3.15% | 25 Aug 2026 |
+| bny-mellon-multi-asset-balanced | 0P0000X2GH.L | +0.66% | 25 Aug 2026 |
+| bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | +0.63% | 25 Aug 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | +1.16% | 24 Aug 2026 |
+| fidelity-european | 0P000100U2.L | +1.91% | 25 Aug 2026 |
+| fidelity-global-dividend | 0P0000WUT3.L | +0.65% | 25 Aug 2026 |
+| fidelity-global-special-situations | 0P0000WUT6.L | +1.24% | 25 Aug 2026 |
+| fidelity-index-world | 0P000125KV.L | +0.37% | 25 Aug 2026 |
+| fidelity-special-situations | 0P0000WUU1.L | +2.72% | 25 Aug 2026 |
+| fssa-greater-china-growth | 0P00000EU6.L | +1.64% | 24 Aug 2026 |
+| ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | +5.80% | 25 Aug 2026 |
+| hsbc-ftse-250-index | 0P0000WN7D.L | +4.45% | 24 Aug 2026 |
+| invesco-global-emerging-markets | 0P0000XBR9.L | +2.87% | 25 Aug 2026 |
+| ishares-japan-equity-index | 0P0000WGSX.L | +0.79% | 25 Aug 2026 |
+| ishares-pacific-ex-japan-index | 0P0000WGT4.L | +2.50% | 25 Aug 2026 |
+| janus-henderson-uk-equity-income-growth | 0P00000RI1.L | +1.71% | 25 Aug 2026 |
+| janus-henderson-uk-responsible-income | 0P000024AF.L | +1.16% | 25 Aug 2026 |
+| jpm-emerging-markets | 0P000013TQ.L | +1.35% | 25 Aug 2026 |
+| jupiter-asian-income | 0P00017EQ6.L | +2.79% | 25 Aug 2026 |
+| jupiter-strategic-bond | 0P0000FY9K.L | +0.52% | 25 Aug 2026 |
+| lazard-global-equity-franchise | 0P0001BM5B.L | +10.47% | 24 Aug 2026 |
+| lg-active-global-high-yield | 0P00001SDH.L | +0.80% | 25 Aug 2026 |
+| lg-european-index | 0P000102LY.L | +1.39% | 25 Aug 2026 |
+| lg-future-world-esg-developed | 0P0001F4XX.L | +1.05% | 25 Aug 2026 |
+| lg-future-world-esg-uk | 0P0001H3BX.L | +1.71% | 25 Aug 2026 |
+| lg-international-index | 0P000102M4.L | +1.14% | 25 Aug 2026 |
+| lg-strategic-bond | 0P00008Y97.L | +0.57% | 25 Aug 2026 |
+| lg-uk-index | 0P000023C8.L | +1.61% | 25 Aug 2026 |
+| lg-us-index | 0P000102MM.L | +0.84% | 25 Aug 2026 |
+| liontrust-uk-growth | 0P0001S8W9.L | +2.89% | 25 Aug 2026 |
+| man-japan-corealpha | 0P0000810W.L | +1.96% | 25 Aug 2026 |
+| polar-capital-european-income | 0P00016CNI.L | +2.71% | 24 Aug 2026 |
+| pyrford-global-total-return | 0P0000N9AE.L | +0.15% | 25 Aug 2026 |
+| schroder-asian-alpha-plus | 0P0000ZSZK.L | +1.19% | 25 Aug 2026 |
+| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +2.43% | 24 Aug 2026 |
+| vanguard-global-small-cap-index | 0P0000N47O.L | +1.45% | 24 Aug 2026 |
+
+## Computed tracker figures (ETF proxy)
 
 | Fund | Proxy | Change |
 |---|---|---|
-| fidelity-index-world | SWDA.L | +1.92% |
-| hsbc-ftse-250-index | VMID.L | +4.87% |
-| ishares-corporate-bond-index | SLXX.L | +0.42% |
-| ishares-japan-equity-index | IJPA.L | +4.23% |
-| ishares-pacific-ex-japan-index | CPJ1.L | +2.04% |
-| lg-all-stocks-gilt-index | IGLT.L | +0.03% |
-| lg-european-index | VERX.L | +2.57% |
-| lg-future-world-esg-developed | SWDA.L | +1.92% |
-| lg-future-world-esg-uk | VUKE.L | +1.58% |
-| lg-international-index | SWDA.L | +1.92% |
-| lg-uk-100-index | ISF.L | +1.62% |
-| lg-uk-index | VUKE.L | +1.58% |
-| lg-uk-mid-cap-index | VMID.L | +4.87% |
-| lg-us-index | VUSA.L | +1.63% |
-| vanguard-global-bond-index | VAGP.L | -0.07% |
-| vanguard-global-corporate-bond-index | VCPA.L | -1.50% |
-| vanguard-global-small-cap-index | WLDS.L | +1.90% |
+| vanguard-global-corporate-bond-index | VCPA.L | -1.55% |
 
 ---
 
-*Automated. Tracker figures come from proxy ETFs tracking the same index, not from fund NAVs - check the live factsheet before acting. 1yr figures are NOT refreshed by this run and continue to age. Not investment advice.*
+*Automated. NAV figures are computed from each fund's own published NAV series; proxy figures come from an ETF tracking the same index and are not the fund itself - check the live factsheet before acting. Hand-entered discrete and cumulative factsheet tables are NOT refreshed by this run and continue to age. Not investment advice.*
