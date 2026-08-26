@@ -41,10 +41,17 @@ week where the S&P rises 2% and sterling strengthens 2%, the raw index says
 source published active fund NAVs. That was wrong: Yahoo carries UK OEICs under
 Morningstar-style symbols (`0P0000W36K.L`), in GBP, priced daily. So
 `fund_nav.py` resolves each fund to such a symbol and computes real 1/3/5yr
-total returns. 36 of 50 funds now carry a figure priced today rather than a
-researched one that ages.
+total returns. 46 of 50 funds now carry a figure priced today rather than a researched one
+that ages.
 
-The other 14 are refused, not guessed. Resolution is the dangerous step — a
+Resolution is a ladder, strongest identifier first: a stored `navSymbol`, then
+the fund's ISIN, then any ISIN found elsewhere in its record, then the name and
+its house abbreviation (Yahoo lists "L&G UK Index" and will not match a search
+for "Legal & General UK Index"), and finally **FT's search API**, which returns
+ISINs for funds Yahoo cannot find by name at all. An ISIN is an identifier; a
+name search is a lottery.
+
+The other 4 are refused, not guessed. Resolution is the dangerous step — a
 wrong symbol yields confident, precise, wrong performance data, which is worse
 than an honestly stale figure — so a match must clear several bars: an ISIN
 hit must be corroborated by the fund name, a name match must be a
@@ -163,7 +170,13 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   research runs corrected. The trail survives in the JSON as a machine-readable
   record, but a daily append would otherwise add ~700 entries a year.
 
-- **14 funds still cannot be priced.** Mostly ISIN-less L&G and Vanguard
+- **10 priced funds use a substitute share class.** Where the exact class is
+  not listed, another *accumulation* class of the same fund is used and the
+  NAV chip carries an asterisk naming the swap. Charges differ between
+  classes, so the return does too. Income and distributing classes are never
+  substituted — they pay dividends away and would understate total return.
+
+- **4 funds still cannot be priced.** Mostly ISIN-less L&G and Vanguard
   trackers whose names return nothing on Yahoo, plus a few where only an
   income class or a USD-hedged class exists. They keep their researched
   figures and keep ageing. Adding a correct `navSymbol` to such a fund by

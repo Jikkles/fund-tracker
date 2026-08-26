@@ -1125,7 +1125,12 @@ function staleInfo(f){
 const BASIS_LABEL = { NAV:"live NAV", HL:'HL rolling', FID:'Fidelity trailing', FE:'FE/Trustnet', DRV:'derived' };
 function basisChip(f){
   if(f.performance && f.performance.nav1yr){
-    return `<span class="fchip basis" title="Total return computed from the fund's own published NAV series, priced ${esc(f.performance.navAsAt||'')}. Not a researched figure - it cannot go stale.">NAV</span>`;
+    // A substitute share class or a redenomination split changes what the
+    // number means, so say so on the chip rather than leaving it in the JSON.
+    const sub = f.navClassNote || '';
+    const cut = f.navNote || '';
+    const extra = [sub, cut].filter(Boolean).join('. ');
+    return `<span class="fchip basis${sub||cut?' basis-note':''}" title="Total return computed from the fund's own published NAV series, priced ${esc(f.performance.navAsAt||'')}. Not a researched figure - it cannot go stale.${extra?' — '+esc(extra)+'.':''}">NAV${sub||cut?'*':''}</span>`;
   }
   const b = f.performance && f.performance.perfBasis;
   return b ? `<span class="fchip basis" title="1yr figure basis: ${BASIS_LABEL[b]||b} — bases are not like-for-like across funds">${b}</span>` : '';

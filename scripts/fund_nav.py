@@ -45,6 +45,11 @@ USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 TIMEOUT = 25
 FUNDS = Path(__file__).resolve().parent.parent / "data" / "funds.json"
 
+# FT's search API is the way in for funds Yahoo cannot find by name. It
+# returns ISINs, and an ISIN then resolves on Yahoo reliably - name search is
+# a lottery, an ISIN is an identifier. Server-rendered JSON, no key.
+FT_SEARCH = "https://markets.ft.com/data/searchapi/searchsecurities?query={}"
+
 SEARCH_URL = ("https://query2.finance.yahoo.com/v1/finance/search"
               "?q={}&quotesCount=8&newsCount=0")
 CHART_URL = ("https://query1.finance.yahoo.com/v8/finance/chart/"
@@ -140,52 +145,124 @@ def _label(quote: dict) -> str:
     return str(quote.get("longname") or quote.get("shortname") or "")
 
 
+def ft_isins(name: str) -> list[str]:
+    """Candidate ISINs for a fund name, via FT's search API."""
+    try:
+        raw = _get(FT_SEARCH.format(urllib.parse.quote(name)))
+        items = (json.loads(raw).get("data") or {}).get("security") or []
+    except (urllib.error.URLError, TimeoutError, OSError,
+            json.JSONDecodeError, AttributeError):
+        return []
+    out = []
+    for item in items:
+        sym = str(item.get("symbol") or "")
+        code = sym.split(":")[0]
+        # Accept only things shaped like an ISIN, and prefer the GBP lines -
+        # a EUR or USD class is a different instrument.
+        if re.fullmatch(r"[A-Z]{2}[A-Z0-9]{9}\d", code):
+            label = str(item.get("name") or "")
+            if overlap(name, label) >= 0.5:
+                out.append((code, sym.endswith(":GBP") or sym.endswith(":GBX")))
+    out.sort(key=lambda x: not x[1])          # GBP lines first
+    return [c for c, _ in out]
+
+
+def wanted_class(fund: dict) -> str | None:
+    """The share-class letter this desk tracks, e.g. 'C' from 'Class C Acc'."""
+    m = re.search(r"\bclass\s+([A-Z])\b", str(fund.get("shareClass") or ""), re.I)
+    return m.group(1).upper() if m else None
+
+
+def class_verdict(label: str, want: str | None) -> tuple[bool, str]:
+    """Judge a candidate's share class. (acceptable, note)."""
+    # Income and distributing classes pay dividends away, so their price
+    # series understates total return - never silently mix one in.
+    if re.search(r"\b(inc|income|dist|distributing)\b", label, re.I) and \
+       not re.search(r"\bacc\b", label, re.I):
+        return False, "income/distributing class"
+    if not re.search(r"\bacc\b", label, re.I):
+        return False, "no accumulation class found"
+    got = re.search(r"\b([A-Z])\s*(?:GBP\s*)?Acc\b", label)
+    got = got.group(1).upper() if got else None
+    if want and got and want != got:
+        return True, f"share class {got} used, desk tracks {want}"
+    return True, ""
+
+
 def resolve(fund: dict) -> tuple[dict | None, str]:
-    """Find a Yahoo symbol for one fund. Returns (match, reason)."""
+    """Find a Yahoo symbol for one fund. Returns (match, reason).
+
+    A ladder, strongest identifier first. Each rung still has to pass the same
+    name and share-class checks - a weaker rung is not a licence to guess.
+    """
     name = fund["name"]
-    isin = fund.get("isin")
+    want = wanted_class(fund)
 
-    if isin:
-        hits = search(isin)
-        time.sleep(0.4)
+    def judge(hits, why):
+        best = None
         for hit in hits:
-            score = overlap(name, _label(hit))
-            # An ISIN is strong evidence, but a typo'd ISIN also resolves to
-            # *something* - the name has to corroborate it.
-            if score >= 0.5:
-                return hit, f"isin {isin} (name {score:.0%})"
-        if hits:
-            return None, (f"isin {isin} resolved to {_label(hits[0])!r}, which "
-                          f"does not match the fund name - refusing")
+            label = _label(hit)
+            if not str(hit.get("symbol", "")).endswith(".L") and "isin" not in why:
+                continue
+            if overlap(name, label) < 0.5:
+                continue
+            ok, note = class_verdict(label, want)
+            if not ok:
+                continue
+            rank = (0 if not note else 1)      # exact class beats a substitute
+            if best is None or rank < best[0]:
+                best = (rank, hit, f"{why}{' - ' + note if note else ''}")
+        return best
 
-    hits = search(name)
-    time.sleep(0.4)
+    # 1. an ISIN we already hold
+    for isin in filter(None, [fund.get("isin")]):
+        got = judge(search(isin), f"isin {isin}")
+        time.sleep(0.35)
+        if got:
+            return got[1], got[2]
 
-    # London-listed GBP lines only. A USD or NOK class is a different
-    # instrument and would silently import currency return.
-    candidates = []
-    for hit in hits:
-        sym = hit.get("symbol", "")
-        if not sym.endswith(".L"):
+    # 2. an ISIN sitting elsewhere in the record but never promoted to the
+    #    isin field - three funds carried one in their prose
+    blob = json.dumps(fund, ensure_ascii=False)
+    for isin in dict.fromkeys(re.findall(r"\b(?:GB00|IE00|LU)[A-Z0-9]{7}\d\b", blob)):
+        if isin == fund.get("isin"):
             continue
-        label = _label(hit)
-        score = overlap(name, label)
-        if score < NAME_MATCH_MIN:
+        got = judge(search(isin), f"isin {isin} (recovered)")
+        time.sleep(0.35)
+        if got:
+            fund["isin"] = isin
+            return got[1], got[2]
+
+    # 3. the name, and its house abbreviation - Yahoo lists "L&G UK Index"
+    #    and will not match it to a search for "Legal & General UK Index"
+    for query in dict.fromkeys([name, brand_variant(name)]):
+        if not query:
             continue
-        # This desk tracks accumulation classes; income classes pay dividends
-        # out and would understate total return against the rest of the list.
-        is_acc = bool(re.search(r"\bacc\b", label, re.I))
-        candidates.append((is_acc, score, hit, label))
+        got = judge(search(query), "name match")
+        time.sleep(0.35)
+        if got:
+            return got[1], got[2]
 
-    if not candidates:
-        return None, "no London-listed GBP match above the name threshold"
+    # 4. ask FT for an ISIN, then come back to Yahoo with it
+    for isin in ft_isins(name)[:4]:
+        got = judge(search(isin), f"isin {isin} (via FT)")
+        time.sleep(0.35)
+        if got:
+            fund["isin"] = isin
+            return got[1], got[2]
 
-    candidates.sort(key=lambda c: (c[0], c[1]), reverse=True)
-    is_acc, score, hit, label = candidates[0]
-    if not is_acc:
-        return None, (f"only non-accumulation classes found "
-                      f"(best: {label!r}) - refusing rather than mixing bases")
-    return hit, f"name match {score:.0%}"
+    return None, "no accumulation-class match on Yahoo, by name, ISIN or FT lookup"
+
+
+def brand_variant(name: str) -> str | None:
+    """Rewrite a house name the way Yahoo lists it."""
+    swaps = [("Legal & General", "L&G"), ("JPMorgan", "JPM"),
+             ("BNY Mellon", "BNY Mellon"), ("Janus Henderson", "Janus Henderson"),
+             ("T. Rowe Price", "T. Rowe Price")]
+    for full, short in swaps:
+        if name.startswith(full) and short != full:
+            return short + name[len(full):]
+    return None
 
 
 def price(symbol: str, span: str = "5y") -> dict | None:
@@ -221,20 +298,28 @@ def _slack(days: int) -> int:
     return min(7, max(3, int(days * 0.05))) * 86400
 
 
-def has_discontinuity(series: dict) -> tuple[bool, str]:
-    """True if the series contains a jump no real fund return explains."""
-    closes = series["c"]
+def split_at_discontinuity(series: dict) -> tuple[dict, str]:
+    """Drop everything up to the last redenomination.
+
+    A 100:1 share-class change is not a -99% return, but nor does it spoil
+    the data after it. Rather than refuse the fund outright, keep the clean
+    tail; the window-coverage check then declines any period reaching back
+    past the break, so nothing is reported that spans it.
+    """
+    closes, stamps = series["c"], series["t"]
+    cut, note = 0, ""
     for i in range(1, len(closes)):
         prev, cur = closes[i - 1], closes[i]
         if not prev:
             continue
-        step = abs(cur - prev) / prev
-        if step > MAX_DAILY_STEP:
-            when = date.fromtimestamp(series["t"][i]).isoformat()
-            return True, (f"{step * 100:.0f}% single-step move on {when} "
-                          f"({prev:g} -> {cur:g}) - looks like a share-class "
-                          f"change, not a return")
-    return False, ""
+        if abs(cur - prev) / prev > MAX_DAILY_STEP:
+            cut = i
+            note = (f"series restarts {date.fromtimestamp(stamps[i]).isoformat()} "
+                    f"after a {prev:g} -> {cur:g} share-class change")
+    if not cut:
+        return series, ""
+    return {"t": stamps[cut:], "c": closes[cut:],
+            "currency": series.get("currency")}, note
 
 
 def pct_over(series: dict, days: int) -> float | None:
@@ -318,6 +403,15 @@ def main(argv: list[str]) -> int:
         fund["navSymbol"] = symbol
         fund["navName"] = label
         fund["navMatch"] = reason
+        # Derive the share-class caveat from the stored Yahoo name every run,
+        # rather than keeping it as a by-product of the search. Once a symbol
+        # is stored the ladder is skipped, so anything recorded only at search
+        # time would silently disappear on the next run.
+        _, class_note = class_verdict(label, wanted_class(fund))
+        if class_note:
+            fund["navClassNote"] = class_note
+        else:
+            fund.pop("navClassNote", None)
 
         if only_resolve:
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} {reason:22} "
@@ -331,11 +425,11 @@ def main(argv: list[str]) -> int:
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} NO PRICE DATA")
             continue
 
-        broken, why = has_discontinuity(series)
-        if broken:
-            refusals.append((fund["name"], f"{symbol}: {why}"))
-            print(f"  [nav] {fund['name'][:38]:40} {symbol:14} REFUSED  {why}")
-            continue
+        series, split_note = split_at_discontinuity(series)
+        if split_note:
+            fund["navNote"] = split_note
+        else:
+            fund.pop("navNote", None)
 
         windows = {"nav1w": 7, "nav1m": 31, "nav1yr": 365,
                    "nav3yr": 365 * 3, "nav5yr": 365 * 5}
