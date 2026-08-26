@@ -2,9 +2,9 @@
 
 Window: 27 Jul 2026 to 26 Aug 2026
 
-- **17** tracker funds priced from GBP ETF proxies
-- **46** active funds marked not-yet-verified (by design - no free source publishes active fund NAVs)
-- **62** catalyst dates refreshed (2 confirmed, 20 estimated)
+- **12** tracker funds priced from GBP ETF proxies
+- **38** active funds marked not-yet-verified (by design - no free source publishes active fund NAVs)
+- **48** catalyst dates refreshed (2 confirmed, 19 estimated)
 
 ## Maintenance needed
 
@@ -14,39 +14,39 @@ Window: 27 Jul 2026 to 26 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +0.80% |
-| FTSE 250 | +4.31% |
+| FTSE 100 | +0.96% |
+| FTSE 250 | +4.36% |
 | S&P 500 | +3.56% |
 | Nasdaq Composite | +4.89% |
-| Euro STOXX 50 | +2.98% |
+| Euro STOXX 50 | +3.11% |
 | Nikkei 225 | +2.05% |
 | Hang Seng | +1.77% |
-| Gold (USD/oz) | +14.77% |
-| Brent crude | -3.71% |
+| Gold (USD/oz) | +14.95% |
+| Brent crude | -3.25% |
 | US 10yr yield | -0.04% |
-| GBP/USD | +2.03% |
+| GBP/USD | +2.11% |
 
 ## Computed tracker figures
 
 | Fund | Proxy | Change |
 |---|---|---|
-| fidelity-index-world | SWDA.L | +1.70% |
-| hsbc-ftse-250-index | VMID.L | +4.86% |
-| ishares-corporate-bond-index | SLXX.L | +0.58% |
-| ishares-japan-equity-index | IJPA.L | +4.90% |
-| ishares-pacific-ex-japan-index | CPJ1.L | +1.99% |
-| lg-all-stocks-gilt-index | IGLT.L | +0.26% |
-| lg-european-index | VERX.L | +2.63% |
-| lg-future-world-esg-developed | SWDA.L | +1.70% |
-| lg-future-world-esg-uk | VUKE.L | +1.40% |
-| lg-international-index | SWDA.L | +1.70% |
-| lg-uk-100-index | ISF.L | +1.43% |
-| lg-uk-index | VUKE.L | +1.40% |
-| lg-uk-mid-cap-index | VMID.L | +4.86% |
-| lg-us-index | VUSA.L | +1.37% |
+| fidelity-index-world | SWDA.L | +1.71% |
+| hsbc-ftse-250-index | VMID.L | +5.05% |
+| ishares-corporate-bond-index | SLXX.L | +0.54% |
+| ishares-japan-equity-index | IJPA.L | +4.94% |
+| ishares-pacific-ex-japan-index | CPJ1.L | +1.97% |
+| lg-all-stocks-gilt-index | IGLT.L | +0.21% |
+| lg-european-index | VERX.L | +2.66% |
+| lg-future-world-esg-developed | SWDA.L | +1.71% |
+| lg-future-world-esg-uk | VUKE.L | +1.55% |
+| lg-international-index | SWDA.L | +1.71% |
+| lg-uk-100-index | ISF.L | +1.56% |
+| lg-uk-index | VUKE.L | +1.55% |
+| lg-uk-mid-cap-index | VMID.L | +5.05% |
+| lg-us-index | VUSA.L | +1.32% |
 | vanguard-global-bond-index | VAGP.L | +0.05% |
 | vanguard-global-corporate-bond-index | VCPA.L | -1.69% |
-| vanguard-global-small-cap-index | WLDS.L | +1.70% |
+| vanguard-global-small-cap-index | WLDS.L | +1.68% |
 
 ---
 
