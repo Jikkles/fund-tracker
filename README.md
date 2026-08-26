@@ -77,6 +77,13 @@ page does.
 published straight to the Pages artifact, so an hourly refresh does not leave
 the repo carrying two dozen commits a day of churning price data.
 
+**The Top 5 / Bottom 5 lists sort by period.** 1W, 1M, 1Y or 5Y, each computed
+from the fund's own NAV series, defaulting to 1W. Only funds that could be
+priced appear, and the header says how many, so a shrinking count is visible
+rather than silent. "vs sector" is offered on 1Y alone: the sector averages
+are researched figures on a different basis, and comparing a NAV return
+against one would not be like-for-like.
+
 **Headlines follow the chart.** The panel under the fund tables shows news
 for whichever index tab is selected — click Nikkei, get Nikkei news. Yahoo's
 headline feed is per-symbol, which is what makes the panel relevant *by

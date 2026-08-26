@@ -616,7 +616,7 @@
 "use strict";
 const LS_KEY = "wsl_funds_data_v1";
 let DATA = null, active = "all", q = "", sortMode = "default";
-let rankMode = "abs", viewMode = "cards", tSort = {k:"p1", d:"desc"};
+let rankMode = "abs", rankPeriod = "nav1w", viewMode = "cards", tSort = {k:"p1", d:"desc"};
 
 /* ---------- loading ----------
    This page is served as a website: funds.json sits next to index.html and is
@@ -1112,22 +1112,43 @@ function miniList(arr){
   return `<table class="data"><tbody>${arr.map(o=>`<tr><td>${esc(o.name)}</td><td class="num">${esc(o.weight)}</td></tr>`).join('')}</tbody></table>`;
 }
 
-/* ---------- render: shortlist pulse (top 5 / bottom 5 / roster) ---------- */
+/* ---------- render: shortlist pulse (top 5 / bottom 5) ---------- */
+/* Ranking periods, all computed from each fund's own NAV series. Funds that
+   could not be priced simply do not appear in these lists - the header says
+   how many did, so a shrinking count is visible rather than silent. */
+const RANK_PERIODS = [
+  { k:'nav1w',  label:'1W', full:'1 week'  },
+  { k:'nav1m',  label:'1M', full:'1 month' },
+  { k:'nav1yr', label:'1Y', full:'1 year'  },
+  { k:'nav5yr', label:'5Y', full:'5 years' },
+];
+function setRankPeriod(k){
+  rankPeriod = k;
+  // "vs sector" has no meaning outside the researched 1yr figures.
+  if(k !== 'nav1yr') rankMode = 'abs';
+  renderIntro();
+}
+
 function renderIntro(){
   const el = document.getElementById('intro');
   if(!DATA || !DATA.funds || !DATA.funds.length){ el.innerHTML=''; return; }
 
   let _introIdSeq = 0;
 
-  // Build sorted performance list — absolute 1yr or sector-relative, per toggle
-  const rel = (rankMode === 'rel');
+  // Build sorted performance list. Over a chosen period the figure is the
+  // fund's own NAV total return; "vs sector" only exists for the researched
+  // 1yr numbers, so it is offered on that period alone rather than silently
+  // comparing a NAV return against a sector average measured differently.
+  const period = RANK_PERIODS.find(x => x.k === rankPeriod) || RANK_PERIODS[0];
+  const rel = (rankMode === 'rel' && period.k === 'nav1yr');
   const ranked = DATA.funds
     .map(f => {
       if(rel){
         const r = vsSector(f);
         return { f, p: r, s: r === null ? null : fmtPP(r) };
       }
-      return { f, p: parsePerf(getPerf1(f)), s: getPerf1(f) };
+      const v = (f.performance || {})[period.k];
+      return { f, p: parsePerf(v), s: v };
     })
     .filter(x => x.p !== null)
     .sort((a,b) => b.p - a.p);
@@ -1178,17 +1199,20 @@ function renderIntro(){
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule);overflow:hidden;margin-bottom:0;border-radius:12px 12px 0 0">
       <div class="pulse-box" style="border:none;border-right:1px solid var(--rule);border-radius:0">
         <div class="pulse-box-head" style="color:var(--forest);border-bottom:2px solid var(--forest);display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-          <span>Top 5 ${rel?'vs sector':'performers'} (1yr) — ${ranked.length} funds with data</span>
+          <span>Top 5 ${rel?'vs sector':'performers'} (${esc(period.full)}) — ${ranked.length} priced</span>
           <span class="seg" style="margin-left:auto">
+            ${RANK_PERIODS.map(x=>`<button ${x.k===period.k?'class="on"':''} onclick="setRankPeriod('${x.k}')">${x.label}</button>`).join('')}
+          </span>
+          ${period.k==='nav1yr' ? `<span class="seg">
             <button ${rankMode==='abs'?'class="on"':''} onclick="rankMode='abs';renderIntro()">Absolute</button>
             <button ${rankMode==='rel'?'class="on"':''} onclick="rankMode='rel';renderIntro()">vs sector</button>
-          </span>
+          </span>` : ''}
         </div>
         ${top5Items}
       </div>
       <div class="pulse-box" style="border:none;border-radius:0">
         <div class="pulse-box-head" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
-          Bottom 5 ${rel?'vs sector':''} (1yr) — ${rel?'biggest category laggards':'lagging funds across the shortlist'}
+          Bottom 5 ${rel?'vs sector':''} (${esc(period.full)}) — ${rel?'biggest category laggards':'weakest over this period'}
         </div>
         ${bot5Items}
       </div>

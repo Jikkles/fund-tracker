@@ -213,10 +213,12 @@ def price(symbol: str, span: str = "5y") -> dict | None:
 # Tactical Bond priced at "-98.86% over 3yr" on exactly this.
 MAX_DAILY_STEP = 0.5
 
-# How much of a requested window the series must actually cover. Without
-# this, a fund launched three months ago reports the same number for 1yr,
-# 3yr and 5yr - a three-month return wearing a five-year label.
-MIN_WINDOW_COVER = 0.9
+# A series must reach back past the window's start, or the window is not
+# really covered - a fund launched three months ago would otherwise report
+# the same number for 1yr, 3yr and 5yr, a three-month return wearing a
+# five-year label. The tolerance absorbs a weekend or holiday at the far end.
+def _slack(days: int) -> int:
+    return min(7, max(3, int(days * 0.05))) * 86400
 
 
 def has_discontinuity(series: dict) -> tuple[bool, str]:
@@ -249,7 +251,7 @@ def pct_over(series: dict, days: int) -> float | None:
     if start is None or not start:
         return None
     # Refuse to label a short history with a long window.
-    if (end - start_t) < days * 86400 * MIN_WINDOW_COVER:
+    if series["t"][0] > cutoff + _slack(days):
         return None
     return (series["c"][-1] - start) / start * 100.0
 
@@ -335,29 +337,27 @@ def main(argv: list[str]) -> int:
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} REFUSED  {why}")
             continue
 
-        one = pct_over(series, 365)
-        three = pct_over(series, 365 * 3)
-        five = pct_over(series, 365 * 5)
+        windows = {"nav1w": 7, "nav1m": 31, "nav1yr": 365,
+                   "nav3yr": 365 * 3, "nav5yr": 365 * 5}
+        vals = {k: pct_over(series, n) for k, n in windows.items()}
+        one, three, five = vals["nav1yr"], vals["nav3yr"], vals["nav5yr"]
         if one is None:
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} too short")
             continue
 
         priced += 1
         perf = fund.setdefault("performance", {})
-        perf["nav1yr"] = fmt(one)
-        if three is not None:
-            perf["nav3yr"] = fmt(three)
-        else:
-            perf.pop("nav3yr", None)
-        if five is not None:
-            perf["nav5yr"] = fmt(five)
-        else:
-            perf.pop("nav5yr", None)
+        for key, value in vals.items():
+            if value is None:
+                perf.pop(key, None)
+            else:
+                perf[key] = fmt(value)
         perf["navAsAt"] = date.fromtimestamp(series["t"][-1]).isoformat()
         perf["navPoints"] = len(series["c"])
         print(f"  [nav] {fund['name'][:38]:40} {symbol:14} "
-              f"1yr {fmt(one):>9}  3yr {fmt(three) or '   n/a':>9}  "
-              f"5yr {fmt(five) or '   n/a':>9}")
+              f"1w {fmt(vals['nav1w']) or '  n/a':>8}  "
+              f"1m {fmt(vals['nav1m']) or '  n/a':>8}  "
+              f"1yr {fmt(one):>9}  5yr {fmt(five) or '   n/a':>9}")
 
     print(f"\n{resolved} resolved, {refused} refused, {priced} priced "
           f"of {len(funds)} funds")
