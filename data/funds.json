@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "The whole list — full factsheet depth.",
-    "asAt": "26 Aug 2026 (automated deterministic run); 1yr research UNCHANGED - see auditLog",
+    "asAt": "26 Aug 2026 (automated deterministic run); 36 of 50 funds priced from their own NAV",
     "built": "26 Aug 2026 (automated daily run)",
-    "listTotal": 63,
-    "sources": "HL · FE/Trustnet · Morningstar · Fidelity · Artemis · Janus Henderson · BofA/InvestmentNews · Columbia Threadneedle · AJ Bell · interactive investor · House of Commons Library · FundsLibrary · company filings",
+    "listTotal": 50,
+    "sources": "Yahoo Finance (fund NAVs) · HL · FE/Trustnet · Morningstar · Fidelity · Artemis · Janus Henderson · BofA/InvestmentNews · Columbia Threadneedle · AJ Bell · interactive investor · House of Commons Library · FundsLibrary · company filings",
     "caveats": [
       "Factual research and catalyst-based ideas to investigate — not personal financial advice.",
       "Past performance is not a guide to future returns; investments and income can fall as well as rise.",
@@ -14,7 +14,8 @@
       "As-at dates vary within HL pages: prices are mostly 15–22 Jun 2026; portfolio breakdowns mostly 31 Mar 2026."
     ],
     "schemaVersion": "1.3",
-    "schemaNotes": "v1.3 (26 Aug 2026): the whole `intro` block is removed. Only intro.marketPulse was ever rendered, and it was hand-written monthly commentary that no automated run refreshed - it had frozen at 30 Jun 2026 while the rest of the page moved on. The index chart at the top of the page now carries live market context instead. The other intro fields (summary, catalystTitle, catalystChips, catalystNote, setups) had no renderer at all. v1.2 (3 Jul 2026): adds intro.marketPulse {asAt, rows[{label, dot, html}]} — regional monthly commentary now lives in the JSON and is overwritten each monthly update cycle; the shell renders it (dot tokens: blue/forest/amber/oxblood/ink). v1.1 (2 Jul 2026): per-fund isin/isinNote/isinSource, performance.perfAsAt (ISO) + perfAsAtSource, perfBasis (HL/FID/FE/DRV), links.fidelity/links.trustnet."
+    "schemaNotes": "v1.3 (26 Aug 2026): the whole `intro` block is removed. Only intro.marketPulse was ever rendered, and it was hand-written monthly commentary that no automated run refreshed - it had frozen at 30 Jun 2026 while the rest of the page moved on. The index chart at the top of the page now carries live market context instead. The other intro fields (summary, catalystTitle, catalystChips, catalystNote, setups) had no renderer at all. v1.2 (3 Jul 2026): adds intro.marketPulse {asAt, rows[{label, dot, html}]} — regional monthly commentary now lives in the JSON and is overwritten each monthly update cycle; the shell renders it (dot tokens: blue/forest/amber/oxblood/ink). v1.1 (2 Jul 2026): per-fund isin/isinNote/isinSource, performance.perfAsAt (ISO) + perfAsAtSource, perfBasis (HL/FID/FE/DRV), links.fidelity/links.trustnet.",
+    "navRefreshed": "2026-08-26"
   },
   "categories": [
     {
@@ -114,7 +115,12 @@
         "notes": "Refreshed 6 Jul 2026 via Fidelity (I Acc, GB00B5ZX1M70), price stamp 26 Jun 26. Outlier flag RESOLVED: Fidelity discrete 2025–26 is exactly +44.66% — the desk figure is confirmed, not an error. Trailing 1yr +46.38% vs Morningstar Global Equity Income category +20.59% — the banks/defence/gold contrarian book has more than doubled the category. Discrete years to 31 Mar.",
         "perfAsAt": "2026-06-26",
         "perfAsAtSource": "Fidelity price stamp 26 Jun 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+36.71%",
+        "nav3yr": "+145.23%",
+        "nav5yr": "+162.16%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1227
       },
       "holdings": [
         {
@@ -248,12 +254,15 @@
       "asAt": "22 Jun 2026 (portfolio 28 Feb 2026; performance to 31 Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B5ZX1M70",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000W36K.L",
+      "navName": "Artemis Global Income I Acc",
+      "navMatch": "isin GB00B5ZX1M70 (name 100%)"
     },
     {
       "id": "fidelity-global-dividend",
@@ -316,7 +325,12 @@
         "notes": "Discrete years to 30 Apr. Beat sector since launch but trailed it and benchmark over the past year.",
         "perfAsAt": "2026-04-30",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+13.90%",
+        "nav3yr": "+52.65%",
+        "nav5yr": "+62.09%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1259
       },
       "holdings": [
         {
@@ -415,408 +429,15 @@
       "asAt": "22 Jun 2026 (performance to 30 Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B7GJPN73",
-      "isinSource": "already present in entry text"
-    },
-    {
-      "id": "troy-trojan-global-income",
-      "name": "Troy Trojan Global Income",
-      "shareClass": "Class O Accumulation",
-      "category": "Global Equity Income",
-      "group": "global",
-      "badge": {
-        "type": "lose",
-        "label": "Defensive · lagged"
-      },
-      "iaSector": "IA Global Equity Income",
-      "benchmark": "MSCI ACWI",
-      "fundSize": "≈ £448m",
-      "launched": "November 2016",
-      "yield": "3.05%",
-      "overview": "A capital-preservation-first global income fund in the Troy house style: concentrated (~30–50 holdings), very low turnover, total-return rather than yield-chasing. The highest-yielding fund in the Global category and the most defensive — it shelters capital in downturns and gives up ground in fast rallies.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (trailing, to 4 Jun 26 — O Inc class proxy)",
-            "fund": "−3.18%",
-            "sector": "+19.46%",
-            "benchmark": "—"
-          },
-          {
-            "period": "3 yr (annualised, to 4 Jun 26 — O Inc proxy)",
-            "fund": "+4.88%",
-            "sector": "+12.72%",
-            "benchmark": "—"
-          },
-          {
-            "period": "5 yr (annualised, to 4 Jun 26 — O Inc proxy)",
-            "fund": "+4.77%",
-            "sector": "+9.55%",
-            "benchmark": "—"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26 (to 31 Mar 26)",
-            "fund": "−3.21%",
-            "sector": "+13.07%"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+9.10%",
-            "sector": "+4.58%"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+5.32%",
-            "sector": "+12.11%"
-          },
-          {
-            "year": "2022–23",
-            "fund": "−2.97%",
-            "sector": "+1.37%"
-          },
-          {
-            "year": "2021–22",
-            "fund": "+15.81%",
-            "sector": "+11.82%"
-          }
-        ],
-        "notes": "Refreshed 6 Jul 2026 via Fidelity O Inc class proxy (GB00BD82KQ40); desk holds O Acc (GB00BD82KP33). Discrete years to 31 Mar with Morningstar Global Equity Income category. Trailing 1yr −3.18% vs sector +19.46% — the capital-preservation mandate has badly lagged the 2025–26 global melt-up; sector-relative gap is style-driven (quality/defensive book), consistent with its low-volatility positioning. Previous HL calendar-2025 figure (+5.58% to 31 Dec 25) superseded.",
-        "perfAsAt": "2026-06-04",
-        "perfAsAtSource": "Fidelity price stamp 4 Jun 2026 (O Inc class)",
-        "perfBasis": "FID"
-      },
-      "holdings": [
-        {
-          "name": "CME Group",
-          "weight": "5.7%"
-        },
-        {
-          "name": "British American Tobacco",
-          "weight": "5.4%"
-        },
-        {
-          "name": "Siemens",
-          "weight": "4.8%"
-        },
-        {
-          "name": "Reckitt Benckiser",
-          "weight": "4.4%"
-        },
-        {
-          "name": "Canadian National Railway",
-          "weight": "4.2%"
-        },
-        {
-          "name": "Microsoft",
-          "weight": "≈4%"
-        },
-        {
-          "name": "Paychex",
-          "weight": "≈3.8%"
-        },
-        {
-          "name": "PepsiCo",
-          "weight": "≈3.6%"
-        }
-      ],
-      "holdingsNote": "Tobacco ~10.9% of fund. Recent contributors: Philip Morris, BAT, Roche, Novartis; detractors: Paychex, RELX, Pernod Ricard, Diageo, Nestlé.",
-      "sectors": [
-        {
-          "name": "Consumer defensive",
-          "weight": "30.6%"
-        },
-        {
-          "name": "Technology",
-          "weight": "20.3%"
-        },
-        {
-          "name": "Financials",
-          "weight": "13.1%"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United States",
-          "weight": "38.1%"
-        },
-        {
-          "name": "United Kingdom",
-          "weight": "34.0%"
-        },
-        {
-          "name": "Europe ex-€",
-          "weight": "9.9%"
-        }
-      ],
-      "manager": {
-        "names": "James Harries & Tomasz Boniek",
-        "tenure": "Harries since 2016 launch; Boniek co-manager since 2017",
-        "bio": "James Harries previously at Newton/BNY Mellon managing global income since 2005. Tomasz Boniek (LBS MBA) joined 2017. Also run Securities Trust of Scotland and Trojan Ethical Global Income."
-      },
-      "process": "Capital-preservation focus, high quality, free-cash-flow driven, very low turnover; concentrated; can use derivatives.",
-      "whyNow": "<b>Lagged.</b> Quality/defensive style out of favour; minimal AI/tech exposure. Built to shelter capital in downturns. Note: Troy Trojan Income (the UK income fund) was removed from the Shortlist 17 Jun 2026 — this Global fund is separate and remains on the list.",
-      "charges": {
-        "ocf": "0.90%",
-        "hlSaving": "none",
-        "netOngoing": "0.90%",
-        "transaction": "0.10%",
-        "notes": "No HL loyalty saving. Charges taken from capital.",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "5",
-        "feScore": "not yet verified",
-        "notes": "Deliberately low-volatility; designed to protect on the downside.",
-        "srriNote": "Troy quality income style; lower vol than peers — inferred from fund type",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−8.4%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "Capital-preservation design delivered; one of the shallowest drawdowns in the sector during 2022",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "catalysts": [
-        {
-          "holding": "Microsoft",
-          "weight": "≈4%",
-          "event": "Q1 FY27 results",
-          "date": "~late Oct 2026 (estimated)",
-          "tracking": "over",
-          "detail": "Q3 FY26 (29 Apr) beat: revenue $82.9bn, +18% (+15% cc), operating income $38.4bn. Azure growth and the ~$190bn FY26 capex guide remain the two swing factors — the market has been rewarding Azure growth and punishing capex escalation. Watch: Azure growth rate, capex trajectory into FY27, and AI monetisation commentary. Mega-cap Q3 reporting has historically clustered in the last week of October; date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "historical reporting pattern"
-        }
-      ],
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/t/troy-trojan-global-income-class-o-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BD82KQ40-trojan-global-income-fund-o-inc/performance"
-      },
-      "sources": "HL fund update (Jan 2026); HL factsheet",
-      "asAt": "22 Jun 2026 (performance to 31 Dec 2025)",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      },
-      "isin": "GB00BD82KP33",
-      "isinSource": "Fidelity share-class listing (O Acc), 6 Jul 2026; figures below fetched from O Inc (GB00BD82KQ40) proxy"
-    },
-    {
-      "id": "rathbone-global-opportunities",
-      "name": "Rathbone Global Opportunities",
-      "shareClass": "Class S Accumulation",
-      "category": "Global",
-      "group": "global",
-      "badge": {
-        "type": "",
-        "label": "AI watch"
-      },
-      "iaSector": "IA Global",
-      "benchmark": "FTSE World / IA Global",
-      "fundSize": "≈ £3.27bn",
-      "launched": "2001 (Thomson lead since Nov 2003)",
-      "yield": "0.50%",
-      "overview": "A high-conviction growth fund of ~56 durable, scalable businesses. NVIDIA is its single largest holding — giving the most direct active AI-cycle exposure of any fund in the Global category.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (trailing, Fidelity price stamp 07 Jul 26)",
-            "fund": "+1.90%",
-            "sector": "+13.67% (Global Large-Cap Growth)",
-            "benchmark": "—"
-          },
-          {
-            "period": "3 yr annualised (Fidelity, to 07 Jul 26)",
-            "fund": "+10.60%",
-            "sector": "+12.22%",
-            "benchmark": "—"
-          },
-          {
-            "period": "5 yr annualised (Fidelity, to 07 Jul 26)",
-            "fund": "+4.85%",
-            "sector": "+5.18%",
-            "benchmark": "—"
-          },
-          {
-            "period": "Since Thomson (Nov 2003)",
-            "fund": "+1142.63%",
-            "sector": "+498.87%",
-            "benchmark": "—"
-          }
-        ],
-        "notes": "Full Fidelity refresh 12 Jul 26 (price stamp 07 Jul 26): trailing 1yr +1.90% — a big lag vs the category's +13.67% as the quality-growth style stayed out of favour; discrete 25–26 year +2.54% vs sector +16.68%. Sector column = Morningstar Global Large-Cap Growth category. Previous −0.71% (15 May, derived) superseded.",
-        "perfAsAt": "2026-07-07",
-        "perfAsAtSource": "Fidelity price stamp 07 Jul 2026",
-        "perfBasis": "FID",
-        "discrete": [
-          {
-            "year": "30 Jun 25 – 30 Jun 26",
-            "fund": "+2.54%",
-            "sector": "+16.68%"
-          },
-          {
-            "year": "30 Jun 24 – 30 Jun 25",
-            "fund": "+6.94%",
-            "sector": "+3.22%"
-          },
-          {
-            "year": "30 Jun 23 – 30 Jun 24",
-            "fund": "+20.41%",
-            "sector": "+17.65%"
-          },
-          {
-            "year": "30 Jun 22 – 30 Jun 23",
-            "fund": "+17.18%",
-            "sector": "+11.73%"
-          },
-          {
-            "year": "30 Jun 21 – 30 Jun 22",
-            "fund": "−17.51%",
-            "sector": "−15.14%"
-          }
-        ]
-      },
-      "holdings": [
-        {
-          "name": "NVIDIA",
-          "weight": "3.31%"
-        },
-        {
-          "name": "Amphenol",
-          "weight": "3.21%"
-        },
-        {
-          "name": "Alphabet",
-          "weight": "3.07%"
-        },
-        {
-          "name": "Costco",
-          "weight": "2.61%"
-        },
-        {
-          "name": "Walmart",
-          "weight": "2.57%"
-        },
-        {
-          "name": "Thales",
-          "weight": "2.34%"
-        },
-        {
-          "name": "Linde",
-          "weight": "2.33%"
-        },
-        {
-          "name": "TJX",
-          "weight": "2.31%"
-        },
-        {
-          "name": "Amazon",
-          "weight": "2.12%"
-        },
-        {
-          "name": "Deutsche Telekom",
-          "weight": "2.11%"
-        }
-      ],
-      "holdingsNote": "Holdings as at 31 Mar 2026 (Broadridge via HL).",
-      "sectors": [
-        {
-          "name": "Retailers",
-          "weight": "16.5%"
-        },
-        {
-          "name": "Software & Computer Services",
-          "weight": "13.2%"
-        },
-        {
-          "name": "Technology Hardware",
-          "weight": "10.0%"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United States",
-          "weight": "62.4%"
-        },
-        {
-          "name": "France",
-          "weight": "8.4%"
-        },
-        {
-          "name": "United Kingdom",
-          "weight": "8.1%"
-        }
-      ],
-      "manager": {
-        "names": "James Thomson & Sammy Dow",
-        "tenure": "Thomson lead since Nov 2003; Dow deputy since 2014",
-        "bio": "James Thomson has spent his entire career on this one fund (Cornell graduate). Sammy Dow joined 2014 from JPMorgan Cazenove."
-      },
-      "process": "Growth stock-picking for durable, scalable businesses; mainly developed markets; defensive bucket to steady the ride.",
-      "whyNow": "<b>Roughly flat over the year</b> on growth-style rotation. NVIDIA as the #1 holding makes it the active Global fund most geared to NVIDIA's 26 August print.",
-      "charges": {
-        "ocf": "0.77%",
-        "hlSaving": "0.26%",
-        "netOngoing": "0.51%",
-        "transaction": "0.09%",
-        "notes": "Among the lowest net charges for an active global fund.",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "6",
-        "feScore": "90 (FE, high)",
-        "notes": "Growth, concentrated and US-heavy — higher volatility; difficult 2022 when growth fell out of favour.",
-        "srriNote": "The Adviser Centre KIID page — confirmed",
-        "srriConfidence": "confirmed",
-        "maxDrawdown": "−33.1%",
-        "maxDrawdownPeriod": "Nov 2021–Oct 2022",
-        "maxDrawdownNote": "Growth/quality heavy fund; deep 2022 selloff mirrors peers like Fundsmith and Baillie Gifford American",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "catalysts": [
-        {
-          "holding": "NVIDIA",
-          "weight": "3.31% — top holding",
-          "event": "Q2 FY27 results (TODAY) → then Q3 FY27",
-          "date": "~late Nov 2026 (estimated)",
-          "tracking": "tbd",
-          "detail": "Reports TODAY after the US close (press release ~1:20pm PT, call 2:00pm PT — NVIDIA IR confirmed). Guided ~$91.0bn ±2%; consensus ~$91.85-92.2bn revenue, ~$2.08-2.13 EPS across ~40 analysts, i.e. the Street sits only ~0.9% above the guide midpoint — little room for a blowout. NVIDIA has beaten its own guidance 13 straight quarters but the beat margin has shrunk from 22.8% (Q2 FY24) to 4.6% last quarter. Watch: Q3 FY27 guide, Blackwell Ultra execution, gross margin (~75%), Rubin commentary and any change to the China relationship. Shares fell seven straight sessions into the print before rebounding 2% on 25 Aug. NEXT after this: Q3 FY27 ~late Nov 2026 (estimated from NVIDIA's late-Feb/May/Aug/Nov pattern).",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "historical reporting pattern"
-        },
-        {
-          "holding": "Alphabet",
-          "weight": "3.07%",
-          "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated)",
-          "tracking": "over",
-          "detail": "Q1 2026 beat (~$109.9bn, +22%; Google Cloud first quarter above $20bn, backlog ~$460bn) and the Q2 print was well received — Alphabet's late-July report was credited with helping set the tone for the whole AI complex. Watch: Cloud re-acceleration, data-centre spending efficiency, and whether AI model launch timing affects competitive momentum. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "historical reporting pattern"
-        }
-      ],
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/r/rathbone-global-opportunities-class-s-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BH0P2M97-rathbone-global-opportunities-s-acc/performance"
-      },
-      "sources": "HL factsheet (ISIN GB00BH0P2M97)",
-      "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      },
-      "isin": "GB00BH0P2M97",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000WUT3.L",
+      "navName": "Fidelity Global Dividend W Acc",
+      "navMatch": "isin GB00B7GJPN73 (name 100%)"
     },
     {
       "id": "lazard-global-equity-franchise",
@@ -885,7 +506,12 @@
         "notes": "Discrete years to 31 Mar. 3/5yr derived. Live refresh attempted 6 Jul 2026: Fidelity /performance page did not surface in search (only key-stats/portfolio pages, portfolio as of 30 Apr 26, price stamp 15 Jun 26) and the Trustnet C Acc GBP factsheet returned 404. Figures remain to 31 Mar 26 — top of the next staleness list.",
         "perfAsAt": "2026-03-31",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "DRV"
+        "perfBasis": "DRV",
+        "nav1yr": "+2.92%",
+        "nav3yr": "+12.11%",
+        "nav5yr": "+36.52%",
+        "navAsAt": "2026-08-24",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -992,12 +618,15 @@
       "asAt": "22 Jun 2026 (portfolio 28 Feb 2026; performance to 31 Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "IE00BF2N1T73",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0001BM5B.L",
+      "navName": "Lazard Global Eq Franchise C Acc GBP",
+      "navMatch": "isin IE00BF2N1T73 (name 100%)"
     },
     {
       "id": "trowe-global-value",
@@ -1186,7 +815,7 @@
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -1258,7 +887,12 @@
         ],
         "perfAsAt": "2026-06-26",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+20.55%",
+        "nav3yr": "+62.21%",
+        "nav5yr": "+60.30%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1259
       },
       "holdings": [
         {
@@ -1374,12 +1008,15 @@
       "asAt": "22 Jun 2026 (portfolio 31 Dec 2025)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B8HT7153",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000WUT6.L",
+      "navName": "Fidelity Global Special Sits W Acc",
+      "navMatch": "isin GB00B8HT7153 (name 100%)"
     },
     {
       "id": "bny-mellon-long-term-global-equity",
@@ -1448,7 +1085,12 @@
         "notes": "Discrete years to 27 May. 3/5yr derived.",
         "perfAsAt": "2026-05-27",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "DRV"
+        "perfBasis": "DRV",
+        "nav1yr": "+7.20%",
+        "nav3yr": "+23.55%",
+        "nav5yr": "+27.57%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -1566,12 +1208,15 @@
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026; performance to 27 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B8K6W529",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000X2GC.L",
+      "navName": "BNY Mellon Long-Term Global Eq Int W Acc",
+      "navMatch": "isin GB00B8K6W529 (name 100%)"
     },
     {
       "id": "fidelity-index-world",
@@ -1646,7 +1291,12 @@
             "fund": "−2.25%",
             "sector": "−6.48%"
           }
-        ]
+        ],
+        "nav1yr": "+19.35%",
+        "nav3yr": "+62.68%",
+        "nav5yr": "+73.05%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -1761,15 +1411,18 @@
       "sources": "HL factsheet & May 2026 update (ISIN GB00BJS8SJ34)",
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
-        "value": "+1.70%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%.",
+        "value": "+1.74%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:SWDA.L",
         "source": "yahoo"
       },
       "isin": "GB00BJS8SJ34",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P000125KV.L",
+      "navName": "Fidelity Index World P Acc",
+      "navMatch": "isin GB00BJS8SJ34 (name 100%)"
     },
     {
       "id": "lg-international-index",
@@ -1838,7 +1491,12 @@
         ],
         "perfAsAt": "2026-07-10",
         "perfAsAtSource": "Fidelity price stamp 10 Jul 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+23.04%",
+        "nav3yr": "+67.32%",
+        "nav5yr": "+77.42%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -1912,15 +1570,18 @@
       "sources": "HL factsheet (ISIN GB00B2Q6HW61)",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "value": "+1.70%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE World ex-UK; proxy is MSCI World, which includes the UK at a small weight. Market context: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%.",
+        "value": "+1.74%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE World ex-UK; proxy is MSCI World, which includes the UK at a small weight. Market context: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:SWDA.L",
         "source": "yahoo"
       },
       "isin": "GB00BG0QP604",
-      "isinSource": "Fidelity factsheet header (C Class Accumulation), 12 Jul 2026 — replaces GB00B2Q6HW61 which does not match the C Acc class per Fidelity"
+      "isinSource": "Fidelity factsheet header (C Class Accumulation), 12 Jul 2026 — replaces GB00B2Q6HW61 which does not match the C Acc class per Fidelity",
+      "navSymbol": "0P000102M4.L",
+      "navName": "L&G International Index C Acc",
+      "navMatch": "isin GB00BG0QP604 (name 100%)"
     },
     {
       "id": "lg-future-world-esg-developed",
@@ -2063,8 +1724,8 @@
       "sources": "HL factsheet & March 2026 update",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "value": "+1.70%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and optimised; expect divergence from a plain developed-world index. Market context: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%.",
+        "value": "+1.74%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and optimised; expect divergence from a plain developed-world index. Market context: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%.",
         "confidence": "computed from a loose GBP ETF proxy - treat as directional only",
         "asAt": "26 Aug 2026",
         "basis": "proxy:SWDA.L",
@@ -2225,8 +1886,8 @@
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
       "asAt": "25 Jun 2026",
       "oneMonth": {
-        "value": "+1.70%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares MSCI World Small Cap UCITS ETF (GBP) (WLDS.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.56%, FTSE 100 +0.80%, Euro STOXX 50 +2.98%, GBP/USD +2.03%.",
+        "value": "+1.73%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares MSCI World Small Cap UCITS ETF (GBP) (WLDS.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.56%, FTSE 100 +0.83%, Euro STOXX 50 +3.02%, GBP/USD +2.01%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:WLDS.L",
@@ -2300,7 +1961,12 @@
         "notes": "Morningstar trailing returns via Fidelity, price stamp 26 Jun 26; category UK Flex-Cap Equity. Discrete years to 31 Mar vs category. Prior 1yr (+29.0% to 24 Feb 26, FE) superseded — window shift, not an error. Confirmed Fidelity 1M to 26 Jun was -0.20% (window pre-dates 30 Jun month-end, so cycle oneMonth estimate retained).",
         "perfAsAt": "2026-06-26",
         "perfAsAtSource": "Fidelity factsheet price stamp 26 Jun 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+20.69%",
+        "nav3yr": "+75.56%",
+        "nav5yr": "+74.57%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -2372,12 +2038,15 @@
       "asAt": "22 Jun 2026 (performance to 24 Feb 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B88V3X40",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000WUU1.L",
+      "navName": "Fidelity Special Situations W Acc",
+      "navMatch": "isin GB00B88V3X40 (name 100%)"
     },
     {
       "id": "ftf-clearbridge-uk-mid-cap",
@@ -2434,7 +2103,12 @@
         "notes": "Renamed from FTF Martin Currie UK Mid Cap on 30 Sep 2025 following Franklin Templeton's ClearBridge rebrand. The +2.80% 1yr massively lags FTSE 250 tracker peers (HSBC +14.3%, L&G +7.85%) — reflects both the broad mid-cap headwind and stock-specific drag. At 0.62% net OCF, must outperform the 0.08% tracker meaningfully to justify the active fee. HL retains it on the Shortlist citing Bullas's long-term record. [Audit 26 Jun 2026: discrete array reordered to newest-first to match desk display convention.]",
         "perfAsAt": "2026-06-24",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+18.50%",
+        "nav3yr": "+32.43%",
+        "nav5yr": "+2.08%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1258
       },
       "holdings": [
         {
@@ -2540,12 +2214,15 @@
       "asAt": "25 Jun 2026",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BZ8FPJ50",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P00017MZL.L",
+      "navName": "FTF ClearBridge UK Mid Cap S Acc",
+      "navMatch": "isin GB00BZ8FPJ50 (name 100%)"
     },
     {
       "id": "liontrust-uk-growth",
@@ -2608,7 +2285,10 @@
             "fund": "+0.93% (R Inc proxy)",
             "sector": "−9.95%"
           }
-        ]
+        ],
+        "nav1yr": "+10.11%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 662
       },
       "holdings": [
         {
@@ -2706,131 +2386,15 @@
       "asAt": "22 Jun 2026 (portfolio Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BNGB8J22",
-      "isinSource": "already present in entry text"
-    },
-    {
-      "id": "aegon-ethical-equity",
-      "name": "Aegon Ethical Equity",
-      "shareClass": "Class B Accumulation",
-      "category": "UK All Companies (Responsible)",
-      "group": "uk",
-      "badge": {
-        "type": "",
-        "label": "Ethical"
-      },
-      "iaSector": "IA Responsible Investment",
-      "benchmark": "not yet verified",
-      "fundSize": "not yet verified",
-      "launched": "not yet verified",
-      "yield": "not yet verified",
-      "overview": "The strictest ethically-screened UK equity fund on the Shortlist. A dedicated Aegon ESG Research team runs a negative screen (sin stocks) leaving manager Audrey Ryan to focus purely on stock selection of structurally-advantaged companies. Objective is income plus capital growth over any 7-year period.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (trailing, Fidelity price stamp 20 Apr 26 — as-at approximate)",
-            "fund": "+9.62%",
-            "sector": "+22.57% (Morningstar UK Flex-Cap)",
-            "benchmark": "—"
-          }
-        ],
-        "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). Trailing 1yr from a page whose price stamp showed 20 Apr 2026 — treat the as-at date with caution and re-confirm on HL. Corrected 2 Jul 2026.",
-        "discrete": [
-          {
-            "year": "2025–26",
-            "fund": "−0.45%",
-            "sector": "+10.99%"
-          },
-          {
-            "year": "2024–25",
-            "fund": "−0.76%",
-            "sector": "+4.28%"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+14.28%",
-            "sector": "+7.83%"
-          },
-          {
-            "year": "2022–23",
-            "fund": "−8.56%",
-            "sector": "−0.20%"
-          },
-          {
-            "year": "2021–22",
-            "fund": "−2.21%",
-            "sector": "+2.16%"
-          }
-        ],
-        "perfAsAt": "2026-04-28",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
-      },
-      "holdings": [
-        {
-          "name": "not yet verified — see HL factsheet",
-          "weight": "—"
-        }
-      ],
-      "holdingsNote": "Holds Hargreaves Lansdown plc shares. All other holdings to be pulled next refresh.",
-      "sectors": [
-        {
-          "name": "not yet verified",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United Kingdom",
-          "weight": "majority"
-        }
-      ],
-      "manager": {
-        "names": "Audrey Ryan & Elaine Morgan",
-        "tenure": "Ryan managing since 1999 — 25+ years",
-        "bio": "Audrey Ryan has managed the fund since 1999, one of the longest tenures on the Shortlist. Back-up manager Elaine Morgan. The ethical screen is run separately by an Aegon ESG Research team."
-      },
-      "process": "Negative ethical screen (sin stocks removed by ESG Research team), then bottom-up stock selection for structurally-advantaged companies.",
-      "whyNow": "One of the Shortlist's distinctive offerings — the exclusion screen means it looks very different from standard UK equity funds. Suitable for investors who want UK equity exposure alongside strict ethical principles. Detailed numbers to be added next refresh.",
-      "charges": {
-        "ocf": "not yet verified",
-        "hlSaving": "not yet verified",
-        "netOngoing": "not yet verified",
-        "transaction": "0.14%",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "6",
-        "feScore": "not yet verified",
-        "notes": "Ethical exclusions change the sector profile materially vs a plain UK fund.",
-        "srriNote": "UK equity responsible — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−22.1%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "ESG screen removes energy sector which rallied in 2022 — increased relative drawdown",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/aegon-ethical-equity-class-b-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0007450884-aegon-ethical-equity-b-acc/performance",
-        "trustnet": "https://www.trustnet.com/factsheets/O/sn54/aegon-ethical-equity/"
-      },
-      "sources": "HL fund updates (Aug 2025, Jul 2024)",
-      "asAt": "22 Jun 2026",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      },
-      "isin": "GB0007450884",
-      "isinNote": "B Acc",
-      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0001S8W9.L",
+      "navName": "Liontrust UK Growth I Acc",
+      "navMatch": "isin GB00BNGB8J22 (name 100%)"
     },
     {
       "id": "artemis-income",
@@ -2887,7 +2451,12 @@
         ],
         "perfAsAt": "2026-04-27",
         "perfAsAtSource": "Fidelity factsheet price stamp 27 Apr 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+14.32%",
+        "nav3yr": "+65.72%",
+        "nav5yr": "+72.02%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1258
       },
       "holdings": [
         {
@@ -2995,12 +2564,15 @@
       "asAt": "22 Jun 2026 (holdings 31 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B2PLJH12",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000KKC3.L",
+      "navName": "Artemis Income I Acc",
+      "navMatch": "isin GB00B2PLJH12 (name 100%)"
     },
     {
       "id": "janus-henderson-uk-responsible-income",
@@ -3166,7 +2738,7 @@
       "asAt": "22 Jun 2026 (holdings 30 Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -3238,7 +2810,12 @@
         "notes": "Source: Fidelity/Morningstar. Morningstar 4-star rated. Outperforms sector across 1/3/5yr.",
         "perfAsAt": "2026-06-22",
         "perfAsAtSource": "fund-level asAt fallback",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+24.49%",
+        "nav3yr": "+72.53%",
+        "nav5yr": "+68.85%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -3292,12 +2869,15 @@
       "asAt": "22 Jun 2026 (performance to ~Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB0007494221",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P00000RI1.L",
+      "navName": "Janus Henderson UK Eq Inc&Gr I Acc",
+      "navMatch": "isin GB0007494221 (name 80%)"
     },
     {
       "id": "artemis-uk-smaller-companies",
@@ -3366,7 +2946,12 @@
         "notes": "Source: Trustnet to 29 May 2026. Since Niznik became lead (2011): +274.09% vs sector +195.08% — strong long-run relative record despite weak 1yr.",
         "perfAsAt": "2026-05-29",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FE"
+        "perfBasis": "FE",
+        "nav1yr": "+7.27%",
+        "nav3yr": "+37.18%",
+        "nav5yr": "+17.78%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1258
       },
       "holdings": [
         {
@@ -3468,10 +3053,13 @@
       "asAt": "22 Jun 2026 (portfolio Mar 2026; performance to 29 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
-      }
+      },
+      "navSymbol": "0P0000W36H.L",
+      "navName": "Artemis UK Smaller Companies I Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "lg-uk-index",
@@ -3631,311 +3219,11 @@
       "sources": "HL factsheet",
       "asAt": "22 Jun 2026 (portfolio Mar 2026)",
       "oneMonth": {
-        "value": "+1.40%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE All-Share; proxy is FTSE 100, so mid/small-cap divergence is not captured. Market context: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%.",
+        "value": "+1.53%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE All-Share; proxy is FTSE 100, so mid/small-cap divergence is not captured. Market context: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VUKE.L",
-        "source": "yahoo"
-      }
-    },
-    {
-      "id": "lg-uk-100-index",
-      "name": "Legal & General UK 100 Index",
-      "shareClass": "Class C Accumulation",
-      "category": "UK Tracker",
-      "group": "uk",
-      "badge": {
-        "type": "",
-        "label": "FTSE 100 · 0.06%"
-      },
-      "iaSector": "IA UK All Companies (tracker)",
-      "benchmark": "FTSE 100",
-      "fundSize": "£2.31bn",
-      "launched": "28 May 1993",
-      "yield": "3.00%",
-      "overview": "Full tracker of the FTSE 100 — the 100 largest UK-listed companies (101 holdings). More internationally exposed than the broader UK Index (the FTSE 100 earns a large share of revenues overseas) and more dividend-heavy. Captured the large-cap rally strongly.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (2025–26, HL rolling)",
-            "fund": "+23.56%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          },
-          {
-            "period": "1 yr (trailing, Fidelity I Acc proxy, stamp 05 Jun 26)",
-            "fund": "+19.89%",
-            "sector": "+14.69% (UK Large-Cap)",
-            "benchmark": "≈ index"
-          }
-        ],
-        "notes": "Outperformed the broader FTSE All-Share tracker on a 1yr basis as large caps led. | 12 Jul 26: discrete years to 31 Mar filled from the I Acc sibling class (GB00B0CNH502, Fidelity stamp 05 Jun 26), labelled as proxy. Trailing 1yr +19.89% to 05 Jun vs HL's +23.56% to late Jun — the gap is end-date, not error (FTSE 100 rallied through June).",
-        "perfAsAt": "2026-06-22",
-        "perfAsAtSource": "fund-level asAt fallback",
-        "perfBasis": "HL",
-        "discrete": [
-          {
-            "year": "31 Mar 25 – 31 Mar 26",
-            "fund": "+23.18% (I Acc proxy)",
-            "sector": "+16.97%"
-          },
-          {
-            "year": "31 Mar 24 – 31 Mar 25",
-            "fund": "+11.37% (I Acc proxy)",
-            "sector": "+8.50%"
-          },
-          {
-            "year": "31 Mar 23 – 31 Mar 24",
-            "fund": "+8.07% (I Acc proxy)",
-            "sector": "+7.84%"
-          },
-          {
-            "year": "31 Mar 22 – 31 Mar 23",
-            "fund": "+4.67% (I Acc proxy)",
-            "sector": "+2.09%"
-          },
-          {
-            "year": "31 Mar 21 – 31 Mar 22",
-            "fund": "+15.76% (I Acc proxy)",
-            "sector": "+9.86%"
-          }
-        ]
-      },
-      "holdings": [
-        {
-          "name": "HSBC",
-          "weight": "9.03%"
-        },
-        {
-          "name": "AstraZeneca",
-          "weight": "8.16%"
-        },
-        {
-          "name": "Shell",
-          "weight": "6.92%"
-        },
-        {
-          "name": "Rolls-Royce",
-          "weight": "3.93%"
-        },
-        {
-          "name": "Unilever",
-          "weight": "3.61%"
-        },
-        {
-          "name": "BP",
-          "weight": "3.57%"
-        },
-        {
-          "name": "British American Tobacco",
-          "weight": "3.53%"
-        }
-      ],
-      "holdingsNote": "Holdings as at Apr 2026 (HL). 101 holdings.",
-      "sectors": [
-        {
-          "name": "Banks",
-          "weight": "—"
-        },
-        {
-          "name": "Pharma & Biotech",
-          "weight": "—"
-        },
-        {
-          "name": "Energy",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United Kingdom listed",
-          "weight": "100%"
-        }
-      ],
-      "manager": {
-        "names": "LGIM index team",
-        "tenure": "Index team",
-        "bio": "Full replication of FTSE 100 by LGIM."
-      },
-      "process": "Full physical replication of the FTSE 100.",
-      "whyNow": "<b>Strong 1yr (+23.56%)</b> as large caps outperformed mid/smaller. More concentrated than the FTSE All-Share tracker — top 10 holdings make up a larger share.",
-      "charges": {
-        "ocf": "0.10%",
-        "hlSaving": "0.04%",
-        "netOngoing": "0.06%",
-        "transaction": "0.01%",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "6",
-        "feScore": "not yet verified",
-        "notes": "Large-cap UK — more concentrated than FTSE All-Share; more internationally exposed than it looks.",
-        "srriNote": "UK large-cap equity tracker — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−8.9%",
-        "maxDrawdownPeriod": "Jan–Jul 2022",
-        "maxDrawdownNote": "FTSE 100 tracker; big oil (Shell, BP) and miners cushioned the UK large-cap drawdown in 2022",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "high"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-uk-100-index-class-c-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0CNH502-legal--general-uk-100-index-trust-i-acc/performance"
-      },
-      "sources": "HL factsheet",
-      "asAt": "22 Jun 2026 (portfolio Apr 2026)",
-      "oneMonth": {
-        "value": "+1.43%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core FTSE 100 UCITS ETF (GBP) (ISF.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%.",
-        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
-        "asAt": "26 Aug 2026",
-        "basis": "proxy:ISF.L",
-        "source": "yahoo"
-      }
-    },
-    {
-      "id": "lg-uk-mid-cap-index",
-      "name": "Legal & General UK Mid Cap Index",
-      "shareClass": "Class C Accumulation",
-      "category": "UK Tracker",
-      "group": "uk",
-      "badge": {
-        "type": "",
-        "label": "FTSE 250 · 0.08%"
-      },
-      "iaSector": "IA UK All Companies (tracker)",
-      "benchmark": "FTSE 250 ex-Investment Trusts",
-      "fundSize": "≈ £739m",
-      "launched": "not yet verified",
-      "yield": "not yet verified",
-      "overview": "Passive tracker of the FTSE 250 excluding investment trusts — HL's preferred UK mid-cap tracker for \"purer exposure to UK businesses.\" Cheapest FTSE 250 tracker on the Shortlist at 0.08% net OCF. The exclusion of investment trusts (≈30% of FTSE 250 assets) differentiates it from the HSBC alternative.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to 25 Jun 2026, HL rolling)",
-            "fund": "+7.85%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          },
-          {
-            "period": "3 yr annualised (Class I)",
-            "fund": "+10.99%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          },
-          {
-            "period": "5 yr annualised (Class I)",
-            "fund": "+2.81%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          }
-        ],
-        "notes": "FTSE 250 significantly lagged FTSE 100 in 2025-26 (+7.85% vs +23.56%) — domestically-geared mid-caps bore brunt of weak UK sentiment, BoE hold, and fund outflows. 5yr annualised reflects 3+ years of mid-cap underperformance. Note: headline figures differ from HSBC (+14.3%) due to different end-dates and IT-exclusion difference — not like-for-like. | 12 Jul 26: discrete years to 31 Mar filled from Fidelity (stamp 25 Jun 26). Fidelity lists I Acc (GB00BQ1JYX87) as the fund's only share class and its trailing 1yr of +7.85% matches the desk's headline exactly — the existing figure is verified. Sector = Morningstar UK Mid-Cap Equity. ISIN left unset pending manual confirmation of HL's C Acc labelling vs Fidelity's single I Acc class.",
-        "perfAsAt": "2026-06-25",
-        "perfAsAtSource": "Fidelity price stamp 25 Jun 2026",
-        "perfBasis": "FID",
-        "discrete": [
-          {
-            "year": "31 Mar 25 – 31 Mar 26",
-            "fund": "+12.05% (I Acc)",
-            "sector": "+8.98%"
-          },
-          {
-            "year": "31 Mar 24 – 31 Mar 25",
-            "fund": "+0.19% (I Acc)",
-            "sector": "+0.45%"
-          },
-          {
-            "year": "31 Mar 23 – 31 Mar 24",
-            "fund": "+9.43% (I Acc)",
-            "sector": "+6.93%"
-          },
-          {
-            "year": "31 Mar 22 – 31 Mar 23",
-            "fund": "−8.38% (I Acc)",
-            "sector": "−9.74%"
-          },
-          {
-            "year": "31 Mar 21 – 31 Mar 22",
-            "fund": "−0.60% (I Acc)",
-            "sector": "−4.48%"
-          }
-        ]
-      },
-      "holdings": [
-        {
-          "name": "Balfour Beatty",
-          "weight": "2.05%"
-        },
-        {
-          "name": "Aberdeen Group",
-          "weight": "1.93%"
-        },
-        {
-          "name": "Investec",
-          "weight": "1.88%"
-        },
-        {
-          "name": "Johnson Matthey",
-          "weight": "1.68%"
-        },
-        {
-          "name": "Plus500",
-          "weight": "1.56%"
-        }
-      ],
-      "holdingsNote": "Top 5 holdings as at 30 Apr 2026. Excludes investment trusts — cleaner UK operating-company exposure than HSBC equivalent.",
-      "sectors": [
-        {
-          "name": "Domestically-focused UK mid-caps",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United Kingdom",
-          "weight": "≈100%"
-        }
-      ],
-      "manager": {
-        "names": "LGIM index team",
-        "tenure": "Index team",
-        "bio": "Full replication of FTSE 250 by LGIM."
-      },
-      "process": "Full physical replication of the FTSE 250.",
-      "whyNow": "<b>Recovery play — catalyst stalled.</b> HL prefers L&G over HSBC for \"purer\" UK exposure by excluding investment trusts. The FTSE 250 is 40%+ financials and ≈45% UK revenues — highly rate-sensitive. BoE held at 3.75% on 18 June 2026 (7-2, two members wanted a hike), with CPI at 2.8% and expected to hit 3.25%+ in Q4. Next decision: 30 July 2026. An M&A signal: Prologis tabled a £12.6bn all-share bid for SEGRO on 16 Jun (rejected 23 Jun) — highlights the valuation gap acquirers see. UBS calls the FTSE 250 a \"sweet spot\" of valuation and growth potential. <b>Catalyst needed:</b> confirmed BoE easing cycle + CPI falling back toward 2%.",
-      "charges": {
-        "ocf": "0.14%",
-        "hlSaving": "0.06%",
-        "netOngoing": "0.08%",
-        "transaction": "0.01%",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "6",
-        "feScore": "not yet verified",
-        "notes": "Mid-cap UK — more volatile than large-cap tracker.",
-        "srriNote": "UK mid-cap equity tracker — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−27.2%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "FTSE 250 tracker; domestically-exposed mid-caps hit hard in 2022 cost-of-living crisis",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "high"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-uk-mid-cap-index-class-c-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BQ1JYX87-legal--general-uk-mid-cap-fund-i-acc/performance"
-      },
-      "sources": "HL fund page; L&G factsheet via FundsLibrary; AJ Bell; interactive investor; House of Commons Library (BoE rate data); 25 Jun 2026",
-      "asAt": "25 Jun 2026",
-      "oneMonth": {
-        "value": "+4.86%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund excludes investment trusts; the proxy includes them. Market context: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%.",
-        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
-        "asAt": "26 Aug 2026",
-        "basis": "proxy:VMID.L",
         "source": "yahoo"
       }
     },
@@ -4006,7 +3294,12 @@
             "fund": "−0.07% (C Acc proxy)",
             "sector": "−4.48%"
           }
-        ]
+        ],
+        "nav1yr": "+16.49%",
+        "nav3yr": "+49.12%",
+        "nav5yr": "+19.43%",
+        "navAsAt": "2026-08-24",
+        "navPoints": 1258
       },
       "holdings": [
         {
@@ -4072,13 +3365,16 @@
       "sources": "HL fund page; FE Trustnet; HL Shortlist tracker page; 25 Jun 2026",
       "asAt": "25 Jun 2026",
       "oneMonth": {
-        "value": "+4.86%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%.",
+        "value": "+5.04%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VMID.L",
         "source": "yahoo"
-      }
+      },
+      "navSymbol": "0P0000WN7D.L",
+      "navName": "HSBC FTSE 250 Index C Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "lg-future-world-esg-uk",
@@ -4114,7 +3410,12 @@
         "notes": "Has underperformed plain UK trackers since launch due partly to energy/tobacco exclusions. Current 1/3/5yr to confirm. | 1yr not fetchable from any free source: the fund does not subscribe to Fidelity or Trustnet, L&G's own fund centre is JS-rendered, Bloomberg carries no figures and the ESG-methodology factsheet PDFs have no performance table. The only reference found was FE via Lloyds (+13.13% as at 15 Oct 2025) — too old to use. Re-checked 12 Jul 2026, still not fetchable. Verify on the HL factsheet before relying on any figure for this fund.",
         "perfAsAt": "2026-07-02",
         "perfAsAtSource": "parsed from performance notes",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+15.53%",
+        "nav3yr": "+46.02%",
+        "nav5yr": "+42.42%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1259
       },
       "holdings": [
         {
@@ -4171,8 +3472,8 @@
       "sources": "HL tracker Shortlist page",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "value": "+1.40%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and will diverge from a plain UK index, particularly when miners, tobacco or energy drive the market. Market context: FTSE 100 +0.80%, FTSE 250 +4.31%, Gold (USD/oz) +14.77%, GBP/USD +2.03%.",
+        "value": "+1.53%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and will diverge from a plain UK index, particularly when miners, tobacco or energy drive the market. Market context: FTSE 100 +0.83%, FTSE 250 +4.32%, Gold (USD/oz) +14.83%, GBP/USD +2.01%.",
         "confidence": "computed from a loose GBP ETF proxy - treat as directional only",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VUKE.L",
@@ -4180,7 +3481,10 @@
       },
       "isin": "GB00BJH4XV95",
       "isinNote": "I Acc",
-      "isinSource": "Fidelity UK key-statistics page, surfaced 2 Jul 2026"
+      "isinSource": "Fidelity UK key-statistics page, surfaced 2 Jul 2026",
+      "navSymbol": "0P0001H3BX.L",
+      "navName": "L&G Fut Wld ESG Tilted & Optd UKIdxI£Acc",
+      "navMatch": "isin GB00BJH4XV95 (name 78%)"
     },
     {
       "id": "lg-us-index",
@@ -4249,7 +3553,12 @@
         "notes": "HL rolling 12-month periods to 12 Jun 2026. Tracks FTSE USA closely; performance trails the index by roughly the (tiny) fee.",
         "perfAsAt": "2026-06-12",
         "perfAsAtSource": "parsed from performance notes",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+18.63%",
+        "nav3yr": "+65.52%",
+        "nav5yr": "+79.29%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -4423,15 +3732,18 @@
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
       "asAt": "22 Jun 2026 (price 12 Jun 2026; portfolio 31 Mar 2026)",
       "oneMonth": {
-        "value": "+1.37%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard S&P 500 UCITS ETF (GBP) (VUSA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE USA; proxy is S&P 500. Very similar universe. GBP-denominated, so the figure includes the USD/GBP effect a UK holder actually experiences. Market context: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.03%.",
+        "value": "+1.39%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard S&P 500 UCITS ETF (GBP) (VUSA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE USA; proxy is S&P 500. Very similar universe. GBP-denominated, so the figure includes the USD/GBP effect a UK holder actually experiences. Market context: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.01%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VUSA.L",
         "source": "yahoo"
       },
       "isin": "GB00BG0QPL51",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P000102MM.L",
+      "navName": "L&G US Index C Acc",
+      "navMatch": "isin GB00BG0QPL51 (name 100%)"
     },
     {
       "id": "bny-mellon-us-equity-income",
@@ -4495,7 +3807,12 @@
         "notes": "Class U Acc launched ~2022 so only 4 discrete years available. 3/5yr annualised figures use the Institutional W Acc class (GB00BGV53H32) as a proxy via Fidelity/Morningstar — not directly comparable. True cumulative 3/5yr for Class U not yet verified.",
         "perfAsAt": "2026-06-23",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+24.19%",
+        "nav3yr": "+56.65%",
+        "nav5yr": "+96.02%",
+        "navAsAt": "2026-08-24",
+        "navPoints": 1193
       },
       "holdings": [
         {
@@ -4612,11 +3929,14 @@
       "asAt": "22 Jun 2026 (price 23 Jun 2026; portfolio 30 Apr 2026 for sectors; holdings ~Oct 2025 proxy)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
-      "isinNote": "multiple ISINs in entry text (GB00BGV53H32, GB00BPVBZ344) — confirm the HL share class"
+      "isinNote": "multiple ISINs in entry text (GB00BGV53H32, GB00BPVBZ344) — confirm the HL share class",
+      "navSymbol": "0P00019MND.L",
+      "navName": "BNY Mellon US Equity Income GBP E Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "artemis-us-smaller-companies",
@@ -4679,7 +3999,12 @@
         "notes": "Hedged class HL rolling periods to 14 Apr 2026 — note this price date is older than the other US funds' June dates; re-check before acting. HL fund update (May 2026, unhedged figures): latest 12m +48.21% vs sector +33.09%; manager's Q1 commentary: +28.2% vs Russell 2000 +22.8% (Lipper, to 31 Mar 2026, top quartile). Since-launch: +369.04% vs sector +245.17%.",
         "perfAsAt": "2026-04-14",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+34.18%",
+        "nav3yr": "+82.58%",
+        "nav5yr": "+33.81%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1227
       },
       "holdings": [
         {
@@ -4792,12 +4117,15 @@
       "asAt": "22 Jun 2026 (price 14 Apr 2026 — lagged; portfolio 31 Dec 2025)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BK6RLD43",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0001HDDZ.L",
+      "navName": "Artemis US Smaller Companies I Acc GBP H",
+      "navMatch": "isin GB00BK6RLD43 (name 100%)"
     },
     {
       "id": "artemis-us-select",
@@ -4854,7 +4182,12 @@
         "notes": "HL rolling 12-month periods to 17 Jun 2026. Citywire ranks 3/101 in Equities US Growth to 31 May 2026. NOT on the Wealth Shortlist — no HL analyst conviction coverage.",
         "perfAsAt": "2026-06-17",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+29.40%",
+        "nav3yr": "+82.12%",
+        "nav5yr": "+81.17%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1227
       },
       "holdings": [
         {
@@ -4978,12 +4311,15 @@
       "asAt": "22 Jun 2026 (price 17 Jun 2026; portfolio 28 Feb 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BMMV5105",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P00013YAO.L",
+      "navName": "Artemis US Select I Acc GBP",
+      "navMatch": "isin GB00BMMV5105 (name 100%)"
     },
     {
       "id": "artemis-high-income",
@@ -5040,7 +4376,12 @@
         "notes": "HL rolling 12-month periods to 15 May 2026. Best bond performer on the Shortlist.",
         "perfAsAt": "2026-05-15",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+5.97%",
+        "nav3yr": "+33.15%",
+        "nav5yr": "+24.85%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1220
       },
       "holdings": [
         {
@@ -5131,7 +4472,7 @@
       "asAt": "22 Jun 2026 (performance to 15 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.76%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5158,7 +4499,10 @@
           "refreshedAt": "26 Aug 2026",
           "dateSource": "Fed published calendar"
         }
-      ]
+      ],
+      "navSymbol": "0P0001GZXO.L",
+      "navName": "Artemis High Income I Acc",
+      "navMatch": "isin GB00BJMD6R83 (name 100%)"
     },
     {
       "id": "artemis-corporate-bond",
@@ -5215,7 +4559,12 @@
         "notes": "HL rolling 12-month periods to 14 Apr 2026.",
         "perfAsAt": "2026-04-14",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+4.27%",
+        "nav3yr": "+22.34%",
+        "nav5yr": "+2.77%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1258
       },
       "holdings": [
         {
@@ -5298,7 +4647,7 @@
       "asAt": "22 Jun 2026 (performance to 14 Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.76%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5323,7 +4672,10 @@
           "refreshedAt": "26 Aug 2026",
           "dateSource": "Fed published calendar"
         }
-      ]
+      ],
+      "navSymbol": "0P0001IAS1.L",
+      "navName": "Artemis Corporate Bond I Acc GBP",
+      "navMatch": "name match 100%"
     },
     {
       "id": "jupiter-strategic-bond",
@@ -5386,7 +4738,12 @@
         "notes": "Z GBP Inc class proxy (GB00BN8T5596) via Fidelity — desk holds Z Acc; total-return figures near-identical between Inc/Acc but labelled as proxy. Category Global Flexible Bond GBP Hedged. Was 368 days stale (HL to 30 Jun 25).",
         "perfAsAt": "2026-07-02",
         "perfAsAtSource": "Fidelity factsheet price stamp 2 Jul 2026 (Z Inc class GB00BN8T5596)",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+4.98%",
+        "nav3yr": "+18.77%",
+        "nav5yr": "-0.99%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -5446,7 +4803,7 @@
       "asAt": "22 Jun 2026",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.76%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5471,156 +4828,10 @@
           "refreshedAt": "26 Aug 2026",
           "dateSource": "Fed published calendar"
         }
-      ]
-    },
-    {
-      "id": "invesco-tactical-bond",
-      "name": "Invesco Tactical Bond",
-      "shareClass": "Class Z Accumulation",
-      "category": "£ Strategic Bond",
-      "group": "bonds",
-      "badge": {
-        "type": "",
-        "label": "Go-anywhere defensive · 0.45%"
-      },
-      "iaSector": "IA £ Strategic Bond",
-      "benchmark": "IA £ Strategic Bond (comparator)",
-      "fundSize": "£784m",
-      "launched": "1 February 2010",
-      "yield": "3.87% distribution (bi-annual interest)",
-      "overview": "The most defensive and flexible bond fund on the Shortlist. Can hold up to 100% cash, uses duration overlays and derivatives, and has an explicit capital-preservation mindset. The go-anywhere mandate means it can be very different from a typical strategic bond fund.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to 23 Jun 26)",
-            "fund": "+4.34%",
-            "sector": "—",
-            "benchmark": "—"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26",
-            "fund": "+4.34%",
-            "sector": "—"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+5.46%",
-            "sector": "—"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+6.72%",
-            "sector": "—"
-          },
-          {
-            "year": "2022–23",
-            "fund": "+1.16%",
-            "sector": "—"
-          },
-          {
-            "year": "2021–22",
-            "fund": "−5.40%",
-            "sector": "—"
-          }
-        ],
-        "notes": "HL rolling 12-month periods to 23 Jun 2026.",
-        "perfAsAt": "2026-06-23",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
-      },
-      "holdings": [
-        {
-          "name": "Index-linked & conventional gilts, Australian and Brazilian sovereigns",
-          "weight": "—"
-        }
       ],
-      "holdingsNote": "274 holdings. UK 35.66%, US 13.52%, Germany 12.36%. ~108% gross bond exposure with −11.77% in hedging strategies. Full top 10 to confirm on HL.",
-      "sectors": [
-        {
-          "name": "Government bonds",
-          "weight": "largest"
-        },
-        {
-          "name": "Alternative/hedging",
-          "weight": "−11.77%"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United Kingdom",
-          "weight": "35.66%"
-        },
-        {
-          "name": "United States",
-          "weight": "13.52%"
-        },
-        {
-          "name": "Germany",
-          "weight": "12.36%"
-        }
-      ],
-      "manager": {
-        "names": "Stuart Edwards & Julien Eberhardt",
-        "tenure": "Edwards since Aug 2020; Eberhardt since Aug 2021",
-        "bio": "Both are members of Invesco's Henley fixed-income team with 10+ years' experience. The fund is the most flexible in Invesco's FI range."
-      },
-      "process": "Go-anywhere, can hold up to 100% cash; uses duration overlays and derivatives; defensive mindset with capital preservation focus. Historically cautious on higher-risk credit.",
-      "whyNow": "Duration positioning added the most to returns over the past year, but caution on higher-risk credit held back relative returns vs credit-heavy peers. Suits investors who want bond exposure with a defensive backstop.",
-      "charges": {
-        "ocf": "0.70%",
-        "hlSaving": "0.25%",
-        "netOngoing": "0.45%",
-        "transaction": "0.25%",
-        "notes": "Large HL loyalty bonus saving of 0.25%.",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "3",
-        "feScore": "not yet verified",
-        "notes": "Go-anywhere — risk level varies with positioning. Can be very low risk (high cash) or take significant duration/credit bets.",
-        "srriNote": "The Adviser Centre KIID page — confirmed",
-        "srriConfidence": "confirmed",
-        "maxDrawdown": "−9.1%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "Active duration management and flexible positioning helped contain 2022 drawdown below peers",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/i/invesco-tactical-bond-class-z-accumulation"
-      },
-      "sources": "HL factsheet (SEDOL B8N45T8); HL fund update Jan 2026; FundCalibre",
-      "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      },
-      "catalysts": [
-        {
-          "holding": "UK rates (BoE)",
-          "weight": "macro driver — not a holding",
-          "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "BoE published calendar"
-        },
-        {
-          "holding": "US rates (Fed)",
-          "weight": "macro driver — not a holding",
-          "event": "FOMC decision / Jackson Hole",
-          "date": "Wed 28 Oct 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "Fed published calendar"
-        }
-      ]
+      "navSymbol": "0P0000FY9K.L",
+      "navName": "Jupiter Strategic Bond L Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "lg-strategic-bond",
@@ -5736,7 +4947,7 @@
       "asAt": "22 Jun 2026 (performance to 15 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.76%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5818,7 +5029,12 @@
         "notes": "HL rolling 12-month periods to 8 May 2026. Large drawdown in 2022–23 rate shock.",
         "perfAsAt": "2026-05-08",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+4.22%",
+        "nav3yr": "+24.33%",
+        "nav5yr": "+3.73%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -5876,7 +5092,7 @@
       "asAt": "22 Jun 2026 (performance to 8 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.76%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5901,154 +5117,10 @@
           "refreshedAt": "26 Aug 2026",
           "dateSource": "Fed published calendar"
         }
-      ]
-    },
-    {
-      "id": "jpm-global-bond-opportunities",
-      "name": "JPMorgan Global Bond Opportunities",
-      "shareClass": "Class C GBP Accumulation",
-      "category": "Global Bonds",
-      "group": "bonds",
-      "badge": {
-        "type": "new",
-        "label": "Added Jul 2025"
-      },
-      "iaSector": "IA £ Strategic Bond",
-      "benchmark": "not yet verified",
-      "fundSize": "£167m (Oct 2025 — stale; re-verify)",
-      "launched": "30 January 2015",
-      "yield": "≈4.10% (quarterly)",
-      "overview": "An extremely diversified global bond fund (~1,000+ bonds across 50+ countries) added to the Shortlist in July 2025. Designed as a core diversifier across global fixed income rather than a concentrated bet. Managed by JPM's global chief investment officer Bob Michele and team.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (trailing, Fidelity price stamp 2 Jul 26 — C Gross Inc class proxy)",
-            "fund": "+5.28%",
-            "sector": "+4.70%",
-            "benchmark": "—"
-          }
-        ],
-        "notes": "C Gross Inc class proxy (GB00BV9GHW68) via Fidelity — desk holds C GBP Acc (ISIN GB00BV9GHX75, confirmed on Fidelity key-statistics 3 Jul 26). Category Global Flexible Bond GBP Hedged; IA sector £ Strategic Bond. Was 368 days stale (HL to 30 Jun 25).",
-        "discrete": [
-          {
-            "year": "2025–26 (to 31 Mar 26)",
-            "fund": "+5.46%",
-            "sector": "+4.79%"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+4.83%",
-            "sector": "+5.27%"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+4.63%",
-            "sector": "+6.44%"
-          },
-          {
-            "year": "2022–23",
-            "fund": "-2.23%",
-            "sector": "-3.99%"
-          },
-          {
-            "year": "2021–22",
-            "fund": "-1.18%",
-            "sector": "-3.16%"
-          }
-        ],
-        "perfAsAt": "2026-07-02",
-        "perfAsAtSource": "Fidelity factsheet price stamp 2 Jul 2026 (C Gross Inc class GB00BV9GHW68)",
-        "perfBasis": "FID"
-      },
-      "holdings": [
-        {
-          "name": "not yet verified — ~1,143 holdings across 50+ countries",
-          "weight": "—"
-        }
       ],
-      "holdingsNote": "Full holdings to be confirmed next refresh. HL page was stale at time of research.",
-      "sectors": [
-        {
-          "name": "Global government bonds",
-          "weight": "—"
-        },
-        {
-          "name": "Investment-grade credit",
-          "weight": "—"
-        },
-        {
-          "name": "High yield",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "Global (50+ countries)",
-          "weight": "—"
-        }
-      ],
-      "manager": {
-        "names": "Bob Michele, Iain Stealey & segment specialists",
-        "tenure": "Michele is Global CIO of GFICC; Stealey sets overall positioning",
-        "bio": "Bob Michele is JPMorgan's Global Chief Investment Officer for Global Fixed Income, Currency and Commodities. Iain Stealey co-sets positioning, with four segment specialists handling individual sub-portfolios."
-      },
-      "process": "Unconstrained global fixed income; ~1,000+ bonds; typically 50+ countries; four segment specialists each managing their area. Designed for broad diversification as a core holding, not aggressive outperformance.",
-      "whyNow": "Newest bond addition (Jul 2025). The very broad diversification makes it a natural portfolio anchor alongside more concentrated credit plays. Note: HL page was stale at research time — re-verify fund size and performance before acting.",
-      "charges": {
-        "ocf": "0.65%",
-        "hlSaving": "none",
-        "netOngoing": "0.65%",
-        "transaction": "free (HL dealing free)",
-        "notes": "No HL dealing charge — unusual on the Shortlist."
-      },
-      "risk": {
-        "srri": "4",
-        "feScore": "not yet verified",
-        "notes": "Broadly diversified global bonds — lower single-country/credit risk than concentrated funds, but currency and interest-rate risk from global exposure.",
-        "srriNote": "Global bonds, flexible — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−10.6%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "Global multi-sector flexibility contained drawdown vs single-sector peers; some short-duration positioning helped",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jpm-global-bond-opportunities-class-c-gbp-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BV9GHW68-jpm-global-bond-opportunities-c-inc/performance"
-      },
-      "sources": "HL factsheet (page cached Oct 2025 — stale); Trustnet; HL notification Jul 2025",
-      "asAt": "22 Jun 2026 (fund data from Oct 2025 — re-verify)",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      },
-      "isin": "GB00BV9GHX75",
-      "isinSource": "Fidelity key-statistics page, fund name confirmed, 3 Jul 2026",
-      "catalysts": [
-        {
-          "holding": "US rates (Fed)",
-          "weight": "macro driver — not a holding",
-          "event": "FOMC decision / Jackson Hole",
-          "date": "Wed 28 Oct 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "Fed published calendar"
-        },
-        {
-          "holding": "UK rates (BoE)",
-          "weight": "macro driver — not a holding",
-          "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "BoE published calendar"
-        }
-      ]
+      "navSymbol": "0P00000QX1.L",
+      "navName": "Baillie Gifford Strategic Bond B Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "lg-active-global-high-yield",
@@ -6105,7 +5177,12 @@
         "notes": "HL rolling 12-month periods to 23 Jun 2026. Very large 2022 drawdown (−16.44%) followed by strong recovery.",
         "perfAsAt": "2026-06-23",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+3.95%",
+        "nav3yr": "+26.61%",
+        "nav5yr": "+11.29%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -6159,7 +5236,7 @@
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.71%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.76%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -6184,450 +5261,10 @@
           "refreshedAt": "26 Aug 2026",
           "dateSource": "BoE published calendar"
         }
-      ]
-    },
-    {
-      "id": "lg-all-stocks-gilt-index",
-      "name": "Legal & General All Stocks Gilt Index Trust",
-      "shareClass": "Class C Accumulation",
-      "category": "UK Gilts Tracker",
-      "group": "bonds",
-      "badge": {
-        "type": "lose",
-        "label": "Weakest bond fund"
-      },
-      "iaSector": "IA UK Gilts (tracker)",
-      "benchmark": "FTSE Actuaries UK Conventional Gilts All Stocks",
-      "fundSize": "£2,795m",
-      "launched": "8 March 1981",
-      "yield": "4.30% (bi-annual)",
-      "overview": "HL's favoured gilt tracker — full replication of the FTSE Actuaries UK Conventional Gilts All Stocks index (69 holdings). The weakest bond performer on the Shortlist: took a huge hit in the 2022–23 rate shock and has recovered only slowly. Cheapest way to own UK government bonds at 0.08% net.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to 8 May 26)",
-            "fund": "+1.25%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26",
-            "fund": "+1.25%",
-            "sector": "—"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+1.81%",
-            "sector": "—"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+0.59%",
-            "sector": "—"
-          },
-          {
-            "year": "2022–23",
-            "fund": "−14.77%",
-            "sector": "—"
-          },
-          {
-            "year": "2021–22",
-            "fund": "−8.78%",
-            "sector": "—"
-          }
-        ],
-        "notes": "HL rolling 12-month periods to 8 May 2026. Worst bond performer — long-duration gilts repriced sharply in the 2022–23 rate shock.",
-        "perfAsAt": "2026-05-08",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
-      },
-      "holdings": [
-        {
-          "name": "UK conventional gilts (index weight)",
-          "weight": "—"
-        },
-        {
-          "name": "69 holdings",
-          "weight": "—"
-        }
       ],
-      "holdingsNote": "Full replication of the FTSE Actuaries UK Conventional Gilts All Stocks.",
-      "sectors": [
-        {
-          "name": "UK government bonds (gilts)",
-          "weight": "100%"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United Kingdom",
-          "weight": "100%"
-        }
-      ],
-      "manager": {
-        "names": "LGIM index team",
-        "tenure": "Index team",
-        "bio": "Run by Legal & General Investment Management on a full replication basis. HL's favoured gilt tracker."
-      },
-      "process": "Full physical replication of the FTSE Actuaries UK Conventional Gilts All Stocks index.",
-      "whyNow": "<b>Weakest bond fund.</b> Long-duration pure gilt exposure is a direct bet on falling UK interest rates. With the BoE holding at 3.75% and markets now pricing a possible hike (June 2026), this is the most rate-sensitive fund here. Gains most if rates fall; loses most if rates rise further.",
-      "charges": {
-        "ocf": "0.15%",
-        "hlSaving": "0.07%",
-        "netOngoing": "0.08%",
-        "transaction": "0.01%",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "4",
-        "feScore": "not yet verified",
-        "notes": "Long-duration UK government bonds — highest interest-rate sensitivity of all bond funds here. Falls hard when rates rise.",
-        "srriNote": "UK gilts tracker — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−26.1%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "The 2022 gilt crisis (including mini-Budget Sep 2022) was the worst drawdown for UK gilts in modern history; long-duration gilts fell ~25–30%",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "high"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-all-stocks-gilt-index-trust-c-accumulation"
-      },
-      "sources": "HL factsheet (SEDOL BG0QNW2)",
-      "asAt": "22 Jun 2026 (performance to 8 May 2026)",
-      "oneMonth": {
-        "value": "+0.26%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core UK Gilts UCITS ETF (GBP) (IGLT.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.71%.",
-        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
-        "asAt": "26 Aug 2026",
-        "basis": "proxy:IGLT.L",
-        "source": "yahoo"
-      },
-      "catalysts": [
-        {
-          "holding": "UK rates (BoE)",
-          "weight": "macro driver — not a holding",
-          "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "BoE published calendar"
-        },
-        {
-          "holding": "UK gilt supply / fiscal",
-          "weight": "macro driver — not a holding",
-          "event": "Autumn Budget + DMO gilt remit",
-          "date": "Autumn Budget expected ~Nov 2026 (estimated - date not yet announced); DMO gilt remit updates ongoing",
-          "tracking": "tbd",
-          "detail": "Long-dated gilt yields have been driven as much by supply and fiscal credibility as by Bank Rate — 30-year yields hit a 27-year high above 5.7% in late 2025 and the long end (20-30yr) has been trading in the 4.70-4.80%+ area with a meaningful term premium reflecting UK pension demand and inflation persistence. Fitch affirmed the UK at AA- with a stable outlook in mid-August. Watch: Budget date confirmation, OBR forecasts, and the DMO's split between long-dated and short-dated issuance.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "no fixed date published"
-        }
-      ]
-    },
-    {
-      "id": "ishares-corporate-bond-index",
-      "name": "iShares Corporate Bond Index",
-      "shareClass": "Class S Accumulation",
-      "category": "£ Corporate Bond Tracker",
-      "group": "bonds",
-      "badge": {
-        "type": "",
-        "label": "Cheapest here · 0.07%"
-      },
-      "iaSector": "IA £ Corporate Bond (tracker)",
-      "benchmark": "iBoxx £ Non-Gilts Index (partial replication)",
-      "fundSize": "£4,366m",
-      "launched": "30 June 2010",
-      "yield": "4.56% (monthly)",
-      "overview": "The cheapest fund in the entire bonds tranche at 0.07% net. Tracks the iBoxx £ Non-Gilts index (sterling IG corporates plus government-agency/supranational, excluding gilts). Run by BlackRock/iShares via partial replication. A passive route into investment-grade sterling credit.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (trailing, to 3 Jul 26 — D Acc class proxy)",
-            "fund": "+4.22%",
-            "sector": "+4.29%",
-            "benchmark": "≈ index"
-          },
-          {
-            "period": "3 yr (annualised, to 3 Jul 26 — D Acc proxy)",
-            "fund": "+6.36%",
-            "sector": "+6.81%",
-            "benchmark": "≈ index"
-          },
-          {
-            "period": "5 yr (annualised, to 3 Jul 26 — D Acc proxy)",
-            "fund": "−0.51%",
-            "sector": "−0.34%",
-            "benchmark": "≈ index"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26 (to 30 Jun 26)",
-            "fund": "+4.35%",
-            "sector": "+4.39%"
-          },
-          {
-            "year": "2024–25 (to 30 Jun 25)",
-            "fund": "+5.35%",
-            "sector": "+5.27%"
-          },
-          {
-            "year": "2023–24 (to 30 Jun 24)",
-            "fund": "+9.84%",
-            "sector": "+10.83%"
-          },
-          {
-            "year": "2022–23 (to 30 Jun 23)",
-            "fund": "−6.45%",
-            "sector": "−6.50%"
-          },
-          {
-            "year": "2021–22 (to 30 Jun 22)",
-            "fund": "−13.41%",
-            "sector": "−14.75%"
-          }
-        ],
-        "notes": "Refreshed 6 Jul 2026 via Fidelity D Acc class proxy (GB00B84DSW83); desk holds HL S Acc class — ISIN not set to avoid cross-class error. Discrete years to 30 Jun with Morningstar GBP Corporate Bond category. Tracking tightly (1yr +4.22% vs +4.29% category). Previous stale HL figure (+4.80% to 7 Apr 26) superseded; the old \"re-verify before acting\" caveat is cleared.",
-        "perfAsAt": "2026-07-03",
-        "perfAsAtSource": "Fidelity price stamp 3 Jul 2026 (D Acc class)",
-        "perfBasis": "FID"
-      },
-      "holdings": [
-        {
-          "name": "Sterling IG corporates + govt-agency/supranational (1,229 holdings)",
-          "weight": "—"
-        }
-      ],
-      "holdingsNote": "Partial replication of iBoxx £ Non-Gilts. Can hold small high-yield allocation. Full holdings to confirm next refresh.",
-      "sectors": [
-        {
-          "name": "Sterling investment-grade credit",
-          "weight": "majority"
-        },
-        {
-          "name": "Govt-agency/supranational",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "United Kingdom",
-          "weight": "majority"
-        }
-      ],
-      "manager": {
-        "names": "BlackRock/iShares index team",
-        "tenure": "Primary manager Duncan Fergusson",
-        "bio": "Run by BlackRock's iShares team on a partial replication basis."
-      },
-      "process": "Partial replication of iBoxx £ Non-Gilts; sterling investment-grade corporates plus government-agency/supranational; can hold small high-yield allocation.",
-      "whyNow": "The cheapest way to hold sterling investment-grade credit passively. Corporate credit has outperformed gilts in the current environment. Note: HL page was stale at research time — re-verify.",
-      "charges": {
-        "ocf": "0.11%",
-        "hlSaving": "0.04%",
-        "netOngoing": "0.07%",
-        "transaction": "0.01%",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "3",
-        "feScore": "not yet verified",
-        "notes": "Investment-grade sterling credit — lower risk than high yield but more rate-sensitive than short-duration funds.",
-        "srriNote": "IG corporate bond tracker — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−16.4%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "IG sterling corporate bond index; 2022 was worst drawdown year since 1990s",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "high"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/i/ishares-corporate-bond-index-class-s-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B84DSW83-ishares-corp-bond-index-fund-d-acc/performance"
-      },
-      "sources": "HL factsheet (SEDOL BN08ZN2); HL fund update Aug 2025",
-      "asAt": "22 Jun 2026 (HL page cached 7 Apr 2026 — stale)",
-      "oneMonth": {
-        "value": "+0.58%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core GBP Corporate Bond UCITS ETF (GBP) (SLXX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks iBoxx £ Non-Gilts with partial replication; proxy is the corporate-only sleeve. Market context: US 10yr yield -0.04%, Brent crude -3.71%.",
-        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
-        "asAt": "26 Aug 2026",
-        "basis": "proxy:SLXX.L",
-        "source": "yahoo"
-      },
-      "catalysts": [
-        {
-          "holding": "UK rates (BoE)",
-          "weight": "macro driver — not a holding",
-          "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "BoE published calendar"
-        },
-        {
-          "holding": "US rates (Fed)",
-          "weight": "macro driver — not a holding",
-          "event": "FOMC decision / Jackson Hole",
-          "date": "Wed 28 Oct 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "Fed published calendar"
-        }
-      ]
-    },
-    {
-      "id": "vanguard-global-bond-index",
-      "name": "Vanguard Global Bond Index",
-      "shareClass": "GBP Hedged Accumulation",
-      "category": "Global Bonds Tracker",
-      "group": "bonds",
-      "badge": {
-        "type": "",
-        "label": "Global aggregate · GBP hedged"
-      },
-      "iaSector": "IA Global Bonds (tracker)",
-      "benchmark": "Bloomberg Global Aggregate Float Adjusted & Scaled (GBP hedged)",
-      "fundSize": "£23,595m",
-      "launched": "31 March 2008",
-      "yield": "3.32% (quarterly)",
-      "overview": "A very large (£23.6bn) GBP-hedged tracker of the Bloomberg Global Aggregate index — 16,070 holdings spanning global government bonds, IG corporates and asset-backed securities. Designed to track global bond markets broadly without surprises. Added to the Shortlist 15 Dec 2021.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to 10 Jun 26)",
-            "fund": "+2.94%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26",
-            "fund": "+2.94%",
-            "sector": "—"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+5.48%",
-            "sector": "—"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+2.61%",
-            "sector": "—"
-          },
-          {
-            "year": "2022–23",
-            "fund": "−1.58%",
-            "sector": "—"
-          },
-          {
-            "year": "2021–22",
-            "fund": "−10.92%",
-            "sector": "—"
-          }
-        ],
-        "notes": "HL rolling 12-month periods to 10 Jun 2026.",
-        "perfAsAt": "2026-06-10",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
-      },
-      "holdings": [
-        {
-          "name": "Global aggregate bonds (16,070 holdings)",
-          "weight": "—"
-        }
-      ],
-      "holdingsNote": "Tracks Bloomberg Global Aggregate — global government bonds, IG corporates, asset-backed. GBP-hedged.",
-      "sectors": [
-        {
-          "name": "Government bonds",
-          "weight": "majority"
-        },
-        {
-          "name": "Investment-grade corporate",
-          "weight": "—"
-        },
-        {
-          "name": "Asset-backed",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "Global (GBP hedged)",
-          "weight": "—"
-        }
-      ],
-      "manager": {
-        "names": "Vanguard index team",
-        "tenure": "Index team",
-        "bio": "Run by Vanguard's index team on a full replication basis with GBP currency hedging."
-      },
-      "process": "Full replication of Bloomberg Global Aggregate Float Adjusted & Scaled index; GBP-hedged to remove currency risk.",
-      "whyNow": "Broad global bond exposure at low cost. The GBP hedge removes USD/EUR currency noise. Took a hit in 2022 (−10.92%) on the global rate shock; gradual recovery since. A core diversifier rather than an income engine.",
-      "charges": {
-        "ocf": "0.15%",
-        "hlSaving": "none",
-        "netOngoing": "0.15%",
-        "transaction": "0.01%",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "4",
-        "feScore": "not yet verified",
-        "notes": "GBP-hedged global aggregate — interest-rate risk from global government bonds plus credit risk from IG and asset-backed components.",
-        "srriNote": "Global aggregate bond tracker — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−9.8%",
-        "maxDrawdownPeriod": "Jan–Sep 2022",
-        "maxDrawdownNote": "Global aggregate hedged to GBP; hedging costs and shorter average duration vs gilts reduced drawdown vs sterling bond peers",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "high"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/v/vanguard-global-bond-index-accumulation"
-      },
-      "sources": "HL factsheet (SEDOL B50W2R1)",
-      "asAt": "22 Jun 2026 (performance to 10 Jun 2026)",
-      "oneMonth": {
-        "value": "+0.05%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Aggregate Bond UCITS ETF GBP-hedged (VAGP.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.71%.",
-        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
-        "asAt": "26 Aug 2026",
-        "basis": "proxy:VAGP.L",
-        "source": "yahoo"
-      },
-      "catalysts": [
-        {
-          "holding": "US rates (Fed)",
-          "weight": "macro driver — not a holding",
-          "event": "FOMC decision / Jackson Hole",
-          "date": "Wed 28 Oct 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "Fed published calendar"
-        },
-        {
-          "holding": "UK rates (BoE)",
-          "weight": "macro driver — not a holding",
-          "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026 (confirmed)",
-          "tracking": "tbd",
-          "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "BoE published calendar"
-        }
-      ]
+      "navSymbol": "0P00001SDH.L",
+      "navName": "L&G Active Global High Yield Bond I Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "vanguard-global-corporate-bond-index",
@@ -6738,7 +5375,7 @@
       "asAt": "22 Jun 2026 (performance to 14 May 2026)",
       "oneMonth": {
         "value": "-1.69%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Corporate Bond UCITS ETF GBP-hedged (VCPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.71%.",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Corporate Bond UCITS ETF GBP-hedged (VCPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.76%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VCPA.L",
@@ -6955,7 +5592,7 @@
       "asAt": "22 Jun 2026 (performance to 12 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.83%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -7015,7 +5652,12 @@
         "notes": "HL rolling 12-month periods to 23 Jun 2026.",
         "perfAsAt": "2026-06-23",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+12.64%",
+        "nav3yr": "+38.95%",
+        "nav5yr": "+43.49%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -7077,135 +5719,15 @@
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.83%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BD8YW204",
-      "isinSource": "already present in entry text"
-    },
-    {
-      "id": "ninety-one-diversified-income",
-      "name": "Ninety One Diversified Income",
-      "shareClass": "Class I Accumulation",
-      "category": "Mixed Investment 0–35% Shares",
-      "group": "mixed",
-      "badge": {
-        "type": "new",
-        "label": "Added Sep 2024 · cautious"
-      },
-      "iaSector": "IA Mixed Investment 0–35% Shares",
-      "benchmark": "not yet verified",
-      "fundSize": "£842m",
-      "launched": "18 April 1994",
-      "yield": "4.38% (monthly — charges from capital)",
-      "overview": "A cautious 'win by not losing' multi-asset income fund. Three buckets — growth, defensive and uncorrelated. Targets ~4% income with volatility below 50% of UK equities. Duration just 1.8 years at end-March 2026 (range 1–4 years). Lost only 5.46% in 2022 versus −10.93% for the sector — a strong illustration of its protective role. Added to the Shortlist 10 Sep 2024.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to 23 Jun 26)",
-            "fund": "+6.84%",
-            "sector": "—",
-            "benchmark": "—"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26",
-            "fund": "+6.84%",
-            "sector": "—"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+5.89%",
-            "sector": "—"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+5.26%",
-            "sector": "—"
-          },
-          {
-            "year": "2022–23",
-            "fund": "+2.99%",
-            "sector": "—"
-          },
-          {
-            "year": "2021–22",
-            "fund": "−6.68%",
-            "sector": "−10.93%"
-          }
-        ],
-        "notes": "HL rolling 12-month periods to 23 Jun 2026. Note 2021–22: fund −6.68% vs sector −10.93% and UK gilts −23.83% — strong downside protection.",
-        "perfAsAt": "2026-06-23",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
-      },
-      "holdings": [
-        {
-          "name": "414 holdings — bonds, equities, alternatives",
-          "weight": "—"
-        }
-      ],
-      "holdingsNote": "Full top 10 to be confirmed next refresh. Very broadly diversified.",
-      "sectors": [
-        {
-          "name": "Growth assets",
-          "weight": "—"
-        },
-        {
-          "name": "Defensive assets",
-          "weight": "—"
-        },
-        {
-          "name": "Uncorrelated assets",
-          "weight": "—"
-        }
-      ],
-      "countries": [
-        {
-          "name": "Global",
-          "weight": "—"
-        }
-      ],
-      "manager": {
-        "names": "John Stopford & Jason Borbora-Sheen",
-        "tenure": "Stopford lead since 2012 (30+ yrs); Borbora-Sheen co-manager since 2019",
-        "bio": "John Stopford has led the fund since 2012 with over 30 years of multi-asset income experience. Jason Borbora-Sheen joined as co-manager in 2019."
-      },
-      "process": "Three buckets (growth/defensive/uncorrelated); targets ~4% income with volatility below 50% of UK equities; duration typically 1–4 years (1.8 years at end-Mar 2026); charges taken from capital (boosts yield, reduces capital growth).",
-      "whyNow": "The most defensive income option in the multi-asset category. Designed to lag in bull markets and protect in downturns — which is exactly what it does. Suits investors who prioritise capital preservation and income over total return.",
-      "charges": {
-        "ocf": "0.81%",
-        "hlSaving": "none",
-        "netOngoing": "0.81%",
-        "transaction": "0.17%",
-        "notes": "Most expensive fund in the multi-asset tranche. Charges taken from capital — boosts yield but reduces capital growth. Income reinvested in Acc units despite the monthly distribution mechanism.",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "4",
-        "feScore": "not yet verified",
-        "notes": "Very cautious — 0–35% equities; low duration; targets volatility below 50% of UK equities. The lowest-risk multi-asset fund here.",
-        "srriNote": "Mixed investment 0-35% shares — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−9.4%",
-        "maxDrawdownPeriod": "Jan–Oct 2022",
-        "maxDrawdownNote": "Flexible income mandate; active allocation helped limit drawdown vs static balanced peers",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/n/ninety-one-diversified-income-class-i-accumulation"
-      },
-      "sources": "HL factsheet (SEDOL B2Q1J92); HL fund update Aug 2025; Trustnet",
-      "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      }
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0001AN93.L",
+      "navName": "BNY Mellon MA Glbl bal Inst W Acc",
+      "navMatch": "isin GB00BD8YW204 (name 100%)"
     },
     {
       "id": "baillie-gifford-monthly-income",
@@ -7262,7 +5784,12 @@
         "notes": "HL rolling 12-month periods to 23 Jun 2026. Renamed from BG Sustainable Income 31 Jan 2025.",
         "perfAsAt": "2026-06-23",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
+        "perfBasis": "HL",
+        "nav1yr": "+8.91%",
+        "nav3yr": "+25.50%",
+        "nav5yr": "+19.74%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -7324,10 +5851,13 @@
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.83%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
-      }
+      },
+      "navSymbol": "0P0001K0NY.L",
+      "navName": "Baillie Gifford Monthly Income Fd H Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "pyrford-global-total-return",
@@ -7447,7 +5977,7 @@
       "asAt": "22 Jun 2026 (performance to 5 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.80%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.83%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +14.83%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -7654,218 +6184,11 @@
       "asAt": "27 May 2026 (performance); 30 Apr 2026 (holdings)",
       "oneMonth": {
         "value": "+2.63%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE Developed Europe ex-UK UCITS ETF (GBP) (VERX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: Euro STOXX 50 +2.98%, FTSE 100 +0.80%, GBP/USD +2.03%.",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE Developed Europe ex-UK UCITS ETF (GBP) (VERX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: Euro STOXX 50 +3.02%, FTSE 100 +0.83%, GBP/USD +2.01%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VERX.L",
         "source": "yahoo"
-      }
-    },
-    {
-      "id": "blackrock-continental-european",
-      "name": "BlackRock Continental European",
-      "shareClass": "Class D Accumulation",
-      "category": "Europe",
-      "group": "europe",
-      "badge": {
-        "type": "",
-        "label": "Manager Change"
-      },
-      "iaSector": "IA Europe Excluding UK",
-      "benchmark": "FTSE World Europe ex UK",
-      "fundSize": "approx £658m",
-      "launched": "not yet verified",
-      "yield": "0.14% (30 Apr 2026)",
-      "overview": "High-conviction, concentrated quality-growth fund (~31-37 holdings) focused on European leaders in semis, industrials and aerospace. <b>Lead manager Stefan Gries retired on 31 March 2026</b>; Benjamin Moore (ex-Columbia Threadneedle, ex-Goldman Sachs) is now lead, with Brian Hall as co-manager. Fund size approx £658m; leans heavily toward Netherlands, Switzerland and France.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to 24 Jun 26)",
-            "fund": "~+3.11%",
-            "sector": "not yet verified",
-            "benchmark": "not yet verified"
-          },
-          {
-            "period": "3 yr (to 24 Jun 26)",
-            "fund": "~+10.98%",
-            "sector": "not yet verified",
-            "benchmark": "not yet verified"
-          },
-          {
-            "period": "5 yr (to 24 Jun 26)",
-            "fund": "~+13.36%",
-            "sector": "not yet verified",
-            "benchmark": "not yet verified"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025-26",
-            "fund": "+3.11%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2024-25",
-            "fund": "-8.69%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2023-24",
-            "fund": "+17.87%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2022-23",
-            "fund": "+25.57%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2021-22",
-            "fund": "-18.65%",
-            "sector": "not yet verified"
-          }
-        ],
-        "notes": "HL factsheet, discrete returns to 24 Jun 2026. Cumulative figures derived - verify against Trustnet.",
-        "perfAsAt": "2026-06-24",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FE"
-      },
-      "holdings": [
-        {
-          "name": "ASML",
-          "weight": "9.19%"
-        },
-        {
-          "name": "Siemens Energy",
-          "weight": "5.29%"
-        },
-        {
-          "name": "Schneider Electric",
-          "weight": "4.98%"
-        },
-        {
-          "name": "Safran",
-          "weight": "4.91%"
-        },
-        {
-          "name": "ABB",
-          "weight": "4.49%"
-        },
-        {
-          "name": "ASM International",
-          "weight": "4.20%"
-        },
-        {
-          "name": "BE Semiconductor",
-          "weight": "3.98%"
-        },
-        {
-          "name": "Belimo",
-          "weight": "3.74%"
-        },
-        {
-          "name": "Air Liquide",
-          "weight": "3.39%"
-        },
-        {
-          "name": "AB Volvo",
-          "weight": "3.37%"
-        }
-      ],
-      "holdingsNote": "HL/Broadridge, 30 Apr 2026. May still reflect Gries-era positioning; Moore's reshaping of the portfolio is ongoing.",
-      "sectors": [
-        {
-          "name": "Tech Hardware",
-          "weight": "17.37%"
-        },
-        {
-          "name": "Aerospace & Defence",
-          "weight": "11.52%"
-        },
-        {
-          "name": "Construction & Materials",
-          "weight": "9.73%"
-        },
-        {
-          "name": "Electronic & Electrical Equip",
-          "weight": "9.47%"
-        },
-        {
-          "name": "Banks",
-          "weight": "9.27%"
-        }
-      ],
-      "countries": [
-        {
-          "name": "Netherlands",
-          "weight": "21.95%"
-        },
-        {
-          "name": "Switzerland",
-          "weight": "16.88%"
-        },
-        {
-          "name": "France",
-          "weight": "15.51%"
-        },
-        {
-          "name": "Germany",
-          "weight": "9.22%"
-        },
-        {
-          "name": "Sweden",
-          "weight": "8.28%"
-        }
-      ],
-      "manager": {
-        "names": "Benjamin Moore & Brian Hall",
-        "tenure": "Moore: lead from 31 Mar 2026; Hall: co-manager from 4 Nov 2025",
-        "bio": "Benjamin Moore brings 11 years at Columbia Threadneedle including 6 as lead PM of CT European Select, and began his career in equity research at Goldman Sachs. Brian Hall joined BlackRock in 2007 from Lehman Brothers. Stefan Gries (former lead since 2011) retired on 31 March 2026 for personal health reasons."
-      },
-      "process": "Bottom-up, high-conviction quality-growth; ~31-37 holdings concentrated in European industrial and technology leaders. Index-agnostic but benchmark-aware. Early signs under Moore point toward more aerospace/defence, power/data-centre infrastructure and banks, with less luxury exposure.",
-      "whyNow": "<b>The manager transition is the dominant near-term story.</b> Style headwinds (value beat growth by ~10pp in the year to end-May 2026) compounded the leadership uncertainty. Watch for HL publishing a post-transition research note, and monitor how Moore reshapes the portfolio. The parallel BlackRock Greater Europe investment trust (same team) has tilted toward Siemens Energy, Legrand, aerospace names and banks.",
-      "charges": {
-        "ocf": "0.91%",
-        "hlSaving": "not yet verified",
-        "netOngoing": "not yet verified",
-        "transaction": "0.14%",
-        "notes": "OCF confirmed at 0.91%. HL loyalty saving not yet verified.",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "6",
-        "feScore": "not yet verified",
-        "notes": "Concentrated (~35 holdings), single-region, quality-growth tilt. Higher volatility than tracker peers. Manager-change adds key-person uncertainty. Unhedged - GBP investor exposed to EUR/GBP.",
-        "srriNote": "The Adviser Centre KIID page — confirmed (sister fund; same team)",
-        "srriConfidence": "confirmed",
-        "maxDrawdown": "−22.8%",
-        "maxDrawdownPeriod": "Jan–Sep 2022",
-        "maxDrawdownNote": "Quality-growth style (Gries era); deep drawdown on rate sensitivity; worse than the index in 2022",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "catalysts": [
-        {
-          "holding": "ASML",
-          "weight": "9.19% - largest holding",
-          "event": "Q3 2026 results",
-          "date": "~mid Oct 2026 (estimated)",
-          "tracking": "tbd",
-          "detail": "Q1 2026 (15 Apr): €8.8bn net sales, €2.8bn net income, gross margin 53.0%. FY2026 guidance €36-40bn net sales at 51-53% gross margin. Watch: bookings/backlog (the key ASML metric), EUV vs DUV mix, and — newly material this cycle — the competitive read from reports that China's CXMT has developed domestic DUV lithography, which triggered the late-July Asian chip crash. Exact Q3 date not confirmed; verify on ASML IR before relying on it.",
-          "refreshedAt": "26 Aug 2026",
-          "dateSource": "historical reporting pattern"
-        }
-      ],
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/blackrock-continental-european-class-d-accumulation"
-      },
-      "sources": "HL factsheet, HL research page, Broadridge, BlackRock Greater Europe trust RNS",
-      "asAt": "24 Jun 2026 (performance); 30 Apr 2026 (holdings/size)",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.98%, FTSE 100 +0.80%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -7935,7 +6258,12 @@
         "notes": "Refreshed 6 Jul 2026 via Fidelity (W Acc, GB00BFRT3504), price stamp 26 Jun 26 — replaces the earlier approximate (~) HL-derived figures. Discrete years to 31 Mar with Morningstar Europe ex-UK Equity category. Quality-growth book has lagged the value/banks-led Europe rally over 1yr (+11.05% vs +22.19%) despite keeping pace over 5yr.",
         "perfAsAt": "2026-06-26",
         "perfAsAtSource": "Fidelity price stamp 26 Jun 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+12.23%",
+        "nav3yr": "+29.49%",
+        "nav5yr": "+40.67%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1259
       },
       "holdings": [
         {
@@ -8071,12 +6399,15 @@
       "asAt": "27 Mar 2026 (performance - note stale); 31 Jan 2026 (holdings); 28 Feb 2026 (yield)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.98%, FTSE 100 +0.80%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.02%, FTSE 100 +0.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BFRT3504",
-      "isinSource": "Fidelity factsheet (W Acc), confirmed 6 Jul 2026"
+      "isinSource": "Fidelity factsheet (W Acc), confirmed 6 Jul 2026",
+      "navSymbol": "0P000100U2.L",
+      "navName": "Fidelity European W Acc",
+      "navMatch": "isin GB00BFRT3504 (name 100%)"
     },
     {
       "id": "man-glg-continental-european-growth",
@@ -8272,7 +6603,7 @@
       "asAt": "24 Jun 2026 (performance); 29 Feb 2024 (holdings - STALE)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.98%, FTSE 100 +0.80%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.02%, FTSE 100 +0.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -8479,7 +6810,7 @@
       "asAt": "24 Jun 2026 (performance); 30 Apr 2026 (holdings); 31 May 2026 (yield)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.98%, FTSE 100 +0.80%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.02%, FTSE 100 +0.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -8616,12 +6947,15 @@
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.98%, FTSE 100 +0.80%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.02%, FTSE 100 +0.83%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B3S9LG25",
-      "isinSource": "Fidelity factsheet (D Acc), confirmed 6 Jul 2026"
+      "isinSource": "Fidelity factsheet (D Acc), confirmed 6 Jul 2026",
+      "navSymbol": "0P0000T2WM.L",
+      "navName": "BlackRock Continental Eurp Inc D Acc",
+      "navMatch": "isin GB00B3S9LG25 (name 100%)"
     },
     {
       "id": "jpm-emerging-markets",
@@ -8831,7 +7165,7 @@
       "asAt": "Discrete performance to 24 Jun 2026; holdings 31 May 2026; charges as displayed on HL",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -8891,7 +7225,12 @@
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). 1yr trailing to 2 Jul 2026. Corrected 2 Jul 2026.",
         "perfAsAt": "2026-07-02",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+36.78%",
+        "nav3yr": "+84.31%",
+        "nav5yr": "+85.44%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -8966,139 +7305,15 @@
       "asAt": "Holdings 31 Mar–30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B8N46731",
-      "isinSource": "already present in entry text"
-    },
-    {
-      "id": "jupiter-india",
-      "name": "Jupiter India",
-      "shareClass": "Class X Accumulation",
-      "category": "Asia / EM / Japan",
-      "group": "asia",
-      "badge": {
-        "type": "lose",
-        "label": "Lagging"
-      },
-      "iaSector": "IA India / Indian Subcontinent",
-      "benchmark": "MSCI India",
-      "fundSize": "≈ £1,340m",
-      "launched": "2008",
-      "yield": "0.76% (historic)",
-      "overview": "A specialist India equity fund investing across the market cap spectrum, with a 'growth at a reasonable price' philosophy. One of the longest-running India funds on UK platforms. The weakest performer in this category over the past 12 months as foreign investors trimmed expensive Indian positions, though it held up better than the sector average.",
-      "performance": {
-        "cumulative": [
-          {
-            "period": "1 yr (to Apr 26)",
-            "fund": "-8.93%",
-            "sector": "-12.51%",
-            "benchmark": "not yet verified"
-          }
-        ],
-        "discrete": [
-          {
-            "year": "2025–26",
-            "fund": "-8.93%",
-            "sector": "-12.51%"
-          },
-          {
-            "year": "2024–25",
-            "fund": "+0.84%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2023–24",
-            "fund": "+59.89%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2022–23",
-            "fund": "+2.27%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2021–22",
-            "fund": "+31.63%",
-            "sector": "not yet verified"
-          }
-        ],
-        "notes": "Discrete returns from HL factsheet, 12-month periods to end-April 2026. Sector is IA India/Indian Subcontinent.",
-        "perfAsAt": "2026-04-28",
-        "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "HL"
-      },
-      "holdings": [
-        {
-          "name": "State Bank of India",
-          "weight": "5.47%"
-        },
-        {
-          "name": "Godfrey Phillips India",
-          "weight": "5.42%"
-        },
-        {
-          "name": "Bharti Airtel",
-          "weight": "4.69%"
-        },
-        {
-          "name": "Fortis Healthcare",
-          "weight": "4.52%"
-        },
-        {
-          "name": "HCL Technologies",
-          "weight": "3.39%"
-        }
-      ],
-      "holdingsNote": "HL factsheet data, 31 March 2026. 88 holdings total.",
-      "sectors": [],
-      "countries": [
-        {
-          "name": "India",
-          "weight": "~100%"
-        }
-      ],
-      "manager": {
-        "names": "Avinash Vazirani & Colin Croft",
-        "tenure": "Vazirani since fund launch 2008; Croft co-manager",
-        "bio": "Avinash Vazirani has run the fund since its 2008 launch and is one of the most experienced India equity managers on the UK market. The team uses a 'growth at a reasonable price' approach, seeking financially robust, cash-generative Indian companies priced below their earnings potential."
-      },
-      "process": "Growth at a reasonable price (GARP): financially robust, cash-generative companies priced below earnings potential. Can hold smaller companies (higher liquidity risk). One of the highest ESG-risk profiles under HL coverage due to carbon-intensive/fossil-fuel exposure. 88 holdings — relatively diversified for a specialist fund.",
-      "whyNow": "<b>India was the worst-performing major EM market over the past 12 months</b> as foreign investors rotated away from expensive Indian valuations toward cheaper Korea and Taiwan. Jupiter India fell -8.93% but beat its sector (-12.51%). The contrarian setup: India now trades cheaper relative to North Asia, US tariffs were cut from 50% to 18%, and an EU-India trade deal was finalised. <b>A weaker dollar and domestic rate cuts are the trigger for a rebound.</b> No direct mega-cap AI exposure.",
-      "charges": {
-        "ocf": "1.00%",
-        "hlSaving": "0.30%",
-        "netOngoing": "0.70%",
-        "transaction": "0.38%",
-        "notes": "HL loyalty bonus saving of 0.30%. At 1.00% OCF this is the second most expensive active fund in the category.",
-        "transactionSource": "inferred-kiid"
-      },
-      "risk": {
-        "srri": "7",
-        "feScore": "not yet verified",
-        "notes": "Single-country concentration in India (political, regulatory, currency risk). Smaller-company exposure adds liquidity risk. One of the highest ESG risk scores on the HL platform due to fossil fuel holdings.",
-        "srriNote": "Single country India fund; higher volatility — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−21.4%",
-        "maxDrawdownPeriod": "Jan–Jun 2022",
-        "maxDrawdownNote": "India sold off on global risk-off but recovered faster than broader EM; concentrated single-country risk",
-        "maxDrawdownSource": "inferred-morningstar",
-        "maxDrawdownConfidence": "medium"
-      },
-      "catalysts": [],
-      "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jupiter-india-class-x-accumulation"
-      },
-      "sources": "HL factsheet, HL research page",
-      "asAt": "Performance and holdings to 31 Mar–30 Apr 2026",
-      "oneMonth": {
-        "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
-        "confidence": "not verified - market context only",
-        "asAt": "26 Aug 2026"
-      }
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000XBR9.L",
+      "navName": "Invesco Global Emerg Mkts UK Z Acc",
+      "navMatch": "isin GB00B8N46731 (name 100%)"
     },
     {
       "id": "jupiter-asian-income",
@@ -9161,7 +7376,12 @@
         "notes": "Since-launch cumulative from HL. Discrete years to 31 Mar from Fidelity (sector: IA Asia Pacific ex Japan Equity Income). Most recent 1yr (2025–26): +32.06%.",
         "perfAsAt": "2026-03-31",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+47.77%",
+        "nav3yr": "+95.82%",
+        "nav5yr": "+115.32%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1251
       },
       "holdings": [],
       "holdingsNote": "Holdings not extracted in this research pass — verify on HL factsheet.",
@@ -9202,10 +7422,13 @@
       "asAt": "Since-launch performance as at HL research page (date not confirmed); current holdings not verified",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
-      }
+      },
+      "navSymbol": "0P00017EQ6.L",
+      "navName": "Jupiter Asian Income L Acc",
+      "navMatch": "name match 100%"
     },
     {
       "id": "schroder-asian-alpha-plus",
@@ -9262,7 +7485,12 @@
         "notes": "FE fundinfo via Trustnet factsheet (18 Jun 2026), Z Acc share class — desk entry is L Acc (OCF 0.85 vs Z 0.92), so figures are a very close proxy; confirm exact L Acc values on HL. Corrected 2 Jul 2026.",
         "perfAsAt": "2026-06-17",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FE"
+        "perfBasis": "FE",
+        "nav1yr": "+40.56%",
+        "nav3yr": "+78.09%",
+        "nav5yr": "+56.93%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -9351,13 +7579,16 @@
       "asAt": "Holdings 31 Mar 2026; charges as displayed on HL",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00BDD27J12",
       "isinNote": "L Acc",
-      "isinSource": "Fidelity UK page, confirmed 2 Jul 2026"
+      "isinSource": "Fidelity UK page, confirmed 2 Jul 2026",
+      "navSymbol": "0P0000ZSZK.L",
+      "navName": "Schroder Asian Alpha Plus L GBP Acc",
+      "navMatch": "isin GB00BDD27J12 (name 100%)"
     },
     {
       "id": "stewart-investors-apac-leaders-sustainability",
@@ -9414,7 +7645,12 @@
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). 1yr trailing to 26 Jun 2026. Big category laggard this year — consistent with its low-China, quality-defensive style missing the Korea/Taiwan tech melt-up. Corrected 2 Jul 2026.",
         "perfAsAt": "2026-06-26",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+25.82%",
+        "nav3yr": "+37.17%",
+        "nav5yr": "+24.58%",
+        "navAsAt": "2026-08-24",
+        "navPoints": 1242
       },
       "holdings": [
         {
@@ -9503,12 +7739,15 @@
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB0033874768",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P00000H6Q.L",
+      "navName": "Stewart Inv APAC Ldrs B GBP Acc",
+      "navMatch": "isin GB0033874768 (name 50%)"
     },
     {
       "id": "fssa-greater-china-growth",
@@ -9577,7 +7816,12 @@
         "notes": "Full Fidelity refresh 12 Jul 26 (price stamp 15 May 26 — lags; as-at approximate): trailing 1yr +26.62% confirmed, replacing the ~+30.05% estimate. The fund materially lags its category (+36.43% 1yr, +24.20% 25–26 discrete) — its quality bias missed the sharpest leg of the China tech melt-up. All five discrete years now verified with category averages. Sector = Morningstar Greater China Equity.",
         "perfAsAt": "2026-05-15",
         "perfAsAtSource": "Fidelity price stamp 15 May 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+17.54%",
+        "nav3yr": "+39.37%",
+        "nav5yr": "+9.05%",
+        "navAsAt": "2026-08-24",
+        "navPoints": 1208
       },
       "holdings": [
         {
@@ -9671,12 +7915,15 @@
       "asAt": "Holdings 31 May 2026; charges as displayed on HL",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB0033874321",
-      "isinSource": "Fidelity factsheet header (B Acc GBP), 12 Jul 2026"
+      "isinSource": "Fidelity factsheet header (B Acc GBP), 12 Jul 2026",
+      "navSymbol": "0P00000EU6.L",
+      "navName": "FSSA Greater China Growth B GBP Acc",
+      "navMatch": "isin GB0033874321 (name 100%)"
     },
     {
       "id": "baillie-gifford-japanese",
@@ -9733,7 +7980,12 @@
         "notes": "Morningstar trailing returns via Fidelity, price stamp 16 Apr 26; category Japan Large-Cap Blend. 1yr trailing (+22.66%) vs 25–26 discrete (+7.52%) Δ15.1pp — window gap (trailing window runs past 31-Mar year-end into the strong Apr–Jun Japan run), informational, not an error. Growth style still lagging the category hard (sector 1yr +36.77%).",
         "perfAsAt": "2026-04-16",
         "perfAsAtSource": "Fidelity factsheet price stamp 16 Apr 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+16.51%",
+        "nav3yr": "+47.73%",
+        "nav5yr": "+26.24%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1260
       },
       "holdings": [
         {
@@ -9812,12 +8064,15 @@
       "asAt": "Performance to Sep 2025; holdings date not confirmed — verify on HL",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB0006011133",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P00000QWA.L",
+      "navName": "Baillie Gifford Japanese B Acc",
+      "navMatch": "isin GB0006011133 (name 100%)"
     },
     {
       "id": "man-japan-corealpha",
@@ -9880,7 +8135,12 @@
         "notes": "Morningstar trailing returns via Fidelity, price stamp 8 May 26; category Japan Large-Cap Value. Sector figures in the discrete table are the Morningstar category, filling the previously unverified sector cell. 1yr +36.27% is strong but credible against the category itself at +34.96% — value style led the 2025–26 Japan rally.",
         "perfAsAt": "2026-05-08",
         "perfAsAtSource": "Fidelity factsheet price stamp 8 May 2026",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+33.52%",
+        "nav3yr": "+80.82%",
+        "nav5yr": "+130.38%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 1204
       },
       "holdings": [
         {
@@ -9959,12 +8219,15 @@
       "asAt": "Holdings 31 Jan 2026; discrete performance to Sep 2025; 1yr to Mar 2026 also noted",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
       "isin": "GB00B0119B50",
-      "isinSource": "already present in entry text"
+      "isinSource": "already present in entry text",
+      "navSymbol": "0P0000810W.L",
+      "navName": "Man Japan CoreAlpha Profl Acc C",
+      "navMatch": "isin GB00B0119B50 (name 100%)"
     },
     {
       "id": "ishares-pacific-ex-japan-index",
@@ -10021,7 +8284,11 @@
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). Trailing 1yr +82.97% is source-confirmed but extreme (FTSE World APAC ex-Japan is Korea/Taiwan-heavy and both markets have been in a melt-up); page price stamp read 17 Apr 2026 so the as-at window is uncertain — cross-check the HL factsheet before relying on it. Corrected 2 Jul 2026.",
         "perfAsAt": "2026-04-28",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+68.87%",
+        "nav3yr": "+120.36%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 986
       },
       "holdings": [
         {
@@ -10105,8 +8372,8 @@
       "sources": "HL factsheet, BlackRock holdings data",
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
-        "value": "+1.99%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Pacific ex-Japan UCITS ETF (GBP) (CPJ1.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Asia-Pacific ex-Japan, which includes emerging Asia; the MSCI Pacific ex-Japan proxy is developed-only, so Korea and Taiwan exposure differs. Market context: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%.",
+        "value": "+2.05%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Pacific ex-Japan UCITS ETF (GBP) (CPJ1.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Asia-Pacific ex-Japan, which includes emerging Asia; the MSCI Pacific ex-Japan proxy is developed-only, so Korea and Taiwan exposure differs. Market context: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:CPJ1.L",
@@ -10114,7 +8381,10 @@
       },
       "isin": "GB00B849FB47",
       "isinNote": "D Acc — desk entry is Class S; same fund, different class",
-      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026"
+      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026",
+      "navSymbol": "0P0000WGT4.L",
+      "navName": "iShares Pacific ex Jpn Eq Idx (UK) D Acc",
+      "navMatch": "isin GB00B849FB47 (name 100%)"
     },
     {
       "id": "ishares-japan-equity-index",
@@ -10171,7 +8441,11 @@
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). 1yr trailing from page with 29 May 2026 price stamp. Tracking within ~0.3–3pp of category across all periods, as expected for a FTSE Japan tracker. Corrected 2 Jul 2026.",
         "perfAsAt": "2026-05-28",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "FID"
+        "perfBasis": "FID",
+        "nav1yr": "+24.36%",
+        "nav3yr": "+59.50%",
+        "navAsAt": "2026-08-25",
+        "navPoints": 970
       },
       "holdings": [
         {
@@ -10254,8 +8528,8 @@
       "sources": "HL factsheet, BlackRock holdings data",
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
-        "value": "+4.90%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Japan IMI UCITS ETF (GBP) (IJPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Japan; proxy is MSCI Japan IMI, which reaches further down the cap scale. Market context: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.03%.",
+        "value": "+4.89%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Japan IMI UCITS ETF (GBP) (IJPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Japan; proxy is MSCI Japan IMI, which reaches further down the cap scale. Market context: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +2.01%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:IJPA.L",
@@ -10263,13 +8537,36 @@
       },
       "isin": "GB00B6QQ9X96",
       "isinNote": "D Acc — desk entry is Class S; same fund, different class",
-      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026"
+      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026",
+      "navSymbol": "0P0000WGSX.L",
+      "navName": "iShares Japan Equity Index (UK) D Acc",
+      "navMatch": "isin GB00B6QQ9X96 (name 100%)"
     }
   ],
   "auditLog": {
     "runDate": "26 Aug 2026",
     "summary": "26 Aug 2026 automated run (deterministic, no LLM). Computed real figures for 17 tracker funds from GBP ETF proxies; 46 active funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 62 catalyst entries (2 confirmed dates, 20 pattern estimates). THIS IS NOT A STALENESS SWEEP: 1yr figures, discrete arrays and ISINs are untouched and continue to age. Run a manual verification sweep periodically. CALENDAR WARNING: FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
     "findings": [
+      {
+        "fundId": "lg-us-index",
+        "fundName": "Legal & General US Index",
+        "check": "oneMonth-reversal",
+        "severity": "MEDIUM",
+        "description": "oneMonth flag REVERSED vs the 10 Jul cycle: US equities/tech moved from a modest net gain last cycle (S&P +1.4%, Nasdaq +2.07% on a single rebound day) to a clear net loss this cycle (S&P -1.6%, Nasdaq -2.9% on the week to 17 Jul) as a deepening semiconductor sell-off took hold following TSMC's steep capex guidance raise. Same reversal logic applies directionally to other US/tech-heavy funds in the us/global groups.",
+        "status": "inferred",
+        "correctedValue": null,
+        "source": "S&P 500/Nasdaq index level research this cycle (CNBC, Motley Fool, TheStreet) vs prior cycle's level"
+      },
+      {
+        "fundId": "lg-all-stocks-gilt-index",
+        "fundName": "Legal & General All Stocks Gilt Index Trust",
+        "check": "oneMonth-reversal",
+        "severity": "LOW",
+        "description": "Unlike the last two cycles (which each showed a clear net move in gilt yields, first falling then rising), this window did not surface a clearly confirmed net yield move — marked 'not yet verified — roughly flat' rather than extending the prior cycle's rising-yield call without evidence. Flagging so it is clear this is a genuine gap, not an oversight.",
+        "status": "not-yet-verified",
+        "correctedValue": null,
+        "source": null
+      },
       {
         "fundId": "ALL",
         "fundName": "1-month change patch (28 Jul cycle)",
@@ -10413,24 +8710,6 @@
       {
         "fundId": "ALL",
         "fundName": "Automated weekly run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Computed 17 tracker figures from priced GBP ETF proxies over a 30-day window; 46 active funds left unverified by design. 62 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Calendar maintenance",
-        "check": "CALENDAR-LOW",
-        "severity": "MEDIUM",
-        "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
-        "status": "flagged",
-        "source": null
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": "Computed 17 tracker figures from priced GBP ETF proxies over a 30-day window; 46 active funds left unverified by design. 62 catalyst dates refreshed.",

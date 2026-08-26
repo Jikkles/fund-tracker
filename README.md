@@ -37,10 +37,23 @@ investor in a US tracker earns the index move *plus* the USD/GBP move — in a
 week where the S&P rises 2% and sterling strengthens 2%, the raw index says
 +2% and the investor got roughly nothing. Pricing a GBP ETF captures that.
 
-**Active funds get an honest gap.** No free source publishes active fund NAVs,
-so they are marked `not yet verified` with the real index moves for their
-market attached as context. The note says explicitly that this is context, not
-the fund's return.
+**Funds are priced from their own NAVs.** The desk originally assumed no free
+source published active fund NAVs. That was wrong: Yahoo carries UK OEICs under
+Morningstar-style symbols (`0P0000W36K.L`), in GBP, priced daily. So
+`fund_nav.py` resolves each fund to such a symbol and computes real 1/3/5yr
+total returns. 36 of 50 funds now carry a figure priced today rather than a
+researched one that ages.
+
+The other 14 are refused, not guessed. Resolution is the dangerous step — a
+wrong symbol yields confident, precise, wrong performance data, which is worse
+than an honestly stale figure — so a match must clear several bars: an ISIN
+hit must be corroborated by the fund name, a name match must be a
+London-listed GBP **accumulation** line (income classes understate total
+return), no two funds may claim the same symbol, and the NAV series must
+contain no jump that a real return cannot explain. Two funds were caught by
+that last rule alone: Invesco Tactical Bond and Ninety One Diversified Income
+had both been through 100:1 share-class redenominations, which would otherwise
+have published as −98.9% three-year returns.
 
 The desk stays honest *by construction* — there is no prompt to disregard and
 no model to drift.
@@ -100,6 +113,7 @@ where a company has confirmed one, and fall back to a pattern estimate marked
 | `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
 | `scripts/calendar_data.py` | Central bank dates + earnings lookup |
 | `scripts/market_series.py` | Index chart series + per-index headlines. **Edit `INDICES`** to change the tabs |
+| `scripts/fund_nav.py` | Resolves each fund to a Yahoo NAV symbol and prices it. `--resolve-only` to check matches |
 | `scripts/anonymise.py` | Strips personal references before publishing |
 
 Test locally without writing anything:
@@ -137,7 +151,13 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   research runs corrected. The trail survives in the JSON as a machine-readable
   record, but a daily append would otherwise add ~700 entries a year.
 
-- **1-year figures are never refreshed.** Those drive the Winning/Lagging
+- **14 funds still cannot be priced.** Mostly ISIN-less L&G and Vanguard
+  trackers whose names return nothing on Yahoo, plus a few where only an
+  income class or a USD-hedged class exists. They keep their researched
+  figures and keep ageing. Adding a correct `navSymbol` to such a fund by
+  hand is enough to bring it in — the resolver trusts a stored symbol.
+
+- **1-year figures for those 14 are never refreshed.** Those drive the Winning/Lagging
   panels and the headline number on every card, and they go stale silently. As
   of writing they were ~45 days old. The automation will not fix this and will
   keep saying so in the audit log — run a manual verification sweep

@@ -986,6 +986,10 @@ const PERF_KEYS = new Set(['fund','sector','benchmark']);
    2. cumulative[0].fund as fallback (may be a longer period — shown with a ≈ prefix warning)
    3. f.p1 legacy field, or '—' */
 function getPerf1(f){
+  // A NAV priced today beats any researched figure, however carefully it was
+  // sourced, because it cannot be stale.
+  const nav = f.performance && f.performance.nav1yr;
+  if(nav) return nav;
   const d = f.performance && f.performance.discrete;
   if(d && d.length){
     const v = d[0].fund;
@@ -1032,6 +1036,10 @@ function mismatch(f){
    'gap'    — trailing (FID/FE) 1yr vs 31-Mar discretes >15pp: expected when the market moved hard in the extra months
    'drift'  — >0.5pp: normal as-at-date noise */
 function mismatchClass(f){
+  // A NAV total return and a researched discrete year measure different
+  // things over different windows; disagreement between them is expected,
+  // not a data fault, so there is nothing here to flag.
+  if(f.performance && f.performance.nav1yr) return null;
   const m = mismatch(f);
   if(m === null || m <= 0.5) return null;
   const basis = f.performance && f.performance.perfBasis;
@@ -1041,13 +1049,14 @@ function mismatchClass(f){
   return {m, cls:'drift'};
 }
 function isUnverified1yr(f){
+  if(f.performance && f.performance.nav1yr) return false;
   const c1 = cum1yrRow(f);
   return !c1 || String(c1.fund).includes('not yet verified');
 }
 /* staleness of the 1yr figure, in days, from performance.perfAsAt (ISO) */
 const STALE_DAYS = 45;
 function staleInfo(f){
-  const iso = f.performance && f.performance.perfAsAt;
+  const iso = (f.performance && (f.performance.navAsAt || f.performance.perfAsAt));
   if(!iso) return null;
   const then = new Date(iso + 'T00:00:00');
   if(isNaN(then)) return null;
@@ -1055,8 +1064,12 @@ function staleInfo(f){
   return { iso, days, stale: days > STALE_DAYS,
            label: then.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'}) };
 }
-const BASIS_LABEL = { HL:'HL rolling', FID:'Fidelity trailing', FE:'FE/Trustnet', DRV:'derived' };
+const BASIS_LABEL = { NAV:"live NAV", HL:'HL rolling', FID:'Fidelity trailing', FE:'FE/Trustnet', DRV:'derived' };
 function basisChip(f){
+  if(f.performance && f.performance.nav1yr){
+    const sym = f.performance && f.navSymbol;
+    return `<span class="fchip basis" title="Total return computed from the fund's own published NAV series, priced ${esc(f.performance.navAsAt||'')}. Not a researched figure - it cannot go stale.">NAV</span>`;
+  }
   const b = f.performance && f.performance.perfBasis;
   return b ? `<span class="fchip basis" title="1yr figure basis: ${BASIS_LABEL[b]||b} — bases are not like-for-like across funds">${b}</span>` : '';
 }

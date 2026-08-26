@@ -237,9 +237,9 @@ def main() -> int:
         f"market context attached - no fund-level figure was estimated for "
         f"them. Refreshed {cat_stats['refreshed']} catalyst entries "
         f"({cat_stats['confirmed']} confirmed dates, {cat_stats['estimated']} "
-        f"pattern estimates). THIS IS NOT A STALENESS SWEEP: 1yr figures, "
-        f"discrete arrays and ISINs are untouched and continue to age. Run a "
-        f"manual verification sweep periodically."
+        f"pattern estimates). 1yr/3yr/5yr figures are computed from each "
+        f"fund's own published NAV series where one could be resolved; "
+        f"discrete arrays and ISINs are untouched and continue to age."
         + (" CALENDAR WARNING: " + " ".join(warnings) if warnings else "")
     )
     audit.setdefault("findings", []).append({
@@ -272,8 +272,11 @@ def main() -> int:
     # history nobody reads.
     audit["findings"] = audit["findings"][-AUDIT_TRAIL_MAX:]
 
+    navs = sum(1 for f in doc["funds"]
+               if (f.get("performance") or {}).get("nav1yr"))
     doc["meta"]["asAt"] = (f"{stamp(today)} (automated deterministic run); "
-                           f"1yr research UNCHANGED - see auditLog")
+                           f"{navs} of {len(doc['funds'])} funds priced from "
+                           f"their own NAV")
     doc["meta"]["built"] = f"{stamp(today)} (automated daily run)"
 
     FUNDS.write_text(json.dumps(doc, indent=2, ensure_ascii=False),

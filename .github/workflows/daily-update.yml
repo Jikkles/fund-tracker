@@ -44,6 +44,11 @@ jobs:
       # No dependencies to install and no secrets to configure - the scripts
       # use only the Python standard library and free public endpoints.
 
+      # Prices each fund from its own published NAV where a symbol resolves.
+      # Runs before run_update.py so the audit summary counts the fresh ones.
+      - name: Refresh fund NAVs
+        run: python scripts/fund_nav.py
+
       - name: Run the update
         run: python scripts/run_update.py
         working-directory: ${{ github.workspace }}
