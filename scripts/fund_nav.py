@@ -352,7 +352,7 @@ def main(argv: list[str]) -> int:
     doc = json.loads(FUNDS.read_text(encoding="utf-8"))
     funds = doc["funds"]
 
-    resolved = refused = priced = 0
+    resolved = refused = priced = partial = 0
     refusals: list[tuple[str, str]] = []
     today = date.today()
 
@@ -434,12 +434,21 @@ def main(argv: list[str]) -> int:
         windows = {"nav1w": 7, "nav1m": 31, "nav1yr": 365,
                    "nav3yr": 365 * 3, "nav5yr": 365 * 5}
         vals = {k: pct_over(series, n) for k, n in windows.items()}
-        one, three, five = vals["nav1yr"], vals["nav3yr"], vals["nav5yr"]
-        if one is None:
+        one, five = vals["nav1yr"], vals["nav5yr"]
+        # A history too short for a year still prices a week and a month
+        # honestly, and those drive the 1W/1M rankings and the rolling
+        # oneMonth figure. Refusing the whole fund because one window is
+        # uncovered threw those away and left it publishing "not yet
+        # verified" while a real NAV sat on the wire. Only a series that
+        # covers no window at all has nothing to say.
+        if all(v is None for v in vals.values()):
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} too short")
             continue
 
-        priced += 1
+        if one is None:
+            partial += 1
+        else:
+            priced += 1
         perf = fund.setdefault("performance", {})
         for key, value in vals.items():
             if value is None:
@@ -451,10 +460,12 @@ def main(argv: list[str]) -> int:
         print(f"  [nav] {fund['name'][:38]:40} {symbol:14} "
               f"1w {fmt(vals['nav1w']) or '  n/a':>8}  "
               f"1m {fmt(vals['nav1m']) or '  n/a':>8}  "
-              f"1yr {fmt(one):>9}  5yr {fmt(five) or '   n/a':>9}")
+              f"1yr {fmt(one) or '   n/a':>9}  5yr {fmt(five) or '   n/a':>9}")
 
     print(f"\n{resolved} resolved, {refused} refused, {priced} priced "
-          f"of {len(funds)} funds")
+          f"of {len(funds)} funds"
+          + (f" (+{partial} priced over short windows only - history too "
+             f"short for a 1-year figure)" if partial else ""))
     if refusals:
         print("\nNeeds a hand-checked symbol in `navSymbol` "
               "(left unverified for now):")

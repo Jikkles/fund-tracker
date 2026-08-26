@@ -1114,7 +1114,13 @@ function isUnverified1yr(f){
 /* staleness of the 1yr figure, in days, from performance.perfAsAt (ISO) */
 const STALE_DAYS = 45;
 function staleInfo(f){
-  const iso = (f.performance && (f.performance.navAsAt || f.performance.perfAsAt));
+  const p = f.performance || {};
+  /* navAsAt dates the NAV figures, and only speaks for the 1yr number when a
+     1yr NAV was actually computed. A fund whose NAV history is too short for
+     a year carries a fresh navAsAt for its 1w/1m figures while its researched
+     1yr figure goes on ageing - reading the fresh date would hide precisely
+     the staleness this strip exists to show. */
+  const iso = (p.nav1yr ? p.navAsAt : null) || p.perfAsAt;
   if(!iso) return null;
   const then = new Date(iso + 'T00:00:00');
   if(isNaN(then)) return null;

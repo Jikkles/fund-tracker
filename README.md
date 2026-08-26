@@ -41,8 +41,8 @@ week where the S&P rises 2% and sterling strengthens 2%, the raw index says
 source published active fund NAVs. That was wrong: Yahoo carries UK OEICs under
 Morningstar-style symbols (`0P0000W36K.L`), in GBP, priced daily. So
 `fund_nav.py` resolves each fund to such a symbol and computes real 1/3/5yr
-total returns. 46 of 50 funds now carry a figure priced today rather than a researched one
-that ages.
+total returns. 49 of 50 funds now carry a figure priced today rather than a researched one
+that ages, and the 50th carries a real 1-week and 1-month figure.
 
 Resolution is a ladder, strongest identifier first: a stored `navSymbol`, then
 the fund's ISIN, then any ISIN found elsewhere in its record, then the name and
@@ -51,10 +51,10 @@ for "Legal & General UK Index"), and finally **FT's search API**, which returns
 ISINs for funds Yahoo cannot find by name at all. An ISIN is an identifier; a
 name search is a lottery.
 
-The other 4 are refused, not guessed. Resolution is the dangerous step — a
-wrong symbol yields confident, precise, wrong performance data, which is worse
-than an honestly stale figure — so a match must clear several bars: an ISIN
-hit must be corroborated by the fund name, a name match must be a
+Nothing is guessed. Resolution is the dangerous step — a wrong symbol yields
+confident, precise, wrong performance data, which is worse than an honestly
+stale figure — so a match must clear several bars: an ISIN hit must be
+corroborated by the fund name, a name match must be a
 London-listed GBP **accumulation** line (income classes understate total
 return), no two funds may claim the same symbol, and the NAV series must
 contain no jump that a real return cannot explain. Two funds were caught by
@@ -176,17 +176,22 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   classes, so the return does too. Income and distributing classes are never
   substituted — they pay dividends away and would understate total return.
 
-- **4 funds still cannot be priced.** Mostly ISIN-less L&G and Vanguard
-  trackers whose names return nothing on Yahoo, plus a few where only an
-  income class or a USD-hedged class exists. They keep their researched
-  figures and keep ageing. Adding a correct `navSymbol` to such a fund by
-  hand is enough to bring it in — the resolver trusts a stored symbol.
+- **1 fund has too little NAV history for a 1-year figure.** BlackRock
+  Continental European Income resolves and prices, but Yahoo only carries
+  about two months of its series, so it contributes to the 1W and 1M
+  rankings and its own rolling 1-month figure while its **1-year number is
+  still the researched one, and still ages**. The Data Health strip goes on
+  reporting it as stale for exactly that reason — a fresh price date on the
+  short windows is deliberately not allowed to vouch for the 1yr figure.
 
-- **1-year figures for those 14 are never refreshed.** Those drive the Winning/Lagging
-  panels and the headline number on every card, and they go stale silently. As
-  of writing they were ~45 days old. The automation will not fix this and will
-  keep saying so in the audit log — run a manual verification sweep
-  periodically.
+- **A fund the resolver cannot match keeps ageing silently.** None are
+  unmatched today, but the failure mode is worth knowing: the fund keeps its
+  researched 1-year figure, which drives the Winning/Lagging panels and the
+  headline number on its card. Three funds sat in that state until their
+  ISINs were confirmed and stored — one of them, Man GLG Continental European
+  Growth, is registered without the "GLG", so no name search was ever going
+  to find it. Storing a correct `isin` or `navSymbol` by hand is enough to
+  bring such a fund in: the resolver trusts a stored identifier.
 
 - **The hardcoded central bank calendar runs out.** It currently covers to
   Dec 2026 (BoE) and Oct 2026 (FOMC). The run warns when it is within 75 days

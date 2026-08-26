@@ -2,9 +2,9 @@
 
 Window: 27 Jul 2026 to 26 Aug 2026
 
-- **46** funds priced from their own published NAV
-- **1** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
-- **3** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
+- **50** funds priced from their own published NAV
+- **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
+- **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **48** catalyst dates refreshed (2 confirmed, 19 estimated)
 
 ## Maintenance needed
@@ -23,10 +23,10 @@ Window: 27 Jul 2026 to 26 Aug 2026
 | Euro STOXX 50 | +3.00% |
 | Nikkei 225 | +1.42% |
 | Hang Seng | +1.21% |
-| Gold (USD/oz) | +14.03% |
-| Brent crude | -2.16% |
+| Gold (USD/oz) | +14.07% |
+| Brent crude | -2.04% |
 | US 10yr yield | +0.50% |
-| GBP/USD | +1.84% |
+| GBP/USD | +1.81% |
 
 ## Fund NAV figures (1 month)
 
@@ -42,6 +42,7 @@ Window: 27 Jul 2026 to 26 Aug 2026
 | baillie-gifford-japanese | 0P00000QWA.L | +3.55% | 25 Aug 2026 |
 | baillie-gifford-monthly-income | 0P0001K0NY.L | +1.23% | 25 Aug 2026 |
 | baillie-gifford-strategic-bond | 0P00000QX1.L | +0.04% | 25 Aug 2026 |
+| blackrock-continental-european-income | 0P0000T2WM.L | +1.19% | 25 Aug 2026 |
 | bny-mellon-long-term-global-equity | 0P0000X2GC.L | +3.15% | 25 Aug 2026 |
 | bny-mellon-multi-asset-balanced | 0P0000X2GH.L | +0.66% | 25 Aug 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | +0.63% | 25 Aug 2026 |
@@ -72,18 +73,15 @@ Window: 27 Jul 2026 to 26 Aug 2026
 | lg-uk-index | 0P000023C8.L | +1.61% | 25 Aug 2026 |
 | lg-us-index | 0P000102MM.L | +0.84% | 25 Aug 2026 |
 | liontrust-uk-growth | 0P0001S8W9.L | +2.89% | 25 Aug 2026 |
+| man-glg-continental-european-growth | 0P000029BY.L | +0.43% | 25 Aug 2026 |
 | man-japan-corealpha | 0P0000810W.L | +1.96% | 25 Aug 2026 |
 | polar-capital-european-income | 0P00016CNI.L | +2.71% | 24 Aug 2026 |
 | pyrford-global-total-return | 0P0000N9AE.L | +0.15% | 25 Aug 2026 |
 | schroder-asian-alpha-plus | 0P0000ZSZK.L | +1.19% | 25 Aug 2026 |
 | stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +2.43% | 24 Aug 2026 |
+| trowe-global-value | 0P0001P4VD.L | +2.08% | 25 Aug 2026 |
+| vanguard-global-corporate-bond-index | 0P0001C5T6.L | +0.35% | 24 Aug 2026 |
 | vanguard-global-small-cap-index | 0P0000N47O.L | +1.45% | 24 Aug 2026 |
-
-## Computed tracker figures (ETF proxy)
-
-| Fund | Proxy | Change |
-|---|---|---|
-| vanguard-global-corporate-bond-index | VCPA.L | -1.55% |
 
 ---
 
