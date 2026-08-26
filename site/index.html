@@ -1338,7 +1338,10 @@ function marketNews(market){
     out.push(n);
     if(out.length >= NEWS_SHOWN) break;
   }
-  return out;
+  // Round-robin decides WHICH stories make the cut, so every index in the
+  // market gets a look in. It must not decide the order they are read in -
+  // that left the ages jumbled (2h, 4d, 5h, 2h...). Sort the survivors.
+  return out.sort((a, b) => (b.d || 0) - (a.d || 0));
 }
 
 function setNewsMarket(k){ newsMarket = k; renderNews(); }
