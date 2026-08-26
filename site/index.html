@@ -344,6 +344,12 @@
     border: 1px solid rgba(245,158,11,.3);
   }
 
+  .rec-card { cursor: pointer; transition: border-color .12s, background .12s, transform .12s; }
+  .rec-card:hover, .rec-card:focus-visible { border-color: var(--blue); background: var(--hover-bg); }
+  .rec-card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+  .rec-open { display: block; margin-top: 8px; font-family: "Inter", sans-serif; font-size: 11px;
+              font-weight: 600; color: var(--ink-soft); }
+  .rec-card:hover .rec-open, .rec-card:focus-visible .rec-open { color: var(--blue); }
   .rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 16px; }
   .rec-card {
     background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px;
@@ -439,7 +445,12 @@
                        cursor: pointer; transition: background .12s, color .12s; }
   .mkt-ranges button:hover { background: var(--hover-bg); color: var(--ink); }
   .mkt-ranges button.on { background: var(--blue); color: #06263a; }
-  .mkt-plot { position: relative; padding: 4px 8px 12px; overflow-x: auto; }
+  /* No overflow property here on purpose. `overflow-x: auto` forced overflow-y
+     to compute to `auto` as well, and the absolutely-positioned tooltip sits
+     ~4px past the box, so a vertical scrollbar appeared and flickered on every
+     range change. Clipping instead would cut the tooltip off near the chart's
+     bottom edge. The SVG is sized to the container, and .mkt clips anyway. */
+  .mkt-plot { position: relative; padding: 4px 8px 12px; }
   .mkt-plot svg { display: block; touch-action: pan-y; }
   .mkt-tip { position: absolute; pointer-events: none; opacity: 0; transition: opacity .1s;
              background: var(--paper); border: 1px solid var(--hover-border); border-radius: 8px;
@@ -457,8 +468,13 @@
      line up by construction - including at 1Y, where the extra toggle wraps
      the left head onto a second line and a fixed min-height would not hold. */
   .rank-grid > .rank-a { border-right: 1px solid var(--rule); }
-  .rank-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  .rank-head { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap;
                min-height: 58px; padding-top: 10px; padding-bottom: 10px; }
+  /* The title yields before the controls do, so the head stays one line at
+     every period. Without this, "Top 5 performers" wrapped where the shorter
+     "Top 5 vs sector" did not, and the pair grew on some periods only. */
+  .rank-title { min-width: 0; overflow: hidden; text-overflow: ellipsis;
+                white-space: nowrap; }
   .rank-list { min-width: 0; }
   .rank-title { flex: 1 1 auto; }
   .rank-controls { display: flex; align-items: center; gap: 8px;
@@ -474,7 +490,8 @@
     .rank-list.rank-a  { order: 2; }
     .rank-head.rank-b  { order: 3; border-top: 1px solid var(--rule); }
     .rank-list.rank-b  { order: 4; }
-    .rank-head { min-height: 0; }
+    .rank-head { min-height: 0; flex-wrap: wrap; }
+    .rank-title { white-space: normal; overflow: visible; }
     .rank-controls { margin-left: 0; }
   }
 
@@ -1108,7 +1125,6 @@ function staleInfo(f){
 const BASIS_LABEL = { NAV:"live NAV", HL:'HL rolling', FID:'Fidelity trailing', FE:'FE/Trustnet', DRV:'derived' };
 function basisChip(f){
   if(f.performance && f.performance.nav1yr){
-    const sym = f.performance && f.navSymbol;
     return `<span class="fchip basis" title="Total return computed from the fund's own published NAV series, priced ${esc(f.performance.navAsAt||'')}. Not a researched figure - it cannot go stale.">NAV</span>`;
   }
   const b = f.performance && f.performance.perfBasis;
@@ -1239,7 +1255,7 @@ function renderIntro(){
   <div class="tldr" style="margin:20px 0;padding:0">
     <div class="rank-grid">
       <div class="pulse-box-head rank-head rank-a" style="color:var(--forest);border-bottom:2px solid var(--forest)">
-          <span class="rank-title">Top 5 ${rel?'vs sector':'performers'} (${esc(period.full)}) — ${ranked.length} priced</span>
+          <span class="rank-title">Top 5 ${rel?'vs sector':'performers'} — ${ranked.length} priced</span>
           <span class="rank-controls">
             <span class="seg">
               ${RANK_PERIODS.map(x=>`<button ${x.k===period.k?'class="on"':''} onclick="setRankPeriod('${x.k}')">${x.label}</button>`).join('')}
@@ -1251,7 +1267,7 @@ function renderIntro(){
           </span>
       </div>
       <div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
-        <span class="rank-title">Bottom 5 ${rel?'vs sector':''} (${esc(period.full)}) — ${rel?'biggest category laggards':'weakest over this period'}</span>
+        <span class="rank-title">Bottom 5 ${rel?'vs sector':''} — ${rel?'biggest category laggards':`weakest over ${esc(period.full)}`}</span>
       </div>
       <div class="rank-list rank-a">${top5Items}</div>
       <div class="rank-list rank-b">${bot5Items}</div>
@@ -1378,6 +1394,22 @@ function mktAgo(d){
   return Math.round(hrs / 24) + 'd ago';
 }
 
+/* The rolling oneMonth field predates NAV pricing and still reads "not yet
+   verified" for active funds. Where a real 1-month NAV return exists it is
+   simply better, so it wins and the stale context note goes with it. */
+function oneMonthView(f){
+  const perf = f.performance || {};
+  if(perf.nav1m){
+    // navAsAt is ISO; the heading reads better in the page's usual date style.
+    const d = perf.navAsAt ? new Date(perf.navAsAt + 'T00:00:00') : null;
+    const asAt = (d && !isNaN(d))
+      ? d.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'})
+      : perf.navAsAt;
+    return { value: perf.nav1m, asAt, note: '', confidence: '' };
+  }
+  return f.oneMonth || null;
+}
+
 /* ---------- render: provenance + old-audit chips ---------- */
 const OLD_AUDIT_DAYS = 35;
 function provenanceChip(){
@@ -1473,10 +1505,11 @@ function scoreForRec(f){
   const p = parsePerf(getPerf1(f));
   let perfScore = (p !== null) ? Math.min(Math.max(p, -30), 60) : 0; // cap at 60
   // sector relative boost: if fund perf > sector perf, add bonus
-  const sc = f.performance&&f.performance.discrete&&f.performance.discrete[0]&&f.performance.discrete[0].sector;
-  const sp = parsePerf(sc);
-  let relScore = 0;
-  if(p !== null && sp !== null) relScore = Math.min(p - sp, 20);
+  // vsSector compares researched fund figure against researched sector
+  // average. getPerf1 now returns a NAV total return, so subtracting a sector
+  // figure from it would mix two bases and quietly skew the ranking.
+  const rel = vsSector(f);
+  const relScore = rel === null ? 0 : Math.min(rel, 20);
 
   let badgeScore = 0;
   if(f.badge){
@@ -1634,14 +1667,22 @@ function renderRecommendations(funds){
     const p1 = getPerf1(f);
     // Extract first sentence of whyNow for thesis
     const thesis = (f.whyNow||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').split(/\.[\s]/)[0].trim();
-    const chargeStr = f.charges&&f.charges.netOngoing ? `<br><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:var(--ink-soft)">${esc(f.charges.netOngoing)} net ongoing</span>` : '';
-    return `<div class="rec-card">
+    return `<div class="rec-card" role="link" tabindex="0"
+                 title="Open ${esc(f.name)} in full"
+                 onclick="openFund('${esc(f.id)}')"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openFund('${esc(f.id)}');}">
       <div class="rec-rank">#${i+1}</div>
       <div class="rec-name">${esc(f.name)}</div>
-      <div class="rec-cat">${catLabel(f.group||'')} · ${esc(f.category||'')}</div>
-      <div class="rec-perf">${esc(p1)} 1yr${chargeStr}</div>
+      <div class="rec-cat">${(() => {
+        // Several funds carry a category identical to their group label, which
+        // rendered as "Asia / EM / Japan · Asia / EM / Japan".
+        const g = catLabel(f.group||''), c = esc(f.category||'');
+        return (!c || c.toLowerCase() === String(g).toLowerCase()) ? g : `${g} · ${c}`;
+      })()}</div>
+      <div class="rec-perf">${esc(p1)} 1yr</div>
       <div class="rec-thesis">${esc(thesis)}${thesis.length>0?'.':''}</div>
       <span class="rec-horizon">6–12 month watch</span>
+      <span class="rec-open">Open full factsheet ▸</span>
     </div>`;
   }).join('');
 }
@@ -1693,8 +1734,9 @@ function dossier(f){
     h += `</div>`;
   }
   // 1-month change (rolling, overwritten each update cycle)
-  if(f.oneMonth){
-    const om = f.oneMonth;
+  const omView = oneMonthView(f);
+  if(omView){
+    const om = omView;
     const omNum = parsePerf(om.value);
     const omCol = omNum===null?'var(--ink-soft)':omNum>0?'var(--forest)':omNum<0?'var(--oxblood)':'var(--ink-soft)';
     h += `<div class="sec"><div class="sec-h">1-month change${om.asAt?` <span style="font-weight:400;color:var(--ink-soft);font-size:12px;text-transform:none;letter-spacing:0">(as at ${esc(om.asAt)})</span>`:''}</div>`+
@@ -1795,14 +1837,14 @@ function renderList(){
     const rs = vsSector(f);
     const relBadge = rs===null?'':`<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:600;color:${rs>=0?'var(--forest)':'var(--oxblood)'};margin-top:2px">${fmtPP(rs)} <span style="font-size:10px;font-family:'Inter',sans-serif;color:var(--ink-soft)">vs sector</span></div>`;
     const charge = f.charges&&f.charges.netOngoing?f.charges.netOngoing:'';
-    const om = f.oneMonth;
+    const om = oneMonthView(f);
     const omNum = om?parsePerf(om.value):null;
     const omCol = omNum===null?'var(--ink-soft)':omNum>0?'var(--forest)':omNum<0?'var(--oxblood)':'var(--ink-soft)';
     const omBadge = om?`<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;color:${omCol};margin-top:2px">${esc(om.value)} <span style="font-size:10px;font-weight:600;font-family:'Inter',sans-serif;color:var(--ink-soft)">1mo</span></div>`:'';
     el.innerHTML = `
       <div class="fhead">
         <div><p class="fname">${esc(f.name)}${bdg}${warn}${staleChip}</p><p class="fcat">${esc(f.category||'')}${f.shareClass?` · ${esc(f.shareClass)}`:''}</p>${sparkline(f,84,24)}</div>
-        <div class="fright"><span class="perf1" style="color:${(n=>n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)')(parsePerf(p1))}">${esc(p1)}</span> <span style="font-size:11px;font-weight:600;font-family:'Inter',sans-serif;">1yr</span>${basisChip(f)}${relBadge}${omBadge}<span class="charge">${charge?`<br>${esc(charge)} net`:''}</span><span class="toggle">open ▸</span></div>
+        <div class="fright"><span class="perf1" style="color:${(n=>n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)')(parsePerf(p1))}">${esc(p1)}</span> <span style="font-size:11px;font-weight:600;font-family:'Inter',sans-serif;">1yr</span>${basisChip(f)}${relBadge}${omBadge}<span class="toggle">open ▸</span></div>
       </div>
       <div class="detail">${dossier(f)}</div>`;
     el.querySelector('.fhead').onclick=()=>{
@@ -1832,7 +1874,7 @@ function renderTable(items, listEl){
       name: f.name, cat: f.category||'',
       p1n: parsePerf(getPerf1(f)), p1: getPerf1(f),
       reln: vsSector(f),
-      omn: f.oneMonth?parsePerf(f.oneMonth.value):null, om: f.oneMonth?f.oneMonth.value:'—',
+      omn: (v=>v?parsePerf(v.value):null)(oneMonthView(f)), om: (v=>v?v.value:'—')(oneMonthView(f)),
       chargen: f.charges&&f.charges.netOngoing?parsePerf(f.charges.netOngoing):null,
       charge: f.charges&&f.charges.netOngoing?f.charges.netOngoing:'—',
       asatIso: st?st.iso:'', asat: st?st.label:'—', stale: st?st.stale:false,
@@ -1874,6 +1916,13 @@ function renderTable(items, listEl){
 function openFund(fid){
   viewMode='cards';
   document.querySelectorAll('#viewSeg button').forEach(b=>b.classList.toggle('on',b.dataset.v==='cards'));
+  // A live search or category filter can be hiding the target, in which case
+  // the lookup below finds nothing and the click appears to do nothing at all.
+  // Clear both so the fund is always there to open.
+  active = 'all'; q = '';
+  const search = document.getElementById('search');
+  if(search) search.value = '';
+  renderFilters();
   renderList();
   const card = document.querySelector(`.fund[data-fid="${fid}"]`);
   if(card){
