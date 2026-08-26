@@ -14,15 +14,15 @@ Window: 27 Jul 2026 to 26 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +0.96% |
-| FTSE 250 | +4.36% |
+| FTSE 100 | +0.98% |
+| FTSE 250 | +4.37% |
 | S&P 500 | +3.56% |
 | Nasdaq Composite | +4.89% |
-| Euro STOXX 50 | +3.11% |
+| Euro STOXX 50 | +3.13% |
 | Nikkei 225 | +2.05% |
 | Hang Seng | +1.77% |
-| Gold (USD/oz) | +14.95% |
-| Brent crude | -3.25% |
+| Gold (USD/oz) | +14.99% |
+| Brent crude | -3.32% |
 | US 10yr yield | -0.04% |
 | GBP/USD | +2.11% |
 
@@ -30,23 +30,23 @@ Window: 27 Jul 2026 to 26 Aug 2026
 
 | Fund | Proxy | Change |
 |---|---|---|
-| fidelity-index-world | SWDA.L | +1.71% |
-| hsbc-ftse-250-index | VMID.L | +5.05% |
+| fidelity-index-world | SWDA.L | +1.69% |
+| hsbc-ftse-250-index | VMID.L | +5.04% |
 | ishares-corporate-bond-index | SLXX.L | +0.54% |
-| ishares-japan-equity-index | IJPA.L | +4.94% |
+| ishares-japan-equity-index | IJPA.L | +4.96% |
 | ishares-pacific-ex-japan-index | CPJ1.L | +1.97% |
-| lg-all-stocks-gilt-index | IGLT.L | +0.21% |
+| lg-all-stocks-gilt-index | IGLT.L | +0.25% |
 | lg-european-index | VERX.L | +2.66% |
-| lg-future-world-esg-developed | SWDA.L | +1.71% |
-| lg-future-world-esg-uk | VUKE.L | +1.55% |
-| lg-international-index | SWDA.L | +1.71% |
-| lg-uk-100-index | ISF.L | +1.56% |
-| lg-uk-index | VUKE.L | +1.55% |
-| lg-uk-mid-cap-index | VMID.L | +5.05% |
-| lg-us-index | VUSA.L | +1.32% |
+| lg-future-world-esg-developed | SWDA.L | +1.69% |
+| lg-future-world-esg-uk | VUKE.L | +1.61% |
+| lg-international-index | SWDA.L | +1.69% |
+| lg-uk-100-index | ISF.L | +1.60% |
+| lg-uk-index | VUKE.L | +1.61% |
+| lg-uk-mid-cap-index | VMID.L | +5.04% |
+| lg-us-index | VUSA.L | +1.33% |
 | vanguard-global-bond-index | VAGP.L | +0.05% |
 | vanguard-global-corporate-bond-index | VCPA.L | -1.69% |
-| vanguard-global-small-cap-index | WLDS.L | +1.68% |
+| vanguard-global-small-cap-index | WLDS.L | +1.70% |
 
 ---
 
