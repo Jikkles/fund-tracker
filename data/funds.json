@@ -8852,33 +8852,6 @@
     "findings": [
       {
         "fundId": "ALL",
-        "fundName": "Calendar maintenance",
-        "check": "CALENDAR-LOW",
-        "severity": "MEDIUM",
-        "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
-        "status": "flagged",
-        "source": null
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Computed 17 tracker figures from priced GBP ETF proxies over a 30-day window; 46 active funds left unverified by design. 62 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Calendar maintenance",
-        "check": "CALENDAR-LOW",
-        "severity": "MEDIUM",
-        "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
-        "status": "flagged",
-        "source": null
-      },
-      {
-        "fundId": "ALL",
         "fundName": "Automated daily run",
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
@@ -9072,6 +9045,33 @@
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": "Priced 46 funds from their own NAV series and 1 tracker figures from GBP ETF proxies over a 30-day window; 3 funds left unverified by design. 48 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Calendar maintenance",
+        "check": "CALENDAR-LOW",
+        "severity": "MEDIUM",
+        "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Research maintenance",
+        "check": "RESEARCH-STALE",
+        "severity": "MEDIUM",
+        "description": "7 funds have factsheet research older than 120 days: lazard-global-equity-franchise (148d), jupiter-asian-income (148d), artemis-us-smaller-companies (134d), and 4 more. Re-research, or rely on the NAV figures, which refresh every run.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 50 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 48 catalyst dates refreshed.",
         "status": "corrected",
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
       },
