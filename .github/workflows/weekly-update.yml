@@ -1,0 +1,73 @@
+name: Weekly fund update
+
+on:
+  schedule:
+    # 07:00 UTC every Monday. GitHub's scheduler is best-effort and can drift
+    # by an hour or more under load - this is not a precise clock.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:            # run manually from the Actions tab
+
+# Scheduled workflows are auto-disabled after 60 days of repo inactivity.
+# This job commits on most runs, which resets that timer as a side effect.
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: fund-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No dependencies to install and no secrets to configure - the scripts
+      # use only the Python standard library and free public endpoints.
+
+      - name: Run the update
+        run: python scripts/run_update.py
+        working-directory: ${{ github.workspace }}
+
+      - name: Anonymisation check
+        run: python scripts/anonymise.py data/funds.json data/funds.json
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "fund-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/funds.json data/last_run.md
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Weekly update: $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp site/index.html _site/index.html
+          cp data/funds.json  _site/funds.json
+          cp data/last_run.md _site/last_run.md
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
