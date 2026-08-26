@@ -33,6 +33,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -65,6 +66,7 @@ INDICES: list[tuple[str, str]] = [
 NEWS_URL = ("https://feeds.finance.yahoo.com/rss/2.0/headline"
             "?s={}&region=US&lang=en-US")
 NEWS_PER_INDEX = 6
+NEWS_SUMMARY_MAX = 400
 
 # (range key, Yahoo range, Yahoo interval)
 SERIES: list[tuple[str, str, str]] = [
@@ -142,6 +144,28 @@ def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
     return parse_chart(raw)
 
 
+def clean_summary(raw: str) -> str:
+    """Flatten a feed description into one plain-text paragraph.
+
+    Descriptions arrive with markup in them and are already truncated by the
+    feed, usually mid-sentence. Trailing punctuation is normalised to an
+    ellipsis so the cut is visible rather than reading as a typo.
+    """
+    txt = re.sub(r"<[^>]+>", " ", raw or "")
+    txt = re.sub(r"\s+", " ", txt).strip()
+    if len(txt) > NEWS_SUMMARY_MAX:
+        cut = txt[:NEWS_SUMMARY_MAX]
+        # Prefer breaking on a word boundary over slicing a word in half.
+        space = cut.rfind(" ")
+        if space > NEWS_SUMMARY_MAX * 0.6:
+            cut = cut[:space]
+        txt = cut
+    txt = txt.rstrip(" ,;:-–—")
+    if txt and txt[-1] not in ".!?…":
+        txt += "…"
+    return txt
+
+
 def fetch_news(ticker: str) -> list[dict]:
     """Headlines for one symbol. Always returns a list.
 
@@ -172,7 +196,8 @@ def fetch_news(ticker: str) -> list[dict]:
             except (TypeError, ValueError):
                 when = None
 
-        out.append({"t": title, "u": link, "d": when})
+        out.append({"t": title, "u": link, "d": when,
+                    "s": clean_summary(item.findtext("description") or "")})
         if len(out) >= NEWS_PER_INDEX:
             break
     return out
@@ -278,6 +303,16 @@ def _selftest_offline() -> bool:
     assert _round(10886.2549) == 10886.25
     assert _round(87.2749) == 87.275
     print("  rounding         OK  (4dp under 10, 3dp under 1000, else 2dp)")
+
+    # An unpunctuated description is almost always a feed truncation, so it
+    # earns the ellipsis; one that already ends in a full stop does not.
+    assert clean_summary("<p>Hello   <b>world</b></p>") == "Hello world…"
+    assert clean_summary("cut off mid clause,").endswith("clause…"),         clean_summary("cut off mid clause,")
+    assert clean_summary("Ends properly.") == "Ends properly."
+    long_txt = "word " * 200
+    assert len(clean_summary(long_txt)) <= NEWS_SUMMARY_MAX + 1
+    assert clean_summary("") == ""
+    print("  summary clean    OK  (tags stripped, truncation marked)")
 
     assert slug("FTSE 100") == "ftse-100"
     assert slug("S&P 500") == "s-p-500"

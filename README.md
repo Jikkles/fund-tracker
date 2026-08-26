@@ -70,6 +70,11 @@ headline feed is per-symbol, which is what makes the panel relevant *by
 construction*: there is no editorial call about what "affects markets", and no
 model deciding. It refreshes hourly with the chart.
 
+Rows expand in place to show the feed's own summary rather than navigating
+away; the **Full story** link on the right is the only part that leaves the
+page. Feed descriptions arrive truncated mid-sentence, so the ellipsis is
+normalised and the cut is visible rather than reading as a typo.
+
 **The page loads itself.** `index.html` fetches `funds.json` from the same
 folder on every visit, with `cache: 'no-store'` and a cache-busting query so
 neither the browser nor GitHub's CDN can serve yesterday's copy. There is no
