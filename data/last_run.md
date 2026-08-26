@@ -15,38 +15,38 @@ Window: 27 Jul 2026 to 26 Aug 2026
 | Index | Change |
 |---|---|
 | FTSE 100 | +0.99% |
-| FTSE 250 | +4.24% |
-| S&P 500 | +3.49% |
-| Nasdaq Composite | +4.63% |
-| Euro STOXX 50 | +3.01% |
+| FTSE 250 | +4.22% |
+| S&P 500 | +3.58% |
+| Nasdaq Composite | +4.75% |
+| Euro STOXX 50 | +3.05% |
 | Nikkei 225 | +1.42% |
 | Hang Seng | +1.77% |
-| Gold (USD/oz) | +14.13% |
-| Brent crude | -1.13% |
-| US 10yr yield | +0.28% |
-| GBP/USD | +1.83% |
+| Gold (USD/oz) | +14.22% |
+| Brent crude | -1.17% |
+| US 10yr yield | +0.32% |
+| GBP/USD | +1.84% |
 
 ## Computed tracker figures
 
 | Fund | Proxy | Change |
 |---|---|---|
 | fidelity-index-world | SWDA.L | +1.92% |
-| hsbc-ftse-250-index | VMID.L | +4.83% |
-| ishares-corporate-bond-index | SLXX.L | +0.39% |
-| ishares-japan-equity-index | IJPA.L | +4.20% |
-| ishares-pacific-ex-japan-index | CPJ1.L | +1.97% |
-| lg-all-stocks-gilt-index | IGLT.L | +0.07% |
-| lg-european-index | VERX.L | +2.67% |
+| hsbc-ftse-250-index | VMID.L | +4.87% |
+| ishares-corporate-bond-index | SLXX.L | +0.42% |
+| ishares-japan-equity-index | IJPA.L | +4.23% |
+| ishares-pacific-ex-japan-index | CPJ1.L | +2.04% |
+| lg-all-stocks-gilt-index | IGLT.L | +0.03% |
+| lg-european-index | VERX.L | +2.57% |
 | lg-future-world-esg-developed | SWDA.L | +1.92% |
-| lg-future-world-esg-uk | VUKE.L | +1.61% |
+| lg-future-world-esg-uk | VUKE.L | +1.58% |
 | lg-international-index | SWDA.L | +1.92% |
-| lg-uk-100-index | ISF.L | +1.58% |
-| lg-uk-index | VUKE.L | +1.61% |
-| lg-uk-mid-cap-index | VMID.L | +4.83% |
-| lg-us-index | VUSA.L | +1.67% |
-| vanguard-global-bond-index | VAGP.L | -0.12% |
-| vanguard-global-corporate-bond-index | VCPA.L | -1.49% |
-| vanguard-global-small-cap-index | WLDS.L | +1.92% |
+| lg-uk-100-index | ISF.L | +1.62% |
+| lg-uk-index | VUKE.L | +1.58% |
+| lg-uk-mid-cap-index | VMID.L | +4.87% |
+| lg-us-index | VUSA.L | +1.63% |
+| vanguard-global-bond-index | VAGP.L | -0.07% |
+| vanguard-global-corporate-bond-index | VCPA.L | -1.50% |
+| vanguard-global-small-cap-index | WLDS.L | +1.90% |
 
 ---
 
