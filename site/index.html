@@ -544,7 +544,7 @@
   </header>
 
   <div class="notadvice">
-    <strong>Not advice.</strong> Factual research and catalyst-based ideas to investigate — not personal financial advice or a recommendation to buy or sell. Past performance isn't a guide to future returns; investments and any income can fall as well as rise and you could get back less than you invest. Re-check the live HL factsheet before acting.
+    <strong>Personal project. Not advice.</strong> This is a personal research project, built and maintained for my own use — not a commercial or regulated service. Factual research and catalyst-based ideas to investigate, not personal financial advice or a recommendation to buy or sell. Past performance isn't a guide to future returns; investments and any income can fall as well as rise and you could get back less than you invest. Re-check the live HL factsheet before acting.
   </div>
 
   <!-- DATA STATUS — hidden unless the automatic load fails. The page fetches
@@ -1258,7 +1258,7 @@ function oldAuditChip(){
   if(!d) return '';
   const days = Math.floor((Date.now() - d) / 86400000);
   if(days <= OLD_AUDIT_DAYS) return '';
-  return `<span class="hchip bad" title="The loaded data's last audit run is ${days} days old — time to run the fund update, or you may be looking at a stale cache.">audit ${days}d old ⚠</span>`;
+  return `<span class="hchip bad" title="The last automated run stamped in this data is ${days} days old. The update is scheduled daily, so this means the workflow has stopped — check the Actions tab. GitHub also disables scheduled workflows after 60 days of repo inactivity.">audit ${days}d old ⚠</span>`;
 }
 
 /* ---------- render: data health strip ---------- */
@@ -1305,7 +1305,7 @@ function renderHealth(){
 
   const staleRows = stale.slice(0, 15).map(({f,s}) =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">1yr figure as at ${esc(s.label)}${f.performance.perfBasis?` (${BASIS_LABEL[f.performance.perfBasis]||f.performance.perfBasis})`:''}</span><span class="hs" style="color:var(--amber)">${s.days}d old</span></div>`).join('') +
-    (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more — this list is your next update cycle, stalest first.</span></div>` : '');
+    (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more, stalest first. The daily run does not refresh 1yr figures — it recomputes the rolling 1-month figure for tracker funds and rolls the catalyst calendar forward. These keep ageing until they are re-researched by hand.</span></div>` : '');
 
   const unverRows = unver.map(f =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">${esc((f.performance&&f.performance.notes)||'1yr not yet verified.')}</span><span class="hs" style="color:var(--amber)">NYV</span></div>`).join('');
@@ -1316,6 +1316,7 @@ function renderHealth(){
       <span style="margin-left:auto;color:var(--ink-soft);font-size:12px">details ▸</span>
     </div>
     <div class="health-body">
+      <div class="hrow"><span class="hd" style="font-style:italic">What the automation cannot vouch for. Every row below is a reason to check a specific figure against the live factsheet before relying on it.</span></div>
       ${incons.length?`<div class="health-sec-h" style="color:var(--oxblood)">Inconsistent — 1yr vs discrete disagree beyond any window explanation (live check)</div>${inconsRows}`:''}
       ${gaps.length?`<div class="health-sec-h">Window gaps — trailing 1yr runs months past the 31-Mar discrete year-end; the gap is the market move in between, not an error</div>${gaps.map(({f,m})=>`<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing (${BASIS_LABEL[f.performance.perfBasis]||''}) vs discrete year-end.</span><span class="hs" style="color:var(--ink-soft)">Δ ${fmtPP(m)}</span></div>`).join('')}`:''}
       ${unver.length?`<div class="health-sec-h">Unverified 1yr figures</div>${unverRows}`:''}

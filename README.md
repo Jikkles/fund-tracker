@@ -174,4 +174,8 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
 
 - **Everything here is public**, including the audit log. `anonymise.py` runs
   as a build step and fails the build rather than publishing a personal
-  reference.
+  reference. It also refuses internal-process vocabulary — a fund note once
+  shipped reading "top of the manual work order — an HL screenshot or a
+  Claude in Chrome run would resolve it", which is a note to the maintainer,
+  not information about the fund. Those are refused rather than rewritten:
+  the sentence usually needs rethinking, not a word swapped.

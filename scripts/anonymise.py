@@ -47,6 +47,47 @@ REWRITES: list[tuple[str, str]] = [
 ]
 
 
+# Vocabulary that belongs to how the desk is maintained, not to the funds.
+# A note reading "top of the manual work order - an HL screenshot or a Claude
+# in Chrome run would resolve it" shipped to the public page inside a fund's
+# performance notes. These are refused rather than rewritten: the surrounding
+# sentence usually needs rethinking, not a word swapped, so the build stops
+# and a human decides what the reader actually needs to know.
+INTERNAL_TERMS = [
+    r"\bclaude\b",
+    r"\bchatgpt\b",
+    r"\bcopilot\b",
+    r"\bcursor\b",
+    r"\bwork order\b",
+    r"\bscreenshot",
+    r"\buploaded\b",
+    r"\bpaste[ds]?\b",
+    r"\bre-?attempted\b",
+    r"\bmy work\b",
+]
+
+# Phrases that read as internal but are legitimate on a public page: the audit
+# summary's own claim that no model was involved, and notes explaining that a
+# figure needs a factsheet or screenshot to confirm.
+INTERNAL_ALLOWED = [
+    "deterministic, no LLM",
+    "live factsheet or screenshot confirms",
+]
+
+
+def find_internal(text: str) -> list[str]:
+    """Return context snippets for any internal-process vocabulary found."""
+    probe = text
+    for phrase in INTERNAL_ALLOWED:
+        probe = probe.replace(phrase, "")
+    out = []
+    for pattern in INTERNAL_TERMS:
+        for m in re.finditer(pattern, probe, re.I):
+            lo, hi = max(0, m.start() - 80), m.end() + 80
+            out.append(probe[lo:hi].replace("\n", " "))
+    return out
+
+
 def anonymise(text: str) -> tuple[str, int]:
     """Return (rewritten_text, replacement_count)."""
     # 1. Mask protected manager names.
@@ -101,6 +142,15 @@ def main() -> int:
               f"add a rule to REWRITES", file=sys.stderr)
         for m in re.finditer(r".{0,70}\bTom\b.{0,70}", probe):
             print(f"    ...{m.group(0)}...", file=sys.stderr)
+        return 1
+
+    internal = find_internal(cleaned)
+    if internal:
+        print(f"ERROR: {len(internal)} internal-process reference(s) would be "
+              f"published. Rewrite the note to say what the reader needs, not "
+              f"what the maintainer still has to do.", file=sys.stderr)
+        for snippet in internal[:10]:
+            print(f"    ...{snippet}...", file=sys.stderr)
         return 1
 
     dst.write_text(cleaned, encoding="utf-8")

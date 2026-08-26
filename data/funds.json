@@ -4111,7 +4111,7 @@
             "benchmark": "—"
           }
         ],
-        "notes": "Has underperformed plain UK trackers since launch due partly to energy/tobacco exclusions. Current 1/3/5yr to confirm. | 1yr not fetchable from Fidelity/Trustnet (fund does not subscribe); only stale reference found was FE via Lloyds (+13.13% as at 15 Oct 2025 — too old to use). Pull the current figure from the HL tracker Shortlist page. Checked 2 Jul 2026. | 12 Jul 26: re-attempted — still not fetchable. Searches surface only L&G's JS-rendered fund centre, Bloomberg (no figures), and ESG-methodology factsheet PDFs with no performance table; fund is not on Fidelity or Trustnet. Remains top of the manual work order — an HL screenshot or a Claude in Chrome run on the L&G fund centre page would resolve it.",
+        "notes": "Has underperformed plain UK trackers since launch due partly to energy/tobacco exclusions. Current 1/3/5yr to confirm. | 1yr not fetchable from any free source: the fund does not subscribe to Fidelity or Trustnet, L&G's own fund centre is JS-rendered, Bloomberg carries no figures and the ESG-methodology factsheet PDFs have no performance table. The only reference found was FE via Lloyds (+13.13% as at 15 Oct 2025) — too old to use. Re-checked 12 Jul 2026, still not fetchable. Verify on the HL factsheet before relying on any figure for this fund.",
         "perfAsAt": "2026-07-02",
         "perfAsAtSource": "parsed from performance notes",
         "perfBasis": "FID"
