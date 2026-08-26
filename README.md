@@ -45,6 +45,15 @@ the fund's return.
 The desk stays honest *by construction* — there is no prompt to disregard and
 no model to drift.
 
+**The page loads itself.** `index.html` fetches `funds.json` from the same
+folder on every visit, with `cache: 'no-store'` and a cache-busting query so
+neither the browser nor GitHub's CDN can serve yesterday's copy. There is no
+file picker and no drag-and-drop — open the URL and it is current. A copy is
+kept in `localStorage` purely so a repeat visit paints instantly and still
+shows something offline; the fetched file replaces it unconditionally the
+moment it arrives, and the header chip says `live data` or `offline copy` so
+you always know which one you are looking at.
+
 **Catalysts roll forward automatically.** Central bank dates are hardcoded from
 published calendars and marked `(confirmed)`. Earnings dates are fetched live
 where a company has confirmed one, and fall back to a pattern estimate marked

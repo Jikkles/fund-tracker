@@ -6,6 +6,15 @@ on:
     # by an hour or more under load - this is not a precise clock.
     - cron: "0 7 * * *"
   workflow_dispatch:            # run manually from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      # Redeploy as soon as the page or the workflow itself changes, so an
+      # edit to the site does not sit undeployed until the next 07:00 run.
+      # Pushes made by this workflow's own bot use GITHUB_TOKEN, which does
+      # not re-trigger workflows - no loop.
+      - "site/**"
+      - ".github/workflows/daily-update.yml"
 
 # Public repos get unlimited GitHub Actions minutes, so a daily run costs
 # nothing. Scheduled workflows are auto-disabled after 60 days of repo

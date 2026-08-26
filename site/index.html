@@ -496,16 +496,13 @@
     <strong>Not advice.</strong> Factual research and catalyst-based ideas to investigate — not personal financial advice or a recommendation to buy or sell. Past performance isn't a guide to future returns; investments and any income can fall as well as rise and you could get back less than you invest. Re-check the live HL factsheet before acting.
   </div>
 
-  <!-- DATA LOADER — hidden by default. The page auto-fetches funds.json from
-       this same folder on every load, so this UI only appears if that fetch
-       fails (e.g. opened as a local file:// page rather than served over
-       http/https, or a genuine network problem). -->
+  <!-- DATA STATUS — hidden unless the automatic load fails. The page fetches
+       funds.json from this same folder on every visit and the daily GitHub
+       Action republishes that file, so there is nothing to load by hand. -->
   <div class="loader hide" id="loader">
-    <h3>Couldn't load the data automatically</h3>
-    <p>That's expected if you opened this file directly rather than via a web server (Chrome blocks local file fetches). Drag <code>funds.json</code> anywhere on this page, or pick it manually below.</p>
-    <input type="file" id="fileInput" accept=".json,application/json" style="display:none">
-    <button class="btn" onclick="document.getElementById('fileInput').click()">Choose funds.json</button>
-    <button class="btn ghost" onclick="clearData()">Clear saved data</button>
+    <h3>Couldn't load the latest data</h3>
+    <p id="loaderMsg">The page couldn't reach <code>funds.json</code>. That is usually a temporary network problem — try again in a moment.</p>
+    <button class="btn" onclick="location.reload()">Retry</button>
   </div>
   <div class="databar" id="databar"></div>
 
@@ -566,8 +563,13 @@ const LS_KEY = "wsl_funds_data_v1";
 let DATA = null, active = "all", q = "", sortMode = "default";
 let rankMode = "abs", viewMode = "cards", tSort = {k:"p1", d:"desc"};
 
-/* ---------- loading ---------- */
-let DATA_SOURCE = null; // {kind:'file'|'drop'|'fetch'|'cache', at: ISO string}
+/* ---------- loading ----------
+   This page is served as a website: funds.json sits next to index.html and is
+   republished by the daily GitHub Action. Every visit fetches it fresh. The
+   localStorage copy exists only so a repeat visit paints instantly and still
+   shows something when the network is down - the fetched file always wins once
+   it arrives. There is no manual file loading. */
+let DATA_SOURCE = null; // {kind:'fetch'|'cache', at: ISO string}
 
 function parseRunDate(obj){
   // "6 Jul 2026" -> Date; returns null if unparseable/absent
@@ -578,32 +580,36 @@ function parseRunDate(obj){
 }
 function loadFromObject(obj, kind){
   DATA = obj;
-  DATA_SOURCE = {kind: kind || 'file', at: new Date().toISOString()};
+  DATA_SOURCE = {kind: kind || 'fetch', at: new Date().toISOString()};
   try { localStorage.setItem(LS_KEY, JSON.stringify(obj)); } catch(e){}
   try { localStorage.setItem(LS_KEY + "_src", JSON.stringify(DATA_SOURCE)); } catch(e){}
   renderAll();
 }
-function clearData(){
-  try { localStorage.removeItem(LS_KEY); } catch(e){}
-  DATA = null; location.reload();
+function showLoadError(msg){
+  const m = document.getElementById('loaderMsg');
+  if(msg && m) m.textContent = msg;
+  document.getElementById('loader').classList.remove('hide');
 }
-document.getElementById('fileInput').addEventListener('change', e=>{
-  const f = e.target.files[0]; if(!f) return;
-  const r = new FileReader();
-  r.onload = ()=>{ try { loadFromObject(JSON.parse(r.result), 'file'); } catch(err){ alert("Couldn't read that JSON: "+err.message); } };
-  r.readAsText(f);
-});
-// drag & drop
-["dragover","drop"].forEach(ev=>document.addEventListener(ev,e=>e.preventDefault()));
-document.addEventListener('drop', e=>{
-  const f = e.dataTransfer.files[0]; if(!f) return;
-  const r = new FileReader();
-  r.onload = ()=>{ try { loadFromObject(JSON.parse(r.result), 'drop'); } catch(err){ alert("Couldn't read that JSON: "+err.message); } };
-  r.readAsText(f);
-});
-// on open: render cache immediately for speed, then fetch funds.json and
-// auto-upgrade if the folder copy has a NEWER auditLog.runDate than the cache.
-// (fetch of a local file fails silently over file:// in Chrome — drag-drop remains the fallback there.)
+
+// cache:'no-store' plus a cache-busting query, so neither the browser nor a
+// CDN copy of funds.json can mask the morning's update.
+function fetchLatest(){
+  return fetch('funds.json?t=' + Date.now(), {cache:'no-store'})
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)));
+}
+
+// Manual refresh from the data bar - re-fetches without a full page reload.
+function refreshNow(){
+  const bar = document.getElementById('databar');
+  if(bar) bar.innerHTML = '<span>Refreshing…</span>';
+  fetchLatest()
+    .then(obj => loadFromObject(obj, 'fetch'))
+    .catch(() => { renderAll(); showLoadError("Refresh failed — still showing the data already on screen."); });
+}
+
+// On open: paint the cached copy immediately for speed, then fetch the live
+// funds.json and replace it. The served file is canonical, so it wins
+// unconditionally - no date comparison, no way to get stuck on stale data.
 window.addEventListener('DOMContentLoaded', ()=>{
   let cached = null, cachedSrc = null;
   try { cached = localStorage.getItem(LS_KEY); } catch(e){}
@@ -615,15 +621,10 @@ window.addEventListener('DOMContentLoaded', ()=>{
       renderAll();
     } catch(e){ cached = null; }
   }
-  fetch('funds.json').then(r=>r.ok?r.json():Promise.reject()).then(obj=>{
-    if(!cached){ loadFromObject(obj, 'fetch'); return; }
-    const fresh = parseRunDate(obj), have = parseRunDate(DATA);
-    if(fresh && (!have || fresh > have)) loadFromObject(obj, 'fetch');
-  }).catch(()=>{
-    // Auto-fetch failed (local file:// page, or a genuine network issue).
-    // If we have nothing on screen at all, reveal the manual-load fallback
-    // rather than leaving the page stuck on "Loading…" forever.
-    if(!cached) document.getElementById('loader').classList.remove('hide');
+  fetchLatest().then(obj => loadFromObject(obj, 'fetch')).catch(err => {
+    // Nothing on screen at all - say so rather than sitting on "Loading…".
+    // If the cache painted, leave it up; the provenance chip marks it offline.
+    if(!cached) showLoadError("The page couldn't reach funds.json (" + err.message + "). That is usually a temporary network problem — try again in a moment.");
   });
 });
 
@@ -909,10 +910,7 @@ const OLD_AUDIT_DAYS = 35;
 function provenanceChip(){
   if(!DATA_SOURCE) return '';
   const k = DATA_SOURCE.kind;
-  const label = k === 'cache' ? 'loaded from cache' :
-                k === 'fetch' ? 'auto-loaded funds.json' :
-                k === 'drop'  ? 'file dropped just now' :
-                                'file picked just now';
+  const label = k === 'cache' ? 'offline copy' : 'live data';
   let when = '';
   if(k === 'cache' && DATA_SOURCE.at){
     const days = Math.floor((Date.now() - new Date(DATA_SOURCE.at)) / 86400000);
@@ -920,8 +918,8 @@ function provenanceChip(){
   }
   const cls = k === 'cache' ? 'warn' : 'ok';
   const tip = k === 'cache'
-    ? 'This is the JSON from a previous session, NOT the folder copy. Drag a newer funds.json onto the page to update.'
-    : 'This data was read fresh this session.';
+    ? "The live file couldn't be fetched, so this is the copy this browser saved on an earlier visit. Reload once you're back online."
+    : 'Fetched fresh from the site on this visit.';
   return `<span class="hchip ${cls}" title="${tip}">${label}${when}</span>`;
 }
 function oldAuditChip(){
@@ -1436,7 +1434,7 @@ function renderAll(){
   }
   document.getElementById('databar').innerHTML =
     `<span class="ok">● Data loaded</span><span>${(DATA.funds||[]).length} funds</span>`+
-    `<button class="btn ghost" style="margin:0;padding:6px 14px;border-radius:20px;font-size:12px;" onclick="document.getElementById('fileInput').click()">Load different file</button>`;
+    `<button class="btn ghost" style="margin:0;padding:6px 14px;border-radius:20px;font-size:12px;" onclick="refreshNow()">Refresh</button>`;
   renderIntro();
   renderHealth();
   renderIntelligence();
