@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "The whole list — full factsheet depth.",
-    "asAt": "26 Aug 2026 (automated deterministic run); 36 of 50 funds priced from their own NAV",
+    "asAt": "26 Aug 2026 (automated deterministic run); 37 of 50 funds priced from their own NAV",
     "built": "26 Aug 2026 (automated daily run)",
     "listTotal": 50,
     "sources": "Yahoo Finance (fund NAVs) · HL · FE/Trustnet · Morningstar · Fidelity · Artemis · Janus Henderson · BofA/InvestmentNews · Columbia Threadneedle · AJ Bell · interactive investor · House of Commons Library · FundsLibrary · company filings",
@@ -256,7 +256,7 @@
       "asAt": "22 Jun 2026 (portfolio 28 Feb 2026; performance to 31 Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -433,7 +433,7 @@
       "asAt": "22 Jun 2026 (performance to 30 Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -624,7 +624,7 @@
       "asAt": "22 Jun 2026 (portfolio 28 Feb 2026; performance to 31 Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -821,7 +821,7 @@
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -1016,7 +1016,7 @@
       "asAt": "22 Jun 2026 (portfolio 31 Dec 2025)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -1218,7 +1218,7 @@
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026; performance to 27 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -1423,8 +1423,8 @@
       "sources": "HL factsheet & May 2026 update (ISIN GB00BJS8SJ34)",
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
-        "value": "+1.74%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%.",
+        "value": "+1.99%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:SWDA.L",
@@ -1584,8 +1584,8 @@
       "sources": "HL factsheet (ISIN GB00B2Q6HW61)",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "value": "+1.74%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE World ex-UK; proxy is MSCI World, which includes the UK at a small weight. Market context: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%.",
+        "value": "+1.99%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE World ex-UK; proxy is MSCI World, which includes the UK at a small weight. Market context: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:SWDA.L",
@@ -1738,8 +1738,8 @@
       "sources": "HL factsheet & March 2026 update",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "value": "+1.74%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and optimised; expect divergence from a plain developed-world index. Market context: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%.",
+        "value": "+1.99%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and optimised; expect divergence from a plain developed-world index. Market context: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%.",
         "confidence": "computed from a loose GBP ETF proxy - treat as directional only",
         "asAt": "26 Aug 2026",
         "basis": "proxy:SWDA.L",
@@ -1900,8 +1900,8 @@
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
       "asAt": "25 Jun 2026",
       "oneMonth": {
-        "value": "+1.73%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares MSCI World Small Cap UCITS ETF (GBP) (WLDS.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.64%, FTSE 100 +1.16%, Euro STOXX 50 +3.27%, GBP/USD +1.89%.",
+        "value": "+1.99%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares MSCI World Small Cap UCITS ETF (GBP) (WLDS.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.67%, FTSE 100 +1.18%, Euro STOXX 50 +3.41%, GBP/USD +1.89%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:WLDS.L",
@@ -2054,7 +2054,7 @@
       "asAt": "22 Jun 2026 (performance to 24 Feb 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -2232,7 +2232,7 @@
       "asAt": "25 Jun 2026",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -2406,7 +2406,7 @@
       "asAt": "22 Jun 2026 (portfolio Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -2586,7 +2586,7 @@
       "asAt": "22 Jun 2026 (holdings 31 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -2760,7 +2760,7 @@
       "asAt": "22 Jun 2026 (holdings 30 Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -2893,7 +2893,7 @@
       "asAt": "22 Jun 2026 (performance to ~Mar 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -3079,7 +3079,7 @@
       "asAt": "22 Jun 2026 (portfolio Mar 2026; performance to 29 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -3245,8 +3245,8 @@
       "sources": "HL factsheet",
       "asAt": "22 Jun 2026 (portfolio Mar 2026)",
       "oneMonth": {
-        "value": "+1.76%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE All-Share; proxy is FTSE 100, so mid/small-cap divergence is not captured. Market context: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%.",
+        "value": "+1.80%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE All-Share; proxy is FTSE 100, so mid/small-cap divergence is not captured. Market context: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VUKE.L",
@@ -3393,8 +3393,8 @@
       "sources": "HL fund page; FE Trustnet; HL Shortlist tracker page; 25 Jun 2026",
       "asAt": "25 Jun 2026",
       "oneMonth": {
-        "value": "+5.15%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%.",
+        "value": "+5.01%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VMID.L",
@@ -3502,8 +3502,8 @@
       "sources": "HL tracker Shortlist page",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "value": "+1.76%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and will diverge from a plain UK index, particularly when miners, tobacco or energy drive the market. Market context: FTSE 100 +1.16%, FTSE 250 +4.47%, Gold (USD/oz) +14.62%, GBP/USD +1.89%.",
+        "value": "+1.82%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and will diverge from a plain UK index, particularly when miners, tobacco or energy drive the market. Market context: FTSE 100 +1.18%, FTSE 250 +4.40%, Gold (USD/oz) +14.77%, GBP/USD +1.89%.",
         "confidence": "computed from a loose GBP ETF proxy - treat as directional only",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VUKE.L",
@@ -3764,8 +3764,8 @@
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
       "asAt": "22 Jun 2026 (price 12 Jun 2026; portfolio 31 Mar 2026)",
       "oneMonth": {
-        "value": "+1.43%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard S&P 500 UCITS ETF (GBP) (VUSA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE USA; proxy is S&P 500. Very similar universe. GBP-denominated, so the figure includes the USD/GBP effect a UK holder actually experiences. Market context: S&P 500 +3.64%, Nasdaq Composite +4.92%, US 10yr yield +0.32%, GBP/USD +1.89%.",
+        "value": "+1.63%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard S&P 500 UCITS ETF (GBP) (VUSA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE USA; proxy is S&P 500. Very similar universe. GBP-denominated, so the figure includes the USD/GBP effect a UK holder actually experiences. Market context: S&P 500 +3.67%, Nasdaq Composite +4.97%, US 10yr yield +0.37%, GBP/USD +1.89%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VUSA.L",
@@ -3963,7 +3963,7 @@
       "asAt": "22 Jun 2026 (price 23 Jun 2026; portfolio 30 Apr 2026 for sectors; holdings ~Oct 2025 proxy)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, Nasdaq Composite +4.92%, US 10yr yield +0.32%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, Nasdaq Composite +4.97%, US 10yr yield +0.37%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -4153,7 +4153,7 @@
       "asAt": "22 Jun 2026 (price 14 Apr 2026 — lagged; portfolio 31 Dec 2025)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, Nasdaq Composite +4.92%, US 10yr yield +0.32%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, Nasdaq Composite +4.97%, US 10yr yield +0.37%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -4349,7 +4349,7 @@
       "asAt": "22 Jun 2026 (price 17 Jun 2026; portfolio 28 Feb 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.64%, Nasdaq Composite +4.92%, US 10yr yield +0.32%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.67%, Nasdaq Composite +4.97%, US 10yr yield +0.37%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -4512,7 +4512,7 @@
       "asAt": "22 Jun 2026 (performance to 15 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.32%, Brent crude -2.64%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.37%, Brent crude -2.09%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -4689,7 +4689,7 @@
       "asAt": "22 Jun 2026 (performance to 14 Apr 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.32%, Brent crude -2.64%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.37%, Brent crude -2.09%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -4847,7 +4847,7 @@
       "asAt": "22 Jun 2026",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.32%, Brent crude -2.64%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.37%, Brent crude -2.09%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -4991,7 +4991,7 @@
       "asAt": "22 Jun 2026 (performance to 15 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.32%, Brent crude -2.64%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.37%, Brent crude -2.09%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5138,7 +5138,7 @@
       "asAt": "22 Jun 2026 (performance to 8 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.32%, Brent crude -2.64%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.37%, Brent crude -2.09%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5284,7 +5284,7 @@
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.32%, Brent crude -2.64%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield +0.37%, Brent crude -2.09%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5423,7 +5423,7 @@
       "asAt": "22 Jun 2026 (performance to 14 May 2026)",
       "oneMonth": {
         "value": "-1.69%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Corporate Bond UCITS ETF GBP-hedged (VCPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield +0.32%, Brent crude -2.64%.",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Corporate Bond UCITS ETF GBP-hedged (VCPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield +0.37%, Brent crude -2.09%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VCPA.L",
@@ -5640,7 +5640,7 @@
       "asAt": "22 Jun 2026 (performance to 12 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, S&P 500 +3.64%, US 10yr yield +0.32%, Gold (USD/oz) +14.62%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, S&P 500 +3.67%, US 10yr yield +0.37%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -5769,7 +5769,7 @@
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, S&P 500 +3.64%, US 10yr yield +0.32%, Gold (USD/oz) +14.62%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, S&P 500 +3.67%, US 10yr yield +0.37%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -5903,7 +5903,7 @@
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, S&P 500 +3.64%, US 10yr yield +0.32%, Gold (USD/oz) +14.62%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, S&P 500 +3.67%, US 10yr yield +0.37%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -6029,7 +6029,7 @@
       "asAt": "22 Jun 2026 (performance to 5 May 2026)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.16%, S&P 500 +3.64%, US 10yr yield +0.32%, Gold (USD/oz) +14.62%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +1.18%, S&P 500 +3.67%, US 10yr yield +0.37%, Gold (USD/oz) +14.77%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -6235,8 +6235,8 @@
       "sources": "HL factsheet, HL tracker Wealth Shortlist, Broadridge",
       "asAt": "27 May 2026 (performance); 30 Apr 2026 (holdings)",
       "oneMonth": {
-        "value": "+2.81%",
-        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE Developed Europe ex-UK UCITS ETF (GBP) (VERX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: Euro STOXX 50 +3.27%, FTSE 100 +1.16%, GBP/USD +1.89%.",
+        "value": "+2.91%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE Developed Europe ex-UK UCITS ETF (GBP) (VERX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: Euro STOXX 50 +3.41%, FTSE 100 +1.18%, GBP/USD +1.89%.",
         "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
         "basis": "proxy:VERX.L",
@@ -6453,7 +6453,7 @@
       "asAt": "27 Mar 2026 (performance - note stale); 31 Jan 2026 (holdings); 28 Feb 2026 (yield)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.27%, FTSE 100 +1.16%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.41%, FTSE 100 +1.18%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -6657,7 +6657,7 @@
       "asAt": "24 Jun 2026 (performance); 29 Feb 2024 (holdings - STALE)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.27%, FTSE 100 +1.16%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.41%, FTSE 100 +1.18%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       }
@@ -6729,7 +6729,14 @@
         "notes": "HL factsheet, discrete returns to 24 Jun 2026. HL Europe sector review cited +6.00% for year to end-May 2026 (different as-at date). Cumulative derived - verify. Charges can be taken from capital, which may flatter yield figures.",
         "perfAsAt": "2026-06-24",
         "perfAsAtSource": "parsed from 1yr period label",
-        "perfBasis": "DRV"
+        "perfBasis": "DRV",
+        "nav1w": "+1.59%",
+        "nav1m": "+2.71%",
+        "nav1yr": "+14.42%",
+        "nav3yr": "+41.02%",
+        "nav5yr": "+63.24%",
+        "navAsAt": "2026-08-24",
+        "navPoints": 1224
       },
       "holdings": [
         {
@@ -6864,10 +6871,13 @@
       "asAt": "24 Jun 2026 (performance); 30 Apr 2026 (holdings); 31 May 2026 (yield)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.27%, FTSE 100 +1.16%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.41%, FTSE 100 +1.18%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
-      }
+      },
+      "navSymbol": "0P00016CNI.L",
+      "navName": "Polar Cptl Eurp Ex UK Inc S GBP Hdg Acc",
+      "navMatch": "name match 80%"
     },
     {
       "id": "blackrock-continental-european-income",
@@ -7001,7 +7011,7 @@
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.27%, FTSE 100 +1.16%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +3.41%, FTSE 100 +1.18%, GBP/USD +1.89%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "26 Aug 2026"
       },
@@ -8600,7 +8610,7 @@
       "sources": "HL factsheet, BlackRock holdings data",
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
-        "value": "+4.57%",
+        "value": "+4.79%",
         "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Japan IMI UCITS ETF (GBP) (IJPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Japan; proxy is MSCI Japan IMI, which reaches further down the cap scale. Market context: Nikkei 225 +2.05%, Hang Seng +1.77%, GBP/USD +1.89%.",
         "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
@@ -8619,26 +8629,6 @@
     "runDate": "26 Aug 2026",
     "summary": "26 Aug 2026 automated run (deterministic, no LLM). Computed real figures for 12 tracker funds from GBP ETF proxies; 38 active funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 48 catalyst entries (2 confirmed dates, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age. CALENDAR WARNING: FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
     "findings": [
-      {
-        "fundId": "ALL",
-        "fundName": "1-month change patch (18 Aug cycle)",
-        "check": "oneMonth-fill",
-        "severity": "INFO",
-        "description": "Overwrote oneMonth field on all 63 funds for a 3-week window (28 Jul -> 18 Aug 2026), longer than the usual ~10-day cadence: 17 index/yield-derived figures, 5 fund-specific macro flags, 41 directional-only estimates. Dominant driver: a broad risk-on reversal — Korea's semiconductor crash fully unwound, US and European indices at record highs, gold at record highs. No fund-specific % invented for active funds beyond labelled directional ranges.",
-        "status": "corrected",
-        "correctedValue": null,
-        "source": "Market Pulse macro research this cycle (FTSE 100/250, S&P 500/Nasdaq/Russell, STOXX 600/DAX/CAC, KOSPI/Nikkei, gold spot, UK gilt & US Treasury yields, Fed/BoE expectations) — no fund-level factsheet fetch performed this cycle"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Staleness escalation",
-        "check": "STALENESS-OVERDUE",
-        "severity": "HIGH",
-        "description": "The last full gap-fill/verification sweep ran 12 Jul 2026 and is now 37 days old. Every 1yr figure, discrete return array, ISIN and inconsistency flag in this file dates from that run or earlier. Four oneMonth cycles have run since without touching that data by design. Given the scale of market moves in that period (Korea crash and full recovery, US/Europe records, gold +10.5% to record highs), the 1yr figures are likely materially out of date. RECOMMENDATION: run a full staleness/verification sweep next session.",
-        "status": "flagged",
-        "correctedValue": null,
-        "source": null
-      },
       {
         "fundId": "ishares-pacific-ex-japan-index",
         "fundName": "iShares Pacific ex Japan Equity Index",
@@ -8833,6 +8823,24 @@
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": "Computed 17 tracker figures from priced GBP ETF proxies over a 30-day window; 46 active funds left unverified by design. 62 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Calendar maintenance",
+        "check": "CALENDAR-LOW",
+        "severity": "MEDIUM",
+        "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Computed 12 tracker figures from priced GBP ETF proxies over a 30-day window; 38 active funds left unverified by design. 48 catalyst dates refreshed.",
         "status": "corrected",
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
       },
