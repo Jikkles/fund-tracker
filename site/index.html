@@ -413,6 +413,39 @@
   .pulse-box { background: var(--paper-2); overflow: hidden; }
   .pulse-box-head { font-family: "Inter", sans-serif; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; padding: 14px 20px; background: rgba(0,0,0,.15); }
 
+  /* ---- index chart ---- */
+  .mkt { border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2);
+         margin: 20px 0; overflow: hidden; }
+  .mkt-tabs { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--rule);
+              background: rgba(0,0,0,.15); scrollbar-width: thin; }
+  .mkt-tabs button { flex: 0 0 auto; background: transparent; border: none; border-bottom: 2px solid transparent;
+                     color: var(--ink-soft); font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
+                     padding: 11px 16px; cursor: pointer; white-space: nowrap; transition: color .12s, background .12s; }
+  .mkt-tabs button:hover { color: var(--ink); background: var(--hover-bg); }
+  .mkt-tabs button.on { color: var(--ink); border-bottom-color: var(--blue); background: var(--paper-2); }
+  .mkt-head { display: flex; align-items: flex-end; gap: 20px; flex-wrap: wrap; padding: 18px 20px 0; }
+  .mkt-name { font-family: "Inter", sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+  .mkt-tick { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; color: var(--ink-soft); }
+  .mkt-price { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 30px; font-weight: 600;
+               letter-spacing: -.02em; line-height: 1; }
+  .mkt-chg { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 15px; font-weight: 600; }
+  .mkt-asof { font-size: 11px; color: var(--ink-soft); margin: 6px 0 0 20px; }
+  .mkt-ranges { display: flex; gap: 4px; flex-wrap: wrap; padding: 14px 20px 4px; }
+  .mkt-ranges button { background: transparent; border: none; border-radius: 6px; color: var(--ink-soft);
+                       font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600; padding: 5px 12px;
+                       cursor: pointer; transition: background .12s, color .12s; }
+  .mkt-ranges button:hover { background: var(--hover-bg); color: var(--ink); }
+  .mkt-ranges button.on { background: var(--blue); color: #06263a; }
+  .mkt-plot { position: relative; padding: 4px 8px 12px; overflow-x: auto; }
+  .mkt-plot svg { display: block; touch-action: pan-y; }
+  .mkt-tip { position: absolute; pointer-events: none; opacity: 0; transition: opacity .1s;
+             background: var(--paper); border: 1px solid var(--hover-border); border-radius: 8px;
+             padding: 7px 11px; font-size: 12px; box-shadow: 0 6px 20px var(--shadow); white-space: nowrap; z-index: 3; }
+  .mkt-tip b { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px; display: block; }
+  .mkt-tip span { color: var(--ink-soft); font-size: 11px; }
+  .mkt-note { padding: 0 20px 16px; font-size: 11px; color: var(--ink-soft); }
+  @media(max-width:640px) { .mkt-price { font-size: 24px; } .mkt-head { gap: 12px; } }
+
   /* market pulse rows */
   .mp-row { display: grid; grid-template-columns: 128px 1fr; gap: 16px; align-items: start;
             padding: 13px 20px; border-bottom: 1px solid var(--rule); transition: background .12s; }  .mp-row:last-child { border-bottom: none; }
@@ -507,6 +540,10 @@
     <button class="btn" onclick="location.reload()">Retry</button>
   </div>
   <div class="databar" id="databar"></div>
+
+  <!-- INDEX CHART — rendered from market.json, which is fetched separately from
+       funds.json so a market-data outage cannot take the fund desk down with it. -->
+  <div id="marketchart"></div>
 
   <!-- INTRO (rendered from data) -->
   <div id="intro"></div>
@@ -623,11 +660,288 @@ window.addEventListener('DOMContentLoaded', ()=>{
       renderAll();
     } catch(e){ cached = null; }
   }
+  fetchMarket();
   fetchLatest().then(obj => loadFromObject(obj, 'fetch')).catch(err => {
     // Nothing on screen at all - say so rather than sitting on "Loading…".
     // If the cache painted, leave it up; the provenance chip marks it offline.
     if(!cached) showLoadError("The page couldn't reach funds.json (" + err.message + "). That is usually a temporary network problem — try again in a moment.");
   });
+});
+
+/* ---------- index chart ----------
+   market.json carries four fetched series per index (1d, 5d, 1y, 5y). The
+   1M / 6M / YTD ranges are sliced out of the 1y series here rather than
+   fetched, which keeps the file to four requests per index instead of seven.
+
+   x is positioned by bar index, not by timestamp, so overnight and weekend
+   gaps do not open dead space in the line - the same thing a quote page does. */
+let MKT = null, mktId = null, mktRange = '1d', mktResizeTimer = null;
+
+const MKT_RANGES = [
+  ['1d','1D'], ['5d','5D'], ['1m','1M'], ['6m','6M'],
+  ['ytd','YTD'], ['1y','1Y'], ['5y','5Y']
+];
+
+function fetchMarket(){
+  return fetch('market.json?t=' + Date.now(), {cache:'no-store'})
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(obj => { MKT = obj; renderChart(); })
+    .catch(() => { /* the chart is additive - the desk stands without it */ });
+}
+
+function mktCurrent(){
+  if(!MKT || !MKT.indices || !MKT.indices.length) return null;
+  return MKT.indices.find(x => x.id === mktId) || MKT.indices[0];
+}
+
+/* Resolve a range key to {t, c, base}. base is the value the change is
+   measured from: the previous session's close for 1D (so a flat open still
+   reads correctly), otherwise the first point in view. */
+function mktSeries(idx, range){
+  const daily = idx.series['1y'];
+  let src = null, from = null;
+
+  if(range === '1d' || range === '5d'){
+    src = idx.series[range];
+  } else if(range === '5y'){
+    src = idx.series['5y'] || daily;
+  } else {
+    src = daily;
+    const now = Date.now() / 1000;
+    if(range === '1m')  from = now - 31 * 86400;
+    if(range === '6m')  from = now - 183 * 86400;
+    if(range === 'ytd') from = new Date(new Date().getFullYear(), 0, 1).getTime() / 1000;
+  }
+  if(!src || !src.c || src.c.length < 2) return null;
+
+  let t = src.t, c = src.c;
+  if(from !== null){
+    let i = 0; while(i < t.length && t[i] < from) i++;
+    // Keep at least two points: a young YTD in early January would otherwise
+    // slice down to nothing.
+    if(i > t.length - 2) i = Math.max(0, t.length - 2);
+    t = t.slice(i); c = c.slice(i);
+  }
+  if(c.length < 2) return null;
+
+  const base = (range === '1d' && typeof src.prevClose === 'number')
+    ? src.prevClose : c[0];
+  return { t, c, base };
+}
+
+function mktNum(v, ref){
+  // ref lets a small delta borrow the precision of the level it moved, so a
+  // 0.60 point move on a 10,885 index reads -0.60 and not -0.6000.
+  const d = Math.abs(ref === undefined ? v : ref) < 10 ? 4 : 2;
+  return v.toLocaleString('en-GB', {minimumFractionDigits:d, maximumFractionDigits:d});
+}
+function mktStamp(ts, tz, mode){
+  const d = new Date(ts * 1000);
+  const o = mode === 'time'  ? {hour:'2-digit', minute:'2-digit', hour12:false}
+          : mode === 'day'   ? {day:'numeric', month:'short'}
+          : mode === 'month' ? {month:'short', year:'2-digit'}
+          : mode === 'date'  ? {day:'numeric', month:'short', year:'numeric'}
+          : {day:'numeric', month:'short', year:'numeric',
+             hour:'2-digit', minute:'2-digit', hour12:false};
+  try { return d.toLocaleString('en-GB', Object.assign({timeZone: tz}, o)); }
+  catch(e){ return d.toLocaleString('en-GB', o); }
+}
+function niceTicks(lo, hi, want){
+  const span = hi - lo;
+  if(!(span > 0)) return [lo];
+  const mag = Math.pow(10, Math.floor(Math.log10(span / want)));
+  const norm = (span / want) / mag;
+  const step = (norm <= 1 ? 1 : norm <= 2 ? 2 : norm <= 5 ? 5 : 10) * mag;
+  const out = [];
+  for(let v = Math.ceil(lo / step) * step; v <= hi + step * 1e-9; v += step) out.push(v);
+  return out;
+}
+
+/* y-window shared by the drawing and the hover maths, so the crosshair dot
+   always lands on the line rather than near it. */
+function mktBounds(ser){
+  let lo = Math.min(ser.base, ...ser.c), hi = Math.max(ser.base, ...ser.c);
+  if(hi === lo){ hi += 1; lo -= 1; }
+  const pad = (hi - lo) * 0.08;
+  return { lo: lo - pad, hi: hi + pad };
+}
+
+function mktChartSvg(idx, ser, width){
+  const W = Math.max(260, width), H = 300;
+  // A phone cannot spare 78px for the right-hand axis, and full precision
+  // labels do not fit there either - both shrink together below 560px.
+  const narrow = W < 560;
+  const padL = 10, padR = narrow ? 52 : 78, padT = 12, padB = 28;
+  const fs = narrow ? 10 : 11;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const c = ser.c, n = c.length;
+  const { lo, hi } = mktBounds(ser);
+
+  const X = i => padL + (n === 1 ? pw / 2 : i / (n - 1) * pw);
+  const Y = v => padT + (hi - v) / (hi - lo) * ph;
+
+  const up = c[n-1] >= ser.base;
+  const col = up ? 'var(--forest)' : 'var(--oxblood)';
+
+  let line = '';
+  for(let i = 0; i < n; i++){
+    line += (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(c[i]).toFixed(1);
+  }
+  const area = line + 'L' + X(n-1).toFixed(1) + ' ' + (padT+ph).toFixed(1)
+                    + 'L' + X(0).toFixed(1) + ' ' + (padT+ph).toFixed(1) + 'Z';
+
+  // y gridlines with right-hand labels, the way a quote page lays them out
+  let grid = '';
+  niceTicks(lo, hi, 5).forEach(v => {
+    const y = Y(v);
+    if(y < padT - 1 || y > padT + ph + 1) return;
+    const lab = (narrow && Math.abs(v) >= 1000)
+      ? Math.round(v).toLocaleString('en-GB') : mktNum(v);
+    grid += '<line x1="' + padL + '" y1="' + y.toFixed(1) + '" x2="' + (padL+pw).toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="var(--rule)" stroke-width="1" opacity=".35"/>'
+          + '<text x="' + (padL+pw+6).toFixed(1) + '" y="' + (y+4).toFixed(1) + '" fill="var(--ink-soft)" font-size="' + fs + '" font-family="JetBrains Mono, monospace">' + lab + '</text>';
+  });
+
+  const mode = mktRange === '1d' ? 'time' : mktRange === '5y' ? 'month' : 'day';
+  let xlab = '';
+  const ticks = Math.min(W < 420 ? 3 : W < 700 ? 4 : 6, n);
+  for(let k = 0; k < ticks; k++){
+    const i = Math.round(k / (ticks - 1 || 1) * (n - 1));
+    const anchor = k === 0 ? 'start' : k === ticks - 1 ? 'end' : 'middle';
+    xlab += '<text x="' + X(i).toFixed(1) + '" y="' + (H-9).toFixed(1) + '" fill="var(--ink-soft)" font-size="' + fs + '" text-anchor="' + anchor + '" font-family="JetBrains Mono, monospace">' + esc(mktStamp(ser.t[i], idx.tz, mode)) + '</text>';
+  }
+
+  const by = Y(ser.base);
+  const baseline = (by >= padT && by <= padT + ph)
+    ? '<line x1="' + padL + '" y1="' + by.toFixed(1) + '" x2="' + (padL+pw).toFixed(1) + '" y2="' + by.toFixed(1) + '" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="4 4" opacity=".7"/>'
+    : '';
+
+  // last-value pill on the right edge
+  const ly = Y(c[n-1]);
+  const pw2 = narrow ? 50 : 70;
+  const plab = (narrow && Math.abs(c[n-1]) >= 1000)
+    ? Math.round(c[n-1]).toLocaleString('en-GB') : mktNum(c[n-1]);
+  const pill = '<rect x="' + (padL+pw+2).toFixed(1) + '" y="' + (ly-9).toFixed(1) + '" width="' + pw2 + '" height="18" rx="3" fill="' + col + '"/>'
+    + '<text x="' + (padL+pw+2+pw2/2).toFixed(1) + '" y="' + (ly+4).toFixed(1) + '" fill="#06263a" font-size="' + fs + '" font-weight="600" text-anchor="middle" font-family="JetBrains Mono, monospace">' + plab + '</text>';
+
+  return '<svg id="mktSvg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + esc(idx.label) + ' price chart">'
+    + '<defs><linearGradient id="mktgrad" x1="0" y1="0" x2="0" y2="1">'
+    + '<stop offset="0%" stop-color="' + col + '" stop-opacity=".28"/>'
+    + '<stop offset="100%" stop-color="' + col + '" stop-opacity="0"/>'
+    + '</linearGradient></defs>'
+    + grid + baseline
+    + '<path d="' + area + '" fill="url(#mktgrad)"/>'
+    + '<path d="' + line + '" fill="none" stroke="' + col + '" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>'
+    + xlab + pill
+    + '<line id="mktCross" x1="0" y1="' + padT + '" x2="0" y2="' + (padT+ph).toFixed(1) + '" stroke="var(--ink-soft)" stroke-width="1" opacity="0"/>'
+    + '<circle id="mktDot" r="3.5" fill="' + col + '" stroke="var(--paper)" stroke-width="1.5" opacity="0"/>'
+    + '<rect id="mktHit" x="' + padL + '" y="' + padT + '" width="' + pw.toFixed(1) + '" height="' + ph.toFixed(1) + '" fill="transparent" style="cursor:crosshair"/>'
+    + '</svg>';
+}
+
+function renderChart(){
+  const el = document.getElementById('marketchart');
+  if(!el) return;
+  const idx = mktCurrent();
+  if(!idx){ el.innerHTML = ''; return; }
+  mktId = idx.id;
+
+  let ser = mktSeries(idx, mktRange);
+  if(!ser){                 // e.g. a session that has not opened yet
+    mktRange = '1y';
+    ser = mktSeries(idx, mktRange);
+  }
+  if(!ser){ el.innerHTML = ''; return; }
+
+  const last = ser.c[ser.c.length - 1];
+  const chg = last - ser.base;
+  const pct = ser.base ? chg / ser.base * 100 : 0;
+  const cls = chg > 0 ? 'perf-pos' : chg < 0 ? 'perf-neg' : 'perf-neu';
+  const sign = chg >= 0 ? '+' : '';
+  const rangeLabel = (MKT_RANGES.find(r => r[0] === mktRange) || ['',''])[1];
+
+  const tabs = MKT.indices.map(x =>
+    '<button class="' + (x.id === idx.id ? 'on' : '') + '" onclick="mktPick(\'' + x.id + '\')">' + esc(x.label) + '</button>'
+  ).join('');
+  const ranges = MKT_RANGES.map(r =>
+    '<button class="' + (r[0] === mktRange ? 'on' : '') + '" onclick="mktSetRange(\'' + r[0] + '\')">' + r[1] + '</button>'
+  ).join('');
+
+  const lastT = ser.t[ser.t.length - 1];
+  const gen = MKT.generated ? new Date(MKT.generated) : null;
+  const genTxt = gen && !isNaN(gen)
+    ? 'Data refreshed ' + gen.toLocaleString('en-GB', {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', hour12:false}) + ' UTC.'
+    : '';
+
+  el.innerHTML =
+  '<div class="mkt">'
+  + '<div class="mkt-tabs">' + tabs + '</div>'
+  + '<div class="mkt-head"><div>'
+  +   '<div class="mkt-name">' + esc(idx.label) + ' <span class="mkt-tick">' + esc(idx.ticker) + '</span></div>'
+  +   '<div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:8px">'
+  +     '<span class="mkt-price">' + mktNum(last) + '</span>'
+  +     '<span class="mkt-chg ' + cls + '">' + sign + mktNum(chg, last) + ' (' + sign + pct.toFixed(2) + '%)</span>'
+  +   '</div>'
+  + '</div></div>'
+  + '<div class="mkt-asof">' + esc(idx.currency) + ' · change over ' + esc(rangeLabel)
+  +   ' · last point ' + esc(mktStamp(lastT, idx.tz, 'full')) + ' ' + esc(idx.tz) + '</div>'
+  + '<div class="mkt-ranges">' + ranges + '</div>'
+  + '<div class="mkt-plot" id="mktPlot"><div class="mkt-tip" id="mktTip"></div></div>'
+  + '<div class="mkt-note">Index levels from Yahoo Finance, delayed and unofficial — indicative only, not a dealing price. ' + esc(genTxt) + '</div>'
+  + '</div>';
+
+  const plot = document.getElementById('mktPlot');
+  plot.insertAdjacentHTML('afterbegin', mktChartSvg(idx, ser, plot.clientWidth - 16));
+  mktWireHover(idx, ser);
+}
+
+function mktWireHover(idx, ser){
+  const svg = document.getElementById('mktSvg');
+  const hit = document.getElementById('mktHit');
+  const cross = document.getElementById('mktCross');
+  const dot = document.getElementById('mktDot');
+  const tip = document.getElementById('mktTip');
+  if(!svg || !hit) return;
+
+  const padL = +hit.getAttribute('x'), pw = +hit.getAttribute('width');
+  const padT = +hit.getAttribute('y'), ph = +hit.getAttribute('height');
+  const c = ser.c, n = c.length;
+  const { lo, hi } = mktBounds(ser);
+  const Y = v => padT + (hi - v) / (hi - lo) * ph;
+  const mode = (mktRange === '1d' || mktRange === '5d') ? 'full' : 'date';
+
+  function move(ev){
+    const r = svg.getBoundingClientRect();
+    const px = (ev.touches ? ev.touches[0].clientX : ev.clientX) - r.left;
+    let i = Math.round((px - padL) / pw * (n - 1));
+    i = Math.max(0, Math.min(n - 1, i));
+    const x = padL + (n === 1 ? pw / 2 : i / (n - 1) * pw), y = Y(c[i]);
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x); cross.setAttribute('opacity', '.5');
+    dot.setAttribute('cx', x); dot.setAttribute('cy', y); dot.setAttribute('opacity', '1');
+    const d = c[i] - ser.base, pc = ser.base ? d / ser.base * 100 : 0;
+    tip.innerHTML = '<b>' + mktNum(c[i]) + '</b><span>' + esc(mktStamp(ser.t[i], idx.tz, mode))
+                  + ' · ' + (d >= 0 ? '+' : '') + pc.toFixed(2) + '%</span>';
+    tip.style.opacity = '1';
+    // Flip the tooltip left near the right edge so it never hangs off the panel.
+    tip.style.left = Math.max(0, Math.min(x + 14, svg.clientWidth - tip.offsetWidth)) + 'px';
+    tip.style.top = Math.max(0, y - 46) + 'px';
+  }
+  function leave(){
+    cross.setAttribute('opacity', '0');
+    dot.setAttribute('opacity', '0');
+    tip.style.opacity = '0';
+  }
+  hit.addEventListener('mousemove', move);
+  hit.addEventListener('mouseleave', leave);
+  hit.addEventListener('touchmove', move, {passive:true});
+  hit.addEventListener('touchend', leave);
+}
+
+function mktPick(id){ mktId = id; renderChart(); }
+function mktSetRange(k){ mktRange = k; renderChart(); }
+
+window.addEventListener('resize', function(){
+  clearTimeout(mktResizeTimer);
+  mktResizeTimer = setTimeout(function(){ if(MKT) renderChart(); }, 150);
 });
 
 /* ---------- helpers ---------- */

@@ -26,7 +26,9 @@ permissions:
   id-token: write
 
 concurrency:
-  group: fund-update
+  # Shared with the hourly market refresh: both publish to Pages and two
+  # deployments in flight at once will collide.
+  group: fund-tracker-pages
   cancel-in-progress: false
 
 jobs:
@@ -61,12 +63,16 @@ jobs:
             git push
           fi
 
+      - name: Fetch index series
+        run: python scripts/market_series.py
+
       - name: Assemble site
         run: |
           mkdir -p _site
           cp site/index.html _site/index.html
           cp data/funds.json  _site/funds.json
           cp data/last_run.md _site/last_run.md
+          cp data/market.json _site/market.json
 
       - uses: actions/upload-pages-artifact@v3
         with:

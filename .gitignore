@@ -3,3 +3,4 @@ __pycache__/
 .env
 data/last_response.txt
 _site/
+data/market.json

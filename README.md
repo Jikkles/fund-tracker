@@ -45,6 +45,25 @@ the fund's return.
 The desk stays honest *by construction* — there is no prompt to disregard and
 no model to drift.
 
+**There is an index chart at the top.** Twelve indices (FTSE 100 and 250,
+S&P 500, Nasdaq, Dow, Euro STOXX 50, Nikkei, Hang Seng, gold, Brent, the US
+10yr and GBP/USD) with 1D / 5D / 1M / 6M / YTD / 1Y / 5Y ranges, drawn as
+inline SVG with a crosshair readout. A second workflow refreshes it roughly
+hourly on weekdays, 07:17-22:17 UTC, which covers the LSE open through the US
+close.
+
+Four series are fetched per index and the rest are derived in the browser:
+5-minute bars for 1D, 30-minute for 5D, daily for 1Y, weekly for 5Y. 1M, 6M
+and YTD are sliced out of the 1Y series rather than fetched, which is why the
+whole panel costs four requests per index instead of seven and lands at about
+150 KB. x is positioned by bar index rather than by timestamp, so overnight
+and weekend gaps do not open dead space in the line - the same thing a quote
+page does.
+
+`data/market.json` is **not committed**. It is regenerated on every deploy and
+published straight to the Pages artifact, so an hourly refresh does not leave
+the repo carrying two dozen commits a day of churning price data.
+
 **The page loads itself.** `index.html` fetches `funds.json` from the same
 folder on every visit, with `cache: 'no-store'` and a cache-busting query so
 neither the browser nor GitHub's CDN can serve yesterday's copy. There is no
@@ -69,13 +88,16 @@ where a company has confirmed one, and fall back to a pattern estimate marked
 | `scripts/proxies.py` | Fund → ETF mapping. **Edit this** if a proxy looks wrong |
 | `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
 | `scripts/calendar_data.py` | Central bank dates + earnings lookup |
+| `scripts/market_series.py` | Index chart series. **Edit `INDICES`** to change the tabs |
 | `scripts/anonymise.py` | Strips personal references before publishing |
 
 Test locally without writing anything:
 
 ```bash
 python scripts/market_data.py --selftest    # check the endpoints are reachable
+python scripts/market_series.py --selftest  # same, for the chart endpoint
 python scripts/run_update.py --dry-run      # full run, writes nothing
+python scripts/market_series.py --dry-run   # chart fetch, writes nothing
 ```
 
 ---
@@ -115,7 +137,16 @@ python scripts/run_update.py --dry-run      # full run, writes nothing
   stale-looking panel between runs. ~5 lines to fix; not yet applied.
 
 - **GitHub's cron drifts** by up to an hour or more, and scheduled workflows
-  are auto-disabled after 60 days of repo inactivity.
+  are auto-disabled after 60 days of repo inactivity. The hourly chart refresh
+  is scheduled at :17 rather than on the hour, which is the busiest slot and
+  drifts worst, but "hourly" still means roughly, not on the dot.
+
+- **The chart is a single unofficial source.** Unlike the fund figures, which
+  fall back from Stooq to Yahoo, the chart is Yahoo-only - it is the only free
+  source here publishing intraday bars, and 1D/5D are the point of the panel.
+  An index that will not fetch is dropped from the tabs; if *nothing* fetches
+  the run fails and the previous deploy stays live rather than being replaced
+  by an empty chart.
 
 - **Everything here is public**, including the audit log. `anonymise.py` runs
   as a build step and fails the build rather than publishing a personal

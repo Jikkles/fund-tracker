@@ -1,0 +1,64 @@
+name: Hourly market refresh
+
+# Redraws the index chart at the top of the page without touching the fund
+# data. Weekday market hours only: 07:17-22:17 UTC covers the LSE open through
+# the US close, and skips the overnight and weekend hours where an extra run
+# would re-fetch numbers that have not moved.
+#
+# The :17 is deliberate. GitHub's scheduler is best-effort and the top of the
+# hour is its busiest slot, so an off-peak minute drifts less.
+
+on:
+  schedule:
+    - cron: "17 7-22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Shared with the daily fund update: both workflows publish to Pages, and two
+# deployments in flight at once will collide. Queue instead of cancelling -
+# a dropped run here just means the chart is an hour staler.
+concurrency:
+  group: fund-tracker-pages
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Standard library only - nothing to install, no secrets.
+      - name: Fetch index series
+        run: python scripts/market_series.py
+
+      # funds.json is whatever the daily run last committed; only the chart
+      # data is regenerated here.
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp site/index.html _site/index.html
+          cp data/funds.json  _site/funds.json
+          cp data/last_run.md _site/last_run.md
+          cp data/market.json _site/market.json
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: refresh
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
