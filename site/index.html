@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HL Wealth Shortlist — Research Desk</title>
+<title>Fund Tracker</title>
+<!-- FT monogram, drawn as rects so it stays crisp at 16px with no font dependency. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f172a'/%3E%3Cg fill='%2338bdf8'%3E%3Crect x='15' y='17' width='6' height='30'/%3E%3Crect x='15' y='17' width='15' height='6'/%3E%3Crect x='15' y='29' width='12' height='5'/%3E%3Crect x='34' y='17' width='15' height='6'/%3E%3Crect x='38.5' y='17' width='6' height='30'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -487,8 +489,8 @@
 <body>
 <div class="wrap">
   <header class="mast">
-    <p class="eyebrow">HL Wealth Shortlist · Research Desk · Accumulation classes</p>
-    <h1 id="title">The whole Shortlist — full factsheet depth.</h1>
+    <p class="eyebrow">Fund Tracker · Research Desk · Accumulation classes</p>
+    <h1 id="title">The whole list — full factsheet depth.</h1>
     <div class="stamp" id="stamp"><span>Loading the latest research…</span></div>
   </header>
 
@@ -1443,7 +1445,7 @@ function renderAll(){
   renderList();
   const cav = (DATA.meta&&DATA.meta.caveats)||[];
   document.getElementById('footer').innerHTML =
-    `HL Wealth Shortlist Research Desk · Accumulation classes${DATA.meta&&DATA.meta.built?` · built ${DATA.meta.built}`:''}<br>`+
+    `Fund Tracker · Research Desk · Accumulation classes${DATA.meta&&DATA.meta.built?` · built ${DATA.meta.built}`:''}<br>`+
     `Charges shown are HL net ongoing (after loyalty saving). Loyalty bonuses are tax-free in an ISA/SIPP but may be taxable in a Fund &amp; Share Account.`+
     (cav.length?`<br><br>`+cav.map(c=>'· '+c).join('<br>'):'');
 }
