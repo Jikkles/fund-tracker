@@ -1,7 +1,7 @@
 # Fund Tracker
 
 An automated research desk covering the ~63 funds on the Hargreaves Lansdown
-Wealth Shortlist. A weekly GitHub Action prices the index trackers from free
+Wealth Shortlist. A daily GitHub Action prices the index trackers from free
 market data, rolls the catalyst calendar forward, and republishes the page.
 
 **No API key. No account. No cost.** Standard library only, free public
@@ -19,7 +19,7 @@ Check the live factsheet before acting on anything here.
 
 2. **Settings → Pages → Source: GitHub Actions.**
 
-3. **Actions tab → "Weekly fund update" → Run workflow.**
+3. **Actions tab → "Daily fund update" → Run workflow.**
    Watch it go green, then check `https://<you>.github.io/<repo>/`.
 
 There is no step 4. Nothing to configure, no secrets to add.

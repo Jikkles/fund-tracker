@@ -1,5 +1,5 @@
 """
-Weekly fund desk update - deterministic, no LLM, no API key, no cost.
+Daily fund desk update - deterministic, no LLM, no API key, no cost.
 
 What this claims and what it does not
 -------------------------------------
@@ -243,7 +243,7 @@ def main() -> int:
     )
     audit.setdefault("findings", []).append({
         "fundId": "ALL",
-        "fundName": "Automated weekly run",
+        "fundName": "Automated daily run",
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": (
@@ -268,7 +268,7 @@ def main() -> int:
 
     doc["meta"]["asAt"] = (f"{stamp(today)} (automated deterministic run); "
                            f"1yr research UNCHANGED - see auditLog")
-    doc["meta"]["built"] = f"{stamp(today)} (automated weekly run)"
+    doc["meta"]["built"] = f"{stamp(today)} (automated daily run)"
 
     FUNDS.write_text(json.dumps(doc, indent=2, ensure_ascii=False),
                      encoding="utf-8")

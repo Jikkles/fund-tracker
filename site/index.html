@@ -489,21 +489,23 @@
   <header class="mast">
     <p class="eyebrow">HL Wealth Shortlist · Research Desk · Accumulation classes</p>
     <h1 id="title">The whole Shortlist — full factsheet depth.</h1>
-    <div class="stamp" id="stamp"><span>Load a data file to begin</span></div>
+    <div class="stamp" id="stamp"><span>Loading the latest research…</span></div>
   </header>
 
   <div class="notadvice">
     <strong>Not advice.</strong> Factual research and catalyst-based ideas to investigate — not personal financial advice or a recommendation to buy or sell. Past performance isn't a guide to future returns; investments and any income can fall as well as rise and you could get back less than you invest. Re-check the live HL factsheet before acting.
   </div>
 
-  <!-- DATA LOADER -->
-  <div class="loader" id="loader">
-    <h3>Load your fund data</h3>
-    <p>This desk reads its content from a <code>funds.json</code> file. Click below and pick the latest one — it'll be remembered next time you open this page.</p>
+  <!-- DATA LOADER — hidden by default. The page auto-fetches funds.json from
+       this same folder on every load, so this UI only appears if that fetch
+       fails (e.g. opened as a local file:// page rather than served over
+       http/https, or a genuine network problem). -->
+  <div class="loader hide" id="loader">
+    <h3>Couldn't load the data automatically</h3>
+    <p>That's expected if you opened this file directly rather than via a web server (Chrome blocks local file fetches). Drag <code>funds.json</code> anywhere on this page, or pick it manually below.</p>
     <input type="file" id="fileInput" accept=".json,application/json" style="display:none">
     <button class="btn" onclick="document.getElementById('fileInput').click()">Choose funds.json</button>
     <button class="btn ghost" onclick="clearData()">Clear saved data</button>
-    <p style="margin-top:10px;font-size:12px">You can also drag &amp; drop the file anywhere on this page.</p>
   </div>
   <div class="databar" id="databar"></div>
 
@@ -617,7 +619,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
     if(!cached){ loadFromObject(obj, 'fetch'); return; }
     const fresh = parseRunDate(obj), have = parseRunDate(DATA);
     if(fresh && (!have || fresh > have)) loadFromObject(obj, 'fetch');
-  }).catch(()=>{ /* no server / file:// — cache or loader screen stands */ });
+  }).catch(()=>{
+    // Auto-fetch failed (local file:// page, or a genuine network issue).
+    // If we have nothing on screen at all, reveal the manual-load fallback
+    // rather than leaving the page stuck on "Loading…" forever.
+    if(!cached) document.getElementById('loader').classList.remove('hide');
+  });
 });
 
 /* ---------- helpers ---------- */

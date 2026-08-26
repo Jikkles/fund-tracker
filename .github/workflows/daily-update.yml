@@ -1,14 +1,15 @@
-name: Weekly fund update
+name: Daily fund update
 
 on:
   schedule:
-    # 07:00 UTC every Monday. GitHub's scheduler is best-effort and can drift
+    # 07:00 UTC every day. GitHub's scheduler is best-effort and can drift
     # by an hour or more under load - this is not a precise clock.
-    - cron: "0 7 * * 1"
+    - cron: "0 7 * * *"
   workflow_dispatch:            # run manually from the Actions tab
 
-# Scheduled workflows are auto-disabled after 60 days of repo inactivity.
-# This job commits on most runs, which resets that timer as a side effect.
+# Public repos get unlimited GitHub Actions minutes, so a daily run costs
+# nothing. Scheduled workflows are auto-disabled after 60 days of repo
+# inactivity - this job commits on most runs, which resets that timer.
 
 permissions:
   contents: write
@@ -47,7 +48,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Weekly update: $(date -u +%Y-%m-%d)"
+            git commit -m "Daily update: $(date -u +%Y-%m-%d)"
             git push
           fi
 
