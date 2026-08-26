@@ -30,6 +30,7 @@ from proxies import CONTEXT_TICKERS, FUND_PROXIES, GROUP_CONTEXT
 
 ROOT = Path(__file__).resolve().parent.parent
 FUNDS = ROOT / "data" / "funds.json"
+AUDIT_TRAIL_MAX = 30      # keep the last month of run records, not all time
 REPORT = ROOT / "data" / "last_run.md"
 
 WINDOW_DAYS = 30
@@ -265,6 +266,11 @@ def main() -> int:
             "status": "flagged",
             "source": None,
         })
+
+    # The findings list is an append-only trail and the page no longer renders
+    # it, so cap it: a daily run would otherwise add ~700 entries a year of
+    # history nobody reads.
+    audit["findings"] = audit["findings"][-AUDIT_TRAIL_MAX:]
 
     doc["meta"]["asAt"] = (f"{stamp(today)} (automated deterministic run); "
                            f"1yr research UNCHANGED - see auditLog")

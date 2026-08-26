@@ -449,6 +449,24 @@
   .mkt-note { padding: 0 20px 16px; font-size: 11px; color: var(--ink-soft); }
   @media(max-width:640px) { .mkt-price { font-size: 24px; } .mkt-head { gap: 12px; } }
 
+  /* ---- headlines ---- */
+  .news-row { display: grid; grid-template-columns: 76px 1fr 18px; gap: 14px; align-items: baseline;
+              padding: 12px 20px; border-bottom: 1px solid var(--rule); text-decoration: none;
+              color: inherit; transition: background .12s; }
+  .news-row:last-child { border-bottom: none; }
+  .news-row:hover { background: var(--hover-bg); }
+  .news-when { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px;
+               color: var(--ink-soft); white-space: nowrap; }
+  .news-title { font-size: 14px; line-height: 1.5; color: var(--ink); }
+  .news-row:hover .news-title { color: var(--blue); }
+  .news-arrow { font-size: 12px; color: var(--ink-soft); opacity: 0; transition: opacity .12s; }
+  .news-row:hover .news-arrow { opacity: 1; }
+  .news-empty { padding: 16px 20px; font-size: 13px; color: var(--ink-soft); font-style: italic; }
+  @media (max-width: 720px) {
+    .news-row { grid-template-columns: 1fr; gap: 4px; }
+    .news-arrow { display: none; }
+  }
+
   /* ---- data health strip ---- */
   .health { margin: 20px 0; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); overflow: hidden; }
   .health-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 13px 20px; cursor: pointer; }
@@ -672,7 +690,7 @@ const MKT_RANGES = [
 function fetchMarket(){
   return fetch('market.json?t=' + Date.now(), {cache:'no-store'})
     .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
-    .then(obj => { MKT = obj; renderChart(); })
+    .then(obj => { MKT = obj; renderChart(); renderNews(); })
     .catch(() => { /* the chart is additive - the desk stands without it */ });
 }
 
@@ -923,7 +941,7 @@ function mktWireHover(idx, ser){
   hit.addEventListener('touchend', leave);
 }
 
-function mktPick(id){ mktId = id; renderChart(); }
+function mktPick(id){ mktId = id; renderChart(); renderNews(); }
 function mktSetRange(k){ mktRange = k; renderChart(); }
 
 window.addEventListener('resize', function(){
@@ -1092,8 +1110,6 @@ function renderIntro(){
   const bot5   = ranked.slice(-5).reverse();
 
   // Roster signals
-  const removed = DATA.funds.filter(f => f.badge && f.badge.type === 'off');
-  const added   = DATA.funds.filter(f => f.badge && f.badge.type === 'new');
 
   // Strip HTML tags
   const strip = s => (s||'').replace(/<[^>]*>/g,'');
@@ -1121,24 +1137,6 @@ function renderIntro(){
     </div>`;
   };
 
-  // ── Roster item: shows name + badge label; click to reveal full note
-  const rosterItem = (name, label, colour, fullNote) => {
-    const noteHtml = fullNote
-      ? `<div class="pr-note"><div class="pr-note-box"><div class="pr-note-lab">Context</div>${fullNote}</div></div>`
-      : '';
-    const toggle = fullNote
-      ? `onclick="this.parentElement.classList.toggle('open')"`
-      : '';
-    return `<div class="pulse-row${fullNote?' has-note':''}">
-      <div class="pr-head" ${toggle}>
-        <span class="rr-name" style="flex:1">${esc(name)}</span>
-        <span class="rr-badge" style="color:${colour};background:${colour==='var(--forest)'?'rgba(95,184,138,.12)':colour==='var(--oxblood)'?'rgba(210,119,106,.12)':'rgba(216,166,78,.12)'}">${esc(label)}</span>
-        ${fullNote?'<span class="pr-chev">▸</span>':''}
-      </div>
-      ${noteHtml}
-    </div>`;
-  };
-
   // Build top 5
   let top5Items = top5.map(({f,p,s},i) =>
     listItem(i+1, f.name, f.category, s, p, strip(f.whyNow||''))
@@ -1148,19 +1146,6 @@ function renderIntro(){
   let bot5Items = bot5.map(({f,p,s},i) =>
     listItem(i+1, f.name, f.category, s, p, strip(f.whyNow||''))
   ).join('');
-
-  // Build roster
-  let rosterItems = '';
-  if(!removed.length && !added.length){
-    rosterItems = `<div class="pulse-row" style="color:var(--ink-soft);font-style:italic;cursor:default"><div class="pr-head" style="cursor:default">No roster changes flagged in current data.</div></div>`;
-  } else {
-    if(added.length) rosterItems += added.map(f =>
-      rosterItem(f.name, f.badge.label||'added', 'var(--blue)', strip(f.whyNow||''))
-    ).join('');
-    if(removed.length) rosterItems += removed.map(f =>
-      rosterItem(f.name, f.badge.label||'removed', 'var(--oxblood)', strip(f.whyNow||''))
-    ).join('');
-  }
 
   el.innerHTML = `
   <div class="tldr" style="margin:20px 0;padding:0">
@@ -1182,13 +1167,50 @@ function renderIntro(){
         ${bot5Items}
       </div>
     </div>
-    <div class="pulse-box" style="border:1px solid var(--rule);border-top:none;border-radius:0 0 12px 12px">
-      <div class="pulse-box-head" style="color:var(--amber);border-bottom:2px solid var(--amber)">
-        Roster changes — additions and removals flagged in current data
-      </div>
-      ${rosterItems}
-    </div>
+    <div class="pulse-box" id="newsbox" style="border:1px solid var(--rule);border-top:none;border-radius:0 0 12px 12px"></div>
   </div>`;
+  renderNews();
+}
+
+/* ---------- render: headlines for the selected index ----------
+   Yahoo's feed is per-symbol, so this follows whichever tab the chart is on
+   rather than being a general business wire. Rendered into its own box so
+   switching index tabs does not rebuild the whole intro block. */
+function renderNews(){
+  const box = document.getElementById('newsbox');
+  if(!box) return;
+  const idx = mktCurrent();
+  const head = (label, body) =>
+    `<div class="pulse-box-head" style="color:var(--amber);border-bottom:2px solid var(--amber)">${label}</div>${body}`;
+  const empty = msg => `<div class="news-empty">${esc(msg)}</div>`;
+
+  if(!idx){ box.innerHTML = head('In the markets', empty('Market data not loaded.')); return; }
+
+  const items = idx.news || [];
+  if(!items.length){
+    box.innerHTML = head('In the markets — ' + esc(idx.label),
+      empty('No headlines published for this index. Not every symbol has a feed — try another tab.'));
+    return;
+  }
+  box.innerHTML = head('In the markets — ' + esc(idx.label), items.map(n => {
+    const when = n.d ? new Date(n.d * 1000) : null;
+    const ago = when ? mktAgo(when) : '';
+    return `<a class="news-row" href="${esc(n.u||'#')}" target="_blank" rel="noopener noreferrer">
+      <span class="news-when">${esc(ago)}</span>
+      <span class="news-title">${esc(n.t||'')}</span>
+      <span class="news-arrow">↗</span>
+    </a>`;
+  }).join(''));
+}
+
+/* Relative age, because an absolute stamp on an hourly-refreshed feed just
+   raises the question of how old that is. */
+function mktAgo(d){
+  const mins = Math.max(0, Math.round((Date.now() - d.getTime()) / 60000));
+  if(mins < 60) return mins + 'm ago';
+  const hrs = Math.round(mins / 60);
+  if(hrs < 24) return hrs + 'h ago';
+  return Math.round(hrs / 24) + 'd ago';
 }
 
 /* ---------- render: provenance + old-audit chips ---------- */
@@ -1241,27 +1263,19 @@ function renderHealth(){
   // unverified 1yr
   const unver = funds.filter(isUnverified1yr);
 
-  // latest audit run findings
+  // last automated run stamp
   const al = DATA.auditLog || {};
   const runDate = al.runDate || '';
-  const findings = (al.findings || []);
-  const corrected = findings.filter(x => x.status === 'corrected');
-  const flagged   = findings.filter(x => x.status === 'flagged');
-
+  // Only live signals earn a chip. A tally of how many figures a past manual
+  // research run corrected or flagged says nothing about today's numbers.
   const chips = [
-    corrected.length ? `<span class="hchip ok">${corrected.length} corrected</span>` : '',
     incons.length ? `<span class="hchip bad">${incons.length} inconsistent ⚠</span>` : '',
-    flagged.length ? `<span class="hchip warn">${flagged.length} flagged</span>` : '',
-    unver.length ? `<span class="hchip warn">${unver.length} unverified 1yr</span>` : '',
     stale.length ? `<span class="hchip warn">${stale.length} stale (>${STALE_DAYS}d)</span>` : `<span class="hchip ok">0 stale</span>`,
-    gaps.length ? `<span class="hchip neu">${gaps.length} window gap</span>` : '',
-    drift.length ? `<span class="hchip neu">${drift.length} window drift</span>` : '',
+    unver.length ? `<span class="hchip warn">${unver.length} unverified 1yr</span>` : '',
     runDate ? `<span class="hchip neu">audit ${esc(runDate)}</span>` : '',
     provenanceChip(),
     oldAuditChip()
   ].filter(Boolean).join('');
-
-  const sevChip = s => `<span class="hchip ${s==='HIGH'?'bad':s.includes('MEDIUM')?'warn':'neu'}">${esc(s)}</span>`;
 
   const inconsRows = incons.map(({f,m}) =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">1yr cumulative and most recent discrete year disagree — one of them is wrong. Verify on HL before relying on the headline.</span><span class="hs" style="color:var(--oxblood)">Δ ${fmtPP(m)}</span></div>`).join('');
@@ -1273,9 +1287,6 @@ function renderHealth(){
   const unverRows = unver.map(f =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">${esc((f.performance&&f.performance.notes)||'1yr not yet verified.')}</span><span class="hs" style="color:var(--amber)">NYV</span></div>`).join('');
 
-  const findRows = findings.slice(-25).reverse().map(x =>
-    `<div class="hrow"><span class="hf">${esc(x.fundName||'')}</span><span class="hd">${esc(x.description||'')}</span><span class="hs">${sevChip(x.severity||'')} <span class="hchip ${x.status==='corrected'?'ok':x.status==='flagged'?'warn':'neu'}">${esc(x.status||'')}</span></span></div>`).join('');
-
   el.innerHTML = `<div class="health" id="healthBox">
     <div class="health-head" onclick="document.getElementById('healthBox').classList.toggle('open')">
       <span class="health-title">Data health</span>${chips}
@@ -1286,7 +1297,6 @@ function renderHealth(){
       ${gaps.length?`<div class="health-sec-h">Window gaps — trailing 1yr runs months past the 31-Mar discrete year-end; the gap is the market move in between, not an error</div>${gaps.map(({f,m})=>`<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing (${BASIS_LABEL[f.performance.perfBasis]||''}) vs discrete year-end.</span><span class="hs" style="color:var(--ink-soft)">Δ ${fmtPP(m)}</span></div>`).join('')}`:''}
       ${unver.length?`<div class="health-sec-h">Unverified 1yr figures</div>${unverRows}`:''}
       ${stale.length?`<div class="health-sec-h">Staleness hit list — figures older than ${STALE_DAYS} days</div>${staleRows}`:''}
-      <div class="health-sec-h">Recent audit findings (latest 25 of ${findings.length})</div>${findRows||'<div class="hrow"><span class="hd">No audit log in this file.</span></div>'}
     </div>
   </div>`;
 }

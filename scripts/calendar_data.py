@@ -193,8 +193,9 @@ def estimate_next(holding: str, today: date) -> str | None:
     year, month = today.year, today.month
     for _ in range(14):
         if month in months and not (month == today.month and today.day > 20):
-            return (f"~{position} {_MONTH_NAMES[month]} {year} "
-                    f"(estimated - not yet confirmed)")
+            # "(estimated)" says it all - an estimate is by definition not
+            # a confirmed date, and the longer label crowded the panel.
+            return f"~{position} {_MONTH_NAMES[month]} {year} (estimated)"
         month += 1
         if month > 12:
             month, year = 1, year + 1

@@ -64,6 +64,12 @@ page does.
 published straight to the Pages artifact, so an hourly refresh does not leave
 the repo carrying two dozen commits a day of churning price data.
 
+**Headlines follow the chart.** The panel under the fund tables shows news
+for whichever index tab is selected — click Nikkei, get Nikkei news. Yahoo's
+headline feed is per-symbol, which is what makes the panel relevant *by
+construction*: there is no editorial call about what "affects markets", and no
+model deciding. It refreshes hourly with the chart.
+
 **The page loads itself.** `index.html` fetches `funds.json` from the same
 folder on every visit, with `cache: 'no-store'` and a cache-busting query so
 neither the browser nor GitHub's CDN can serve yesterday's copy. There is no
@@ -88,7 +94,7 @@ where a company has confirmed one, and fall back to a pattern estimate marked
 | `scripts/proxies.py` | Fund → ETF mapping. **Edit this** if a proxy looks wrong |
 | `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
 | `scripts/calendar_data.py` | Central bank dates + earnings lookup |
-| `scripts/market_series.py` | Index chart series. **Edit `INDICES`** to change the tabs |
+| `scripts/market_series.py` | Index chart series + per-index headlines. **Edit `INDICES`** to change the tabs |
 | `scripts/anonymise.py` | Strips personal references before publishing |
 
 Test locally without writing anything:
@@ -120,6 +126,12 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   ETF misses mid-cap divergence. ESG-tilted funds will diverge more. Each note
   states its own caveat and every figure carries `verify vs HL factsheet`.
 
+- **The audit trail is capped at the last 30 entries.** It is no longer
+  rendered on the page — the Data Health strip now shows only live signals
+  (stale, inconsistent, unverified) rather than a tally of what past manual
+  research runs corrected. The trail survives in the JSON as a machine-readable
+  record, but a daily append would otherwise add ~700 entries a year.
+
 - **1-year figures are never refreshed.** Those drive the Winning/Lagging
   panels and the headline number on every card, and they go stale silently. As
   of writing they were ~45 days old. The automation will not fix this and will
@@ -140,6 +152,13 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   are auto-disabled after 60 days of repo inactivity. The hourly chart refresh
   is scheduled at :17 rather than on the hour, which is the busiest slot and
   drifts worst, but "hourly" still means roughly, not on the dot.
+
+- **Headline coverage is uneven and can be stale.** Yahoo publishes no feed
+  at all for some symbols — `^FTMC` (FTSE 250) returns nothing, and the panel
+  says so rather than borrowing another index's news. Where a feed does exist
+  it is not always busy: the FTSE 100 feed routinely carries items a week old.
+  Every headline is stamped with its age so you can see that at a glance. News
+  never fails the run; an unreachable feed degrades to no headlines.
 
 - **The chart is a single unofficial source.** Unlike the fund figures, which
   fall back from Stooq to Yahoo, the chart is Yahoo-only - it is the only free

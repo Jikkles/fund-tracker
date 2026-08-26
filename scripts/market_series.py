@@ -33,7 +33,9 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 USER_AGENT = "fund-tracker/1.0 (+github actions; personal research desk)"
@@ -56,6 +58,13 @@ INDICES: list[tuple[str, str]] = [
     ("US 10yr yield",    "^TNX"),
     ("GBP/USD",          "GBPUSD=X"),
 ]
+
+# Yahoo's headline feed is per-symbol, so each index gets news about itself
+# rather than a general business wire. That is what makes the panel relevant
+# by construction - there is no judgement call about what "affects markets".
+NEWS_URL = ("https://feeds.finance.yahoo.com/rss/2.0/headline"
+            "?s={}&region=US&lang=en-US")
+NEWS_PER_INDEX = 6
 
 # (range key, Yahoo range, Yahoo interval)
 SERIES: list[tuple[str, str, str]] = [
@@ -133,6 +142,42 @@ def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
     return parse_chart(raw)
 
 
+def fetch_news(ticker: str) -> list[dict]:
+    """Headlines for one symbol. Always returns a list.
+
+    News is decorative - a feed that is empty, slow or malformed must never
+    cost us the chart, so every failure here degrades to no headlines rather
+    than propagating. Not every symbol has a feed: ^FTMC returns nothing at
+    all, and the panel says so rather than showing another index's news.
+    """
+    try:
+        raw = _get(NEWS_URL.format(urllib.parse.quote(ticker)))
+        root = ET.fromstring(raw)
+    except (urllib.error.URLError, TimeoutError, OSError, ET.ParseError):
+        return []
+
+    out, seen = [], set()
+    for item in root.iterfind(".//item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        if not title or title.lower() in seen:
+            continue
+        seen.add(title.lower())
+
+        when = None
+        stamp_txt = item.findtext("pubDate")
+        if stamp_txt:
+            try:
+                when = int(parsedate_to_datetime(stamp_txt).timestamp())
+            except (TypeError, ValueError):
+                when = None
+
+        out.append({"t": title, "u": link, "d": when})
+        if len(out) >= NEWS_PER_INDEX:
+            break
+    return out
+
+
 def fetch_index(label: str, ticker: str) -> dict | None:
     """Build one index entry. None if not even the 1y series can be had."""
     series: dict[str, dict] = {}
@@ -163,6 +208,7 @@ def fetch_index(label: str, ticker: str) -> dict | None:
         price = series["1y"]["c"][-1]
 
     return {
+        "news": fetch_news(ticker),
         "id": slug(label),
         "label": label,
         "ticker": ticker,
@@ -186,7 +232,8 @@ def build() -> dict:
         got = ",".join(sorted(entry["series"]))
         pts = sum(len(s["c"]) for s in entry["series"].values())
         print(f"  [chart] {label:20} {ticker:11} "
-              f"{entry['price']:>12}  {pts:5} pts  [{got}]")
+              f"{entry['price']:>12}  {pts:5} pts  [{got}]  "
+              f"{len(entry['news'])} headlines")
         out.append(entry)
 
     return {
