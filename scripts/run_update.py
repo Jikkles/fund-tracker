@@ -44,6 +44,28 @@ WINDOW_DAYS = 30
 # plus a bank holiday without ever letting last month's figure pose as fresh.
 NAV_MAX_AGE_DAYS = 8
 
+# How old hand-researched factsheet data may get before the run flags it.
+# Factsheets refresh monthly or quarterly, so 120 days means at least one full
+# quarter was missed. Nothing here can fix it - only a person can - so the
+# warning exists to turn a silent drift into a visible worklist.
+RESEARCH_STALE_DAYS = 120
+
+# Caveats that hold regardless of what any given run produced. Anything that
+# depends on the data - dates, counts, which basis a figure used - belongs in
+# build_caveats() instead: a hand-written claim about the data starts drifting
+# out of date the moment the data moves, and the reader has no way to tell.
+DURABLE_CAVEATS = [
+    "Factual research and catalyst-based ideas to investigate — not personal "
+    "financial advice.",
+    "Past performance is not a guide to future returns; investments and income "
+    "can fall as well as rise.",
+    "Where a field shows 'not yet verified' it was not confirmed within the "
+    "research run — not invented or omitted by choice.",
+    "Portfolio breakdowns (holdings, sectors, countries) are point-in-time from "
+    "each fund's last published factsheet and are older than its price data. "
+    "Every fund's holdings note carries its own as-at date.",
+]
+
 CONF_TEXT = {
     "exact": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
     "close": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
@@ -163,6 +185,104 @@ def build_one_month(doc: dict, quotes: dict[str, md.Quote],
         stats["unverified"] += 1
 
     return entries, stats
+
+
+def plural(n: int, one: str, many: str) -> str:
+    """Counts here swing between 1 and 50 run to run - agree the verb to them."""
+    return one if n == 1 else many
+
+
+def build_caveats(doc: dict, entries: dict, stats: dict,
+                  today: date) -> list[str]:
+    """Rebuild the data-dependent caveats from what this run actually did.
+
+    These are rendered on the page. Written by hand they went stale silently -
+    the list was still telling readers prices were "mostly 15-22 Jun 2026"
+    months after the daily NAV pricing landed. Derived from the data, they
+    cannot say anything the run did not just do.
+    """
+    funds = doc["funds"]
+    total = len(funds)
+    lines: list[str] = []
+
+    nav_dates = sorted(
+        (f.get("performance") or {}).get("navAsAt")
+        for f in funds
+        if (entries.get(f["id"]) or {}).get("basis", "").startswith("nav:")
+        and (f.get("performance") or {}).get("navAsAt"))
+    if nav_dates:
+        first = date.fromisoformat(nav_dates[0])
+        last = date.fromisoformat(nav_dates[-1])
+        span = (f"priced {stamp(last)}" if first == last
+                else f"priced {stamp(first)} to {stamp(last)}")
+        lines.append(
+            f"{stats['nav']} of {total} funds "
+            f"{plural(stats['nav'], 'carries', 'carry')} a 1-month figure "
+            f"computed from the fund's own published NAV series ({span}), "
+            f"refreshed every run. {stats['computed']} "
+            f"{plural(stats['computed'], 'uses', 'use')} a same-index GBP ETF "
+            f"proxy and {stats['unverified']} "
+            f"{plural(stats['unverified'], 'carries', 'carry')} no fund-level "
+            f"figure at all - each figure is labelled with the basis it used.")
+
+    perf_dates = sorted(d for f in funds
+                        if (d := (f.get("performance") or {}).get("perfAsAt")))
+    if perf_dates:
+        oldest, newest = (date.fromisoformat(perf_dates[0]),
+                          date.fromisoformat(perf_dates[-1]))
+        run = (f"are all as at {stamp(oldest)}" if oldest == newest
+               else f"run {stamp(oldest)} to {stamp(newest)}")
+        lines.append(
+            f"The discrete and cumulative performance tables are hand-entered "
+            f"from published factsheets and are NOT refreshed by the daily "
+            f"run: as-at dates {run}, up to "
+            f"{(today - oldest).days} days old. Their bases differ "
+            f"(Trustnet/FE discrete or cumulative, HL rolling 12-month, "
+            f"Fidelity annualised) — do not compare across funds without "
+            f"adjusting.")
+
+    derived = sum(1 for f in funds
+                  if (f.get("performance") or {}).get("perfBasis") == "DRV")
+    if derived:
+        whose = "fund's" if derived == 1 else "funds'"
+        lines.append(
+            f"{derived} {whose} cumulative 3/5yr figures are derived by "
+            f"compounding discrete annual returns and are approximate — "
+            f"verify against Trustnet or Morningstar for published totals.")
+
+    return DURABLE_CAVEATS + lines
+
+
+def research_health(doc: dict, today: date) -> list[str]:
+    """Warn when hand-researched factsheet data has gone stale.
+
+    calendar_data.calendar_health does this for the central bank tables. The
+    researched half of each card ages exactly the same way but had nothing
+    watching it, so it aged in silence while the NAV figures beside it stayed
+    current - the widest gap on the desk between what is fresh and what looks
+    fresh.
+    """
+    aged: list[tuple[int, str]] = []
+    for fund in doc["funds"]:
+        as_at = (fund.get("performance") or {}).get("perfAsAt")
+        if not as_at:
+            continue
+        try:
+            age = (today - date.fromisoformat(as_at)).days
+        except ValueError:
+            continue
+        if age > RESEARCH_STALE_DAYS:
+            aged.append((age, fund["id"]))
+
+    if not aged:
+        return []
+    aged.sort(reverse=True)
+    worst = ", ".join(f"{fid} ({age}d)" for age, fid in aged[:3])
+    more = f", and {len(aged) - 3} more" if len(aged) > 3 else ""
+    return [f"{len(aged)} {plural(len(aged), 'fund has', 'funds have')} "
+            f"factsheet research older than "
+            f"{RESEARCH_STALE_DAYS} days: {worst}{more}. Re-research, or "
+            f"rely on the NAV figures, which refresh every run."]
 
 
 def refresh_catalysts(doc: dict, today: date) -> dict:
@@ -299,7 +419,12 @@ def main() -> int:
           f"{cat_stats['estimated']} estimated, "
           f"{cat_stats['failed']} unresolved")
 
-    warnings = cal.calendar_health(today)
+    # Two separate health checks, reported together but audited apart: one
+    # watches the hardcoded central bank tables, the other the researched
+    # factsheet data. Both need a person; neither can be fixed by this run.
+    cal_warnings = cal.calendar_health(today)
+    res_warnings = research_health(doc, today)
+    warnings = cal_warnings + res_warnings
     for w in warnings:
         print(f"[warn] {w}")
 
@@ -323,7 +448,10 @@ def main() -> int:
         f"pattern estimates). 1yr/3yr/5yr figures are computed from each "
         f"fund's own published NAV series where one could be resolved; "
         f"discrete arrays and ISINs are untouched and continue to age."
-        + (" CALENDAR WARNING: " + " ".join(warnings) if warnings else "")
+        + (" CALENDAR WARNING: " + " ".join(cal_warnings)
+           if cal_warnings else "")
+        + (" RESEARCH STALE: " + " ".join(res_warnings)
+           if res_warnings else "")
     )
     audit.setdefault("findings", []).append({
         "fundId": "ALL",
@@ -340,13 +468,23 @@ def main() -> int:
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed "
                   "published calendars",
     })
-    if warnings:
+    if cal_warnings:
         audit["findings"].append({
             "fundId": "ALL",
             "fundName": "Calendar maintenance",
             "check": "CALENDAR-LOW",
             "severity": "MEDIUM",
-            "description": " ".join(warnings),
+            "description": " ".join(cal_warnings),
+            "status": "flagged",
+            "source": None,
+        })
+    if res_warnings:
+        audit["findings"].append({
+            "fundId": "ALL",
+            "fundName": "Research maintenance",
+            "check": "RESEARCH-STALE",
+            "severity": "MEDIUM",
+            "description": " ".join(res_warnings),
             "status": "flagged",
             "source": None,
         })
@@ -362,6 +500,9 @@ def main() -> int:
                            f"{navs} of {len(doc['funds'])} funds priced from "
                            f"their own NAV")
     doc["meta"]["built"] = f"{stamp(today)} (automated daily run)"
+    # Regenerated every run so the page's caveats describe this run's data
+    # rather than whatever was true when someone last edited them by hand.
+    doc["meta"]["caveats"] = build_caveats(doc, entries, stats, today)
 
     FUNDS.write_text(json.dumps(doc, indent=2, ensure_ascii=False),
                      encoding="utf-8")
