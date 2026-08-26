@@ -14,39 +14,39 @@ Window: 27 Jul 2026 to 26 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +0.83% |
-| FTSE 250 | +4.32% |
+| FTSE 100 | +0.80% |
+| FTSE 250 | +4.31% |
 | S&P 500 | +3.56% |
 | Nasdaq Composite | +4.89% |
-| Euro STOXX 50 | +3.02% |
+| Euro STOXX 50 | +2.98% |
 | Nikkei 225 | +2.05% |
 | Hang Seng | +1.77% |
-| Gold (USD/oz) | +14.83% |
-| Brent crude | -3.76% |
+| Gold (USD/oz) | +14.77% |
+| Brent crude | -3.71% |
 | US 10yr yield | -0.04% |
-| GBP/USD | +2.01% |
+| GBP/USD | +2.03% |
 
 ## Computed tracker figures
 
 | Fund | Proxy | Change |
 |---|---|---|
-| fidelity-index-world | SWDA.L | +1.74% |
-| hsbc-ftse-250-index | VMID.L | +5.04% |
-| ishares-corporate-bond-index | SLXX.L | +0.55% |
-| ishares-japan-equity-index | IJPA.L | +4.89% |
-| ishares-pacific-ex-japan-index | CPJ1.L | +2.05% |
-| lg-all-stocks-gilt-index | IGLT.L | +0.25% |
+| fidelity-index-world | SWDA.L | +1.70% |
+| hsbc-ftse-250-index | VMID.L | +4.86% |
+| ishares-corporate-bond-index | SLXX.L | +0.58% |
+| ishares-japan-equity-index | IJPA.L | +4.90% |
+| ishares-pacific-ex-japan-index | CPJ1.L | +1.99% |
+| lg-all-stocks-gilt-index | IGLT.L | +0.26% |
 | lg-european-index | VERX.L | +2.63% |
-| lg-future-world-esg-developed | SWDA.L | +1.74% |
-| lg-future-world-esg-uk | VUKE.L | +1.53% |
-| lg-international-index | SWDA.L | +1.74% |
-| lg-uk-100-index | ISF.L | +1.45% |
-| lg-uk-index | VUKE.L | +1.53% |
-| lg-uk-mid-cap-index | VMID.L | +5.04% |
-| lg-us-index | VUSA.L | +1.39% |
-| vanguard-global-bond-index | VAGP.L | -0.05% |
+| lg-future-world-esg-developed | SWDA.L | +1.70% |
+| lg-future-world-esg-uk | VUKE.L | +1.40% |
+| lg-international-index | SWDA.L | +1.70% |
+| lg-uk-100-index | ISF.L | +1.43% |
+| lg-uk-index | VUKE.L | +1.40% |
+| lg-uk-mid-cap-index | VMID.L | +4.86% |
+| lg-us-index | VUSA.L | +1.37% |
+| vanguard-global-bond-index | VAGP.L | +0.05% |
 | vanguard-global-corporate-bond-index | VCPA.L | -1.69% |
-| vanguard-global-small-cap-index | WLDS.L | +1.73% |
+| vanguard-global-small-cap-index | WLDS.L | +1.70% |
 
 ---
 
