@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "HL Wealth Shortlist — Full Research Desk",
-    "asAt": "26 Aug 2026 (1-month change patch + full catalysts refresh); underlying 1yr/factsheet research as at 6-12 Jul 2026 (UNCHANGED — now 45+ days old, staleness sweep OVERDUE)",
-    "built": "26 Aug 2026 (1-month update cycle + catalysts rebuild)",
+    "asAt": "26 Aug 2026 (automated deterministic run); 1yr research UNCHANGED - see auditLog",
+    "built": "26 Aug 2026 (automated weekly run)",
     "listTotal": 63,
     "sources": "HL · FE/Trustnet · Morningstar · Fidelity · Artemis · Janus Henderson · BofA/InvestmentNews · Columbia Threadneedle · AJ Bell · interactive investor · House of Commons Library · FundsLibrary · company filings",
     "caveats": [
@@ -301,10 +301,11 @@
           "holding": "Samsung Electronics",
           "weight": "3.71% — top holding",
           "event": "Q3 2026 results",
-          "date": "~early Oct 2026 preliminary, ~late Oct 2026 full (estimated)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "A volatile few months: Samsung posted record Q2 results (operating profit up 19-fold on AI demand) but shares then fell 30-40% from 2026 highs during the late-July crash, dropping 13.4% in a single session on 28 Jul on the CXMT/DUV lithography shock, before recovering strongly with the KOSPI's ~23% rebound off its 30 Jul low. Watch: HBM/DRAM contract pricing, the HBM4 ramp and Nvidia qualification, foundry order book, and Chinese memory competition. Samsung typically posts preliminary results in the first week of the month following quarter-end, with full results ~3 weeks later.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -314,10 +315,10 @@
       "sources": "HL factsheet & notifications; Fidelity (ISIN GB00B5ZX1M70); Artemis",
       "asAt": "22 Jun 2026 (portfolio 28 Feb 2026; performance to 31 Mar 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely strongly positive again",
-        "note": "The gold story accelerated dramatically this window. Spot gold rose from ~$4,429 (18 Aug) to $4,677.19 on 25 Aug — its highest since mid-May and up over 15% month-to-date, with UOB noting gold was on track for its strongest monthly gain since September 1999. Drivers: a weaker dollar and the US Treasury's bond-buyback plan capping yields, on top of continued Middle East tension. UK-listed miners led the FTSE 100 higher this window, so the fund's Kinross Gold, Agnico Eagle and Freeport-McMoRan positions should be benefiting materially. This is now the SECOND consecutive strongly-positive cycle for the gold call after three prior flips — the trend has held rather than reversed this time. Still NOT confirmed at fund level; this remains the top candidate for a live factsheet check.",
-        "confidence": "low-medium — macro-driven, fund-specific % not confirmed"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B5ZX1M70",
       "isinSource": "already present in entry text"
@@ -468,10 +469,11 @@
           "holding": "TSMC",
           "weight": "≈4.4% — top holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -480,10 +482,10 @@
       "sources": "HL fund update (May 2026); HL factsheet (ISIN GB00B7GJPN73)",
       "asAt": "22 Jun 2026 (performance to 30 Apr 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B7GJPN73",
       "isinSource": "already present in entry text"
@@ -652,10 +654,11 @@
           "holding": "Microsoft",
           "weight": "≈4%",
           "event": "Q1 FY27 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q3 FY26 (29 Apr) beat: revenue $82.9bn, +18% (+15% cc), operating income $38.4bn. Azure growth and the ~$190bn FY26 capex guide remain the two swing factors — the market has been rewarding Azure growth and punishing capex escalation. Watch: Azure growth rate, capex trajectory into FY27, and AI monetisation commentary. Mega-cap Q3 reporting has historically clustered in the last week of October; date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -665,10 +668,10 @@
       "sources": "HL fund update (Jan 2026); HL factsheet",
       "asAt": "22 Jun 2026 (performance to 31 Dec 2025)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BD82KP33",
       "isinSource": "Fidelity share-class listing (O Acc), 6 Jul 2026; figures below fetched from O Inc (GB00BD82KQ40) proxy"
@@ -851,19 +854,21 @@
           "holding": "NVIDIA",
           "weight": "3.31% — top holding",
           "event": "Q2 FY27 results (TODAY) → then Q3 FY27",
-          "date": "Wed 26 Aug 2026 (confirmed, after US close)",
+          "date": "~late Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Reports TODAY after the US close (press release ~1:20pm PT, call 2:00pm PT — NVIDIA IR confirmed). Guided ~$91.0bn ±2%; consensus ~$91.85-92.2bn revenue, ~$2.08-2.13 EPS across ~40 analysts, i.e. the Street sits only ~0.9% above the guide midpoint — little room for a blowout. NVIDIA has beaten its own guidance 13 straight quarters but the beat margin has shrunk from 22.8% (Q2 FY24) to 4.6% last quarter. Watch: Q3 FY27 guide, Blackwell Ultra execution, gross margin (~75%), Rubin commentary and any change to the China relationship. Shares fell seven straight sessions into the print before rebounding 2% on 25 Aug. NEXT after this: Q3 FY27 ~late Nov 2026 (estimated from NVIDIA's late-Feb/May/Aug/Nov pattern).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Alphabet",
           "weight": "3.07%",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q1 2026 beat (~$109.9bn, +22%; Google Cloud first quarter above $20bn, backlog ~$460bn) and the Q2 print was well received — Alphabet's late-July report was credited with helping set the tone for the whole AI complex. Watch: Cloud re-acceleration, data-centre spending efficiency, and whether AI model launch timing affects competitive momentum. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -873,10 +878,10 @@
       "sources": "HL factsheet (ISIN GB00BH0P2M97)",
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BH0P2M97",
       "isinSource": "already present in entry text"
@@ -1054,10 +1059,10 @@
       "sources": "HL factsheet; Fidelity (ISIN IE00BF2N1T73)",
       "asAt": "22 Jun 2026 (portfolio 28 Feb 2026; performance to 31 Mar 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "IE00BF2N1T73",
       "isinSource": "already present in entry text"
@@ -1234,10 +1239,11 @@
           "holding": "Alphabet",
           "weight": "2.68% — top holding",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q1 2026 beat (~$109.9bn, +22%; Google Cloud first quarter above $20bn, backlog ~$460bn) and the Q2 print was well received — Alphabet's late-July report was credited with helping set the tone for the whole AI complex. Watch: Cloud re-acceleration, data-centre spending efficiency, and whether AI model launch timing affects competitive momentum. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -1247,10 +1253,10 @@
       "sources": "HL factsheet & July 2025 research note",
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -1421,10 +1427,11 @@
           "holding": "Full mega-cap cluster",
           "weight": "top holdings",
           "event": "Q3 2026 mega-cap earnings cluster",
-          "date": "NVIDIA 26 Aug 2026 (confirmed) → TSMC 15 Oct → mega-caps ~late Oct 2026",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "The reporting sequence that matters for AI-exposed funds: NVIDIA Q2 FY27 TODAY (26 Aug, confirmed), then TSMC Q3 on 15 Oct (confirmed), ASML within days of TSMC, then the US mega-cap cluster (Microsoft, Apple, Amazon, Alphabet, Meta) in the last week of October (estimated, not confirmed), with Samsung/SK Hynix Q3 late Oct and NVIDIA Q3 FY27 ~late Nov. The through-line all season is AI capex discipline — whether hyperscaler spending keeps translating into supplier revenue, and whether investors keep tolerating rising capex.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting patterns (cluster)"
         }
       ],
       "links": {
@@ -1434,10 +1441,10 @@
       "sources": "HL factsheet (ISIN GB00B8HT7153); FundCalibre",
       "asAt": "22 Jun 2026 (portfolio 31 Dec 2025)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B8HT7153",
       "isinSource": "already present in entry text"
@@ -1613,10 +1620,11 @@
           "holding": "TSMC",
           "weight": "4.46% — joint-top holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -1625,10 +1633,10 @@
       "sources": "HL factsheet (ISIN GB00B8K6W529); Fidelity/Morningstar holdings; BNY SEC filings",
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026; performance to 27 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "A split window globally: gold melted up (+15% month-to-date, strongest month since September 1999) lifting miners and the UK index, while US tech and semiconductors sold off (Nasdaq -2% on the week to 21 Aug, semis worse) and Europe and Asia consolidated. Oil fell (Brent -3.9% to $88.58 on 25 Aug) as the US shifted from military action to economic sanctions on Iran. Net effect depends on regional and sector mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B8K6W529",
       "isinSource": "already present in entry text"
@@ -1807,10 +1815,11 @@
           "holding": "NVIDIA + mega-cap cluster",
           "weight": "NVIDIA #1 at 5.05%",
           "event": "Q3 2026 mega-cap earnings cluster",
-          "date": "NVIDIA 26 Aug 2026 (confirmed) → TSMC 15 Oct → mega-caps ~late Oct 2026",
+          "date": "~late Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Same sequence as above: NVIDIA Q2 FY27 TODAY (26 Aug, confirmed), TSMC Q3 15 Oct (confirmed), ASML within days, US mega-caps last week of October (estimated), Samsung/SK Hynix Q3 late Oct, NVIDIA Q3 FY27 ~late Nov. For a broad world tracker the aggregate AI-capex message matters more than any single print.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting patterns (cluster)"
         }
       ],
       "links": {
@@ -1820,10 +1829,12 @@
       "sources": "HL factsheet & May 2026 update (ISIN GB00BJS8SJ34)",
       "asAt": "22 Jun 2026 (portfolio 31 Mar 2026)",
       "oneMonth": {
+        "value": "+1.56%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "≈ flat to -0.5%",
-        "note": "Blended global tracker — a soft US/tech window offset by firm UK and steady European markets.",
-        "confidence": "low-medium — index-derived"
+        "basis": "proxy:SWDA.L",
+        "source": "yahoo"
       },
       "isin": "GB00BJS8SJ34",
       "isinSource": "already present in entry text"
@@ -1969,10 +1980,12 @@
       "sources": "HL factsheet (ISIN GB00B2Q6HW61)",
       "asAt": "22 Jun 2026",
       "oneMonth": {
+        "value": "+1.56%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE World ex-UK; proxy is MSCI World, which includes the UK at a small weight. Market context: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "≈ flat to -0.5%",
-        "note": "Same blended-index logic as Fidelity Index World.",
-        "confidence": "low-medium — index-derived"
+        "basis": "proxy:SWDA.L",
+        "source": "yahoo"
       },
       "isin": "GB00BG0QP604",
       "isinSource": "Fidelity factsheet header (C Class Accumulation), 12 Jul 2026 — replaces GB00B2Q6HW61 which does not match the C Acc class per Fidelity"
@@ -2118,10 +2131,12 @@
       "sources": "HL factsheet & March 2026 update",
       "asAt": "22 Jun 2026",
       "oneMonth": {
+        "value": "+1.56%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI World UCITS ETF (GBP) (SWDA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and optimised; expect divergence from a plain developed-world index. Market context: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%.",
+        "confidence": "computed from a loose GBP ETF proxy - treat as directional only",
         "asAt": "26 Aug 2026",
-        "value": "≈ flat to -0.5%",
-        "note": "ESG-tilted developed index — similar direction to Fidelity Index World, tilt effect not separately verified.",
-        "confidence": "low"
+        "basis": "proxy:SWDA.L",
+        "source": "yahoo"
       }
     },
     {
@@ -2278,10 +2293,12 @@
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
       "asAt": "25 Jun 2026",
       "oneMonth": {
+        "value": "+1.64%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares MSCI World Small Cap UCITS ETF (GBP) (WLDS.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: S&P 500 +3.56%, FTSE 100 +0.71%, Euro STOXX 50 +2.82%, GBP/USD +2.10%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "The Russell 2000 outperformed notably this window, climbing 0.85% on 24 Aug and jumping again on 21 Aug while large-cap tech fell — a rotation-toward-small-caps signal. No global small-cap index figure confirmed.",
-        "confidence": "low"
+        "basis": "proxy:WLDS.L",
+        "source": "yahoo"
       }
     },
     {
@@ -2422,10 +2439,10 @@
       "sources": "Trustnet factsheet (to 24 Feb 2026); HL research note; Fidelity (ISIN GB00B88V3X40)",
       "asAt": "22 Jun 2026 (performance to 24 Feb 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B88V3X40",
       "isinSource": "already present in entry text"
@@ -2590,10 +2607,10 @@
       "sources": "HL fund page (ISIN GB00BZ8FPJ50); FTF ClearBridge factsheet via FundsLibrary; Trustnet; 25 Jun 2026",
       "asAt": "25 Jun 2026",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BZ8FPJ50",
       "isinSource": "already present in entry text"
@@ -2756,10 +2773,10 @@
       "sources": "HL factsheet (ISIN GB00BNGB8J22)",
       "asAt": "22 Jun 2026 (portfolio Apr 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BNGB8J22",
       "isinSource": "already present in entry text"
@@ -2874,10 +2891,10 @@
       "sources": "HL fund updates (Aug 2025, Jul 2024)",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB0007450884",
       "isinNote": "B Acc",
@@ -3045,10 +3062,10 @@
       "sources": "Artemis fund page; HL factsheet (ISIN GB00B2PLJH12)",
       "asAt": "22 Jun 2026 (holdings 31 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B2PLJH12",
       "isinSource": "already present in entry text"
@@ -3216,10 +3233,10 @@
       "sources": "HL factsheet; HL fund updates (May 2026, May 2025)",
       "asAt": "22 Jun 2026 (holdings 30 Apr 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -3342,10 +3359,10 @@
       "sources": "Fidelity factsheet (ISIN GB0007494221); Janus Henderson; Fundslibrary factsheet (31 Jan 2026)",
       "asAt": "22 Jun 2026 (performance to ~Mar 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB0007494221",
       "isinSource": "already present in entry text"
@@ -3518,10 +3535,10 @@
       "sources": "Trustnet factsheet (to 29 May 2026); HL research note",
       "asAt": "22 Jun 2026 (portfolio Mar 2026; performance to 29 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely positive",
-        "note": "A good window for the UK: the FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, led by miners and banks. The gold melt-up (+15% month-to-date, strongest month since September 1999) was the dominant driver for the index's precious-metals names, and the UK's negligible semiconductor weighting meant it sidestepped the global chip selloff that hit the US. Funds tilted to miners and financials likely led; healthcare and media lagged across European trading.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -3682,10 +3699,12 @@
       "sources": "HL factsheet",
       "asAt": "22 Jun 2026 (portfolio Mar 2026)",
       "oneMonth": {
+        "value": "+1.35%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE All-Share; proxy is FTSE 100, so mid/small-cap divergence is not captured. Market context: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "≈ +1% to +1.5%",
-        "note": "Same miner-led strength as the FTSE 100 tracker above.",
-        "confidence": "medium — index-derived, verify tracker NAV vs HL factsheet"
+        "basis": "proxy:VUKE.L",
+        "source": "yahoo"
       }
     },
     {
@@ -3835,10 +3854,12 @@
       "sources": "HL factsheet",
       "asAt": "22 Jun 2026 (portfolio Apr 2026)",
       "oneMonth": {
+        "value": "+1.35%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core FTSE 100 UCITS ETF (GBP) (ISF.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "≈ +1% to +1.5%",
-        "note": "FTSE 100 rose from ~10,720 (18 Aug) to ~10,868 (25 Aug), roughly +1.4%, with miners and banks leading — the gold melt-up (+15% month-to-date) lifted the UK's precious-metals miners hard, and the index is unusually well positioned for this environment given its heavy miner weighting and negligible semiconductor exposure.",
-        "confidence": "medium — index-derived, verify tracker NAV vs HL factsheet"
+        "basis": "proxy:ISF.L",
+        "source": "yahoo"
       }
     },
     {
@@ -3978,10 +3999,12 @@
       "sources": "HL fund page; L&G factsheet via FundsLibrary; AJ Bell; interactive investor; House of Commons Library (BoE rate data); 25 Jun 2026",
       "asAt": "25 Jun 2026",
       "oneMonth": {
+        "value": "+4.86%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund excludes investment trusts; the proxy includes them. Market context: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified",
-        "note": "No confirmed FTSE 250 level found for this specific window; UK large-caps were firm on miners/banks but mid-cap direction is unconfirmed.",
-        "confidence": "low"
+        "basis": "proxy:VMID.L",
+        "source": "yahoo"
       }
     },
     {
@@ -4117,10 +4140,12 @@
       "sources": "HL fund page; FE Trustnet; HL Shortlist tracker page; 25 Jun 2026",
       "asAt": "25 Jun 2026",
       "oneMonth": {
+        "value": "+4.86%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 250 UCITS ETF (GBP) (VMID.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified",
-        "note": "Same as L&G UK Mid Cap Index above — no confirmed FTSE 250 window figure.",
-        "confidence": "low"
+        "basis": "proxy:VMID.L",
+        "source": "yahoo"
       }
     },
     {
@@ -4214,10 +4239,12 @@
       "sources": "HL tracker Shortlist page",
       "asAt": "22 Jun 2026",
       "oneMonth": {
+        "value": "+1.35%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE 100 UCITS ETF (GBP) (VUKE.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund is ESG-tilted and will diverge from a plain UK index, particularly when miners, tobacco or energy drive the market. Market context: FTSE 100 +0.71%, FTSE 250 +4.20%, Gold (USD/oz) +15.06%, GBP/USD +2.10%.",
+        "confidence": "computed from a loose GBP ETF proxy - treat as directional only",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely lagged",
-        "note": "The FTSE 100's gains this window came largely from miners, which ESG screens frequently exclude or underweight — so this fund plausibly lagged a plain UK tracker. Not confirmed.",
-        "confidence": "low"
+        "basis": "proxy:VUKE.L",
+        "source": "yahoo"
       },
       "isin": "GB00BJH4XV95",
       "isinNote": "I Acc",
@@ -4401,55 +4428,61 @@
           "holding": "NVIDIA",
           "weight": "7.72% — top holding",
           "event": "Q2 FY27 results (TODAY) → then Q3 FY27",
-          "date": "Wed 26 Aug 2026 (confirmed, after US close)",
+          "date": "~late Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Reports TODAY after the US close (press release ~1:20pm PT, call 2:00pm PT — NVIDIA IR confirmed). Guided ~$91.0bn ±2%; consensus ~$91.85-92.2bn revenue, ~$2.08-2.13 EPS across ~40 analysts, i.e. the Street sits only ~0.9% above the guide midpoint — little room for a blowout. NVIDIA has beaten its own guidance 13 straight quarters but the beat margin has shrunk from 22.8% (Q2 FY24) to 4.6% last quarter. Watch: Q3 FY27 guide, Blackwell Ultra execution, gross margin (~75%), Rubin commentary and any change to the China relationship. Shares fell seven straight sessions into the print before rebounding 2% on 25 Aug. NEXT after this: Q3 FY27 ~late Nov 2026 (estimated from NVIDIA's late-Feb/May/Aug/Nov pattern).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Apple",
           "weight": "6.31%",
           "event": "Q4 FY26 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~early Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Apple has been the Mag 7 laggard on AI capex — largely absent from the data-centre buildout race, which has explained part of its relative underperformance. Watch: iPhone cycle, Services margin, and any shift in AI strategy/capex posture. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Microsoft",
           "weight": "4.86%",
           "event": "Q1 FY27 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q3 FY26 (29 Apr) beat: revenue $82.9bn, +18% (+15% cc), operating income $38.4bn. Azure growth and the ~$190bn FY26 capex guide remain the two swing factors — the market has been rewarding Azure growth and punishing capex escalation. Watch: Azure growth rate, capex trajectory into FY27, and AI monetisation commentary. Mega-cap Q3 reporting has historically clustered in the last week of October; date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Amazon",
           "weight": "4.02%",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: AWS growth and margin (the dominant driver), retail margin, and capex. AWS is one of the four hyperscaler capex lines that feed NVIDIA's demand visibility — the lead time between hyperscaler capex commitments and accelerated-compute supplier revenue has historically run one to two quarters. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Alphabet",
           "weight": "≈6.29% (A+C)",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q1 2026 beat (~$109.9bn, +22%; Google Cloud first quarter above $20bn, backlog ~$460bn) and the Q2 print was well received — Alphabet's late-July report was credited with helping set the tone for the whole AI complex. Watch: Cloud re-acceleration, data-centre spending efficiency, and whether AI model launch timing affects competitive momentum. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Meta Platforms",
           "weight": "2.13%",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: ad revenue growth, Reality Labs losses, and — the market's main focus across the Mag 7 this year — AI capex discipline. Investor tolerance for rising capex without visible revenue translation has been narrowing through 2026. Date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -4458,10 +4491,12 @@
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
       "asAt": "22 Jun 2026 (price 12 Jun 2026; portfolio 31 Mar 2026)",
       "oneMonth": {
+        "value": "+1.21%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard S&P 500 UCITS ETF (GBP) (VUSA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE USA; proxy is S&P 500. Very similar universe. GBP-denominated, so the figure includes the USD/GBP effect a UK holder actually experiences. Market context: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.10%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "≈ -0.5% to -1%",
-        "note": "A soft window: the S&P 500 slipped from 7,745.06 (17 Aug) to 7,652.86 (24 Aug) before recovering ~0.3% on 25 Aug to roughly 7,675 — net about -0.9%. The index snapped a three-week advance, and the Nasdaq Composite fell roughly 2% over the week to 21 Aug. Semiconductors were the epicentre: the VanEck Semiconductor ETF fell more than 4% on that week, the iShares Semiconductor ETF slid 2.7% on 24 Aug alone, with Micron -5.8%, AMD -3%+ and Broadcom -2%+. NVIDIA fell seven consecutive sessions into today's earnings before rebounding 2% on 25 Aug.",
-        "confidence": "medium — index-derived, verify tracker NAV vs HL factsheet"
+        "basis": "proxy:VUSA.L",
+        "source": "yahoo"
       },
       "isin": "GB00BG0QPL51",
       "isinSource": "already present in entry text"
@@ -4644,10 +4679,10 @@
       "sources": "HL factsheet (ISIN GB00BPVBZ344); Fidelity/Morningstar (Inst W proxy GB00BGV53H32); HL fund note Sep 2025",
       "asAt": "22 Jun 2026 (price 23 Jun 2026; portfolio 30 Apr 2026 for sectors; holdings ~Oct 2025 proxy)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely soft",
-        "note": "A soft window for US equities: the S&P 500 fell from 7,745.06 (17 Aug) to 7,652.86 (24 Aug), recovering ~0.3% on 25 Aug to roughly 7,675 — net about -0.9%, snapping a three-week advance. The Nasdaq dropped roughly 2% over the week to 21 Aug, with semiconductors worst hit (VanEck Semiconductor ETF -4%+; Micron -5.8%, AMD -3%+, Broadcom -2%+ on 24 Aug). NVIDIA fell seven straight sessions into today's Q2 FY27 print before rebounding 2% on 25 Aug. Offsetting: healthcare had its best week since June on Moderna/Merck mRNA trial success, and the Russell 2000 outperformed. Two live catalysts land within 48 hours — NVIDIA's results tonight and Warsh's Jackson Hole speech on Friday 28 Aug.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isinNote": "multiple ISINs in entry text (GB00BGV53H32, GB00BPVBZ344) — confirm the HL share class"
     },
@@ -4824,10 +4859,10 @@
       "sources": "HL factsheet (ISIN GB00BK6RLD43 to confirm); HL fund update May 2026; Artemis fund page; FundCalibre; Citywire",
       "asAt": "22 Jun 2026 (price 14 Apr 2026 — lagged; portfolio 31 Dec 2025)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely soft",
-        "note": "A soft window for US equities: the S&P 500 fell from 7,745.06 (17 Aug) to 7,652.86 (24 Aug), recovering ~0.3% on 25 Aug to roughly 7,675 — net about -0.9%, snapping a three-week advance. The Nasdaq dropped roughly 2% over the week to 21 Aug, with semiconductors worst hit (VanEck Semiconductor ETF -4%+; Micron -5.8%, AMD -3%+, Broadcom -2%+ on 24 Aug). NVIDIA fell seven straight sessions into today's Q2 FY27 print before rebounding 2% on 25 Aug. Offsetting: healthcare had its best week since June on Moderna/Merck mRNA trial success, and the Russell 2000 outperformed. Two live catalysts land within 48 hours — NVIDIA's results tonight and Warsh's Jackson Hole speech on Friday 28 Aug.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BK6RLD43",
       "isinSource": "already present in entry text"
@@ -4997,10 +5032,11 @@
           "holding": "NVIDIA",
           "weight": "8.91% — top holding",
           "event": "Q2 FY27 results (TODAY) → then Q3 FY27",
-          "date": "Wed 26 Aug 2026 (confirmed, after US close)",
+          "date": "~late Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Reports TODAY after the US close (press release ~1:20pm PT, call 2:00pm PT — NVIDIA IR confirmed). Guided ~$91.0bn ±2%; consensus ~$91.85-92.2bn revenue, ~$2.08-2.13 EPS across ~40 analysts, i.e. the Street sits only ~0.9% above the guide midpoint — little room for a blowout. NVIDIA has beaten its own guidance 13 straight quarters but the beat margin has shrunk from 22.8% (Q2 FY24) to 4.6% last quarter. Watch: Q3 FY27 guide, Blackwell Ultra execution, gross margin (~75%), Rubin commentary and any change to the China relationship. Shares fell seven straight sessions into the print before rebounding 2% on 25 Aug. NEXT after this: Q3 FY27 ~late Nov 2026 (estimated from NVIDIA's late-Feb/May/Aug/Nov pattern).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -5009,10 +5045,10 @@
       "sources": "HL factsheet (ISIN GB00BMMV5105); Artemis fund page; Citywire",
       "asAt": "22 Jun 2026 (price 17 Jun 2026; portfolio 28 Feb 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — likely soft",
-        "note": "A soft window for US equities: the S&P 500 fell from 7,745.06 (17 Aug) to 7,652.86 (24 Aug), recovering ~0.3% on 25 Aug to roughly 7,675 — net about -0.9%, snapping a three-week advance. The Nasdaq dropped roughly 2% over the week to 21 Aug, with semiconductors worst hit (VanEck Semiconductor ETF -4%+; Micron -5.8%, AMD -3%+, Broadcom -2%+ on 24 Aug). NVIDIA fell seven straight sessions into today's Q2 FY27 print before rebounding 2% on 25 Aug. Offsetting: healthcare had its best week since June on Moderna/Merck mRNA trial success, and the Russell 2000 outperformed. Two live catalysts land within 48 hours — NVIDIA's results tonight and Warsh's Jackson Hole speech on Friday 28 Aug.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: S&P 500 +3.56%, Nasdaq Composite +4.89%, US 10yr yield -0.04%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BMMV5105",
       "isinSource": "already present in entry text"
@@ -5162,10 +5198,10 @@
       "sources": "HL factsheet (SEDOL BJMD6R8); Fidelity (ISIN GB00BJMD6R83); HL fund update Apr 2026",
       "asAt": "22 Jun 2026 (performance to 15 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BJMD6R83",
       "isinSource": "already present in entry text",
@@ -5174,19 +5210,21 @@
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -5327,29 +5365,31 @@
       "sources": "HL factsheet (SEDOL BFZ91W5); HL research note Jun 2026",
       "asAt": "22 Jun 2026 (performance to 14 Apr 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -5473,29 +5513,31 @@
       "sources": "HL factsheet; HL fund update Jul 2025",
       "asAt": "22 Jun 2026",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -5620,29 +5662,31 @@
       "sources": "HL factsheet (SEDOL B8N45T8); HL fund update Jan 2026; FundCalibre",
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -5759,29 +5803,31 @@
       "sources": "HL factsheet (SEDOL B1TWMW9)",
       "asAt": "22 Jun 2026 (performance to 15 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -5897,29 +5943,31 @@
       "sources": "HL factsheet (SEDOL 0594785); Baillie Gifford fund page",
       "asAt": "22 Jun 2026 (performance to 8 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -6040,10 +6088,10 @@
       "sources": "HL factsheet (page cached Oct 2025 — stale); Trustnet; HL notification Jul 2025",
       "asAt": "22 Jun 2026 (fund data from Oct 2025 — re-verify)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BV9GHX75",
       "isinSource": "Fidelity key-statistics page, fund name confirmed, 3 Jul 2026",
@@ -6052,19 +6100,21 @@
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         },
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         }
       ]
     },
@@ -6176,29 +6226,31 @@
       "sources": "HL factsheet (SEDOL B0CNHJ4); Citywire",
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind after a volatile stretch",
-        "note": "Yields eased late in the window after the US Treasury announced a plan to roughly double planned bond repurchases — an unusual intervention aimed at taming long-dated yields following the 30-year testing multi-decade highs. That capped what was described as a tumultuous week for Treasuries. UK Bank Rate remains 4.00% after the July hold, with the next MPC decision on 17 Sep. Warsh's first Jackson Hole speech as Fed chair (Fri 28 Aug) is the near-term duration catalyst.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: US 10yr yield -0.04%, Brent crude -3.66%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "catalysts": [
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         },
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         }
       ]
     },
@@ -6314,29 +6366,33 @@
       "sources": "HL factsheet (SEDOL BG0QNW2)",
       "asAt": "22 Jun 2026 (performance to 8 May 2026)",
       "oneMonth": {
+        "value": "+0.29%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core UK Gilts UCITS ETF (GBP) (IGLT.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.66%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind",
-        "note": "Yields dipped late in the window: US Treasury yields moved lower after the Treasury Department announced a plan to roughly double planned bond repurchases to tame long-dated yields (following the 30-year testing multi-decade highs), and gilts typically track that direction. But the window included what was described as a tumultuous week for Treasuries, so intra-window volatility was high. No confirmed UK 10yr window move.",
-        "confidence": "low — directional only"
+        "basis": "proxy:IGLT.L",
+        "source": "yahoo"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "UK gilt supply / fiscal",
           "weight": "macro driver — not a holding",
           "event": "Autumn Budget + DMO gilt remit",
-          "date": "Autumn Budget ~Nov 2026 (date not yet confirmed)",
+          "date": "Autumn Budget expected ~Nov 2026 (estimated - date not yet announced); DMO gilt remit updates ongoing",
           "tracking": "tbd",
           "detail": "Long-dated gilt yields have been driven as much by supply and fiscal credibility as by Bank Rate — 30-year yields hit a 27-year high above 5.7% in late 2025 and the long end (20-30yr) has been trading in the 4.70-4.80%+ area with a meaningful term premium reflecting UK pension demand and inflation persistence. Fitch affirmed the UK at AA- with a stable outlook in mid-August. Watch: Budget date confirmation, OBR forecasts, and the DMO's split between long-dated and short-dated issuance.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "no fixed date published"
         }
       ]
     },
@@ -6465,29 +6521,33 @@
       "sources": "HL factsheet (SEDOL BN08ZN2); HL fund update Aug 2025",
       "asAt": "22 Jun 2026 (HL page cached 7 Apr 2026 — stale)",
       "oneMonth": {
+        "value": "+0.62%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core GBP Corporate Bond UCITS ETF (GBP) (SLXX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks iBoxx £ Non-Gilts with partial replication; proxy is the corporate-only sleeve. Market context: US 10yr yield -0.04%, Brent crude -3.66%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind",
-        "note": "Same easing-yield backdrop as the Gilt Index Trust above; credit spreads not separately verified.",
-        "confidence": "low"
+        "basis": "proxy:SLXX.L",
+        "source": "yahoo"
       },
       "catalysts": [
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         },
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         }
       ]
     },
@@ -6607,29 +6667,33 @@
       "sources": "HL factsheet (SEDOL B50W2R1)",
       "asAt": "22 Jun 2026 (performance to 10 Jun 2026)",
       "oneMonth": {
+        "value": "-0.02%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Aggregate Bond UCITS ETF GBP-hedged (VAGP.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.66%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind",
-        "note": "The US Treasury's plan to double bond repurchases pushed yields lower late in the window, a supportive signal for global bond NAVs after a volatile stretch. Not confirmed at fund level.",
-        "confidence": "low"
+        "basis": "proxy:VAGP.L",
+        "source": "yahoo"
       },
       "catalysts": [
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         },
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         }
       ]
     },
@@ -6741,29 +6805,33 @@
       "sources": "HL factsheet (SEDOL BDFB5M5); HL fund update Nov 2025",
       "asAt": "22 Jun 2026 (performance to 14 May 2026)",
       "oneMonth": {
+        "value": "-2.28%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard Global Corporate Bond UCITS ETF GBP-hedged (VCPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield -0.04%, Brent crude -3.66%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — plausible mild tailwind",
-        "note": "Same as Vanguard Global Bond Index above.",
-        "confidence": "low"
+        "basis": "proxy:VCPA.L",
+        "source": "yahoo"
       },
       "catalysts": [
         {
           "holding": "US rates (Fed)",
           "weight": "macro driver — not a holding",
           "event": "FOMC decision / Jackson Hole",
-          "date": "Jackson Hole 27-29 Aug 2026 (Warsh speech Fri 28 Aug); FOMC ~mid-Sep; 27-28 Oct 2026",
+          "date": "Wed 28 Oct 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "Fed published calendar"
         },
         {
           "holding": "UK rates (BoE)",
           "weight": "macro driver — not a holding",
           "event": "MPC Bank Rate decision",
-          "date": "Thu 17 Sep 2026, then 5 Nov + 17 Dec (all confirmed by BoE)",
+          "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "BoE published calendar"
         }
       ]
     },
@@ -6930,19 +6998,21 @@
           "holding": "Microsoft",
           "weight": "2.43% — top holding",
           "event": "Q1 FY27 results",
-          "date": "~late Oct 2026 (estimated — not yet confirmed)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q3 FY26 (29 Apr) beat: revenue $82.9bn, +18% (+15% cc), operating income $38.4bn. Azure growth and the ~$190bn FY26 capex guide remain the two swing factors — the market has been rewarding Azure growth and punishing capex escalation. Watch: Azure growth rate, capex trajectory into FY27, and AI monetisation commentary. Mega-cap Q3 reporting has historically clustered in the last week of October; date NOT confirmed for 2026.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "TSMC",
           "weight": "2.36%",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -6952,10 +7022,10 @@
       "sources": "HL factsheet (SEDOL BNBQX42); Trustnet (Dec 2025 factsheet)",
       "asAt": "22 Jun 2026 (performance to 12 Jun 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed to positive",
-        "note": "Multi-asset funds likely did reasonably: any gold or commodity sleeve had an exceptional window (+15% month-to-date for bullion), UK equity exposure was firm on miners/banks, bond sleeves got late relief as the Treasury buyback plan capped yields — offset by a soft US/tech equity window. Net effect depends on the specific mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +15.06%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -7074,10 +7144,10 @@
       "sources": "HL factsheet (SEDOL BD8YW20); Fidelity (ISIN GB00BD8YW204)",
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed to positive",
-        "note": "Multi-asset funds likely did reasonably: any gold or commodity sleeve had an exceptional window (+15% month-to-date for bullion), UK equity exposure was firm on miners/banks, bond sleeves got late relief as the Treasury buyback plan capped yields — offset by a soft US/tech equity window. Net effect depends on the specific mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +15.06%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BD8YW204",
       "isinSource": "already present in entry text"
@@ -7199,10 +7269,10 @@
       "sources": "HL factsheet (SEDOL B2Q1J92); HL fund update Aug 2025; Trustnet",
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed to positive",
-        "note": "Multi-asset funds likely did reasonably: any gold or commodity sleeve had an exceptional window (+15% month-to-date for bullion), UK equity exposure was firm on miners/banks, bond sleeves got late relief as the Treasury buyback plan capped yields — offset by a soft US/tech equity window. Net effect depends on the specific mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +15.06%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -7321,10 +7391,10 @@
       "sources": "HL factsheet (SEDOL BFXY296); HL fund update Jun 2026",
       "asAt": "22 Jun 2026 (performance to 23 Jun 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed to positive",
-        "note": "Multi-asset funds likely did reasonably: any gold or commodity sleeve had an exceptional window (+15% month-to-date for bullion), UK equity exposure was firm on miners/banks, bond sleeves got late relief as the Treasury buyback plan capped yields — offset by a soft US/tech equity window. Net effect depends on the specific mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +15.06%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -7444,10 +7514,10 @@
       "sources": "HL factsheet (SEDOL BZ0CQJ1); HL research notes Dec 2025",
       "asAt": "22 Jun 2026 (performance to 5 May 2026)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed to positive",
-        "note": "Multi-asset funds likely did reasonably: any gold or commodity sleeve had an exceptional window (+15% month-to-date for bullion), UK equity exposure was firm on miners/banks, bond sleeves got late relief as the Treasury buyback plan capped yields — offset by a soft US/tech equity window. Net effect depends on the specific mix.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: FTSE 100 +0.71%, S&P 500 +3.56%, US 10yr yield -0.04%, Gold (USD/oz) +15.06%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -7638,10 +7708,11 @@
           "holding": "ASML",
           "weight": "4.81% - largest single holding",
           "event": "Q3 2026 results",
-          "date": "~mid-Oct 2026 (estimated — ASML typically reports within days of TSMC)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Q1 2026 (15 Apr): €8.8bn net sales, €2.8bn net income, gross margin 53.0%. FY2026 guidance €36-40bn net sales at 51-53% gross margin. Watch: bookings/backlog (the key ASML metric), EUV vs DUV mix, and — newly material this cycle — the competitive read from reports that China's CXMT has developed domestic DUV lithography, which triggered the late-July Asian chip crash. Exact Q3 date not confirmed; verify on ASML IR before relying on it.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -7650,10 +7721,12 @@
       "sources": "HL factsheet, HL tracker Wealth Shortlist, Broadridge",
       "asAt": "27 May 2026 (performance); 30 Apr 2026 (holdings)",
       "oneMonth": {
+        "value": "+2.44%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from Vanguard FTSE Developed Europe ex-UK UCITS ETF (GBP) (VERX.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: Euro STOXX 50 +2.82%, FTSE 100 +0.71%, GBP/USD +2.10%.",
+        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat to slightly up",
-        "note": "European markets struggled for direction: the STOXX 600 opened around flat on 21 Aug with miners and banks leading and healthcare/media lagging. Germany's DAX was at ~26,319 on 25 Aug, up over 200 points that session. No confirmed STOXX 600 window figure.",
-        "confidence": "low-medium — directional only"
+        "basis": "proxy:VERX.L",
+        "source": "yahoo"
       }
     },
     {
@@ -7844,10 +7917,11 @@
           "holding": "ASML",
           "weight": "9.19% - largest holding",
           "event": "Q3 2026 results",
-          "date": "~mid-Oct 2026 (estimated — ASML typically reports within days of TSMC)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Q1 2026 (15 Apr): €8.8bn net sales, €2.8bn net income, gross margin 53.0%. FY2026 guidance €36-40bn net sales at 51-53% gross margin. Watch: bookings/backlog (the key ASML metric), EUV vs DUV mix, and — newly material this cycle — the competitive read from reports that China's CXMT has developed domestic DUV lithography, which triggered the late-July Asian chip crash. Exact Q3 date not confirmed; verify on ASML IR before relying on it.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -7856,10 +7930,10 @@
       "sources": "HL factsheet, HL research page, Broadridge, BlackRock Greater Europe trust RNS",
       "asAt": "24 Jun 2026 (performance); 30 Apr 2026 (holdings/size)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "European markets struggled for direction this window: the STOXX 600 opened around flat on 21 Aug with miners and banks leading while healthcare and media lagged; Germany's DAX was ~26,319 on 25 Aug after gaining over 200 points that session, and France's CAC was marginally lower on 21 Aug. Europe's heavy semiconductor cohort (ASML, Infineon, STMicro) faced the same global chip-selloff pressure that hit US semis, so semi-heavy European funds likely lagged those tilted to miners, banks or industrials.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.82%, FTSE 100 +0.71%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -8050,10 +8124,11 @@
           "holding": "ASML",
           "weight": "7.56% - largest holding",
           "event": "Q3 2026 results",
-          "date": "~mid-Oct 2026 (estimated — ASML typically reports within days of TSMC)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Q1 2026 (15 Apr): €8.8bn net sales, €2.8bn net income, gross margin 53.0%. FY2026 guidance €36-40bn net sales at 51-53% gross margin. Watch: bookings/backlog (the key ASML metric), EUV vs DUV mix, and — newly material this cycle — the competitive read from reports that China's CXMT has developed domestic DUV lithography, which triggered the late-July Asian chip crash. Exact Q3 date not confirmed; verify on ASML IR before relying on it.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -8063,10 +8138,10 @@
       "sources": "HL factsheet, HL research page, Broadridge",
       "asAt": "27 Mar 2026 (performance - note stale); 31 Jan 2026 (holdings); 28 Feb 2026 (yield)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "European markets struggled for direction this window: the STOXX 600 opened around flat on 21 Aug with miners and banks leading while healthcare and media lagged; Germany's DAX was ~26,319 on 25 Aug after gaining over 200 points that session, and France's CAC was marginally lower on 21 Aug. Europe's heavy semiconductor cohort (ASML, Infineon, STMicro) faced the same global chip-selloff pressure that hit US semis, so semi-heavy European funds likely lagged those tilted to miners, banks or industrials.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.82%, FTSE 100 +0.71%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BFRT3504",
       "isinSource": "Fidelity factsheet (W Acc), confirmed 6 Jul 2026"
@@ -8251,10 +8326,11 @@
           "holding": "Novo Nordisk",
           "weight": "8.54% (stale, Feb 2024) - largest declared position",
           "event": "Q3 2026 results / GLP-1 pipeline updates",
-          "date": "~early Nov 2026 (estimated)",
+          "date": "~early Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: GLP-1 volume and pricing dynamics, US competitive position versus Eli Lilly, oral formulation progress and manufacturing capacity. Date NOT confirmed — previously logged as 'not yet verified' and still not pinned to a specific date; verify on Novo Nordisk IR.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -8263,10 +8339,10 @@
       "sources": "HL factsheet, Man Group website, The Adviser Centre, Broadridge",
       "asAt": "24 Jun 2026 (performance); 29 Feb 2024 (holdings - STALE)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "European markets struggled for direction this window: the STOXX 600 opened around flat on 21 Aug with miners and banks leading while healthcare and media lagged; Germany's DAX was ~26,319 on 25 Aug after gaining over 200 points that session, and France's CAC was marginally lower on 21 Aug. Europe's heavy semiconductor cohort (ASML, Infineon, STMicro) faced the same global chip-selloff pressure that hit US semis, so semi-heavy European funds likely lagged those tilted to miners, banks or industrials.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.82%, FTSE 100 +0.71%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -8457,10 +8533,11 @@
           "holding": "TotalEnergies",
           "weight": "4.74% - largest holding",
           "event": "Q3 2026 results / oil price and energy supply outlook",
-          "date": "~late Oct 2026 results; oil exposure ongoing",
+          "date": "Q3 2026 results ~late Oct 2026 (estimated); oil price exposure is continuous rather than event-driven",
           "tracking": "tbd",
           "detail": "Oil has been the dominant swing factor and has moved violently this year: Brent spiked toward $117/bbl in March on Strait of Hormuz disruption, ran up ~25% in July as supply disruptions spread from Hormuz to the Red Sea, then fell back to ~$88.58 on 25 Aug (-3.9% in a session) as the US shifted from military action to an economic-sanctions strategy against Iran. Brent remains roughly 45% higher than at the start of the year. Watch: Hormuz shipping status, OPEC+ policy, and gas/LNG pricing.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "no fixed date published"
         }
       ],
       "links": {
@@ -8469,10 +8546,10 @@
       "sources": "HL factsheet, Broadridge, Portfolio Adviser (Shortlist addition notice)",
       "asAt": "24 Jun 2026 (performance); 30 Apr 2026 (holdings); 31 May 2026 (yield)",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "European markets struggled for direction this window: the STOXX 600 opened around flat on 21 Aug with miners and banks leading while healthcare and media lagged; Germany's DAX was ~26,319 on 25 Aug after gaining over 200 points that session, and France's CAC was marginally lower on 21 Aug. Europe's heavy semiconductor cohort (ASML, Infineon, STMicro) faced the same global chip-selloff pressure that hit US semis, so semi-heavy European funds likely lagged those tilted to miners, banks or industrials.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.82%, FTSE 100 +0.71%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -8606,10 +8683,10 @@
       "sectorsNote": "Top sectors as at 31 Mar 2026 (Citywire / Morningstar).",
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "European markets struggled for direction this window: the STOXX 600 opened around flat on 21 Aug with miners and banks leading while healthcare and media lagged; Germany's DAX was ~26,319 on 25 Aug after gaining over 200 points that session, and France's CAC was marginally lower on 21 Aug. Europe's heavy semiconductor cohort (ASML, Infineon, STMicro) faced the same global chip-selloff pressure that hit US semis, so semi-heavy European funds likely lagged those tilted to miners, banks or industrials.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Euro STOXX 50 +2.82%, FTSE 100 +0.71%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B3S9LG25",
       "isinSource": "Fidelity factsheet (D Acc), confirmed 6 Jul 2026"
@@ -8788,28 +8865,31 @@
           "holding": "SK Hynix",
           "weight": "10.20% — largest holding",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "The single most volatile large-cap of this cycle: SK Hynix fell ~15% in a session three separate times in July, overtook Samsung on market cap for the first time in June 2026, completed a ~$26.5bn Nasdaq ADR listing (which triggered heavy post-listing profit-taking), then led the KOSPI's rebound with a 7%+ single-session gain in mid-August. Korea Investment & Securities cut its 2026/2027 operating profit estimates by 9%/11% on HBM average-selling-price concerns. Watch: HBM revenue share, DRAM contract pricing, and 'peak-out' commentary on the memory cycle.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "TSMC",
           "weight": "9.70% — second largest holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Samsung Electronics",
           "weight": "8.05% — third largest holding",
           "event": "Q3 2026 results",
-          "date": "~early Oct 2026 preliminary, ~late Oct 2026 full (estimated)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "A volatile few months: Samsung posted record Q2 results (operating profit up 19-fold on AI demand) but shares then fell 30-40% from 2026 highs during the late-July crash, dropping 13.4% in a single session on 28 Jul on the CXMT/DUV lithography shock, before recovering strongly with the KOSPI's ~23% rebound off its 30 Jul low. Watch: HBM/DRAM contract pricing, the HBM4 ramp and Nvidia qualification, foundry order book, and Chinese memory competition. Samsung typically posts preliminary results in the first week of the month following quarter-end, with full results ~3 weeks later.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -8818,10 +8898,10 @@
       "sources": "HL factsheet, HL Broadridge holdings data",
       "asAt": "Discrete performance to 24 Jun 2026; holdings 31 May 2026; charges as displayed on HL",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Asia consolidated after the powerful rebound of the prior cycle: Korea's KOSPI reached 6,912.95 on 21 Aug (+0.88%) before slipping 0.71% on 24 Aug; Japan's Nikkei was rangebound around 65,850-66,016; Hong Kong's Hang Seng eased from 26,009.46 (21 Aug) to ~25,511 (25 Aug); mainland China's CSI 300 closed 4,618.90 on 21 Aug (+0.57%) with the Shanghai Composite at ~3,889 on 25 Aug. Mixed rather than clearly directional, with the global chip selloff capping the AI-hardware names that drove the July-August recovery.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -8938,10 +9018,11 @@
           "holding": "TSMC",
           "weight": "~9.7% — largest holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -8952,10 +9033,10 @@
       "sources": "HL factsheet, Invesco factsheet PDF (31 Mar 2026)",
       "asAt": "Holdings 31 Mar–30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Asia consolidated after the powerful rebound of the prior cycle: Korea's KOSPI reached 6,912.95 on 21 Aug (+0.88%) before slipping 0.71% on 24 Aug; Japan's Nikkei was rangebound around 65,850-66,016; Hong Kong's Hang Seng eased from 26,009.46 (21 Aug) to ~25,511 (25 Aug); mainland China's CSI 300 closed 4,618.90 on 21 Aug (+0.57%) with the Shanghai Composite at ~3,889 on 25 Aug. Mixed rather than clearly directional, with the global chip selloff capping the AI-hardware names that drove the July-August recovery.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B8N46731",
       "isinSource": "already present in entry text"
@@ -9081,10 +9162,10 @@
       "sources": "HL factsheet, HL research page",
       "asAt": "Performance and holdings to 31 Mar–30 Apr 2026",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
         "value": "not yet verified",
-        "note": "No India-specific data point confirmed this window.",
-        "confidence": "low — directional only"
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -9188,10 +9269,10 @@
       "sources": "HL research page, HL factsheet",
       "asAt": "Since-launch performance as at HL research page (date not confirmed); current holdings not verified",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Asia consolidated after the powerful rebound of the prior cycle: Korea's KOSPI reached 6,912.95 on 21 Aug (+0.88%) before slipping 0.71% on 24 Aug; Japan's Nikkei was rangebound around 65,850-66,016; Hong Kong's Hang Seng eased from 26,009.46 (21 Aug) to ~25,511 (25 Aug); mainland China's CSI 300 closed 4,618.90 on 21 Aug (+0.57%) with the Shanghai Composite at ~3,889 on 25 Aug. Mixed rather than clearly directional, with the global chip selloff capping the AI-hardware names that drove the July-August recovery.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       }
     },
     {
@@ -9313,19 +9394,21 @@
           "holding": "TSMC",
           "weight": "9.77% — largest holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Tencent",
           "weight": "6.66% — second largest holding",
           "event": "Q3 2026 results",
-          "date": "~mid-Nov 2026 (estimated)",
+          "date": "~mid Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: gaming revenue (domestic and international), advertising recovery, fintech/business services growth, and AI infrastructure spend. Date NOT confirmed — Tencent typically reports Q3 in the middle of November.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -9335,10 +9418,10 @@
       "sources": "HL factsheet, HL Broadridge holdings, HL research page (Sep 2025 update)",
       "asAt": "Holdings 31 Mar 2026; charges as displayed on HL",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Asia consolidated after the powerful rebound of the prior cycle: Korea's KOSPI reached 6,912.95 on 21 Aug (+0.88%) before slipping 0.71% on 24 Aug; Japan's Nikkei was rangebound around 65,850-66,016; Hong Kong's Hang Seng eased from 26,009.46 (21 Aug) to ~25,511 (25 Aug); mainland China's CSI 300 closed 4,618.90 on 21 Aug (+0.57%) with the Shanghai Composite at ~3,889 on 25 Aug. Mixed rather than clearly directional, with the global chip selloff capping the AI-hardware names that drove the July-August recovery.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00BDD27J12",
       "isinNote": "L Acc",
@@ -9462,19 +9545,21 @@
           "holding": "TSMC",
           "weight": "10.13% — largest holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "HDFC Bank",
           "weight": "5.52% — fifth largest holding",
           "event": "Q2 FY27 results",
-          "date": "~mid-Oct 2026 (estimated)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: net interest margin, deposit growth, asset quality and credit costs. Indian equities have lagged other Asian markets through recent cycles. Date NOT confirmed — HDFC Bank typically reports around the middle of the month following quarter-end.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -9485,10 +9570,10 @@
       "sources": "HL factsheet, Stewart Investors fund page, Chelsea Financial Services",
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Asia consolidated after the powerful rebound of the prior cycle: Korea's KOSPI reached 6,912.95 on 21 Aug (+0.88%) before slipping 0.71% on 24 Aug; Japan's Nikkei was rangebound around 65,850-66,016; Hong Kong's Hang Seng eased from 26,009.46 (21 Aug) to ~25,511 (25 Aug); mainland China's CSI 300 closed 4,618.90 on 21 Aug (+0.57%) with the Shanghai Composite at ~3,889 on 25 Aug. Mixed rather than clearly directional, with the global chip selloff capping the AI-hardware names that drove the July-August recovery.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB0033874768",
       "isinSource": "already present in entry text"
@@ -9629,19 +9714,21 @@
           "holding": "TSMC",
           "weight": "9.52% — largest holding",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "Tencent",
           "weight": "5.71% — third largest holding",
           "event": "Q3 2026 results",
-          "date": "~mid-Nov 2026 (estimated)",
+          "date": "~mid Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: gaming revenue (domestic and international), advertising recovery, fintech/business services growth, and AI infrastructure spend. Date NOT confirmed — Tencent typically reports Q3 in the middle of November.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -9651,10 +9738,10 @@
       "sources": "HL factsheet, HL Broadridge holdings data",
       "asAt": "Holdings 31 May 2026; charges as displayed on HL",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Mainland China was steady-to-slightly-positive (CSI 300 +0.57% to 4,618.90 on 21 Aug; Shanghai Composite ~3,889 on 25 Aug) while Hong Kong eased (Hang Seng from 26,009.46 on 21 Aug to ~25,511 by 25 Aug) — onshore and offshore diverged again this window.",
-        "confidence": "low — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB0033874321",
       "isinSource": "Fidelity factsheet header (B Acc GBP), 12 Jul 2026"
@@ -9778,10 +9865,11 @@
           "holding": "SoftBank Group",
           "weight": "6.19% — largest holding",
           "event": "Q2 FY26 results",
-          "date": "~mid-Nov 2026 (estimated)",
+          "date": "~mid Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Watch: Vision Fund marks, the Arm stake, and AI-related investment commitments. SoftBank fell 4.43% in the 28 Jul Asian chip rout, so it carries meaningful beta to the AI hardware trade. Date NOT confirmed.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -9791,10 +9879,10 @@
       "sources": "HL factsheet, HL research page, Fidelity factsheet data (GB0006011133)",
       "asAt": "Performance to Sep 2025; holdings date not confirmed — verify on HL",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "The Nikkei 225 was rangebound at a high level: 66,016.36 on 21 Aug, -0.10% on 24 Aug, then +328 points to ~65,856 on 25 Aug, holding onto its strong recovery from the late-July crash.",
-        "confidence": "low-medium — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB0006011133",
       "isinSource": "already present in entry text"
@@ -9924,10 +10012,11 @@
           "holding": "Sumitomo Mitsui Trust Group",
           "weight": "4.44% — largest holding",
           "event": "Q2 FY27 results",
-          "date": "~mid-Nov 2026 (estimated)",
+          "date": "~mid Nov 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Japanese financials benefit from the BoJ's normalisation path and a steeper yield curve. Watch: net interest income, fee income and any commentary on domestic rate expectations. Date NOT confirmed.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -9937,10 +10026,10 @@
       "sources": "HL factsheet, HL Broadridge holdings, Fidelity factsheet (GB00B0119B50)",
       "asAt": "Holdings 31 Jan 2026; discrete performance to Sep 2025; 1yr to Mar 2026 also noted",
       "oneMonth": {
-        "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "The Nikkei 225 was rangebound at a high level: 66,016.36 on 21 Aug, -0.10% on 24 Aug, then +328 points to ~65,856 on 25 Aug, holding onto its strong recovery from the late-July crash.",
-        "confidence": "low-medium — directional only"
+        "value": "not yet verified",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 27 Jul 2026 to 26 Aug 2026: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "confidence": "not verified - market context only",
+        "asAt": "26 Aug 2026"
       },
       "isin": "GB00B0119B50",
       "isinSource": "already present in entry text"
@@ -10059,19 +10148,21 @@
           "holding": "TSMC",
           "weight": "19.68% — largest holding (highest TSMC weight of any Shortlist fund)",
           "event": "Q3 2026 results",
-          "date": "Thu 15 Oct 2026 (confirmed)",
+          "date": "~mid Oct 2026 (estimated - not yet confirmed)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         },
         {
           "holding": "SK Hynix",
           "weight": "5.64%",
           "event": "Q3 2026 results",
-          "date": "~late Oct 2026 (estimated)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "The single most volatile large-cap of this cycle: SK Hynix fell ~15% in a session three separate times in July, overtook Samsung on market cap for the first time in June 2026, completed a ~$26.5bn Nasdaq ADR listing (which triggered heavy post-listing profit-taking), then led the KOSPI's rebound with a 7%+ single-session gain in mid-August. Korea Investment & Securities cut its 2026/2027 operating profit estimates by 9%/11% on HBM average-selling-price concerns. Watch: HBM revenue share, DRAM contract pricing, and 'peak-out' commentary on the memory cycle.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -10082,10 +10173,12 @@
       "sources": "HL factsheet, BlackRock holdings data",
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
+        "value": "+2.09%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Pacific ex-Japan UCITS ETF (GBP) (CPJ1.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Asia-Pacific ex-Japan, which includes emerging Asia; the MSCI Pacific ex-Japan proxy is developed-only, so Korea and Taiwan exposure differs. Market context: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — mixed",
-        "note": "Korea consolidated after its huge rebound: the KOSPI reached 6,912.95 on 21 Aug (+0.88%) but slipped 0.71% on 24 Aug. Australia's ASX 200 hit 9,058.90 on 21 Aug before easing. Hong Kong's Hang Seng closed 26,009.46 on 21 Aug then fell to ~25,511 by 25 Aug. Mixed rather than directional.",
-        "confidence": "low"
+        "basis": "proxy:CPJ1.L",
+        "source": "yahoo"
       },
       "isin": "GB00B849FB47",
       "isinNote": "D Acc — desk entry is Class S; same fund, different class",
@@ -10215,10 +10308,11 @@
           "holding": "Advantest",
           "weight": "2.20%",
           "event": "Q2 FY27 results",
-          "date": "~late Oct 2026 (estimated)",
+          "date": "~late Oct 2026 (estimated - not yet confirmed)",
           "tracking": "tbd",
           "detail": "Semiconductor test equipment — high beta to the AI/memory capex cycle. Fell over 10% in the 28 Jul rout. Watch: order intake and guidance, which lead the broader memory cycle. Date NOT confirmed.",
-          "refreshedAt": "26 Aug 2026"
+          "refreshedAt": "26 Aug 2026",
+          "dateSource": "historical reporting pattern"
         }
       ],
       "links": {
@@ -10228,10 +10322,12 @@
       "sources": "HL factsheet, BlackRock holdings data",
       "asAt": "Holdings 30 Apr 2026; charges as displayed on HL",
       "oneMonth": {
+        "value": "+4.79%",
+        "note": "Computed over 27 Jul 2026 to 26 Aug 2026 from iShares Core MSCI Japan IMI UCITS ETF (GBP) (IJPA.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Fund tracks FTSE Japan; proxy is MSCI Japan IMI, which reaches further down the cap scale. Market context: Nikkei 225 +2.05%, Hang Seng +1.82%, GBP/USD +2.10%.",
+        "confidence": "computed from a similar-index GBP ETF proxy - verify vs HL factsheet",
         "asAt": "26 Aug 2026",
-        "value": "not yet verified — roughly flat",
-        "note": "The Nikkei 225 closed 66,016.36 on 21 Aug, slipped 0.10% on 24 Aug, then rose 328 points to ~65,856 on 25 Aug — broadly rangebound at a high level after its strong recovery from the late-July crash.",
-        "confidence": "low-medium — directional only"
+        "basis": "proxy:IJPA.L",
+        "source": "yahoo"
       },
       "isin": "GB00B6QQ9X96",
       "isinNote": "D Acc — desk entry is Class S; same fund, different class",
@@ -10240,7 +10336,7 @@
   ],
   "auditLog": {
     "runDate": "26 Aug 2026",
-    "summary": "26 Aug 2026 combined cycle: oneMonth patch + FULL CATALYSTS REBUILD. *** ROOT CAUSE FIXED: a review reported the Upcoming Catalysts panel still showing late-July events. Confirmed as a real process gap — the oneMonth cycle only ever overwrote the 'oneMonth' field and never touched 'catalysts', so 38 entries across 25 funds sat frozen while four oneMonth cycles (10 Jul, 18 Jul, 28 Jul, 18 Aug) ran past them. All 38 rewritten forward-looking; 12 bond funds that had NO catalysts given macro entries (BoE/FOMC/gilt supply); 62 entries total, each with a 'refreshedAt' stamp and an explicit CONFIRMED-vs-ESTIMATED date label. The hl-fund-audit skill has been updated so every future cycle refreshes catalysts too. *** SECOND ISSUE FOUND, NOT FIXED: the shell HTML renders catalyst chips in raw JSON array order with NO date filtering or sorting (FundResearch14.html ~line 1042, .slice(0,6)) — so past-dated events will display again as soon as these dates age. A ~5-line renderer change would make the panel self-managing; flagged for review for a joint look rather than patched unilaterally. *** STALENESS: last full 1yr/verification sweep still 12 Jul 2026 — now 45 days old and OVERDUE; five oneMonth cycles have run since. oneMonth overwritten on all 63 funds for the 18 -> 26 Aug window (17 index-derived, 5 fund-specific, 41 directional). Window: gold melt-up (+15% MTD, strongest month since Sept 1999), soft US tech/semis, firm UK on miners, oil down on the US pivot to sanctions.",
+    "summary": "26 Aug 2026 automated run (deterministic, no LLM). Computed real figures for 17 tracker funds from GBP ETF proxies; 46 active funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 62 catalyst entries (2 confirmed dates, 20 pattern estimates). THIS IS NOT A STALENESS SWEEP: 1yr figures, discrete arrays and ISINs are untouched and continue to age. Run a manual verification sweep periodically. CALENDAR WARNING: FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
     "findings": [
       {
         "fundId": "ftf-clearbridge-uk-mid-cap",
@@ -12392,6 +12488,24 @@
         "description": "REPEAT of the 18 Aug flag, now more urgent. Last full gap-fill/verification sweep ran 12 Jul 2026 — 45 days ago. Five oneMonth cycles have run since without touching 1yr figures, discrete arrays or ISINs, by design. Market moves in that period have been extreme (Korea crash and full recovery, US/Europe records, gold from ~$4,000 to $4,677). The 1yr figures driving the Winning/Lagging panels and the headline card figures are very likely materially wrong now. RECOMMENDATION: run a full staleness sweep next session before relying on any 1yr-based ranking.",
         "status": "flagged",
         "correctedValue": null,
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated weekly run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Computed 17 tracker figures from priced GBP ETF proxies over a 30-day window; 46 active funds left unverified by design. 62 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Calendar maintenance",
+        "check": "CALENDAR-LOW",
+        "severity": "MEDIUM",
+        "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
+        "status": "flagged",
         "source": null
       }
     ]
