@@ -29,9 +29,9 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -49,7 +49,12 @@ jobs:
           cp data/last_run.md _site/last_run.md
           cp data/market.json _site/market.json
 
-      - uses: actions/upload-pages-artifact@v3
+      # v4 of this action stopped including dotfiles in the artifact, and does
+      # so silently. Nothing here is hidden - the four files above are copied
+      # in by name - but a future `.nojekyll` or similar dropped into _site
+      # would vanish from the deploy without a word. `include-hidden-files:
+      # true` is the escape hatch if that ever changes.
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
@@ -61,4 +66,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
