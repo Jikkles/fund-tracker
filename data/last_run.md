@@ -5,26 +5,22 @@ Window: 28 Jul 2026 to 27 Aug 2026
 - **70** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
-- **48** catalyst dates refreshed (2 confirmed, 19 estimated)
-
-## Maintenance needed
-
-- FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.
+- **48** catalyst dates refreshed (2 confirmed, 0 provisional, 19 estimated)
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.76% |
-| FTSE 250 | +3.66% |
-| S&P 500 | +3.82% |
-| Nasdaq Composite | +6.16% |
-| Euro STOXX 50 | +2.15% |
-| Nikkei 225 | +6.04% |
+| FTSE 100 | -0.75% |
+| FTSE 250 | +3.68% |
+| S&P 500 | +3.97% |
+| Nasdaq Composite | +6.40% |
+| Euro STOXX 50 | +2.09% |
+| Nikkei 225 | +6.25% |
 | Hang Seng | +1.01% |
-| Gold (USD/oz) | +14.91% |
-| Brent crude | +4.29% |
-| US 10yr yield | +1.35% |
+| Gold (USD/oz) | +15.17% |
+| Brent crude | +3.42% |
+| US 10yr yield | +1.00% |
 | GBP/USD | +2.24% |
 
 ## Fund NAV figures (1 month)
