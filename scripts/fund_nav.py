@@ -345,6 +345,38 @@ def fmt(v: float | None) -> str | None:
     return None if v is None else f"{'+' if v >= 0 else ''}{v:.2f}%"
 
 
+def reject_collisions(picks: dict[int, tuple[dict, str]],
+                      funds: list[dict]) -> list[tuple[str, str]]:
+    """
+    Drop any symbol claimed by more than one fund. Mutates `picks`.
+
+    "BlackRock Continental European" and "...European Income" both matched the
+    same line. A collision is proof that at least one is wrong, and guessing
+    which would be exactly the silent corruption this guards against - so
+    neither keeps it, unless one got there by ISIN and the others did not.
+    """
+    refusals: list[tuple[str, str]] = []
+    claimed: dict[str, list[int]] = {}
+    for i, (match, _) in picks.items():
+        claimed.setdefault(match["symbol"], []).append(i)
+    for symbol, owners in claimed.items():
+        if len(owners) < 2:
+            continue
+        # An ISIN-sourced match is stronger evidence than a name match, so if
+        # exactly one claimant got there by ISIN, it keeps the symbol.
+        by_isin = [i for i in owners if picks[i][1].startswith("isin")]
+        keep = by_isin[0] if len(by_isin) == 1 else None
+        for i in owners:
+            if i == keep:
+                continue
+            other = ", ".join(funds[j]["name"] for j in owners if j != i)
+            refusals.append((funds[i]["name"],
+                             f"symbol {symbol} also matched by {other} - "
+                             f"collision, refusing"))
+            picks.pop(i)
+    return refusals
+
+
 def main(argv: list[str]) -> int:
     dry = "--dry-run" in argv
     only_resolve = "--resolve-only" in argv
@@ -373,24 +405,7 @@ def main(argv: list[str]) -> int:
             else:
                 refusals.append((fund["name"], reason))
 
-    claimed: dict[str, list[int]] = {}
-    for i, (match, _) in picks.items():
-        claimed.setdefault(match["symbol"], []).append(i)
-    for symbol, owners in claimed.items():
-        if len(owners) < 2:
-            continue
-        # An ISIN-sourced match is stronger evidence than a name match, so if
-        # exactly one claimant got there by ISIN, it keeps the symbol.
-        by_isin = [i for i in owners if picks[i][1].startswith("isin")]
-        keep = by_isin[0] if len(by_isin) == 1 else None
-        for i in owners:
-            if i == keep:
-                continue
-            other = ", ".join(funds[j]["name"] for j in owners if j != i)
-            refusals.append((funds[i]["name"],
-                             f"symbol {symbol} also matched by {other} - "
-                             f"collision, refusing"))
-            picks.pop(i)
+    refusals.extend(reject_collisions(picks, funds))
 
     for i, fund in enumerate(funds):
         if i not in picks:
@@ -483,5 +498,153 @@ def main(argv: list[str]) -> int:
     return 0
 
 
+# ---------------------------------------------------------------------------
+# Self-test - the guards, against captured payloads (runs offline)
+# ---------------------------------------------------------------------------
+# Resolution is the dangerous step on this desk. A wrong symbol does not fail
+# loudly; it publishes confident, precise, wrong performance data, which is
+# worse than an honestly stale figure. Every guard below exists because
+# something got through once, and none of them had a test until now.
+def _selftest_offline() -> bool:
+    import sys as _sys
+
+    def _series(closes, start=1_700_000_000, step=86400):
+        return {"t": [start + i * step for i in range(len(closes))],
+                "c": list(closes), "currency": "GBP"}
+
+    # --- name matching ---------------------------------------------------
+    # Yahoo truncates hard. These are real labels the resolver has to accept.
+    assert overlap("Legal & General UK Index Trust", "L&G UK Index I Acc") == 1.0
+    assert overlap("L&G Future World ESG Tilted & Optimised UK Index",
+                   "L&G Fut Wld ESG Tilted & Optd UKIdxI Acc") >= 0.6
+    assert overlap("", "anything") == 0.0
+    # Share-class letters are stopwords: "Class I" must not lend a point of
+    # similarity to every other fund with an I class.
+    assert "i" not in words("L&G UK Index Class I Accumulation")
+    assert "global" in words("Artemis Glbl Income"), "abbreviation not expanded"
+
+    # Three things the floor does NOT do, pinned so a change to it is a
+    # deliberate change rather than a surprise:
+    #
+    # 1. NAME_MATCH_MIN's own comment claims 0.6 "rejects 'Artemis Income'
+    #    against 'Artemis Global Income'". It does not. "income" is a
+    #    stopword, leaving "artemis" as the only significant word, so the
+    #    pair scores a perfect 1.0. What actually separates those two funds
+    #    is the ISIN rung and the collision rule below, not this floor.
+    assert overlap("Artemis Income", "Artemis Global Income I Acc") == 1.0
+
+    # 2. The BlackRock pair the collision rule exists for clears the floor
+    #    comfortably. The floor is not what catches it.
+    assert overlap("BlackRock Continental European",
+                   "BlackRock European Dynamic D Acc") > NAME_MATCH_MIN
+
+    # 3. ABBREV maps "apac" to "asiapacific", but our own name splits into
+    #    "asia" + "pacific" and never meets it, so the entry does not do what
+    #    it looks like it does - the pair scores 0.5 and would be refused.
+    #    Stewart Investors resolves today only because its symbol is stored.
+    assert overlap("Stewart Investors Asia Pacific Leaders Sustainability",
+                   "Stewart Inv APAC Ldrs B GBP Acc") == 0.5
+    print("  name overlap     OK  (3 documented gaps pinned)", file=_sys.stderr)
+
+    # --- share class -----------------------------------------------------
+    assert wanted_class({"shareClass": "Class C Accumulation"}) == "C"
+    assert wanted_class({"shareClass": "Accumulation"}) is None
+    assert wanted_class({}) is None
+
+    # Income classes pay dividends away, so their series understates total
+    # return. They are never substituted, whatever else matches.
+    assert class_verdict("Artemis Income I Inc", "I")[0] is False
+    assert class_verdict("Jupiter UK Growth Distributing", None)[0] is False
+    assert class_verdict("Some Fund GBP", None)[0] is False,         "a line with no accumulation marker must not be accepted"
+    # An accumulation line in another class is allowed, but must say so - it
+    # is the asterisk the page prints next to the figure. 30 funds carry one.
+    ok, note = class_verdict("L&G UK Index I Acc", "C")
+    assert ok and note == "share class I used, desk tracks C", (ok, note)
+    # The exact class earns no note, and so no asterisk.
+    ok, note = class_verdict("L&G UK Index I Acc", "I")
+    assert ok and note == "", (ok, note)
+
+    # A fourth documented gap: the class regex reads a SINGLE letter before
+    # "Acc", so a two-letter class like "FD" is not seen at all and the
+    # substitute is accepted silently, with no note and no asterisk. No fund
+    # on the desk has such a label today, which is why this is latent rather
+    # than wrong on the page - but it is the failure that would be quiet.
+    ok, note = class_verdict("BlackRock European Dynamic FD Acc", "D")
+    assert ok and note == "", (ok, note)
+    print("  share class      OK  (income refused, substitute flagged)",
+          file=_sys.stderr)
+
+    # --- redenomination --------------------------------------------------
+    # The guard that caught Invesco Tactical Bond and Ninety One Diversified
+    # Income. A 100:1 share-class change is not a -99% return; without this
+    # the desk published "-98.86% over 3yr" as fact.
+    clean, note = split_at_discontinuity(_series([100.0] * 40))
+    assert note == "" and len(clean["c"]) == 40, "steady series must be untouched"
+
+    split = _series([100.0] * 20 + [1.0] * 20)
+    kept, note = split_at_discontinuity(split)
+    assert note and "share-class change" in note, note
+    assert kept["c"] == [1.0] * 20, "must keep the clean tail, not the whole"
+    assert len(kept["t"]) == len(kept["c"])
+
+    # A real move, however violent, is a return and must survive. 2020 exists.
+    kept, note = split_at_discontinuity(_series([100.0, 70.0, 90.0]))
+    assert note == "", f"a -30% day is a market, not a redenomination: {note}"
+    print(f"  redenomination   OK  (100:1 split cut, -30% day kept)",
+          file=_sys.stderr)
+
+    # --- window coverage -------------------------------------------------
+    # A fund with three months of history must not report a 1-year figure.
+    # Without this it reports the same number for 1yr, 3yr and 5yr - a
+    # three-month return wearing a five-year label.
+    short = _series([100.0 + i for i in range(90)])
+    assert pct_over(short, 30) is not None, "30d is covered by 90d of history"
+    assert pct_over(short, 365) is None, "1yr must be refused on 90d of data"
+    assert pct_over(short, 1825) is None
+
+    long = _series([100.0] * 400 + [110.0])
+    got = pct_over(long, 365)
+    assert got is not None and abs(got - 10.0) < 0.5, got
+    assert pct_over(_series([100.0]), 30) is None, "one point is not a series"
+    assert pct_over({"t": [], "c": []}, 30) is None
+    # A zero start cannot be divided by.
+    assert pct_over(_series([0.0] + [1.0] * 40), 30) is not None
+    print("  window coverage  OK  (short history refused a long label)",
+          file=_sys.stderr)
+
+    # --- collisions ------------------------------------------------------
+    funds = [{"name": "BlackRock Continental European"},
+             {"name": "BlackRock Continental European Income"},
+             {"name": "Artemis Income"}]
+    picks = {0: ({"symbol": "0PSAME.L"}, "name match"),
+             1: ({"symbol": "0PSAME.L"}, "name match"),
+             2: ({"symbol": "0POTHER.L"}, "name match")}
+    refused = reject_collisions(picks, funds)
+    assert len(refused) == 2, refused
+    assert 0 not in picks and 1 not in picks, "neither may keep a tie"
+    assert 2 in picks, "an uncontested symbol must survive"
+
+    # Unless exactly one got there by ISIN, which is real evidence.
+    picks = {0: ({"symbol": "0PSAME.L"}, "isin GB00TEST1234"),
+             1: ({"symbol": "0PSAME.L"}, "name match")}
+    refused = reject_collisions(picks, [funds[0], funds[1]])
+    assert list(picks) == [0], picks
+    assert len(refused) == 1 and "collision" in refused[0][1]
+    print("  collisions       OK  (tie refused, ISIN claimant kept)",
+          file=_sys.stderr)
+
+    # --- formatting ------------------------------------------------------
+    assert fmt(None) is None
+    assert fmt(0) == "+0.00%"
+    assert fmt(-3.456) == "-3.46%"
+    assert fmt(12.0) == "+12.00%"
+
+    print("  fund_nav self-test: OK", file=_sys.stderr)
+    return True
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        _selftest_offline()
+        raise SystemExit(0)
     raise SystemExit(main(sys.argv[1:]))

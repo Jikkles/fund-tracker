@@ -678,5 +678,125 @@ def main(argv: list[str]) -> int:
     return 0
 
 
+# ---------------------------------------------------------------------------
+# Self-test - parsing and guards, against captured fragments (runs offline)
+# ---------------------------------------------------------------------------
+# This module writes more fields than any other on the desk, and every guard
+# in it exists to stop a confident wrong figure being written over a correct
+# one. None of them had a test until now.
+_PAGE = """
+<h1>Example Global Equity Class I - Accumulation (GBP)</h1>
+<table>
+<tr><td>Sector</td><td>Global</td></tr>
+<tr><td>Fund size</td><td>&pound;1,234 million</td></tr>
+<tr><td>Net ongoing charge</td><td>0.85% i</td></tr>
+<tr><td>Accumulation/income</td><td>Accumulation</td></tr>
+<tr><td>Launch date</td><td>15 April 2019</td></tr>
+<tr><td>Historic yield</td><td>2.90%</td></tr>
+<tr><td>Top 10 holdings</td></tr>
+<tr><td>4&Acirc;&frac14;% Treasury Gilt 2039</td><td>8.10%</td></tr>
+<tr><td>Second Holding plc</td><td>6.40%</td></tr>
+<tr><td>Third Holding</td><td>5.20%</td></tr>
+<tr><td>Fourth Holding</td><td>4.80%</td></tr>
+<tr><td>Fifth Holding</td><td>3.90%</td></tr>
+<tr><td>Sector</td><td>Weight</td></tr>
+<tr><td>Technology</td><td>25.00%</td></tr>
+<tr><td>Financials</td><td>18.00%</td></tr>
+<tr><td>Jason Forster</td></tr>
+<tr><td>Manager start date</td><td>15/04/2019</td></tr>
+<tr><td>01/08/21 to 01/08/22</td><td>01/08/22 to 01/08/23</td><td>01/08/23 to 01/08/24</td></tr>
+<tr><td>Annual return</td><td>-4.10%</td><td>12.30%</td><td>7.70%</td></tr>
+</table>
+"""
+
+
+def _selftest_offline() -> bool:
+    import sys as _sys
+
+    # --- mojibake --------------------------------------------------------
+    # HL publish this themselves: their markup carries the literal entities
+    # "4&Acirc;&frac14;%" where they mean a quarter.
+    assert demojibake("4Â¼% Gilt") == "4¼% Gilt"
+    assert demojibake("list â€” full") == "list — full"
+    assert demojibake("HL Â· FE") == "HL · FE"
+    assert demojibake("Ã©lan") == "élan"
+    # The negatives matter more than the positives: a wrong "repair" silently
+    # corrupts a holding name, and these are legitimately spelled that way.
+    for intact in ("Zürich", "Señor Martínez", "Nestlé",
+                   "plain ascii", "4¼% already correct", ""):
+        assert demojibake(intact) == intact, intact
+    # Reached through the real entity path, as a scrape would.
+    assert text_of("<td>4&Acirc;&frac14;% Gilt</td>") == "4¼% Gilt"
+    print("  mojibake         OK  (repaired; accents left alone)",
+          file=_sys.stderr)
+
+    # --- page identity ---------------------------------------------------
+    fund = {"name": "Example Global Equity", "shareClass": "Class I Accumulation"}
+    ok, why = page_is_ours(_PAGE, fund)
+    assert ok, why
+
+    # A different fund must be refused on the name floor.
+    ok, why = page_is_ours(_PAGE, {"name": "Totally Different Bond Trust",
+                                   "shareClass": "Class I Accumulation"})
+    assert not ok and "name mismatch" in why, why
+
+    # ...unless the link was pinned by hand, which is the case the L&G Future
+    # World UK fund needed: HL abbreviate so hard it scored 57% against the
+    # 60% floor and a correct factsheet was locked out.
+    ok, why = page_is_ours(_PAGE, {"name": "Totally Different Bond Trust",
+                                   "shareClass": "Class I Accumulation"},
+                           trust_name=True)
+    assert ok, why
+
+    # But a pin is a claim about the fund, never about the class. An income
+    # tracker pointed at an accumulation page is still refused, pinned or not.
+    inc = {"name": "Example Global Equity", "shareClass": "Class I Income"}
+    for trust in (False, True):
+        ok, why = page_is_ours(_PAGE, inc, trust_name=trust)
+        assert not ok and "share-class mismatch" in why, (trust, why)
+
+    assert page_is_ours("<p>no heading here</p>", fund)[0] is False
+    print("  page identity    OK  (pin skips name, never the class)",
+          file=_sys.stderr)
+
+    # --- parsing ---------------------------------------------------------
+    got = parse(_PAGE)
+    assert got["fundSize"] == "£1,234 million", got["fundSize"]
+    assert got["launched"] == "15 April 2019", got["launched"]
+    assert got["fundYield"] == "2.90% (historic)", got["fundYield"]
+    # HL append a tooltip glyph to some charge cells: "0.85% i".
+    assert got["charges"]["netOngoing"] == "0.85%", got["charges"]
+    assert got["holdings"][0]["name"] == "4¼% Treasury Gilt 2039",         "holdings must arrive demojibaked"
+    assert len(got["holdings"]) == 5, [h["name"] for h in got["holdings"]]
+    assert got["sectors"][0] == {"name": "Technology", "weight": "25.00%"}
+    assert got["manager"]["names"] == "Jason Forster", got.get("manager")
+    assert got["manager"]["tenure"] == "Jason Forster since 15/04/2019"
+
+    # Discrete periods: HL lists oldest first, the desk reads [0] as most
+    # recent, so the order is reversed rather than silently relabelled.
+    assert got["discrete"][0]["year"] == "01/08/23 to 01/08/24", got["discrete"]
+    assert got["discrete"][0]["fund"] == "+7.70%"
+    assert got["discrete"][-1]["fund"] == "-4.10%", "sign must survive"
+    assert all(d["sector"] == "not yet verified" for d in got["discrete"]),         "HL publishes no comparator; one must never be invented"
+    print(f"  parsing          OK  ({len(got)} field groups)", file=_sys.stderr)
+
+    # A misaligned discrete table is taken as nothing at all - attributing a
+    # return to the wrong year is worse than having no history.
+    skewed = _PAGE.replace("<td>-4.10%</td><td>12.30%</td><td>7.70%</td>",
+                           "<td>12.30%</td><td>7.70%</td>")
+    assert discrete_returns(rows(skewed)) is None, "length mismatch must refuse"
+    assert parse("") == {} or "discrete" not in parse("")
+    print("  parse guards     OK  (misaligned table refused)", file=_sys.stderr)
+
+    # --- class comparison ------------------------------------------------
+    assert class_letter("Class I - Accumulation") == "I"
+    assert class_letter("Accumulation") is None
+    print("  hl_factsheet self-test: OK", file=_sys.stderr)
+    return True
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        _selftest_offline()
+        raise SystemExit(0)
     raise SystemExit(main(sys.argv[1:]))

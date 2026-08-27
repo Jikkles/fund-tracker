@@ -243,6 +243,8 @@ python scripts/market_data.py --selftest    # check the endpoints are reachable
 python scripts/market_series.py --selftest  # same, for the chart endpoint
 python scripts/cb_calendar.py --selftest    # Fed/BoE calendar parsing, offline
 python scripts/calendar_data.py --selftest  # date rollover + sort anchors, offline
+python scripts/fund_nav.py --selftest       # resolution guards, offline
+python scripts/hl_factsheet.py --selftest   # scrape parsing + guards, offline
 python scripts/cb_calendar.py               # what the published calendars say today
 python scripts/run_update.py --dry-run      # full run, writes nothing
 python scripts/market_series.py --dry-run   # chart fetch, writes nothing
@@ -304,6 +306,24 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   breaks *and* the table runs out, the rate chip says "next date not
   published" instead of naming a date. Top up `calendar_data.py` if that
   happens.
+
+- **Three things the name-overlap floor does not do.** `fund_nav.py --selftest`
+  pins them, because each looks like a protection that is not there.
+  `NAME_MATCH_MIN`'s own comment claims 0.6 "rejects 'Artemis Income' against
+  'Artemis Global Income'" - it does not; "income" is a stopword, leaving
+  "artemis" as the only significant word, and the pair scores a perfect 1.0.
+  What separates those funds is the ISIN rung and the collision rule, not the
+  floor. The BlackRock pair the collision rule exists for also clears the
+  floor comfortably. And `ABBREV` maps `apac` to `asiapacific`, which our own
+  "Asia Pacific" never meets, so Stewart Investors scores 0.5 and resolves
+  today only because its symbol is stored. None of this is currently wrong on
+  the page; all of it would be a surprise to whoever changes the floor next.
+
+- **A two-letter share class is not detected.** `class_verdict` reads a single
+  letter before "Acc", so a label like "FD Acc" is accepted as if it were an
+  exact match - no note, no asterisk. No fund on the desk carries such a label
+  today, so it is latent rather than wrong, but it is the failure that would
+  be quiet. 30 funds do carry a substitute-class note, and those are correct.
 
 - **HL publish mojibake, and the desk now repairs it.** Their factsheets carry
   the literal entities `4&Acirc;&frac14;%` where they mean `4¼%` - UTF-8
