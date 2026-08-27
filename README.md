@@ -125,6 +125,31 @@ shows something offline; the fetched file replaces it unconditionally the
 moment it arrives, and the header chip says `live data` or `offline copy` so
 you always know which one you are looking at.
 
+**Factsheet depth is scraped, not typed.** `hl_factsheet.py` reads each fund's
+HL factsheet and refreshes the parts a NAV series cannot supply: top ten
+holdings, sector and country splits, fund size, launch date, historic yield,
+the net ongoing charge and HL's saving, manager names with start dates, and
+five discrete annual periods. That closes the last hand-maintained surface on
+the desk - the 120-day stale-research warning used to name eight funds and now
+names none.
+
+The same rule applies here as everywhere else: nothing is guessed. A field is
+written only when it is found and parses, and a page is used only after it is
+confirmed to be this fund. Two guards do that work. The first compares the
+page's own title against the fund name and rejects a mismatch - which is how a
+scrape of two trackers was caught landing on HL's generic "Wealth Shortlist
+Trackers" page instead of a factsheet. The second compares share class, because
+HL frequently lists a different retail class than the desk prices: charges,
+yield and discrete history are class-specific and are dropped when the classes
+differ, while holdings, fund size and manager - which describe the whole fund -
+are still taken. Six funds are in that state today and say so.
+
+It also refuses to overwrite a discrete history that already carries sector
+comparators. HL publishes fund returns on that table but no comparator, and its
+periods end in August where the researched ones generally end in March, so
+copying a comparator across would attach it to a period it was never measured
+over.
+
 **Catalysts roll forward automatically.** Central bank dates are hardcoded from
 published calendars and marked `(confirmed)`. Earnings dates are fetched live
 where a company has confirmed one, and fall back to a pattern estimate marked
@@ -142,6 +167,7 @@ where a company has confirmed one, and fall back to a pattern estimate marked
 | `scripts/calendar_data.py` | Central bank dates + earnings lookup |
 | `scripts/market_series.py` | Index chart series + per-index headlines. **Edit `INDICES`** to change the tabs |
 | `scripts/fund_nav.py` | Resolves each fund to a Yahoo NAV symbol and prices it. `--resolve-only` to check matches |
+| `scripts/hl_factsheet.py` | Refreshes researched depth from HL factsheets. `--dry-run`, `--only <id>`, `--new` |
 | `scripts/anonymise.py` | Strips personal references before publishing |
 
 Test locally without writing anything:

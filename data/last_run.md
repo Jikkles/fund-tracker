@@ -10,22 +10,21 @@ Window: 28 Jul 2026 to 27 Aug 2026
 ## Maintenance needed
 
 - FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.
-- 8 funds have factsheet research older than 120 days: lazard-global-equity-franchise (149d), jupiter-asian-income (149d), artemis-us-smaller-companies (135d), and 5 more. Re-research, or rely on the NAV figures, which refresh every run.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.57% |
-| FTSE 250 | +3.55% |
-| S&P 500 | +3.32% |
-| Nasdaq Composite | +5.04% |
-| Euro STOXX 50 | +2.71% |
+| FTSE 100 | -0.42% |
+| FTSE 250 | +3.70% |
+| S&P 500 | +3.54% |
+| Nasdaq Composite | +4.81% |
+| Euro STOXX 50 | +2.59% |
 | Nikkei 225 | +6.04% |
 | Hang Seng | +1.01% |
-| Gold (USD/oz) | +15.25% |
-| Brent crude | +3.04% |
-| US 10yr yield | +1.30% |
+| Gold (USD/oz) | +13.67% |
+| Brent crude | -1.13% |
+| US 10yr yield | +0.50% |
 | GBP/USD | +2.16% |
 
 ## Fund NAV figures (1 month)
