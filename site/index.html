@@ -1549,7 +1549,11 @@ function buildGroupPanel(groupKey, label, funds){
     return pb-pa;
   });
   const top3 = sorted.slice(0,3);
-  const bot3 = sorted.filter(f=>parsePerf(getPerf1(f))!==null).slice(-3).reverse();
+  // Lagging draws only from priced funds the Winning column has not already taken.
+  // Both columns used to slice the two ends of one sorted list, so a category with
+  // fewer than six priced funds showed the same fund as both winning and lagging.
+  const shown = new Set(top3);
+  const bot3 = sorted.filter(f=>parsePerf(getPerf1(f))!==null && !shown.has(f)).slice(-3).reverse();
 
   // Catalyst chips for this group
   const allChips = [];

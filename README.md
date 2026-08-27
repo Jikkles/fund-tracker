@@ -1,8 +1,14 @@
 # Fund Tracker
 
-An automated research desk covering the ~63 funds on the Hargreaves Lansdown
-Wealth Shortlist. A daily GitHub Action prices the index trackers from free
-market data, rolls the catalyst calendar forward, and republishes the page.
+An automated research desk covering 70 funds - ten in each of seven
+categories - drawn from the Hargreaves Lansdown Wealth Shortlist, with
+additions where the Shortlist does not carry ten in a category. A daily GitHub
+Action prices every fund from free market data, rolls the catalyst calendar
+forward, and republishes the page.
+
+Ten per category is a floor, not decoration. The Winning and Lagging columns
+take the top three and bottom three of one sorted list, so a category holding
+four priced funds showed the same fund in both columns.
 
 **No API key. No account. No cost.** Standard library only, free public
 endpoints, runs entirely inside GitHub's free Actions allowance.
@@ -28,9 +34,11 @@ There is no step 4. Nothing to configure, no secrets to add.
 
 ## What it actually does
 
-**Tracker funds get real numbers.** Each of the 17 index trackers is mapped to
-a London-listed, GBP-denominated ETF following the same index. The script
-prices a 30-day window and computes the actual change.
+**Tracker funds get real numbers.** The proxy table maps 17 tracker funds to a
+London-listed, GBP-denominated ETF following the same index, and prices a
+30-day window from it. This is now a fallback: every fund on the list resolves
+to its own NAV series, so the last several runs have priced 0 funds from a
+proxy. It earns its place for the run where a NAV lookup fails.
 
 This is deliberately better than estimating from headline index moves. A UK
 investor in a US tracker earns the index move *plus* the USD/GBP move — in a
@@ -41,8 +49,9 @@ week where the S&P rises 2% and sterling strengthens 2%, the raw index says
 source published active fund NAVs. That was wrong: Yahoo carries UK OEICs under
 Morningstar-style symbols (`0P0000W36K.L`), in GBP, priced daily. So
 `fund_nav.py` resolves each fund to such a symbol and computes real 1/3/5yr
-total returns. 49 of 50 funds now carry a figure priced today rather than a researched one
-that ages, and the 50th carries a real 1-week and 1-month figure.
+total returns. 67 of 70 funds now carry a figure priced today rather than a
+researched one that ages, and the other three - share classes younger than a
+year - carry real 1-week and 1-month figures instead of a back-filled guess.
 
 Resolution is a ladder, strongest identifier first: a stored `navSymbol`, then
 the fund's ISIN, then any ISIN found elsewhere in its record, then the name and
