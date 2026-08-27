@@ -3,11 +3,17 @@ Forward calendar for the catalysts panel.
 
 Two kinds of event, handled differently because their reliability differs:
 
-  CENTRAL BANK DATES are published years in advance and essentially never
-  move. They are hardcoded below, sourced from the Bank of England and
-  Federal Reserve published calendars, and marked (confirmed). Extend the
-  table when the next year is published - there is a staleness check that
-  will warn you when it is running low.
+  CENTRAL BANK DATES are read from the published calendars by cb_calendar,
+  which scrapes the Bank of England and Federal Reserve pages. The tables
+  below are no longer the source - they are a floor. Where a scrape and a
+  hand-entered future date disagree, the hand-entered one wins and the run
+  says so; beyond the table's horizon the scrape stands alone, which is the
+  point. A page that cannot be read degrades to the table rather than to
+  nothing, so the desk keeps working when the Fed's markup changes.
+
+  The Bank publishes one year as confirmed and the next as provisional, and
+  that distinction is carried through to the label. A provisional date is
+  not a confirmed one.
 
   EARNINGS DATES are fetched live where possible. When a company has
   confirmed its date the fetch returns it and we mark (confirmed). When it
@@ -32,10 +38,13 @@ import urllib.error
 import urllib.request
 from datetime import date, timedelta
 
+import cb_calendar as cb
 from market_data import USER_AGENT, TIMEOUT
 
 # ---------------------------------------------------------------------------
-# Central bank calendar - published, confirmed, hardcoded.
+# Central bank calendar - a floor under the published calendars, not the
+# source. cb_calendar reads the real pages; these dates are what the desk
+# falls back to when it cannot, and what a suspect scrape is checked against.
 # Source: bankofengland.co.uk/monetary-policy/upcoming-mpc-dates
 #         federalreserve.gov/monetarypolicy/fomccalendars.htm
 # ---------------------------------------------------------------------------
@@ -49,9 +58,32 @@ FOMC_DATES: list[date] = [
     date(2026, 10, 28),   # 27-28 Oct, decision on the 28th
 ]
 
-# Roughly how far ahead we still have coverage. When the last hardcoded date
-# is within this window, the run emits a warning to top the table up.
+# holding name -> (report label, fallback table, fetcher, source credit)
+CENTRAL_BANKS: dict[str, tuple[str, list[date], object, str]] = {
+    "UK rates (BoE)": ("BoE MPC", BOE_MPC_DATES, cb.fetch_boe,
+                       "BoE published calendar"),
+    "US rates (Fed)": ("FOMC", FOMC_DATES, cb.fetch_fomc,
+                       "Fed published calendar"),
+}
+
+# Roughly how far ahead we still have coverage. When the last known date is
+# within this window, the run emits a warning.
 CALENDAR_LOW_WATER = timedelta(days=75)
+
+# One fetch per page per run. next_event is called per holding and
+# calendar_health runs afterwards; without this the pages would be pulled
+# several times for the same answer.
+_CALENDAR_CACHE: dict[str, tuple[list[cb.Meeting], list[str]]] = {}
+
+
+def load_calendar(holding: str, today: date
+                  ) -> tuple[list[cb.Meeting], list[str]]:
+    """Published calendar reconciled against the fallback table, cached."""
+    if holding not in _CALENDAR_CACHE:
+        label, table, fetch, _ = CENTRAL_BANKS[holding]
+        _CALENDAR_CACHE[holding] = cb.reconcile(
+            fetch(today), table, today, label)
+    return _CALENDAR_CACHE[holding]
 
 
 def next_after(dates: list[date], today: date) -> date | None:
@@ -59,18 +91,30 @@ def next_after(dates: list[date], today: date) -> date | None:
     return upcoming[0] if upcoming else None
 
 
+def next_meeting(meetings: list[cb.Meeting], today: date) -> cb.Meeting | None:
+    upcoming = sorted((m for m in meetings if m.day >= today),
+                      key=lambda m: m.day)
+    return upcoming[0] if upcoming else None
+
+
 def calendar_health(today: date) -> list[str]:
-    """Warn when the hardcoded tables are running out."""
+    """
+    Warn when a calendar is running out, and surface any disagreement
+    between the published page and the fallback table.
+    """
     warnings = []
-    for name, dates in (("BoE MPC", BOE_MPC_DATES), ("FOMC", FOMC_DATES)):
-        remaining = [d for d in dates if d >= today]
+    for holding, (label, _table, _fetch, _src) in CENTRAL_BANKS.items():
+        meetings, notes = load_calendar(holding, today)
+        warnings.extend(notes)
+        remaining = [m.day for m in meetings if m.day >= today]
         if not remaining:
             warnings.append(
-                f"{name} calendar is EXHAUSTED - no future dates left. "
-                f"Add the next year's published dates to calendar_data.py.")
+                f"{label} calendar is EXHAUSTED - no future dates left, and "
+                f"the published page did not supply any. Add the next "
+                f"year's dates to calendar_data.py.")
         elif max(remaining) - today < CALENDAR_LOW_WATER:
             warnings.append(
-                f"{name} calendar runs out on {max(remaining):%d %b %Y}. "
+                f"{label} calendar runs out on {max(remaining):%d %b %Y}. "
                 f"Top it up from the published calendar.")
     return warnings
 
@@ -237,18 +281,16 @@ def next_event(holding: str, today: date) -> tuple[str, str, str | None] | None:
     ISO date used only to order and to age out the catalyst panel, or None
     where the event genuinely resolves to no date at all.
     """
-    if holding in ("UK rates (BoE)",):
-        nxt = next_after(BOE_MPC_DATES, today)
+    if holding in CENTRAL_BANKS:
+        _label, _table, _fetch, source = CENTRAL_BANKS[holding]
+        meetings, _notes = load_calendar(holding, today)
+        nxt = next_meeting(meetings, today)
         if nxt:
-            return (f"{fmt_date(nxt, with_weekday=True)} (confirmed)",
-                    "BoE published calendar", nxt.isoformat())
-        return None
-
-    if holding in ("US rates (Fed)",):
-        nxt = next_after(FOMC_DATES, today)
-        if nxt:
-            return (f"{fmt_date(nxt, with_weekday=True)} (confirmed)",
-                    "Fed published calendar", nxt.isoformat())
+            # (provisional) is the Bank's own word for its next-year dates.
+            # Relabelling one as confirmed would be the same failure as
+            # dressing a pattern estimate up as a fetched date.
+            return (f"{fmt_date(nxt.day, with_weekday=True)} ({nxt.status})",
+                    source, nxt.day.isoformat())
         return None
 
     # Aggregate "cluster" entries track a reporting season, not one company.
@@ -322,8 +364,10 @@ def _season_end(dates: list[tuple[date, str]]) -> date:
 
 def _selftest_offline() -> bool:
     """
-    Exercise the date logic with no network. Everything below is pure
-    arithmetic on the hardcoded tables, so it runs anywhere.
+    Exercise the date logic with no network. Pattern windows are pure
+    arithmetic; the central bank cache is seeded by hand so the fetch never
+    runs - reading the published pages is cb_calendar's business and has its
+    own self-test.
     """
     import sys as _sys
 
@@ -350,12 +394,30 @@ def _selftest_offline() -> bool:
     # A rhythm that never matches must fail rather than loop.
     assert pattern_window([], "mid", date(2026, 8, 27)) is None
 
-    # Central bank events resolve to the published date, confirmed, with an
-    # anchor equal to the date itself.
-    hit = next_event("UK rates (BoE)", date(2026, 8, 27))
-    assert hit and hit[0].endswith("(confirmed)"), hit
-    assert hit[2] == "2026-09-17", hit
-    assert fmt_date(date(2026, 9, 17), with_weekday=True) == "Thu 17 Sep 2026"
+    # Central bank events resolve to the published date, with an anchor
+    # equal to the date itself. Seed the cache so this stays offline - the
+    # fetch itself is cb_calendar's to test, not ours.
+    today = date(2026, 8, 27)
+    _CALENDAR_CACHE["UK rates (BoE)"] = ([
+        cb.Meeting(date(2026, 9, 17), "confirmed"),
+        cb.Meeting(date(2027, 2, 4), "provisional"),
+    ], [])
+    hit = next_event("UK rates (BoE)", today)
+    assert hit == ("Thu 17 Sep 2026 (confirmed)", "BoE published calendar",
+                   "2026-09-17"), hit
+
+    # Past that date the next one up is provisional, and must say so rather
+    # than inherit the confirmed label from the entry before it.
+    hit = next_event("UK rates (BoE)", date(2026, 9, 18))
+    assert hit and hit[0].endswith("(provisional)"), hit
+    assert hit[2] == "2027-02-04", hit
+
+    # An exhausted calendar resolves to nothing rather than to a past date.
+    _CALENDAR_CACHE["US rates (Fed)"] = (
+        [cb.Meeting(date(2026, 10, 28), "confirmed")], [])
+    assert next_event("US rates (Fed)", date(2026, 10, 29)) is None
+    assert any("EXHAUSTED" in w for w in calendar_health(date(2026, 10, 29)))
+    _CALENDAR_CACHE.clear()
 
     # An annual policy event rolls with the calendar instead of naming a
     # year that will go stale.
@@ -403,9 +465,16 @@ if __name__ == "__main__":
     print(f"Calendar check for {today}\n")
     for w in calendar_health(today):
         print(f"  WARNING: {w}")
-    print(f"\n  Next BoE MPC: {next_after(BOE_MPC_DATES, today)}")
-    print(f"  Next FOMC:    {next_after(FOMC_DATES, today)}\n")
-    print("  Pattern estimates (no network needed):")
+
+    print()
+    for holding, (label, _t, _f, _s) in CENTRAL_BANKS.items():
+        meetings, _ = load_calendar(holding, today)
+        nxt = next_meeting(meetings, today)
+        ahead = sum(1 for m in meetings if m.day >= today)
+        print(f"  Next {label:8} {fmt_date(nxt.day, True) if nxt else '-':18}"
+              f"({nxt.status if nxt else 'none'}), {ahead} ahead")
+
+    print("\n  Pattern estimates (no network needed):")
     for holding in list(REPORTING_PATTERN)[:8]:
         est = estimate_next(holding, today)
         print(f"    {holding:24} {est[0] if est else '-':32} "

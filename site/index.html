@@ -1092,6 +1092,30 @@ function catalystChipDate(s){
   return s ? String(s).split(/;|,\s*then\b/)[0].trim() : '';
 }
 
+/* A catalyst whose date has passed with nothing to replace it means the run
+   could not resolve a next date for that holding. Pattern estimates always
+   roll, so in practice this is a central bank calendar that has run out.
+
+   These are surfaced rather than filtered out. Dropping them is what the
+   "upcoming" filter would do on its own, and it would make the Fed quietly
+   disappear from the Bonds panel one day in late October - which is exactly
+   how an exhausted table used to hide itself. A row saying the next date is
+   not published is a signal; a missing row is not. */
+function stalledCatalysts(list){
+  const cutoff = Date.now() - 86400000;
+  const live = new Set();
+  (list||[]).forEach(c=>{ const t = catalystTime(c);
+    if(t===null || t>=cutoff) live.add(c.holding); });
+  const out = [], seen = new Set();
+  (list||[]).forEach(c=>{
+    const t = catalystTime(c);
+    if(t===null || t>=cutoff || live.has(c.holding)) return;
+    const k = `${c.holding} · ${c.event}`.toLowerCase();
+    if(seen.has(k)) return; seen.add(k); out.push(c);
+  });
+  return out;
+}
+
 const PERF_KEYS = new Set(['fund','sector','benchmark']);
 
 /* Returns the best available 1yr figure for a fund:
@@ -1620,6 +1644,9 @@ function buildGroupPanel(groupKey, label, funds){
     const k = `${c.holding} · ${c.event}`.toLowerCase();
     if(seen.has(k)) return false; seen.add(k); return true;
   }).slice(0,6);
+  // Holdings whose calendar has stopped rolling. Shown after the real
+  // chips, and never allowed to push one off the list.
+  const stalled = stalledCatalysts(pool).slice(0, Math.max(0, 6 - uniqueChips.length));
 
   // Key themes: collect whyNow snippets from top 2
   const themes = top3.slice(0,2).map(f=>{
@@ -1662,12 +1689,19 @@ function buildGroupPanel(groupKey, label, funds){
   // Col 3 — Upcoming catalysts
   h += `<div style="padding:16px 18px">`;
   h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border-bottom:2px solid var(--amber);padding-bottom:7px;margin-bottom:12px">Upcoming catalysts</div>`;
-  if(uniqueChips.length){
+  const chipRow = (name, date, muted) => {
+    let r = `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 8px;border-bottom:1px solid var(--rule);gap:10px;border-radius:6px;transition:background .12s" onmouseover="this.style.background='var(--hover-bg)'" onmouseout="this.style.background=''">`;
+    r += `<span style="font-size:15px;flex:1;min-width:0${muted?';opacity:.62':''}">${esc(name)}</span>`;
+    r += `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:${muted?'var(--ink-soft)':'var(--amber)'};white-space:nowrap;text-align:right${muted?';font-style:italic':''}">${esc(date)}</span>`;
+    return r + `</div>`;
+  };
+  if(uniqueChips.length || stalled.length){
     uniqueChips.forEach(c=>{
-      h += `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 8px;border-bottom:1px solid var(--rule);gap:10px;border-radius:6px;transition:background .12s" onmouseover="this.style.background='var(--hover-bg)'" onmouseout="this.style.background=''">`; 
-      h += `<span style="font-size:15px;flex:1;min-width:0">${esc(c.holding||c.event)}</span>`;
-      h += `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--amber);white-space:nowrap;text-align:right">${esc(catalystChipDate(c.date))}</span>`;
-      h += `</div>`;
+      h += chipRow(c.holding||c.event, catalystChipDate(c.date), false);
+    });
+    // Named, not dropped: the next date genuinely is not published yet.
+    stalled.forEach(c=>{
+      h += chipRow(c.holding||c.event, 'next date not published', true);
     });
   } else if(pool.length){
     // Distinguishing the two empty states matters: "logged but all in the

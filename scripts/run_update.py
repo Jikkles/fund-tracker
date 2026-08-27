@@ -286,7 +286,8 @@ def research_health(doc: dict, today: date) -> list[str]:
 
 
 def refresh_catalysts(doc: dict, today: date) -> dict:
-    stats = {"refreshed": 0, "confirmed": 0, "estimated": 0, "failed": 0}
+    stats = {"refreshed": 0, "confirmed": 0, "provisional": 0,
+             "estimated": 0, "failed": 0}
     resolved: dict[str, tuple[str, str, str | None]] = {}
 
     holdings = {c.get("holding")
@@ -297,7 +298,15 @@ def refresh_catalysts(doc: dict, today: date) -> dict:
         result = cal.next_event(holding, today)
         if result:
             resolved[holding] = result
-            key = "confirmed" if "(confirmed)" in result[0] else "estimated"
+            # A provisional date is the publisher's own hedge - the Bank
+            # marks next year's MPC dates that way - and is neither confirmed
+            # nor estimated. Folding it into either would overstate one.
+            if "(confirmed)" in result[0]:
+                key = "confirmed"
+            elif "(provisional)" in result[0]:
+                key = "provisional"
+            else:
+                key = "estimated"
             stats[key] += 1
         else:
             stats["failed"] += 1
@@ -336,7 +345,9 @@ def write_report(stats, cat_stats, quotes, proxy_quotes, entries, warnings,
         f"- **{stats['unverified']}** funds marked not-yet-verified "
         f"(by design - nothing free publishes a figure for them)",
         f"- **{cat_stats['refreshed']}** catalyst dates refreshed "
-        f"({cat_stats['confirmed']} confirmed, {cat_stats['estimated']} estimated)",
+        f"({cat_stats['confirmed']} confirmed, "
+        f"{cat_stats['provisional']} provisional, "
+        f"{cat_stats['estimated']} estimated)",
         "",
     ]
     if stats["nav_stale"]:
@@ -425,6 +436,7 @@ def main() -> int:
     cat_stats = refresh_catalysts(doc, today)
     print(f"[catalysts] {cat_stats['refreshed']} entries updated - "
           f"{cat_stats['confirmed']} confirmed, "
+          f"{cat_stats['provisional']} provisional, "
           f"{cat_stats['estimated']} estimated, "
           f"{cat_stats['failed']} unresolved")
 
@@ -453,8 +465,10 @@ def main() -> int:
         f"{stats['unverified']} funds marked 'not yet verified' with "
         f"market context attached - no fund-level figure was estimated for "
         f"them. Refreshed {cat_stats['refreshed']} catalyst entries "
-        f"({cat_stats['confirmed']} confirmed dates, {cat_stats['estimated']} "
-        f"pattern estimates). 1yr/3yr/5yr figures are computed from each "
+        f"({cat_stats['confirmed']} confirmed dates, "
+        f"{cat_stats['provisional']} provisional, "
+        f"{cat_stats['estimated']} pattern estimates). "
+        f"1yr/3yr/5yr figures are computed from each "
         f"fund's own published NAV series where one could be resolved; "
         f"discrete arrays and ISINs are untouched and continue to age."
         + (" CALENDAR WARNING: " + " ".join(cal_warnings)

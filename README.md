@@ -151,10 +151,10 @@ copying a comparator across would attach it to a period it was never measured
 over.
 
 **Catalysts roll forward automatically, and now in the right order.** Central
-bank dates are hardcoded from published calendars and marked `(confirmed)`.
-Earnings dates are fetched live where a company has confirmed one, and fall
-back to a pattern estimate marked `(estimated)` where it has not. Never the
-other way round.
+bank dates are read from the Fed and BoE published calendars and marked
+`(confirmed)` or `(provisional)` as the publisher marks them. Earnings dates
+are fetched live where a company has confirmed one, and fall back to a pattern
+estimate marked `(estimated)` where it has not. Never the other way round.
 
 Every resolved catalyst also carries `dateISO`, a machine-readable sort
 anchor. The displayed date is deliberately fuzzy where the event is - `~mid
@@ -165,6 +165,34 @@ anchor is never displayed; for an estimate it is the middle of the stated
 third of the month, an ordering device rather than a claim of precision. The
 page parses the date text as a fallback, so a hand-entered catalyst the
 resolver does not cover still sorts rather than sinking to the bottom.
+
+**The central bank dates are read from the published calendars.** They used
+to be typed into `calendar_data.py` by hand, which worked until it did not:
+the FOMC table was down to a single date, the run had been warning about it
+for weeks, and the table was *already wrong* - it named 28 Oct as the next
+Fed decision when the published calendar has one on 16 Sep. `cb_calendar.py`
+now reads both pages, which carries the desk through Dec 2027 without a
+person touching it.
+
+The scrape is the dangerous step, so it fails closed. A year is accepted only
+if it yields a plausible number of meetings - both committees meet eight times
+a year, so a panel parsing to two means the markup moved, not that six
+meetings were cancelled. Rows it does not understand are dropped rather than
+guessed at; the Fed lists the occasional "22 (notation vote)" among the
+scheduled meetings and a notation vote is not a policy decision. Dates outside
+a sane horizon are refused, which catches a parse locked onto the wrong number
+entirely. And the hand-maintained table is kept as a **floor, not a legacy**:
+where the scrape and a hand-entered future date disagree, the hand-entered one
+wins and the run says so, because a hand-checked date is worth more than a
+regex and a silent overwrite is how a bad parse would reach the page. Beyond
+the table's horizon the scrape stands alone, which is the entire point.
+
+**A provisional date is not a confirmed date.** The Bank publishes one year
+under "confirmed dates" and the next under "provisional dates" - that is the
+page's own word, not an inference - and it is carried through to the label and
+counted in its own bucket in the run report. Relabelling a provisional date as
+confirmed would be the same failure as dressing a pattern estimate up as a
+fetched one, which is what this module exists to prevent.
 
 Two events had no company calendar to fetch and were written out as fixed
 strings naming 2026. Those now roll from an annual rhythm like any other
@@ -185,6 +213,7 @@ than event-driven" caveat is appended to it, rather than replacing it.
 | `scripts/proxies.py` | Fund → ETF mapping. **Edit this** if a proxy looks wrong |
 | `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
 | `scripts/calendar_data.py` | Central bank dates + earnings lookup |
+| `scripts/cb_calendar.py` | Reads the published Fed/BoE calendars. `--selftest` |
 | `scripts/market_series.py` | Index chart series + per-index headlines. **Edit `INDICES`** to change the tabs |
 | `scripts/fund_nav.py` | Resolves each fund to a Yahoo NAV symbol and prices it. `--resolve-only` to check matches |
 | `scripts/hl_factsheet.py` | Refreshes researched depth from HL factsheets. `--dry-run`, `--only <id>`, `--new` |
@@ -195,7 +224,9 @@ Test locally without writing anything:
 ```bash
 python scripts/market_data.py --selftest    # check the endpoints are reachable
 python scripts/market_series.py --selftest  # same, for the chart endpoint
+python scripts/cb_calendar.py --selftest    # Fed/BoE calendar parsing, offline
 python scripts/calendar_data.py --selftest  # date rollover + sort anchors, offline
+python scripts/cb_calendar.py               # what the published calendars say today
 python scripts/run_update.py --dry-run      # full run, writes nothing
 python scripts/market_series.py --dry-run   # chart fetch, writes nothing
 ```
@@ -249,10 +280,13 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   to find it. Storing a correct `isin` or `navSymbol` by hand is enough to
   bring such a fund in: the resolver trusts a stored identifier.
 
-- **The hardcoded central bank calendar runs out.** It currently covers to
-  Dec 2026 (BoE) and Oct 2026 (FOMC). The run warns when it is within 75 days
-  of exhausting and logs a `CALENDAR-LOW` finding. Top up `calendar_data.py`
-  from the published calendars when it does.
+- **The central bank calendar is scraped, so it can break.** It is read from
+  the Fed and BoE pages, and a page can be redesigned. Failure degrades to the
+  hardcoded table rather than to nothing, and the run still warns when the
+  merged calendar is within 75 days of exhausting - but if both the scrape
+  breaks *and* the table runs out, the rate chip says "next date not
+  published" instead of naming a date. Top up `calendar_data.py` if that
+  happens.
 
 - **GitHub's cron drifts** by up to an hour or more, and scheduled workflows
   are auto-disabled after 60 days of repo inactivity. The hourly chart refresh
