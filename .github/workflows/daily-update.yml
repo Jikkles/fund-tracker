@@ -2,15 +2,20 @@ name: Daily fund update
 
 on:
   schedule:
-    # 07:00 UTC every day. GitHub's scheduler is best-effort and can drift
-    # by an hour or more under load - this is not a precise clock.
-    - cron: "0 7 * * *"
+    # 06:23 UTC every day. The odd time is deliberate, for two reasons. The
+    # top of the hour is the scheduler's busiest slot, so an off-peak minute
+    # drifts less - the same reasoning as the hourly refresh's :17. And 06:23
+    # lands before the hourly window opens at 07:17, so these two workflows
+    # never queue behind one another on the shared Pages concurrency group.
+    # Still best-effort: GitHub can drift this by an hour, or skip it
+    # entirely under load. It is not a precise clock.
+    - cron: "23 6 * * *"
   workflow_dispatch:            # run manually from the Actions tab
   push:
     branches: [main]
     paths:
       # Redeploy as soon as the page or the workflow itself changes, so an
-      # edit to the site does not sit undeployed until the next 07:00 run.
+      # edit to the site does not sit undeployed until the next 06:23 run.
       # Pushes made by this workflow's own bot use GITHUB_TOKEN, which does
       # not re-trigger workflows - no loop.
       - "site/**"
