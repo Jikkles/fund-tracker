@@ -56,8 +56,16 @@ CHART_URL = ("https://query1.finance.yahoo.com/v8/finance/chart/"
              "{}?interval=1d&range={}")
 
 # Word-overlap floor for accepting a match, as a fraction of our own
-# significant words. 0.6 rejects "Artemis Income" against "Artemis Global
-# Income" while still tolerating share-class and punctuation noise.
+# significant words, tolerating share-class and punctuation noise.
+#
+# Be clear about what this does NOT do, because the obvious reading is wrong.
+# It does not separate "Artemis Income" from "Artemis Global Income": "income"
+# is a stopword, so "artemis" is the only significant word left on our side
+# and the pair scores a perfect 1.0. Nor does it separate the BlackRock funds
+# that collided - they score 0.67, comfortably clear. What keeps those apart
+# is the ISIN rung of the ladder and the collision rule in reject_collisions;
+# this floor only screens out the plainly unrelated. fund_nav.py --selftest
+# pins all three cases so a change here is a deliberate one.
 NAME_MATCH_MIN = 0.6
 
 # Words that carry no identifying information and would inflate the overlap
@@ -90,6 +98,10 @@ ABBREV = {
 
 # Normalisations so "L&G" matches "Legal & General" and similar.
 ALIASES = [
+    # ABBREV turns Yahoo's "APAC" into one word, so our own "Asia Pacific"
+    # has to become the same one word or the two never meet - which is why
+    # the APAC entry did nothing at all until this line existed.
+    (r"\basia[\s-]+pacific\b", "asiapacific"),
     (r"\bl&g\b", "legal general"),
     (r"\bl and g\b", "legal general"),
     (r"&", " "),
@@ -168,8 +180,15 @@ def ft_isins(name: str) -> list[str]:
 
 
 def wanted_class(fund: dict) -> str | None:
-    """The share-class letter this desk tracks, e.g. 'C' from 'Class C Acc'."""
-    m = re.search(r"\bclass\s+([A-Z])\b", str(fund.get("shareClass") or ""), re.I)
+    """The share-class letter this desk tracks, e.g. 'C' from 'Class C Acc'.
+
+    One or two letters: houses issue "FD" and "ID" lines as well as "C" and
+    "I", and a single-letter pattern reads a two-letter class as no class at
+    all - which then compares equal to everything and waves a substitute
+    through with no note.
+    """
+    m = re.search(r"\bclass\s+([A-Z]{1,2})\b",
+                  str(fund.get("shareClass") or ""), re.I)
     return m.group(1).upper() if m else None
 
 
@@ -182,7 +201,7 @@ def class_verdict(label: str, want: str | None) -> tuple[bool, str]:
         return False, "income/distributing class"
     if not re.search(r"\bacc\b", label, re.I):
         return False, "no accumulation class found"
-    got = re.search(r"\b([A-Z])\s*(?:GBP\s*)?Acc\b", label)
+    got = re.search(r"\b([A-Z]{1,2})\s*(?:GBP\s*)?Acc\b", label)
     got = got.group(1).upper() if got else None
     if want and got and want != got:
         return True, f"share class {got} used, desk tracks {want}"
@@ -538,13 +557,18 @@ def _selftest_offline() -> bool:
     assert overlap("BlackRock Continental European",
                    "BlackRock European Dynamic D Acc") > NAME_MATCH_MIN
 
-    # 3. ABBREV maps "apac" to "asiapacific", but our own name splits into
-    #    "asia" + "pacific" and never meets it, so the entry does not do what
-    #    it looks like it does - the pair scores 0.5 and would be refused.
-    #    Stewart Investors resolves today only because its symbol is stored.
+    # Yahoo's "APAC" and our "Asia Pacific" are normalised to the same single
+    # word. Before the ALIASES entry existed the pair scored 0.5 and would
+    # have been refused on a fresh resolve; Stewart Investors was carried by
+    # its stored symbol alone.
     assert overlap("Stewart Investors Asia Pacific Leaders Sustainability",
-                   "Stewart Inv APAC Ldrs B GBP Acc") == 0.5
-    print("  name overlap     OK  (3 documented gaps pinned)", file=_sys.stderr)
+                   "Stewart Inv APAC Ldrs B GBP Acc") >= NAME_MATCH_MIN
+    assert "asiapacific" in words("Stewart Investors Asia Pacific Leaders")
+    assert "asiapacific" in words("Stewart Inv APAC Ldrs B GBP Acc")
+    # A lone "Pacific" is a different fund and must not be swept in.
+    assert "asiapacific" not in words("iShares Pacific ex Japan Equity Index")
+    print("  name overlap     OK  (2 real limits pinned, APAC fixed)",
+          file=_sys.stderr)
 
     # --- share class -----------------------------------------------------
     assert wanted_class({"shareClass": "Class C Accumulation"}) == "C"
@@ -564,13 +588,18 @@ def _selftest_offline() -> bool:
     ok, note = class_verdict("L&G UK Index I Acc", "I")
     assert ok and note == "", (ok, note)
 
-    # A fourth documented gap: the class regex reads a SINGLE letter before
-    # "Acc", so a two-letter class like "FD" is not seen at all and the
-    # substitute is accepted silently, with no note and no asterisk. No fund
-    # on the desk has such a label today, which is why this is latent rather
-    # than wrong on the page - but it is the failure that would be quiet.
+    # Two-letter classes. Houses issue "FD" and "ID" lines as well as "C" and
+    # "I", and a single-letter pattern read those as no class at all - which
+    # compares equal to everything and waved a substitute through unmarked.
     ok, note = class_verdict("BlackRock European Dynamic FD Acc", "D")
+    assert ok and note == "share class FD used, desk tracks D", (ok, note)
+    assert wanted_class({"shareClass": "Class FD Accumulation"}) == "FD"
+    assert wanted_class({"shareClass": "Class ID Accumulation"}) == "ID"
+    # An exact two-letter match still earns no note, and so no asterisk.
+    ok, note = class_verdict("Example FD Acc", "FD")
     assert ok and note == "", (ok, note)
+    # Single-letter classes are untouched by the widening.
+    assert wanted_class({"shareClass": "Class C Accumulation"}) == "C"
     print("  share class      OK  (income refused, substitute flagged)",
           file=_sys.stderr)
 

@@ -307,23 +307,15 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   published" instead of naming a date. Top up `calendar_data.py` if that
   happens.
 
-- **Three things the name-overlap floor does not do.** `fund_nav.py --selftest`
+- **Two things the name-overlap floor does not do.** `fund_nav.py --selftest`
   pins them, because each looks like a protection that is not there.
-  `NAME_MATCH_MIN`'s own comment claims 0.6 "rejects 'Artemis Income' against
-  'Artemis Global Income'" - it does not; "income" is a stopword, leaving
-  "artemis" as the only significant word, and the pair scores a perfect 1.0.
-  What separates those funds is the ISIN rung and the collision rule, not the
-  floor. The BlackRock pair the collision rule exists for also clears the
-  floor comfortably. And `ABBREV` maps `apac` to `asiapacific`, which our own
-  "Asia Pacific" never meets, so Stewart Investors scores 0.5 and resolves
-  today only because its symbol is stored. None of this is currently wrong on
-  the page; all of it would be a surprise to whoever changes the floor next.
-
-- **A two-letter share class is not detected.** `class_verdict` reads a single
-  letter before "Acc", so a label like "FD Acc" is accepted as if it were an
-  exact match - no note, no asterisk. No fund on the desk carries such a label
-  today, so it is latent rather than wrong, but it is the failure that would
-  be quiet. 30 funds do carry a substitute-class note, and those are correct.
+  `NAME_MATCH_MIN` does not separate "Artemis Income" from "Artemis Global
+  Income" - "income" is a stopword, leaving "artemis" as the only significant
+  word, and the pair scores a perfect 1.0. The BlackRock pair the collision
+  rule exists for scores 0.67 and clears the floor comfortably too. What
+  actually keeps those funds apart is the ISIN rung and `reject_collisions`;
+  the floor only screens out the plainly unrelated. That is a design that
+  works, but not for the reason the old comment gave.
 
 - **HL publish mojibake, and the desk now repairs it.** Their factsheets carry
   the literal entities `4&Acirc;&frac14;%` where they mean `4¼%` - UTF-8
