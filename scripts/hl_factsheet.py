@@ -372,10 +372,24 @@ def class_letter(s: str) -> str | None:
     return m.group(1).upper() if m else None
 
 
-def page_is_ours(html: str, fund: dict) -> tuple[bool, str]:
+def page_is_ours(html: str, fund: dict,
+                 trust_name: bool = False) -> tuple[bool, str]:
     """
     Confirm the page describes this fund AND this share class before we take
     a single figure from it.
+
+    `trust_name` skips the name-overlap floor, and is passed only for a link
+    pinned by hand. The floor is a heuristic standing in for a person
+    confirming the page; where a person has already done that, it has nothing
+    to add and can only get in the way. It does exactly that on the L&G
+    Future World family, where HL writes "Future Wrld ESG Tilted & Opt UK Id"
+    for "Future World ESG Tilted & Optimised UK Index" - 57% against a 60%
+    floor, so a correct factsheet was locked out and the fund aged instead.
+
+    The share-class check below is NOT skipped, pinned or not. That one is
+    not a heuristic - an income line really does report different numbers -
+    and pinning a URL is a claim about which fund the page describes, not
+    about which class.
     """
     m = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S | re.I)
     title = text_of(m.group(1)) if m else ""
@@ -387,7 +401,7 @@ def page_is_ours(html: str, fund: dict) -> tuple[bool, str]:
     if not ours:
         return False, "no comparable words in our name"
     score = len(ours & theirs) / len(ours)
-    if score < NAME_FLOOR:
+    if score < NAME_FLOOR and not trust_name:
         return False, f"name mismatch ({score:.0%}): page says {title!r}"
 
     # Accumulation vs income changes every income figure on the page.
@@ -507,6 +521,10 @@ def apply(fund: dict, got: dict, class_ok: bool = True) -> list[str]:
 def resolve_url(fund: dict) -> tuple[str | None, str | None, str]:
     """Return (url, html, note) for the page that is genuinely this fund's."""
     stored = (fund.get("links") or {}).get("hl")
+    # A link pinned by hand is trusted on identity, the same way the NAV
+    # resolver trusts a stored ISIN or navSymbol. Everything the scraper
+    # writes back is unpinned and goes on being checked by name.
+    pinned = bool(stored) and fund.get("hlSource") == "manual"
     # A stored link may point at one of HL's sub-tabs. Those pages carry the
     # header and the return table but none of the portfolio breakdown, so a
     # scrape from them looks like a fund that publishes no holdings.
@@ -524,7 +542,7 @@ def resolve_url(fund: dict) -> tuple[str | None, str | None, str]:
         time.sleep(PAUSE)
         if html is None:
             continue
-        ok, why = page_is_ours(html, fund)
+        ok, why = page_is_ours(html, fund, trust_name=(pinned and url == stored))
         if ok:
             return url, html, why
         return None, None, why          # found a page, but it is not ours
@@ -611,6 +629,17 @@ def main(argv: list[str]) -> int:
         ours = class_letter(f.get("shareClass", "") + " " + f["name"])
         theirs = class_letter(note)
         class_ok = not (ours and theirs and ours != theirs)
+        # An explicit false says the class could not be confirmed either way,
+        # which the letter comparison cannot express: it stays silent when
+        # our own shareClass carries no letter to compare. L&G Future World
+        # ESG UK is that case - HL's page contradicts itself, titled "UK Id
+        # Accumulation" above a heading reading "Class C", while the NAV line
+        # the desk prices is Class I. Unconfirmed is not the same as matching,
+        # and the conservative reading is the only honest one.
+        if f.get("hlClassConfirmed") is False:
+            class_ok = False
+            theirs = theirs or "unconfirmed"
+            ours = ours or "unstated"
         if not class_ok:
             mismatches.append((f["id"], ours, theirs))
             print(f"  [class] {f['name'][:43]:43} we price Class {ours}, HL lists "

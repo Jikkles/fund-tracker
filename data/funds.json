@@ -4547,12 +4547,12 @@
       "group": "uk",
       "badge": {
         "type": "",
-        "label": "ESG UK tracker · 0.10%"
+        "label": "Wealth Shortlist"
       },
-      "iaSector": "IA UK All Companies (tracker)",
+      "iaSector": "IA UK All Companies",
       "benchmark": "Solactive L&G Enhanced ESG UK Index",
-      "fundSize": "not yet verified",
-      "launched": "April 2019",
+      "fundSize": "£640 million",
+      "launched": "15 April 2019",
       "yield": "not yet verified",
       "overview": "An ESG-tilted UK equity tracker. Like its Global equivalent, it excludes certain sectors and tilts weights toward better-ESG UK companies. Has lagged non-ESG UK trackers since launch, partly due to the exclusion of energy and tobacco which have performed well.",
       "performance": {
@@ -4571,8 +4571,8 @@
           }
         ],
         "notes": "Has underperformed plain UK trackers since launch due partly to energy/tobacco exclusions. Current 1/3/5yr to confirm. | 1yr not fetchable from any free source: the fund does not subscribe to Fidelity or Trustnet, L&G's own fund centre is JS-rendered, Bloomberg carries no figures and the ESG-methodology factsheet PDFs have no performance table. The only reference found was FE via Lloyds (+13.13% as at 15 Oct 2025) — too old to use. Re-checked 12 Jul 2026, still not fetchable. Verify on the HL factsheet before relying on any figure for this fund.",
-        "perfAsAt": "2026-07-02",
-        "perfAsAtSource": "parsed from performance notes",
+        "perfAsAt": "2026-08-27",
+        "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+15.42%",
         "nav3yr": "+45.89%",
@@ -4584,30 +4584,134 @@
       },
       "holdings": [
         {
-          "name": "ESG-tilted UK large-caps",
-          "weight": "—"
-        }
-      ],
-      "holdingsNote": "Excludes tobacco, fossil fuel producers. Holdings to be confirmed.",
-      "sectors": [
-        {
-          "name": "Technology",
-          "weight": "tilted up"
+          "name": "Hsbc Holdings",
+          "weight": "8.39%"
         },
         {
-          "name": "Energy",
-          "weight": "excluded/reduced"
+          "name": "Astrazeneca",
+          "weight": "7.34%"
+        },
+        {
+          "name": "Unilever",
+          "weight": "5.04%"
+        },
+        {
+          "name": "GSK",
+          "weight": "3.93%"
+        },
+        {
+          "name": "Lloyds Banking Group",
+          "weight": "3.49%"
+        },
+        {
+          "name": "Barclays",
+          "weight": "3.06%"
+        },
+        {
+          "name": "Relx",
+          "weight": "2.44%"
+        },
+        {
+          "name": "Royal Bank OF Scotland Group",
+          "weight": "2.36%"
+        },
+        {
+          "name": "BP P.L.C.",
+          "weight": "2.32%"
+        },
+        {
+          "name": "Diageo",
+          "weight": "2.19%"
+        }
+      ],
+      "holdingsNote": "Top ten of 305 holdings, from the HL factsheet on 27 Aug 2026.",
+      "sectors": [
+        {
+          "name": "Banks",
+          "weight": "19.67%"
+        },
+        {
+          "name": "Pharmaceuticals & Biotechnology",
+          "weight": "13.77%"
+        },
+        {
+          "name": "Personal Care, Drug & Grocery Stores",
+          "weight": "8.08%"
+        },
+        {
+          "name": "Non-Renewable Energy",
+          "weight": "6.73%"
+        },
+        {
+          "name": "Investment Banking & Brokerage Services",
+          "weight": "4.55%"
+        },
+        {
+          "name": "Software & Computer Services",
+          "weight": "4.46%"
+        },
+        {
+          "name": "Industrial Support Services",
+          "weight": "4.18%"
+        },
+        {
+          "name": "Life Insurance",
+          "weight": "3.34%"
+        },
+        {
+          "name": "Media",
+          "weight": "2.93%"
+        },
+        {
+          "name": "Beverages",
+          "weight": "2.63%"
         }
       ],
       "countries": [
         {
           "name": "United Kingdom",
-          "weight": "≈100%"
+          "weight": "94.10%"
+        },
+        {
+          "name": "Cash and Equiv.",
+          "weight": "2.00%"
+        },
+        {
+          "name": "Direct Property and REITs",
+          "weight": "1.93%"
+        },
+        {
+          "name": "Non-Classified",
+          "weight": "0.72%"
+        },
+        {
+          "name": "Ireland",
+          "weight": "0.48%"
+        },
+        {
+          "name": "United States",
+          "weight": "0.30%"
+        },
+        {
+          "name": "Netherlands",
+          "weight": "0.29%"
+        },
+        {
+          "name": "Norway",
+          "weight": "0.17%"
+        },
+        {
+          "name": "Luxembourg",
+          "weight": "0.01%"
+        },
+        {
+          "name": "Spain",
+          "weight": "0.00%"
         }
       ],
       "manager": {
-        "names": "LGIM index team",
-        "tenure": "Index team",
+        "names": "Jason Forster",
+        "tenure": "Jason Forster since 15/04/2019",
         "bio": "Run by LGIM with ESG tilt and decarbonisation pathway."
       },
       "process": "Tracks Solactive L&G Enhanced ESG UK Index; exclusions (tobacco, fossil fuel producers); ESG tilts; decarbonisation pathway.",
@@ -4631,9 +4735,11 @@
         "maxDrawdownSource": "inferred-morningstar",
         "maxDrawdownConfidence": "medium"
       },
-      "links": {},
+      "links": {
+        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-future-wrld-esg-tilted-and-opt-uk-id-accumulation"
+      },
       "sources": "HL tracker Shortlist page",
-      "asAt": "22 Jun 2026",
+      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.61%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.75%, FTSE 250 +3.68%, Gold (USD/oz) +15.17%, GBP/USD +2.24%.",
@@ -4647,7 +4753,9 @@
       "isinSource": "Fidelity UK key-statistics page, surfaced 2 Jul 2026",
       "navSymbol": "0P0001H3BX.L",
       "navName": "L&G Fut Wld ESG Tilted & Optd UKIdxI£Acc",
-      "navMatch": "stored"
+      "navMatch": "stored",
+      "hlSource": "manual",
+      "hlClassConfirmed": false
     },
     {
       "id": "lg-us-index",

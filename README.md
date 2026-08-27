@@ -314,11 +314,26 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   `--repair-text`. If HL's mangling ever changes shape the guard will refuse
   it and the raw text will show through, which is the safe direction.
 
-- **One fund has no reachable HL factsheet.** `lg-future-world-esg-uk` returns
-  "no HL page found", so the weekly refresh leaves it exactly as it was and
-  its research goes on ageing - 56 days at the time of writing. Every other
-  fund is dated today. A correct `links.hl` stored by hand would bring it in,
-  the same way a stored `isin` rescues a fund the NAV resolver cannot match.
+- **A hand-pinned HL link is trusted on identity.** The name-overlap floor of
+  60% is a heuristic standing in for a person confirming the page, so where a
+  person has already confirmed it the floor has nothing to add. It was
+  actively harmful on the L&G Future World family: HL writes "Future Wrld ESG
+  Tilted & Opt UK Id" for "Future World ESG Tilted & Optimised UK Index",
+  which scores 57%, so a correct factsheet was locked out and the fund aged
+  instead. Set `links.hl` and `hlSource: "manual"` to pin one. The
+  share-class check is *not* skipped for a pinned link - that one is not a
+  heuristic, and pinning a URL is a claim about which fund the page describes,
+  not which class.
+
+- **`hlClassConfirmed: false` forces the conservative reading.** The letter
+  comparison stays silent when our own `shareClass` carries no letter, which
+  is not the same as the classes matching. L&G Future World ESG UK is that
+  case, and HL's page contradicts itself there - titled "UK Id Accumulation"
+  above a heading reading "Class C", while the NAV line the desk prices is
+  Class I. The flag says "unconfirmed" out loud, so holdings, sectors,
+  countries, fund size and manager are taken while charges, yield and
+  discrete history are not. Its charges on the page happen to match what the
+  desk already held, which is reassuring but is not confirmation.
 
 - **GitHub's cron drifts** by up to an hour or more, and scheduled workflows
   are auto-disabled after 60 days of repo inactivity. The hourly chart refresh
