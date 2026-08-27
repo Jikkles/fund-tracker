@@ -1,0 +1,113 @@
+name: Weekly factsheet refresh
+
+# Re-scrapes each fund's HL factsheet for the depth a NAV series cannot
+# supply: top ten holdings, sector and country splits, fund size, launch
+# date, historic yield, the net ongoing charge, manager tenure and the
+# discrete annual periods.
+#
+# WEEKLY, NOT DAILY, for two reasons. None of this data moves daily - a
+# holdings table is republished monthly at best - so a daily scrape would
+# re-fetch 70 pages to learn nothing. And they are someone else's pages: the
+# script already pauses between requests, and asking once a week rather than
+# seven times is the same courtesy at the other end.
+#
+# Sunday 05:41 UTC: a quiet slot, off the top of the hour like the other two
+# schedules, and finished well before the daily run's 06:23 so the shared
+# Pages concurrency group is free by then.
+#
+# This workflow exists because the scraper did not have one. It was written,
+# tested and then only ever run by hand, so the research it refreshes was
+# ageing towards the 120-day stale warning that the scraper was built to
+# prevent - the tool was there, the schedule was not.
+
+on:
+  schedule:
+    - cron: "41 5 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Shared with the daily update and the hourly chart refresh: all three
+# publish to Pages, and two deployments in flight at once will collide.
+concurrency:
+  group: fund-tracker-pages
+  cancel-in-progress: false
+
+jobs:
+  factsheets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      # Standard library only - nothing to install, no secrets.
+      #
+      # A fund whose page cannot be reached, or whose page turns out to
+      # describe a different share class, is reported and skipped rather
+      # than partially applied - so a bad day at HL leaves the stored
+      # research exactly as it was instead of overwriting it with a
+      # confident wrong figure. That means this step succeeding is not the
+      # same as every fund refreshing; read the log for the per-fund lines.
+      - name: Refresh factsheet depth
+        run: python scripts/hl_factsheet.py
+
+      # The publish gate, same as the daily run: this fails the build rather
+      # than shipping a personal reference or internal-process vocabulary.
+      - name: Anonymisation check
+        run: python scripts/anonymise.py data/funds.json data/funds.json
+
+      - name: Commit refreshed research
+        run: |
+          git config user.name  "fund-tracker-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/funds.json
+          if git diff --staged --quiet; then
+            echo "No factsheet changes to commit."
+          else
+            git commit -m "Weekly factsheet refresh: $(date -u +%Y-%m-%d)"
+            # The daily run commits to the same branch. The concurrency group
+            # keeps the two from overlapping, but a manual dispatch can still
+            # land mid-flight, so rebase rather than fail the whole refresh
+            # on a push that raced us.
+            git pull --rebase origin main
+            git push
+          fi
+
+      # funds.json has just changed, so the page is rebuilt and redeployed
+      # rather than left waiting for the next daily run - a data-only commit
+      # does not match the daily workflow's site/** push trigger.
+      - name: Fetch index series
+        run: python scripts/market_series.py
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp site/index.html _site/index.html
+          cp data/funds.json  _site/funds.json
+          cp data/last_run.md _site/last_run.md
+          cp data/market.json _site/market.json
+
+      # v4 of this action stopped including dotfiles in the artifact, and does
+      # so silently. Nothing here is hidden - the four files above are copied
+      # in by name - but a future `.nojekyll` or similar dropped into _site
+      # would vanish from the deploy without a word. `include-hidden-files:
+      # true` is the escape hatch if that ever changes.
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: factsheets
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

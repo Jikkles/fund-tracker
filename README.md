@@ -133,6 +133,23 @@ five discrete annual periods. That closes the last hand-maintained surface on
 the desk - the 120-day stale-research warning used to name eight funds and now
 names none.
 
+**It runs weekly, on its own schedule.** For a long time it did not run at all
+on a timer: the scraper was written, tested, and then only ever invoked by
+hand, so the research it exists to refresh was quietly ageing back towards the
+warning it was built to remove - one fund had reached 99 of the 120 days. The
+tool was there; the schedule was not. `weekly-factsheets.yml` fixes that.
+
+Weekly rather than daily on both counts that matter. None of this data moves
+daily - a holdings table is republished monthly at best - so a daily scrape
+would re-fetch 70 pages to learn nothing. And they are someone else's pages:
+asking once a week rather than seven times is the same courtesy as the pause
+the script already keeps between requests.
+
+The date is stamped on every successful read, not only on a change, so a fund
+confirmed unchanged against HL today counts as verified rather than stale.
+That is why a run reporting "0 refreshed" still clears the warning: 48 of the
+70 funds had nothing to update and all 48 are now dated today.
+
 The same rule applies here as everywhere else: nothing is guessed. A field is
 written only when it is found and parses, and a page is used only after it is
 confirmed to be this fund. Two guards do that work. The first compares the
@@ -216,7 +233,7 @@ than event-driven" caveat is appended to it, rather than replacing it.
 | `scripts/cb_calendar.py` | Reads the published Fed/BoE calendars. `--selftest` |
 | `scripts/market_series.py` | Index chart series + per-index headlines. **Edit `INDICES`** to change the tabs |
 | `scripts/fund_nav.py` | Resolves each fund to a Yahoo NAV symbol and prices it. `--resolve-only` to check matches |
-| `scripts/hl_factsheet.py` | Refreshes researched depth from HL factsheets. `--dry-run`, `--only <id>`, `--new` |
+| `scripts/hl_factsheet.py` | Refreshes researched depth from HL factsheets. `--dry-run`, `--only <id>`, `--new`, `--repair-text` |
 | `scripts/anonymise.py` | Strips personal references before publishing |
 
 Test locally without writing anything:
@@ -287,6 +304,21 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   breaks *and* the table runs out, the rate chip says "next date not
   published" instead of naming a date. Top up `calendar_data.py` if that
   happens.
+
+- **HL publish mojibake, and the desk now repairs it.** Their factsheets carry
+  the literal entities `4&Acirc;&frac14;%` where they mean `4¼%` - UTF-8
+  decoded as cp1252 somewhere on their side, not ours. `text_of` puts it back
+  through the encoding that mangled it, and only accepts the result when it
+  re-mangles to exactly the input, so text that was never mangled is left
+  alone. 19 stored holdings names were repaired in place with
+  `--repair-text`. If HL's mangling ever changes shape the guard will refuse
+  it and the raw text will show through, which is the safe direction.
+
+- **One fund has no reachable HL factsheet.** `lg-future-world-esg-uk` returns
+  "no HL page found", so the weekly refresh leaves it exactly as it was and
+  its research goes on ageing - 56 days at the time of writing. Every other
+  fund is dated today. A correct `links.hl` stored by hand would bring it in,
+  the same way a stored `isin` rescues a fund the NAV resolver cannot match.
 
 - **GitHub's cron drifts** by up to an hour or more, and scheduled workflows
   are auto-disabled after 60 days of repo inactivity. The hourly chart refresh

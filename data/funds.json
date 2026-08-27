@@ -1062,7 +1062,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/tiz6/t.-rowe-price-global-value-equity/"
       },
       "sources": "HL factsheet & July 2025 research note",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+2.02%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.97%, FTSE 100 -0.75%, Euro STOXX 50 +2.09%, GBP/USD +2.24%.",
@@ -1586,7 +1586,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-long-term-global-equity-class-w-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00B8K6W529); Fidelity/Morningstar holdings; BNY SEC filings",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+3.17%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.97%, FTSE 100 -0.75%, Euro STOXX 50 +2.09%, GBP/USD +2.24%.",
@@ -2350,8 +2350,8 @@
           }
         ],
         "notes": "10yr lag vs index reflects OCF cost drag — typical for a tracker. Source: FE Analytics via Trustnet factsheet (20 May 2026).",
-        "perfAsAt": "2026-05-20",
-        "perfAsAtSource": "parsed from 1yr period label",
+        "perfAsAt": "2026-08-27",
+        "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FE",
         "nav1w": "-0.25%",
         "nav1m": "+1.10%",
@@ -2438,7 +2438,7 @@
         "hl": "https://www.hl.co.uk/funds/research-and-news/vanguard-global-small-cap-index-february-2026-fund-update"
       },
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
-      "asAt": "25 Jun 2026",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.10%",
         "note": "Total return over the 31 days to 25 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.97%, FTSE 100 -0.75%, Euro STOXX 50 +2.09%, GBP/USD +2.24%.",
@@ -2899,7 +2899,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/ftf-clearbridge-uk-mid-cap-class-s-accumulation"
       },
       "sources": "HL fund page (ISIN GB00BZ8FPJ50); FTF ClearBridge factsheet via FundsLibrary; Trustnet; 25 Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+5.86%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.75%, FTSE 250 +3.68%, Gold (USD/oz) +15.17%, GBP/USD +2.24%.",
@@ -3111,7 +3111,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/liontrust-uk-growth-class-i-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BNGB8J22)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+2.58%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.75%, FTSE 250 +3.68%, Gold (USD/oz) +15.17%, GBP/USD +2.24%.",
@@ -3572,7 +3572,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/janus-henderson-uk-responsible-income-class-i-accumulation"
       },
       "sources": "HL factsheet; HL fund updates (May 2026, May 2025)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.07%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -0.75%, FTSE 250 +3.68%, Gold (USD/oz) +15.17%, GBP/USD +2.24%.",
@@ -3808,7 +3808,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/janus-henderson-uk-equity-income-and-growth-accumulation"
       },
       "sources": "Fidelity factsheet (ISIN GB0007494221); Janus Henderson; Fundslibrary factsheet (31 Jan 2026)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.71%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.75%, FTSE 250 +3.68%, Gold (USD/oz) +15.17%, GBP/USD +2.24%.",
@@ -4949,7 +4949,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-us-index-class-c-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.29%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.97%, Nasdaq Composite +6.40%, US 10yr yield +1.00%, GBP/USD +2.24%.",
@@ -5175,7 +5175,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-us-equity-income-class-u-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BPVBZ344); Fidelity/Morningstar (Inst W proxy GB00BGV53H32); HL fund note Sep 2025",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.11%",
         "note": "Total return over the 31 days to 25 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class E used, desk tracks U Market context: S&P 500 +3.97%, Nasdaq Composite +6.40%, US 10yr yield +1.00%, GBP/USD +2.24%.",
@@ -5396,7 +5396,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-us-smaller-companies-class-i-hedged-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BK6RLD43 to confirm); HL fund update May 2026; Artemis fund page; FundCalibre; Citywire",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+2.51%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.97%, Nasdaq Composite +6.40%, US 10yr yield +1.00%, GBP/USD +2.24%.",
@@ -5619,7 +5619,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-us-select-class-i-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BMMV5105); Artemis fund page; Citywire",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "-2.46%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.97%, Nasdaq Composite +6.40%, US 10yr yield +1.00%, GBP/USD +2.24%.",
@@ -5720,7 +5720,7 @@
           "weight": "1.42%"
         },
         {
-          "name": "4Â½% Treasury Gilt 2028",
+          "name": "4½% Treasury Gilt 2028",
           "weight": "1.18%"
         },
         {
@@ -5856,7 +5856,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-high-income-class-i-quarterly-accumulation"
       },
       "sources": "HL factsheet (SEDOL BJMD6R8); Fidelity (ISIN GB00BJMD6R83); HL fund update Apr 2026",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.79%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.00%, Brent crude +3.42%.",
@@ -6085,7 +6085,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-corporate-bond-class-i-accumulation"
       },
       "sources": "HL factsheet (SEDOL BFZ91W5); HL research note Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.57%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.00%, Brent crude +3.42%.",
@@ -6194,7 +6194,7 @@
       },
       "holdings": [
         {
-          "name": "4Â½% Treasury Gilt 2035",
+          "name": "4½% Treasury Gilt 2035",
           "weight": "7.59%"
         },
         {
@@ -6575,7 +6575,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-strategic-bond-class-i-accumulation"
       },
       "sources": "HL factsheet (SEDOL B1TWMW9)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.64%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.00%, Brent crude +3.42%.",
@@ -6805,7 +6805,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-strategic-bond-class-b-accumulation"
       },
       "sources": "HL factsheet (SEDOL 0594785); Baillie Gifford fund page",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.30%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.00%, Brent crude +3.42%.",
@@ -7027,7 +7027,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-active-global-high-yield-bond-accumulation"
       },
       "sources": "HL factsheet (SEDOL B0CNHJ4); Citywire",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.91%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.00%, Brent crude +3.42%.",
@@ -7257,7 +7257,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/v/vanguard-global-corporate-bond-index-accumulation"
       },
       "sources": "HL factsheet (SEDOL BDFB5M5); HL fund update Nov 2025",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.51%",
         "note": "Total return over the 31 days to 25 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.00%, Brent crude +3.42%.",
@@ -7398,15 +7398,15 @@
           "weight": "2.17%"
         },
         {
-          "name": "4Â¼% Treasury Gilt 2039",
+          "name": "4¼% Treasury Gilt 2039",
           "weight": "2.06%"
         },
         {
-          "name": "4Â¼% Treasury Gilt 2027",
+          "name": "4¼% Treasury Gilt 2027",
           "weight": "2.04%"
         },
         {
-          "name": "4Â¼% Treasury Stock 2036",
+          "name": "4¼% Treasury Stock 2036",
           "weight": "2.04%"
         },
         {
@@ -7554,7 +7554,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B86LX253-bny-mellon-multi-asset-blncd-inst-w-acc/performance"
       },
       "sources": "HL factsheet (SEDOL BNBQX42); Trustnet (Dec 2025 factsheet)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.86%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -0.75%, S&P 500 +3.97%, US 10yr yield +1.00%, Gold (USD/oz) +15.17%.",
@@ -7659,15 +7659,15 @@
           "weight": "2.23%"
         },
         {
-          "name": "4Â¼% Treasury Gilt 2039",
+          "name": "4¼% Treasury Gilt 2039",
           "weight": "2.14%"
         },
         {
-          "name": "4Â¼% Treasury Stock 2036",
+          "name": "4¼% Treasury Stock 2036",
           "weight": "2.09%"
         },
         {
-          "name": "4Â¼% Treasury Gilt 2027",
+          "name": "4¼% Treasury Gilt 2027",
           "weight": "2.08%"
         },
         {
@@ -7790,7 +7790,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-multi-asset-global-balanced-class-w-accumulation"
       },
       "sources": "HL factsheet (SEDOL BD8YW20); Fidelity (ISIN GB00BD8YW204)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.83%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.75%, S&P 500 +3.97%, US 10yr yield +1.00%, Gold (USD/oz) +15.17%.",
@@ -8026,7 +8026,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-monthly-income-class-b-accumulation"
       },
       "sources": "HL factsheet (SEDOL BFXY296); HL fund update Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.42%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -0.75%, S&P 500 +3.97%, US 10yr yield +1.00%, Gold (USD/oz) +15.17%.",
@@ -8110,7 +8110,7 @@
           "weight": "8.53%"
         },
         {
-          "name": "3Â¼% Treasury Gilt 2033",
+          "name": "3¼% Treasury Gilt 2033",
           "weight": "8.01%"
         },
         {
@@ -8134,7 +8134,7 @@
           "weight": "5.74%"
         },
         {
-          "name": "0Â¼% Treasury Gilt 2031",
+          "name": "0¼% Treasury Gilt 2031",
           "weight": "4.87%"
         },
         {
@@ -8142,7 +8142,7 @@
           "weight": "4.16%"
         },
         {
-          "name": "4Â¼% Treasury Gilt 2034",
+          "name": "4¼% Treasury Gilt 2034",
           "weight": "3.98%"
         }
       ],
@@ -8262,7 +8262,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/pyrford-global-total-return-accumulation"
       },
       "sources": "HL factsheet (SEDOL BZ0CQJ1); HL research notes Dec 2025",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.29%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.75%, S&P 500 +3.97%, US 10yr yield +1.00%, Gold (USD/oz) +15.17%.",
@@ -8523,7 +8523,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-european-index-class-c-accumulation"
       },
       "sources": "HL factsheet, HL tracker Wealth Shortlist, Broadridge",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.40%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +2.09%, FTSE 100 -0.75%, GBP/USD +2.24%.",
@@ -9046,7 +9046,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/m/man-continental-european-growth-professional-accumulation"
       },
       "sources": "HL factsheet, Man Group website, The Adviser Centre, Broadridge",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+0.84%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +2.09%, FTSE 100 -0.75%, GBP/USD +2.24%.",
@@ -9308,7 +9308,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/polar-capital-european-ex-uk-income-i-gbp-accumulation"
       },
       "sources": "HL factsheet, Broadridge, Portfolio Adviser (Shortlist addition notice)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.96%",
         "note": "Total return over the 31 days to 25 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +2.09%, FTSE 100 -0.75%, GBP/USD +2.24%.",
@@ -9832,7 +9832,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jpm-emerging-markets-class-c-accumulation"
       },
       "sources": "HL factsheet, HL Broadridge holdings data",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+2.25%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Nikkei 225 +6.25%, Hang Seng +1.01%, GBP/USD +2.24%.",
@@ -11816,7 +11816,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/G6IF/ishares-pacific-ex-japan-equity-index-uk-d-acc"
       },
       "sources": "HL factsheet, BlackRock holdings data",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+3.01%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +6.25%, Hang Seng +1.01%, GBP/USD +2.24%.",
@@ -12048,7 +12048,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B6QQ9X96-ishares-japan-equity-index-d-acc/performance"
       },
       "sources": "HL factsheet, BlackRock holdings data",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.39%",
         "note": "Total return over the 31 days to 26 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +6.25%, Hang Seng +1.01%, GBP/USD +2.24%.",
@@ -12145,7 +12145,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/ftf-royce-us-smaller-companies-class-w-accumulation"
       },
       "sources": "HL factsheet (Wealth Shortlist confirmed, fund size, launch, yield, net ongoing charge); Yahoo Finance NAV series; ISIN via FT security search.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0001PP1Y.L",
       "navMatch": "stored",
       "isin": "GB00BP9LKJ73",
@@ -12314,7 +12314,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/s/schroder-us-smaller-companies-class-z-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0002PEG1.L",
       "navMatch": "stored",
       "navName": "",
@@ -12519,7 +12519,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-index-us-class-p-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P000125KU.L",
       "navMatch": "stored",
       "navName": "",
@@ -12740,7 +12740,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-american-special-situations-class-w-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000WUU7.L",
       "navMatch": "stored",
       "navName": "",
@@ -12961,7 +12961,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/premier-miton-us-opportunities-class-b-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000XOCD.L",
       "navMatch": "stored",
       "navName": "",
@@ -13158,7 +13158,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/h/hsbc-american-index-class-c-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000WN7H.L",
       "navMatch": "stored",
       "navName": "",
@@ -13371,7 +13371,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/c/ct-european-select-class-z-accumulation"
       },
       "sources": "HL Europe sector page (Wealth Shortlist membership); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000X3IE.L",
       "navMatch": "stored",
       "navName": "",
@@ -13592,7 +13592,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jupiter-european-class-i-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000U20D.L",
       "navMatch": "stored",
       "navName": "",
@@ -13783,7 +13783,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/blackrock-european-dynamic-fd-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000NBFS.L",
       "navMatch": "stored",
       "navName": "",
@@ -14004,7 +14004,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-index-europe-ex-uk-class-p-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P00011RBW.L",
       "navMatch": "stored",
       "navName": "",
@@ -14225,7 +14225,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-european-class-b-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P00000QWM.L",
       "navMatch": "stored",
       "navName": "",
@@ -14418,7 +14418,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/i/ishares-corporate-bond-index-class-s-accumulation"
       },
       "sources": "HL Wealth Shortlist tracker page (membership, sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0001O7DN.L",
       "navMatch": "stored",
       "navName": "",
@@ -14609,7 +14609,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-all-stocks-gilt-index-trust-c-accumulation"
       },
       "sources": "HL Wealth Shortlist tracker page (membership, sector); Yahoo Finance NAV series; ISIN via FT security search, corroborated by the NAV line name.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P000102LM.L",
       "navMatch": "stored",
       "isin": "GB00BG0QNW27",
@@ -14631,11 +14631,11 @@
           "weight": "2.55%"
         },
         {
-          "name": "4Â¼% Treasury Stock 2032",
+          "name": "4¼% Treasury Stock 2032",
           "weight": "2.48%"
         },
         {
-          "name": "4Â¾% Treasury Gilt 2030",
+          "name": "4¾% Treasury Gilt 2030",
           "weight": "2.43%"
         },
         {
@@ -14643,11 +14643,11 @@
           "weight": "2.39%"
         },
         {
-          "name": "1Â¼% Treasury Gilt 2027",
+          "name": "1¼% Treasury Gilt 2027",
           "weight": "2.26%"
         },
         {
-          "name": "4Â¾% Treasury Gilt 2035",
+          "name": "4¾% Treasury Gilt 2035",
           "weight": "2.19%"
         },
         {
@@ -14659,11 +14659,11 @@
           "weight": "2.14%"
         },
         {
-          "name": "4Â½% Treasury Gilt 2035",
+          "name": "4½% Treasury Gilt 2035",
           "weight": "2.12%"
         },
         {
-          "name": "3Â¾% Treasury Gilt 2027",
+          "name": "3¾% Treasury Gilt 2027",
           "weight": "2.08%"
         }
       ],
@@ -14742,7 +14742,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/r/royal-london-corporate-bond-class-z-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000YQN5.L",
       "navMatch": "stored",
       "navName": "",
@@ -14939,7 +14939,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-managed-class-b-accumulation"
       },
       "sources": "HL mixed investment / total return sector page (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P00000QWU.L",
       "navMatch": "stored",
       "navName": "",
@@ -15133,7 +15133,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-real-return-class-u-accumulation"
       },
       "sources": "HL mixed investment / total return sector page (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000X2FF.L",
       "navMatch": "stored",
       "navName": "",
@@ -15327,7 +15327,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/s/schroder-managed-balanced-class-i-accumulation"
       },
       "sources": "HL mixed investment / total return sector page and sector review (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000ZSYH.L",
       "navMatch": "stored",
       "navName": "",
@@ -15548,7 +15548,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/t/troy-trojan-class-x-accumulation"
       },
       "sources": "HL mixed and total return sector review (Wealth Shortlist membership); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0001CBJA.L",
       "navMatch": "stored",
       "navName": "",
@@ -15571,7 +15571,7 @@
           "weight": "6.41%"
         },
         {
-          "name": "1Â¼% Treasury Gilt 2027",
+          "name": "1¼% Treasury Gilt 2027",
           "weight": "6.01%"
         },
         {
@@ -15767,7 +15767,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/t/troy-trojan-ethical-class-x-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0001J9W9.L",
       "navMatch": "stored",
       "navName": "",
@@ -15783,7 +15783,7 @@
       },
       "holdings": [
         {
-          "name": "1Â¼% Treasury Gilt 2027",
+          "name": "1¼% Treasury Gilt 2027",
           "weight": "5.91%"
         },
         {
@@ -15985,7 +15985,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/r/royal-london-sustainable-world-trust-class-c-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
       "navSymbol": "0P0000XYWQ.L",
       "navMatch": "stored",
       "navName": "",

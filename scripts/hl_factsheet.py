@@ -114,8 +114,52 @@ def slug_candidates(fund: dict) -> list[str]:
 
 # ---------------------------------------------------------------- parsing
 
+# Mojibake: UTF-8 bytes decoded as cp1252 somewhere upstream, so "¼" arrives
+# as "Â¼" and "—" as "â€”". This is not our decode to fix - HL publish it in
+# their own markup, as the literal entities "4&Acirc;&frac14;%" - so the job
+# is to survive it rather than to correct the fetch.
+#
+# The repair is to put the text back through the encoding that mangled it:
+# encode as cp1252 to recover the original bytes, decode those as UTF-8.
+_SUSPECT = re.compile(r"[ÂÃ][-¿]|â€")
+
+
+def demojibake(s: str) -> str:
+    """
+    Undo a cp1252-decoded-UTF-8 mangling, and only that.
+
+    Guarded three ways, because a wrong "repair" silently corrupts a holding
+    name. It is attempted only on text showing the signature; the decode must
+    succeed strictly, so text that was never mangled raises and is left alone;
+    and the result must re-mangle back to exactly the input, which is an
+    inverse check rather than a guess. Anything short of that keeps the
+    original - a stray "Â" is ugly, a corrupted fund name is wrong.
+    """
+    if not s:
+        return s
+    out = s
+    for _ in range(3):          # text is occasionally mangled twice over
+        if not _SUSPECT.search(out):
+            break
+        for codec in ("cp1252", "latin-1"):
+            try:
+                fixed = out.encode(codec).decode("utf-8")
+                if fixed.encode("utf-8").decode(codec) != out:
+                    continue    # not a clean inverse; do not trust it
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                continue
+            if fixed != out:
+                out = fixed
+                break
+        else:
+            break
+    return out
+
+
 def text_of(fragment: str) -> str:
-    return re.sub(r"\s+", " ", htmllib.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+    return demojibake(re.sub(
+        r"\s+", " ",
+        htmllib.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip())
 
 
 def rows(html: str) -> list[list[str]]:
@@ -487,9 +531,59 @@ def resolve_url(fund: dict) -> tuple[str | None, str | None, str]:
     return None, None, "no HL page found"
 
 
+def repair_stored_text(doc: dict) -> list[tuple[str, str, str]]:
+    """
+    Walk every string in the document and undo any stored mojibake.
+
+    Fixing text_of stops new mangling arriving, but the desk has been storing
+    HL's for as long as it has been scraping - and the page title carries some
+    of its own, from well before any of this was automated. Repairing in place
+    is safe precisely because demojibake refuses anything that is not an exact
+    inverse; a string it cannot prove was mangled is returned untouched.
+    """
+    fixed: list[tuple[str, str, str]] = []
+
+    def walk(node, path):
+        if isinstance(node, dict):
+            for k, v in list(node.items()):
+                if isinstance(v, str):
+                    repaired = demojibake(v)
+                    if repaired != v:
+                        node[k] = repaired
+                        fixed.append((f"{path}/{k}", v, repaired))
+                else:
+                    walk(v, f"{path}/{k}")
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                if isinstance(v, str):
+                    repaired = demojibake(v)
+                    if repaired != v:
+                        node[i] = repaired
+                        fixed.append((f"{path}/{i}", v, repaired))
+                else:
+                    walk(v, f"{path}/{i}")
+
+    walk(doc, "")
+    return fixed
+
+
 def main(argv: list[str]) -> int:
     dry = "--dry-run" in argv
     new_only = "--new" in argv
+
+    if "--repair-text" in argv:
+        doc = json.load(io.open(FUNDS, encoding="utf-8"))
+        fixed = repair_stored_text(doc)
+        for path, before, after in fixed:
+            print(f"  {path}\n      {before[:88]}\n   -> {after[:88]}")
+        print(f"\n{len(fixed)} string(s) repaired")
+        if dry or not fixed:
+            print("--dry-run: nothing written" if dry else "nothing to write")
+            return 0
+        io.open(FUNDS, "w", encoding="utf-8", newline="\n").write(
+            json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+        print(f"wrote {FUNDS}")
+        return 0
     only = set()
     if "--only" in argv:
         only = set(argv[argv.index("--only") + 1:])
