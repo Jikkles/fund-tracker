@@ -150,10 +150,30 @@ periods end in August where the researched ones generally end in March, so
 copying a comparator across would attach it to a period it was never measured
 over.
 
-**Catalysts roll forward automatically.** Central bank dates are hardcoded from
-published calendars and marked `(confirmed)`. Earnings dates are fetched live
-where a company has confirmed one, and fall back to a pattern estimate marked
-`(estimated)` where it has not. Never the other way round.
+**Catalysts roll forward automatically, and now in the right order.** Central
+bank dates are hardcoded from published calendars and marked `(confirmed)`.
+Earnings dates are fetched live where a company has confirmed one, and fall
+back to a pattern estimate marked `(estimated)` where it has not. Never the
+other way round.
+
+Every resolved catalyst also carries `dateISO`, a machine-readable sort
+anchor. The displayed date is deliberately fuzzy where the event is - `~mid
+Oct 2026` is the honest form of a pattern estimate - but a fuzzy string cannot
+be ordered or compared against today, which is why the panel used to publish
+in raw array order with events that had already happened still in it. The
+anchor is never displayed; for an estimate it is the middle of the stated
+third of the month, an ordering device rather than a claim of precision. The
+page parses the date text as a fallback, so a hand-entered catalyst the
+resolver does not cover still sorts rather than sinking to the bottom.
+
+Two events had no company calendar to fetch and were written out as fixed
+strings naming 2026. Those now roll from an annual rhythm like any other
+estimate: a hardcoded `~Nov 2026` would have gone on saying `~Nov 2026`
+throughout 2027, which is a stale date wearing a forward-looking label - the
+same failure the confirmed/estimated split exists to prevent, arrived at from
+the other direction. TotalEnergies also stopped being an exception: its date
+comes from the normal ladder now and its "oil exposure is continuous rather
+than event-driven" caveat is appended to it, rather than replacing it.
 
 ---
 
@@ -175,6 +195,7 @@ Test locally without writing anything:
 ```bash
 python scripts/market_data.py --selftest    # check the endpoints are reachable
 python scripts/market_series.py --selftest  # same, for the chart endpoint
+python scripts/calendar_data.py --selftest  # date rollover + sort anchors, offline
 python scripts/run_update.py --dry-run      # full run, writes nothing
 python scripts/market_series.py --dry-run   # chart fetch, writes nothing
 ```
@@ -232,11 +253,6 @@ python scripts/market_series.py --dry-run   # chart fetch, writes nothing
   Dec 2026 (BoE) and Oct 2026 (FOMC). The run warns when it is within 75 days
   of exhausting and logs a `CALENDAR-LOW` finding. Top up `calendar_data.py`
   from the published calendars when it does.
-
-- **The catalyst panel does not filter by date.** `site/index.html` builds the
-  Upcoming Catalysts column in raw array order with no date filter and no
-  chronological sort (~line 1042, `.slice(0,6)`). Fresh data still ages into a
-  stale-looking panel between runs. ~5 lines to fix; not yet applied.
 
 - **GitHub's cron drifts** by up to an hour or more, and scheduled workflows
   are auto-disabled after 60 days of repo inactivity. The hourly chart refresh

@@ -287,7 +287,7 @@ def research_health(doc: dict, today: date) -> list[str]:
 
 def refresh_catalysts(doc: dict, today: date) -> dict:
     stats = {"refreshed": 0, "confirmed": 0, "estimated": 0, "failed": 0}
-    resolved: dict[str, tuple[str, str]] = {}
+    resolved: dict[str, tuple[str, str, str | None]] = {}
 
     holdings = {c.get("holding")
                 for f in doc["funds"] for c in (f.get("catalysts") or [])
@@ -307,8 +307,17 @@ def refresh_catalysts(doc: dict, today: date) -> dict:
             hit = resolved.get(c.get("holding"))
             if not hit:
                 continue
-            c["date"], c["dateSource"] = hit
+            c["date"], c["dateSource"], iso = hit
             c["refreshedAt"] = stamp(today)
+            # dateISO is the sort anchor for the page's catalyst panel. The
+            # displayed date stays fuzzy where the event is; this is the only
+            # field that can be ordered or compared against today. Clear it
+            # rather than leave a previous run's anchor attached to a date
+            # string that has since been re-resolved to something else.
+            if iso:
+                c["dateISO"] = iso
+            else:
+                c.pop("dateISO", None)
             stats["refreshed"] += 1
 
     return stats

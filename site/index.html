@@ -1037,6 +1037,61 @@ function perfClass(s){
   return n>0?'perf-pos':n<0?'perf-neg':'perf-neu';
 }
 
+/* ---------- catalyst ordering ----------
+   The run writes `dateISO` next to every catalyst it resolves: a machine
+   -readable anchor for the human-readable `date`, which is deliberately fuzzy
+   where the event is ("~mid Oct 2026"). A fuzzy string cannot be sorted or
+   aged out, which is why this panel used to publish in raw array order with
+   events that had already happened still sitting in it.
+
+   The text is parsed as a fallback so a hand-entered catalyst the resolver
+   does not cover still finds its place rather than sinking to the bottom. */
+const CAT_MONTHS = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11};
+const CAT_THIRD  = {early:5, mid:15, late:25};
+function catalystTime(c){
+  if(c && c.dateISO){
+    const t = Date.parse(c.dateISO + 'T00:00:00Z');
+    if(!isNaN(t)) return t;
+  }
+  const s = c && c.date;
+  if(!s) return null;
+  // "Thu 17 Sep 2026 (confirmed)" — a real day beats a window.
+  let m = /(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{4})/.exec(s);
+  if(m && CAT_MONTHS[m[2].toLowerCase()]!==undefined)
+    return Date.UTC(+m[3], CAT_MONTHS[m[2].toLowerCase()], +m[1]);
+  // "~mid Oct 2026 (estimated)" — anchored mid-window, same as the run does.
+  m = /(early|mid|late)\s+([A-Za-z]{3})[a-z]*\s+(\d{4})/i.exec(s);
+  if(m && CAT_MONTHS[m[2].toLowerCase()]!==undefined)
+    return Date.UTC(+m[3], CAT_MONTHS[m[2].toLowerCase()], CAT_THIRD[m[1].toLowerCase()]);
+  return null;
+}
+/* Soonest first. Undated entries keep their place at the end - an event with
+   no date is still information, it just cannot be scheduled. Past events are
+   dropped where the heading promises "upcoming" and demoted everywhere else,
+   because the dossier's catalyst detail is research worth keeping on the page
+   even once the event it describes has been and gone. */
+function orderCatalysts(list, dropPast){
+  const cutoff = Date.now() - 86400000;   // today's own event survives all day
+  const soon = [], past = [], undated = [];
+  (list||[]).forEach(c=>{
+    const t = catalystTime(c);
+    if(t===null) undated.push({c,t:0});
+    else (t >= cutoff ? soon : past).push({c,t});
+  });
+  soon.sort((a,b)=>a.t-b.t);
+  past.sort((a,b)=>b.t-a.t);              // most recently passed first
+  return soon.concat(undated, dropPast?[]:past).map(x=>x.c);
+}
+
+/* The chip's date column is a single nowrap line, so it shows the date and
+   nothing else. Trailing context - a cluster's "then the wider cluster through
+   Nov 2026", a holding's "oil price exposure is continuous" caveat - would
+   stretch the column past the panel; it stays on the fund's own catalyst
+   trace, where there is room to read it. */
+function catalystChipDate(s){
+  return s ? String(s).split(/;|,\s*then\b/)[0].trim() : '';
+}
+
 const PERF_KEYS = new Set(['fund','sector','benchmark']);
 
 /* Returns the best available 1yr figure for a fund:
@@ -1555,10 +1610,16 @@ function buildGroupPanel(groupKey, label, funds){
   const shown = new Set(top3);
   const bot3 = sorted.filter(f=>parsePerf(getPerf1(f))!==null && !shown.has(f)).slice(-3).reverse();
 
-  // Catalyst chips for this group
-  const allChips = [];
-  funds.forEach(f=>{ if(f.catalysts) f.catalysts.forEach(c=>{ if(c.date) allChips.push({label:`${c.holding} · ${c.event}`,holding:c.holding,event:c.event,date:c.date}); }); });
-  const seen = new Set(); const uniqueChips = allChips.filter(c=>{ const k=c.label.toLowerCase(); if(seen.has(k)) return false; seen.add(k); return true; }).slice(0,6);
+  // Catalyst chips for this group. Pooled across the whole category and then
+  // ordered once - ordering per fund and concatenating would leave the list
+  // sorted within each fund and arbitrary between them.
+  const pool = [];
+  funds.forEach(f=>{ if(f.catalysts) f.catalysts.forEach(c=>{ if(c.date) pool.push(c); }); });
+  const seen = new Set();
+  const uniqueChips = orderCatalysts(pool, true).filter(c=>{
+    const k = `${c.holding} · ${c.event}`.toLowerCase();
+    if(seen.has(k)) return false; seen.add(k); return true;
+  }).slice(0,6);
 
   // Key themes: collect whyNow snippets from top 2
   const themes = top3.slice(0,2).map(f=>{
@@ -1604,10 +1665,15 @@ function buildGroupPanel(groupKey, label, funds){
   if(uniqueChips.length){
     uniqueChips.forEach(c=>{
       h += `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 8px;border-bottom:1px solid var(--rule);gap:10px;border-radius:6px;transition:background .12s" onmouseover="this.style.background='var(--hover-bg)'" onmouseout="this.style.background=''">`; 
-      h += `<span style="font-size:15px;flex:1;min-width:0">${esc(c.holding||c.label.split(' · ')[0])}</span>`;
-      h += `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--amber);white-space:nowrap;text-align:right">${c.date?esc(c.date):''}</span>`;
+      h += `<span style="font-size:15px;flex:1;min-width:0">${esc(c.holding||c.event)}</span>`;
+      h += `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--amber);white-space:nowrap;text-align:right">${esc(catalystChipDate(c.date))}</span>`;
       h += `</div>`;
     });
+  } else if(pool.length){
+    // Distinguishing the two empty states matters: "logged but all in the
+    // past" says the calendar has stopped rolling forward, which is a
+    // maintenance signal. "None logged" is just an unresearched category.
+    h += `<p class="intel-note">Every logged catalyst for this category has already passed — the calendar has not rolled forward.</p>`;
   } else { h += `<p class="intel-note">No catalysts logged.</p>`; }
   h += `</div>`;
 
@@ -1796,10 +1862,18 @@ function dossier(f){
   }
   // catalysts
   if(f.catalysts && f.catalysts.length){
+    // Soonest first, and an event whose date has passed says "was" rather
+    // than "next" - the detail underneath is still worth reading, but the
+    // label was claiming a date that has already gone by.
+    const cutoff = Date.now() - 86400000;
     h += `<div class="sec"><div class="sec-h">Holding → catalyst traces</div>`+
-      f.catalysts.map(c=>`<div class="trace"><div class="tl">${esc(c.holding)}${c.weight?` · ${esc(c.weight)}`:''} · next: ${esc(c.event)}${c.date?` · ${esc(c.date)}`:''}</div>
+      orderCatalysts(f.catalysts, false).map(c=>{
+        const t = catalystTime(c);
+        const lead = (t!==null && t < cutoff) ? 'was' : 'next';
+        return `<div class="trace"><div class="tl">${esc(c.holding)}${c.weight?` · ${esc(c.weight)}`:''} · ${lead}: ${esc(c.event)}${c.date?` · ${esc(c.date)}`:''}</div>
         <div class="tt">Tracking: <span class="${trackClass(c.tracking)}">${trackLabel(c.tracking)}</span></div>
-        <div class="tx">${esc(c.detail)}</div></div>`).join('')+`</div>`;
+        <div class="tx">${esc(c.detail)}</div></div>`;
+      }).join('')+`</div>`;
   }
   // link + sources
   const lks = [];

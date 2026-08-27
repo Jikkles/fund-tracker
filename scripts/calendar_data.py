@@ -15,6 +15,14 @@ Two kinds of event, handled differently because their reliability differs:
   historical reporting rhythm and mark (estimated). Never the other way
   round: presenting an inferred date as confirmed is the specific failure
   this module exists to prevent.
+
+Every resolved event also carries an ISO **sort anchor**. The displayed string
+is deliberately fuzzy where the date is - "~mid Oct 2026" is the honest form of
+a pattern estimate - but a fuzzy string cannot be ordered or aged out, which is
+why the catalyst panel used to publish events in arbitrary order with last
+month's still in it. The anchor exists purely to sort and to filter; it is
+never displayed, and for an estimate it is the middle of the stated third of
+the month (early=5th, mid=15th, late=25th), not a claim of precision.
 """
 
 from __future__ import annotations
@@ -146,18 +154,27 @@ CLUSTER_MEMBERS: dict[str, list[str]] = {
     ],
 }
 
-# Events with no fixed published date. Rather than fabricate one, state the
-# expected window and say plainly that it is not scheduled. Update when a
-# date is announced.
-UNSCHEDULED_EVENTS: dict[str, str] = {
+# Events with no fixed published date and no company calendar to fetch. These
+# still roll: the window is generated from an annual rhythm the same way an
+# earnings estimate is, rather than being written out with a year in it. The
+# previous hardcoded strings named 2026 and would have gone on naming 2026
+# through the whole of 2027 - a stale date presented as a forward-looking one,
+# which is the exact failure this module exists to prevent, arrived at from
+# the other direction.
+#   holding -> (months it lands in, where in the month, what it is)
+ANNUAL_POLICY_EVENTS: dict[str, tuple[list[int], str, str]] = {
     "UK gilt supply / fiscal": (
-        "Autumn Budget expected ~Nov 2026 (estimated - date not yet "
-        "announced); DMO gilt remit updates ongoing"
+        [11], "mid",
+        "Autumn Budget, date not yet announced; DMO gilt remit updates ongoing",
     ),
-    "TotalEnergies": (
-        "Q3 2026 results ~late Oct 2026 (estimated); oil price exposure "
-        "is continuous rather than event-driven"
-    ),
+}
+
+# Context appended to a holding's resolved date where the date alone would
+# overstate how event-driven the fund's exposure actually is. The date itself
+# still comes from the normal confirmed-then-estimated ladder, so it rolls.
+EVENT_NOTES: dict[str, str] = {
+    "TotalEnergies": ("oil price exposure is continuous rather than "
+                      "event-driven"),
 }
 
 
@@ -183,40 +200,55 @@ def fetch_earnings_date(ticker: str) -> date | None:
         return None
 
 
-def estimate_next(holding: str, today: date) -> str | None:
-    """Pattern-based estimate. Always labelled (estimated)."""
-    pattern = REPORTING_PATTERN.get(holding)
-    if not pattern:
-        return None
-    months, position = pattern
+# Where in the month a "early"/"mid"/"late" window is anchored for sorting.
+# Ordering needs a single day; the published string keeps the honest window.
+_ANCHOR_DAY = {"early": 5, "mid": 15, "late": 25}
 
+
+def pattern_window(months: list[int], position: str,
+                   today: date) -> tuple[str, date] | None:
+    """Next (label, sort anchor) for a company or event reporting rhythm."""
     year, month = today.year, today.month
     for _ in range(14):
         if month in months and not (month == today.month and today.day > 20):
             # "(estimated)" says it all - an estimate is by definition not
             # a confirmed date, and the longer label crowded the panel.
-            return f"~{position} {_MONTH_NAMES[month]} {year} (estimated)"
+            label = f"~{position} {_MONTH_NAMES[month]} {year} (estimated)"
+            return label, date(year, month, _ANCHOR_DAY.get(position, 15))
         month += 1
         if month > 12:
             month, year = 1, year + 1
     return None
 
 
-def next_event(holding: str, today: date) -> tuple[str, str] | None:
+def estimate_next(holding: str, today: date) -> tuple[str, date] | None:
+    """Pattern-based estimate. Always labelled (estimated)."""
+    pattern = REPORTING_PATTERN.get(holding)
+    if not pattern:
+        return None
+    return pattern_window(pattern[0], pattern[1], today)
+
+
+def next_event(holding: str, today: date) -> tuple[str, str, str | None] | None:
     """
-    Return (date_string, source) for a holding's next event.
-    date_string always states (confirmed) or (estimated).
+    Return (date_string, source, sort_anchor) for a holding's next event.
+
+    date_string always states (confirmed) or (estimated). sort_anchor is an
+    ISO date used only to order and to age out the catalyst panel, or None
+    where the event genuinely resolves to no date at all.
     """
     if holding in ("UK rates (BoE)",):
         nxt = next_after(BOE_MPC_DATES, today)
         if nxt:
-            return f"{fmt_date(nxt, with_weekday=True)} (confirmed)", "BoE published calendar"
+            return (f"{fmt_date(nxt, with_weekday=True)} (confirmed)",
+                    "BoE published calendar", nxt.isoformat())
         return None
 
     if holding in ("US rates (Fed)",):
         nxt = next_after(FOMC_DATES, today)
         if nxt:
-            return f"{fmt_date(nxt, with_weekday=True)} (confirmed)", "Fed published calendar"
+            return (f"{fmt_date(nxt, with_weekday=True)} (confirmed)",
+                    "Fed published calendar", nxt.isoformat())
         return None
 
     # Aggregate "cluster" entries track a reporting season, not one company.
@@ -238,17 +270,26 @@ def next_event(holding: str, today: date) -> tuple[str, str] | None:
             return (f"{first_member} {fmt_date(first_date)} (confirmed), "
                     f"then the wider cluster through "
                     f"{_season_end(dates):%b %Y}",
-                    "Yahoo Finance calendar, earliest confirmed constituent")
-        # Nothing confirmed: fall back to the earliest pattern estimate.
-        estimates = [estimate_next(m, today) for m in members]
-        estimates = [e for e in estimates if e]
+                    "Yahoo Finance calendar, earliest confirmed constituent",
+                    first_date.isoformat())
+        # Nothing confirmed: fall back to the earliest pattern estimate. Sort
+        # by the anchor, not by list order - the members are listed by weight.
+        estimates = [e for e in (estimate_next(m, today) for m in members) if e]
         if estimates:
-            return estimates[0], "historical reporting patterns (cluster)"
+            label, anchor = min(estimates, key=lambda e: e[1])
+            return (label, "historical reporting patterns (cluster)",
+                    anchor.isoformat())
         return None
 
-    # Fiscal/policy events with no fixed published date.
-    if holding in UNSCHEDULED_EVENTS:
-        return UNSCHEDULED_EVENTS[holding], "no fixed date published"
+    # Fiscal/policy events with no company calendar to fetch.
+    if holding in ANNUAL_POLICY_EVENTS:
+        months, position, note = ANNUAL_POLICY_EVENTS[holding]
+        hit = pattern_window(months, position, today)
+        if hit:
+            label, anchor = hit
+            return (f"{label} - {note}", "no fixed date published",
+                    anchor.isoformat())
+        return None
 
     ticker = HOLDING_TICKERS.get(holding)
     if ticker:
@@ -256,20 +297,108 @@ def next_event(holding: str, today: date) -> tuple[str, str] | None:
         # Sanity-check: a "confirmed" date in the past, or absurdly far out,
         # is stale provider data, not a real confirmation.
         if confirmed and today <= confirmed <= today + timedelta(days=200):
-            return (f"{fmt_date(confirmed, with_weekday=True)} (confirmed)",
-                    f"Yahoo Finance calendar ({ticker})")
+            return (_with_note(holding,
+                               f"{fmt_date(confirmed, with_weekday=True)} "
+                               f"(confirmed)"),
+                    f"Yahoo Finance calendar ({ticker})",
+                    confirmed.isoformat())
 
     est = estimate_next(holding, today)
     if est:
-        return est, "historical reporting pattern"
+        label, anchor = est
+        return (_with_note(holding, label), "historical reporting pattern",
+                anchor.isoformat())
     return None
+
+
+def _with_note(holding: str, label: str) -> str:
+    note = EVENT_NOTES.get(holding)
+    return f"{label}; {note}" if note else label
 
 
 def _season_end(dates: list[tuple[date, str]]) -> date:
     return max(d for d, _ in dates)
 
 
+def _selftest_offline() -> bool:
+    """
+    Exercise the date logic with no network. Everything below is pure
+    arithmetic on the hardcoded tables, so it runs anywhere.
+    """
+    import sys as _sys
+
+    # Pattern windows roll forward, and the anchor lands inside the month
+    # the label names.
+    label, anchor = pattern_window([10], "mid", date(2026, 8, 27))
+    assert label == "~mid Oct 2026 (estimated)", label
+    assert anchor == date(2026, 10, 15), anchor
+
+    # Past the 20th of a reporting month, the window moves to the next one
+    # rather than pointing at a date that has all but arrived.
+    label, anchor = pattern_window([8, 11], "late", date(2026, 8, 27))
+    assert label == "~late Nov 2026 (estimated)", label
+    assert anchor == date(2026, 11, 25), anchor
+
+    # ...and before the 20th it stays in the current month.
+    label, anchor = pattern_window([8], "late", date(2026, 8, 3))
+    assert anchor == date(2026, 8, 25), anchor
+
+    # Rolling over a year boundary.
+    label, anchor = pattern_window([1], "early", date(2026, 11, 30))
+    assert label == "~early Jan 2027 (estimated)", label
+
+    # A rhythm that never matches must fail rather than loop.
+    assert pattern_window([], "mid", date(2026, 8, 27)) is None
+
+    # Central bank events resolve to the published date, confirmed, with an
+    # anchor equal to the date itself.
+    hit = next_event("UK rates (BoE)", date(2026, 8, 27))
+    assert hit and hit[0].endswith("(confirmed)"), hit
+    assert hit[2] == "2026-09-17", hit
+    assert fmt_date(date(2026, 9, 17), with_weekday=True) == "Thu 17 Sep 2026"
+
+    # An annual policy event rolls with the calendar instead of naming a
+    # year that will go stale.
+    hit = next_event("UK gilt supply / fiscal", date(2027, 3, 1))
+    assert hit and "Nov 2027" in hit[0], hit
+    assert hit[2] == "2027-11-15", hit
+
+    # An event note is appended to the rolling date, not substituted for it.
+    # Tested through estimate_next rather than next_event: a holding with a
+    # ticker would reach for the network, and this test must run offline.
+    label, anchor = estimate_next("TotalEnergies", date(2026, 12, 1))
+    assert label == "~late Feb 2027 (estimated)", label
+    noted = _with_note("TotalEnergies", label)
+    assert noted.startswith("~late Feb 2027 (estimated); "), noted
+    assert "continuous rather than event-driven" in noted, noted
+    assert _with_note("NVIDIA", label) == label, "unrelated holding gained a note"
+
+    # Every anchor a holding can produce must parse as an ISO date and must
+    # not already be in the past - the panel filters on exactly that.
+    today = date(2026, 8, 27)
+    for holding in REPORTING_PATTERN:
+        hit = estimate_next(holding, today)
+        assert hit, f"{holding} resolved to nothing"
+        assert hit[1] >= today, (holding, hit)
+    for holding in ANNUAL_POLICY_EVENTS:
+        hit = next_event(holding, today)
+        assert hit, f"{holding} resolved to nothing"
+        assert date.fromisoformat(hit[2]) >= today, (holding, hit)
+
+    # A holding nothing knows about resolves to nothing rather than a guess.
+    assert estimate_next("Some Company Nobody Tracks", today) is None
+
+    print("  calendar self-test: OK", file=_sys.stderr)
+    return True
+
+
 if __name__ == "__main__":
+    import sys
+
+    if "--selftest" in sys.argv:
+        _selftest_offline()
+        raise SystemExit(0)
+
     today = date.today()
     print(f"Calendar check for {today}\n")
     for w in calendar_health(today):
@@ -278,4 +407,6 @@ if __name__ == "__main__":
     print(f"  Next FOMC:    {next_after(FOMC_DATES, today)}\n")
     print("  Pattern estimates (no network needed):")
     for holding in list(REPORTING_PATTERN)[:8]:
-        print(f"    {holding:24} {estimate_next(holding, today)}")
+        est = estimate_next(holding, today)
+        print(f"    {holding:24} {est[0] if est else '-':32} "
+              f"sorts as {est[1] if est else '-'}")
