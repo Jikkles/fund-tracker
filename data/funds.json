@@ -121,9 +121,10 @@
         "nav3yr": "+148.11%",
         "nav5yr": "+163.56%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1228,
+        "navPoints": 1227,
         "nav1w": "+1.95%",
-        "nav1m": "+4.18%"
+        "nav1m": "+4.18%",
+        "navYtd": "+25.10%"
       },
       "holdings": [
         {
@@ -376,9 +377,10 @@
         "nav3yr": "+52.42%",
         "nav5yr": "+61.73%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+0.83%",
-        "nav1m": "+0.50%"
+        "nav1m": "+0.50%",
+        "navYtd": "+9.50%"
       },
       "holdings": [
         {
@@ -636,11 +638,12 @@
         "perfBasis": "DRV",
         "nav1yr": "+2.39%",
         "nav3yr": "+10.60%",
-        "nav5yr": "+34.97%",
+        "nav5yr": "+35.00%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.36%",
-        "nav1m": "+7.07%"
+        "nav1m": "+7.07%",
+        "navYtd": "+11.91%"
       },
       "holdings": [
         {
@@ -888,7 +891,8 @@
         "nav1yr": "+36.12%",
         "nav3yr": "+77.98%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1065
+        "navPoints": 1065,
+        "navYtd": "+19.83%"
       },
       "holdings": [
         {
@@ -1149,9 +1153,10 @@
         "nav3yr": "+64.25%",
         "nav5yr": "+61.74%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+1.22%",
-        "nav1m": "+2.51%"
+        "nav1m": "+2.51%",
+        "navYtd": "+13.14%"
       },
       "holdings": [
         {
@@ -1412,9 +1417,10 @@
         "nav3yr": "+24.05%",
         "nav5yr": "+27.80%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.25%",
-        "nav1m": "+3.57%"
+        "nav1m": "+3.57%",
+        "navYtd": "+5.35%"
       },
       "holdings": [
         {
@@ -1679,9 +1685,10 @@
         "nav3yr": "+64.17%",
         "nav5yr": "+73.73%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.68%",
-        "nav1m": "+1.29%"
+        "nav1m": "+1.29%",
+        "navYtd": "+11.95%"
       },
       "holdings": [
         {
@@ -1942,9 +1949,10 @@
         "nav3yr": "+68.44%",
         "nav5yr": "+78.02%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.78%",
-        "nav1m": "+1.82%"
+        "nav1m": "+1.82%",
+        "navYtd": "+14.22%"
       },
       "holdings": [
         {
@@ -2193,7 +2201,8 @@
         "nav3yr": "+62.39%",
         "nav5yr": "+67.67%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+11.13%"
       },
       "holdings": [
         {
@@ -2357,9 +2366,10 @@
         "nav1m": "+1.53%",
         "nav1yr": "+23.48%",
         "nav3yr": "+52.02%",
-        "nav5yr": "+44.35%",
+        "nav5yr": "+44.33%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+17.09%"
       },
       "holdings": [
         {
@@ -2524,9 +2534,10 @@
         "nav3yr": "+74.88%",
         "nav5yr": "+73.81%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.19%",
-        "nav1m": "+2.32%"
+        "nav1m": "+2.32%",
+        "navYtd": "+12.42%"
       },
       "holdings": [
         {
@@ -2762,9 +2773,10 @@
         "nav3yr": "+32.43%",
         "nav5yr": "+2.05%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+1.14%",
-        "nav1m": "+5.80%"
+        "nav1m": "+5.80%",
+        "navYtd": "+14.29%"
       },
       "holdings": [
         {
@@ -2980,7 +2992,8 @@
         "navAsAt": "2026-08-27",
         "navPoints": 664,
         "nav1w": "+0.96%",
-        "nav1m": "+2.44%"
+        "nav1m": "+2.44%",
+        "navYtd": "+11.24%"
       },
       "holdings": [
         {
@@ -3186,9 +3199,10 @@
         "nav3yr": "+64.91%",
         "nav5yr": "+71.37%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+1.31%",
-        "nav1m": "-0.51%"
+        "nav1m": "-0.51%",
+        "navYtd": "+8.45%"
       },
       "holdings": [
         {
@@ -3420,7 +3434,8 @@
         "nav3yr": "+52.72%",
         "nav5yr": "+49.39%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1253
+        "navPoints": 1252,
+        "navYtd": "+10.52%"
       },
       "holdings": [
         {
@@ -3659,9 +3674,10 @@
         "nav3yr": "+71.66%",
         "nav5yr": "+68.11%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.98%",
-        "nav1m": "+1.20%"
+        "nav1m": "+1.20%",
+        "navYtd": "+14.49%"
       },
       "holdings": [
         {
@@ -3895,9 +3911,10 @@
         "nav3yr": "+37.49%",
         "nav5yr": "+17.21%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+1.25%",
-        "nav1m": "+2.94%"
+        "nav1m": "+2.94%",
+        "navYtd": "+8.06%"
       },
       "holdings": [
         {
@@ -4115,7 +4132,8 @@
         "nav3yr": "+59.61%",
         "nav5yr": "+69.31%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+11.97%"
       },
       "holdings": [
         {
@@ -4361,11 +4379,12 @@
         ],
         "nav1yr": "+17.36%",
         "nav3yr": "+48.92%",
-        "nav5yr": "+20.34%",
+        "nav5yr": "+19.22%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+1.73%",
-        "nav1m": "+4.14%"
+        "nav1m": "+4.14%",
+        "navYtd": "+13.15%"
       },
       "holdings": [
         {
@@ -4578,9 +4597,10 @@
         "nav3yr": "+45.22%",
         "nav5yr": "+42.94%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+1.12%",
-        "nav1m": "+1.15%"
+        "nav1m": "+1.15%",
+        "navYtd": "+8.66%"
       },
       "holdings": [
         {
@@ -4829,9 +4849,10 @@
         "nav3yr": "+66.79%",
         "nav5yr": "+80.54%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.58%",
-        "nav1m": "+1.62%"
+        "nav1m": "+1.62%",
+        "navYtd": "+11.17%"
       },
       "holdings": [
         {
@@ -5137,11 +5158,12 @@
         "perfBasis": "FID",
         "nav1yr": "+24.55%",
         "nav3yr": "+55.92%",
-        "nav5yr": "+95.39%",
+        "nav5yr": "+96.27%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1194,
+        "navPoints": 1193,
         "nav1w": "+0.64%",
-        "nav1m": "+0.74%"
+        "nav1m": "+0.74%",
+        "navYtd": "+18.26%"
       },
       "holdings": [
         {
@@ -5364,9 +5386,10 @@
         "nav3yr": "+85.00%",
         "nav5yr": "+35.20%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1228,
+        "navPoints": 1227,
         "nav1w": "+0.00%",
-        "nav1m": "+3.79%"
+        "nav1m": "+3.79%",
+        "navYtd": "+22.78%"
       },
       "holdings": [
         {
@@ -5579,9 +5602,10 @@
         "nav3yr": "+84.54%",
         "nav5yr": "+83.14%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1228,
+        "navPoints": 1227,
         "nav1w": "+0.33%",
-        "nav1m": "-1.22%"
+        "nav1m": "-1.22%",
+        "navYtd": "+18.87%"
       },
       "holdings": [
         {
@@ -5802,9 +5826,10 @@
         "nav3yr": "+33.00%",
         "nav5yr": "+24.52%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1221,
+        "navPoints": 1220,
         "nav1w": "+0.27%",
-        "nav1m": "+0.63%"
+        "nav1m": "+0.63%",
+        "navYtd": "+3.22%"
       },
       "holdings": [
         {
@@ -6063,9 +6088,10 @@
         "nav3yr": "+22.34%",
         "nav5yr": "+2.54%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+0.24%",
-        "nav1m": "+0.37%"
+        "nav1m": "+0.37%",
+        "navYtd": "+0.68%"
       },
       "holdings": [
         {
@@ -6296,9 +6322,10 @@
         "nav3yr": "+18.85%",
         "nav5yr": "-1.10%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.31%",
-        "nav1m": "+0.58%"
+        "nav1m": "+0.58%",
+        "navYtd": "+2.29%"
       },
       "holdings": [
         {
@@ -6547,7 +6574,8 @@
         "nav3yr": "+29.25%",
         "nav5yr": "+22.17%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+2.70%"
       },
       "holdings": [
         {
@@ -6780,9 +6808,10 @@
         "nav3yr": "+24.56%",
         "nav5yr": "+3.76%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.30%",
-        "nav1m": "+0.23%"
+        "nav1m": "+0.23%",
+        "navYtd": "+1.03%"
       },
       "holdings": [
         {
@@ -7010,9 +7039,10 @@
         "nav3yr": "+26.83%",
         "nav5yr": "+11.13%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.11%",
-        "nav1m": "+0.97%"
+        "nav1m": "+0.97%",
+        "navYtd": "+2.61%"
       },
       "holdings": [
         {
@@ -7232,9 +7262,10 @@
         "nav1m": "+0.44%",
         "nav1yr": "+2.56%",
         "nav3yr": "+16.85%",
-        "nav5yr": "-0.29%",
+        "nav5yr": "-0.26%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+0.58%"
       },
       "holdings": [
         {
@@ -7478,7 +7509,8 @@
         "nav3yr": "+39.11%",
         "nav5yr": "+44.10%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+6.83%"
       },
       "holdings": [
         {
@@ -7737,9 +7769,10 @@
         "nav3yr": "+39.40%",
         "nav5yr": "+43.45%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.74%",
-        "nav1m": "+0.95%"
+        "nav1m": "+0.95%",
+        "navYtd": "+6.91%"
       },
       "holdings": [
         {
@@ -7973,9 +8006,10 @@
         "nav3yr": "+26.06%",
         "nav5yr": "+19.82%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.90%",
-        "nav1m": "+1.68%"
+        "nav1m": "+1.68%",
+        "navYtd": "+7.52%"
       },
       "holdings": [
         {
@@ -8210,7 +8244,8 @@
         "nav3yr": "+23.42%",
         "nav5yr": "+25.21%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1231
+        "navPoints": 1230,
+        "navYtd": "+4.49%"
       },
       "holdings": [
         {
@@ -8458,7 +8493,8 @@
         "nav3yr": "+53.78%",
         "nav5yr": "+56.94%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261
+        "navPoints": 1260,
+        "navYtd": "+11.12%"
       },
       "holdings": [
         {
@@ -8716,9 +8752,10 @@
         "nav3yr": "+29.49%",
         "nav5yr": "+39.95%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+0.71%",
-        "nav1m": "+1.91%"
+        "nav1m": "+1.91%",
+        "navYtd": "+7.45%"
       },
       "holdings": [
         {
@@ -8981,7 +9018,8 @@
         "nav3yr": "+14.36%",
         "nav5yr": "+4.04%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260
+        "navPoints": 1259,
+        "navYtd": "+4.13%"
       },
       "holdings": [
         {
@@ -9241,9 +9279,10 @@
         "nav1m": "+1.87%",
         "nav1yr": "+14.42%",
         "nav3yr": "+39.01%",
-        "nav5yr": "+62.76%",
+        "nav5yr": "+63.72%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1225
+        "navPoints": 1224,
+        "navYtd": "+11.34%"
       },
       "holdings": [
         {
@@ -9745,7 +9784,8 @@
         "nav1m": "+2.87%",
         "nav1yr": "+48.22%",
         "navAsAt": "2026-08-27",
-        "navPoints": 418
+        "navPoints": 418,
+        "navYtd": "+29.62%"
       },
       "holdings": [
         {
@@ -10014,9 +10054,10 @@
         "nav3yr": "+86.56%",
         "nav5yr": "+83.84%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+2.80%",
-        "nav1m": "+4.12%"
+        "nav1m": "+4.12%",
+        "navYtd": "+23.04%"
       },
       "holdings": [
         {
@@ -10272,9 +10313,10 @@
         "nav3yr": "+97.37%",
         "nav5yr": "+113.51%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1252,
+        "navPoints": 1251,
         "nav1w": "+2.40%",
-        "nav1m": "+3.60%"
+        "nav1m": "+3.60%",
+        "navYtd": "+35.34%"
       },
       "holdings": [
         {
@@ -10509,9 +10551,10 @@
         "nav3yr": "+80.61%",
         "nav5yr": "+56.17%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.86%",
-        "nav1m": "+2.62%"
+        "nav1m": "+2.62%",
+        "navYtd": "+29.57%"
       },
       "holdings": [
         {
@@ -10772,9 +10815,10 @@
         "nav3yr": "+38.67%",
         "nav5yr": "+24.36%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1243,
+        "navPoints": 1242,
         "nav1w": "+2.18%",
-        "nav1m": "+3.92%"
+        "nav1m": "+3.92%",
+        "navYtd": "+20.83%"
       },
       "holdings": [
         {
@@ -11047,9 +11091,10 @@
         "nav3yr": "+39.02%",
         "nav5yr": "+9.10%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1209,
+        "navPoints": 1208,
         "nav1w": "+1.86%",
-        "nav1m": "+2.92%"
+        "nav1m": "+2.92%",
+        "navYtd": "+18.28%"
       },
       "holdings": [
         {
@@ -11293,9 +11338,10 @@
         "nav3yr": "+49.40%",
         "nav5yr": "+25.63%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.13%",
-        "nav1m": "+4.72%"
+        "nav1m": "+4.72%",
+        "navYtd": "+18.96%"
       },
       "holdings": [
         {
@@ -11514,9 +11560,10 @@
         "nav3yr": "+81.93%",
         "nav5yr": "+129.80%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1205,
+        "navPoints": 1204,
         "nav1w": "+1.35%",
-        "nav1m": "+2.58%"
+        "nav1m": "+2.58%",
+        "navYtd": "+22.20%"
       },
       "holdings": [
         {
@@ -11738,7 +11785,8 @@
         "navAsAt": "2026-08-27",
         "navPoints": 988,
         "nav1w": "+2.26%",
-        "nav1m": "+3.89%"
+        "nav1m": "+3.89%",
+        "navYtd": "+48.38%"
       },
       "holdings": [
         {
@@ -12002,7 +12050,8 @@
         "navAsAt": "2026-08-27",
         "navPoints": 972,
         "nav1w": "+1.16%",
-        "nav1m": "+1.66%"
+        "nav1m": "+1.66%",
+        "navYtd": "+17.78%"
       },
       "holdings": [
         {
@@ -12198,7 +12247,7 @@
         "nav3yr": "+36.67%",
         "nav5yr": "+50.80%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -12227,7 +12276,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+23.14%"
       },
       "manager": {
         "names": "not yet verified",
@@ -12572,7 +12622,7 @@
         "nav3yr": "+66.49%",
         "nav5yr": "+83.00%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -12601,7 +12651,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+11.56%"
       },
       "manager": {
         "names": "Geode Capital",
@@ -12793,7 +12844,7 @@
         "nav3yr": "+31.25%",
         "nav5yr": "+54.19%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -12822,7 +12873,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+7.43%"
       },
       "manager": {
         "names": "Ashish Bhardwaj & Rosanna Burcheri",
@@ -13014,7 +13066,7 @@
         "nav3yr": "+0.71%",
         "nav5yr": "+7.18%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -13043,7 +13095,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "-4.16%"
       },
       "manager": {
         "names": "Alex Knox & Hugh Grieves & Aditya Khowala",
@@ -13209,9 +13262,9 @@
         "nav1m": "+1.26%",
         "nav1yr": "+18.92%",
         "nav3yr": "+64.85%",
-        "nav5yr": "+82.60%",
+        "nav5yr": "+81.24%",
         "navAsAt": "2026-08-26",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -13240,7 +13293,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+10.54%"
       },
       "manager": {
         "names": "Annual charges",
@@ -13424,7 +13478,7 @@
         "nav3yr": "+32.09%",
         "nav5yr": "+21.51%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -13453,7 +13507,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+8.76%"
       },
       "manager": {
         "names": "Fred Jeanmaire",
@@ -13645,7 +13700,7 @@
         "nav3yr": "+41.44%",
         "nav5yr": "+29.91%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -13674,7 +13729,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+15.93%"
       },
       "manager": {
         "names": "Chris Legg & Christopher Sellers & Niall Gallagher",
@@ -14057,7 +14113,7 @@
         "nav3yr": "+51.87%",
         "nav5yr": "+55.09%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -14086,7 +14142,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+10.98%"
       },
       "manager": {
         "names": "Geode Capital",
@@ -14278,7 +14335,7 @@
         "nav3yr": "+17.98%",
         "nav5yr": "-29.89%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -14307,7 +14364,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+1.38%"
       },
       "manager": {
         "names": "Chris Howarth & Joe Faraday",
@@ -14500,7 +14558,8 @@
         "navAsAt": "2026-08-27",
         "navPoints": 991,
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+0.39%"
       },
       "manager": {
         "names": "Duncan Fergusson",
@@ -14691,7 +14750,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "-1.12%"
       },
       "manager": {
         "names": "LGIM Index Fund Management Team",
@@ -14822,9 +14882,10 @@
         "nav3yr": "+24.44%",
         "nav5yr": "+5.89%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+0.82%"
       },
       "manager": {
         "names": "Shalin Shah & Matt Franklin",
@@ -14992,7 +15053,7 @@
         "nav3yr": "+34.93%",
         "nav5yr": "-0.23%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -15021,7 +15082,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+6.32%"
       },
       "manager": {
         "names": "Iain McCombie & Steven Hay",
@@ -15213,9 +15275,10 @@
         "nav3yr": "+36.17%",
         "nav5yr": "+24.14%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+8.40%"
       },
       "manager": {
         "names": "Aron Pataki & Andy Warwick & Ella Gude",
@@ -15407,9 +15470,10 @@
         "nav3yr": "+44.39%",
         "nav5yr": "+31.41%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+11.40%"
       },
       "manager": {
         "names": "Nick Pearson & Remi OluâPitan",
@@ -15601,7 +15665,7 @@
         "nav3yr": "+22.22%",
         "nav5yr": "+21.49%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -15630,7 +15694,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+3.19%"
       },
       "manager": {
         "names": "Sebastian Lyon & Charlotte Yonge",
@@ -15849,7 +15914,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+2.45%"
       },
       "manager": {
         "names": "Charlotte Yonge & Sebastian Lyon",
@@ -16038,7 +16104,7 @@
         "nav3yr": "+47.36%",
         "nav5yr": "+34.23%",
         "navAsAt": "2026-08-27",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "26/08/25 to 26/08/26",
@@ -16067,7 +16133,8 @@
           }
         ],
         "perfAsAt": "2026-08-27",
-        "perfAsAtSource": "HL factsheet scrape"
+        "perfAsAtSource": "HL factsheet scrape",
+        "navYtd": "+8.17%"
       },
       "manager": {
         "names": "Michael Fox",
