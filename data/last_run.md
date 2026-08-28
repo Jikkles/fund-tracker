@@ -11,15 +11,15 @@ Window: 29 Jul 2026 to 28 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.91% |
-| FTSE 250 | +3.95% |
+| FTSE 100 | -0.90% |
+| FTSE 250 | +3.94% |
 | S&P 500 | +5.67% |
 | Nasdaq Composite | +8.58% |
-| Euro STOXX 50 | +3.49% |
+| Euro STOXX 50 | +3.56% |
 | Nikkei 225 | +8.09% |
 | Hang Seng | -0.86% |
 | Gold (USD/oz) | +15.17% |
-| Brent crude | -3.05% |
+| Brent crude | -3.14% |
 | US 10yr yield | +1.08% |
 | GBP/USD | +2.23% |
 
