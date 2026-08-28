@@ -620,7 +620,8 @@
      What it fixes, in order of how much it hurt:
        - 36px page gutters ate 18% of a 390px screen
        - the sticky control panel stood ~600px tall and covered
-         two thirds of the viewport on every scroll
+         two thirds of the viewport on every scroll (it is no
+         longer sticky at all below the breakpoint)
        - fund heads split into two grid columns, so a name wrapped
          to four lines beside a 22px figure
        - the intel panel's three columns ran off the right edge
@@ -723,12 +724,16 @@
     .rec-thesis { font-size: 14.5px; }
 
     /* ---- directory controls ----
-       Kept sticky, because filtering 70 funds from the top of the page only
-       is worse - but rebuilt as three short rows (search / sort+view /
-       one swipeable chip strip) so it stands ~160px instead of ~600px. */
+       Not sticky on a phone. Even rebuilt down to three short rows it stood
+       ~170px, and a panel that size parked over the top fifth of the screen
+       reads as an obstruction while you scroll the list or a dossier - the
+       filters are not worth that much of a small screen. It scrolls away
+       with the rest of the page; the blur and the float shadow go with it,
+       since nothing passes underneath any more. */
     .controls {
-      top: 8px; padding: 12px; gap: 10px; border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.35);
+      position: static; padding: 12px; gap: 10px; border-radius: 12px;
+      background: var(--paper-2); box-shadow: none;
+      backdrop-filter: none; -webkit-backdrop-filter: none;
     }
     /* 16px or iOS zooms the whole page in when the field takes focus. */
     #search { flex: 1 1 100%; min-width: 0; font-size: 16px; padding: 12px 14px; }
@@ -750,7 +755,7 @@
     /* ---- fund cards ----
        One column: identity first, then a single wrapping metric row. The
        two-column head squeezed a 40-character fund name into ~180px. */
-    .fund { margin-bottom: 12px; scroll-margin-top: 176px; }
+    .fund { margin-bottom: 12px; scroll-margin-top: 12px; }
     .fhead { grid-template-columns: 1fr; gap: 10px; padding: 14px; }
     .fname { font-size: 17px; line-height: 1.32; }
     .badge { font-size: 10px; padding: 3px 8px; margin-left: 6px; }
