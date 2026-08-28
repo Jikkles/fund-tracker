@@ -25,6 +25,8 @@
     --shadow:  rgba(0,0,0,.4);
     --hover-bg:#273549;
     --hover-border:#475569;
+    /* thead over .paper-2 composites to this; a sticky cell needs it opaque. */
+    --thead-solid:#1a2332;
   }
   * { box-sizing: border-box; }
   body {
@@ -591,6 +593,241 @@
 
   @media(max-width:800px) { .three { grid-template-columns: 1fr 1fr; } .intel-grid { grid-template-columns: 1fr; } }
   @media(max-width:640px) { .three { grid-template-columns: 1fr; } .fright .charge { display: none; } .rec-grid { grid-template-columns: 1fr; } }
+
+  /* ---- shared scaffolding the mobile layer below leans on ---- */
+
+  /* The intel panel's three columns used to carry their grid inline, so no
+     media query could reach them and they clipped off the side of a phone.
+     Same layout, now addressable. */
+  .intel-3col { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 0;
+                border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; }
+  .intel-3col > .i3 { padding: 16px 18px; }
+  .intel-3col > .i3:not(:last-child) { border-right: 1px solid var(--rule); }
+
+  /* Dossier tables swipe rather than crush. Never overflows on a wide screen,
+     so this is inert above the breakpoint. The scroll container is a block
+     formatting context, so the table's own top margin has to move out to the
+     wrapper or it would stop collapsing and add 8px above every table. */
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 8px; }
+  .tbl-scroll > table.data { margin-top: 0; }
+
+  .mob-only { display: none; }
+
+  /* ============================================================
+     MOBILE — phones only (<=760px). Nothing in this block applies
+     above the breakpoint, so the desktop desk is untouched.
+
+     What it fixes, in order of how much it hurt:
+       - 36px page gutters ate 18% of a 390px screen
+       - the sticky control panel stood ~600px tall and covered
+         two thirds of the viewport on every scroll
+       - fund heads split into two grid columns, so a name wrapped
+         to four lines beside a 22px figure
+       - the intel panel's three columns ran off the right edge
+       - the 9-column table view scrolled with no visible cue and
+         no anchor once you swiped
+       - 15px form controls made iOS zoom on focus
+     ============================================================ */
+  @media (max-width: 760px) {
+
+    /* ---- page frame ---- */
+    html { -webkit-text-size-adjust: 100%; }
+    body { line-height: 1.55; }
+    .wrap {
+      padding: 20px 14px 56px;
+      padding-left: max(14px, env(safe-area-inset-left));
+      padding-right: max(14px, env(safe-area-inset-right));
+    }
+    * { -webkit-tap-highlight-color: rgba(56,189,248,.12); }
+
+    .mast { padding-bottom: 18px; margin-bottom: 18px; }
+    .eyebrow { font-size: 10.5px; letter-spacing: .12em; margin-bottom: 10px; }
+    h1 { font-size: clamp(26px, 7.5vw, 34px); line-height: 1.15; }
+    .stamp { font-size: 11.5px; gap: 6px 14px; margin-top: 12px; }
+    h2 { font-size: 13px; letter-spacing: .08em; margin: 34px 0 8px; }
+    p { font-size: 15.5px; }
+    ul.clean li { font-size: 15px; padding-left: 22px; }
+
+    .notadvice { font-size: 13.5px; line-height: 1.55; padding: 14px 16px; margin: 18px 0; border-radius: 10px; }
+    .databar { font-size: 12px; gap: 8px 14px; }
+    .loader { padding: 24px 16px; }
+    .btn { padding: 12px 22px; }
+    .btn.ghost { margin-left: 0; margin-top: 8px; }
+
+    /* Touch screens keep a hover state stuck on after a tap, so the lifts and
+       drop shadows read as a stuck selection. Flat is better here. */
+    .fund:hover, .fund.open, .kf:hover, .trace:hover, .rec-card:hover,
+    .filter:hover, .extlink:hover, .btn:hover, .loader:hover { transform: none; }
+    .fund:hover { box-shadow: 0 2px 8px rgba(0,0,0,.15); }
+
+    /* ---- index chart ---- */
+    .mkt { margin: 16px 0; }
+    .mkt-tabs button { padding: 11px 14px; }
+    .mkt-head { padding: 14px 14px 0; gap: 10px; }
+    .mkt-name { font-size: 16px; }
+    .mkt-price { font-size: 26px; }
+    .mkt-chg { font-size: 13px; }
+    .mkt-asof { margin: 6px 14px 0; font-size: 10.5px; line-height: 1.5; }
+    .mkt-ranges { padding: 12px 14px 4px; gap: 6px; }
+    .mkt-ranges button { padding: 8px 14px; }
+    .mkt-plot { padding: 4px 4px 10px; }
+    .mkt-note { padding: 0 14px 14px; line-height: 1.5; }
+
+    /* ---- top / bottom rankings ---- */
+    .pulse-box-head { padding: 12px 14px; font-size: 12px; }
+    .rank-head { gap: 10px; }
+    .rank-controls { width: 100%; flex-wrap: wrap; gap: 8px; }
+    .seg button { padding: 8px 14px; }
+    .pr-head { padding: 12px 14px; gap: 8px; }
+    .pulse-row .pr-num { font-size: 12px; min-width: 16px; margin-right: 2px; align-self: flex-start; padding-top: 2px; }
+    .pulse-row .pr-name { font-size: 15px; line-height: 1.35; }
+    .pulse-row .pr-perf { font-size: 14px; }
+    .pr-note { padding: 0 14px 12px; }
+    .pr-note-box { font-size: 13.5px; padding: 11px 13px; }
+
+    /* ---- headlines ---- */
+    .news-head { padding: 12px 14px; }
+    .news-tabs { margin-left: 0; width: 100%; }
+    .news-tabs button { padding: 7px 13px; }
+    .news-row .pr-head { padding: 12px 14px; }
+    .news-title { font-size: 14.5px; }
+    .news-empty { padding: 14px; }
+
+    /* ---- data health ---- */
+    .health-head { padding: 12px 14px; gap: 8px; }
+    .health-title { font-size: 12px; width: 100%; margin-right: 0; }
+    .hchip { font-size: 10.5px; padding: 4px 9px; }
+    .health-sec-h { padding: 12px 14px 6px; line-height: 1.45; }
+    /* Three columns in 350px left the description ~90px wide. Stack them. */
+    .hrow { flex-direction: column; align-items: stretch; gap: 4px; padding: 11px 14px; }
+    .hrow .hf { min-width: 0; }
+    .hrow .hs { align-self: flex-start; }
+
+    /* ---- intelligence ---- */
+    .intel-tabs { gap: 4px; }
+    .itab { font-size: 11px; padding: 9px 13px; letter-spacing: .06em; }
+    .itab-panel { padding: 16px 14px; border-radius: 0 0 12px 12px; }
+    .intel-3col { grid-template-columns: 1fr; }
+    .intel-3col > .i3 { padding: 14px; }
+    .intel-3col > .i3:not(:last-child) { border-right: none; border-bottom: 1px solid var(--rule); }
+    .intel-row { padding: 8px 4px; font-size: 14.5px; }
+    .intel-row .iname { padding-right: 10px; }
+    .theme-line { font-size: 14px; padding: 11px 4px; }
+    /* Inline, the fund-name chip left a one-word orphan beside it and the
+       thesis started mid-line. Its own line reads as a heading instead. */
+    .theme-tag { display: block; width: fit-content; margin: 0 0 7px; }
+
+    .rec-grid { gap: 14px; }
+    .rec-card { padding: 18px 16px; }
+    .rec-name { font-size: 17px; }
+    .rec-thesis { font-size: 14.5px; }
+
+    /* ---- directory controls ----
+       Kept sticky, because filtering 70 funds from the top of the page only
+       is worse - but rebuilt as three short rows (search / sort+view /
+       one swipeable chip strip) so it stands ~160px instead of ~600px. */
+    .controls {
+      top: 8px; padding: 12px; gap: 10px; border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.35);
+    }
+    /* 16px or iOS zooms the whole page in when the field takes focus. */
+    #search { flex: 1 1 100%; min-width: 0; font-size: 16px; padding: 12px 14px; }
+    /* flex-basis 0 on both, or the select's widest option sets the line's
+       intrinsic width and knocks the view toggle onto a row of its own. */
+    .sort-wrap { flex: 1 1 0; min-width: 0; gap: 8px; }
+    #sortSelect { flex: 1 1 0; min-width: 0; font-size: 15px; padding: 10px 12px; padding-right: 28px; }
+    #viewSeg { margin-left: 0 !important; flex: 0 0 auto; }
+    .seg button { font-size: 13px; }
+    .filters {
+      flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; gap: 8px;
+      scrollbar-width: none; -ms-overflow-style: none;
+      margin: 0 -12px; padding: 2px 12px;
+    }
+    .filters::-webkit-scrollbar { display: none; }
+    .filter { flex: 0 0 auto; padding: 9px 15px; font-size: 13px; }
+    .count { font-size: 12px; margin-left: 0; line-height: 1.5; }
+
+    /* ---- fund cards ----
+       One column: identity first, then a single wrapping metric row. The
+       two-column head squeezed a 40-character fund name into ~180px. */
+    .fund { margin-bottom: 12px; scroll-margin-top: 176px; }
+    .fhead { grid-template-columns: 1fr; gap: 10px; padding: 14px; }
+    .fname { font-size: 17px; line-height: 1.32; }
+    .badge { font-size: 10px; padding: 3px 8px; margin-left: 6px; }
+    .fcat { font-size: 11px; margin-top: 5px; }
+    .fright {
+      display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+      text-align: left; white-space: normal;
+      border-top: 1px solid var(--rule); padding-top: 11px;
+    }
+    .fright > div { margin-top: 0 !important; }
+    .fright .perf1 { font-size: 20px; }
+    .fperf-main { white-space: nowrap; }
+    .toggle { margin-top: 0; margin-left: auto; align-self: center; }
+    .fchip { margin-left: 6px; }
+
+    /* ---- dossier ---- */
+    .detail { padding: 0 14px 22px; }
+    .sec { margin-top: 22px; }
+    .sec-h { font-size: 11px; margin-bottom: 12px; }
+    .keyfacts { grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+    .costgrid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .kf { padding: 11px 12px; border-radius: 8px; }
+    .kf .k { font-size: 10px; }
+    /* the value carries an inline size chosen for a wide card */
+    .kf .v { font-size: 14px !important; margin-top: 3px; }
+    .prose { font-size: 15px; line-height: 1.65; }
+    .trace { padding: 12px 14px; }
+    .trace .tt { font-size: 15px; }
+    .trace .tx { font-size: 14px; }
+    .flag { font-size: 13px; padding: 11px 13px; }
+    .src { font-size: 11px; line-height: 1.6; }
+    /* full-width targets rather than three link-sized taps in a row */
+    .extlink { display: block; flex: 1 1 100%; text-align: center; padding: 12px 16px; margin-top: 14px; }
+
+    /* ---- dossier tables ---- */
+    table.data { font-size: 13px; }
+    table.data th { padding: 9px 11px; font-size: 10.5px; }
+    table.data td { padding: 9px 11px; }
+    /* Period labels like "2025-26 (to 31 Mar 26)" wrapped to five lines and
+       dragged every row's height with them; the wrapper scrolls instead. */
+    .perf-tbl th:first-child, .perf-tbl td:first-child { white-space: nowrap; }
+    .perf-tbl { min-width: 100%; }
+
+    /* ---- table view ----
+       Nine columns will not fit and should not try. The fund name pins to the
+       left so a swiped-out row still says which fund it belongs to. */
+    .ftable-wrap { -webkit-overflow-scrolling: touch; }
+    table.ftable { font-size: 12px; }
+    table.ftable th { padding: 10px 11px; font-size: 10px; }
+    table.ftable td { padding: 10px 11px; }
+    table.ftable th:first-child, table.ftable td:first-child {
+      position: sticky; left: 0; z-index: 2;
+      min-width: 132px; max-width: 152px;
+      background: var(--paper-2); box-shadow: 1px 0 0 var(--rule);
+    }
+    table.ftable th:first-child { background: var(--thead-solid); z-index: 3; }
+    table.ftable tbody tr:hover td:first-child { background: var(--hover-bg); }
+    /* Name and category wrap inside a narrow column; everything past them is
+       a figure or a short flag and stays on one line. Letting the category
+       run full width pushed the 1yr figure - the column that matters most -
+       clean off the first screen. */
+    table.ftable th:nth-child(2), table.ftable td:nth-child(2) { max-width: 104px; }
+    table.ftable th:nth-child(n+3), table.ftable td:nth-child(n+3) { white-space: nowrap; }
+    .mob-only { display: revert; }
+
+    .empty { padding: 28px 0; font-size: 13px; }
+    footer { font-size: 12px; margin-top: 36px; }
+    .caveats li { font-size: 12.5px; }
+  }
+
+  /* Very narrow phones (<=380px): the key-fact and cost pairs stop fitting
+     two-up once a value is more than a few characters. */
+  @media (max-width: 380px) {
+    .keyfacts, .costgrid { grid-template-columns: 1fr; }
+    .wrap { padding-left: 12px; padding-right: 12px; }
+    .fname { font-size: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -1247,16 +1484,16 @@ function fmtPP(n){ return (n>0?'+':'') + n.toFixed(1) + 'pp'; }
 
 function rows(arr, cols){ // cols: [{key,label,num}]
   if(!arr || !arr.length) return '<p class="flag">Not yet verified — to be pulled in the next research run.</p>';
-  return `<table class="data"><thead><tr>${cols.map(c=>`<th class="${c.num?'num':''}">${c.label}</th>`).join('')}</tr></thead>
+  return `<div class="tbl-scroll"><table class="data perf-tbl"><thead><tr>${cols.map(c=>`<th class="${c.num?'num':''}">${c.label}</th>`).join('')}</tr></thead>
     <tbody>${arr.map(o=>`<tr>${cols.map(c=>{
       const val = esc(o[c.key]);
       if(c.num && PERF_KEYS.has(c.key)) return `<td class="${perfClass(val)}">${val}</td>`;
       return `<td class="${c.num?'num':''}">${val}</td>`;
-    }).join('')}</tr>`).join('')}</tbody></table>`;
+    }).join('')}</tr>`).join('')}</tbody></table></div>`;
 }
 function miniList(arr){
   if(!arr||!arr.length) return '<p class="flag">see factsheet</p>';
-  return `<table class="data"><tbody>${arr.map(o=>`<tr><td>${esc(o.name)}</td><td class="num">${esc(o.weight)}</td></tr>`).join('')}</tbody></table>`;
+  return `<div class="tbl-scroll"><table class="data mini-tbl"><tbody>${arr.map(o=>`<tr><td>${esc(o.name)}</td><td class="num">${esc(o.weight)}</td></tr>`).join('')}</tbody></table></div>`;
 }
 
 /* ---------- render: shortlist pulse (top 5 / bottom 5) ---------- */
@@ -1662,10 +1899,10 @@ function buildGroupPanel(groupKey, label, funds){
   let h = `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--ink-soft);margin-bottom:14px">${funds.length} funds · avg 1yr: <b style="color:var(--ink);font-size:14px">${avgStr}</b></div>`;
 
   // Three columns: Winning | Lagging | Catalysts
-  h += `<div style="display:grid;grid-template-columns:1fr 1fr 1.1fr;gap:0;border:1px solid var(--rule);border-radius:12px;overflow:hidden">`;
+  h += `<div class="intel-3col">`;
 
   // Col 1 — Winning
-  h += `<div style="padding:16px 18px;border-right:1px solid var(--rule)">`;
+  h += `<div class="i3">`;
   h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:7px;margin-bottom:12px">Winning</div>`;
   if(top3.length){
     top3.forEach(f=>{
@@ -1676,7 +1913,7 @@ function buildGroupPanel(groupKey, label, funds){
   h += `</div>`;
 
   // Col 2 — Lagging
-  h += `<div style="padding:16px 18px;border-right:1px solid var(--rule)">`;
+  h += `<div class="i3">`;
   h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);border-bottom:2px solid var(--oxblood);padding-bottom:7px;margin-bottom:12px">Lagging</div>`;
   if(bot3.length){
     bot3.forEach(f=>{
@@ -1687,7 +1924,7 @@ function buildGroupPanel(groupKey, label, funds){
   h += `</div>`;
 
   // Col 3 — Upcoming catalysts
-  h += `<div style="padding:16px 18px">`;
+  h += `<div class="i3">`;
   h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border-bottom:2px solid var(--amber);padding-bottom:7px;margin-bottom:12px">Upcoming catalysts</div>`;
   const chipRow = (name, date, muted) => {
     let r = `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 8px;border-bottom:1px solid var(--rule);gap:10px;border-radius:6px;transition:background .12s" onmouseover="this.style.background='var(--hover-bg)'" onmouseout="this.style.background=''">`;
@@ -1970,7 +2207,7 @@ function renderList(){
     el.innerHTML = `
       <div class="fhead">
         <div><p class="fname">${esc(f.name)}${bdg}${warn}${staleChip}</p><p class="fcat">${esc(f.category||'')}${f.shareClass?` · ${esc(f.shareClass)}`:''}</p>${sparkline(f,84,24)}</div>
-        <div class="fright"><span class="perf1" style="color:${(n=>n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)')(parsePerf(p1))}">${esc(p1)}</span> <span style="font-size:11px;font-weight:600;font-family:'Inter',sans-serif;">1yr</span>${basisChip(f)}${relBadge}${omBadge}<span class="toggle">open ▸</span></div>
+        <div class="fright"><span class="fperf-main"><span class="perf1" style="color:${(n=>n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)')(parsePerf(p1))}">${esc(p1)}</span> <span style="font-size:11px;font-weight:600;font-family:'Inter',sans-serif;">1yr</span>${basisChip(f)}</span>${relBadge}${omBadge}<span class="toggle">open ▸</span></div>
       </div>
       <div class="detail">${dossier(f)}</div>`;
     el.querySelector('.fhead').onclick=()=>{
@@ -2035,7 +2272,8 @@ function renderTable(items, listEl){
     <td>${r.incons?'<span class="fchip bad" style="margin-left:0">⚠</span>':''}${r.unver?'<span class="fchip warn" style="margin-left:'+(r.incons?'6px':'0')+'">NYV</span>':''}${r.stale&&!r.unver?'<span class="fchip warn" style="margin-left:'+(r.incons?'6px':'0')+'">stale</span>':''}</td>
   </tr>`).join('');
 
-  listEl.innerHTML = `<div class="ftable-wrap"><table class="ftable">
+  listEl.innerHTML = `<p class="count mob-only" style="margin:0 0 8px">Swipe the table sideways for the rest of the columns.</p>
+    <div class="ftable-wrap"><table class="ftable">
     <thead><tr>${cols.map(colHtml).join('')}</tr></thead><tbody>${body}</tbody></table></div>
     <p class="count" style="margin-top:10px">Click a column header to sort · click a row to open the fund's full dossier.</p>`;
 }
