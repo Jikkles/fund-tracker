@@ -1300,6 +1300,9 @@ function parsePerf(s){
   const n = parseFloat(String(s).replace(/\u2212/g,'-').replace(/[^0-9.\-+]/g,''));
   return isNaN(n)?null:n;
 }
+function perfColor(n){
+  return n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)';
+}
 function perfClass(s){
   const n = parsePerf(s);
   if(n===null) return 'perf-neu';
@@ -2254,18 +2257,23 @@ function renderList(){
     const warn = (mcc && mcc.cls==='incons') ? `<span class="fchip bad" title="1yr cumulative and most recent discrete year disagree by ${fmtPP(mcc.m)} — verify on HL">⚠ inconsistent</span>` : '';
     const st = staleInfo(f);
     const staleChip = (st && st.stale) ? `<span class="fchip warn" title="1yr figure is ${st.days} days old">1yr as at ${esc(st.label)}</span>` : '';
+    // The card leads with the figure the list is sorted on. Leading with the
+    // 1yr number while ranking on YTD made the order look broken: the visible
+    // figures did not descend, because they were not the ones being sorted.
+    const ytd = getYtd(f);
     const p1 = getPerf1(f);
-    const rs = vsSector(f);
-    const relBadge = rs===null?'':`<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;font-weight:600;color:${rs>=0?'var(--forest)':'var(--oxblood)'};margin-top:2px">${fmtPP(rs)} <span style="font-size:10px;font-family:'Inter',sans-serif;color:var(--ink-soft)">vs sector</span></div>`;
     const charge = f.charges&&f.charges.netOngoing?f.charges.netOngoing:'';
     const om = oneMonthView(f);
-    const omNum = om?parsePerf(om.value):null;
-    const omCol = omNum===null?'var(--ink-soft)':omNum>0?'var(--forest)':omNum<0?'var(--oxblood)':'var(--ink-soft)';
-    const omBadge = om?`<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;color:${omCol};margin-top:2px">${esc(om.value)} <span style="font-size:10px;font-weight:600;font-family:'Inter',sans-serif;color:var(--ink-soft)">1mo</span></div>`:'';
+    // 1yr and 1mo read as secondary lines under it. The basis chip travels
+    // with the 1yr figure, which is the number it actually describes.
+    const subLine = (val, label, extra) =>
+      `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;font-weight:600;color:${perfColor(parsePerf(val))};margin-top:2px">${esc(val)} <span style="font-size:10px;font-weight:600;font-family:'Inter',sans-serif;color:var(--ink-soft)">${label}</span>${extra||''}</div>`;
+    const p1Badge = subLine(p1, '1yr', basisChip(f));
+    const omBadge = om ? subLine(om.value, '1mo') : '';
     el.innerHTML = `
       <div class="fhead">
         <div><p class="fname">${esc(f.name)}${bdg}${warn}${staleChip}</p><p class="fcat">${esc(f.category||'')}${f.shareClass?` · ${esc(f.shareClass)}`:''}</p>${sparkline(f,84,24)}</div>
-        <div class="fright"><span class="fperf-main"><span class="perf1" style="color:${(n=>n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)')(parsePerf(p1))}">${esc(p1)}</span> <span style="font-size:11px;font-weight:600;font-family:'Inter',sans-serif;">1yr</span>${basisChip(f)}</span>${relBadge}${omBadge}<span class="toggle">open ▸</span></div>
+        <div class="fright"><span class="fperf-main"><span class="perf1" style="color:${perfColor(parsePerf(ytd))}">${esc(ytd||'—')}</span> <span style="font-size:11px;font-weight:600;font-family:'Inter',sans-serif;">ytd</span></span>${p1Badge}${omBadge}<span class="toggle">open ▸</span></div>
       </div>
       <div class="detail">${dossier(f)}</div>`;
     el.querySelector('.fhead').onclick=()=>{
