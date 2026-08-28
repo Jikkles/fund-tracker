@@ -360,6 +360,34 @@ def pct_over(series: dict, days: int) -> float | None:
     return (series["c"][-1] - start) / start * 100.0
 
 
+def pct_ytd(series: dict) -> float | None:
+    """
+    Calendar year-to-date total return, or None if the series cannot carry one.
+
+    Anchored on the final close of LAST year, not the first close of this one,
+    so a figure published on 2 January measures the move since the year turned
+    rather than a single session against itself.
+
+    Two refusals, both in the same spirit as `pct_over`'s window coverage:
+    a fund whose history begins inside this year has no such anchor, and a
+    series that has not priced at all this year has no year to date. Either
+    one would otherwise publish a number wearing a label it has not earned.
+    """
+    if not series or len(series["t"]) < 2:
+        return None
+    year = date.today().year
+    if date.fromtimestamp(series["t"][-1]).year < year:
+        return None
+    base = None
+    for stamp, close in zip(series["t"], series["c"]):
+        if date.fromtimestamp(stamp).year >= year:
+            break
+        base = close
+    if not base:
+        return None
+    return (series["c"][-1] - base) / base * 100.0
+
+
 def fmt(v: float | None) -> str | None:
     return None if v is None else f"{'+' if v >= 0 else ''}{v:.2f}%"
 
@@ -468,6 +496,10 @@ def main(argv: list[str]) -> int:
         windows = {"nav1w": 7, "nav1m": 31, "nav1yr": 365,
                    "nav3yr": 365 * 3, "nav5yr": 365 * 5}
         vals = {k: pct_over(series, n) for k, n in windows.items()}
+        # YTD is calendar-anchored, not a trailing window, so it is computed
+        # separately rather than bolted onto `windows` with a day count that
+        # would drift a little further from 1 January every day of the year.
+        vals["navYtd"] = pct_ytd(series)
         one, five = vals["nav1yr"], vals["nav5yr"]
         # A history too short for a year still prices a week and a month
         # honestly, and those drive the 1W/1M rankings and the rolling
@@ -494,6 +526,7 @@ def main(argv: list[str]) -> int:
         print(f"  [nav] {fund['name'][:38]:40} {symbol:14} "
               f"1w {fmt(vals['nav1w']) or '  n/a':>8}  "
               f"1m {fmt(vals['nav1m']) or '  n/a':>8}  "
+              f"ytd {fmt(vals['navYtd']) or '   n/a':>9}  "
               f"1yr {fmt(one) or '   n/a':>9}  5yr {fmt(five) or '   n/a':>9}")
 
     print(f"\n{resolved} resolved, {refused} refused, {priced} priced "
@@ -639,6 +672,42 @@ def _selftest_offline() -> bool:
     # A zero start cannot be divided by.
     assert pct_over(_series([0.0] + [1.0] * 40), 30) is not None
     print("  window coverage  OK  (short history refused a long label)",
+          file=_sys.stderr)
+
+    # --- year to date ----------------------------------------------------
+    # YTD is anchored on last year's final close, so the baseline is the year
+    # boundary rather than whichever session happened to open the year.
+    import datetime as _dt
+    _today = date.today()
+    _jan1 = _dt.datetime(_today.year, 1, 1)
+    _days_in = (_today - _jan1.date()).days
+
+    def _spanning(pre, post):
+        """Closes running up to 31 Dec, then `post` continuing into this year."""
+        start = int((_jan1 - _dt.timedelta(days=len(pre))).timestamp())
+        return _series(pre + post, start=start)
+
+    # 100.0 through the end of last year, then a step to 110.0 this year.
+    pre = [100.0] * 40
+    post = [110.0] * max(1, min(_days_in, 5))
+    ytd = pct_ytd(_spanning(pre, post))
+    assert ytd is not None and abs(ytd - 10.0) < 1e-9, ytd
+
+    # A fund whose whole history starts inside this year has no anchor in
+    # last year, so it gets nothing rather than an inception return labelled
+    # "YTD" - the same refusal pct_over makes for an uncovered window.
+    this_year_only = _series([100.0, 110.0],
+                             start=int((_jan1 + _dt.timedelta(days=1)).timestamp()))
+    assert pct_ytd(this_year_only) is None, "no pre-Jan-1 anchor must refuse"
+
+    # A series that stopped last year has no year to date at all.
+    stale = _series([100.0] * 40,
+                    start=int((_jan1 - _dt.timedelta(days=60)).timestamp()))
+    assert pct_ytd(stale) is None, "a series with nothing this year must refuse"
+
+    assert pct_ytd(_series([100.0])) is None, "one point is not a series"
+    assert pct_ytd({"t": [], "c": []}) is None
+    print("  year to date     OK  (anchored on 31 Dec, no-anchor refused)",
           file=_sys.stderr)
 
     # --- collisions ------------------------------------------------------

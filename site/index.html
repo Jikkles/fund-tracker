@@ -285,6 +285,22 @@
   .src { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; color: var(--ink-soft); margin-top: 14px; }
 
   .empty { padding: 40px 0; text-align: center; color: var(--ink-soft); font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 14px; }
+
+  /* ---- list preview / expand ---- */
+  .list-more { display: flex; justify-content: center; margin-top: 16px; }
+  .list-more button {
+    font-family: "Inter", sans-serif; font-weight: 600; font-size: 13px;
+    background: var(--paper-2); border: 1px solid var(--rule);
+    color: var(--ink-soft); padding: 10px 22px; border-radius: 24px;
+    cursor: pointer; transition: all .2s ease;
+  }
+  .list-more button:hover {
+    border-color: var(--ink-soft); color: var(--ink);
+    background: var(--hover-bg); transform: translateY(-1px);
+  }
+  .list-more button:focus-visible {
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(56,189,248,.2);
+  }
   footer {
     margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 20px;
     font-size: 13px; color: var(--ink-soft);
@@ -641,6 +657,11 @@
     }
     * { -webkit-tap-highlight-color: rgba(56,189,248,.12); }
 
+    /* The expand control is the one way out of the preview, so it gets a
+       full-width, thumb-sized target rather than the 39px pill the desktop
+       padding gives it - under the 44px minimum on both mobile platforms. */
+    .list-more button { width: 100%; padding: 14px 22px; font-size: 14px; }
+
     .mast { padding-bottom: 18px; margin-bottom: 18px; }
     .eyebrow { font-size: 10.5px; letter-spacing: .12em; margin-bottom: 10px; }
     h1 { font-size: clamp(26px, 7.5vw, 34px); line-height: 1.15; }
@@ -891,7 +912,12 @@
       <div class="sort-wrap">
         <span class="sort-label">Sort</span>
         <select id="sortSelect" aria-label="Sort funds">
-          <option value="default">Default order</option>
+          <option value="ytd-desc" selected>YTD ↓ best first</option>
+          <option value="ytd-asc">YTD ↑ worst first</option>
+          <!-- Renamed from "Default order": it is no longer the default, and a
+               label that says otherwise would be the one option on this menu
+               that lies about what it does. It is the order funds.json ships. -->
+          <option value="default">List order</option>
           <option value="perf-desc">1yr ↓ best first</option>
           <option value="perf-asc">1yr ↑ worst first</option>
           <option value="rel-desc">vs sector ↓ best first</option>
@@ -915,8 +941,13 @@
 <script>
 "use strict";
 const LS_KEY = "wsl_funds_data_v1";
-let DATA = null, active = "all", q = "", sortMode = "default";
+let DATA = null, active = "all", q = "", sortMode = "ytd-desc";
 let rankMode = "abs", rankPeriod = "nav1w", viewMode = "cards", tSort = {k:"p1", d:"desc"};
+// The directory opens as a preview: the leading few funds under whatever sort
+// is active, with everything else one click away. 70 cards is a long scroll to
+// reach the filters again, and the ranked head is the part worth seeing first.
+const LIST_PREVIEW = 5;
+let listExpanded = false;
 
 /* ---------- loading ----------
    This page is served as a website: funds.json sits next to index.html and is
@@ -1380,6 +1411,16 @@ function getPerf1(f){
     if(v && v !== 'not yet verified') return v;
   }
   return f.p1 || '—';
+}
+
+/* Calendar year-to-date NAV total return, or null where there isn't one.
+
+   The run refuses a YTD figure for any fund whose price history does not
+   reach back past 1 January, because an inception return wearing a "YTD"
+   label is exactly the kind of confident-but-wrong number this desk avoids.
+   Those funds sort to the bottom rather than being read as 0%. */
+function getYtd(f){
+  return (f.performance && f.performance.navYtd) || null;
 }
 
 /* ---------- v1.1 analytical helpers ---------- */
@@ -2055,7 +2096,7 @@ function renderFilters(){
   cats.forEach(c=>{
     const b=document.createElement('button');
     b.className='filter'+(c.key==='all'?' on':'');b.textContent=c.label;b.dataset.k=c.key;
-    b.onclick=()=>{active=c.key;document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('on',f.dataset.k===c.key));renderList();};
+    b.onclick=()=>{active=c.key;listExpanded=false;document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('on',f.dataset.k===c.key));renderList();};
     wrap.appendChild(b);
   });
 }
@@ -2171,7 +2212,15 @@ function renderList(){
     return okCat && hay.includes(q);
   });
   // sort
-  if(sortMode==='perf-desc'||sortMode==='perf-asc'){
+  if(sortMode==='ytd-desc'||sortMode==='ytd-asc'){
+    items.sort((a,b)=>{
+      const pa=parsePerf(getYtd(a));
+      const pb=parsePerf(getYtd(b));
+      if(pa===null&&pb===null) return 0;
+      if(pa===null) return 1; if(pb===null) return -1;
+      return sortMode==='ytd-desc'?pb-pa:pa-pb;
+    });
+  } else if(sortMode==='perf-desc'||sortMode==='perf-asc'){
     items.sort((a,b)=>{
       const pa=parsePerf(getPerf1(a));
       const pb=parsePerf(getPerf1(b));
@@ -2189,12 +2238,20 @@ function renderList(){
   } else if(sortMode==='name-asc'){
     items.sort((a,b)=>a.name.localeCompare(b.name));
   }
+  // Only the head of the list is drawn until the reader asks for the rest.
+  // The count says "5 of 70" while that is true - claiming "Showing 70 funds"
+  // above five cards would be the page misreporting itself.
+  const total = items.length;
+  const collapsed = !listExpanded && total > LIST_PREVIEW;
+  const limit = collapsed ? LIST_PREVIEW : total;
   document.getElementById('count').textContent =
-    `Showing ${items.length} fund${items.length!==1?'s':''}`+(active==='all'&&DATA.meta&&DATA.meta.listTotal?` · ${(DATA.funds||[]).length} profiled of ${DATA.meta.listTotal} on the list`:'');
+    (collapsed ? `Showing ${limit} of ${total} funds`
+               : `Showing ${total} fund${total!==1?'s':''}`)
+    +(active==='all'&&DATA.meta&&DATA.meta.listTotal?` · ${(DATA.funds||[]).length} profiled of ${DATA.meta.listTotal} on the list`:'');
   const listEl = document.getElementById('list'); listEl.innerHTML='';
-  if(!items.length){ listEl.innerHTML='<div class="empty">No funds match. Try a manager name, a holding like “NVIDIA”, or clear the filter.</div>'; return; }
-  if(viewMode==='table'){ renderTable(items, listEl); return; }
-  items.forEach(f=>{
+  if(!total){ listEl.innerHTML='<div class="empty">No funds match. Try a manager name, a holding like “NVIDIA”, or clear the filter.</div>'; return; }
+  if(viewMode==='table'){ renderTable(items, listEl, limit); appendMoreButton(listEl, total, limit, collapsed); return; }
+  items.slice(0, limit).forEach(f=>{
     const el=document.createElement('div'); el.className='fund'; el.dataset.fid=f.id;
     const bdg = f.badge?`<span class="badge ${f.badge.type||''}">${esc(f.badge.label)}</span>`:'';
     const mcc = mismatchClass(f);
@@ -2221,10 +2278,35 @@ function renderList(){
     };
     listEl.appendChild(el);
   });
+  appendMoreButton(listEl, total, limit, collapsed);
+}
+
+/* The expand/collapse control under the list. Absent entirely when the whole
+   filtered set already fits - a button that would reveal nothing is noise.
+   Collapsing scrolls the controls back into view, because folding 70 cards
+   away underneath you otherwise leaves the viewport pointing at the footer. */
+function appendMoreButton(listEl, total, limit, collapsed){
+  if(total <= LIST_PREVIEW) return;
+  const wrap = document.createElement('div');
+  wrap.className = 'list-more';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.textContent = collapsed ? `Show all ${total} funds ▾` : `Show fewer ▴`;
+  btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+  btn.onclick = () => {
+    listExpanded = collapsed;
+    renderList();
+    if(!listExpanded){
+      const d = document.getElementById('directory');
+      if(d) d.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  };
+  wrap.appendChild(btn);
+  listEl.appendChild(wrap);
 }
 
 /* ---------- render: table view ---------- */
-function renderTable(items, listEl){
+function renderTable(items, listEl, limit){
   const cols = [
     {k:'name',   label:'Fund'},
     {k:'cat',    label:'Category'},
@@ -2262,10 +2344,14 @@ function renderTable(items, listEl){
     spark:(a,b)=>0
   }[key];
   if(cmp){ rowsData.sort(cmp); if(dir==='asc') rowsData.reverse(); }
+  // Cut the preview only now. The table sorts by its own clicked column, so
+  // slicing the incoming list would have shown the card order's top five
+  // re-sorted - not the top five of the column actually being sorted on.
+  const rows = rowsData.slice(0, limit==null ? rowsData.length : limit);
 
   const colHtml = c => `<th class="${c.num?'num':''}" onclick="tSort=(tSort.k==='${c.k}'&&tSort.d==='desc')?{k:'${c.k}',d:'asc'}:{k:'${c.k}',d:'desc'};renderList()">${c.label}${tSort.k===c.k?(tSort.d==='desc'?' ▾':' ▴'):''}</th>`;
   const pcol = n => n===null?'var(--ink-soft)':n>0?'var(--forest)':n<0?'var(--oxblood)':'var(--ink-soft)';
-  const body = rowsData.map(r => `<tr onclick="openFund('${r.f.id}')">
+  const body = rows.map(r => `<tr onclick="openFund('${r.f.id}')">
     <td><strong>${esc(r.name)}</strong></td>
     <td style="color:var(--ink-soft)">${esc(r.cat)}</td>
     <td class="num mono" style="color:${pcol(r.p1n)}">${esc(r.p1)}${basisChip(r.f)}</td>
@@ -2285,10 +2371,11 @@ function renderTable(items, listEl){
 function openFund(fid){
   viewMode='cards';
   document.querySelectorAll('#viewSeg button').forEach(b=>b.classList.toggle('on',b.dataset.v==='cards'));
-  // A live search or category filter can be hiding the target, in which case
-  // the lookup below finds nothing and the click appears to do nothing at all.
-  // Clear both so the fund is always there to open.
-  active = 'all'; q = '';
+  // A live search, a category filter or the collapsed preview can all be
+  // hiding the target, in which case the lookup below finds nothing and the
+  // click appears to do nothing at all. Clear all three so the fund is
+  // always there to open.
+  active = 'all'; q = ''; listExpanded = true;
   const search = document.getElementById('search');
   if(search) search.value = '';
   renderFilters();
@@ -2327,7 +2414,11 @@ function renderAll(){
     `Charges shown are HL net ongoing (after loyalty saving). Loyalty bonuses are tax-free in an ISA/SIPP but may be taxable in a Fund &amp; Share Account.`+
     (cav.length?`<br><br>`+cav.map(c=>'· '+c).join('<br>'):'');
 }
-document.getElementById('search').addEventListener('input', e=>{ q=e.target.value.toLowerCase(); renderList(); });
+// Typing changes which funds are in the list, so it re-previews for the same
+// reason a tab switch does: any time the set changes under you, you get its
+// head back with the true total on the button. Setting `search.value` from
+// openFund fires no input event, so that path keeps its deliberate expand.
+document.getElementById('search').addEventListener('input', e=>{ q=e.target.value.toLowerCase(); listExpanded=false; renderList(); });
 document.getElementById('sortSelect').addEventListener('change', e=>{ sortMode=e.target.value; renderList(); });
 document.querySelectorAll('#viewSeg button').forEach(b=>{
   b.addEventListener('click', ()=>{
