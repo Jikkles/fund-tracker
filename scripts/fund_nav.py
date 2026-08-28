@@ -192,16 +192,26 @@ def wanted_class(fund: dict) -> str | None:
     return m.group(1).upper() if m else None
 
 
+# Yahoo spells the accumulation marker both ways - "Artemis Global Income I
+# Acc" but "Trojan Fund X Accumulation". A pattern anchored on the
+# abbreviation alone reads the spelled-out word as no marker at all, which
+# rejected sound candidates at search time and left "no accumulation class
+# found" standing on funds whose own line says the word.
+ACC = r"acc(?:um(?:ulation)?)?"
+
+
 def class_verdict(label: str, want: str | None) -> tuple[bool, str]:
     """Judge a candidate's share class. (acceptable, note)."""
     # Income and distributing classes pay dividends away, so their price
     # series understates total return - never silently mix one in.
     if re.search(r"\b(inc|income|dist|distributing)\b", label, re.I) and \
-       not re.search(r"\bacc\b", label, re.I):
+       not re.search(rf"\b{ACC}\b", label, re.I):
         return False, "income/distributing class"
-    if not re.search(r"\bacc\b", label, re.I):
+    if not re.search(rf"\b{ACC}\b", label, re.I):
         return False, "no accumulation class found"
-    got = re.search(r"\b([A-Z]{1,2})\s*(?:GBP\s*)?Acc\b", label)
+    # The class letter stays case-sensitive: matching case-insensitively would
+    # read ordinary capitalised words as class designators.
+    got = re.search(r"\b([A-Z]{1,2})\s*(?:GBP\s*)?Acc(?:um(?:ulation)?)?\b", label)
     got = got.group(1).upper() if got else None
     if want and got and want != got:
         return True, f"share class {got} used, desk tracks {want}"
@@ -301,7 +311,8 @@ def price(symbol: str, span: str = "5y") -> dict | None:
         return None
     meta = result.get("meta") or {}
     return {"t": [p[0] for p in pairs], "c": [p[1] for p in pairs],
-            "currency": meta.get("currency")}
+            "currency": meta.get("currency"),
+            "name": meta.get("longName") or meta.get("shortName") or ""}
 
 
 # A NAV series that jumps by more than this in one step is not reporting a
@@ -487,6 +498,21 @@ def main(argv: list[str]) -> int:
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} NO PRICE DATA")
             continue
 
+        # A symbol pinned by hand carries no name with it, so `label` was empty
+        # and class_verdict judged an empty string - answering "no accumulation
+        # class found" for 20 funds whose line is plainly an Acc class. That is
+        # a caveat about the desk's own missing metadata, published as though
+        # it were a fact about the fund. The chart names the line; adopt it and
+        # judge the class on that.
+        if not label and series.get("name"):
+            label = series["name"]
+            fund["navName"] = label
+            _, class_note = class_verdict(label, wanted_class(fund))
+            if class_note:
+                fund["navClassNote"] = class_note
+            else:
+                fund.pop("navClassNote", None)
+
         series, split_note = split_at_discontinuity(series)
         if split_note:
             fund["navNote"] = split_note
@@ -633,8 +659,25 @@ def _selftest_offline() -> bool:
     assert ok and note == "", (ok, note)
     # Single-letter classes are untouched by the widening.
     assert wanted_class({"shareClass": "Class C Accumulation"}) == "C"
-    print("  share class      OK  (income refused, substitute flagged)",
-          file=_sys.stderr)
+    # An empty label is not evidence of anything, but class_verdict cannot say
+    # so - it can only report what it sees. These are the real Yahoo names of
+    # two funds that carried "no accumulation class found" for months purely
+    # because the desk had never stored a name to judge.
+    assert class_verdict("Schroder US Smaller Companies L Acc", "L") == (True, "")
+    assert class_verdict("BlackRock European Dynamic D Acc", "D") == (True, "")
+    assert class_verdict("", "L") == (False, "no accumulation class found")
+    # Yahoo spells the marker out as often as it abbreviates. Trojan Fund
+    # carried "no accumulation class found" against a line whose own name is
+    # "Trojan Fund X Accumulation".
+    assert class_verdict("Trojan Fund X Accumulation", "X") == (True, "")
+    assert class_verdict("Fidelity Index US P Accumulation", "P") == (True, "")
+    assert class_verdict("Some Fund Accum", None)[0] is True
+    ok, note = class_verdict("Trojan Fund O Accumulation", "X")
+    assert ok and note == "share class O used, desk tracks X", note
+    # The wider spelling must not smuggle an income line through.
+    assert class_verdict("Trojan Fund X Income", "X")[0] is False
+    print("  share class      OK  (income refused, substitute flagged, "
+          "empty label pinned)", file=_sys.stderr)
 
     # --- redenomination --------------------------------------------------
     # The guard that caught Invesco Tactical Bond and Ninety One Diversified
