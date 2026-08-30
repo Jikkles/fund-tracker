@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-08-29
+# Fund tracker - automated run 2026-08-30
 
-Window: 30 Jul 2026 to 29 Aug 2026
+Window: 31 Jul 2026 to 30 Aug 2026
 
 - **70** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -11,17 +11,17 @@ Window: 30 Jul 2026 to 29 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.96% |
-| FTSE 250 | +3.40% |
-| S&P 500 | +3.94% |
-| Nasdaq Composite | +5.65% |
-| Euro STOXX 50 | +1.27% |
-| Nikkei 225 | +6.89% |
-| Hang Seng | -1.13% |
-| Gold (USD/oz) | +12.43% |
-| Brent crude | +0.75% |
-| US 10yr yield | +0.19% |
-| GBP/USD | +1.27% |
+| FTSE 100 | -0.40% |
+| FTSE 250 | +4.02% |
+| S&P 500 | +2.96% |
+| Nasdaq Composite | +4.05% |
+| Euro STOXX 50 | +2.01% |
+| Nikkei 225 | +3.18% |
+| Hang Seng | -1.16% |
+| Gold (USD/oz) | +11.87% |
+| Brent crude | -2.24% |
+| US 10yr yield | -0.53% |
+| GBP/USD | +0.54% |
 
 ## Fund NAV figures (1 month)
 
@@ -58,8 +58,8 @@ Window: 30 Jul 2026 to 29 Aug 2026
 | fssa-greater-china-growth | 0P00000EU6.L | +5.13% | 28 Aug 2026 |
 | ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | +4.93% | 28 Aug 2026 |
 | ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -3.65% | 28 Aug 2026 |
-| hsbc-american-index | 0P0000WN7H.L | +1.61% | 27 Aug 2026 |
-| hsbc-ftse-250-index | 0P0000WN7D.L | +4.21% | 27 Aug 2026 |
+| hsbc-american-index | 0P0000WN7H.L | +1.87% | 28 Aug 2026 |
+| hsbc-ftse-250-index | 0P0000WN7D.L | +3.87% | 28 Aug 2026 |
 | invesco-global-emerging-markets | 0P0000XBR9.L | +6.58% | 28 Aug 2026 |
 | ishares-corporate-bond-index | 0P0001O7DN.L | +0.13% | 28 Aug 2026 |
 | ishares-japan-equity-index | 0P0000WGSX.L | +4.87% | 28 Aug 2026 |
@@ -74,23 +74,23 @@ Window: 30 Jul 2026 to 29 Aug 2026
 | lg-active-global-high-yield | 0P00001SDH.L | +1.03% | 28 Aug 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | -0.41% | 28 Aug 2026 |
 | lg-european-index | 0P000102LY.L | +2.20% | 28 Aug 2026 |
-| lg-future-world-esg-developed | 0P0001F4XX.L | +1.62% | 27 Aug 2026 |
+| lg-future-world-esg-developed | 0P0001F4XX.L | +2.93% | 28 Aug 2026 |
 | lg-future-world-esg-uk | 0P0001H3BX.L | +0.63% | 28 Aug 2026 |
-| lg-international-index | 0P000102M4.L | +1.82% | 27 Aug 2026 |
-| lg-strategic-bond | 0P00008Y97.L | +0.57% | 27 Aug 2026 |
+| lg-international-index | 0P000102M4.L | +3.45% | 28 Aug 2026 |
+| lg-strategic-bond | 0P00008Y97.L | +0.57% | 28 Aug 2026 |
 | lg-uk-index | 0P000023C8.L | +0.76% | 28 Aug 2026 |
-| lg-us-index | 0P000102MM.L | +1.62% | 27 Aug 2026 |
+| lg-us-index | 0P000102MM.L | +2.73% | 28 Aug 2026 |
 | liontrust-uk-growth | 0P0001S8W9.L | +0.76% | 28 Aug 2026 |
 | man-glg-continental-european-growth | 0P000029BY.L | +3.33% | 28 Aug 2026 |
 | man-japan-corealpha | 0P0000810W.L | +4.19% | 28 Aug 2026 |
 | polar-capital-european-income | 0P00016CNI.L | +1.00% | 27 Aug 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | -0.42% | 28 Aug 2026 |
 | pyrford-global-total-return | 0P0000N9AE.L | +0.00% | 28 Aug 2026 |
-| royal-london-corporate-bond | 0P0000YQN5.L | +0.41% | 27 Aug 2026 |
+| royal-london-corporate-bond | 0P0000YQN5.L | +0.12% | 28 Aug 2026 |
 | royal-london-sustainable-world | 0P0000XYWQ.L | +1.27% | 28 Aug 2026 |
 | schroder-asian-alpha-plus | 0P0000ZSZK.L | +7.08% | 28 Aug 2026 |
 | schroder-managed-balanced | 0P0000ZSYH.L | +2.60% | 28 Aug 2026 |
-| schroder-us-smaller-companies | 0P0002PEG1.L | +0.11% | 27 Aug 2026 |
+| schroder-us-smaller-companies | 0P0002PEG1.L | +0.02% | 28 Aug 2026 |
 | stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +7.26% | 28 Aug 2026 |
 | trojan-ethical | 0P0001J9W9.L | +2.05% | 28 Aug 2026 |
 | trojan-fund | 0P0001CBJA.L | +1.82% | 28 Aug 2026 |
