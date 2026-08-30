@@ -114,7 +114,7 @@
           }
         ],
         "notes": "Refreshed 6 Jul 2026 via Fidelity (I Acc, GB00B5ZX1M70), price stamp 26 Jun 26. Outlier flag RESOLVED: Fidelity discrete 2025–26 is exactly +44.66% — the desk figure is confirmed, not an error. Trailing 1yr +46.38% vs Morningstar Global Equity Income category +20.59% — the banks/defence/gold contrarian book has more than doubled the category. Discrete years to 31 Mar.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+38.28%",
@@ -168,7 +168,7 @@
           "weight": "2.08%"
         }
       ],
-      "holdingsNote": "Top ten of 91 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 91 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -296,7 +296,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B5ZX1M70-artemis-global-income-fund-class-i-acc/performance"
       },
       "sources": "HL factsheet & notifications; Fidelity (ISIN GB00B5ZX1M70); Artemis",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+6.01%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -370,7 +370,7 @@
           }
         ],
         "notes": "Discrete years to 30 Apr. Beat sector since launch but trailed it and benchmark over the past year.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+14.33%",
@@ -424,7 +424,7 @@
           "weight": "2.65%"
         }
       ],
-      "holdingsNote": "Top ten of 53 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 53 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Personal Care, Drug & Grocery Stores",
@@ -553,7 +553,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-global-dividend-class-w-accumulation"
       },
       "sources": "HL fund update (May 2026); HL factsheet (ISIN GB00B7GJPN73)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.30%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -633,7 +633,7 @@
           }
         ],
         "notes": "Discrete years to 31 Mar. 3/5yr derived. Live refresh attempted 6 Jul 2026: Fidelity /performance page did not surface in search (only key-stats/portfolio pages, portfolio as of 30 Apr 26, price stamp 15 Jun 26) and the Trustnet C Acc GBP factsheet returned 404. Figures remain to 31 Mar 26 — top of the next staleness list.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
         "nav1yr": "+3.00%",
@@ -687,7 +687,7 @@
           "weight": "3.65%"
         }
       ],
-      "holdingsNote": "Top ten of 30 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 30 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Industrial Support Services",
@@ -803,7 +803,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/lazard-global-equity-franchise-class-c-gbp-accumulation"
       },
       "sources": "HL factsheet; Fidelity (ISIN IE00BF2N1T73)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.58%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -883,7 +883,7 @@
           }
         ],
         "notes": "Strategy discretes to 30 Jun. HL OEIC class is small (~£37m). | AUDIT 26 Aug 2026: the 1yr cumulative (+45.42%) and most recent discrete (+3.48%) still disagree, but neither drives the headline any more — the fund now prices from its own published NAV series (GB00BLFG9N53, C Acc), which is measured daily on one consistent basis.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1w": "+0.81%",
@@ -936,7 +936,7 @@
           "weight": "1.57%"
         }
       ],
-      "holdingsNote": "Top ten of 100 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 100 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -1066,7 +1066,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/tiz6/t.-rowe-price-global-value-equity/"
       },
       "sources": "HL factsheet & July 2025 research note",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.75%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -1146,7 +1146,7 @@
             "sector": "+9.16%"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+21.96%",
@@ -1200,7 +1200,7 @@
           "weight": "2.03%"
         }
       ],
-      "holdingsNote": "Top ten of 92 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 92 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Software & Computer Services",
@@ -1330,7 +1330,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B8HT7153-fidelity-global-special-situations-w-acc/performance"
       },
       "sources": "HL factsheet (ISIN GB00B8HT7153); FundCalibre",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.79%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -1384,33 +1384,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+7.22%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+8.22%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+2.09%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+1.83%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+14.77%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+14.91%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+3.96%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-2.31%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-2.17%",
             "sector": "not yet verified"
           }
         ],
         "notes": "Discrete years to 27 May. 3/5yr derived.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
         "nav1yr": "+8.22%",
@@ -1464,7 +1464,7 @@
           "weight": "3.82%"
         }
       ],
-      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -1592,7 +1592,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-long-term-global-equity-class-w-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00B8K6W529); Fidelity/Morningstar holdings; BNY SEC filings",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.31%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -1651,7 +1651,7 @@
           }
         ],
         "notes": "Full Fidelity refresh 12 Jul 26 (price stamp 07 Jul 26): trailing 1yr +24.12% vs category +19.31%; discrete years to 30 Jun (Morningstar). Sector column = Morningstar Global Large-Cap Blend Equity category. Tracks MSCI World closely.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "discrete": [
@@ -1732,7 +1732,7 @@
           "weight": "1.28%"
         }
       ],
-      "holdingsNote": "Top ten of 1289 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 1289 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -1862,7 +1862,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BJS8SJ34-fidelity-index-world-fund-p-acc/performance"
       },
       "sources": "HL factsheet & May 2026 update (ISIN GB00BJS8SJ34)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.09%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -1942,7 +1942,7 @@
             "sector": "−6.48%"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+23.33%",
@@ -1957,128 +1957,128 @@
       "holdings": [
         {
           "name": "Nvidia Corporation",
-          "weight": "4.76%"
+          "weight": "4.79%"
         },
         {
           "name": "Apple",
-          "weight": "4.25%"
+          "weight": "4.54%"
         },
         {
           "name": "Microsoft Corporation",
-          "weight": "2.84%"
+          "weight": "3.57%"
         },
         {
           "name": "Amazon.Com",
-          "weight": "2.39%"
+          "weight": "2.71%"
         },
         {
           "name": "Alphabet",
-          "weight": "2.11%"
+          "weight": "2.08%"
         },
         {
           "name": "Taiwan Semiconductor Manufacturing Company Limited",
-          "weight": "1.88%"
+          "weight": "1.87%"
         },
         {
           "name": "Broadcom",
-          "weight": "1.81%"
+          "weight": "1.87%"
         },
         {
           "name": "Alphabet",
-          "weight": "1.71%"
-        },
-        {
-          "name": "Micron Technology",
-          "weight": "1.34%"
+          "weight": "1.69%"
         },
         {
           "name": "Meta Platforms",
-          "weight": "1.26%"
+          "weight": "1.24%"
+        },
+        {
+          "name": "Micron Technology",
+          "weight": "1.01%"
         }
       ],
-      "holdingsNote": "Top ten of 2205 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 2202 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
-          "weight": "24.74%"
+          "weight": "22.46%"
         },
         {
           "name": "Software & Computer Services",
-          "weight": "11.75%"
+          "weight": "12.51%"
         },
         {
           "name": "Banks",
-          "weight": "7.03%"
-        },
-        {
-          "name": "Pharmaceuticals & Biotechnology",
-          "weight": "5.10%"
+          "weight": "7.44%"
         },
         {
           "name": "Retailers",
-          "weight": "4.95%"
+          "weight": "5.29%"
+        },
+        {
+          "name": "Pharmaceuticals & Biotechnology",
+          "weight": "5.09%"
         },
         {
           "name": "Investment Banking & Brokerage Services",
-          "weight": "3.56%"
+          "weight": "3.76%"
         },
         {
           "name": "Non-Renewable Energy",
-          "weight": "2.57%"
+          "weight": "3.51%"
         },
         {
           "name": "Industrial Support Services",
-          "weight": "2.43%"
+          "weight": "2.66%"
         },
         {
           "name": "Aerospace & Defence",
-          "weight": "2.12%"
+          "weight": "2.17%"
         },
         {
-          "name": "Automobiles & Parts",
-          "weight": "2.12%"
+          "name": "Non-life Insurance",
+          "weight": "2.03%"
         }
       ],
       "countries": [
         {
           "name": "United States",
-          "weight": "63.80%"
+          "weight": "63.98%"
         },
         {
           "name": "Japan",
-          "weight": "6.16%"
+          "weight": "6.23%"
         },
         {
           "name": "Taiwan",
-          "weight": "3.64%"
+          "weight": "3.41%"
         },
         {
           "name": "Canada",
-          "weight": "3.15%"
+          "weight": "3.27%"
         },
         {
           "name": "South Korea",
-          "weight": "3.06%"
+          "weight": "2.55%"
         },
         {
           "name": "Switzerland",
-          "weight": "2.38%"
+          "weight": "2.40%"
         },
         {
           "name": "France",
-          "weight": "1.97%"
+          "weight": "2.04%"
         },
         {
           "name": "Germany",
-          "weight": "1.93%"
+          "weight": "2.01%"
         },
         {
           "name": "Netherlands",
-          "weight": "1.73%"
+          "weight": "1.61%"
         },
         {
           "name": "Australia",
-          "weight": "1.49%"
+          "weight": "1.56%"
         }
       ],
       "manager": {
@@ -2112,7 +2112,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BG0QP604-lg-international-index-trust-c-acc/performance"
       },
       "sources": "HL factsheet (ISIN GB00B2Q6HW61)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.82%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -2192,7 +2192,7 @@
             "sector": "+9.16%"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1w": "+0.80%",
@@ -2274,7 +2274,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BYWQWX01-lg-future-wld-esg-tldopt-dev-idx-i-inc/performance"
       },
       "sources": "HL factsheet & March 2026 update",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.62%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -2359,7 +2359,7 @@
           }
         ],
         "notes": "10yr lag vs index reflects OCF cost drag — typical for a tracker. Source: FE Analytics via Trustnet factsheet (20 May 2026).",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FE",
         "nav1w": "+1.07%",
@@ -2448,7 +2448,7 @@
         "hl": "https://www.hl.co.uk/funds/research-and-news/vanguard-global-small-cap-index-february-2026-fund-update"
       },
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+1.72%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, FTSE 100 -0.96%, Euro STOXX 50 +1.27%, GBP/USD +1.27%.",
@@ -2527,7 +2527,7 @@
           }
         ],
         "notes": "Morningstar trailing returns via Fidelity, price stamp 26 Jun 26; category UK Flex-Cap Equity. Discrete years to 31 Mar vs category. Prior 1yr (+29.0% to 24 Feb 26, FE) superseded — window shift, not an error. Confirmed Fidelity 1M to 26 Jun was -0.20% (window pre-dates 30 Jun month-end, so cycle oneMonth estimate retained).",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+21.58%",
@@ -2581,7 +2581,7 @@
           "weight": "2.60%"
         }
       ],
-      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -2698,7 +2698,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B88V3X40-fidelity-special-situations-w-acc/performance"
       },
       "sources": "Trustnet factsheet (to 24 Feb 2026); HL research note; Fidelity (ISIN GB00B88V3X40)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.16%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -2740,33 +2740,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+18.57%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+19.96%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "-6.75%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "-7.47%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+21.21%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+20.61%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-1.93%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-22.28%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-22.43%",
             "sector": "not yet verified"
           }
         ],
         "notes": "Renamed from FTF Martin Currie UK Mid Cap on 30 Sep 2025 following Franklin Templeton's ClearBridge rebrand. The +2.80% 1yr massively lags FTSE 250 tracker peers (HSBC +14.3%, L&G +7.85%) — reflects both the broad mid-cap headwind and stock-specific drag. At 0.62% net OCF, must outperform the 0.08% tracker meaningfully to justify the active fee. HL retains it on the Shortlist citing Bullas's long-term record. [Audit 26 Jun 2026: discrete array reordered to newest-first to match desk display convention.]",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+19.96%",
@@ -2820,7 +2820,7 @@
           "weight": "2.93%"
         }
       ],
-      "holdingsNote": "Top ten of 39 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 39 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Investment Banking & Brokerage Services",
@@ -2911,7 +2911,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/ftf-clearbridge-uk-mid-cap-class-s-accumulation"
       },
       "sources": "HL fund page (ISIN GB00BZ8FPJ50); FTF ClearBridge factsheet via FundsLibrary; Trustnet; 25 Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.93%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -2958,7 +2958,7 @@
           }
         ],
         "notes": "HL rolling 12-month periods shown. HL notes outperformance of IA UK All Companies since Economic Advantage process began Mar 2009. 3/5yr cumulative figures not yet verified for this class. | 12 Jul 26: discrete years filled from the R Inc sibling class (GB0007014557, Fidelity stamp 10 Jul 26) — R Inc carries a higher fee than the desk's I Acc, so I Acc figures run roughly 0.5–0.9pp better per year; treat as directional. Sector = Morningstar UK Flex-Cap Equity. R Inc trailing 1yr +1.45% vs category +10.20% to 10 Jul — consistent with the persistent quality-style lag.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "discrete": [
@@ -3037,7 +3037,7 @@
           "weight": "2.58%"
         }
       ],
-      "holdingsNote": "Top ten of 43 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 43 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Pharmaceuticals & Biotechnology",
@@ -3124,7 +3124,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/liontrust-uk-growth-class-i-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BNGB8J22)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.76%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -3192,7 +3192,7 @@
             "sector": "+10.32%"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+14.47%",
@@ -3246,7 +3246,7 @@
           "weight": "3.35%"
         }
       ],
-      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -3351,7 +3351,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B2PLJH12-artemis-income-fund-class-i-acc/performance"
       },
       "sources": "Artemis fund page; HL factsheet (ISIN GB00B2PLJH12)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.03%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -3380,7 +3380,7 @@
       "benchmark": "FTSE All-Share",
       "fundSize": "£634 million",
       "launched": "15 May 1995",
-      "yield": "3.60% (historic)",
+      "yield": "3.40% (historic)",
       "overview": "The main ethical UK equity income fund on the Shortlist. Strict exclusions (alcohol, armaments, gambling, nuclear, tobacco, fossil fuels) narrow the universe; within that, manager Andrew Jones targets cash-generative, attractively-valued dividend payers. Very domestically focused (~88% UK). Income reinvested in Acc units.",
       "performance": {
         "cumulative": [
@@ -3399,33 +3399,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+14.15%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+14.60%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+9.22%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+8.00%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+21.77%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+21.87%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+1.30%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-6.44%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-6.00%",
             "sector": "not yet verified"
           }
         ],
         "notes": "Cumulative return is since manager Andrew Jones took over Jan 2012 — NOT a 1yr figure. Discrete years to 31 Mar (HL rolling 12-month periods). Most recent 1yr (2025–26): +9.86%.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1w": "+0.85%",
@@ -3479,7 +3479,7 @@
           "weight": "2.39%"
         }
       ],
-      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -3587,7 +3587,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/janus-henderson-uk-responsible-income-class-i-accumulation"
       },
       "sources": "HL factsheet; HL fund updates (May 2026, May 2025)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.00%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -3616,7 +3616,7 @@
       "benchmark": "FTSE All-Share",
       "fundSize": "£230 million",
       "launched": "1 October 1974",
-      "yield": "3.30% (historic)",
+      "yield": "3.20% (historic)",
       "overview": "One of the longest-running UK income funds on the Shortlist, launched in 1974. A multi-cap, value-tilted approach with a small/mid-cap bias that has produced one of the stronger UK income performances over the past year. Income reinvested in Acc units.",
       "performance": {
         "cumulative": [
@@ -3641,33 +3641,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+24.49%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+25.03%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+14.67%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+13.65%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
+            "year": "28/08/23 to 28/08/24",
             "fund": "+22.19%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-1.87%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-1.35%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-1.42%",
             "sector": "not yet verified"
           }
         ],
         "notes": "Source: Fidelity/Morningstar. Morningstar 4-star rated. Outperforms sector across 1/3/5yr.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+25.03%",
@@ -3721,7 +3721,7 @@
           "weight": "2.13%"
         }
       ],
-      "holdingsNote": "Top ten of 82 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 82 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -3824,7 +3824,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/janus-henderson-uk-equity-income-and-growth-accumulation"
       },
       "sources": "Fidelity factsheet (ISIN GB0007494221); Janus Henderson; Fundslibrary factsheet (31 Jan 2026)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.11%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -3904,7 +3904,7 @@
           }
         ],
         "notes": "Source: Trustnet to 29 May 2026. Since Niznik became lead (2011): +274.09% vs sector +195.08% — strong long-run relative record despite weak 1yr.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FE",
         "nav1yr": "+8.35%",
@@ -3958,7 +3958,7 @@
           "weight": "2.12%"
         }
       ],
-      "holdingsNote": "Top ten of 72 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 72 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Software & Computer Services",
@@ -4045,7 +4045,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-uk-smaller-companies-class-i-accumulation"
       },
       "sources": "Trustnet factsheet (to 29 May 2026); HL research note",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.43%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -4096,7 +4096,7 @@
           }
         ],
         "notes": "Tracks FTSE All-Share closely. Full 1/3/5yr cumulative to confirm next refresh. | 12 Jul 26: discrete years to 31 Mar filled from the I Acc sibling class (GB00B0CNGN12, Fidelity stamp 22 May 26) — tracker class differences are minimal but rows are labelled as proxy. I Acc trailing 1yr +22.77% corroborates the HL +22.26% headline. Sector = Morningstar UK Large-Cap Equity.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "discrete": [
@@ -4138,108 +4138,108 @@
       "holdings": [
         {
           "name": "Hsbc Holdings",
-          "weight": "8.48%"
+          "weight": "9.02%"
         },
         {
           "name": "Astrazeneca",
-          "weight": "7.42%"
-        },
-        {
-          "name": "Rolls-Royce Holdings",
-          "weight": "4.18%"
+          "weight": "6.35%"
         },
         {
           "name": "Shell",
-          "weight": "3.98%"
+          "weight": "4.46%"
+        },
+        {
+          "name": "Rolls-Royce Holdings",
+          "weight": "4.17%"
         },
         {
           "name": "Unilever",
-          "weight": "3.33%"
+          "weight": "3.36%"
         },
         {
           "name": "British American Tobacco P.L.C.",
-          "weight": "3.33%"
-        },
-        {
-          "name": "GSK",
-          "weight": "2.73%"
-        },
-        {
-          "name": "RIO Tinto",
-          "weight": "2.55%"
+          "weight": "3.06%"
         },
         {
           "name": "BP P.L.C.",
-          "weight": "2.51%"
+          "weight": "2.83%"
+        },
+        {
+          "name": "GSK",
+          "weight": "2.56%"
+        },
+        {
+          "name": "RIO Tinto",
+          "weight": "2.48%"
         },
         {
           "name": "Barclays",
-          "weight": "2.42%"
+          "weight": "2.35%"
         }
       ],
-      "holdingsNote": "Top ten of 543 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 540 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
-          "weight": "16.65%"
+          "weight": "17.27%"
         },
         {
           "name": "Pharmaceuticals & Biotechnology",
-          "weight": "11.40%"
+          "weight": "10.16%"
         },
         {
           "name": "Non-Renewable Energy",
-          "weight": "8.30%"
+          "weight": "9.30%"
         },
         {
           "name": "Aerospace & Defence",
-          "weight": "6.57%"
+          "weight": "6.80%"
         },
         {
           "name": "Industrial Metals & Mining",
-          "weight": "6.41%"
+          "weight": "6.32%"
         },
         {
           "name": "Personal Care, Drug & Grocery Stores",
-          "weight": "5.99%"
+          "weight": "6.11%"
         },
         {
           "name": "Equity Investment Instruments",
-          "weight": "4.57%"
+          "weight": "4.37%"
         },
         {
           "name": "Tobacco",
-          "weight": "4.04%"
+          "weight": "3.75%"
         },
         {
           "name": "Gas, Water & Multi-utilities",
-          "weight": "3.22%"
+          "weight": "3.10%"
         },
         {
           "name": "Investment Banking & Brokerage Services",
-          "weight": "2.67%"
+          "weight": "2.70%"
         }
       ],
       "countries": [
         {
           "name": "United Kingdom",
-          "weight": "89.73%"
+          "weight": "90.12%"
         },
         {
           "name": "Non-Classified",
-          "weight": "5.72%"
+          "weight": "5.45%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "1.86%"
+          "weight": "1.77%"
         },
         {
           "name": "Direct Property and REITs",
-          "weight": "1.25%"
+          "weight": "1.30%"
         },
         {
           "name": "Spain",
-          "weight": "0.58%"
+          "weight": "0.51%"
         },
         {
           "name": "Switzerland",
@@ -4247,14 +4247,14 @@
         },
         {
           "name": "Ireland",
-          "weight": "0.30%"
-        },
-        {
-          "name": "Israel",
-          "weight": "0.11%"
+          "weight": "0.31%"
         },
         {
           "name": "Managed Funds",
+          "weight": "0.09%"
+        },
+        {
+          "name": "Israel",
           "weight": "0.09%"
         },
         {
@@ -4294,7 +4294,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0CNGN12-legal--general-uk-index-trust-i-acc/performance"
       },
       "sources": "HL factsheet",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.76%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class I used, desk tracks C Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -4323,7 +4323,7 @@
       "benchmark": "FTSE 250 (including Investment Trusts)",
       "fundSize": "£1,530 million",
       "launched": "7 October 1997",
-      "yield": "3.22% (historic)",
+      "yield": "2.99% (historic)",
       "overview": "HSBC's tracker of the full FTSE 250 — includes investment trusts, which HL notes adds \"some international diversification.\" Slightly dearer than L&G (0.10% vs 0.08%) but tracks a broader index. HL rates it \"an excellent tracker fund\" but steers most investors toward L&G for purer UK operating exposure.",
       "performance": {
         "cumulative": [
@@ -4347,7 +4347,7 @@
           }
         ],
         "notes": "Full refresh 12 Jul 26 from the Fidelity C Acc sibling class (GB00B80QG052, stamp 01 Jul 26) — desk holds HL's S Acc class; C figures are a close proxy and labelled throughout. Trailing 1yr +10.52% supersedes the stale +14.3% (to ~3 Apr) — the drop is window roll-off, not a market fall. Sector = Morningstar UK Mid-Cap Equity. Yield ≈3.0%. Investment-trust inclusion still explains divergence vs L&G's ex-IT mid-cap fund.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "discrete": [
@@ -4428,7 +4428,7 @@
           "weight": "0.85%"
         }
       ],
-      "holdingsNote": "Top ten of 322 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 322 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Alternative Trading Strategies",
@@ -4522,8 +4522,8 @@
       "whyNow": "Same mid-cap recovery setup as L&G UK Mid Cap Index. Choose HSBC over L&G only if you want the small international diversification from investment trust inclusion. HL preference: L&G for \"purer\" exposure. Both need the same catalyst — BoE easing + CPI improvement. <b>BoE held 3.75% on 18 Jun 2026; next decision 30 Jul 2026.</b>",
       "charges": {
         "ocf": "0.13%",
-        "hlSaving": "0.04%",
-        "netOngoing": "0.09%",
+        "hlSaving": "0.05%",
+        "netOngoing": "0.08%",
         "transaction": "0.01%",
         "transactionSource": "inferred-kiid"
       },
@@ -4544,7 +4544,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B80QG052-hsbc-ftse-250-index-acc-c/performance"
       },
       "sources": "HL fund page; FE Trustnet; HL Shortlist tracker page; 25 Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.21%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class C used, desk tracks S Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -4590,7 +4590,7 @@
           }
         ],
         "notes": "Has underperformed plain UK trackers since launch due partly to energy/tobacco exclusions. Current 1/3/5yr to confirm. | 1yr not fetchable from any free source: the fund does not subscribe to Fidelity or Trustnet, L&G's own fund centre is JS-rendered, Bloomberg carries no figures and the ESG-methodology factsheet PDFs have no performance table. The only reference found was FE via Lloyds (+13.13% as at 15 Oct 2025) — too old to use. Re-checked 12 Jul 2026, still not fetchable. Verify on the HL factsheet before relying on any figure for this fund.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+15.84%",
@@ -4605,11 +4605,11 @@
       "holdings": [
         {
           "name": "Hsbc Holdings",
-          "weight": "8.39%"
+          "weight": "8.84%"
         },
         {
           "name": "Astrazeneca",
-          "weight": "7.34%"
+          "weight": "6.20%"
         },
         {
           "name": "Unilever",
@@ -4617,108 +4617,108 @@
         },
         {
           "name": "GSK",
-          "weight": "3.93%"
+          "weight": "3.64%"
         },
         {
           "name": "Lloyds Banking Group",
-          "weight": "3.49%"
+          "weight": "3.50%"
         },
         {
           "name": "Barclays",
-          "weight": "3.06%"
+          "weight": "2.95%"
         },
         {
           "name": "Relx",
-          "weight": "2.44%"
-        },
-        {
-          "name": "Royal Bank OF Scotland Group",
-          "weight": "2.36%"
+          "weight": "2.61%"
         },
         {
           "name": "BP P.L.C.",
-          "weight": "2.32%"
+          "weight": "2.59%"
         },
         {
-          "name": "Diageo",
-          "weight": "2.19%"
+          "name": "Natwest Group",
+          "weight": "2.43%"
+        },
+        {
+          "name": "Shell",
+          "weight": "2.28%"
         }
       ],
-      "holdingsNote": "Top ten of 305 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 304 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
-          "weight": "19.67%"
+          "weight": "20.15%"
         },
         {
           "name": "Pharmaceuticals & Biotechnology",
-          "weight": "13.77%"
+          "weight": "12.32%"
         },
         {
           "name": "Personal Care, Drug & Grocery Stores",
-          "weight": "8.08%"
+          "weight": "8.13%"
         },
         {
           "name": "Non-Renewable Energy",
-          "weight": "6.73%"
+          "weight": "7.35%"
         },
         {
           "name": "Investment Banking & Brokerage Services",
-          "weight": "4.55%"
+          "weight": "4.73%"
         },
         {
           "name": "Software & Computer Services",
-          "weight": "4.46%"
+          "weight": "4.70%"
         },
         {
           "name": "Industrial Support Services",
-          "weight": "4.18%"
+          "weight": "4.45%"
         },
         {
           "name": "Life Insurance",
-          "weight": "3.34%"
+          "weight": "3.47%"
         },
         {
           "name": "Media",
-          "weight": "2.93%"
+          "weight": "2.97%"
         },
         {
           "name": "Beverages",
-          "weight": "2.63%"
+          "weight": "2.68%"
         }
       ],
       "countries": [
         {
           "name": "United Kingdom",
-          "weight": "94.10%"
+          "weight": "93.87%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "2.00%"
+          "weight": "2.09%"
         },
         {
           "name": "Direct Property and REITs",
-          "weight": "1.93%"
+          "weight": "1.96%"
         },
         {
           "name": "Non-Classified",
-          "weight": "0.72%"
+          "weight": "0.70%"
         },
         {
           "name": "Ireland",
-          "weight": "0.48%"
+          "weight": "0.47%"
         },
         {
           "name": "United States",
-          "weight": "0.30%"
+          "weight": "0.37%"
         },
         {
           "name": "Netherlands",
-          "weight": "0.29%"
+          "weight": "0.33%"
         },
         {
           "name": "Norway",
-          "weight": "0.17%"
+          "weight": "0.18%"
         },
         {
           "name": "Luxembourg",
@@ -4759,7 +4759,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-future-wrld-esg-tilted-and-opt-uk-id-accumulation"
       },
       "sources": "HL tracker Shortlist page",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.63%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, FTSE 250 +3.40%, Gold (USD/oz) +12.43%, GBP/USD +1.27%.",
@@ -4816,33 +4816,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+19.16%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+19.53%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+13.66%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+14.47%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+24.15%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+23.83%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-0.15%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+7.26%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+7.73%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 12 Jun 2026. Tracks FTSE USA closely; performance trails the index by roughly the (tiny) fee.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+18.73%",
@@ -4857,128 +4857,128 @@
       "holdings": [
         {
           "name": "Nvidia Corporation",
-          "weight": "7.14%"
+          "weight": "7.16%"
         },
         {
           "name": "Apple",
-          "weight": "6.38%"
+          "weight": "6.79%"
         },
         {
           "name": "Microsoft Corporation",
-          "weight": "4.27%"
+          "weight": "5.33%"
         },
         {
           "name": "Amazon.Com",
-          "weight": "3.58%"
+          "weight": "4.05%"
         },
         {
           "name": "Alphabet",
-          "weight": "3.17%"
+          "weight": "3.11%"
         },
         {
           "name": "Broadcom",
-          "weight": "2.71%"
+          "weight": "2.79%"
         },
         {
           "name": "Alphabet",
-          "weight": "2.57%"
-        },
-        {
-          "name": "Micron Technology",
-          "weight": "2.01%"
+          "weight": "2.54%"
         },
         {
           "name": "Meta Platforms",
-          "weight": "1.89%"
+          "weight": "1.86%"
         },
         {
-          "name": "Tesla",
-          "weight": "1.86%"
+          "name": "Micron Technology",
+          "weight": "1.51%"
+        },
+        {
+          "name": "Jpmorgan Chase & CO",
+          "weight": "1.45%"
         }
       ],
-      "holdingsNote": "Top ten of 500 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 501 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
-          "weight": "27.63%"
+          "weight": "25.53%"
         },
         {
           "name": "Software & Computer Services",
-          "weight": "16.39%"
+          "weight": "17.38%"
         },
         {
           "name": "Retailers",
-          "weight": "6.71%"
+          "weight": "7.19%"
         },
         {
           "name": "Pharmaceuticals & Biotechnology",
-          "weight": "5.14%"
+          "weight": "5.10%"
         },
         {
           "name": "Investment Banking & Brokerage Services",
-          "weight": "3.91%"
+          "weight": "4.12%"
         },
         {
           "name": "Banks",
-          "weight": "3.56%"
-        },
-        {
-          "name": "Industrial Support Services",
-          "weight": "3.02%"
-        },
-        {
-          "name": "Aerospace & Defence",
-          "weight": "2.35%"
+          "weight": "3.71%"
         },
         {
           "name": "Non-Renewable Energy",
-          "weight": "2.18%"
+          "weight": "3.38%"
         },
         {
-          "name": "Automobiles & Parts",
-          "weight": "2.12%"
+          "name": "Industrial Support Services",
+          "weight": "3.30%"
+        },
+        {
+          "name": "Aerospace & Defence",
+          "weight": "2.36%"
+        },
+        {
+          "name": "Medical Equipment & Services",
+          "weight": "2.22%"
         }
       ],
       "countries": [
         {
           "name": "United States",
-          "weight": "95.73%"
+          "weight": "95.71%"
         },
         {
           "name": "Ireland",
-          "weight": "2.02%"
+          "weight": "2.00%"
         },
         {
           "name": "Direct Property and REITs",
-          "weight": "0.98%"
+          "weight": "1.01%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "0.40%"
+          "weight": "0.39%"
         },
         {
           "name": "Switzerland",
-          "weight": "0.25%"
+          "weight": "0.26%"
         },
         {
           "name": "Managed Funds",
-          "weight": "0.23%"
+          "weight": "0.26%"
         },
         {
           "name": "Netherlands",
-          "weight": "0.13%"
+          "weight": "0.12%"
         },
         {
           "name": "Luxembourg",
-          "weight": "0.11%"
+          "weight": "0.12%"
         },
         {
           "name": "Singapore",
-          "weight": "0.09%"
+          "weight": "0.06%"
         },
         {
           "name": "United Kingdom",
-          "weight": "0.03%"
+          "weight": "0.04%"
         }
       ],
       "manager": {
@@ -5078,7 +5078,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-us-index-class-c-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.62%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, Nasdaq Composite +5.65%, US 10yr yield +0.19%, GBP/USD +1.27%.",
@@ -5153,7 +5153,7 @@
           }
         ],
         "notes": "Class U Acc launched ~2022 so only 4 discrete years available. 3/5yr annualised figures use the Institutional W Acc class (GB00BGV53H32) as a proxy via Fidelity/Morningstar — not directly comparable. True cumulative 3/5yr for Class U not yet verified.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+23.75%",
@@ -5207,7 +5207,7 @@
           "weight": "3.95%"
         }
       ],
-      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -5305,7 +5305,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-us-equity-income-class-u-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BPVBZ344); Fidelity/Morningstar (Inst W proxy GB00BGV53H32); HL fund note Sep 2025",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.27%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class E used, desk tracks U Market context: S&P 500 +3.94%, Nasdaq Composite +5.65%, US 10yr yield +0.19%, GBP/USD +1.27%.",
@@ -5353,33 +5353,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+34.28%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+33.86%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+9.53%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+10.50%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+25.97%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+26.44%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-5.86%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-23.22%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-22.20%",
             "sector": "not yet verified"
           }
         ],
         "notes": "Hedged class HL rolling periods to 14 Apr 2026 — note this price date is older than the other US funds' June dates; re-check before acting. HL fund update (May 2026, unhedged figures): latest 12m +48.21% vs sector +33.09%; manager's Q1 commentary: +28.2% vs Russell 2000 +22.8% (Lipper, to 31 Mar 2026, top quartile). Since-launch: +369.04% vs sector +245.17%.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+33.86%",
@@ -5433,7 +5433,7 @@
           "weight": "3.24%"
         }
       ],
-      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Medical Equipment & Services",
@@ -5527,7 +5527,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-us-smaller-companies-class-i-hedged-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BK6RLD43 to confirm); HL fund update May 2026; Artemis fund page; FundCalibre; Citywire",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+5.14%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, Nasdaq Composite +5.65%, US 10yr yield +0.19%, GBP/USD +1.27%.",
@@ -5569,33 +5569,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+29.48%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+30.01%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+11.39%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+12.77%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+27.47%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+26.71%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-1.06%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-0.34%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+0.28%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 17 Jun 2026. Citywire ranks 3/101 in Equities US Growth to 31 May 2026. NOT on the Wealth Shortlist — no HL analyst conviction coverage.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+30.01%",
@@ -5649,7 +5649,7 @@
           "weight": "3.06%"
         }
       ],
-      "holdingsNote": "Top ten of 49 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 49 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -5751,7 +5751,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-us-select-class-i-accumulation"
       },
       "sources": "HL factsheet (ISIN GB00BMMV5105); Artemis fund page; Citywire",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.51%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +3.94%, Nasdaq Composite +5.65%, US 10yr yield +0.19%, GBP/USD +1.27%.",
@@ -5793,33 +5793,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+6.01%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+5.99%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+9.40%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+8.97%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+15.20%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+15.49%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+2.37%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-8.68%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-8.70%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 15 May 2026. Best bond performer on the Shortlist.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+5.99%",
@@ -5873,7 +5873,7 @@
           "weight": "0.92%"
         }
       ],
-      "holdingsNote": "Top ten of 179 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 179 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -5989,7 +5989,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-high-income-class-i-quarterly-accumulation"
       },
       "sources": "HL factsheet (SEDOL BJMD6R8); Fidelity (ISIN GB00BJMD6R83); HL fund update Apr 2026",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.68%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -6055,33 +6055,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+4.47%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+4.02%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+4.19%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+4.21%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+12.66%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+12.78%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-2.24%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-14.12%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-14.15%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 14 Apr 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+4.02%",
@@ -6135,7 +6135,7 @@
           "weight": "1.71%"
         }
       ],
-      "holdingsNote": "Top ten of 103 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 103 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -6219,7 +6219,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-corporate-bond-class-i-accumulation"
       },
       "sources": "HL factsheet (SEDOL BFZ91W5); HL research note Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.13%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -6315,7 +6315,7 @@
           }
         ],
         "notes": "Z GBP Inc class proxy (GB00BN8T5596) via Fidelity — desk holds Z Acc; total-return figures near-identical between Inc/Acc but labelled as proxy. Category Global Flexible Bond GBP Hedged. Was 368 days stale (HL to 30 Jun 25).",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+4.77%",
@@ -6369,7 +6369,7 @@
           "weight": "1.23%"
         }
       ],
-      "holdingsNote": "Top ten of 282 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 282 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -6474,7 +6474,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BN8T5596-jupiter-strategic-bond-z-gbp-inc/performance"
       },
       "sources": "HL factsheet; HL fund update Jul 2025",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.48%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks Z Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -6539,33 +6539,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+4.61%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+4.38%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+7.52%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+7.34%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+14.89%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+15.26%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+3.03%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
+            "year": "28/08/21 to 28/08/22",
             "fund": "-8.01%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 15 May 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1w": "+0.21%",
@@ -6579,47 +6579,55 @@
       },
       "holdings": [
         {
-          "name": "Bonds",
-          "weight": "89.22%"
+          "name": "Space Expl Technolo 6.65%",
+          "weight": "1.04%"
         },
         {
-          "name": "Non-Classified",
-          "weight": "5.50%"
+          "name": "AA BD. 8.45%",
+          "weight": "1.01%"
         },
         {
-          "name": "Cash And Equiv.",
-          "weight": "4.84%"
+          "name": "Stellantis N.V 6.87 6.87%",
+          "weight": "0.98%"
         },
         {
-          "name": "Managed Funds",
-          "weight": "0.75%"
+          "name": "Intl. Distributio 7.375%",
+          "weight": "0.95%"
         },
         {
-          "name": "Banks",
-          "weight": "0.27%"
+          "name": "Ford Motor Credit 6.184%",
+          "weight": "0.83%"
         },
         {
-          "name": "Software & Computer Services",
-          "weight": "0.01%"
+          "name": "Pg&E F2V",
+          "weight": "0.80%"
         },
         {
-          "name": "Alternative Trading Strategies",
-          "weight": "-0.58%"
+          "name": "Just GRP. 6.875%",
+          "weight": "0.79%"
+        },
+        {
+          "name": "Intesa Sanpaolo F2V",
+          "weight": "0.78%"
+        },
+        {
+          "name": "BAT Intl. FIN. 2.25%",
+          "weight": "0.78%"
         }
       ],
-      "holdingsNote": "Top ten of 1503 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 1549 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
-          "weight": "89.22%"
+          "weight": "87.10%"
         },
         {
           "name": "Non-Classified",
-          "weight": "5.50%"
+          "weight": "7.05%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "4.84%"
+          "weight": "5.55%"
         },
         {
           "name": "Managed Funds",
@@ -6635,49 +6643,49 @@
         },
         {
           "name": "Alternative Trading Strategies",
-          "weight": "-0.58%"
+          "weight": "-0.72%"
         }
       ],
       "countries": [
         {
           "name": "United States",
-          "weight": "24.96%"
+          "weight": "25.39%"
         },
         {
           "name": "United Kingdom",
-          "weight": "21.25%"
+          "weight": "20.36%"
         },
         {
           "name": "Non-Classified",
-          "weight": "6.00%"
+          "weight": "7.32%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "4.84%"
-        },
-        {
-          "name": "France",
-          "weight": "4.29%"
-        },
-        {
-          "name": "Netherlands",
-          "weight": "4.05%"
+          "weight": "5.55%"
         },
         {
           "name": "Luxembourg",
-          "weight": "4.04%"
+          "weight": "4.31%"
         },
         {
-          "name": "Italy",
-          "weight": "2.25%"
+          "name": "Netherlands",
+          "weight": "3.92%"
         },
         {
-          "name": "Turkey",
-          "weight": "2.03%"
+          "name": "France",
+          "weight": "3.88%"
         },
         {
           "name": "Canada",
           "weight": "1.98%"
+        },
+        {
+          "name": "Germany",
+          "weight": "1.91%"
+        },
+        {
+          "name": "Turkey",
+          "weight": "1.87%"
         }
       ],
       "manager": {
@@ -6711,7 +6719,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-strategic-bond-class-i-accumulation"
       },
       "sources": "HL factsheet (SEDOL B1TWMW9)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.57%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -6775,33 +6783,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+4.50%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+4.18%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+6.07%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+6.06%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+12.47%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+12.61%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-1.39%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-15.39%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-15.36%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 8 May 2026. Large drawdown in 2022–23 rate shock.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+4.18%",
@@ -6855,7 +6863,7 @@
           "weight": "1.86%"
         }
       ],
-      "holdingsNote": "Top ten of 110 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 110 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -6942,7 +6950,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-strategic-bond-class-b-accumulation"
       },
       "sources": "HL factsheet (SEDOL 0594785); Baillie Gifford fund page",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.42%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -7006,33 +7014,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
+            "year": "28/08/25 to 28/08/26",
             "fund": "+4.06%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+8.71%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+8.49%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+12.37%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+12.73%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+1.76%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-13.87%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-13.82%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 23 Jun 2026. Very large 2022 drawdown (−16.44%) followed by strong recovery.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+4.06%",
@@ -7047,92 +7055,100 @@
       "holdings": [
         {
           "name": "Z GBP Hedged ACC",
-          "weight": "5.13%"
+          "weight": "5.12%"
         },
         {
           "name": "Core Scientific FIN 7.75%",
-          "weight": "0.69%"
-        },
-        {
-          "name": "Ecopetrol 5.875%",
           "weight": "0.66%"
         },
         {
           "name": "Land O'Lakes CAP. 7.45%",
-          "weight": "0.66%"
+          "weight": "0.65%"
+        },
+        {
+          "name": "Ecopetrol 5.875%",
+          "weight": "0.64%"
         },
         {
           "name": "Canary Wharf GRP. 3.375%",
-          "weight": "0.54%"
+          "weight": "0.59%"
+        },
+        {
+          "name": "Immobiliare Grande 4.45%",
+          "weight": "0.53%"
+        },
+        {
+          "name": "Energy Transfer LP F2V",
+          "weight": "0.51%"
         }
       ],
-      "holdingsNote": "Top ten of 927 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 920 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
-          "weight": "91.54%"
-        },
-        {
-          "name": "Managed Funds",
-          "weight": "5.13%"
+          "weight": "87.44%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "2.88%"
+          "weight": "5.54%"
         },
         {
-          "name": "Alternative Trading Strategies",
-          "weight": "0.22%"
+          "name": "Managed Funds",
+          "weight": "5.12%"
+        },
+        {
+          "name": "Non-Classified",
+          "weight": "1.64%"
         },
         {
           "name": "Software & Computer Services",
-          "weight": "0.21%"
+          "weight": "0.20%"
         },
         {
           "name": "Real Estate Investment & Services",
-          "weight": "0.01%"
+          "weight": "0.05%"
         }
       ],
       "countries": [
         {
           "name": "United States",
-          "weight": "55.46%"
+          "weight": "53.25%"
         },
         {
           "name": "United Kingdom",
           "weight": "6.12%"
         },
         {
+          "name": "Cash and Equiv.",
+          "weight": "5.54%"
+        },
+        {
           "name": "Managed Funds",
-          "weight": "5.13%"
+          "weight": "5.12%"
         },
         {
           "name": "France",
-          "weight": "4.01%"
+          "weight": "3.67%"
         },
         {
           "name": "Luxembourg",
-          "weight": "3.53%"
+          "weight": "3.16%"
         },
         {
           "name": "Netherlands",
-          "weight": "3.23%"
+          "weight": "3.11%"
         },
         {
-          "name": "Cash and Equiv.",
-          "weight": "2.88%"
+          "name": "Non-Classified",
+          "weight": "2.51%"
         },
         {
           "name": "Italy",
-          "weight": "2.57%"
+          "weight": "2.15%"
         },
         {
           "name": "Canada",
-          "weight": "2.11%"
-        },
-        {
-          "name": "Germany",
-          "weight": "2.00%"
+          "weight": "2.10%"
         }
       ],
       "manager": {
@@ -7165,7 +7181,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-active-global-high-yield-bond-accumulation"
       },
       "sources": "HL factsheet (SEDOL B0CNHJ4); Citywire",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.03%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -7229,33 +7245,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+2.56%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+2.09%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+4.23%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+4.49%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+10.00%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+9.73%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
-            "fund": "-1.82%",
+            "year": "28/08/22 to 28/08/23",
+            "fund": "-1.68%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-13.18%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-13.62%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 14 May 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1w": "+0.30%",
@@ -7309,7 +7325,7 @@
           "weight": "0.07%"
         }
       ],
-      "holdingsNote": "Top ten of 11072 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 11072 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -7396,7 +7412,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/v/vanguard-global-corporate-bond-index-accumulation"
       },
       "sources": "HL factsheet (SEDOL BDFB5M5); HL fund update Nov 2025",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.38%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +0.19%, Brent crude +0.75%.",
@@ -7500,7 +7516,7 @@
           }
         ],
         "notes": "HL rolling 12-month periods to 12 Jun 2026. Top-decile 5yr (FE rank 8/180). 5yr derived. | 12 Jul 26: missing 2021–22 discrete row filled from the Inst W Acc sibling class (GB00B86LX253, Fidelity stamp 05 May 26; 31 Mar 21–31 Mar 22 window vs the other rows' 12-Jun HL windows — labelled accordingly). W Acc trailing 1yr +14.93% to 05 May corroborates the desk's +13.90% to 12 Jun.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
         "nav1w": "+0.52%",
@@ -7554,7 +7570,7 @@
           "weight": "2.02%"
         }
       ],
-      "holdingsNote": "Top ten of 78 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 78 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -7694,7 +7710,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B86LX253-bny-mellon-multi-asset-blncd-inst-w-acc/performance"
       },
       "sources": "HL factsheet (SEDOL BNBQX42); Trustnet (Dec 2025 factsheet)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.87%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -0.96%, S&P 500 +3.94%, US 10yr yield +0.19%, Gold (USD/oz) +12.43%.",
@@ -7736,33 +7752,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+12.87%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+13.00%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+8.86%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+8.31%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+14.45%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+14.75%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+1.43%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+0.80%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+0.84%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 23 Jun 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+13.00%",
@@ -7816,7 +7832,7 @@
           "weight": "2.03%"
         }
       ],
-      "holdingsNote": "Top ten of 74 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 74 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -7931,7 +7947,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-multi-asset-global-balanced-class-w-accumulation"
       },
       "sources": "HL factsheet (SEDOL BD8YW20); Fidelity (ISIN GB00BD8YW204)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.86%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, S&P 500 +3.94%, US 10yr yield +0.19%, Gold (USD/oz) +12.43%.",
@@ -7973,33 +7989,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+8.98%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+9.37%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+3.89%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+3.30%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+11.10%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+11.35%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-2.62%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-3.23%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-3.16%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 23 Jun 2026. Renamed from BG Sustainable Income 31 Jan 2025.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1yr": "+9.57%",
@@ -8053,7 +8069,7 @@
           "weight": "0.95%"
         }
       ],
-      "holdingsNote": "Top ten of 320 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 320 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -8168,7 +8184,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-monthly-income-class-b-accumulation"
       },
       "sources": "HL factsheet (SEDOL BFXY296); HL fund update Jun 2026",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.10%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -0.96%, S&P 500 +3.94%, US 10yr yield +0.19%, Gold (USD/oz) +12.43%.",
@@ -8209,33 +8225,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+7.69%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+7.48%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+6.59%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+6.27%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+9.54%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+9.94%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-0.95%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
+            "year": "28/08/21 to 28/08/22",
             "fund": "+3.03%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL rolling 12-month periods to 5 May 2026. Returns have improved markedly in the past two years.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1w": "+0.29%",
@@ -8289,7 +8305,7 @@
           "weight": "3.98%"
         }
       ],
-      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -8405,7 +8421,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/pyrford-global-total-return-accumulation"
       },
       "sources": "HL factsheet (SEDOL BZ0CQJ1); HL research notes Dec 2025",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.00%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.96%, S&P 500 +3.94%, US 10yr yield +0.19%, Gold (USD/oz) +12.43%.",
@@ -8458,33 +8474,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+20.55%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+20.91%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+12.27%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+11.72%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
+            "year": "28/08/23 to 28/08/24",
             "fund": "+15.48%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+12.79%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-10.09%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-10.25%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL factsheet, to 27 May 2026. 3yr/5yr cumulative derived from discrete annual returns - verify against Trustnet/Morningstar.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1w": "+0.47%",
@@ -8499,19 +8515,19 @@
       "holdings": [
         {
           "name": "Asml Holding N.V.",
-          "weight": "6.28%"
-        },
-        {
-          "name": "Novartis AG",
-          "weight": "2.54%"
+          "weight": "5.44%"
         },
         {
           "name": "Roche Holding AG",
-          "weight": "2.53%"
+          "weight": "2.62%"
+        },
+        {
+          "name": "Novartis AG",
+          "weight": "2.48%"
         },
         {
           "name": "Nestle S.A.",
-          "weight": "2.29%"
+          "weight": "2.18%"
         },
         {
           "name": "Siemens Aktiengesellschaft",
@@ -8519,108 +8535,108 @@
         },
         {
           "name": "Banco Santander S.A.",
-          "weight": "1.68%"
+          "weight": "1.72%"
         },
         {
           "name": "Allianz SE",
-          "weight": "1.53%"
+          "weight": "1.59%"
+        },
+        {
+          "name": "SAP SE",
+          "weight": "1.55%"
         },
         {
           "name": "Schneider Electric SE",
-          "weight": "1.51%"
+          "weight": "1.53%"
         },
         {
-          "name": "Iberdrola SA",
-          "weight": "1.45%"
-        },
-        {
-          "name": "ABB LTD",
-          "weight": "1.45%"
+          "name": "Total SE",
+          "weight": "1.40%"
         }
       ],
-      "holdingsNote": "Top ten of 551 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 551 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
-          "weight": "13.78%"
+          "weight": "14.50%"
         },
         {
           "name": "Pharmaceuticals & Biotechnology",
-          "weight": "10.78%"
+          "weight": "10.72%"
         },
         {
           "name": "Technology Hardware & Equipment",
-          "weight": "8.53%"
+          "weight": "7.21%"
         },
         {
           "name": "Non-life Insurance",
-          "weight": "5.69%"
+          "weight": "5.88%"
         },
         {
           "name": "Personal Goods",
-          "weight": "4.46%"
+          "weight": "4.38%"
         },
         {
           "name": "Electronic & Electrical Equipment",
-          "weight": "4.31%"
+          "weight": "4.05%"
         },
         {
           "name": "Construction & Materials",
-          "weight": "4.15%"
+          "weight": "4.03%"
         },
         {
           "name": "Investment Banking & Brokerage Services",
-          "weight": "3.69%"
+          "weight": "3.86%"
         },
         {
           "name": "Aerospace & Defence",
-          "weight": "3.65%"
+          "weight": "3.83%"
         },
         {
-          "name": "Food Producers",
-          "weight": "3.40%"
+          "name": "Non-Renewable Energy",
+          "weight": "3.34%"
         }
       ],
       "countries": [
         {
           "name": "Switzerland",
-          "weight": "18.37%"
+          "weight": "18.17%"
         },
         {
           "name": "France",
-          "weight": "16.57%"
+          "weight": "16.73%"
         },
         {
           "name": "Germany",
-          "weight": "16.15%"
+          "weight": "16.50%"
         },
         {
           "name": "Netherlands",
-          "weight": "13.53%"
+          "weight": "12.64%"
         },
         {
           "name": "Spain",
-          "weight": "7.30%"
+          "weight": "7.46%"
         },
         {
           "name": "Sweden",
-          "weight": "6.21%"
+          "weight": "6.39%"
         },
         {
           "name": "Italy",
-          "weight": "6.10%"
+          "weight": "6.24%"
         },
         {
           "name": "Denmark",
-          "weight": "3.20%"
+          "weight": "3.22%"
         },
         {
           "name": "Finland",
-          "weight": "2.30%"
+          "weight": "2.18%"
         },
         {
           "name": "Belgium",
-          "weight": "1.77%"
+          "weight": "1.75%"
         }
       ],
       "manager": {
@@ -8667,7 +8683,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-european-index-class-c-accumulation"
       },
       "sources": "HL factsheet, HL tracker Wealth Shortlist, Broadridge",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.20%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +1.27%, FTSE 100 -0.96%, GBP/USD +1.27%.",
@@ -8745,7 +8761,7 @@
           }
         ],
         "notes": "Refreshed 6 Jul 2026 via Fidelity (W Acc, GB00BFRT3504), price stamp 26 Jun 26 — replaces the earlier approximate (~) HL-derived figures. Discrete years to 31 Mar with Morningstar Europe ex-UK Equity category. Quality-growth book has lagged the value/banks-led Europe rally over 1yr (+11.05% vs +22.19%) despite keeping pace over 5yr.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+12.36%",
@@ -8799,7 +8815,7 @@
           "weight": "2.82%"
         }
       ],
-      "holdingsNote": "Top ten of 46 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 46 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -8929,7 +8945,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BFRT3504-fidelity-european-w-acc-uk/performance"
       },
       "sources": "HL factsheet, HL research page, Broadridge",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.07%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +1.27%, FTSE 100 -0.96%, GBP/USD +1.27%.",
@@ -8956,7 +8972,7 @@
       },
       "iaSector": "IA Europe Excluding UK",
       "benchmark": "FTSE World Europe ex UK",
-      "fundSize": "£1,095 million",
+      "fundSize": "£240 million",
       "launched": "30 June 1998",
       "yield": "0.24% (historic)",
       "overview": "Pure-blood quality-growth fund with ~27-30 holdings - the most concentrated and growth-oriented active Europe fund on the Shortlist. Run by Rory Powe (since 2014) and Virginia Nordback. Thrives when growth is scarce; struggles when cyclicals and value lead. <b>Weakest 5yr cumulative (~+16%) of the active Europe Shortlist peers</b>. Holdings data on HL is over 2 years stale (Feb 2024).",
@@ -8983,33 +8999,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+4.60%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+4.87%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "-4.28%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "-4.14%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+14.86%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+14.68%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+12.27%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-19.20%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-19.24%",
             "sector": "not yet verified"
           }
         ],
         "notes": "HL factsheet, discrete returns to 24 Jun 2026. Cumulative derived - verify. Notable drawdowns: -20.37% in 2021-22 and -8.79% in 2024-25.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
         "nav1w": "+1.20%",
@@ -9063,7 +9079,7 @@
           "weight": "4.57%"
         }
       ],
-      "holdingsNote": "Top ten of 25 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 25 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -9192,7 +9208,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/m/man-continental-european-growth-professional-accumulation"
       },
       "sources": "HL factsheet, Man Group website, The Adviser Centre, Broadridge",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.33%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +1.27%, FTSE 100 -0.96%, GBP/USD +1.27%.",
@@ -9272,7 +9288,7 @@
           }
         ],
         "notes": "HL factsheet, discrete returns to 24 Jun 2026. HL Europe sector review cited +6.00% for year to end-May 2026 (different as-at date). Cumulative derived - verify. Charges can be taken from capital, which may flatter yield figures.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
         "nav1w": "+0.23%",
@@ -9326,7 +9342,7 @@
           "weight": "3.04%"
         }
       ],
-      "holdingsNote": "Top ten of 40 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 40 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Industrial Transportation",
@@ -9455,7 +9471,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/polar-capital-european-ex-uk-income-i-gbp-accumulation"
       },
       "sources": "HL factsheet, Broadridge, Portfolio Adviser (Shortlist addition notice)",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.00%",
         "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +1.27%, FTSE 100 -0.96%, GBP/USD +1.27%.",
@@ -9533,7 +9549,7 @@
           }
         ],
         "notes": "Refreshed 6 Jul 2026 via Fidelity (D Acc, GB00B3S9LG25). Trailing figures computed to the 8 May 26 price stamp — as-at approximate. Discrete years to 31 Mar with Morningstar Europe ex-UK Equity category averages. Fund lagging the category over 1yr (+13.15% vs +19.17%) after a strong relative 24–25. Previous HL figure (+16.42% to 30 Sep 25) superseded. Yield 3.72% at end Sep 2025 (HL).",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1w": "+0.73%",
@@ -9543,129 +9559,129 @@
       },
       "holdings": [
         {
-          "name": "Engie",
-          "weight": "3.69%"
+          "name": "Asml Holding N.V.",
+          "weight": "3.90%"
         },
         {
           "name": "Unicredit Societa' PER Azioni",
-          "weight": "3.61%"
+          "weight": "3.56%"
         },
         {
           "name": "Siemens Aktiengesellschaft",
-          "weight": "3.60%"
+          "weight": "3.43%"
         },
         {
-          "name": "Caixabank SA",
-          "weight": "3.34%"
-        },
-        {
-          "name": "Legrand",
-          "weight": "3.27%"
-        },
-        {
-          "name": "KBC Groep NV",
+          "name": "Intesa Sanpaolo SPA",
           "weight": "3.17%"
         },
         {
           "name": "ASR Nederland N.V.",
-          "weight": "2.93%"
+          "weight": "3.16%"
         },
         {
-          "name": "Roche Holding AG",
-          "weight": "2.85%"
+          "name": "KBC Groep NV",
+          "weight": "3.11%"
         },
         {
-          "name": "Total SE",
-          "weight": "2.85%"
+          "name": "Novartis AG",
+          "weight": "3.04%"
         },
         {
-          "name": "Intesa Sanpaolo SPA",
+          "name": "ABN Amro Group NV",
+          "weight": "2.92%"
+        },
+        {
+          "name": "Engie",
+          "weight": "2.92%"
+        },
+        {
+          "name": "Caixabank SA",
           "weight": "2.78%"
         }
       ],
-      "holdingsNote": "Top ten of 58 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
-          "weight": "15.73%"
+          "weight": "18.05%"
         },
         {
           "name": "Construction & Materials",
-          "weight": "11.48%"
+          "weight": "9.35%"
         },
         {
           "name": "Non-life Insurance",
-          "weight": "7.71%"
+          "weight": "7.85%"
         },
         {
           "name": "Pharmaceuticals & Biotechnology",
-          "weight": "7.29%"
-        },
-        {
-          "name": "Industrial Engineering",
-          "weight": "6.95%"
-        },
-        {
-          "name": "Electronic & Electrical Equipment",
-          "weight": "6.75%"
+          "weight": "7.61%"
         },
         {
           "name": "Gas, Water & Multi-utilities",
-          "weight": "5.76%"
-        },
-        {
-          "name": "Electricity",
-          "weight": "5.02%"
-        },
-        {
-          "name": "Technology Hardware & Equipment",
-          "weight": "4.05%"
+          "weight": "5.83%"
         },
         {
           "name": "Aerospace & Defence",
-          "weight": "4.03%"
+          "weight": "5.76%"
+        },
+        {
+          "name": "Industrial Engineering",
+          "weight": "5.64%"
+        },
+        {
+          "name": "Electronic & Electrical Equipment",
+          "weight": "5.54%"
+        },
+        {
+          "name": "Technology Hardware & Equipment",
+          "weight": "5.33%"
+        },
+        {
+          "name": "Industrial Transportation",
+          "weight": "3.88%"
         }
       ],
       "countries": [
         {
           "name": "France",
-          "weight": "25.15%"
+          "weight": "18.68%"
         },
         {
           "name": "Netherlands",
-          "weight": "15.95%"
-        },
-        {
-          "name": "Germany",
-          "weight": "11.96%"
+          "weight": "18.57%"
         },
         {
           "name": "Italy",
-          "weight": "11.12%"
+          "weight": "14.17%"
+        },
+        {
+          "name": "Germany",
+          "weight": "13.11%"
         },
         {
           "name": "Switzerland",
-          "weight": "10.15%"
-        },
-        {
-          "name": "Spain",
-          "weight": "7.58%"
+          "weight": "11.81%"
         },
         {
           "name": "Sweden",
-          "weight": "6.20%"
+          "weight": "4.89%"
+        },
+        {
+          "name": "Spain",
+          "weight": "4.69%"
         },
         {
           "name": "Belgium",
-          "weight": "3.17%"
-        },
-        {
-          "name": "Finland",
-          "weight": "2.38%"
+          "weight": "3.11%"
         },
         {
           "name": "United Kingdom",
-          "weight": "2.21%"
+          "weight": "2.63%"
+        },
+        {
+          "name": "Austria",
+          "weight": "2.51%"
         }
       ],
       "manager": {
@@ -9701,7 +9717,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B3S9LG25-blackrock-continental-european-inc-d-acc/performance"
       },
       "sources": "HL factsheet page, Morningstar",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "sectorsNote": "Top sectors as at 31 Mar 2026 (Citywire / Morningstar).",
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
@@ -9751,33 +9767,33 @@
         ],
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+47.45%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+48.49%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+16.43%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+16.48%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+7.16%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+6.25%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-7.99%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-17.45%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-17.51%",
             "sector": "not yet verified"
           }
         ],
         "notes": "Discrete returns from HL factsheet, 12-month periods to 24 June 2026. Cumulative 1yr to Apr 2026 vs IA Global Emerging Markets sector. Benchmark comparison not yet verified.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
         "nav1w": "+0.11%",
@@ -9829,7 +9845,7 @@
           "weight": "1.61%"
         }
       ],
-      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -9980,7 +9996,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jpm-emerging-markets-class-c-accumulation"
       },
       "sources": "HL factsheet, HL Broadridge holdings data",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+5.34%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -10047,7 +10063,7 @@
           }
         ],
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). 1yr trailing to 2 Jul 2026. Corrected 2 Jul 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+40.41%",
@@ -10101,7 +10117,7 @@
           "weight": "3.00%"
         }
       ],
-      "holdingsNote": "Top ten of 62 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 62 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -10232,7 +10248,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/GUXP/invesco-global-emerging-markets-uk-z-acc"
       },
       "sources": "HL factsheet, Invesco factsheet PDF (31 Mar 2026)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+6.58%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -10306,7 +10322,7 @@
           }
         ],
         "notes": "Since-launch cumulative from HL. Discrete years to 31 Mar from Fidelity (sector: IA Asia Pacific ex Japan Equity Income). Most recent 1yr (2025–26): +32.06%.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+50.50%",
@@ -10360,7 +10376,7 @@
           "weight": "4.03%"
         }
       ],
-      "holdingsNote": "Top ten of 26 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 26 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -10477,7 +10493,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/new-funds/jupiter-asian-income-class-i"
       },
       "sources": "HL research page, HL factsheet",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.38%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks I Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -10544,7 +10560,7 @@
           }
         ],
         "notes": "FE fundinfo via Trustnet factsheet (18 Jun 2026), Z Acc share class — desk entry is L Acc (OCF 0.85 vs Z 0.92), so figures are a very close proxy; confirm exact L Acc values on HL. Corrected 2 Jul 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FE",
         "nav1yr": "+44.19%",
@@ -10598,7 +10614,7 @@
           "weight": "2.64%"
         }
       ],
-      "holdingsNote": "Top ten of 52 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 52 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -10739,7 +10755,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/o/jowb/schroder-asian-alpha-plus-l-acc"
       },
       "sources": "HL factsheet, HL Broadridge holdings, HL research page (Sep 2025 update)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.08%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -10808,7 +10824,7 @@
           }
         ],
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). 1yr trailing to 26 Jun 2026. Big category laggard this year — consistent with its low-China, quality-defensive style missing the Korea/Taiwan tech melt-up. Corrected 2 Jul 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+29.14%",
@@ -10862,7 +10878,7 @@
           "weight": "3.00%"
         }
       ],
-      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -11004,7 +11020,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/qi53/stewart-investors-asia-pacific-leaders-sustainability/"
       },
       "sources": "HL factsheet, Stewart Investors fund page, Chelsea Financial Services",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.26%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -11084,7 +11100,7 @@
           }
         ],
         "notes": "Full Fidelity refresh 12 Jul 26 (price stamp 15 May 26 — lags; as-at approximate): trailing 1yr +26.62% confirmed, replacing the ~+30.05% estimate. The fund materially lags its category (+36.43% 1yr, +24.20% 25–26 discrete) — its quality bias missed the sharpest leg of the China tech melt-up. All five discrete years now verified with category averages. Sector = Morningstar Greater China Equity.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+22.59%",
@@ -11138,7 +11154,7 @@
           "weight": "3.09%"
         }
       ],
-      "holdingsNote": "Top ten of 48 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 48 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -11263,7 +11279,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0033874321-fssa-greater-china-growth-b-acc/performance"
       },
       "sources": "HL factsheet, HL Broadridge holdings data",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+5.13%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -11331,7 +11347,7 @@
           }
         ],
         "notes": "Morningstar trailing returns via Fidelity, price stamp 16 Apr 26; category Japan Large-Cap Blend. 1yr trailing (+22.66%) vs 25–26 discrete (+7.52%) Δ15.1pp — window gap (trailing window runs past 31-Mar year-end into the strong Apr–Jun Japan run), informational, not an error. Growth style still lagging the category hard (sector 1yr +36.77%).",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+18.78%",
@@ -11385,7 +11401,7 @@
           "weight": "2.63%"
         }
       ],
-      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Industrial Engineering",
@@ -11479,7 +11495,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0006011133-baillie-gifford-japanese-b-acc/performance"
       },
       "sources": "HL factsheet, HL research page, Fidelity factsheet data (GB0006011133)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.03%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -11506,7 +11522,7 @@
       },
       "iaSector": "IA Japan",
       "benchmark": "TOPIX; Russell/Nomura Large Cap Value",
-      "fundSize": "£3,242 million",
+      "fundSize": "£3,192 million",
       "launched": "25 May 2004",
       "yield": "1.97% (historic)",
       "overview": "A deep-value contrarian Japan equity fund investing in out-of-favour large-cap cyclicals expected to mean-revert. The largest Japan active fund on the Wealth Shortlist at £2.8bn. Run by Jeff Atherton and team using a systematic-plus-qualitative value process. The top-performing Japan fund over 1 and 3 years, benefiting from Japan's value/cyclical rotation and the 'Takaichi trade'.",
@@ -11553,7 +11569,7 @@
           }
         ],
         "notes": "Morningstar trailing returns via Fidelity, price stamp 8 May 26; category Japan Large-Cap Value. Sector figures in the discrete table are the Morningstar category, filling the previously unverified sector cell. 1yr +36.27% is strong but credible against the category itself at +34.96% — value style led the 2025–26 Japan rally.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+34.73%",
@@ -11607,7 +11623,7 @@
           "weight": "2.94%"
         }
       ],
-      "holdingsNote": "Top ten of 59 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 59 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -11709,7 +11725,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0119B50-man-japan-corealpha-fund-prof-acc-c/performance"
       },
       "sources": "HL factsheet, HL Broadridge holdings, Fidelity factsheet (GB00B0119B50)",
-      "asAt": "27 Aug 2026 (factsheet refreshed from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.19%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -11777,7 +11793,7 @@
           }
         ],
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). Trailing 1yr +82.97% is source-confirmed but extreme (FTSE World APAC ex-Japan is Korea/Taiwan-heavy and both markets have been in a melt-up); page price stamp read 17 Apr 2026 so the as-at window is uncertain — cross-check the HL factsheet before relying on it. Corrected 2 Jul 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+71.41%",
@@ -11791,128 +11807,128 @@
       "holdings": [
         {
           "name": "Taiwan Semiconductor Manufacturing Company Limited",
-          "weight": "19.10%"
+          "weight": "20.12%"
         },
         {
           "name": "Samsung Electronics CO. LTD",
-          "weight": "10.36%"
+          "weight": "9.38%"
         },
         {
           "name": "SK Hynix",
-          "weight": "8.76%"
+          "weight": "7.37%"
         },
         {
           "name": "BHP Group Limited",
+          "weight": "2.38%"
+        },
+        {
+          "name": "Commonwealth Bank OF Australia",
           "weight": "2.30%"
         },
         {
           "name": "Mediatek Corporation",
-          "weight": "2.11%"
+          "weight": "1.78%"
         },
         {
-          "name": "Commonwealth Bank OF Australia",
-          "weight": "2.07%"
-        },
-        {
-          "name": "Delta Electronics",
-          "weight": "1.57%"
-        },
-        {
-          "name": "HON HAI Precision Industry CO.",
-          "weight": "1.17%"
-        },
-        {
-          "name": "AIA Group Limited",
-          "weight": "1.15%"
+          "name": "DBS Group Holdings LTD",
+          "weight": "1.29%"
         },
         {
           "name": "Samsung Electronics CO. LTD",
-          "weight": "1.13%"
+          "weight": "1.19%"
+        },
+        {
+          "name": "AIA Group Limited",
+          "weight": "1.17%"
+        },
+        {
+          "name": "Delta Electronics",
+          "weight": "1.08%"
         }
       ],
-      "holdingsNote": "Top ten of 632 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 611 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
-          "weight": "40.78%"
-        },
-        {
-          "name": "Telecommunications Equipment",
-          "weight": "11.91%"
+          "weight": "38.48%"
         },
         {
           "name": "Banks",
-          "weight": "10.53%"
+          "weight": "12.37%"
+        },
+        {
+          "name": "Telecommunications Equipment",
+          "weight": "10.95%"
         },
         {
           "name": "Industrial Metals & Mining",
-          "weight": "4.59%"
+          "weight": "4.43%"
         },
         {
-          "name": "Electronic & Electrical Equipment",
-          "weight": "2.93%"
+          "name": "Cash and Equiv.",
+          "weight": "2.92%"
         },
         {
           "name": "Investment Banking & Brokerage Services",
-          "weight": "2.37%"
+          "weight": "2.58%"
         },
         {
           "name": "Life Insurance",
-          "weight": "2.24%"
+          "weight": "2.41%"
+        },
+        {
+          "name": "Electronic & Electrical Equipment",
+          "weight": "2.12%"
         },
         {
           "name": "Non-Renewable Energy",
-          "weight": "1.64%"
+          "weight": "1.71%"
         },
         {
-          "name": "Software & Computer Services",
-          "weight": "1.63%"
-        },
-        {
-          "name": "Industrial Transportation",
-          "weight": "1.56%"
+          "name": "Real Estate Investment Trusts",
+          "weight": "1.58%"
         }
       ],
       "countries": [
         {
           "name": "Taiwan",
-          "weight": "36.56%"
+          "weight": "36.51%"
         },
         {
           "name": "South Korea",
-          "weight": "31.76%"
+          "weight": "27.80%"
         },
         {
           "name": "Australia",
-          "weight": "15.72%"
+          "weight": "16.90%"
         },
         {
           "name": "Hong Kong",
-          "weight": "5.04%"
+          "weight": "5.33%"
         },
         {
           "name": "Singapore",
-          "weight": "3.33%"
-        },
-        {
-          "name": "Thailand",
-          "weight": "1.76%"
-        },
-        {
-          "name": "Malaysia",
-          "weight": "1.72%"
-        },
-        {
-          "name": "Direct Property and REITs",
-          "weight": "1.37%"
+          "weight": "3.95%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "1.36%"
+          "weight": "2.92%"
+        },
+        {
+          "name": "Thailand",
+          "weight": "1.85%"
+        },
+        {
+          "name": "Malaysia",
+          "weight": "1.83%"
+        },
+        {
+          "name": "Direct Property and REITs",
+          "weight": "1.44%"
         },
         {
           "name": "New Zealand",
-          "weight": "0.66%"
+          "weight": "0.71%"
         }
       ],
       "manager": {
@@ -11972,7 +11988,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/G6IF/ishares-pacific-ex-japan-equity-index-uk-d-acc"
       },
       "sources": "HL factsheet, BlackRock holdings data",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+9.72%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -12042,7 +12058,7 @@
           }
         ],
         "notes": "Discrete years to 31 Mar (Fidelity/Morningstar). 1yr trailing from page with 29 May 2026 price stamp. Tracking within ~0.3–3pp of category across all periods, as expected for a FTSE Japan tracker. Corrected 2 Jul 2026.",
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
         "nav1yr": "+25.05%",
@@ -12056,100 +12072,100 @@
       "holdings": [
         {
           "name": "Mitsubishi UFJ Financial Group",
-          "weight": "3.33%"
+          "weight": "3.88%"
         },
         {
           "name": "Toyota Motor Corporation",
-          "weight": "3.27%"
+          "weight": "3.28%"
         },
         {
-          "name": "Softbank Group Corp.",
-          "weight": "2.97%"
+          "name": "Mitsui Sumitomo Insurance CO.",
+          "weight": "2.46%"
         },
         {
           "name": "Tokyo Electron Limited",
+          "weight": "2.44%"
+        },
+        {
+          "name": "Advantest Corporation",
           "weight": "2.35%"
         },
         {
           "name": "Hitachi",
-          "weight": "2.26%"
-        },
-        {
-          "name": "Mitsui Sumitomo Insurance CO.",
-          "weight": "2.15%"
+          "weight": "2.33%"
         },
         {
           "name": "Sony Corp",
-          "weight": "2.09%"
+          "weight": "2.24%"
         },
         {
-          "name": "Advantest Corporation",
-          "weight": "1.92%"
+          "name": "Softbank Group Corp.",
+          "weight": "1.98%"
         },
         {
           "name": "Mizuho Financial Group",
-          "weight": "1.75%"
+          "weight": "1.92%"
         },
         {
-          "name": "Mitsubishi Corporation",
-          "weight": "1.68%"
+          "name": "Recruit Holdings CO.",
+          "weight": "1.69%"
         }
       ],
-      "holdingsNote": "Top ten of 481 holdings, from the HL factsheet on 27 Aug 2026.",
+      "holdingsNote": "Top ten of 480 holdings, from the HL factsheet on 30 Aug 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
-          "weight": "12.92%"
+          "weight": "13.02%"
         },
         {
           "name": "Banks",
-          "weight": "10.06%"
+          "weight": "11.37%"
         },
         {
           "name": "General Industrials",
-          "weight": "8.06%"
+          "weight": "7.78%"
         },
         {
           "name": "Automobiles & Parts",
-          "weight": "7.10%"
-        },
-        {
-          "name": "Industrial Support Services",
-          "weight": "5.09%"
-        },
-        {
-          "name": "Telecommunications Service Providers",
-          "weight": "4.92%"
-        },
-        {
-          "name": "Electronic & Electrical Equipment",
-          "weight": "4.87%"
+          "weight": "6.88%"
         },
         {
           "name": "Leisure Goods",
-          "weight": "4.86%"
+          "weight": "5.35%"
+        },
+        {
+          "name": "Industrial Support Services",
+          "weight": "5.23%"
         },
         {
           "name": "Industrial Engineering",
-          "weight": "4.74%"
+          "weight": "4.54%"
         },
         {
-          "name": "Chemicals",
-          "weight": "3.66%"
+          "name": "Electronic & Electrical Equipment",
+          "weight": "4.37%"
+        },
+        {
+          "name": "Telecommunications Service Providers",
+          "weight": "4.01%"
+        },
+        {
+          "name": "Pharmaceuticals & Biotechnology",
+          "weight": "3.40%"
         }
       ],
       "countries": [
         {
           "name": "Japan",
-          "weight": "97.64%"
+          "weight": "97.97%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "1.36%"
+          "weight": "1.00%"
         },
         {
           "name": "Direct Property and REITs",
-          "weight": "0.68%"
+          "weight": "0.69%"
         },
         {
           "name": "Managed Funds",
@@ -12157,7 +12173,7 @@
         },
         {
           "name": "Non-Classified",
-          "weight": "0.00%"
+          "weight": "0.01%"
         }
       ],
       "manager": {
@@ -12205,7 +12221,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B6QQ9X96-ishares-japan-equity-index-d-acc/performance"
       },
       "sources": "HL factsheet, BlackRock holdings data",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.87%",
         "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +6.89%, Hang Seng -1.13%, GBP/USD +1.27%.",
@@ -12250,32 +12266,32 @@
         "navPoints": 1260,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+26.07%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+26.16%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+0.46%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "-0.06%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+7.92%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+8.75%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-1.25%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+12.46%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+12.62%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+22.04%"
       },
@@ -12303,7 +12319,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/ftf-royce-us-smaller-companies-class-w-accumulation"
       },
       "sources": "HL factsheet (Wealth Shortlist confirmed, fund size, launch, yield, net ongoing charge); Yahoo Finance NAV series; ISIN via FT security search.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001PP1Y.L",
       "navMatch": "stored",
       "isin": "GB00BP9LKJ73",
@@ -12419,7 +12435,7 @@
           "weight": "0.00%"
         }
       ],
-      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "schroder-us-smaller-companies",
@@ -12444,7 +12460,7 @@
         "nav1m": "+0.11%",
         "navAsAt": "2026-08-27",
         "navPoints": 80,
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape"
       },
       "manager": {
@@ -12471,7 +12487,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/s/schroder-us-smaller-companies-class-z-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0002PEG1.L",
       "navMatch": "stored",
       "navName": "Schroder US Smaller Companies L Acc",
@@ -12593,7 +12609,7 @@
           "weight": "0.93%"
         }
       ],
-      "holdingsNote": "Top ten of 79 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 79 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "fidelity-index-us",
@@ -12623,32 +12639,32 @@
         "navPoints": 1261,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+19.01%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+19.71%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+13.06%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+13.77%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+24.53%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+24.14%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-0.87%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+9.76%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+10.15%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+11.59%"
       },
@@ -12676,7 +12692,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-index-us-class-p-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000125KU.L",
       "navMatch": "stored",
       "navName": "Fidelity Index US P Acc",
@@ -12814,7 +12830,7 @@
           "weight": "0.05%"
         }
       ],
-      "holdingsNote": "Top ten of 505 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 505 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "fidelity-american-special-situations",
@@ -12844,32 +12860,32 @@
         "navPoints": 1260,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+14.00%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+13.79%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+1.13%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+1.41%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+14.30%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+14.08%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-6.64%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+23.19%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+24.21%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+6.70%"
       },
@@ -12897,7 +12913,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-american-special-situations-class-w-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000WUU7.L",
       "navMatch": "stored",
       "navName": "Fidelity American Special Sits W Acc",
@@ -13035,7 +13051,7 @@
           "weight": "0.02%"
         }
       ],
-      "holdingsNote": "Top ten of 60 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 60 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "premier-miton-us-opportunities",
@@ -13065,32 +13081,32 @@
         "navPoints": 1260,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "-8.25%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "-8.61%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "-1.28%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "-1.69%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+12.52%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+13.02%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-5.33%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+10.88%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+11.10%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "-4.86%"
       },
@@ -13118,7 +13134,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/premier-miton-us-opportunities-class-b-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000XOCD.L",
       "navMatch": "stored",
       "navName": "Premier Miton US Opportunities B Acc",
@@ -13232,7 +13248,7 @@
           "weight": "2.41%"
         }
       ],
-      "holdingsNote": "Top ten of 41 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 41 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "hsbc-american-index",
@@ -13262,32 +13278,32 @@
         "navPoints": 1259,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+18.94%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+19.61%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+13.75%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+13.80%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+23.81%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+24.12%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-0.77%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+9.62%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+9.89%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+10.93%"
       },
@@ -13315,7 +13331,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/h/hsbc-american-index-class-c-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000WN7H.L",
       "navMatch": "stored",
       "navName": "HSBC American Index C Acc",
@@ -13445,7 +13461,7 @@
           "weight": "-4.74%"
         }
       ],
-      "holdingsNote": "Top ten of 576 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 576 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "ct-european-select",
@@ -13475,32 +13491,32 @@
         "navPoints": 1261,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+14.44%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+14.65%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+0.66%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+0.49%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+15.89%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+15.83%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+12.91%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-18.82%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-19.00%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+8.52%"
       },
@@ -13528,7 +13544,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/c/ct-european-select-class-z-accumulation"
       },
       "sources": "HL Europe sector page (Wealth Shortlist membership); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000X3IE.L",
       "navMatch": "stored",
       "navName": "CT European Select Z Acc GBP",
@@ -13666,7 +13682,7 @@
           "weight": "1.63%"
         }
       ],
-      "holdingsNote": "Top ten of 37 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 37 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "jupiter-european",
@@ -13696,32 +13712,32 @@
         "navPoints": 1261,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+24.73%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+25.93%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+3.48%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+2.70%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+10.48%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+10.42%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+8.96%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-16.19%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-16.43%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+15.66%"
       },
@@ -13749,7 +13765,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/j/jupiter-european-class-i-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000U20D.L",
       "navMatch": "stored",
       "navName": "Jupiter European I Acc",
@@ -13887,7 +13903,7 @@
           "weight": "3.96%"
         }
       ],
-      "holdingsNote": "Top ten of 42 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 42 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "blackrock-european-dynamic",
@@ -13912,7 +13928,7 @@
         "nav1m": "+3.78%",
         "navAsAt": "2026-08-28",
         "navPoints": 55,
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape"
       },
       "manager": {
@@ -13939,7 +13955,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/blackrock-european-dynamic-fd-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000NBFS.L",
       "navMatch": "stored",
       "navName": "BlackRock European Dynamic D Acc",
@@ -13954,130 +13970,130 @@
       "holdings": [
         {
           "name": "Asml Holding N.V.",
-          "weight": "8.38%"
+          "weight": "8.63%"
         },
         {
           "name": "Unicredit Societa' PER Azioni",
-          "weight": "5.32%"
-        },
-        {
-          "name": "Siemens Energy AG",
-          "weight": "4.66%"
-        },
-        {
-          "name": "ASM International N.V.",
-          "weight": "4.17%"
-        },
-        {
-          "name": "ABN Amro Group NV",
-          "weight": "3.81%"
-        },
-        {
-          "name": "BE Semiconductor Industries N.V.",
-          "weight": "3.56%"
-        },
-        {
-          "name": "AIB Group Public Limited Company",
-          "weight": "3.18%"
-        },
-        {
-          "name": "ABB LTD",
-          "weight": "3.10%"
+          "weight": "6.15%"
         },
         {
           "name": "Safran",
-          "weight": "2.93%"
+          "weight": "3.91%"
+        },
+        {
+          "name": "Siemens Energy AG",
+          "weight": "3.67%"
+        },
+        {
+          "name": "ABN Amro Group NV",
+          "weight": "3.43%"
         },
         {
           "name": "Erste Group Bank AG",
-          "weight": "2.74%"
+          "weight": "3.37%"
+        },
+        {
+          "name": "ASM International N.V.",
+          "weight": "3.16%"
+        },
+        {
+          "name": "Lloyds Banking Group",
+          "weight": "3.11%"
+        },
+        {
+          "name": "AIB Group Public Limited Company",
+          "weight": "2.97%"
+        },
+        {
+          "name": "ABB LTD",
+          "weight": "2.96%"
         }
       ],
       "sectors": [
         {
           "name": "Banks",
-          "weight": "22.32%"
+          "weight": "25.00%"
         },
         {
           "name": "Technology Hardware & Equipment",
-          "weight": "16.98%"
+          "weight": "14.84%"
         },
         {
           "name": "Aerospace & Defence",
-          "weight": "9.25%"
+          "weight": "9.26%"
         },
         {
           "name": "Pharmaceuticals & Biotechnology",
-          "weight": "7.37%"
+          "weight": "7.34%"
         },
         {
           "name": "Electronic & Electrical Equipment",
-          "weight": "6.84%"
-        },
-        {
-          "name": "Construction & Materials",
-          "weight": "6.37%"
+          "weight": "6.25%"
         },
         {
           "name": "Renewable Energy",
-          "weight": "6.06%"
+          "weight": "5.05%"
+        },
+        {
+          "name": "Construction & Materials",
+          "weight": "4.71%"
         },
         {
           "name": "Industrial Engineering",
-          "weight": "4.14%"
-        },
-        {
-          "name": "Cash and Equiv.",
           "weight": "4.10%"
         },
         {
           "name": "General Industrials",
-          "weight": "3.35%"
+          "weight": "3.88%"
+        },
+        {
+          "name": "Cash and Equiv.",
+          "weight": "3.62%"
         }
       ],
       "countries": [
         {
           "name": "Netherlands",
-          "weight": "22.35%"
+          "weight": "20.26%"
         },
         {
           "name": "Germany",
-          "weight": "14.51%"
-        },
-        {
-          "name": "Switzerland",
-          "weight": "12.31%"
-        },
-        {
-          "name": "France",
-          "weight": "10.67%"
+          "weight": "15.52%"
         },
         {
           "name": "Italy",
-          "weight": "9.58%"
+          "weight": "12.69%"
         },
         {
-          "name": "Sweden",
-          "weight": "6.44%"
+          "name": "Switzerland",
+          "weight": "12.27%"
         },
         {
-          "name": "Cash and Equiv.",
-          "weight": "4.10%"
-        },
-        {
-          "name": "Spain",
-          "weight": "3.73%"
-        },
-        {
-          "name": "Ireland",
-          "weight": "3.18%"
+          "name": "France",
+          "weight": "10.15%"
         },
         {
           "name": "Austria",
-          "weight": "2.74%"
+          "weight": "4.47%"
+        },
+        {
+          "name": "Spain",
+          "weight": "3.75%"
+        },
+        {
+          "name": "Cash and Equiv.",
+          "weight": "3.62%"
+        },
+        {
+          "name": "United Kingdom",
+          "weight": "3.11%"
+        },
+        {
+          "name": "Ireland",
+          "weight": "2.97%"
         }
       ],
-      "holdingsNote": "Top ten of 54 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "fidelity-index-europe-ex-uk",
@@ -14107,32 +14123,32 @@
         "navPoints": 1261,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+20.24%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+20.57%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+11.25%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+10.53%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+15.28%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+15.47%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+12.24%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-9.62%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-9.76%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+11.00%"
       },
@@ -14160,7 +14176,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-index-europe-ex-uk-class-p-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00011RBW.L",
       "navMatch": "stored",
       "navName": "Fidelity Index Europe ex UK P Acc",
@@ -14298,7 +14314,7 @@
           "weight": "1.68%"
         }
       ],
-      "holdingsNote": "Top ten of 333 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 333 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "baillie-gifford-european",
@@ -14328,32 +14344,32 @@
         "navPoints": 1261,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+2.79%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+2.37%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+2.69%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+2.50%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+12.81%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+13.29%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-4.26%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-37.38%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-37.45%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+1.48%"
       },
@@ -14381,7 +14397,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-european-class-b-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000QWM.L",
       "navMatch": "stored",
       "navName": "Baillie Gifford European B Acc",
@@ -14519,7 +14535,7 @@
           "weight": "3.80%"
         }
       ],
-      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "ishares-corporate-bond-index",
@@ -14546,7 +14562,7 @@
         "nav3yr": "+17.83%",
         "navAsAt": "2026-08-28",
         "navPoints": 992,
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+0.35%"
       },
@@ -14574,7 +14590,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/i/ishares-corporate-bond-index-class-s-accumulation"
       },
       "sources": "HL Wealth Shortlist tracker page (membership, sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001O7DN.L",
       "navMatch": "stored",
       "navName": "iShares Corporate Bond Index (UK) S Acc",
@@ -14589,102 +14605,102 @@
       "holdings": [
         {
           "name": "KFW Bankengruppe MTN 6 12/07/2028",
-          "weight": "0.57%"
-        },
-        {
-          "name": "KFW MTN Regs 4.875 10/10/2028",
-          "weight": "0.44%"
-        },
-        {
-          "name": "European Investment Bank 6% 2028",
-          "weight": "0.44%"
+          "weight": "0.58%"
         },
         {
           "name": "KFW MTN Regs 3.75 01/09/2029",
-          "weight": "0.43%"
+          "weight": "0.50%"
         },
         {
           "name": "European Investment Bank 5.625 06/07/2032",
-          "weight": "0.42%"
+          "weight": "0.44%"
+        },
+        {
+          "name": "KFW MTN Regs 4.875 10/10/2028",
+          "weight": "0.43%"
+        },
+        {
+          "name": "European Investment Bank 6% 2028",
+          "weight": "0.43%"
         },
         {
           "name": "KFW MTN Regs 4.375 01/31/2028",
-          "weight": "0.40%"
-        },
-        {
-          "name": "KFW MTN Regs 3.75 07/30/2027",
-          "weight": "0.40%"
+          "weight": "0.39%"
         },
         {
           "name": "KFW MTN Regs 4 07/01/2031",
-          "weight": "0.34%"
+          "weight": "0.35%"
+        },
+        {
+          "name": "European Bank FOR Reconstruction A MTN 4.25 10/19/2028",
+          "weight": "0.33%"
         },
         {
           "name": "KFW Bankengruppe MTN 5.75 06/07/2032",
-          "weight": "0.32%"
+          "weight": "0.29%"
         },
         {
           "name": "Asian Development Bank MTN 4 07/01/2031",
-          "weight": "0.30%"
+          "weight": "0.29%"
         }
       ],
       "sectors": [
         {
           "name": "Bonds",
-          "weight": "99.54%"
-        },
-        {
-          "name": "Cash and Equiv.",
-          "weight": "0.26%"
+          "weight": "99.22%"
         },
         {
           "name": "Non-Classified",
-          "weight": "0.21%"
+          "weight": "0.60%"
+        },
+        {
+          "name": "Cash and Equiv.",
+          "weight": "0.18%"
         }
       ],
       "countries": [
         {
           "name": "United Kingdom",
-          "weight": "40.38%"
+          "weight": "39.91%"
         },
         {
           "name": "United States",
-          "weight": "18.95%"
+          "weight": "18.91%"
         },
         {
           "name": "France",
-          "weight": "8.22%"
+          "weight": "8.01%"
         },
         {
           "name": "Germany",
-          "weight": "5.84%"
+          "weight": "6.06%"
         },
         {
           "name": "Netherlands",
-          "weight": "4.72%"
+          "weight": "4.79%"
         },
         {
           "name": "Luxembourg",
-          "weight": "4.59%"
+          "weight": "4.57%"
         },
         {
           "name": "Canada",
-          "weight": "2.07%"
-        },
-        {
-          "name": "Philippines",
-          "weight": "1.64%"
+          "weight": "2.58%"
         },
         {
           "name": "Non-Classified",
-          "weight": "1.61%"
+          "weight": "2.00%"
+        },
+        {
+          "name": "Philippines",
+          "weight": "1.46%"
         },
         {
           "name": "Spain",
-          "weight": "1.34%"
+          "weight": "1.18%"
         }
       ],
-      "holdingsNote": "Top ten of 1231 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 1251 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "lg-all-stocks-gilt-index",
@@ -14712,32 +14728,32 @@
         "navPoints": 428,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+2.91%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+2.38%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "-2.22%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "-2.17%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+7.74%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+7.80%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-11.53%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-18.19%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-18.22%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "-1.32%"
       },
@@ -14765,7 +14781,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-all-stocks-gilt-index-trust-c-accumulation"
       },
       "sources": "HL Wealth Shortlist tracker page (membership, sector); Yahoo Finance NAV series; ISIN via FT security search, corroborated by the NAV line name.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000102LM.L",
       "navMatch": "stored",
       "isin": "GB00BG0QNW27",
@@ -14783,66 +14799,66 @@
       "holdings": [
         {
           "name": "4 3/8% Treasury Gilt 2028",
-          "weight": "2.55%"
-        },
-        {
-          "name": "4¼% Treasury Stock 2032",
-          "weight": "2.48%"
+          "weight": "2.56%"
         },
         {
           "name": "4¾% Treasury Gilt 2030",
-          "weight": "2.43%"
+          "weight": "2.47%"
         },
         {
           "name": "4 3/8% Treasury Gilt 2030",
-          "weight": "2.39%"
+          "weight": "2.44%"
+        },
+        {
+          "name": "4¼% Treasury Stock 2032",
+          "weight": "2.44%"
+        },
+        {
+          "name": "4% Treasury Gilt 2029",
+          "weight": "2.28%"
         },
         {
           "name": "1¼% Treasury Gilt 2027",
-          "weight": "2.26%"
+          "weight": "2.28%"
         },
         {
           "name": "4¾% Treasury Gilt 2035",
-          "weight": "2.19%"
+          "weight": "2.26%"
         },
         {
-          "name": "4 1/2 Treasury 2034",
-          "weight": "2.16%"
+          "name": "4½% Treasury Gilt 2035",
+          "weight": "2.18%"
+        },
+        {
+          "name": "4 1/8% Treasury Gilt 2031",
+          "weight": "2.18%"
         },
         {
           "name": "0 7/8% Treasury Gilt 2029",
           "weight": "2.14%"
-        },
-        {
-          "name": "4½% Treasury Gilt 2035",
-          "weight": "2.12%"
-        },
-        {
-          "name": "3¾% Treasury Gilt 2027",
-          "weight": "2.08%"
         }
       ],
       "sectors": [
         {
           "name": "Bonds",
-          "weight": "99.07%"
+          "weight": "99.30%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "0.93%"
+          "weight": "0.70%"
         }
       ],
       "countries": [
         {
           "name": "United Kingdom",
-          "weight": "99.07%"
+          "weight": "99.30%"
         },
         {
           "name": "Cash and Equiv.",
-          "weight": "0.93%"
+          "weight": "0.70%"
         }
       ],
-      "holdingsNote": "Top ten of 70 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 69 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "royal-london-corporate-bond",
@@ -14870,7 +14886,7 @@
         "nav5yr": "+5.89%",
         "navAsAt": "2026-08-27",
         "navPoints": 1258,
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+0.82%"
       },
@@ -14898,7 +14914,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/r/royal-london-corporate-bond-class-z-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000YQN5.L",
       "navMatch": "stored",
       "navName": "Royal London Corporate Bond M Acc",
@@ -15012,7 +15028,7 @@
           "weight": "0.99%"
         }
       ],
-      "holdingsNote": "Top ten of 348 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 348 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "baillie-gifford-managed",
@@ -15042,32 +15058,32 @@
         "navPoints": 1261,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+8.34%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+8.53%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+11.05%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+10.97%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+13.39%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+13.46%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-2.95%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-23.73%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-23.42%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+6.68%"
       },
@@ -15095,7 +15111,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/baillie-gifford-managed-class-b-accumulation"
       },
       "sources": "HL mixed investment / total return sector page (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000QWU.L",
       "navMatch": "stored",
       "navName": "Baillie Gifford Managed B Acc",
@@ -15233,7 +15249,7 @@
           "weight": "1.78%"
         }
       ],
-      "holdingsNote": "Top ten of 402 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 402 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "bny-mellon-real-return",
@@ -15261,7 +15277,7 @@
         "nav5yr": "+24.20%",
         "navAsAt": "2026-08-28",
         "navPoints": 1261,
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+8.45%"
       },
@@ -15289,7 +15305,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-real-return-class-u-accumulation"
       },
       "sources": "HL mixed investment / total return sector page (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000X2FF.L",
       "navMatch": "stored",
       "navName": "BNY Mellon Real Return Inst W Acc",
@@ -15427,7 +15443,7 @@
           "weight": "3.61%"
         }
       ],
-      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "schroder-managed-balanced",
@@ -15455,7 +15471,7 @@
         "nav5yr": "+31.52%",
         "navAsAt": "2026-08-28",
         "navPoints": 1261,
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+11.50%"
       },
@@ -15483,7 +15499,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/s/schroder-managed-balanced-class-i-accumulation"
       },
       "sources": "HL mixed investment / total return sector page and sector review (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000ZSYH.L",
       "navMatch": "stored",
       "navName": "Schroder Managed Balanced Z Acc",
@@ -15621,7 +15637,7 @@
           "weight": "2.85%"
         }
       ],
-      "holdingsNote": "Top ten of 457 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 457 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "trojan-fund",
@@ -15651,32 +15667,32 @@
         "navPoints": 1260,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+7.75%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+7.44%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+7.28%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+7.19%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+6.27%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+6.52%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-2.50%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+1.99%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+1.96%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+3.21%"
       },
@@ -15704,7 +15720,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/t/troy-trojan-class-x-accumulation"
       },
       "sources": "HL mixed and total return sector review (Wealth Shortlist membership); Yahoo Finance NAV series.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001CBJA.L",
       "navMatch": "stored",
       "navName": "Trojan Fund X Accumulation",
@@ -15842,7 +15858,7 @@
           "weight": "-0.37%"
         }
       ],
-      "holdingsNote": "Top ten of 36 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 36 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "trojan-ethical",
@@ -15870,32 +15886,32 @@
         "navPoints": 428,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+7.40%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+7.35%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+8.43%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+8.31%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+8.26%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+8.49%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "-1.89%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "+0.89%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "+0.92%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+2.52%"
       },
@@ -15923,7 +15939,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/t/troy-trojan-ethical-class-x-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001J9W9.L",
       "navMatch": "stored",
       "navName": "Trojan Ethical X Acc",
@@ -16058,7 +16074,7 @@
           "weight": "0.80%"
         }
       ],
-      "holdingsNote": "Top ten of 33 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 33 holdings, from the HL factsheet on 30 Aug 2026."
     },
     {
       "id": "royal-london-sustainable-world",
@@ -16088,32 +16104,32 @@
         "navPoints": 1260,
         "discrete": [
           {
-            "year": "26/08/25 to 26/08/26",
-            "fund": "+15.57%",
+            "year": "28/08/25 to 28/08/26",
+            "fund": "+16.55%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/24 to 26/08/25",
-            "fund": "+9.56%",
+            "year": "28/08/24 to 28/08/25",
+            "fund": "+9.59%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/23 to 26/08/24",
-            "fund": "+17.40%",
+            "year": "28/08/23 to 28/08/24",
+            "fund": "+17.34%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/22 to 26/08/23",
+            "year": "28/08/22 to 28/08/23",
             "fund": "+0.00%",
             "sector": "not yet verified"
           },
           {
-            "year": "26/08/21 to 26/08/22",
-            "fund": "-9.71%",
+            "year": "28/08/21 to 28/08/22",
+            "fund": "-9.63%",
             "sector": "not yet verified"
           }
         ],
-        "perfAsAt": "2026-08-27",
+        "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+8.56%"
       },
@@ -16141,7 +16157,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/r/royal-london-sustainable-world-trust-class-c-accumulation"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Factsheet depth not yet verified.",
-      "asAt": "27 Aug 2026 (factsheet confirmed unchanged from HL)",
+      "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000XYWQ.L",
       "navMatch": "stored",
       "navName": "Royal London Sustainable World C Acc",
@@ -16279,7 +16295,7 @@
           "weight": "1.76%"
         }
       ],
-      "holdingsNote": "Top ten of 251 holdings, from the HL factsheet on 27 Aug 2026."
+      "holdingsNote": "Top ten of 251 holdings, from the HL factsheet on 30 Aug 2026."
     }
   ],
   "auditLog": {
