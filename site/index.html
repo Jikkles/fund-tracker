@@ -41,11 +41,6 @@
 
   .mast { border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 24px; }
   h1 { font-size: clamp(32px,4vw,48px); line-height: 1.1; margin: 0; font-weight: 700; letter-spacing: -.02em; }
-  .stamp {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px; color: var(--ink-soft); margin-top: 16px;
-    display: flex; flex-wrap: wrap; gap: 8px 20px;
-  }
 
   .notadvice {
     background: var(--paper-2); border: 1px solid var(--rule);
@@ -107,12 +102,9 @@
 
   .controls {
     display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-    margin: 16px 0 24px; position: sticky; top: 74px;
-    background: rgba(15,23,42,.85);
-    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    padding: 16px 20px; z-index: 10;
+    margin: 16px 0 24px; padding: 16px 20px;
+    background: var(--paper-2);
     border: 1px solid var(--rule); border-radius: 14px;
-    box-shadow: 0 8px 32px rgba(0,0,0,.3);
   }
   #search {
     flex: 1; min-width: 220px;
@@ -650,7 +642,6 @@
 
     .mast { padding-bottom: 18px; margin-bottom: 18px; }
     h1 { font-size: clamp(26px, 7.5vw, 34px); line-height: 1.15; }
-    .stamp { font-size: 11.5px; gap: 6px 14px; margin-top: 12px; }
     h2 { font-size: 13px; letter-spacing: .08em; margin: 34px 0 8px; }
     p { font-size: 15.5px; }
     ul.clean li { font-size: 15px; padding-left: 22px; }
@@ -728,18 +719,8 @@
     .rec-name { font-size: 17px; }
     .rec-thesis { font-size: 14.5px; }
 
-    /* ---- directory controls ----
-       Not sticky on a phone. Even rebuilt down to three short rows it stood
-       ~170px, and a panel that size parked over the top fifth of the screen
-       reads as an obstruction while you scroll the list or a dossier - the
-       filters are not worth that much of a small screen. It scrolls away
-       with the rest of the page; the blur and the float shadow go with it,
-       since nothing passes underneath any more. */
-    .controls {
-      position: static; padding: 12px; gap: 10px; border-radius: 12px;
-      background: var(--paper-2); box-shadow: none;
-      backdrop-filter: none; -webkit-backdrop-filter: none;
-    }
+    /* ---- directory controls ---- */
+    .controls { padding: 12px; gap: 10px; border-radius: 12px; }
     /* 16px or iOS zooms the whole page in when the field takes focus. */
     #search { flex: 1 1 100%; min-width: 0; font-size: 16px; padding: 12px 14px; }
     /* flex-basis 0 on both, or the select's widest option sets the line's
@@ -855,7 +836,7 @@
             backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
             border-bottom: 1px solid var(--rule); }
   .topnav-in { max-width: 1440px; margin: 0 auto; padding: 9px 36px;
-               display: flex; align-items: center; gap: 24px; }
+               display: flex; align-items: center; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 10px; flex: 0 0 auto;
            text-decoration: none; color: var(--ink); }
   .brand svg { display: block; flex: 0 0 auto; }
@@ -869,9 +850,9 @@
               overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
   .navlinks::-webkit-scrollbar { display: none; }
   .navlinks a { flex: 0 0 auto; font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+                font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
                 color: var(--ink-soft); text-decoration: none; white-space: nowrap;
-                padding: 7px 13px; border-radius: 20px; border: 1px solid transparent;
+                padding: 7px 9px; border-radius: 20px; border: 1px solid transparent;
                 transition: color .12s, background .12s, border-color .12s; }
   .navlinks a:hover { color: var(--ink); background: var(--hover-bg); }
   .navlinks a.on { color: var(--blue); background: rgba(56,189,248,.12);
@@ -880,6 +861,11 @@
   .navstamp { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px;
               color: var(--ink-soft); line-height: 1.35; text-align: right; white-space: nowrap; }
   .navstamp b { display: block; font-weight: 400; color: var(--ink); }
+  /* The as-at line runs to about 110 characters. Only its date fits a nav
+     bar, so the value is trimmed to what is legible at this size and the
+     whole sentence stays on the title attribute. */
+  .navstamp.data { max-width: 240px; }
+  .navstamp.data b { overflow: hidden; text-overflow: ellipsis; }
   .navbtn { font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
             display: inline-flex; align-items: center; gap: 7px;
             background: transparent; color: var(--ink-soft);
@@ -887,13 +873,6 @@
             padding: 7px 15px; cursor: pointer; white-space: nowrap;
             transition: color .12s, border-color .12s, background .12s; }
   .navbtn:hover { color: var(--ink); border-color: var(--blue); background: var(--chip); }
-  /* Below about 1300px the eight sections stop fitting at full padding. They
-     tighten before the row starts scrolling, because a nav you have to swipe
-     to reach the last item of is a nav that hides where it can go. */
-  @media (max-width: 1320px) {
-    .topnav-in { gap: 16px; }
-    .navlinks a { padding: 7px 9px; font-size: 10px; letter-spacing: .06em; }
-  }
   /* Anchored jumps have to clear the sticky bar, or the heading lands under it. */
   .sec-anchor { scroll-margin-top: 84px; }
 
@@ -964,7 +943,36 @@
   .rank-grid.stack .pulse-row .pr-name { font-size: 14px; line-height: 1.3; }
   .rank-grid.stack .pulse-row .pr-perf { font-size: 13.5px; }
   .rank-grid.stack .pulse-row .pr-num { font-size: 13px; margin-right: 10px; min-width: 20px; }
-  .rank-grid.stack .pr-note { padding-left: 16px; }
+  /* ---- the floating "why it's moving" panel ----
+     Positioned from JS and taken out of flow entirely, so opening one cannot
+     reflow the list or restretch the chart sized against it. */
+  .rank-pop { position: absolute; z-index: 60;
+              width: min(340px, calc(100vw - 24px));
+              background: var(--paper-2); color: var(--ink);
+              border: 1px solid var(--hover-border); border-left: 3px solid var(--amber);
+              border-radius: 12px; padding: 16px 40px 16px 18px;
+              box-shadow: 0 18px 44px rgba(0,0,0,.55); }
+  .rank-pop[hidden] { display: none; }
+  .rank-pop-lab { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px;
+                  letter-spacing: .14em; text-transform: uppercase; color: var(--amber); }
+  .rank-pop-name { font-size: 15px; font-weight: 700; margin: 6px 0 8px; line-height: 1.3; }
+  .rank-pop-body { font-size: 14px; line-height: 1.6; color: var(--ink-soft);
+                   max-height: 52vh; overflow-y: auto; }
+  .rank-pop-x { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px;
+                display: grid; place-items: center; padding: 0; cursor: pointer;
+                background: transparent; border: none; border-radius: 6px;
+                color: var(--ink-soft); font-size: 12px; }
+  .rank-pop-x:hover { background: var(--hover-bg); color: var(--ink); }
+  /* On a phone the two columns are stacked and there is no "beside" left to
+     put it, so it becomes a sheet at the foot of the screen rather than a
+     panel dropped on top of the row you were reading. */
+  @media (max-width: 760px) {
+    .rank-pop { position: fixed !important;
+                left: 12px !important; right: 12px !important;
+                bottom: 12px !important; top: auto !important;
+                width: auto !important; }
+    .rank-pop-body { max-height: 40vh; }
+  }
   /* Four period buttons and a title have to share about 380px. At the desktop
      padding they do not, and the seg dropped onto a second line - 40px of
      empty head above a list that had just been condensed to save it. */
@@ -995,7 +1003,12 @@
     .topnav-in { padding: 8px 14px; gap: 12px; flex-wrap: wrap; }
     .brand small { display: none; }
     .navlinks { order: 3; flex: 1 0 100%; margin: 0 -14px; padding: 4px 14px 2px; }
+    /* Two provenance stamps and a button will not share a phone's nav row.
+       The market refresh time is also printed under the chart, so it is the
+       one that gives way; the fund data's as-at date is not repeated anywhere. */
     .navstamp { font-size: 9.5px; }
+    .navstamp:not(.data) { display: none; }
+    .navstamp.data { max-width: 150px; }
     .navbtn { padding: 7px 12px; font-size: 11px; }
     .sec-anchor { scroll-margin-top: 118px; }
     .kpis { grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
@@ -1031,6 +1044,7 @@
     <div class="navmeta">
       <span class="navstamp" id="navstamp">Last updated<b>—</b></span>
       <button class="navbtn" onclick="refreshNow()" title="Re-fetch funds.json without reloading the page">Refresh &#8635;</button>
+      <span class="navstamp data" id="datastamp">Data as at<b>&#8212;</b></span>
     </div>
   </div>
 </nav>
@@ -1038,7 +1052,6 @@
 <div class="wrap">
   <header class="mast sec-anchor" id="top">
     <h1 id="title">Fund Tracker</h1>
-    <div class="stamp" id="stamp"><span>Loading the latest research&#8230;</span></div>
   </header>
 
   <div class="notadvice">
@@ -1797,34 +1810,32 @@ function renderRanks(){
   const sectionHead = (label, colour) =>
     `<span style="color:${colour};font-weight:600">${label}</span>`;
 
-  // ── List item: shows num + name + perf; click to reveal full note
-  const listItem = (num, name, cat, perfStr, pNum, fullNote) => {
+  // ── List item: num + name + perf. The note opens in a floating panel
+  // rather than inside the row - see rankNote().
+  const listItem = (key, num, name, cat, perfStr, pNum, fullNote) => {
     const perfCol = pNum >= 0 ? 'var(--forest)' : 'var(--oxblood)';
-    const noteHtml = fullNote
-      ? `<div class="pr-note"><div class="pr-note-box"><div class="pr-note-lab">Why it's moving</div>${fullNote}</div></div>`
-      : '';
-    const toggle = fullNote
-      ? `onclick="this.parentElement.classList.toggle('open')"`
-      : '';
+    if(fullNote) RANK_NOTES[key] = { name: name, text: fullNote };
+    const toggle = fullNote ? ` onclick="rankNote(this,'${key}')"` : '';
     return `<div class="pulse-row${fullNote?' has-note':''}">
-      <div class="pr-head" ${toggle}>
+      <div class="pr-head"${toggle}>
         <span class="pr-num">${num}.</span>
         <span class="pr-name">${esc(name)}${cat?`<span class="pr-cat">${esc(cat)}</span>`:''}</span>
         <span class="pr-perf" style="color:${perfCol}">${esc(perfStr)}</span>
         ${fullNote?'<span class="pr-chev">▸</span>':''}
       </div>
-      ${noteHtml}
     </div>`;
   };
 
-  // Build top 5
+  // A repaint invalidates every key, and any open panel with them.
+  Object.keys(RANK_NOTES).forEach(k => delete RANK_NOTES[k]);
+  closeRankNote();
+
   let top5Items = top5.map(({f,p,s},i) =>
-    listItem(i+1, f.name, f.category, s, p, strip(f.whyNow||''))
+    listItem('t'+i, i+1, f.name, f.category, s, p, strip(f.whyNow||''))
   ).join('');
 
-  // Build bottom 5
   let bot5Items = bot5.map(({f,p,s},i) =>
-    listItem(i+1, f.name, f.category, s, p, strip(f.whyNow||''))
+    listItem('b'+i, i+1, f.name, f.category, s, p, strip(f.whyNow||''))
   ).join('');
 
   // Stacked, not side by side: the pair now shares the overview row with the
@@ -2666,6 +2677,113 @@ function renderNavStamp(){
   el.innerHTML = 'Last updated<b>' + esc(when) + '</b>';
 }
 
+/* ---------- ranking notes ----------
+   "Why it's moving" used to expand inside the row. In the narrow overview
+   column that is a 250px block of prose opening in the middle of a ten-row
+   list, and because the chart beside it is sized to this column's height, it
+   stretched the chart too. It now opens as a panel that takes no part in the
+   layout: preferred to the right of the ranking column, flipped to the left
+   when the window has no room there, and clamped into the viewport either
+   way so it can never widen the page. */
+const RANK_NOTES = {};
+let rankNoteOpen = null;
+
+function rankPopEl(){
+  let pop = document.getElementById('rankPop');
+  if(!pop){
+    pop = document.createElement('div');
+    pop.id = 'rankPop';
+    pop.className = 'rank-pop';
+    pop.hidden = true;
+    document.body.appendChild(pop);
+  }
+  return pop;
+}
+
+function closeRankNote(){
+  const pop = document.getElementById('rankPop');
+  if(pop) pop.hidden = true;
+  document.querySelectorAll('#ranks .pulse-row.open').forEach(r => r.classList.remove('open'));
+  rankNoteOpen = null;
+}
+
+function rankNote(head, key){
+  const note = RANK_NOTES[key];
+  if(!note) return;
+  if(rankNoteOpen === key){ closeRankNote(); return; }
+  closeRankNote();
+
+  const pop = rankPopEl();
+  pop.innerHTML = '<div class="rank-pop-lab">Why it\'s moving</div>'
+                + '<div class="rank-pop-name">' + esc(note.name) + '</div>'
+                + '<div class="rank-pop-body">' + esc(note.text) + '</div>'
+                + '<button class="rank-pop-x" onclick="closeRankNote()" aria-label="Close">&#10005;</button>';
+  pop.hidden = false;
+  head.parentElement.classList.add('open');
+  rankNoteOpen = key;
+  placeRankNote(head);
+}
+
+function placeRankNote(head){
+  const pop = document.getElementById('rankPop');
+  const ranks = document.getElementById('ranks');
+  if(!pop || pop.hidden || !ranks) return;
+  // Below 760px the stylesheet pins it to the foot of the screen instead.
+  if(window.matchMedia('(max-width: 760px)').matches){ pop.style.left = pop.style.top = ''; return; }
+  const col = ranks.getBoundingClientRect();
+  const row = head.getBoundingClientRect();
+  const vw = document.documentElement.clientWidth;
+  const w = pop.offsetWidth, h = pop.offsetHeight;
+  const M = 12;
+
+  // Right of the column by preference; left of it when that would overflow.
+  let left = col.right + 14;
+  if(left + w > vw - M) left = col.left - 14 - w;
+  if(left < M) left = Math.max(M, vw - w - M);
+
+  // Top-aligned with its row, nudged up only far enough to stay on screen.
+  let top = row.top;
+  if(top + h > window.innerHeight - M) top = window.innerHeight - h - M;
+  if(top < M) top = M;
+
+  pop.style.left = Math.round(left + window.scrollX) + 'px';
+  pop.style.top  = Math.round(top + window.scrollY) + 'px';
+}
+
+// A click anywhere else closes it, as does Escape. Scrolling or resizing
+// re-places it against the row it belongs to rather than leaving it stranded.
+document.addEventListener('click', function(e){
+  if(!rankNoteOpen) return;
+  if(e.target.closest('#rankPop') || e.target.closest('#ranks .pr-head')) return;
+  closeRankNote();
+});
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeRankNote(); });
+['scroll','resize'].forEach(function(ev){
+  window.addEventListener(ev, function(){
+    if(!rankNoteOpen) return;
+    const head = document.querySelector('#ranks .pulse-row.open .pr-head');
+    if(head) placeRankNote(head); else closeRankNote();
+  }, {passive:true});
+});
+
+/* ---------- render: the as-at stamp ----------
+   meta.asAt leads with a date and then qualifies it - "31 Aug 2026 (automated
+   deterministic run); 67 of 70 funds priced from their own NAV". Only the date
+   fits a nav bar, so the qualifier becomes the tooltip rather than being
+   dropped, and the profiled count rides alongside it. */
+function renderDataStamp(){
+  const el = document.getElementById('datastamp');
+  if(!el || !DATA || !DATA.meta) return;
+  const asAt  = DATA.meta.asAt || '';
+  const date  = (asAt.split(/[(;]/)[0] || '').trim().replace(/[,·\s]+$/, '') || asAt;
+  const n     = (DATA.funds || []).length;
+  const total = DATA.meta.listTotal;
+  const count = total ? n + ' of ' + total + ' profiled' : (n ? n + ' profiled' : '');
+  el.title = [asAt ? 'Data as at ' + asAt : '',
+              total ? n + ' profiled of ' + total + ' on the list' : ''].filter(Boolean).join(' · ');
+  el.innerHTML = 'Data as at<b>' + esc([date, count].filter(Boolean).join(' · ')) + '</b>';
+}
+
 /* ---------- nav: which section am I in ----------
    Ordered down the page, so the last section whose top has passed under the
    bar is the current one. A hidden section has no offsetParent and is skipped,
@@ -2696,12 +2814,7 @@ window.addEventListener('scroll', () => {
 function renderAll(){
   if(!DATA){ return; }
   document.getElementById('loader').classList.add('hide');
-  if(DATA.meta){
-    const s=[]; if(DATA.meta.asAt) s.push(`Data as at ${DATA.meta.asAt}`);
-    if(DATA.meta.listTotal) s.push(`${(DATA.funds||[]).length} profiled of ${DATA.meta.listTotal} on the list`);
-    if(DATA.meta.sources) s.push(`Sources: ${DATA.meta.sources}`);
-    document.getElementById('stamp').innerHTML = s.map(x=>`<span>${x}</span>`).join('');
-  }
+  renderDataStamp();
   renderNavStamp();
   renderKpis();
   renderRanks();
@@ -2712,8 +2825,10 @@ function renderAll(){
   document.getElementById('directory').style.display = (DATA.funds&&DATA.funds.length)?'block':'none';
   renderList();
   const cav = (DATA.meta&&DATA.meta.caveats)||[];
+  const src = DATA.meta && DATA.meta.sources;
   document.getElementById('footer').innerHTML =
     `Fund Tracker · Research Desk · Accumulation classes${DATA.meta&&DATA.meta.built?` · built ${DATA.meta.built}`:''}<br>`+
+    (src?`<br>Sources: ${src}<br><br>`:'')+
     `Charges shown are HL net ongoing (after loyalty saving). Loyalty bonuses are tax-free in an ISA/SIPP but may be taxable in a Fund &amp; Share Account.`+
     (cav.length?`<br><br>`+cav.map(c=>'· '+c).join('<br>'):'');
   scrollSpy();
