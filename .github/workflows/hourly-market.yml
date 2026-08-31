@@ -1,16 +1,30 @@
 name: Hourly market refresh
 
 # Redraws the index chart at the top of the page without touching the fund
-# data. Weekday market hours only: 07:17-22:17 UTC covers the LSE open through
-# the US close, and skips the overnight and weekend hours where an extra run
-# would re-fetch numbers that have not moved.
+# data. Four weekday fires, not sixteen: 08:17 after the LSE open, 13:17 just
+# before the US open, 17:17 through the US afternoon, and 21:17 after the US
+# close. Overnight and weekend hours are skipped, where a run would re-fetch
+# numbers that have not moved.
 #
-# The :17 is deliberate. GitHub's scheduler is best-effort and the top of the
-# hour is its busiest slot, so an off-peak minute drifts less.
+# It asked for every hour from 07:17 to 22:17 until 31 Aug 2026. That did not
+# survive contact with GitHub's scheduler, which is best-effort and sheds
+# scheduled runs under load: over the six days to 31 Aug, roughly 80 requested
+# fires produced 11 actual runs - several of them hours outside the requested
+# window, and a two-day gap with none at all. Asking for less gets more. A
+# handful of fires a day stands a far better chance of each being honoured
+# than a queue of sixteen that mostly evaporates, and the chart is fresher for
+# it despite the smaller number on the cron line.
+#
+# The :17 is deliberate. The top of the hour is the scheduler's busiest slot,
+# so an off-peak minute drifts less.
+#
+# This schedule is still best-effort and is not a clock. Nothing here is
+# load-bearing - a dropped run means the chart is a few hours stale, not
+# wrong. When a particular refresh matters, dispatch it by hand.
 
 on:
   schedule:
-    - cron: "17 7-22 * * 1-5"
+    - cron: "17 8,13,17,21 * * 1-5"
   workflow_dispatch:
 
 permissions:
