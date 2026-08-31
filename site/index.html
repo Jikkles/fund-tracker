@@ -920,7 +920,12 @@
   @media (max-width: 1080px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
   /* ---- overview row: chart | ranking pair ---- */
-  .ov-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  /* The ranking pair is a list of ten short rows and needs roughly 30% to
+     read; the chart is the thing that gets better with every pixel, so it
+     takes the rest. Clamped rather than a bare fraction because below about
+     340px the fund names start wrapping, and above 430px the column is just
+     padding around a figure. */
+  .ov-grid { display: grid; grid-template-columns: minmax(0, 1fr) clamp(360px, 30%, 430px);
              gap: 18px; align-items: start; margin: 0 0 22px; }
   .ov-grid .mkt { margin: 0; }
   /* Both tracks are minmax(0,…) and both items clear their auto minimum: a
@@ -960,6 +965,11 @@
   .rank-grid.stack .pulse-row .pr-perf { font-size: 13.5px; }
   .rank-grid.stack .pulse-row .pr-num { font-size: 13px; margin-right: 10px; min-width: 20px; }
   .rank-grid.stack .pr-note { padding-left: 16px; }
+  /* Four period buttons and a title have to share about 380px. At the desktop
+     padding they do not, and the seg dropped onto a second line - 40px of
+     empty head above a list that had just been condensed to save it. */
+  .rank-grid.stack .rank-head .seg button { padding: 5px 10px; font-size: 11.5px; }
+  .rank-grid.stack .rank-title { font-size: 11.5px; letter-spacing: .03em; }
   /* The category line, sized here rather than inline so the row can be
      condensed without the markup fighting the stylesheet. */
   .pr-cat { display: block; font-size: 11px; font-weight: 400; line-height: 1.35;
@@ -1474,6 +1484,22 @@ window.addEventListener('resize', function(){
   clearTimeout(mktResizeTimer);
   mktResizeTimer = setTimeout(function(){ if(MKT) renderChart(); }, 150);
 });
+
+/* Re-fit whenever the ranking column's height moves. Drawing the chart changes
+   the chart card's height and nothing else, so this settles in one pass rather
+   than feeding back into itself. */
+(function(){
+  const ranks = document.getElementById('ranks');
+  if(!ranks || !window.ResizeObserver) return;
+  let lastH = 0, fitTimer = null;
+  new ResizeObserver(function(){
+    const h = Math.round(ranks.offsetHeight);
+    if(h === lastH) return;
+    lastH = h;
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(function(){ if(MKT) renderChart(); }, 60);
+  }).observe(ranks);
+})();
 
 /* ---------- helpers ---------- */
 const esc = s => (s==null?'':String(s));
