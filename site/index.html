@@ -37,14 +37,9 @@
     -webkit-font-smoothing: antialiased;
     line-height: 1.6;
   }
-  .wrap { max-width: 1440px; margin: 0 auto; padding: 40px 36px 90px; }
+  .wrap { max-width: 1440px; margin: 0 auto; padding: 26px 36px 90px; }
 
   .mast { border-bottom: 1px solid var(--rule); padding-bottom: 24px; margin-bottom: 24px; }
-  .eyebrow {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 12px; letter-spacing: .15em; text-transform: uppercase;
-    color: var(--blue); margin: 0 0 12px; font-weight: 600;
-  }
   h1 { font-size: clamp(32px,4vw,48px); line-height: 1.1; margin: 0; font-weight: 700; letter-spacing: -.02em; }
   .stamp {
     font-family: "JetBrains Mono", ui-monospace, monospace;
@@ -82,13 +77,6 @@
   .btn.ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); margin-left: 8px; }
   .btn.ghost:hover { color: var(--ink); border-color: var(--ink); background: rgba(248,250,252,.05); box-shadow: none; }
 
-  .databar {
-    font-family: "JetBrains Mono", ui-monospace, monospace;
-    font-size: 13px; color: var(--ink-soft);
-    display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; margin: 16px 0 0;
-  }
-  .databar .ok { color: var(--forest); font-weight: 600; }
-
   h2 {
     font-size: 15px; font-family: "JetBrains Mono", ui-monospace, monospace;
     letter-spacing: .1em; text-transform: uppercase;
@@ -108,7 +96,6 @@
   .win { color: var(--forest); font-weight: 600; }
   .lose { color: var(--oxblood); font-weight: 600; }
 
-  .tldr { background: transparent; margin: 24px 0; }
   .cat-block { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px; padding: 20px 24px; margin: 16px 0; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
   .cat-block h3 { font-size: 20px; margin: 6px 0 12px; font-weight: 600; }
   .datechip {
@@ -120,7 +107,7 @@
 
   .controls {
     display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
-    margin: 16px 0 24px; position: sticky; top: 16px;
+    margin: 16px 0 24px; position: sticky; top: 74px;
     background: rgba(15,23,42,.85);
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     padding: 16px 20px; z-index: 10;
@@ -368,7 +355,6 @@
   .rec-open { display: block; margin-top: 8px; font-family: "Inter", sans-serif; font-size: 11px;
               font-weight: 600; color: var(--ink-soft); }
   .rec-card:hover .rec-open, .rec-card:focus-visible .rec-open { color: var(--blue); }
-  .rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 16px; }
   .rec-card {
     background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px;
     padding: 24px 20px; position: relative; transition: all .2s ease;
@@ -663,7 +649,6 @@
     .list-more button { width: 100%; padding: 14px 22px; font-size: 14px; }
 
     .mast { padding-bottom: 18px; margin-bottom: 18px; }
-    .eyebrow { font-size: 10.5px; letter-spacing: .12em; margin-bottom: 10px; }
     h1 { font-size: clamp(26px, 7.5vw, 34px); line-height: 1.15; }
     .stamp { font-size: 11.5px; gap: 6px 14px; margin-top: 12px; }
     h2 { font-size: 13px; letter-spacing: .08em; margin: 34px 0 8px; }
@@ -671,7 +656,6 @@
     ul.clean li { font-size: 15px; padding-left: 22px; }
 
     .notadvice { font-size: 13.5px; line-height: 1.55; padding: 14px 16px; margin: 18px 0; border-radius: 10px; }
-    .databar { font-size: 12px; gap: 8px 14px; }
     .loader { padding: 24px 16px; }
     .btn { padding: 12px 22px; }
     .btn.ghost { margin-left: 0; margin-top: 8px; }
@@ -854,14 +838,207 @@
     .wrap { padding-left: 12px; padding-right: 12px; }
     .fname { font-size: 16px; }
   }
+
+  /* ============================================================
+     DESK SHELL
+     The overview reads top-down as: what the desk holds (KPI strip),
+     what moved today (chart beside the ranking pair), why it moved
+     (headlines, with the health caveat attached under them), then the
+     analysis and finally the funds themselves. The chart and the
+     ranking sit side by side because they answer the same question
+     from two directions and were a full screen apart when stacked.
+     ============================================================ */
+
+  /* ---- desk nav ---- */
+  .topnav { position: sticky; top: 0; z-index: 40;
+            background: rgba(15,23,42,.9);
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--rule); }
+  .topnav-in { max-width: 1440px; margin: 0 auto; padding: 9px 36px;
+               display: flex; align-items: center; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 10px; flex: 0 0 auto;
+           text-decoration: none; color: var(--ink); }
+  .brand svg { display: block; flex: 0 0 auto; }
+  .brand b     { display: block; font-size: 14.5px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+  .brand small { display: block; font-family: "JetBrains Mono", ui-monospace, monospace;
+                 font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-soft); }
+
+  /* The link row scrolls rather than wraps: a nav that changes height as the
+     window narrows drags every sticky offset under it out of true. */
+  .navlinks { display: flex; align-items: center; gap: 2px; min-width: 0;
+              overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+  .navlinks::-webkit-scrollbar { display: none; }
+  .navlinks a { flex: 0 0 auto; font-family: "JetBrains Mono", ui-monospace, monospace;
+                font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+                color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+                padding: 7px 13px; border-radius: 20px; border: 1px solid transparent;
+                transition: color .12s, background .12s, border-color .12s; }
+  .navlinks a:hover { color: var(--ink); background: var(--hover-bg); }
+  .navlinks a.on { color: var(--blue); background: rgba(56,189,248,.12);
+                   border-color: rgba(56,189,248,.42); }
+  .navmeta { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; margin-left: auto; }
+  .navstamp { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px;
+              color: var(--ink-soft); line-height: 1.35; text-align: right; white-space: nowrap; }
+  .navstamp b { display: block; font-weight: 400; color: var(--ink); }
+  .navbtn { font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 7px;
+            background: transparent; color: var(--ink-soft);
+            border: 1px solid var(--rule); border-radius: 20px;
+            padding: 7px 15px; cursor: pointer; white-space: nowrap;
+            transition: color .12s, border-color .12s, background .12s; }
+  .navbtn:hover { color: var(--ink); border-color: var(--blue); background: var(--chip); }
+  /* Below about 1300px the eight sections stop fitting at full padding. They
+     tighten before the row starts scrolling, because a nav you have to swipe
+     to reach the last item of is a nav that hides where it can go. */
+  @media (max-width: 1320px) {
+    .topnav-in { gap: 16px; }
+    .navlinks a { padding: 7px 9px; font-size: 10px; letter-spacing: .06em; }
+  }
+  /* Anchored jumps have to clear the sticky bar, or the heading lands under it. */
+  .sec-anchor { scroll-margin-top: 84px; }
+
+  /* ---- KPI strip ---- */
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 16px; margin: 22px 0; }
+  .kpis:empty { display: none; }
+  .kpi { display: flex; align-items: flex-start; gap: 14px;
+         background: var(--paper-2); border: 1px solid var(--rule); border-radius: 14px;
+         padding: 18px 20px; text-decoration: none; color: inherit;
+         box-shadow: 0 4px 12px rgba(0,0,0,.12);
+         transition: border-color .15s, transform .15s, box-shadow .15s; }
+  a.kpi:hover { border-color: var(--hover-border); transform: translateY(-3px);
+                box-shadow: 0 12px 28px rgba(0,0,0,.3); }
+  .kpi-ico { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 11px;
+             display: grid; place-items: center; background: var(--chip); }
+  .kpi-body { min-width: 0; }
+  .kpi-lab { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px;
+             letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  .kpi-val { font-size: 30px; font-weight: 700; letter-spacing: -.025em;
+             line-height: 1.15; margin-top: 5px; }
+  .kpi-sub { font-size: 12px; color: var(--ink-soft); margin-top: 3px;
+             overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  @media (max-width: 1080px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  /* ---- overview row: chart | ranking pair ---- */
+  .ov-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+             gap: 18px; align-items: start; margin: 0 0 22px; }
+  .ov-grid .mkt { margin: 0; }
+  /* Both tracks are minmax(0,…) and both items clear their auto minimum: a
+     grid item defaults to min-width:auto, and the chart card's tab strip has a
+     min-content width of about 1,100px, which pushed the whole page sideways
+     on a phone before the column was allowed to be narrower than its content. */
+  .ov-grid > * { min-width: 0; }
+  @media (max-width: 1080px) { .ov-grid { grid-template-columns: minmax(0, 1fr); } }
+
+  /* The index label stays put while the tabs scroll past it, so the strip
+     still says what it is once you have swiped off "FTSE 100". */
+  .mkt-tabwrap { display: flex; align-items: stretch; background: rgba(0,0,0,.15);
+                 border-bottom: 1px solid var(--rule); }
+  .mkt-tabwrap .mkt-tabs { flex: 1 1 auto; min-width: 0; border-bottom: none; background: transparent; }
+  .mkt-tablab { flex: 0 0 auto; display: flex; align-items: center;
+                font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px;
+                letter-spacing: .13em; text-transform: uppercase; color: var(--ink-soft);
+                padding: 0 14px; border-right: 1px solid var(--rule); }
+  @media (max-width: 900px) { .mkt-tablab { display: none; } }
+
+  /* ---- ranking pair, stacked in the right-hand column ---- */
+  .rank-grid.stack { grid-template-columns: 1fr; border-radius: 12px; }
+  .rank-grid.stack > .rank-a { border-right: none; }
+  .rank-grid.stack .rank-head.rank-a { order: 1; }
+  .rank-grid.stack .rank-list.rank-a { order: 2; }
+  .rank-grid.stack .rank-head.rank-b { order: 3; border-top: 1px solid var(--rule); }
+  .rank-grid.stack .rank-list.rank-b { order: 4; }
+  .rank-grid.stack .rank-head { min-height: 0; flex-wrap: wrap; }
+  .rank-grid.stack .rank-title { white-space: normal; overflow: visible; }
+  .rank-grid.stack .rank-controls { margin-left: auto; }
+  /* A 42%-wide column cannot spare the desktop row padding. */
+  .rank-grid.stack .pulse-box-head { padding: 12px 16px; font-size: 12px; }
+  .rank-grid.stack .pr-head { padding: 10px 16px; }
+  .rank-grid.stack .pulse-row .pr-name { font-size: 14.5px; }
+  .rank-grid.stack .pulse-row .pr-perf { font-size: 14px; }
+  .rank-grid.stack .pr-note { padding-left: 16px; }
+
+  /* ---- headlines + health, one block ---- */
+  .newsbox { border: 1px solid var(--rule); border-radius: 12px; }
+  #health .health { margin: 14px 0 0; }
+
+  /* ---- watchlist rail ----
+     Eight cards as a wrapped grid pushed the funds directory a screen and a
+     half down. As a rail the row keeps one card's height and the arrow says
+     there is more to the right, which a wrapped grid never did. */
+  .rec-rail { position: relative; margin-top: 16px; }
+  .rec-grid { display: flex; gap: 20px; margin: 0; overflow-x: auto;
+              scroll-snap-type: x proximity; scroll-behavior: smooth;
+              padding: 6px 2px 16px; scrollbar-width: none; -ms-overflow-style: none; }
+  .rec-grid::-webkit-scrollbar { display: none; }
+  .rec-grid > .rec-card { flex: 0 0 clamp(238px, calc((100% - 60px) / 4), 360px);
+                          scroll-snap-align: start; }
+  .rec-arrow { position: absolute; top: 50%; transform: translateY(-50%);
+               width: 38px; height: 38px; border-radius: 50%; z-index: 5;
+               display: grid; place-items: center; cursor: pointer; padding: 0;
+               background: var(--paper-2); color: var(--ink);
+               border: 1px solid var(--hover-border);
+               box-shadow: 0 6px 18px rgba(0,0,0,.45);
+               transition: background .12s, color .12s, border-color .12s; }
+  .rec-arrow:hover { background: var(--blue); color: var(--paper); border-color: var(--blue); }
+  .rec-arrow.prev { left: -14px; }
+  .rec-arrow.next { right: -14px; }
+  /* Hidden at each end of the rail rather than left sitting there dead. */
+  .rec-arrow[hidden] { display: none; }
+  /* openFund scrolls a card to the top of the viewport, which is under the
+     sticky bar unless the card reserves the same room the anchors do. */
+  .fund { scroll-margin-top: 84px; }
+  @media (max-width: 760px) { .rec-arrow { display: none; } }
+
+  /* ---- mobile shell ---- */
+  @media (max-width: 760px) {
+    .topnav-in { padding: 8px 14px; gap: 12px; flex-wrap: wrap; }
+    .brand small { display: none; }
+    .navlinks { order: 3; flex: 1 0 100%; margin: 0 -14px; padding: 4px 14px 2px; }
+    .navstamp { font-size: 9.5px; }
+    .navbtn { padding: 7px 12px; font-size: 11px; }
+    .sec-anchor { scroll-margin-top: 118px; }
+    .kpis { grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
+    .kpi { padding: 14px 16px; }
+    .kpi-val { font-size: 26px; }
+    .ov-grid { gap: 14px; margin-bottom: 16px; }
+    .rec-grid > .rec-card { flex: 0 0 84%; }
+  }
 </style>
 </head>
 <body>
+<!-- DESK NAV — the section links are plain anchors so the page still works
+     with scripting off; scrollSpy() only decorates which one is current. -->
+<nav class="topnav">
+  <div class="topnav-in">
+    <a class="brand" href="#top">
+      <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#38bdf8" opacity=".14"/>
+        <g fill="#38bdf8"><rect x="15" y="17" width="6" height="30"/><rect x="15" y="17" width="15" height="6"/><rect x="15" y="29" width="12" height="5"/><rect x="34" y="17" width="15" height="6"/><rect x="38.5" y="17" width="6" height="30"/></g>
+      </svg>
+      <span><b>Fund Tracker</b><small>Research desk</small></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="#top">Overview</a>
+      <a href="#markets">Markets</a>
+      <a href="#newsbox">In the markets</a>
+      <a href="#health">Data health</a>
+      <a href="#intelligence">Intelligence</a>
+      <a href="#watchlist">Watchlist</a>
+      <a href="#directory">Funds</a>
+      <a href="#footer">About</a>
+    </div>
+    <div class="navmeta">
+      <span class="navstamp" id="navstamp">Last updated<b>—</b></span>
+      <button class="navbtn" onclick="refreshNow()" title="Re-fetch funds.json without reloading the page">Refresh &#8635;</button>
+    </div>
+  </div>
+</nav>
+
 <div class="wrap">
-  <header class="mast">
-    <p class="eyebrow">Fund Tracker · Research Desk · Accumulation classes</p>
-    <h1 id="title">The whole list — full factsheet depth.</h1>
-    <div class="stamp" id="stamp"><span>Loading the latest research…</span></div>
+  <header class="mast sec-anchor" id="top">
+    <h1 id="title">Fund Tracker</h1>
+    <div class="stamp" id="stamp"><span>Loading the latest research&#8230;</span></div>
   </header>
 
   <div class="notadvice">
@@ -876,20 +1053,24 @@
     <p id="loaderMsg">The page couldn't reach <code>funds.json</code>. That is usually a temporary network problem — try again in a moment.</p>
     <button class="btn" onclick="location.reload()">Retry</button>
   </div>
-  <div class="databar" id="databar"></div>
 
-  <!-- INDEX CHART — rendered from market.json, which is fetched separately from
-       funds.json so a market-data outage cannot take the fund desk down with it. -->
-  <div id="marketchart"></div>
+  <!-- HEADLINE FIGURES — four counts that frame everything below them. -->
+  <div class="kpis" id="kpis"></div>
 
-  <!-- INTRO (rendered from data) -->
-  <div id="intro"></div>
+  <!-- OVERVIEW ROW — the index chart beside the day's ranking pair. The chart
+       is rendered from market.json, fetched separately from funds.json so a
+       market-data outage cannot take the fund desk down with it. -->
+  <div class="ov-grid sec-anchor" id="markets">
+    <div id="marketchart"></div>
+    <div id="ranks"></div>
+  </div>
 
-  <!-- DATA HEALTH (rendered from auditLog + live checks) -->
-  <div id="health"></div>
+  <!-- HEADLINES, with the health caveat attached directly underneath -->
+  <div class="pulse-box newsbox sec-anchor" id="newsbox"></div>
+  <div id="health" class="sec-anchor"></div>
 
   <!-- INTELLIGENCE PANEL — computed from all loaded funds -->
-  <div id="intelligence" style="display:none">
+  <div id="intelligence" class="sec-anchor" style="display:none">
     <h2>Market intelligence &#8212; across all regions</h2>
     <div class="h2-rule"></div>
     <div class="intel-section">
@@ -897,15 +1078,19 @@
       <div id="intelPanels"></div>
     </div>
 
-    <h2 style="margin-top:36px">6&#8211;12 month watchlist &#8212; top 8 from all research</h2>
+    <h2 style="margin-top:36px" class="sec-anchor" id="watchlist">6&#8211;12 month watchlist &#8212; top 8 from all research</h2>
     <div class="h2-rule"></div>
     <p style="font-size:15px;color:var(--ink-soft);margin:0 0 14px">Scored on 1yr performance vs sector, badge signal, and quality of <em>whyNow</em> thesis. Not advice &#8212; do your own due diligence before acting.</p>
-    <div class="rec-grid" id="recGrid"></div>
+    <div class="rec-rail">
+      <button class="rec-arrow prev" id="recPrev" onclick="recScroll(-1)" aria-label="Scroll watchlist left">&#8249;</button>
+      <div class="rec-grid" id="recGrid"></div>
+      <button class="rec-arrow next" id="recNext" onclick="recScroll(1)" aria-label="Scroll watchlist right">&#8250;</button>
+    </div>
   </div>
 
   <!-- DIRECTORY -->
-  <div id="directory" style="display:none">
-    <h2>The funds — click any to expand</h2>
+  <div id="directory" class="sec-anchor" style="display:none">
+    <h2>The funds &#8212; click any to expand</h2>
     <div class="h2-rule"></div>
     <div class="controls">
       <input id="search" type="text" placeholder="Search fund, manager or holding…" aria-label="Search">
@@ -931,9 +1116,8 @@
     <div id="list"></div>
   </div>
 
-  <footer id="footer"></footer>
+  <footer id="footer" class="sec-anchor"></footer>
 </div>
-
 <script>
 "use strict";
 const LS_KEY = "wsl_funds_data_v1";
@@ -982,8 +1166,8 @@ function fetchLatest(){
 
 // Manual refresh from the data bar - re-fetches without a full page reload.
 function refreshNow(){
-  const bar = document.getElementById('databar');
-  if(bar) bar.innerHTML = '<span>Refreshing…</span>';
+  const bar = document.getElementById('navstamp');
+  if(bar) bar.innerHTML = 'Last updated<b>refreshing…</b>';
   fetchLatest()
     .then(obj => loadFromObject(obj, 'fetch'))
     .catch(() => { renderAll(); showLoadError("Refresh failed — still showing the data already on screen."); });
@@ -1028,7 +1212,7 @@ const MKT_RANGES = [
 function fetchMarket(){
   return fetch('market.json?t=' + Date.now(), {cache:'no-store'})
     .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
-    .then(obj => { MKT = obj; renderChart(); renderNews(); })
+    .then(obj => { MKT = obj; renderChart(); renderNews(); renderNavStamp(); })
     .catch(() => { /* the chart is additive - the desk stands without it */ });
 }
 
@@ -1217,7 +1401,8 @@ function renderChart(){
 
   el.innerHTML =
   '<div class="mkt">'
-  + '<div class="mkt-tabs">' + tabs + '</div>'
+  + '<div class="mkt-tabwrap"><span class="mkt-tablab">Market indices</span>'
+  +   '<div class="mkt-tabs">' + tabs + '</div></div>'
   + '<div class="mkt-head"><div>'
   +   '<div class="mkt-name">' + esc(idx.label) + ' <span class="mkt-tick">' + esc(idx.ticker) + '</span></div>'
   +   '<div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:8px">'
@@ -1286,7 +1471,7 @@ function mktSetRange(k){ mktRange = k; renderChart(); }
 
 window.addEventListener('resize', function(){
   clearTimeout(mktResizeTimer);
-  mktResizeTimer = setTimeout(function(){ if(MKT) renderChart(); }, 150);
+  mktResizeTimer = setTimeout(function(){ if(MKT) renderChart(); recArrows(); }, 150);
 });
 
 /* ---------- helpers ---------- */
@@ -1555,11 +1740,11 @@ function setRankPeriod(k){
   rankPeriod = k;
   // "vs sector" has no meaning outside the researched 1yr figures.
   if(k !== 'nav1yr') rankMode = 'abs';
-  renderIntro();
+  renderRanks();
 }
 
-function renderIntro(){
-  const el = document.getElementById('intro');
+function renderRanks(){
+  const el = document.getElementById('ranks');
   if(!DATA || !DATA.funds || !DATA.funds.length){ el.innerHTML=''; return; }
 
   let _introIdSeq = 0;
@@ -1623,9 +1808,10 @@ function renderIntro(){
     listItem(i+1, f.name, f.category, s, p, strip(f.whyNow||''))
   ).join('');
 
+  // Stacked, not side by side: the pair now shares the overview row with the
+  // index chart, so it gets roughly a third of the width rather than all of it.
   el.innerHTML = `
-  <div class="tldr" style="margin:20px 0;padding:0">
-    <div class="rank-grid">
+    <div class="rank-grid stack">
       <div class="pulse-box-head rank-head rank-a" style="color:var(--forest);border-bottom:2px solid var(--forest)">
           <span class="rank-title">Top 5 ${rel?'vs sector':'performers'} — ${ranked.length} priced</span>
           <span class="rank-controls">
@@ -1633,8 +1819,8 @@ function renderIntro(){
               ${RANK_PERIODS.map(x=>`<button ${x.k===period.k?'class="on"':''} onclick="setRankPeriod('${x.k}')">${x.label}</button>`).join('')}
             </span>
             ${period.k==='nav1yr' ? `<span class="seg">
-              <button ${rankMode==='abs'?'class="on"':''} onclick="rankMode='abs';renderIntro()">Absolute</button>
-              <button ${rankMode==='rel'?'class="on"':''} onclick="rankMode='rel';renderIntro()">vs sector</button>
+              <button ${rankMode==='abs'?'class="on"':''} onclick="rankMode='abs';renderRanks()">Absolute</button>
+              <button ${rankMode==='rel'?'class="on"':''} onclick="rankMode='rel';renderRanks()">vs sector</button>
             </span>` : ''}
           </span>
       </div>
@@ -1643,10 +1829,7 @@ function renderIntro(){
       </div>
       <div class="rank-list rank-a">${top5Items}</div>
       <div class="rank-list rank-b">${bot5Items}</div>
-    </div>
-    <div class="pulse-box" id="newsbox" style="border:1px solid var(--rule);border-top:none;border-radius:0 0 12px 12px"></div>
-  </div>`;
-  renderNews();
+    </div>`;
 }
 
 /* ---------- render: headlines by market ----------
@@ -2085,6 +2268,8 @@ function renderRecommendations(funds){
       <span class="rec-open">Open full factsheet ▸</span>
     </div>`;
   }).join('');
+  grid.scrollLeft = 0;
+  recArrows();
 }
 
 /* ---------- render: filters ---------- */
@@ -2392,21 +2577,141 @@ function openFund(fid){
   }
 }
 
+/* ---------- render: headline figures ----------
+   Four counts in the order the desk is read: how much is covered, how it has
+   done, what is on the shortlist, and what is leading it. Each card links to
+   the section that shows its working, so the strip is a table of contents as
+   well as a summary. */
+const KPI_ICONS = {
+  funds: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17.5" r="2.2"/><circle cx="12" cy="8.5" r="2.2"/><circle cx="18.5" cy="14" r="2.2"/><path d="M7.3 15.7 10.3 10.4M13.6 9.9l3.4 2.9"/></svg>',
+  trend: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17.5 9 11.5 13 15.5 21 6.5"/><polyline points="15.5 6.5 21 6.5 21 12"/></svg>',
+  star:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(245,158,11,.22)" stroke="var(--amber)" stroke-width="1.7" stroke-linejoin="round"><polygon points="12 3.2 14.7 8.8 20.8 9.7 16.4 14 17.5 20.1 12 17.2 6.5 20.1 7.6 14 3.2 9.7 9.3 8.8 12 3.2"/></svg>',
+  best:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.9"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="var(--forest)"/></svg>'
+};
+
+function renderKpis(){
+  const el = document.getElementById('kpis');
+  if(!el) return;
+  if(!DATA || !DATA.funds || !DATA.funds.length){ el.innerHTML = ''; return; }
+  const funds = DATA.funds;
+
+  // Every figure here is drawn from the same getPerf1 the rest of the page
+  // ranks on, so the strip cannot disagree with the list underneath it.
+  const priced = funds.map(f => ({f, p: parsePerf(getPerf1(f))})).filter(x => x.p !== null);
+  const avg  = priced.length ? priced.reduce((s,x) => s + x.p, 0) / priced.length : null;
+  const best = priced.length ? priced.reduce((a,b) => b.p > a.p ? b : a) : null;
+  const total = (DATA.meta && DATA.meta.listTotal) || funds.length;
+  const watchN = Math.min(8, priced.length);
+
+  const card = (href, click, ico, lab, val, col, sub, tip) =>
+    `<a class="kpi" href="${href}"${click ? ` onclick="${click}"` : ''} title="${esc(tip)}">
+       <div class="kpi-ico">${ico}</div>
+       <div class="kpi-body">
+         <div class="kpi-lab">${esc(lab)}</div>
+         <div class="kpi-val"${col ? ` style="color:${col}"` : ''}>${esc(val)}</div>
+         <div class="kpi-sub">${esc(sub)}</div>
+       </div>
+     </a>`;
+
+  el.innerHTML = [
+    card('#directory', '', KPI_ICONS.funds, 'Funds tracked',
+         String(funds.length), '', `of ${total} on the list`,
+         'Jump to the full fund directory'),
+    card('#intelligence', '', KPI_ICONS.trend, 'Avg 1yr performance',
+         avg === null ? '—' : (avg > 0 ? '+' : '') + avg.toFixed(1) + '%',
+         perfColor(avg), `across ${priced.length} priced funds`,
+         'Mean 1yr return of every fund with a priced figure'),
+    card('#watchlist', '', KPI_ICONS.star, 'Watchlist',
+         `Top ${watchN}`, 'var(--amber)', 'from all research',
+         'Jump to the 6–12 month watchlist'),
+    best
+      ? card('#directory', `event.preventDefault();openFund('${esc(best.f.id)}')`, KPI_ICONS.best,
+             'Best 1yr (top fund)', getPerf1(best.f), 'var(--forest)', best.f.name,
+             `Open ${best.f.name}`)
+      : card('#directory', '', KPI_ICONS.best, 'Best 1yr (top fund)', '—', '', 'no priced figures yet', '')
+  ].join('');
+}
+
+/* ---------- render: nav stamp ----------
+   The market file is refreshed several times a day and the fund file once, so
+   the later of the two is what "last updated" honestly means. Formatted in
+   UTC because that is what the label claims. */
+function renderNavStamp(){
+  const el = document.getElementById('navstamp');
+  if(!el) return;
+  const gen = MKT && MKT.generated ? new Date(MKT.generated) : null;
+  let when;
+  if(gen && !isNaN(gen)){
+    when = gen.toLocaleString('en-GB', {
+      day:'numeric', month:'short', year:'numeric',
+      hour:'2-digit', minute:'2-digit', hour12:false, timeZone:'UTC'
+    }) + ' UTC';
+  } else {
+    when = (DATA && DATA.meta && DATA.meta.built) || '—';
+  }
+  el.innerHTML = 'Last updated<b>' + esc(when) + '</b>';
+}
+
+/* ---------- nav: which section am I in ----------
+   Ordered down the page, so the last section whose top has passed under the
+   bar is the current one. A hidden section has no offsetParent and is skipped,
+   which is what keeps "Intelligence" from lighting up before the data loads. */
+const NAV_SECTIONS = ['top','markets','newsbox','health','intelligence','watchlist','directory','footer'];
+let spyTick = 0;
+function scrollSpy(){
+  const links = document.querySelectorAll('#navlinks a');
+  if(!links.length) return;
+  let current = NAV_SECTIONS[0];
+  const line = 120;
+  NAV_SECTIONS.forEach(id => {
+    const el = document.getElementById(id);
+    if(!el || el.offsetParent === null) return;
+    if(el.getBoundingClientRect().top <= line) current = id;
+  });
+  // At the very bottom the last section may never cross the line on a short
+  // page, so the end of the scroll always counts as the final section.
+  if(window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = 'footer';
+  links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', () => {
+  if(spyTick) return;
+  spyTick = requestAnimationFrame(() => { spyTick = 0; scrollSpy(); });
+}, {passive:true});
+
+/* ---------- watchlist rail ----------
+   Eight cards on one row, scrolled a card at a time. The arrows hide at each
+   end rather than sitting there dead, which is the only cue that the row has
+   run out. */
+function recScroll(dir){
+  const g = document.getElementById('recGrid');
+  if(!g) return;
+  const card = g.querySelector('.rec-card');
+  const step = card ? card.getBoundingClientRect().width + 20 : g.clientWidth * 0.8;
+  g.scrollBy({left: dir * step, behavior: 'smooth'});
+}
+function recArrows(){
+  const g = document.getElementById('recGrid');
+  const prev = document.getElementById('recPrev'), next = document.getElementById('recNext');
+  if(!g || !prev || !next) return;
+  const max = g.scrollWidth - g.clientWidth;
+  prev.hidden = g.scrollLeft <= 4;
+  next.hidden = g.scrollLeft >= max - 4;
+}
+
 /* ---------- render: everything ---------- */
 function renderAll(){
   if(!DATA){ return; }
   document.getElementById('loader').classList.add('hide');
   if(DATA.meta){
-    if(DATA.meta.title) document.getElementById('title').textContent = DATA.meta.title;
     const s=[]; if(DATA.meta.asAt) s.push(`Data as at ${DATA.meta.asAt}`);
     if(DATA.meta.listTotal) s.push(`${(DATA.funds||[]).length} profiled of ${DATA.meta.listTotal} on the list`);
     if(DATA.meta.sources) s.push(`Sources: ${DATA.meta.sources}`);
     document.getElementById('stamp').innerHTML = s.map(x=>`<span>${x}</span>`).join('');
   }
-  document.getElementById('databar').innerHTML =
-    `<span class="ok">● Data loaded</span><span>${(DATA.funds||[]).length} funds</span>`+
-    `<button class="btn ghost" style="margin:0;padding:6px 14px;border-radius:20px;font-size:12px;" onclick="refreshNow()">Refresh</button>`;
-  renderIntro();
+  renderNavStamp();
+  renderKpis();
+  renderRanks();
+  renderNews();
   renderHealth();
   renderIntelligence();
   renderFilters();
@@ -2417,6 +2722,7 @@ function renderAll(){
     `Fund Tracker · Research Desk · Accumulation classes${DATA.meta&&DATA.meta.built?` · built ${DATA.meta.built}`:''}<br>`+
     `Charges shown are HL net ongoing (after loyalty saving). Loyalty bonuses are tax-free in an ISA/SIPP but may be taxable in a Fund &amp; Share Account.`+
     (cav.length?`<br><br>`+cav.map(c=>'· '+c).join('<br>'):'');
+  scrollSpy();
 }
 // Typing changes which funds are in the list, so it re-previews for the same
 // reason a tab switch does: any time the set changes under you, you get its
@@ -2424,6 +2730,10 @@ function renderAll(){
 // openFund fires no input event, so that path keeps its deliberate expand.
 document.getElementById('search').addEventListener('input', e=>{ q=e.target.value.toLowerCase(); listExpanded=false; renderList(); });
 document.getElementById('sortSelect').addEventListener('change', e=>{ sortMode=e.target.value; renderList(); });
+(function(){
+  const g = document.getElementById('recGrid');
+  if(g) g.addEventListener('scroll', recArrows, {passive:true});
+})();
 document.querySelectorAll('#viewSeg button').forEach(b=>{
   b.addEventListener('click', ()=>{
     viewMode=b.dataset.v;
