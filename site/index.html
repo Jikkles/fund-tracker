@@ -434,6 +434,12 @@
   .mkt-price { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 30px; font-weight: 600;
                letter-spacing: -.02em; line-height: 1; }
   .mkt-chg { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 15px; font-weight: 600; }
+  /* Amber, not red: a shut exchange is a caveat about the figure beside it,
+     not a fall in it. */
+  .mkt-closed { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 600;
+                white-space: nowrap; padding: 3px 10px; border-radius: 20px;
+                color: var(--amber); background: rgba(245,158,11,.13);
+                border: 1px solid rgba(245,158,11,.34); cursor: help; }
   .mkt-asof { font-size: 11px; color: var(--ink-soft); margin: 6px 0 0 20px; }
   .mkt-ranges { display: flex; gap: 4px; flex-wrap: wrap; padding: 14px 20px 4px; }
   .mkt-ranges button { background: transparent; border: none; border-radius: 6px; color: var(--ink-soft);
@@ -1271,12 +1277,29 @@ function mktNum(v, ref){
   const d = Math.abs(ref === undefined ? v : ref) < 10 ? 4 : 2;
   return v.toLocaleString('en-GB', {minimumFractionDigits:d, maximumFractionDigits:d});
 }
+/* Has a session been missed, rather than simply not started yet?
+
+   Age, not calendar date. Comparing dates in the exchange's own timezone reads
+   correctly and behaves badly: at 15:30 UTC it is already tomorrow in Tokyo, so
+   the Nikkei bar printed nine hours earlier scored as "not today" and every
+   European evening flagged a market that had traded perfectly normally.
+
+   The longest gap any of these markets leaves between consecutive sessions is
+   the US close to the US open, about 17.5 hours. Anything past a day therefore
+   means a session was skipped - a holiday or a weekend - while an overnight
+   roll or a market that has not opened yet stays quiet. */
+const MKT_STALE_S = 24 * 3600;
+function mktMissedSession(ts){
+  return (Date.now() / 1000) - ts > MKT_STALE_S;
+}
+
 function mktStamp(ts, tz, mode){
   const d = new Date(ts * 1000);
   const o = mode === 'time'  ? {hour:'2-digit', minute:'2-digit', hour12:false}
           : mode === 'day'   ? {day:'numeric', month:'short'}
           : mode === 'month' ? {month:'short', year:'2-digit'}
           : mode === 'date'  ? {day:'numeric', month:'short', year:'numeric'}
+          : mode === 'wday'  ? {weekday:'short', day:'numeric', month:'short'}
           : {day:'numeric', month:'short', year:'numeric',
              hour:'2-digit', minute:'2-digit', hour12:false};
   try { return d.toLocaleString('en-GB', Object.assign({timeZone: tz}, o)); }
@@ -1418,6 +1441,18 @@ function renderChart(){
   ).join('');
 
   const lastT = ser.t[ser.t.length - 1];
+
+  /* An intraday range claims to show today. When the exchange has not traded -
+     a holiday, a weekend, the hours before the bell - the newest bar belongs to
+     the previous session and the price above it is that session's close. The
+     as-of line said so in 11px grey, which reads as a stale page rather than a
+     shut market. Only 1D and 5D make the claim; on a 1Y chart a bar from Friday
+     is just the last daily bar. */
+  const lastSession = ((mktRange === '1d' || mktRange === '5d') && mktMissedSession(lastT))
+    ? '<span class="mkt-closed" title="' + esc(idx.label) + ' has not traded today, so this is the last completed session - its exchange is shut for a holiday or the weekend, or has not opened yet.">'
+      + 'Last session &middot; ' + esc(mktStamp(lastT, idx.tz, 'wday')) + '</span>'
+    : '';
+
   const gen = MKT.generated ? new Date(MKT.generated) : null;
   const genTxt = gen && !isNaN(gen)
     ? 'Data refreshed ' + gen.toLocaleString('en-GB', {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', hour12:false}) + ' UTC.'
@@ -1432,6 +1467,7 @@ function renderChart(){
   +   '<div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:8px">'
   +     '<span class="mkt-price">' + mktNum(last) + '</span>'
   +     '<span class="mkt-chg ' + cls + '">' + sign + mktNum(chg, last) + ' (' + sign + pct.toFixed(2) + '%)</span>'
+  +     lastSession
   +   '</div>'
   + '</div></div>'
   + '<div class="mkt-asof">' + esc(idx.currency) + ' · change over ' + esc(rangeLabel)
