@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "The whole list — full factsheet depth.",
-    "asAt": "31 Aug 2026 (automated deterministic run); 67 of 70 funds priced from their own NAV",
-    "built": "31 Aug 2026 (automated daily run)",
+    "asAt": "1 Sep 2026 (automated deterministic run); 67 of 70 funds priced from their own NAV",
+    "built": "1 Sep 2026 (automated daily run)",
     "listTotal": 70,
     "sources": "Yahoo Finance (fund NAVs) · HL · FE/Trustnet · Morningstar · Fidelity · Artemis · Janus Henderson · BofA/InvestmentNews · Columbia Threadneedle · AJ Bell · interactive investor · House of Commons Library · FundsLibrary · company filings",
     "caveats": [
@@ -10,13 +10,13 @@
       "Past performance is not a guide to future returns; investments and income can fall as well as rise.",
       "Where a field shows 'not yet verified' it was not confirmed within the research run — not invented or omitted by choice.",
       "Portfolio breakdowns (holdings, sectors, countries) are point-in-time from each fund's last published factsheet and are older than its price data. Every fund's holdings note carries its own as-at date.",
-      "70 of 70 funds carry a 1-month figure computed from the fund's own published NAV series (priced 27 Aug 2026 to 28 Aug 2026), refreshed every run. 0 use a same-index GBP ETF proxy and 0 carry no fund-level figure at all - each figure is labelled with the basis it used.",
-      "The discrete and cumulative performance tables are hand-entered from published factsheets and are NOT refreshed by the daily run: as-at dates are all as at 30 Aug 2026, up to 1 days old. Their bases differ (Trustnet/FE discrete or cumulative, HL rolling 12-month, Fidelity annualised) — do not compare across funds without adjusting.",
+      "70 of 70 funds carry a 1-month figure computed from the fund's own published NAV series (priced 28 Aug 2026), refreshed every run. 0 use a same-index GBP ETF proxy and 0 carry no fund-level figure at all - each figure is labelled with the basis it used.",
+      "The discrete and cumulative performance tables are hand-entered from published factsheets and are NOT refreshed by the daily run: as-at dates are all as at 30 Aug 2026, up to 2 days old. Their bases differ (Trustnet/FE discrete or cumulative, HL rolling 12-month, Fidelity annualised) — do not compare across funds without adjusting.",
       "5 funds' cumulative 3/5yr figures are derived by compounding discrete annual returns and are approximate — verify against Trustnet or Morningstar for published totals."
     ],
     "schemaVersion": "1.3",
     "schemaNotes": "v1.3 (26 Aug 2026): the whole `intro` block is removed. Only intro.marketPulse was ever rendered, and it was hand-written monthly commentary that no automated run refreshed - it had frozen at 30 Jun 2026 while the rest of the page moved on. The index chart at the top of the page now carries live market context instead. The other intro fields (summary, catalystTitle, catalystChips, catalystNote, setups) had no renderer at all. v1.2 (3 Jul 2026): adds intro.marketPulse {asAt, rows[{label, dot, html}]} — regional monthly commentary now lives in the JSON and is overwritten each monthly update cycle; the shell renders it (dot tokens: blue/forest/amber/oxblood/ink). v1.1 (2 Jul 2026): per-fund isin/isinNote/isinSource, performance.perfAsAt (ISO) + perfAsAtSource, perfBasis (HL/FID/FE/DRV), links.fidelity/links.trustnet.",
-    "navRefreshed": "2026-08-31"
+    "navRefreshed": "2026-09-01"
   },
   "categories": [
     {
@@ -119,9 +119,9 @@
         "perfBasis": "FID",
         "nav1yr": "+38.28%",
         "nav3yr": "+148.12%",
-        "nav5yr": "+163.57%",
+        "nav5yr": "+163.49%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1228,
+        "navPoints": 1227,
         "nav1w": "+1.12%",
         "nav1m": "+6.01%",
         "navYtd": "+25.11%"
@@ -286,7 +286,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "A volatile few months: Samsung posted record Q2 results (operating profit up 19-fold on AI demand) but shares then fell 30-40% from 2026 highs during the late-July crash, dropping 13.4% in a single session on 28 Jul on the CXMT/DUV lithography shock, before recovering strongly with the KOSPI's ~23% rebound off its 30 Jul low. Watch: HBM/DRAM contract pricing, the HBM4 ramp and Nvidia qualification, foundry order book, and Chinese memory competition. Samsung typically posts preliminary results in the first week of the month following quarter-end, with full results ~3 weeks later.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -299,7 +299,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+6.01%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000W36K.L",
@@ -375,9 +375,9 @@
         "perfBasis": "HL",
         "nav1yr": "+14.33%",
         "nav3yr": "+52.25%",
-        "nav5yr": "+61.56%",
+        "nav5yr": "+61.00%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+0.41%",
         "nav1m": "+0.30%",
         "navYtd": "+9.39%"
@@ -544,7 +544,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -556,7 +556,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.30%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WUT3.L",
@@ -636,14 +636,14 @@
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
-        "nav1yr": "+3.00%",
-        "nav3yr": "+11.13%",
-        "nav5yr": "+35.64%",
-        "navAsAt": "2026-08-27",
+        "nav1yr": "+3.84%",
+        "nav3yr": "+11.83%",
+        "nav5yr": "+35.86%",
+        "navAsAt": "2026-08-28",
         "navPoints": 1261,
-        "nav1w": "+1.94%",
-        "nav1m": "+7.58%",
-        "navYtd": "+12.45%"
+        "nav1w": "+1.68%",
+        "nav1m": "+4.86%",
+        "navYtd": "+13.15%"
       },
       "holdings": [
         {
@@ -805,10 +805,10 @@
       "sources": "HL factsheet; Fidelity (ISIN IE00BF2N1T73)",
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "+7.58%",
-        "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "value": "+4.86%",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "27 Aug 2026",
+        "asAt": "28 Aug 2026",
         "basis": "nav:0P0001BM5B.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -1056,7 +1056,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q1 2026 beat (~$109.9bn, +22%; Google Cloud first quarter above $20bn, backlog ~$460bn) and the Q2 print was well received — Alphabet's late-July report was credited with helping set the tone for the whole AI complex. Watch: Cloud re-acceleration, data-centre spending efficiency, and whether AI model launch timing affects competitive momentum. Date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -1069,7 +1069,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.75%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001P4VD.L",
@@ -1151,9 +1151,9 @@
         "perfBasis": "FID",
         "nav1yr": "+21.96%",
         "nav3yr": "+63.71%",
-        "nav5yr": "+61.21%",
+        "nav5yr": "+60.90%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+0.89%",
         "nav1m": "+3.79%",
         "navYtd": "+12.77%"
@@ -1320,7 +1320,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "The reporting sequence that matters for AI-exposed funds: NVIDIA Q2 FY27 TODAY (26 Aug, confirmed), then TSMC Q3 on 15 Oct (confirmed), ASML within days of TSMC, then the US mega-cap cluster (Microsoft, Apple, Amazon, Alphabet, Meta) in the last week of October (estimated, not confirmed), with Samsung/SK Hynix Q3 late Oct and NVIDIA Q3 FY27 ~late Nov. The through-line all season is AI capex discipline — whether hyperscaler spending keeps translating into supplier revenue, and whether investors keep tolerating rising capex.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting patterns (cluster)",
           "dateISO": "2026-10-15"
         }
@@ -1333,7 +1333,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.79%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WUT6.L",
@@ -1415,9 +1415,9 @@
         "perfBasis": "DRV",
         "nav1yr": "+8.22%",
         "nav3yr": "+24.56%",
-        "nav5yr": "+28.32%",
+        "nav5yr": "+28.03%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.49%",
         "nav1m": "+3.31%",
         "navYtd": "+5.78%"
@@ -1583,7 +1583,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -1595,7 +1595,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.31%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000X2GC.L",
@@ -1683,9 +1683,9 @@
         ],
         "nav1yr": "+20.29%",
         "nav3yr": "+64.31%",
-        "nav5yr": "+73.88%",
+        "nav5yr": "+73.73%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.33%",
         "nav1m": "+2.09%",
         "navYtd": "+12.04%"
@@ -1852,7 +1852,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Same sequence as above: NVIDIA Q2 FY27 TODAY (26 Aug, confirmed), TSMC Q3 15 Oct (confirmed), ASML within days, US mega-caps last week of October (estimated), Samsung/SK Hynix Q3 late Oct, NVIDIA Q3 FY27 ~late Nov. For a broad world tracker the aggregate AI-capex message matters more than any single print.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting patterns (cluster)",
           "dateISO": "2026-10-15"
         }
@@ -1865,7 +1865,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.09%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000125KV.L",
@@ -1947,9 +1947,9 @@
         "perfBasis": "FID",
         "nav1yr": "+24.01%",
         "nav3yr": "+69.21%",
-        "nav5yr": "+78.83%",
+        "nav5yr": "+78.40%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.18%",
         "nav1m": "+3.45%",
         "navYtd": "+14.74%"
@@ -2115,7 +2115,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.45%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000102M4.L",
@@ -2199,9 +2199,9 @@
         "nav1m": "+2.93%",
         "nav1yr": "+19.81%",
         "nav3yr": "+63.16%",
-        "nav5yr": "+68.47%",
+        "nav5yr": "+67.93%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "navYtd": "+11.66%"
       },
       "holdings": [
@@ -2277,7 +2277,7 @@
       "asAt": "30 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
         "value": "+2.93%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001F4XX.L",
@@ -2362,14 +2362,14 @@
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FE",
-        "nav1w": "+1.07%",
-        "nav1m": "+1.72%",
-        "nav1yr": "+23.13%",
-        "nav3yr": "+52.29%",
-        "nav5yr": "+44.59%",
-        "navAsAt": "2026-08-27",
+        "nav1w": "-0.39%",
+        "nav1m": "+1.28%",
+        "nav1yr": "+22.26%",
+        "nav3yr": "+51.13%",
+        "nav5yr": "+42.92%",
+        "navAsAt": "2026-08-28",
         "navPoints": 1261,
-        "navYtd": "+17.30%"
+        "navYtd": "+16.41%"
       },
       "holdings": [
         {
@@ -2450,10 +2450,10 @@
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
       "asAt": "30 Aug 2026 (factsheet confirmed unchanged from HL)",
       "oneMonth": {
-        "value": "+1.72%",
-        "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, FTSE 100 -0.31%, Euro STOXX 50 +0.04%, GBP/USD +0.45%.",
+        "value": "+1.28%",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, FTSE 100 -0.78%, Euro STOXX 50 -0.28%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "27 Aug 2026",
+        "asAt": "28 Aug 2026",
         "basis": "nav:0P0000N47O.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -2532,9 +2532,9 @@
         "perfBasis": "FID",
         "nav1yr": "+21.58%",
         "nav3yr": "+75.11%",
-        "nav5yr": "+74.05%",
+        "nav5yr": "+72.27%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.88%",
         "nav1m": "+2.16%",
         "navYtd": "+12.58%"
@@ -2701,7 +2701,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.16%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WUU1.L",
@@ -2771,9 +2771,9 @@
         "perfBasis": "HL",
         "nav1yr": "+19.96%",
         "nav3yr": "+32.36%",
-        "nav5yr": "+1.99%",
+        "nav5yr": "+1.02%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+0.86%",
         "nav1m": "+4.93%",
         "navYtd": "+14.22%"
@@ -2914,7 +2914,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.93%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00017MZL.L",
@@ -3127,7 +3127,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.76%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001S8W9.L",
@@ -3197,9 +3197,9 @@
         "perfBasis": "FID",
         "nav1yr": "+14.47%",
         "nav3yr": "+64.52%",
-        "nav5yr": "+70.97%",
+        "nav5yr": "+69.65%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+0.74%",
         "nav1m": "-1.03%",
         "navYtd": "+8.19%"
@@ -3354,7 +3354,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.03%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000KKC3.L",
@@ -3432,9 +3432,9 @@
         "nav1m": "+0.00%",
         "nav1yr": "+15.43%",
         "nav3yr": "+52.54%",
-        "nav5yr": "+49.22%",
+        "nav5yr": "+48.18%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1253,
+        "navPoints": 1252,
         "navYtd": "+10.39%"
       },
       "holdings": [
@@ -3590,7 +3590,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.00%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000024AF.L",
@@ -3672,9 +3672,9 @@
         "perfBasis": "FID",
         "nav1yr": "+25.03%",
         "nav3yr": "+71.73%",
-        "nav5yr": "+68.19%",
+        "nav5yr": "+67.23%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.55%",
         "nav1m": "+1.11%",
         "navYtd": "+14.54%"
@@ -3827,7 +3827,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.11%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000RI1.L",
@@ -3909,9 +3909,9 @@
         "perfBasis": "FE",
         "nav1yr": "+8.35%",
         "nav3yr": "+37.70%",
-        "nav5yr": "+17.39%",
+        "nav5yr": "+16.54%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+1.25%",
         "nav1m": "+2.43%",
         "navYtd": "+8.22%"
@@ -4048,7 +4048,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.43%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000W36H.L",
@@ -4130,9 +4130,9 @@
         "nav1m": "+0.76%",
         "nav1yr": "+20.64%",
         "nav3yr": "+59.39%",
-        "nav5yr": "+69.08%",
+        "nav5yr": "+67.82%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "navYtd": "+11.81%"
       },
       "holdings": [
@@ -4297,7 +4297,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.76%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class I used, desk tracks C Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class I used, desk tracks C Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000023C8.L",
@@ -4379,9 +4379,9 @@
         ],
         "nav1yr": "+18.68%",
         "nav3yr": "+49.28%",
-        "nav5yr": "+19.51%",
+        "nav5yr": "+19.26%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+1.37%",
         "nav1m": "+3.87%",
         "navYtd": "+13.43%"
@@ -4547,7 +4547,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.87%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class C used, desk tracks S Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class C used, desk tracks S Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WN7D.L",
@@ -4595,9 +4595,9 @@
         "perfBasis": "FID",
         "nav1yr": "+15.84%",
         "nav3yr": "+45.24%",
-        "nav5yr": "+42.96%",
+        "nav5yr": "+41.69%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+0.74%",
         "nav1m": "+0.63%",
         "navYtd": "+8.67%"
@@ -4762,7 +4762,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.63%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 +2.95%, Gold (USD/oz) +11.15%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, FTSE 250 +1.91%, Gold (USD/oz) +10.82%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001H3BX.L",
@@ -4847,9 +4847,9 @@
         "perfBasis": "HL",
         "nav1yr": "+19.53%",
         "nav3yr": "+67.53%",
-        "nav5yr": "+81.35%",
+        "nav5yr": "+81.14%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+1.35%",
         "nav1m": "+2.73%",
         "navYtd": "+11.67%"
@@ -5014,7 +5014,7 @@
           "date": "~late Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Reports TODAY after the US close (press release ~1:20pm PT, call 2:00pm PT — NVIDIA IR confirmed). Guided ~$91.0bn ±2%; consensus ~$91.85-92.2bn revenue, ~$2.08-2.13 EPS across ~40 analysts, i.e. the Street sits only ~0.9% above the guide midpoint — little room for a blowout. NVIDIA has beaten its own guidance 13 straight quarters but the beat margin has shrunk from 22.8% (Q2 FY24) to 4.6% last quarter. Watch: Q3 FY27 guide, Blackwell Ultra execution, gross margin (~75%), Rubin commentary and any change to the China relationship. Shares fell seven straight sessions into the print before rebounding 2% on 25 Aug. NEXT after this: Q3 FY27 ~late Nov 2026 (estimated from NVIDIA's late-Feb/May/Aug/Nov pattern).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-25"
         },
@@ -5025,7 +5025,7 @@
           "date": "~early Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Apple has been the Mag 7 laggard on AI capex — largely absent from the data-centre buildout race, which has explained part of its relative underperformance. Watch: iPhone cycle, Services margin, and any shift in AI strategy/capex posture. Date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-05"
         },
@@ -5036,7 +5036,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q3 FY26 (29 Apr) beat: revenue $82.9bn, +18% (+15% cc), operating income $38.4bn. Azure growth and the ~$190bn FY26 capex guide remain the two swing factors — the market has been rewarding Azure growth and punishing capex escalation. Watch: Azure growth rate, capex trajectory into FY27, and AI monetisation commentary. Mega-cap Q3 reporting has historically clustered in the last week of October; date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         },
@@ -5047,7 +5047,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: AWS growth and margin (the dominant driver), retail margin, and capex. AWS is one of the four hyperscaler capex lines that feed NVIDIA's demand visibility — the lead time between hyperscaler capex commitments and accelerated-compute supplier revenue has historically run one to two quarters. Date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         },
@@ -5058,7 +5058,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q1 2026 beat (~$109.9bn, +22%; Google Cloud first quarter above $20bn, backlog ~$460bn) and the Q2 print was well received — Alphabet's late-July report was credited with helping set the tone for the whole AI complex. Watch: Cloud re-acceleration, data-centre spending efficiency, and whether AI model launch timing affects competitive momentum. Date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         },
@@ -5069,7 +5069,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: ad revenue growth, Reality Labs losses, and — the market's main focus across the Mag 7 this year — AI capex discipline. Investor tolerance for rising capex without visible revenue translation has been narrowing through 2026. Date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -5081,7 +5081,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.73%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000102MM.L",
@@ -5156,14 +5156,14 @@
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "FID",
-        "nav1yr": "+23.75%",
-        "nav3yr": "+55.20%",
-        "nav5yr": "+95.36%",
-        "navAsAt": "2026-08-27",
+        "nav1yr": "+23.99%",
+        "nav3yr": "+55.64%",
+        "nav5yr": "+97.57%",
+        "navAsAt": "2026-08-28",
         "navPoints": 1194,
-        "nav1w": "+0.86%",
-        "nav1m": "+0.27%",
-        "navYtd": "+17.71%"
+        "nav1w": "+0.40%",
+        "nav1m": "-0.52%",
+        "navYtd": "+18.05%"
       },
       "holdings": [
         {
@@ -5307,10 +5307,10 @@
       "sources": "HL factsheet (ISIN GB00BPVBZ344); Fidelity/Morningstar (Inst W proxy GB00BGV53H32); HL fund note Sep 2025",
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "+0.27%",
-        "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class E used, desk tracks U Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "value": "-0.52%",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class E used, desk tracks U Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "27 Aug 2026",
+        "asAt": "28 Aug 2026",
         "basis": "nav:0P00019MND.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -5384,9 +5384,9 @@
         "perfBasis": "HL",
         "nav1yr": "+33.86%",
         "nav3yr": "+84.47%",
-        "nav5yr": "+34.81%",
+        "nav5yr": "+34.25%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1228,
+        "navPoints": 1227,
         "nav1w": "+0.75%",
         "nav1m": "+5.14%",
         "navYtd": "+22.43%"
@@ -5530,7 +5530,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+5.14%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001HDDZ.L",
@@ -5600,9 +5600,9 @@
         "perfBasis": "HL",
         "nav1yr": "+30.01%",
         "nav3yr": "+84.13%",
-        "nav5yr": "+82.73%",
+        "nav5yr": "+82.94%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1228,
+        "navPoints": 1227,
         "nav1w": "+1.13%",
         "nav1m": "+0.51%",
         "navYtd": "+18.60%"
@@ -5742,7 +5742,7 @@
           "date": "~late Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Reports TODAY after the US close (press release ~1:20pm PT, call 2:00pm PT — NVIDIA IR confirmed). Guided ~$91.0bn ±2%; consensus ~$91.85-92.2bn revenue, ~$2.08-2.13 EPS across ~40 analysts, i.e. the Street sits only ~0.9% above the guide midpoint — little room for a blowout. NVIDIA has beaten its own guidance 13 straight quarters but the beat margin has shrunk from 22.8% (Q2 FY24) to 4.6% last quarter. Watch: Q3 FY27 guide, Blackwell Ultra execution, gross margin (~75%), Rubin commentary and any change to the China relationship. Shares fell seven straight sessions into the print before rebounding 2% on 25 Aug. NEXT after this: Q3 FY27 ~late Nov 2026 (estimated from NVIDIA's late-Feb/May/Aug/Nov pattern).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-25"
         }
@@ -5754,7 +5754,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.51%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00013YAO.L",
@@ -5824,9 +5824,9 @@
         "perfBasis": "HL",
         "nav1yr": "+5.99%",
         "nav3yr": "+32.99%",
-        "nav5yr": "+24.52%",
+        "nav5yr": "+24.32%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1221,
+        "navPoints": 1220,
         "nav1w": "+0.28%",
         "nav1m": "+0.68%",
         "navYtd": "+3.21%"
@@ -5992,7 +5992,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.68%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001GZXO.L",
@@ -6008,7 +6008,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         },
@@ -6019,7 +6019,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         }
@@ -6086,9 +6086,9 @@
         "perfBasis": "HL",
         "nav1yr": "+4.02%",
         "nav3yr": "+22.19%",
-        "nav5yr": "+2.42%",
+        "nav5yr": "+2.71%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "nav1w": "+0.10%",
         "nav1m": "+0.13%",
         "navYtd": "+0.55%"
@@ -6222,7 +6222,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.13%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001IAS1.L",
@@ -6236,7 +6236,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         },
@@ -6247,7 +6247,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         }
@@ -6320,9 +6320,9 @@
         "perfBasis": "FID",
         "nav1yr": "+4.77%",
         "nav3yr": "+18.81%",
-        "nav5yr": "-1.14%",
+        "nav5yr": "-0.99%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.28%",
         "nav1m": "+0.48%",
         "navYtd": "+2.26%"
@@ -6477,7 +6477,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.48%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks Z Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks Z Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000FY9K.L",
@@ -6491,7 +6491,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         },
@@ -6502,7 +6502,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         }
@@ -6574,7 +6574,7 @@
         "nav3yr": "+29.25%",
         "nav5yr": "+22.17%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "navYtd": "+2.70%"
       },
       "holdings": [
@@ -6722,7 +6722,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.57%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00008Y97.L",
@@ -6736,7 +6736,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         },
@@ -6747,7 +6747,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         }
@@ -6814,9 +6814,9 @@
         "perfBasis": "HL",
         "nav1yr": "+4.18%",
         "nav3yr": "+24.42%",
-        "nav5yr": "+3.65%",
+        "nav5yr": "+3.97%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.08%",
         "nav1m": "+0.42%",
         "navYtd": "+0.92%"
@@ -6953,7 +6953,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.42%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000QX1.L",
@@ -6967,7 +6967,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         },
@@ -6978,7 +6978,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         }
@@ -7045,9 +7045,9 @@
         "perfBasis": "HL",
         "nav1yr": "+4.06%",
         "nav3yr": "+26.90%",
-        "nav5yr": "+11.19%",
+        "nav5yr": "+11.26%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.28%",
         "nav1m": "+1.03%",
         "navYtd": "+2.67%"
@@ -7184,7 +7184,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.03%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00001SDH.L",
@@ -7198,7 +7198,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         },
@@ -7209,7 +7209,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         }
@@ -7274,14 +7274,14 @@
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "HL",
-        "nav1w": "+0.30%",
-        "nav1m": "+0.38%",
-        "nav1yr": "+2.44%",
-        "nav3yr": "+16.79%",
-        "nav5yr": "-0.31%",
-        "navAsAt": "2026-08-27",
+        "nav1w": "+0.16%",
+        "nav1m": "-0.04%",
+        "nav1yr": "+2.09%",
+        "nav3yr": "+16.50%",
+        "nav5yr": "-0.27%",
+        "navAsAt": "2026-08-28",
         "navPoints": 1261,
-        "navYtd": "+0.52%"
+        "navYtd": "+0.28%"
       },
       "holdings": [
         {
@@ -7414,10 +7414,10 @@
       "sources": "HL factsheet (SEDOL BDFB5M5); HL fund update Nov 2025",
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "+0.38%",
-        "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "value": "-0.04%",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "27 Aug 2026",
+        "asAt": "28 Aug 2026",
         "basis": "nav:0P0001C5T6.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -7429,7 +7429,7 @@
           "date": "Wed 16 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Kevin Warsh is Fed Chair and delivers his first Jackson Hole speech as chair on Friday 28 Aug — a potentially market-moving event for duration. Direction of travel this year has been toward HIKES, not cuts: September hike odds sat around 35-40% before easing on soft July retail sales, payrolls and PPI. Separately, the Treasury announced a plan to roughly double planned bond repurchases to tame long-dated yields, after the 30-year tested multi-decade highs — an unusual intervention that shaped a tumultuous week for Treasuries in mid-August.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
         },
@@ -7440,7 +7440,7 @@
           "date": "Thu 17 Sep 2026 (confirmed)",
           "tracking": "tbd",
           "detail": "Bank Rate is 4.00% after the MPC held in July, with Governor Bailey saying the disinflation process remained on track despite external risks. Rate-hike pricing has swung violently this year on oil: markets priced up to four hikes at one point in the spring, then pared back, then moved toward two hikes in July as the Iran conflict spiked crude. The 5 Nov meeting carries a full Monetary Policy Report and press conference. Watch: UK CPI (headline was expected at a four-month high in the August print), wage growth (~4.1% y/y) and unemployment (4.9%).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
         }
@@ -7523,9 +7523,9 @@
         "nav1m": "+0.87%",
         "nav1yr": "+12.81%",
         "nav3yr": "+38.75%",
-        "nav5yr": "+43.73%",
+        "nav5yr": "+43.49%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "navYtd": "+6.56%"
       },
       "holdings": [
@@ -7689,7 +7689,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q3 FY26 (29 Apr) beat: revenue $82.9bn, +18% (+15% cc), operating income $38.4bn. Azure growth and the ~$190bn FY26 capex guide remain the two swing factors — the market has been rewarding Azure growth and punishing capex escalation. Watch: Azure growth rate, capex trajectory into FY27, and AI monetisation commentary. Mega-cap Q3 reporting has historically clustered in the last week of October; date NOT confirmed for 2026.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         },
@@ -7700,7 +7700,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -7713,7 +7713,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.87%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000X2GH.L",
@@ -7783,9 +7783,9 @@
         "perfBasis": "HL",
         "nav1yr": "+13.00%",
         "nav3yr": "+39.06%",
-        "nav5yr": "+43.10%",
+        "nav5yr": "+42.88%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.53%",
         "nav1m": "+0.86%",
         "navYtd": "+6.64%"
@@ -7950,7 +7950,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.86%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001AN93.L",
@@ -8020,9 +8020,9 @@
         "perfBasis": "HL",
         "nav1yr": "+9.57%",
         "nav3yr": "+25.82%",
-        "nav5yr": "+19.59%",
+        "nav5yr": "+19.41%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.64%",
         "nav1m": "+1.10%",
         "navYtd": "+7.32%"
@@ -8187,7 +8187,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.10%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001K0NY.L",
@@ -8258,9 +8258,9 @@
         "nav1m": "+0.00%",
         "nav1yr": "+7.03%",
         "nav3yr": "+23.42%",
-        "nav5yr": "+25.21%",
+        "nav5yr": "+24.91%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1231,
+        "navPoints": 1230,
         "navYtd": "+4.49%"
       },
       "holdings": [
@@ -8424,7 +8424,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.00%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000N9AE.L",
@@ -8507,9 +8507,9 @@
         "nav1m": "+2.20%",
         "nav1yr": "+20.91%",
         "nav3yr": "+53.89%",
-        "nav5yr": "+57.05%",
+        "nav5yr": "+56.47%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "navYtd": "+11.20%"
       },
       "holdings": [
@@ -8674,7 +8674,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Q1 2026 (15 Apr): €8.8bn net sales, €2.8bn net income, gross margin 53.0%. FY2026 guidance €36-40bn net sales at 51-53% gross margin. Watch: bookings/backlog (the key ASML metric), EUV vs DUV mix, and — newly material this cycle — the competitive read from reports that China's CXMT has developed domestic DUV lithography, which triggered the late-July Asian chip crash. Exact Q3 date not confirmed; verify on ASML IR before relying on it.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -8686,7 +8686,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.20%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000102LY.L",
@@ -8766,9 +8766,9 @@
         "perfBasis": "FID",
         "nav1yr": "+12.36%",
         "nav3yr": "+29.33%",
-        "nav5yr": "+39.78%",
+        "nav5yr": "+39.06%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "nav1w": "+0.56%",
         "nav1m": "+3.07%",
         "navYtd": "+7.32%"
@@ -8935,7 +8935,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Q1 2026 (15 Apr): €8.8bn net sales, €2.8bn net income, gross margin 53.0%. FY2026 guidance €36-40bn net sales at 51-53% gross margin. Watch: bookings/backlog (the key ASML metric), EUV vs DUV mix, and — newly material this cycle — the competitive read from reports that China's CXMT has developed domestic DUV lithography, which triggered the late-July Asian chip crash. Exact Q3 date not confirmed; verify on ASML IR before relying on it.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -8948,7 +8948,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.07%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000100U2.L",
@@ -9032,9 +9032,9 @@
         "nav1m": "+3.33%",
         "nav1yr": "+4.87%",
         "nav3yr": "+14.07%",
-        "nav5yr": "+3.78%",
+        "nav5yr": "+3.34%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "navYtd": "+3.86%"
       },
       "holdings": [
@@ -9199,7 +9199,7 @@
           "date": "~early Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: GLP-1 volume and pricing dynamics, US competitive position versus Eli Lilly, oral formulation progress and manufacturing capacity. Date NOT confirmed — previously logged as 'not yet verified' and still not pinned to a specific date; verify on Novo Nordisk IR.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-05"
         }
@@ -9211,7 +9211,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.33%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000029BY.L",
@@ -9291,14 +9291,14 @@
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "perfBasis": "DRV",
-        "nav1w": "+0.23%",
-        "nav1m": "+1.00%",
-        "nav1yr": "+13.21%",
-        "nav3yr": "+37.83%",
-        "nav5yr": "+62.33%",
-        "navAsAt": "2026-08-27",
+        "nav1w": "+0.22%",
+        "nav1m": "+0.04%",
+        "nav1yr": "+13.84%",
+        "nav3yr": "+38.45%",
+        "nav5yr": "+62.35%",
+        "navAsAt": "2026-08-28",
         "navPoints": 1225,
-        "navYtd": "+10.40%"
+        "navYtd": "+10.90%"
       },
       "holdings": [
         {
@@ -9462,7 +9462,7 @@
           "date": "~late Oct 2026 (estimated); oil price exposure is continuous rather than event-driven",
           "tracking": "tbd",
           "detail": "Oil has been the dominant swing factor and has moved violently this year: Brent spiked toward $117/bbl in March on Strait of Hormuz disruption, ran up ~25% in July as supply disruptions spread from Hormuz to the Red Sea, then fell back to ~$88.58 on 25 Aug (-3.9% in a session) as the US shifted from military action to an economic-sanctions strategy against Iran. Brent remains roughly 45% higher than at the start of the year. Watch: Hormuz shipping status, OPEC+ policy, and gas/LNG pricing.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -9473,10 +9473,10 @@
       "sources": "HL factsheet, Broadridge, Portfolio Adviser (Shortlist addition notice)",
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "+1.00%",
-        "note": "Total return over the 31 days to 27 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "value": "+0.04%",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "27 Aug 2026",
+        "asAt": "28 Aug 2026",
         "basis": "nav:0P00016CNI.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -9722,7 +9722,7 @@
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
         "value": "+2.41%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000T2WM.L",
@@ -9965,7 +9965,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "The single most volatile large-cap of this cycle: SK Hynix fell ~15% in a session three separate times in July, overtook Samsung on market cap for the first time in June 2026, completed a ~$26.5bn Nasdaq ADR listing (which triggered heavy post-listing profit-taking), then led the KOSPI's rebound with a 7%+ single-session gain in mid-August. Korea Investment & Securities cut its 2026/2027 operating profit estimates by 9%/11% on HBM average-selling-price concerns. Watch: HBM revenue share, DRAM contract pricing, and 'peak-out' commentary on the memory cycle.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         },
@@ -9976,7 +9976,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         },
@@ -9987,7 +9987,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "A volatile few months: Samsung posted record Q2 results (operating profit up 19-fold on AI demand) but shares then fell 30-40% from 2026 highs during the late-July crash, dropping 13.4% in a single session on 28 Jul on the CXMT/DUV lithography shock, before recovering strongly with the KOSPI's ~23% rebound off its 30 Jul low. Watch: HBM/DRAM contract pricing, the HBM4 ramp and Nvidia qualification, foundry order book, and Chinese memory competition. Samsung typically posts preliminary results in the first week of the month following quarter-end, with full results ~3 weeks later.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -9999,7 +9999,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+5.34%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000013TQ.L",
@@ -10068,9 +10068,9 @@
         "perfBasis": "FID",
         "nav1yr": "+40.41%",
         "nav3yr": "+86.62%",
-        "nav5yr": "+83.90%",
+        "nav5yr": "+82.58%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.62%",
         "nav1m": "+6.58%",
         "navYtd": "+23.08%"
@@ -10237,7 +10237,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -10251,7 +10251,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+6.58%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000XBR9.L",
@@ -10327,9 +10327,9 @@
         "perfBasis": "FID",
         "nav1yr": "+50.50%",
         "nav3yr": "+97.76%",
-        "nav5yr": "+113.93%",
+        "nav5yr": "+112.82%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1252,
+        "navPoints": 1251,
         "nav1w": "+1.00%",
         "nav1m": "+7.38%",
         "navYtd": "+35.60%"
@@ -10496,7 +10496,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.38%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks I Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks I Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00017EQ6.L",
@@ -10565,9 +10565,9 @@
         "perfBasis": "FE",
         "nav1yr": "+44.19%",
         "nav3yr": "+80.17%",
-        "nav5yr": "+55.79%",
+        "nav5yr": "+54.63%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+0.00%",
         "nav1m": "+7.08%",
         "navYtd": "+29.26%"
@@ -10734,7 +10734,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         },
@@ -10745,7 +10745,7 @@
           "date": "~mid Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: gaming revenue (domestic and international), advertising recovery, fintech/business services growth, and AI infrastructure spend. Date NOT confirmed — Tencent typically reports Q3 in the middle of November.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-15"
         }
@@ -10758,7 +10758,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.08%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000ZSZK.L",
@@ -10829,9 +10829,9 @@
         "perfBasis": "FID",
         "nav1yr": "+29.14%",
         "nav3yr": "+38.54%",
-        "nav5yr": "+24.24%",
+        "nav5yr": "+24.79%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1243,
+        "navPoints": 1242,
         "nav1w": "+1.05%",
         "nav1m": "+7.26%",
         "navYtd": "+20.71%"
@@ -10998,7 +10998,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         },
@@ -11009,7 +11009,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: net interest margin, deposit growth, asset quality and credit costs. Indian equities have lagged other Asian markets through recent cycles. Date NOT confirmed — HDFC Bank typically reports around the middle of the month following quarter-end.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         }
@@ -11023,7 +11023,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.26%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000H6Q.L",
@@ -11105,9 +11105,9 @@
         "perfBasis": "FID",
         "nav1yr": "+22.59%",
         "nav3yr": "+39.27%",
-        "nav5yr": "+9.29%",
+        "nav5yr": "+8.48%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1209,
+        "navPoints": 1208,
         "nav1w": "+1.53%",
         "nav1m": "+5.13%",
         "navYtd": "+18.49%"
@@ -11258,7 +11258,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         },
@@ -11269,7 +11269,7 @@
           "date": "~mid Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: gaming revenue (domestic and international), advertising recovery, fintech/business services growth, and AI infrastructure spend. Date NOT confirmed — Tencent typically reports Q3 in the middle of November.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-15"
         }
@@ -11282,7 +11282,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+5.13%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000EU6.L",
@@ -11352,9 +11352,9 @@
         "perfBasis": "FID",
         "nav1yr": "+18.78%",
         "nav3yr": "+50.55%",
-        "nav5yr": "+26.60%",
+        "nav5yr": "+25.93%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "nav1w": "+2.31%",
         "nav1m": "+7.03%",
         "navYtd": "+19.87%"
@@ -11485,7 +11485,7 @@
           "date": "~mid Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Watch: Vision Fund marks, the Arm stake, and AI-related investment commitments. SoftBank fell 4.43% in the 28 Jul Asian chip rout, so it carries meaningful beta to the AI hardware trade. Date NOT confirmed.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-15"
         }
@@ -11498,7 +11498,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+7.03%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000QWA.L",
@@ -11574,9 +11574,9 @@
         "perfBasis": "FID",
         "nav1yr": "+34.73%",
         "nav3yr": "+83.37%",
-        "nav5yr": "+131.62%",
+        "nav5yr": "+129.41%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1205,
+        "navPoints": 1204,
         "nav1w": "+1.77%",
         "nav1m": "+4.19%",
         "navYtd": "+23.17%"
@@ -11715,7 +11715,7 @@
           "date": "~mid Nov 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Japanese financials benefit from the BoJ's normalisation path and a steeper yield curve. Watch: net interest income, fee income and any commentary on domestic rate expectations. Date NOT confirmed.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-11-15"
         }
@@ -11728,7 +11728,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.19%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000810W.L",
@@ -11966,7 +11966,7 @@
           "date": "~mid Oct 2026 (estimated)",
           "tracking": "over",
           "detail": "Q2 2026 (16 Jul) beat: revenue $40.2bn above guidance, gross margin 67.7%. Raised 2026 revenue growth outlook to slightly above 40% and lifted capex guidance to $18.75-20bn. Q3 guided $44.6-45.8bn revenue with gross margin 65-67%, reflecting temporary 2nm ramp costs. Watch: whether the 2nm ramp compresses margin as guided, capex trajectory (CEO Wei has said the next three years' capex will significantly exceed the last three), and any read-through on memory oversupply from Chinese competition (CXMT).",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-15"
         },
@@ -11977,7 +11977,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "The single most volatile large-cap of this cycle: SK Hynix fell ~15% in a session three separate times in July, overtook Samsung on market cap for the first time in June 2026, completed a ~$26.5bn Nasdaq ADR listing (which triggered heavy post-listing profit-taking), then led the KOSPI's rebound with a 7%+ single-session gain in mid-August. Korea Investment & Securities cut its 2026/2027 operating profit estimates by 9%/11% on HBM average-selling-price concerns. Watch: HBM revenue share, DRAM contract pricing, and 'peak-out' commentary on the memory cycle.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -11991,7 +11991,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+9.72%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WGT4.L",
@@ -12211,7 +12211,7 @@
           "date": "~late Oct 2026 (estimated)",
           "tracking": "tbd",
           "detail": "Semiconductor test equipment — high beta to the AI/memory capex cycle. Fell over 10% in the 28 Jul rout. Watch: order intake and guidance, which lead the broader memory cycle. Date NOT confirmed.",
-          "refreshedAt": "31 Aug 2026",
+          "refreshedAt": "1 Sep 2026",
           "dateSource": "historical reporting pattern",
           "dateISO": "2026-10-25"
         }
@@ -12224,7 +12224,7 @@
       "asAt": "30 Aug 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.87%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +4.16%, Hang Seng -1.70%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +3.86%, Hang Seng -2.58%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WGSX.L",
@@ -12261,9 +12261,9 @@
         "nav1m": "-3.65%",
         "nav1yr": "+26.16%",
         "nav3yr": "+35.45%",
-        "nav5yr": "+49.46%",
+        "nav5yr": "+49.95%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -12327,7 +12327,7 @@
       "navName": "FTF Royce US Smaller Companies W Acc",
       "oneMonth": {
         "value": "-3.65%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001PP1Y.L",
@@ -12493,7 +12493,7 @@
       "navName": "Schroder US Smaller Companies L Acc",
       "oneMonth": {
         "value": "+0.02%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0002PEG1.L",
@@ -12634,9 +12634,9 @@
         "nav1m": "+1.94%",
         "nav1yr": "+19.71%",
         "nav3yr": "+66.54%",
-        "nav5yr": "+83.05%",
+        "nav5yr": "+83.16%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -12698,7 +12698,7 @@
       "navName": "Fidelity Index US P Acc",
       "oneMonth": {
         "value": "+1.94%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000125KU.L",
@@ -12855,9 +12855,9 @@
         "nav1m": "+0.34%",
         "nav1yr": "+13.79%",
         "nav3yr": "+30.37%",
-        "nav5yr": "+53.15%",
+        "nav5yr": "+52.91%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -12919,7 +12919,7 @@
       "navName": "Fidelity American Special Sits W Acc",
       "oneMonth": {
         "value": "+0.34%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WUU7.L",
@@ -13076,9 +13076,9 @@
         "nav1m": "-0.42%",
         "nav1yr": "-8.61%",
         "nav3yr": "-0.03%",
-        "nav5yr": "+6.40%",
+        "nav5yr": "+6.35%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -13140,7 +13140,7 @@
       "navName": "Premier Miton US Opportunities B Acc",
       "oneMonth": {
         "value": "-0.42%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000XOCD.L",
@@ -13273,9 +13273,9 @@
         "nav1m": "+1.87%",
         "nav1yr": "+19.64%",
         "nav3yr": "+66.33%",
-        "nav5yr": "+82.87%",
+        "nav5yr": "+82.92%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -13337,7 +13337,7 @@
       "navName": "HSBC American Index C Acc",
       "oneMonth": {
         "value": "+1.87%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +0.97%, Nasdaq Composite +1.45%, US 10yr yield +1.58%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.13%, Nasdaq Composite +1.76%, US 10yr yield +1.54%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000WN7H.L",
@@ -13486,9 +13486,9 @@
         "nav1m": "+2.77%",
         "nav1yr": "+14.65%",
         "nav3yr": "+31.79%",
-        "nav5yr": "+21.24%",
+        "nav5yr": "+21.03%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -13550,7 +13550,7 @@
       "navName": "CT European Select Z Acc GBP",
       "oneMonth": {
         "value": "+2.77%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000X3IE.L",
@@ -13707,9 +13707,9 @@
         "nav1m": "+3.07%",
         "nav1yr": "+25.93%",
         "nav3yr": "+41.11%",
-        "nav5yr": "+29.60%",
+        "nav5yr": "+29.12%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -13771,7 +13771,7 @@
       "navName": "Jupiter European I Acc",
       "oneMonth": {
         "value": "+3.07%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000U20D.L",
@@ -13961,7 +13961,7 @@
       "navName": "BlackRock European Dynamic D Acc",
       "oneMonth": {
         "value": "+3.78%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000NBFS.L",
@@ -14118,9 +14118,9 @@
         "nav1m": "+2.20%",
         "nav1yr": "+20.57%",
         "nav3yr": "+51.90%",
-        "nav5yr": "+55.12%",
+        "nav5yr": "+54.47%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -14182,7 +14182,7 @@
       "navName": "Fidelity Index Europe ex UK P Acc",
       "oneMonth": {
         "value": "+2.20%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00011RBW.L",
@@ -14339,9 +14339,9 @@
         "nav1m": "+4.55%",
         "nav1yr": "+2.37%",
         "nav3yr": "+18.11%",
-        "nav5yr": "-29.82%",
+        "nav5yr": "-29.52%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -14403,7 +14403,7 @@
       "navName": "Baillie Gifford European B Acc",
       "oneMonth": {
         "value": "+4.55%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 +0.04%, FTSE 100 -0.31%, GBP/USD +0.45%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -0.28%, FTSE 100 -0.78%, GBP/USD +0.32%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000QWM.L",
@@ -14596,7 +14596,7 @@
       "navName": "iShares Corporate Bond Index (UK) S Acc",
       "oneMonth": {
         "value": "+0.13%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001O7DN.L",
@@ -14790,7 +14790,7 @@
       "navNote": "series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change",
       "oneMonth": {
         "value": "-0.41%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P000102LM.L",
@@ -14883,9 +14883,9 @@
         "nav1m": "+0.12%",
         "nav1yr": "+4.49%",
         "nav3yr": "+24.22%",
-        "nav5yr": "+5.71%",
+        "nav5yr": "+6.03%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1259,
+        "navPoints": 1258,
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+0.64%"
@@ -14920,7 +14920,7 @@
       "navName": "Royal London Corporate Bond M Acc",
       "oneMonth": {
         "value": "+0.12%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.58%, Brent crude +5.32%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +1.54%, Brent crude +9.60%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000YQN5.L",
@@ -15053,9 +15053,9 @@
         "nav1m": "+3.91%",
         "nav1yr": "+8.53%",
         "nav3yr": "+35.39%",
-        "nav5yr": "+0.11%",
+        "nav5yr": "+0.23%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -15117,7 +15117,7 @@
       "navName": "Baillie Gifford Managed B Acc",
       "oneMonth": {
         "value": "+3.91%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P00000QWU.L",
@@ -15274,9 +15274,9 @@
         "nav1m": "+3.15%",
         "nav1yr": "+14.86%",
         "nav3yr": "+36.23%",
-        "nav5yr": "+24.20%",
+        "nav5yr": "+24.06%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+8.45%"
@@ -15311,7 +15311,7 @@
       "navName": "BNY Mellon Real Return Inst W Acc",
       "oneMonth": {
         "value": "+3.15%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000X2FF.L",
@@ -15468,9 +15468,9 @@
         "nav1m": "+2.60%",
         "nav1yr": "+19.17%",
         "nav3yr": "+44.52%",
-        "nav5yr": "+31.52%",
+        "nav5yr": "+31.25%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1261,
+        "navPoints": 1260,
         "perfAsAt": "2026-08-30",
         "perfAsAtSource": "HL factsheet scrape",
         "navYtd": "+11.50%"
@@ -15505,7 +15505,7 @@
       "navName": "Schroder Managed Balanced Z Acc",
       "oneMonth": {
         "value": "+2.60%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000ZSYH.L",
@@ -15662,9 +15662,9 @@
         "nav1m": "+1.82%",
         "nav1yr": "+7.44%",
         "nav3yr": "+22.24%",
-        "nav5yr": "+21.52%",
+        "nav5yr": "+21.47%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -15726,7 +15726,7 @@
       "navName": "Trojan Fund X Accumulation",
       "oneMonth": {
         "value": "+1.82%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001CBJA.L",
@@ -15946,7 +15946,7 @@
       "navNote": "series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change",
       "oneMonth": {
         "value": "+2.05%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0001J9W9.L",
@@ -16099,9 +16099,9 @@
         "nav1m": "+1.27%",
         "nav1yr": "+16.55%",
         "nav3yr": "+47.88%",
-        "nav5yr": "+34.71%",
+        "nav5yr": "+34.83%",
         "navAsAt": "2026-08-28",
-        "navPoints": 1260,
+        "navPoints": 1259,
         "discrete": [
           {
             "year": "28/08/25 to 28/08/26",
@@ -16163,7 +16163,7 @@
       "navName": "Royal London Sustainable World C Acc",
       "oneMonth": {
         "value": "+1.27%",
-        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 +0.97%, US 10yr yield +1.58%, Gold (USD/oz) +11.15%.",
+        "note": "Total return over the 31 days to 28 Aug 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.78%, S&P 500 +1.13%, US 10yr yield +1.54%, Gold (USD/oz) +10.82%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "28 Aug 2026",
         "basis": "nav:0P0000XYWQ.L",
@@ -16299,20 +16299,11 @@
     }
   ],
   "auditLog": {
-    "runDate": "31 Aug 2026",
-    "summary": "31 Aug 2026 automated run (deterministic, no LLM). Priced 70 funds from their own published NAV series and 0 tracker funds from GBP ETF proxies; 0 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 48 catalyst entries (2 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age.",
+    "runDate": "1 Sep 2026",
+    "summary": "1 Sep 2026 automated run (deterministic, no LLM). Priced 70 funds from their own published NAV series and 0 tracker funds from GBP ETF proxies; 0 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 48 catalyst entries (2 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age.",
     "findings": [
       {
         "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 70 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 48 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
         "fundName": "Calendar maintenance",
         "check": "CALENDAR-LOW",
         "severity": "MEDIUM",
@@ -16391,6 +16382,15 @@
         "description": "FOMC calendar runs out on 28 Oct 2026. Top it up from the published calendar.",
         "status": "flagged",
         "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 70 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 48 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
       },
       {
         "fundId": "ALL",

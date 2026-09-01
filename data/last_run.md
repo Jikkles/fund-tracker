@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-08-31
+# Fund tracker - automated run 2026-09-01
 
-Window: 1 Aug 2026 to 31 Aug 2026
+Window: 2 Aug 2026 to 1 Sep 2026
 
 - **70** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -11,17 +11,17 @@ Window: 1 Aug 2026 to 31 Aug 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.31% |
-| FTSE 250 | +2.95% |
-| S&P 500 | +0.97% |
-| Nasdaq Composite | +1.45% |
-| Euro STOXX 50 | +0.04% |
-| Nikkei 225 | +4.16% |
-| Hang Seng | -1.70% |
-| Gold (USD/oz) | +11.15% |
-| Brent crude | +5.32% |
-| US 10yr yield | +1.58% |
-| GBP/USD | +0.45% |
+| FTSE 100 | -0.78% |
+| FTSE 250 | +1.91% |
+| S&P 500 | +1.13% |
+| Nasdaq Composite | +1.76% |
+| Euro STOXX 50 | -0.28% |
+| Nikkei 225 | +3.86% |
+| Hang Seng | -2.58% |
+| Gold (USD/oz) | +10.82% |
+| Brent crude | +9.60% |
+| US 10yr yield | +1.54% |
+| GBP/USD | +0.32% |
 
 ## Fund NAV figures (1 month)
 
@@ -45,7 +45,7 @@ Window: 1 Aug 2026 to 31 Aug 2026
 | bny-mellon-multi-asset-balanced | 0P0000X2GH.L | +0.87% | 28 Aug 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | +0.86% | 28 Aug 2026 |
 | bny-mellon-real-return | 0P0000X2FF.L | +3.15% | 28 Aug 2026 |
-| bny-mellon-us-equity-income | 0P00019MND.L | +0.27% | 27 Aug 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | -0.52% | 28 Aug 2026 |
 | ct-european-select | 0P0000X3IE.L | +2.77% | 28 Aug 2026 |
 | fidelity-american-special-situations | 0P0000WUU7.L | +0.34% | 28 Aug 2026 |
 | fidelity-european | 0P000100U2.L | +3.07% | 28 Aug 2026 |
@@ -70,7 +70,7 @@ Window: 1 Aug 2026 to 31 Aug 2026
 | jupiter-asian-income | 0P00017EQ6.L | +7.38% | 28 Aug 2026 |
 | jupiter-european | 0P0000U20D.L | +3.07% | 28 Aug 2026 |
 | jupiter-strategic-bond | 0P0000FY9K.L | +0.48% | 28 Aug 2026 |
-| lazard-global-equity-franchise | 0P0001BM5B.L | +7.58% | 27 Aug 2026 |
+| lazard-global-equity-franchise | 0P0001BM5B.L | +4.86% | 28 Aug 2026 |
 | lg-active-global-high-yield | 0P00001SDH.L | +1.03% | 28 Aug 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | -0.41% | 28 Aug 2026 |
 | lg-european-index | 0P000102LY.L | +2.20% | 28 Aug 2026 |
@@ -83,7 +83,7 @@ Window: 1 Aug 2026 to 31 Aug 2026
 | liontrust-uk-growth | 0P0001S8W9.L | +0.76% | 28 Aug 2026 |
 | man-glg-continental-european-growth | 0P000029BY.L | +3.33% | 28 Aug 2026 |
 | man-japan-corealpha | 0P0000810W.L | +4.19% | 28 Aug 2026 |
-| polar-capital-european-income | 0P00016CNI.L | +1.00% | 27 Aug 2026 |
+| polar-capital-european-income | 0P00016CNI.L | +0.04% | 28 Aug 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | -0.42% | 28 Aug 2026 |
 | pyrford-global-total-return | 0P0000N9AE.L | +0.00% | 28 Aug 2026 |
 | royal-london-corporate-bond | 0P0000YQN5.L | +0.12% | 28 Aug 2026 |
@@ -95,8 +95,8 @@ Window: 1 Aug 2026 to 31 Aug 2026
 | trojan-ethical | 0P0001J9W9.L | +2.05% | 28 Aug 2026 |
 | trojan-fund | 0P0001CBJA.L | +1.82% | 28 Aug 2026 |
 | trowe-global-value | 0P0001P4VD.L | +2.75% | 28 Aug 2026 |
-| vanguard-global-corporate-bond-index | 0P0001C5T6.L | +0.38% | 27 Aug 2026 |
-| vanguard-global-small-cap-index | 0P0000N47O.L | +1.72% | 27 Aug 2026 |
+| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -0.04% | 28 Aug 2026 |
+| vanguard-global-small-cap-index | 0P0000N47O.L | +1.28% | 28 Aug 2026 |
 
 ---
 
