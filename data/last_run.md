@@ -21,7 +21,7 @@ Window: 2 Aug 2026 to 1 Sep 2026
 | Gold (USD/oz) | +8.48% |
 | Brent crude | +13.67% |
 | US 10yr yield | +2.35% |
-| GBP/USD | +0.17% |
+| GBP/USD | +0.18% |
 
 ## Fund NAV figures (1 month)
 
