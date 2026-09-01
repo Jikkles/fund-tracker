@@ -1,5 +1,7 @@
 # Fund Tracker
 
+### **[View the live tracker →](https://jikkles.github.io/fund-tracker/)**
+
 An automated research desk covering 70 funds - ten in each of seven
 categories - drawn from the Hargreaves Lansdown Wealth Shortlist, with
 additions where the Shortlist does not carry ten in a category. A daily GitHub
@@ -26,7 +28,8 @@ Check the live factsheet before acting on anything here.
 2. **Settings → Pages → Source: GitHub Actions.**
 
 3. **Actions tab → "Daily fund update" → Run workflow.**
-   Watch it go green, then check `https://<you>.github.io/<repo>/`.
+   Watch it go green, then check `https://<you>.github.io/<repo>/`
+   (this one lives at <https://jikkles.github.io/fund-tracker/>).
 
 There is no step 4. Nothing to configure, no secrets to add.
 
