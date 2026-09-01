@@ -14,12 +14,17 @@ on:
   push:
     branches: [main]
     paths:
-      # Redeploy as soon as the page or the workflow itself changes, so an
-      # edit to the site does not sit undeployed until the next 06:23 run.
-      # Pushes made by this workflow's own bot use GITHUB_TOKEN, which does
-      # not re-trigger workflows - no loop.
+      # Redeploy as soon as the page changes, so an edit to the site does not
+      # sit undeployed until the next 06:23 run. Pushes made by this workflow's
+      # own bot use GITHUB_TOKEN, which does not re-trigger workflows - no loop.
+      #
+      # This file is deliberately NOT in the list. It was, and every edit to it
+      # therefore fired a full run: refetch every NAV, regenerate all three data
+      # files and commit them - for a change that touched no data and altered
+      # nothing about what gets published. An evening of workflow edits left six
+      # "Daily update" commits on main. Editing the pipeline is not a reason to
+      # rerun it; dispatch it by hand when a change here needs proving.
       - "site/**"
-      - ".github/workflows/daily-update.yml"
 
 # Public repos get unlimited GitHub Actions minutes, so a daily run costs
 # nothing. Scheduled workflows are auto-disabled after 60 days of repo
