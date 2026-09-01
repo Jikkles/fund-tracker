@@ -904,6 +904,51 @@
              overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   @media (max-width: 1080px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
+  /* ---- group strip: how each corner of the list is doing ---- */
+  /* Seven rows of one figure apiece. The bar carries the comparison, the
+     number carries the value, and the sign is always written out: the
+     green/red pair this page ranks in sits right on the colour-blind
+     separation floor, so direction is never left to colour alone. */
+  .grp-box { background: var(--paper-2); border: 1px solid var(--rule);
+             border-radius: 14px; margin: 22px 0; overflow: hidden; }
+  .grp-box:empty { display: none; }
+  .grp-head { display: flex; align-items: center; justify-content: space-between;
+              gap: 12px; flex-wrap: wrap; padding: 14px 20px;
+              background: rgba(0,0,0,.15); border-bottom: 1px solid var(--rule); }
+  .grp-title { font-family: "Inter", sans-serif; font-weight: 600; font-size: 13px;
+               text-transform: uppercase; letter-spacing: .05em; }
+  .grp-sub { font-size: 12px; color: var(--ink-soft); text-transform: none;
+             letter-spacing: 0; font-weight: 400; margin-left: 8px; }
+  .grp-rows { padding: 8px 20px 14px; }
+  .grp-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 80px;
+             align-items: center; gap: 14px; width: 100%; padding: 7px 8px;
+             margin: 0 -8px; background: none; border: 0; border-radius: 8px;
+             font: inherit; color: inherit; text-align: left; cursor: pointer;
+             transition: background .12s; }
+  .grp-row:hover { background: var(--hover-bg); }
+  .grp-row:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+  .grp-lab { font-size: 13px; font-weight: 600; overflow: hidden;
+             text-overflow: ellipsis; white-space: nowrap; }
+  .grp-n { color: var(--ink-soft); font-weight: 400; font-size: 11px; }
+  /* The track holds the zero line; bars grow from it in either direction, so a
+     negative group reads as a bar on the other side rather than a short one. */
+  .grp-track { position: relative; height: 12px; }
+  .grp-zero { position: absolute; top: -3px; bottom: -3px; width: 1px;
+              background: var(--rule); }
+  .grp-bar { position: absolute; top: 1px; height: 10px; }
+  .grp-bar.pos { border-radius: 0 4px 4px 0; }
+  .grp-bar.neg { border-radius: 4px 0 0 4px; }
+  .grp-val { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 13px;
+             font-weight: 600; text-align: right; }
+  @media (max-width: 720px) {
+    .grp-head { padding: 12px 14px; }
+    .grp-rows { padding: 6px 14px 12px; }
+    /* Wide enough for "Asia / EM / Japan" and its count; the bar gives up the
+       room, because a truncated label loses the row's identity and the bar
+       only loses a few pixels of length. */
+    .grp-row { grid-template-columns: 132px minmax(0, 1fr) 64px; gap: 8px; }
+  }
+
   /* ---- overview row: chart | ranking pair ---- */
   /* The ranking pair is a list of ten short rows and needs roughly 30% to
      read; the chart is the thing that gets better with every pixel, so it
@@ -1075,6 +1120,9 @@
 
   <!-- HEADLINE FIGURES — four counts that frame everything below them. -->
   <div class="kpis" id="kpis"></div>
+
+  <!-- Per-group averages: the view between one fund and all seventy. -->
+  <div class="grp-box" id="groups"></div>
 
   <!-- OVERVIEW ROW — the index chart beside the day's ranking pair. The chart
        is rendered from market.json, fetched separately from funds.json so a
@@ -2346,6 +2394,42 @@ function renderFilters(){
   });
 }
 
+/* ---------- "not yet verified" is a non-answer, not a value ----------
+   The run writes this sentinel wherever it could not source a figure. Printed
+   as-is it reads like data, so it is folded to null before rendering - the
+   same treatment getPerf1 already gives it on the performance side.
+
+   The exact string only. A run that qualifies itself - "not yet verified
+   (strategy typically rated 6 of 7)" - is telling the reader something, and
+   keeps its tile. */
+function verified(v){
+  if(v == null) return null;
+  const s = String(v).trim();
+  return (!s || s.toLowerCase() === 'not yet verified') ? null : v;
+}
+
+/* Where this fund's worst fall sits among its own corner of the list. A bare
+   "-16.2%" is hard to judge; "shallower than seven of nine peers" is not, and
+   it costs nothing because every figure needed is already loaded. Funds whose
+   drawdown is unverified drop out of both the fund's own line and the peer
+   count, so the denominator never implies more evidence than exists. */
+function drawdownPeer(f){
+  const dd = parsePerf(verified((f.risk||{}).maxDrawdown));
+  if(dd === null || !DATA || !DATA.funds) return '';
+  const peers = DATA.funds
+    .filter(o => o !== f && o.group === f.group)
+    .map(o => parsePerf(verified((o.risk||{}).maxDrawdown)))
+    .filter(v => v !== null);
+  if(peers.length < 3) return '';   // too few to be a comparison worth drawing
+  const cat = (DATA.categories||[]).find(c => c.key === f.group);
+  const label = cat ? cat.label : (f.group || '');
+  // Drawdowns are negative, so a larger number is the shallower fall.
+  const shallower = peers.filter(v => dd > v).length;
+  if(shallower === peers.length) return `The shallowest fall of the ${peers.length+1} ${label} funds with a figure on file.`;
+  if(shallower === 0)            return `The deepest fall of the ${peers.length+1} ${label} funds with a figure on file.`;
+  return `Shallower than ${shallower} of the ${peers.length} other ${label} funds with a figure on file.`;
+}
+
 /* ---------- render: one fund dossier ---------- */
 function dossier(f){
   let h = '';
@@ -2417,10 +2501,47 @@ function dossier(f){
       if(c.notes) h += `<p class="flag">${c.notes}</p>`; h += `</div>`; }
   }
   // risk
-  if(f.risk && (f.risk.srri||f.risk.feScore||f.risk.notes)){
-    h += `<div class="sec"><div class="sec-h">Risk</div><div class="costgrid">`+
-      [["SRRI (1–7)",f.risk.srri],["FE risk score",f.risk.feScore]].filter(x=>x[1]).map(x=>`<div class="kf"><div class="k">${x[0]}</div><div class="v">${esc(x[1])}</div></div>`).join('')+`</div>`;
-    if(f.risk.notes) h += `<p class="prose soft">${f.risk.notes}</p>`; h += `</div>`;
+  //
+  // "not yet verified" is a sentinel this run writes wherever it could not
+  // source a figure, not a value. Rendered literally it filled this box with
+  // three tiles all saying the same non-answer, on 20 of the 70 funds. It is
+  // treated as absent here, the same way getPerf1 already treats it.
+  //
+  // The worst fall leads, because it is the risk figure a reader can actually
+  // picture: SRRI is a 1-7 bucket and the FE score is verified on three funds
+  // out of seventy. It is deliberately NOT painted red - every drawdown is
+  // negative, so the colour would separate nothing, and a shallow -8% would
+  // wear the same alarm as a -32%. The peer line does that work instead.
+  if(f.risk){
+    const rk = f.risk;
+    const dd     = verified(rk.maxDrawdown);
+    const srri   = verified(rk.srri);
+    const fe     = verified(rk.feScore);
+    const rNotes = verified(rk.notes);
+    if(dd || srri || fe || rNotes){
+      h += `<div class="sec"><div class="sec-h">Risk</div>`;
+      if(dd){
+        // Every one of these is inferred from a peer/index proxy rather than
+        // measured off the fund's own NAV series, so the chip says so and the
+        // confidence rides with it. Claiming a computed drawdown here would be
+        // exactly the confident-but-wrong number this desk refuses elsewhere.
+        const conf = verified(rk.maxDrawdownConfidence);
+        const chip = conf === 'low' ? 'warn' : 'isin';
+        const peer = drawdownPeer(f);
+        h += `<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px">`+
+             `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:20px;font-weight:700">${esc(dd)}</span>`+
+             (verified(rk.maxDrawdownPeriod)?`<span style="font-size:13px;color:var(--ink-soft)">worst fall &middot; ${esc(rk.maxDrawdownPeriod)}</span>`:`<span style="font-size:13px;color:var(--ink-soft)">worst fall</span>`)+
+             `</div>`+
+             `<div style="margin-bottom:8px"><span class="fchip ${chip}" style="margin-left:0" title="Inferred from category and index behaviour over the period, not measured from this fund's own NAV series">inferred${conf?` &middot; ${esc(conf)} confidence`:''}</span></div>`+
+             (peer?`<p class="prose soft" style="margin:0 0 8px">${esc(peer)}</p>`:'')+
+             (verified(rk.maxDrawdownNote)?`<p class="prose soft" style="margin:0 0 14px">${esc(rk.maxDrawdownNote)}</p>`:'');
+      }
+      const tiles = [["SRRI (1–7)",srri],["FE risk score",fe]].filter(x=>x[1]);
+      if(tiles.length) h += `<div class="costgrid">`+
+        tiles.map(x=>`<div class="kf"><div class="k">${x[0]}</div><div class="v">${esc(x[1])}</div></div>`).join('')+`</div>`;
+      if(rNotes) h += `<p class="prose soft">${rNotes}</p>`;
+      h += `</div>`;
+    }
   }
   // catalysts
   if(f.catalysts && f.catalysts.length){
@@ -2650,6 +2771,93 @@ const KPI_ICONS = {
   best:  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.9"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="var(--forest)"/></svg>'
 };
 
+/* ---------- render: group strip ----------
+   Seven groups of ten funds. Between a single fund card and all seventy the
+   page had nothing, so the largest fact in the file - Asia running away with
+   it while bonds sit flat - could only be seen by reading the whole list.
+
+   The average is unweighted: every priced fund counts once, whatever it
+   holds. The list is ten per group by construction, so the mean describes the
+   group rather than its biggest member. Funds without a figure for the chosen
+   period drop out and the header says how many priced, matching the ranking
+   panel underneath - a thinning group is visible rather than silent. */
+const GROUP_PERIODS = [
+  { k:'nav1m',  label:'1M',  full:'1 month' },
+  { k:'navYtd', label:'YTD', full:'the year to date' },
+  { k:'nav1yr', label:'1Y',  full:'1 year' },
+];
+let groupPeriod = 'navYtd';
+function setGroupPeriod(k){ groupPeriod = k; renderGroups(); }
+
+/* Fund names ride into a title attribute, so quotes have to be neutralised
+   here rather than trusted; esc() elsewhere on this page passes text through. */
+const attrEsc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+
+function renderGroups(){
+  const el = document.getElementById('groups');
+  if(!el) return;
+  if(!DATA || !DATA.funds || !DATA.funds.length){ el.innerHTML=''; return; }
+
+  const period = GROUP_PERIODS.find(p=>p.k===groupPeriod) || GROUP_PERIODS[0];
+  const val = f => parsePerf((f.performance||{})[period.k]);
+
+  const rows = (DATA.categories||[]).map(c=>{
+    const funds  = (DATA.funds||[]).filter(f=>f.group===c.key);
+    const priced = funds.map(f=>({f, v:val(f)})).filter(x=>x.v!==null).sort((a,b)=>b.v-a.v);
+    if(!priced.length) return null;
+    return { key:c.key, label:c.label, n:priced.length, total:funds.length,
+             mean: priced.reduce((s,x)=>s+x.v,0)/priced.length,
+             best: priced[0], worst: priced[priced.length-1] };
+  }).filter(Boolean).sort((a,b)=>b.mean-a.mean);
+  if(!rows.length){ el.innerHTML=''; return; }
+
+  // The domain always contains zero, so the baseline sits where no change is
+  // and bar length stays proportional to the move rather than to the spread.
+  const lo = Math.min(0, ...rows.map(r=>r.mean));
+  const hi = Math.max(0, ...rows.map(r=>r.mean));
+  const span = (hi - lo) || 1;
+  const zero = (0 - lo) / span * 100;
+  const fmt = v => (v>0?'+':'') + v.toFixed(1) + '%';
+  const pricedTotal = rows.reduce((s,r)=>s+r.n,0);
+
+  el.innerHTML =
+    `<div class="grp-head">
+       <span class="grp-title">How each corner is doing<span class="grp-sub">unweighted average &middot; ${pricedTotal} priced funds</span></span>
+       <span class="seg">${GROUP_PERIODS.map(p=>
+         `<button ${p.k===period.k?'class="on"':''} onclick="setGroupPeriod('${p.k}')">${esc(p.label)}</button>`).join('')}</span>
+     </div>
+     <div class="grp-rows">${rows.map(r=>{
+       const pos = r.mean >= 0;
+       const w    = Math.abs(r.mean) / span * 100;
+       const left = pos ? zero : zero - w;
+       const col  = perfColor(r.mean);
+       const tip  = `${r.label}: ${fmt(r.mean)} average over ${period.full}, across `
+                  + `${r.n}${r.n!==r.total?` of ${r.total}`:''} priced funds\n`
+                  + `Best: ${r.best.f.name} ${fmt(r.best.v)}\n`
+                  + `Weakest: ${r.worst.f.name} ${fmt(r.worst.v)}\n`
+                  + `Click to filter the directory to this group`;
+       return `<button type="button" class="grp-row" title="${attrEsc(tip)}" onclick="filterToGroup('${esc(r.key)}')">
+         <span class="grp-lab">${esc(r.label)} <span class="grp-n">${r.n}</span></span>
+         <span class="grp-track">
+           <span class="grp-zero" style="left:${zero}%"></span>
+           <span class="grp-bar ${pos?'pos':'neg'}" style="left:${left}%;width:${w}%;background:${col}"></span>
+         </span>
+         <span class="grp-val" style="color:${col}">${fmt(r.mean)}</span>
+       </button>`;
+     }).join('')}</div>`;
+}
+
+/* Clicking a group row does what clicking its filter chip does, then takes the
+   reader to the list it just narrowed - a filter applied 2000px above the
+   thing it filters otherwise looks like nothing happened. */
+function filterToGroup(key){
+  active = key; listExpanded = false;
+  document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('on', f.dataset.k===key));
+  renderList();
+  const d = document.getElementById('directory');
+  if(d) d.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
 function renderKpis(){
   const el = document.getElementById('kpis');
   if(!el) return;
@@ -2853,6 +3061,7 @@ function renderAll(){
   renderDataStamp();
   renderNavStamp();
   renderKpis();
+  renderGroups();
   renderRanks();
   renderNews();
   renderHealth();
