@@ -40,13 +40,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      # Deep enough to rebase onto anything that landed on main since this
-      # run started. The default shallow clone has no merge base to rebase
-      # against; 50 is far more history than a race of a few minutes needs,
-      # and unlike fetch-depth 0 it does not grow with the repo.
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 50
 
       - uses: actions/setup-python@v7
         with:
@@ -76,16 +70,25 @@ jobs:
         run: |
           git config user.name  "fund-tracker-bot"
           git config user.email "actions@users.noreply.github.com"
+          # main can have moved since checkout - a hand-pushed change, or a run
+          # that overlapped this one. Rebasing onto it is the wrong tool here:
+          # an overlapping run has regenerated the same JSON, so every hunk
+          # conflicts and there is no merge to make. The newer run's output is
+          # simply the answer. So move onto whatever main is now, keeping this
+          # run's files in the working tree, and commit them on top.
+          #
+          # --mixed, not --soft: --soft would leave the index holding the tree
+          # from before the fetch, quietly reverting anything the incoming
+          # commits changed. This way the commit contains these three files and
+          # nothing else.
+          git fetch origin main
+          git reset --mixed FETCH_HEAD
           git add data/funds.json data/last_run.md data/market.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
             git commit -m "Daily update: $(date -u +%Y-%m-%d)"
-            # main can have moved since checkout - a hand-pushed site change,
-            # or a run that overlapped this one. Rebasing first turns what
-            # would be a rejected push into an ordinary one.
-            git pull --rebase origin main
-            git push
+            git push origin HEAD:main
           fi
 
       - name: Assemble site
