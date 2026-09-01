@@ -50,6 +50,15 @@ jobs:
           python-version: "3.12"
 
       # Standard library only - nothing to install, no secrets.
+      #
+      # Deliberately not committed here, though data/market.json is tracked and
+      # the daily run does commit it. This workflow fires several times a day
+      # and the file is rewritten in full each time, so committing it here
+      # would add a few hundred KB of churn a day and bury the daily updates
+      # in the log. The copy on main is therefore up to a day behind the one
+      # being served, which is the intended trade: the published chart is
+      # always fresh, and the committed copy exists so a clone can render the
+      # page at all.
       - name: Fetch index series
         run: python scripts/market_series.py
 
