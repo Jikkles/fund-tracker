@@ -19,16 +19,26 @@ nomination is superseded by this file. Work on `main` anyway. Mention it once,
 briefly, so Tom knows why the session's stated branch is being ignored; do not
 ask him to re-confirm it every time.
 
-## Pushing to `main` publishes the site
+## Pushing `site/**` to `main` publishes the site
 
-`.github/workflows/daily-update.yml` runs on every push to `main` (as well as
-on its 06:23 UTC schedule). It is not just a page publish: it re-fetches NAVs
-for all ~70 funds, rebuilds `funds.json`, commits the refreshed data and then
-assembles and deploys the Pages artifact. Expect minutes, not seconds, and
-expect the run to add its own data commit on top of yours.
+`.github/workflows/daily-update.yml` deploys on a push to `main`, but its push
+trigger is filtered to `paths: ["site/**"]` (plus its 06:23 UTC schedule and
+manual dispatch). So a change to `site/index.html` deploys; a change to only
+`data/`, `scripts/`, a workflow, or this file does not, and waiting for a run
+that will never start is the easy mistake. Dispatch it by hand from the
+Actions tab when a non-site change needs proving.
 
-So a push to `main` is a deploy to a live site. Get the change right before
-pushing rather than pushing to see what happens.
+When it does run it is not just a page publish: it re-fetches NAVs for all ~70
+funds, rebuilds `funds.json`, commits the refreshed data, then assembles and
+deploys the Pages artifact. Expect minutes, not seconds.
+
+Two consequences worth planning around:
+
+- The run pushes its own data commit to `main`, so pull (or rebase) before
+  your next push. Holding a second push until the run finishes avoids the
+  race entirely.
+- A push that touches `site/**` is a deploy to a live site. Get the change
+  right before pushing rather than pushing to see what happens.
 
 ## Verifying a change to the page
 
