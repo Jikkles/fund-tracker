@@ -892,6 +892,10 @@
      whole sentence stays on the title attribute. */
   .navstamp.data { max-width: 240px; }
   .navstamp.data b { overflow: hidden; text-overflow: ellipsis; }
+  /* The button is the only refresh feedback a phone gets - see refreshNow -
+     so its working state has to look deliberate rather than dead. Width is
+     held steady so the nav does not jump as the label changes. */
+  .navbtn[disabled] { opacity: .65; cursor: default; }
   .navbtn { font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
             display: inline-flex; align-items: center; gap: 7px;
             background: transparent; color: var(--ink-soft);
@@ -1114,7 +1118,7 @@
     </div>
     <div class="navmeta">
       <span class="navstamp" id="navstamp">Last updated<b>—</b></span>
-      <button class="navbtn" onclick="refreshNow()" title="Re-fetch funds.json without reloading the page">Refresh &#8635;</button>
+      <button class="navbtn" id="refreshBtn" onclick="refreshNow()" title="Re-fetch the data — and the page itself if a newer version has been published">Refresh &#8635;</button>
       <span class="navstamp data" id="datastamp">Data as at<b>&#8212;</b></span>
     </div>
   </div>
@@ -1292,18 +1296,55 @@ function reloadFresh(){
    page reload in the ordinary case - but checks first whether the page itself
    has been superseded, and reloads outright when it has. Refresh now means
    "show me the current desk", which is what it always looked like it meant. */
+/* Refresh used to report itself only through the "Last updated" stamp, which
+   is display:none below 760px - so on a phone every message it produced went
+   into an element that was not being rendered. Tapping the button did the
+   work and showed nothing, which is indistinguishable from a dead control,
+   and on a desk whose figures rarely move between taps there was usually no
+   second-hand evidence either. The state now goes on the button itself, which
+   is visible at every width. */
+let REFRESHING = false;
+function setRefreshLabel(html, busy){
+  const b = document.getElementById('refreshBtn');
+  if(!b) return;
+  b.innerHTML = html;
+  b.disabled = !!busy;
+}
+
 function refreshNow(){
+  if(REFRESHING) return Promise.resolve();
+  REFRESHING = true;
   const bar = document.getElementById('navstamp');
   if(bar) bar.innerHTML = 'Last updated<b>refreshing…</b>';
+  setRefreshLabel('Refreshing…', true);
+
+  /* Against a warm cache a refresh can finish in tens of milliseconds, which
+     reads as a flicker rather than as an answer. Hold the busy state briefly
+     so the tap is acknowledged whether the fetch was slow or instant. */
+  const floor = new Promise(r => setTimeout(r, 450));
+  const settle = html => floor.then(() => {
+    REFRESHING = false;
+    setRefreshLabel(html, false);
+    // Back to the resting label, unless another refresh has started since.
+    setTimeout(() => { if(!REFRESHING) setRefreshLabel('Refresh &#8635;', false); }, 1600);
+  });
+
   return newBuildAvailable().then(stale => {
     if(stale){
+      // The reload replaces the document, so this label is the last thing the
+      // old page shows and never needs resetting.
       if(bar) bar.innerHTML = 'Last updated<b>updating page…</b>';
+      setRefreshLabel('Updating…', true);
       reloadFresh();
       return;
     }
     return fetchLatest()
-      .then(obj => loadFromObject(obj, 'fetch'))
-      .catch(() => { renderAll(); showLoadError("Refresh failed — still showing the data already on screen."); });
+      .then(obj => { loadFromObject(obj, 'fetch'); return settle('Updated &#10003;'); })
+      .catch(() => {
+        renderAll();
+        showLoadError("Refresh failed — still showing the data already on screen.");
+        return settle('Retry &#8635;');
+      });
   });
 }
 
