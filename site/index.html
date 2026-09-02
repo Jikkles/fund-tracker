@@ -595,6 +595,15 @@
                 font-size: 12px; font-weight: 600; padding: 6px 14px; cursor: pointer; }
   .seg button.on { background: var(--chip); color: var(--ink); }
 
+  /* Scope picker on the ranking panel. A select rather than a chip row:
+     sixteen categories will not fit across a third-width panel, and a row
+     that wraps to three lines pushes the ranking itself below the fold. */
+  .rank-scope { background: var(--paper-2); color: var(--ink-soft); border: 1px solid var(--rule);
+                border-radius: 20px; font-family: "Inter", sans-serif; font-size: 12px;
+                font-weight: 600; padding: 6px 10px; cursor: pointer; max-width: 190px; }
+  .rank-scope:hover { color: var(--ink); }
+  .rank-scope.on { color: var(--ink); border-color: var(--chip); }
+
   /* ---- table view ---- */
   .ftable-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); }
   table.ftable { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -1210,6 +1219,9 @@
 const LS_KEY = "wsl_funds_data_v1";
 let DATA = null, active = "all", q = "", sortMode = "ytd-desc";
 let rankPeriod = "nav1w", viewMode = "cards", tSort = {k:"p1", d:"desc"};
+/* Which category the ranking panel is scoped to. "all" is every priced
+   fund, which is what the panel used to be and still opens as. */
+let rankGroup = "all";
 // The directory opens as a preview: the leading few funds under whatever sort
 // is active, with everything else one click away. 70 cards is a long scroll to
 // reach the filters again, and the ranked head is the part worth seeing first.
@@ -1977,6 +1989,17 @@ function setRankPeriod(k){
   renderRanks();
 }
 
+/* Scope the ranking to one category, or to everything. Kept separate from
+   the directory's own filter: narrowing the ranking at the top of the page
+   should not silently re-filter the list 2000px below it. filterToGroup()
+   drives this one way only - strip row to panel - because that click is the
+   reader saying "show me this corner", and the panel is the first thing
+   they see when they say it. */
+function setRankGroup(k){
+  rankGroup = k || 'all';
+  renderRanks();
+}
+
 function renderRanks(){
   const el = document.getElementById('ranks');
   if(!DATA || !DATA.funds || !DATA.funds.length){ el.innerHTML=''; return; }
@@ -1987,16 +2010,38 @@ function renderRanks(){
   // offer a "vs sector" mode on the 1yr period alone, which made the one
   // period that matters most the one whose head was a different shape.
   const period = RANK_PERIODS.find(x => x.k === rankPeriod) || RANK_PERIODS[0];
-  const ranked = DATA.funds
+
+  // Scope first, then rank. A category that has been emptied by the period
+  // filter falls back to the whole list rather than rendering an empty panel:
+  // a blank ranking looks like a fault, and the reason - nothing in this
+  // corner has a 5-year record yet - is not visible from the gap.
+  const cats  = DATA.categories || [];
+  const scope = cats.find(c => c.key === rankGroup);
+  const pool  = scope ? DATA.funds.filter(f => f.group === scope.key) : DATA.funds;
+  let ranked = pool
     .map(f => {
       const v = (f.performance || {})[period.k];
       return { f, p: parsePerf(v), s: v };
     })
     .filter(x => x.p !== null)
     .sort((a,b) => b.p - a.p);
+  let emptied = false;
+  if(scope && !ranked.length){
+    emptied = true;
+    ranked = DATA.funds
+      .map(f => { const v = (f.performance || {})[period.k]; return { f, p: parsePerf(v), s: v }; })
+      .filter(x => x.p !== null)
+      .sort((a,b) => b.p - a.p);
+  }
 
-  const top5   = ranked.slice(0, 5);
-  const bot5   = ranked.slice(-5).reverse();
+  // Below eleven priced funds a top five and a bottom five are the same
+  // funds twice over - at three, both lists are the entire category. So the
+  // panel stops pretending to select and shows the category in full, once,
+  // best to worst. This is the whole reason the scope picker is safe to
+  // offer: Japan holds three funds and Cash & Index-Linked holds two.
+  const whole  = ranked.length <= 10;
+  const top5   = whole ? ranked : ranked.slice(0, 5);
+  const bot5   = whole ? []     : ranked.slice(-5).reverse();
 
   // Roster signals
 
@@ -2034,23 +2079,36 @@ function renderRanks(){
     listItem('b'+i, i+1, f.name, f.category, s, p, strip(f.whyNow||''))
   ).join('');
 
+  const scopeLabel = scope && !emptied ? scope.label : 'all funds';
+  const scopeSel =
+    `<select class="rank-scope${rankGroup!=='all'?' on':''}" aria-label="Scope the ranking to a category"
+             onchange="setRankGroup(this.value)">
+       <option value="all"${rankGroup==='all'?' selected':''}>All funds</option>
+       ${cats.map(c=>`<option value="${esc(c.key)}"${c.key===rankGroup?' selected':''}>${esc(c.label)}</option>`).join('')}
+     </select>`;
+  const headA = whole
+    ? `${esc(scopeLabel)} — all ${ranked.length}, best to worst`
+    : `Top 5 — ${esc(scopeLabel)}, ${ranked.length} priced`;
+
   // Stacked, not side by side: the pair now shares the overview row with the
   // index chart, so it gets roughly a third of the width rather than all of it.
   el.innerHTML = `
     <div class="rank-grid stack">
       <div class="pulse-box-head rank-head rank-a" style="color:var(--forest);border-bottom:2px solid var(--forest)">
-          <span class="rank-title">Top 5 performers — ${ranked.length} priced</span>
+          <span class="rank-title">${headA}</span>
           <span class="rank-controls">
+            ${scopeSel}
             <span class="seg">
               ${RANK_PERIODS.map(x=>`<button ${x.k===period.k?'class="on"':''} onclick="setRankPeriod('${x.k}')">${x.label}</button>`).join('')}
             </span>
           </span>
       </div>
-      <div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
+      ${whole ? '' : `<div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
         <span class="rank-title">Bottom 5 — weakest over ${esc(period.full)}</span>
-      </div>
+      </div>`}
       <div class="rank-list rank-a">${top5Items}</div>
-      <div class="rank-list rank-b">${bot5Items}</div>
+      ${whole ? '' : `<div class="rank-list rank-b">${bot5Items}</div>`}
+      ${emptied ? `<p class="intel-note">No fund in ${esc(scope.label)} has a ${esc(period.full)} figure yet — showing all funds instead.</p>` : ''}
     </div>`;
   if(MKT) renderChart();
 }
@@ -3094,6 +3152,11 @@ function filterToGroup(key){
   active = key; listExpanded = false;
   document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('on', f.dataset.k===key));
   renderList();
+  // Retune the ranking panel to the same corner. Clicking a row in the strip
+  // is the reader asking about one category, and the ranking is the other
+  // thing on the page that can answer per-category - leaving it on "all
+  // funds" makes the two panels disagree about what is being looked at.
+  setRankGroup(key);
   const d = document.getElementById('directory');
   if(d) d.scrollIntoView({behavior:'smooth', block:'start'});
 }
