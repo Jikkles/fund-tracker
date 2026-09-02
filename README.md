@@ -51,14 +51,14 @@ nothing to configure, no secrets to add.
 | Workflow | Schedule | Does |
 |---|---|---|
 | `daily-update.yml` | Daily | Prices every fund, rolls catalysts, deploys the page |
-| `hourly-market.yml` | Hourly on weekdays, 07:17–22:17 UTC | Refreshes the index chart and headlines |
+| `hourly-market.yml` | Weekdays at 08:17, 13:17, 17:17 and 21:17 UTC | Refreshes the index chart and headlines |
 | `weekly-factsheets.yml` | Weekly | Re-scrapes HL factsheet depth |
 
 Weekly is deliberate for factsheets: holdings tables are republished monthly at best, and
 they are someone else's pages — asking once a week rather than seven times is basic courtesy.
 
 `data/market.json` is **not committed**. It is regenerated on every deploy and published
-straight to the Pages artifact, so hourly refreshes don't leave two dozen commits a day of
+straight to the Pages artifact, so a chart refresh doesn't leave the repo carrying commits of
 churning price data.
 
 ---
@@ -227,8 +227,10 @@ python scripts/market_series.py  --dry-run    # chart fetch, writes nothing
   returns without comparators, over periods ending in August where the researched ones end in
   March, so copying one across would attach it to a period it was never measured over.
 - **GitHub's cron drifts** by an hour or more, and scheduled workflows auto-disable after 60
-  days of repo inactivity. The chart refresh runs at :17 rather than the busiest on-the-hour
-  slot, but "hourly" means roughly.
+  days of repo inactivity. The chart asks for four fires a day rather than sixteen, at :17
+  rather than the busiest on-the-hour slot, because asking for less gets more: over the six
+  days to 31 Aug 2026, roughly 80 requested hourly fires produced 11 actual runs. Treat the
+  schedule as best-effort - a dropped run means a stale chart, not a wrong one.
 - **The audit trail is capped at 30 entries** and is no longer rendered on the page. It
   survives in the JSON as a machine-readable record; a daily append would add ~700 entries a
   year.
