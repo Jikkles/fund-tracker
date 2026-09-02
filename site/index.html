@@ -2216,7 +2216,17 @@ function renderHealth(){
    advantage is one of the few things that is genuinely predictive over five
    years rather than merely historical. Doubling it turns the list into the
    cheapest eight trackers; removing it makes no visible difference at eight
-   places. 0.4 is the balance point. */
+   places. 0.4 is the balance point.
+
+   WHICH COST: the OCF, not netOngoing. netOngoing is the OCF less the HL
+   loyalty saving, which 34 of the 70 funds carry and which is worth up to
+   0.28pp - a discount for buying on one platform, not a property of the fund.
+   Ranking on it scored the same fund differently depending on where it was
+   held. The OCF is the manager's own charge and is the same wherever you buy,
+   so it is what both the score and the card now use. It swaps 2nd and 3rd
+   place today and changes nothing else about the eight.
+   Neither figure is the whole cost of owning the fund: the platform's own
+   account fee sits on top of both and is not held per-fund in the data. */
 const REC_WEIGHTS = { nav5yr:1.0, nav3yr:1.0, nav1yr:0.4, cost:0.4, drawdown:0.5 };
 const REC_BADGE   = { win:0.5, lose:-0.4, new:0.1 };
 
@@ -2235,7 +2245,7 @@ function buildRecScales(funds){
     nav5yr:   scale(col(f => recNum((f.performance||{}).nav5yr))),
     nav3yr:   scale(col(f => recNum((f.performance||{}).nav3yr))),
     nav1yr:   scale(col(f => recNum((f.performance||{}).nav1yr))),
-    cost:     scale(col(f => recNum((f.charges||{}).netOngoing))),
+    cost:     scale(col(f => recNum((f.charges||{}).ocf))),
     drawdown: scale(col(f => recNum((f.risk||{}).maxDrawdown))),
   };
 }
@@ -2254,7 +2264,7 @@ function scoreForRec(f){
        + W.nav3yr   * REC_Z.nav3yr(recNum(p.nav3yr))
        + W.nav1yr   * REC_Z.nav1yr(recNum(p.nav1yr))
        // Cost is a drag, so a high charge scores negative.
-       - W.cost     * REC_Z.cost(recNum((f.charges||{}).netOngoing))
+       - W.cost     * REC_Z.cost(recNum((f.charges||{}).ocf))
        // Drawdowns are negative; the shallower fall is the larger number.
        + W.drawdown * REC_Z.drawdown(recNum((f.risk||{}).maxDrawdown))
        + (REC_BADGE[(f.badge||{}).type] || 0);
@@ -2284,12 +2294,14 @@ function recSrri(f){
 function recDrivers(f){
   const p = f.performance||{}, out = [];
   const fig = (v, label) => `<span class="${perfClass(v)}">${esc(v)}</span> ${label}`;
-  const plain = (v, label) => `<span class="perf-neu">${esc(v)}</span> ${label}`;
+  const plain = (v, label, tip) => `<span class="perf-neu"${tip?` title="${esc(tip)}"`:''}>${esc(v)}</span> ${label}`;
   const long = verified(p.nav5yr) ? fig(p.nav5yr, 'over 5yr')
              : verified(p.nav3yr) ? fig(p.nav3yr, 'over 3yr') : null;
   if(long) out.push(long);
-  const c = verified((f.charges||{}).netOngoing);
-  if(c) out.push(plain(c, 'net charge'));
+  // The OCF, not the HL net charge: see WHICH COST above. Every fund with a
+  // verified netOngoing also has a verified OCF, so nothing loses the line.
+  const c = verified((f.charges||{}).ocf);
+  if(c) out.push(plain(c, 'ongoing charge', 'The fund manager\'s own annual charge (OCF) — the same wherever you buy. Any platform account fee sits on top, and the HL loyalty saving is on the full factsheet.'));
   const dd = verified((f.risk||{}).maxDrawdown);
   if(dd) out.push(fig(dd, 'worst fall'));
   // The SRRI band is deliberately not a fourth driver line: it is on the pill
