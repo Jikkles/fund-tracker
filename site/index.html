@@ -361,8 +361,15 @@
   .rec-name  { font-size: 18px; font-weight: 700; margin: 0 0 8px; padding-right: 36px; line-height: 1.4; color: var(--ink); }
   .rec-cat   { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 12px; }
   /* Three drivers rather than one headline return: at this size they read as
-     evidence, and green on all of them would overstate a mixed picture. */
-  .rec-perf  { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px; color: var(--ink); font-weight: 600; margin-bottom: 12px; line-height: 1.7; }
+     evidence rather than as a leaderboard entry. Only the figure is painted,
+     and only where the sign means something - a gain is green, a fall is red,
+     and the charge stays in ink because a cost has no direction. The label
+     after each figure is left in ink-soft so a card of coloured lines reads
+     as evidence rather than as an alarm. */
+  .rec-perf  { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px; color: var(--ink-soft); font-weight: 600; margin-bottom: 12px; line-height: 1.7; }
+  .rec-perf .perf-pos { color: var(--forest); }
+  .rec-perf .perf-neg { color: var(--oxblood); }
+  .rec-perf .perf-neu { color: var(--ink); }
   .rec-thesis { font-size: 15px; color: var(--ink-soft); line-height: 1.6; }
   .rec-horizon {
     display: inline-block; font-family: "Inter", sans-serif;
@@ -371,6 +378,17 @@
     background: rgba(56,189,248,.15); color: var(--blue); margin-top: 16px;
     border: 1px solid rgba(56,189,248,.3);
   }
+  /* The SRRI grade, next to the horizon it has to be held over. Deliberately
+     uncoloured: green and red are spoken for by the sign of a return on this
+     card, and a red 6 would read as "bad fund" rather than "volatile fund",
+     which is not the same claim. */
+  .rec-risk {
+    display: inline-block; font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 20px; margin: 16px 0 0 8px;
+    background: var(--paper); color: var(--ink-soft); border: 1px solid var(--rule);
+  }
+  .rec-risk.unknown { opacity: .75; }
 
   .pulse-row {
     display: block; padding: 0; border-bottom: 1px solid var(--rule);
@@ -2242,19 +2260,40 @@ function scoreForRec(f){
        + (REC_BADGE[(f.badge||{}).type] || 0);
 }
 
+/* The SRRI band as a bare 1-7, which is all the card has room for. Several
+   funds carry the grade inside a qualifier - "6 (unhedged class confirmed;
+   hedged class not separately verified)" - so the leading digit is taken and
+   the rest dropped; "not yet verified (strategy typically rated 6 of 7)" has
+   no leading digit and correctly yields nothing, because a typical rating for
+   the strategy is not this share class's grade. */
+function recSrri(f){
+  const v = verified((f.risk||{}).srri);
+  if(!v) return null;
+  const m = String(v).trim().match(/^([1-7])(?![0-9])/);
+  return m ? m[1] : null;
+}
+
 /* The one-line case for a fund being here, built from what actually moved its
    score. The card used to show a 1yr figure and the first sentence of whyNow,
    which read as a leaderboard entry; over a five-year horizon the three-year
-   record and the charge are the part worth seeing. */
+   record and the charge are the part worth seeing.
+   Each figure is painted by its own sign - a gain green, a fall red - so the
+   worst-fall line stops reading as another return. The charge carries no sign
+   and stays in ink: it is a cost either way, and colouring it would imply a
+   direction the number does not have. */
 function recDrivers(f){
   const p = f.performance||{}, out = [];
-  const long = verified(p.nav5yr) ? `${esc(p.nav5yr)} over 5yr`
-             : verified(p.nav3yr) ? `${esc(p.nav3yr)} over 3yr` : null;
+  const fig = (v, label) => `<span class="${perfClass(v)}">${esc(v)}</span> ${label}`;
+  const plain = (v, label) => `<span class="perf-neu">${esc(v)}</span> ${label}`;
+  const long = verified(p.nav5yr) ? fig(p.nav5yr, 'over 5yr')
+             : verified(p.nav3yr) ? fig(p.nav3yr, 'over 3yr') : null;
   if(long) out.push(long);
   const c = verified((f.charges||{}).netOngoing);
-  if(c) out.push(`${esc(c)} net charge`);
+  if(c) out.push(plain(c, 'net charge'));
   const dd = verified((f.risk||{}).maxDrawdown);
-  if(dd) out.push(`${esc(dd)} worst fall`);
+  if(dd) out.push(fig(dd, 'worst fall'));
+  // The SRRI band is deliberately not a fourth driver line: it is on the pill
+  // below, and printing it twice on a card this size reads as a fault.
   // One per line. Joined with a separator, the middot stranded at the wrap
   // point on any card whose name pushed the drivers onto two lines.
   return out.map(x => `<div>${x}</div>`).join('');
@@ -2454,6 +2493,14 @@ function renderRecommendations(funds){
       <div class="rec-perf">${recDrivers(f)}</div>
       <div class="rec-thesis">${esc(thesis.replace(/\.$/,''))}${thesis.length>0?'.':''}</div>
       <span class="rec-horizon">6 months – 5 years</span>
+      ${(() => {
+        // Shown even when unknown: a card that simply omitted the pill would
+        // look like a rendering fault rather than a gap in the data, and the
+        // desk's rule is to say the figure is missing, never to guess it.
+        const s = recSrri(f);
+        return s ? `<span class="rec-risk" title="SRRI — the fund's 1–7 volatility grade">Risk ${s} / 7</span>`
+                 : `<span class="rec-risk unknown" title="No SRRI verified for this share class">Risk n/a</span>`;
+      })()}
       <span class="rec-open">Open full factsheet ▸</span>
     </div>`;
   }).join('');
