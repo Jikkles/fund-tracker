@@ -18,8 +18,8 @@ Window: 3 Aug 2026 to 2 Sep 2026
 | Euro STOXX 50 | -1.00% |
 | Nikkei 225 | +3.86% |
 | Hang Seng | -2.61% |
-| Gold (USD/oz) | +9.96% |
-| Brent crude | +13.62% |
+| Gold (USD/oz) | +9.93% |
+| Brent crude | +13.68% |
 | US 10yr yield | +2.35% |
 | GBP/USD | -0.04% |
 
