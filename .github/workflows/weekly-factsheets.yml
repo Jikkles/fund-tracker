@@ -89,6 +89,12 @@ jobs:
         run: |
           mkdir -p _site
           cp site/index.html _site/index.html
+          # Stamp the deployed copy with the commit it was built from. The page
+          # compares this against the served file to tell whether the copy the
+          # browser is holding has been superseded - see newBuildAvailable().
+          # Only _site is stamped; the repo keeps its placeholder, which is how
+          # the page knows it is being opened locally rather than served.
+          sed -i "s/__BUILD__/$GITHUB_SHA/" _site/index.html
           cp data/funds.json  _site/funds.json
           cp data/last_run.md _site/last_run.md
           cp data/market.json _site/market.json

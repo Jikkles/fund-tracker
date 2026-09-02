@@ -1247,13 +1247,64 @@ function fetchLatest(){
     .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)));
 }
 
-// Manual refresh from the data bar - re-fetches without a full page reload.
+/* ---------- is this page still the page being served? ----------
+   The commit SHA, substituted into the deployed copy by every workflow that
+   publishes. Opened straight from the repo it stays an unsubstituted
+   placeholder, which is the signal for "not deployed, nothing to compare
+   against" - so the check below disables itself during local work.
+
+   It exists because the data on this page could never go stale but the page
+   itself could. funds.json is re-fetched with cache-busting on every load and
+   every refresh; index.html is whatever the browser happens to be holding. A
+   phone with a cached copy therefore poured fresh figures into an old layout
+   for as long as that cache lived, and Refresh could not clear it, because
+   Refresh only ever re-fetched the data. */
+const BUILD = '__BUILD__';
+const BUILT = /^[0-9a-f]{7,40}$/.test(BUILD);
+
+/* Resolves true when the served index.html carries a different build to this
+   one. Any failure resolves false rather than rejecting: a refresh that
+   cannot reach the network should leave what is on screen alone, not throw.
+   The regex cannot match its own source - the character after the quote is a
+   bracket, not a hex digit - so it finds the constant and nothing else. */
+function newBuildAvailable(){
+  if(!BUILT) return Promise.resolve(false);
+  return fetch('index.html?t=' + Date.now(), {cache:'no-store'})
+    .then(r => r.ok ? r.text() : '')
+    .then(t => {
+      const m = t.match(/const BUILD = '([0-9a-f]{7,40})'/);
+      return !!m && m[1] !== BUILD;
+    })
+    .catch(() => false);
+}
+
+/* A reload the cache cannot answer from its own shelf. location.reload() is
+   not enough on its own - it can be served the very copy that is the problem,
+   which is what left a phone on an old layout an hour after a deploy. A URL
+   the cache has never seen cannot be. The previous marker is stripped so it
+   does not accumulate, and replace() keeps repeated refreshes out of the back
+   button's history. */
+function reloadFresh(){
+  location.replace(location.href.split('?')[0].split('#')[0] + '?v=' + Date.now());
+}
+
+/* Manual refresh from the data bar. Still re-fetches the data without a full
+   page reload in the ordinary case - but checks first whether the page itself
+   has been superseded, and reloads outright when it has. Refresh now means
+   "show me the current desk", which is what it always looked like it meant. */
 function refreshNow(){
   const bar = document.getElementById('navstamp');
   if(bar) bar.innerHTML = 'Last updated<b>refreshing…</b>';
-  fetchLatest()
-    .then(obj => loadFromObject(obj, 'fetch'))
-    .catch(() => { renderAll(); showLoadError("Refresh failed — still showing the data already on screen."); });
+  return newBuildAvailable().then(stale => {
+    if(stale){
+      if(bar) bar.innerHTML = 'Last updated<b>updating page…</b>';
+      reloadFresh();
+      return;
+    }
+    return fetchLatest()
+      .then(obj => loadFromObject(obj, 'fetch'))
+      .catch(() => { renderAll(); showLoadError("Refresh failed — still showing the data already on screen."); });
+  });
 }
 
 // On open: paint the cached copy immediately for speed, then fetch the live
