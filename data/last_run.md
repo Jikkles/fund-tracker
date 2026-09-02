@@ -11,17 +11,17 @@ Window: 3 Aug 2026 to 2 Sep 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.60% |
-| FTSE 250 | +2.78% |
+| FTSE 100 | -0.61% |
+| FTSE 250 | +0.97% |
 | S&P 500 | +0.41% |
 | Nasdaq Composite | +0.72% |
-| Euro STOXX 50 | -0.10% |
-| Nikkei 225 | +1.48% |
-| Hang Seng | -1.70% |
-| Gold (USD/oz) | +8.49% |
-| Brent crude | +13.88% |
+| Euro STOXX 50 | -0.93% |
+| Nikkei 225 | +0.90% |
+| Hang Seng | -2.90% |
+| Gold (USD/oz) | +8.47% |
+| Brent crude | +13.16% |
 | US 10yr yield | +2.35% |
-| GBP/USD | +0.13% |
+| GBP/USD | +0.10% |
 
 ## Fund NAV figures (1 month)
 
@@ -55,11 +55,11 @@ Window: 3 Aug 2026 to 2 Sep 2026
 | fidelity-index-us | 0P000125KU.L | +0.98% | 1 Sep 2026 |
 | fidelity-index-world | 0P000125KV.L | +0.89% | 1 Sep 2026 |
 | fidelity-special-situations | 0P0000WUU1.L | +0.93% | 1 Sep 2026 |
-| fssa-greater-china-growth | 0P00000EU6.L | +2.41% | 1 Sep 2026 |
+| fssa-greater-china-growth | 0P00000EU6.L | +5.13% | 28 Aug 2026 |
 | ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | +2.48% | 1 Sep 2026 |
 | ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -3.89% | 1 Sep 2026 |
-| hsbc-american-index | 0P0000WN7H.L | +1.87% | 28 Aug 2026 |
-| hsbc-ftse-250-index | 0P0000WN7D.L | +3.87% | 28 Aug 2026 |
+| hsbc-american-index | 0P0000WN7H.L | +2.04% | 1 Sep 2026 |
+| hsbc-ftse-250-index | 0P0000WN7D.L | +1.37% | 1 Sep 2026 |
 | invesco-global-emerging-markets | 0P0000XBR9.L | +3.26% | 1 Sep 2026 |
 | ishares-corporate-bond-index | 0P0001O7DN.L | -0.24% | 1 Sep 2026 |
 | ishares-japan-equity-index | 0P0000WGSX.L | +2.19% | 1 Sep 2026 |
@@ -74,12 +74,12 @@ Window: 3 Aug 2026 to 2 Sep 2026
 | lg-active-global-high-yield | 0P00001SDH.L | +0.68% | 1 Sep 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | -0.98% | 1 Sep 2026 |
 | lg-european-index | 0P000102LY.L | -0.57% | 1 Sep 2026 |
-| lg-future-world-esg-developed | 0P0001F4XX.L | +2.93% | 28 Aug 2026 |
+| lg-future-world-esg-developed | 0P0001F4XX.L | +0.97% | 1 Sep 2026 |
 | lg-future-world-esg-uk | 0P0001H3BX.L | +0.46% | 1 Sep 2026 |
-| lg-international-index | 0P000102M4.L | +3.45% | 28 Aug 2026 |
-| lg-strategic-bond | 0P00008Y97.L | +0.57% | 28 Aug 2026 |
+| lg-international-index | 0P000102M4.L | +1.16% | 1 Sep 2026 |
+| lg-strategic-bond | 0P00008Y97.L | +0.00% | 1 Sep 2026 |
 | lg-uk-index | 0P000023C8.L | -0.41% | 1 Sep 2026 |
-| lg-us-index | 0P000102MM.L | +2.73% | 28 Aug 2026 |
+| lg-us-index | 0P000102MM.L | +0.45% | 1 Sep 2026 |
 | liontrust-uk-growth | 0P0001S8W9.L | +0.10% | 1 Sep 2026 |
 | man-glg-continental-european-growth | 0P000029BY.L | +0.71% | 1 Sep 2026 |
 | man-japan-corealpha | 0P0000810W.L | +4.60% | 1 Sep 2026 |
