@@ -1145,7 +1145,7 @@
   <!-- HEADLINE FIGURES — four counts that frame everything below them. -->
   <div class="kpis" id="kpis"></div>
 
-  <!-- Per-group averages: the view between one fund and all seventy. -->
+  <!-- Per-group averages: the view between one fund and the whole list. -->
   <div class="grp-box" id="groups"></div>
 
   <!-- OVERVIEW ROW — the index chart beside the day's ranking pair. The chart
@@ -2063,15 +2063,24 @@ function renderRanks(){
 
    The groups mirror DATA.categories, so the news splits the way the funds do. */
 const NEWS_MARKETS = [
-  { key:'uk',     label:'UK',                ids:['ftse-100','ftse-250'] },
-  { key:'us',     label:'US',                ids:['s-p-500','nasdaq-composite','dow-jones'] },
-  { key:'europe', label:'Europe',            ids:['euro-stoxx-50'] },
-  { key:'asia',   label:'Asia / EM / Japan', ids:['nikkei-225','hang-seng'] },
-  { key:'global', label:'Global',            ids:['s-p-500','euro-stoxx-50','nikkei-225'] },
-  { key:'bonds',  label:'Bonds',             ids:['us-10yr-yield'] },
-  { key:'mixed',  label:'Multi-Asset',       ids:['gold-usd-oz','brent-crude','gbp-usd'] },
+  { key:'uk-growth',       label:'UK Growth',        ids:['ftse-100','ftse-250'] },
+  { key:'uk-income',       label:'UK Equity Income', ids:['ftse-100'] },
+  { key:'uk-smaller',      label:'UK Small & Mid',   ids:['ftse-250','ftse-100'] },
+  { key:'us',              label:'North America',    ids:['s-p-500','nasdaq-composite','dow-jones'] },
+  { key:'europe',          label:'Europe',           ids:['euro-stoxx-50'] },
+  { key:'japan',           label:'Japan',            ids:['nikkei-225'] },
+  { key:'asia',            label:'Asia',             ids:['hang-seng','nikkei-225'] },
+  { key:'em',              label:'Emerging Markets', ids:['hang-seng','s-p-500'] },
+  { key:'global',          label:'Global',           ids:['s-p-500','euro-stoxx-50','nikkei-225'] },
+  { key:'property',        label:'Property & Infra', ids:['ftse-100','us-10yr-yield'] },
+  { key:'specialist',      label:'Specialist',       ids:['nasdaq-composite','gold-usd-oz','brent-crude'] },
+  { key:'bonds-gov',       label:'Corporate & Gilts',ids:['us-10yr-yield'] },
+  { key:'bonds-strategic', label:'Strategic Bonds',  ids:['us-10yr-yield','brent-crude'] },
+  { key:'cash',            label:'Cash & Index-Linked', ids:['us-10yr-yield','gbp-usd'] },
+  { key:'mixed',           label:'Mixed Investment', ids:['gold-usd-oz','brent-crude','gbp-usd'] },
+  { key:'total-return',    label:'Total Return',     ids:['gold-usd-oz','ftse-100','us-10yr-yield'] },
 ];
-let newsMarket = 'uk';
+let newsMarket = 'uk-growth';
 const NEWS_SHOWN = 6;
 const NEWS_PER_STEM = 2;
 
@@ -2287,7 +2296,7 @@ function renderHealth(){
    It replaces a score that was 60 of its ~103 points raw 1yr return, which
    made the watchlist a re-skin of the 1yr leaderboard - the same thing the
    ranking panel and the "best 1yr" tile already say. On 2026-09-01 it returned
-   eight funds drawn from two of the seven groups, seven of them SRRI 6.
+   eight funds drawn from two of the then seven groups, seven of them SRRI 6.
 
    Each input is turned into a z-score across the whole list and clamped to
    +/-2, so one freak number cannot dominate, and every weight is comparable to
@@ -2560,7 +2569,7 @@ function renderRecommendations(funds){
 
   // A fund with no three-year record cannot be assessed over a six-month to
   // five-year horizon, so it is not ranked rather than being ranked on one
-  // year and a run of blanks. Seven of the seventy sit out on that rule today.
+  // year and a run of blanks. A handful sit out on that rule on any given day.
   const eligible = funds.filter(f => recNum((f.performance||{}).nav3yr) !== null);
 
   // At most two per group. Without the cap the list simply reprints whichever
@@ -2737,8 +2746,8 @@ function dossier(f){
   // treated as absent here, the same way getPerf1 already treats it.
   //
   // The worst fall leads, because it is the risk figure a reader can actually
-  // picture: SRRI is a 1-7 bucket and the FE score is verified on three funds
-  // out of seventy. It is deliberately NOT painted red - every drawdown is
+  // picture: SRRI is a 1-7 bucket and the FE score is verified on only a
+  // handful of funds. It is deliberately NOT painted red - every drawdown is
   // negative, so the colour would separate nothing, and a shallow -8% would
   // wear the same alarm as a -32%. The peer line does that work instead.
   if(f.risk){
@@ -3001,15 +3010,17 @@ const KPI_ICONS = {
 };
 
 /* ---------- render: group strip ----------
-   Seven groups of ten funds. Between a single fund card and all seventy the
-   page had nothing, so the largest fact in the file - Asia running away with
-   it while bonds sit flat - could only be seen by reading the whole list.
+   Sixteen groups. Between a single fund card and all of them the page had
+   nothing, so the largest fact in the file - gold running away with it while
+   cash sits flat - could only be seen by reading the whole list.
 
    The average is unweighted: every priced fund counts once, whatever it
-   holds. The list is ten per group by construction, so the mean describes the
-   group rather than its biggest member. Funds without a figure for the chosen
-   period drop out and the header says how many priced, matching the ranking
-   panel underneath - a thinning group is visible rather than silent. */
+   holds. Groups are no longer equal in size, so a mean over three funds sits
+   beside a mean over twelve; the count next to each label says which, and the
+   tooltip names the best and weakest so a small group cannot quietly read as
+   a market call. Funds without a figure for the chosen period drop out and
+   the header says how many priced, matching the ranking panel underneath - a
+   thinning group is visible rather than silent. */
 const GROUP_PERIODS = [
   { k:'nav1m',  label:'1M',  full:'1 month' },
   { k:'navYtd', label:'YTD', full:'the year to date' },

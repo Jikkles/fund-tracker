@@ -64,6 +64,10 @@ DURABLE_CAVEATS = [
     "Portfolio breakdowns (holdings, sectors, countries) are point-in-time from "
     "each fund's last published factsheet and are older than its price data. "
     "Every fund's holdings note carries its own as-at date.",
+    "Wealth Shortlist status is read from HL's own Wealth Shortlist data, not "
+    "inferred from factsheet prose. A fund marked Ex-Shortlist was dropped by HL "
+    "and is still tracked here; funds with neither badge cover asset classes the "
+    "Shortlist does not include. Membership is HL's view, not a rating by this desk.",
 ]
 
 CONF_TEXT = {

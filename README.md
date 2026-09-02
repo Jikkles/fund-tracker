@@ -11,8 +11,11 @@
   <img alt="Hosting: GitHub Pages" src="https://img.shields.io/badge/hosting-GitHub_Pages-24292e">
 </p>
 
-An automated research desk covering **70 funds** — ten in each of seven categories — drawn
-from the Hargreaves Lansdown Wealth Shortlist. GitHub Actions price every fund from free
+An automated research desk covering **103 funds** across sixteen categories. The core is the
+Hargreaves Lansdown Wealth Shortlist, read from HL's own published list; around it sit funds
+HL has dropped but the desk still tracks, and funds covering asset classes the Shortlist does
+not include at all — property, infrastructure, commodities, index-linked gilts and cash.
+Every fund prices from its own published NAV series. GitHub Actions price them all from free
 market data, roll the catalyst calendar forward, and republish the page. Standard library
 only, free public endpoints, inside GitHub's free Actions allowance.
 
@@ -29,9 +32,38 @@ only, free public endpoints, inside GitHub's free Actions allowance.
 | **Top 5 / Bottom 5** | Ranked over 1W · 1M · 1Y · 5Y from each fund's own NAV series. Only priced funds appear, and the header says how many |
 | **Watchlist** | Top 8 to hold over six months to five years, scored on 1yr vs sector, OCF, max drawdown and badge signal. Capped at two per group, and a fund with no three-year record sits out rather than being ranked on one year and a run of blanks |
 | **Fund cards** | Holdings, sector and country splits, size, charges, managers, discrete annual returns — scraped from HL factsheets |
-| **Headlines** | Split by market (UK, US, Europe, Asia/EM/Japan, Global, Bonds, Multi-Asset), expanding in place |
+| **Headlines** | Split by market, one tab per category, expanding in place |
 | **Catalysts** | Central bank and earnings dates, each labelled `confirmed`, `provisional` or `estimated` |
 | **Data health** | Live signals only — stale, inconsistent, unverified |
+
+---
+
+## The list, and what the badges mean
+
+Sixteen categories, sized by what is actually out there rather than a fixed ten per bucket:
+
+`UK Growth` · `UK Equity Income` · `UK Small & Mid` · `North America` · `Europe` · `Japan` ·
+`Asia` · `Emerging Markets` · `Global` · `Property & Infrastructure` · `Specialist & Thematic` ·
+`Corporate & Gilts` · `Strategic & Global Bonds` · `Cash & Index-Linked` · `Mixed Investment` ·
+`Total Return`
+
+The seven-by-ten grid this replaced was forcing Japan, China and emerging markets into one
+row while ten near-identical Europe funds sat in another — the widest-dispersion bucket was
+the most compressed, and the narrowest had the most slots.
+
+| Badge | Meaning |
+|---|---|
+| **Wealth Shortlist** | On HL's list as at the last run |
+| **Ex-Shortlist** | Dropped by HL, still tracked here |
+| *(none)* | Never on it — the asset classes HL does not shortlist |
+
+Status comes from `scripts/shortlist.py`, which reads HL's published Wealth Shortlist data
+and matches on SEDOL. It is HL's view, not a rating by this desk.
+
+> It used to be inferred from factsheet prose, by looking for "our analysts have selected
+> this fund for the Wealth Shortlist". HL ship that sentence six times in a hidden tooltip
+> template on *every* factsheet, so the test was true for every fund and 68 of 70 carried a
+> badge that meant nothing. A list published as a list should be read as one.
 
 ---
 

@@ -54,6 +54,16 @@ jobs:
       # No dependencies to install and no secrets to configure - the scripts
       # use only the Python standard library and free public endpoints.
 
+      # Reads HL's published Wealth Shortlist and sets each fund's status from
+      # it. One request, and it has to run before run_update.py so the page's
+      # caveat counts match the badges. continue-on-error because a fund desk
+      # that cannot reach HL for a minute should still publish its prices -
+      # on failure every fund keeps the status it already had, which is last
+      # run's answer rather than a wrong one.
+      - name: Refresh Wealth Shortlist status
+        run: python scripts/shortlist.py
+        continue-on-error: true
+
       # Prices each fund from its own published NAV where a symbol resolves.
       # Runs before run_update.py so the audit summary counts the fresh ones.
       - name: Refresh fund NAVs
@@ -73,7 +83,7 @@ jobs:
       # chart aborts the whole script when no index fetches - correct on its
       # own terms, it exists to stop an empty chart reaching the page - but
       # without this line that abort also skips the commit, and a full NAV
-      # refresh across ~70 funds is computed and then thrown away because
+      # refresh across ~100 funds is computed and then thrown away because
       # Yahoo throttled a runner for a minute. The two datasets are
       # independent and the cheap one must not be able to discard the
       # expensive one. On failure market.json keeps its previous contents, so

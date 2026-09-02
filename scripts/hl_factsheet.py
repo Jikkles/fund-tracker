@@ -341,12 +341,16 @@ def parse(html: str) -> dict:
     if (v := managers(html)):
         out["manager"] = v
 
-    # Wealth Shortlist membership is stated in prose, not a table.
-    flat = text_of(html).lower()
-    if "selected this fund for the wealth shortlist" in flat:
-        out["shortlist"] = True
-    elif "does not feature on the wealth shortlist" in flat:
-        out["shortlist"] = False
+    # Wealth Shortlist membership is NOT read from this page. It used to be,
+    # by looking for "selected this fund for the wealth shortlist" in the
+    # prose - but HL ship that sentence six times in a hidden tooltip template
+    # on every factsheet, shortlisted or not. The test was therefore true for
+    # every fund on the desk, and 68 of 70 carried a badge that meant nothing.
+    #
+    # Membership now comes from HL's own Wealth Shortlist data instead, via
+    # scripts/shortlist.py. A list HL publishes as a list should be read as
+    # one, not inferred from the wording of a page that is about something
+    # else.
     return out
 
 
@@ -497,14 +501,6 @@ def apply(fund: dict, got: dict, class_ok: bool = True) -> list[str]:
         elif existing != got["discrete"]:
             perf["discrete"] = got["discrete"]
             changed.append(f"discrete: {len(got['discrete'])} periods")
-
-    if "shortlist" in got:
-        badge = fund.setdefault("badge", {})
-        want = ({"type": "", "label": "Wealth Shortlist"} if got["shortlist"]
-                else {"type": "off", "label": "NOT on Shortlist"})
-        if badge.get("label") != want["label"]:
-            changed.append(f"badge: {badge.get('label')!r} -> {want['label']!r}")
-            fund["badge"] = want
 
     # Stamp the date on every successful read, not only on a change. A field
     # confirmed unchanged against HL today is verified, not stale, and the

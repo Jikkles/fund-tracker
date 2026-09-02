@@ -132,12 +132,27 @@ CONTEXT_TICKERS: dict[str, str] = {
 }
 
 # Which context lines are most relevant to each fund group.
+#
+# Keys must match data/funds.json `categories`. The desk moved from seven
+# equal buckets to HL's own sector split plus the asset classes HL does not
+# shortlist (property, specialist, cash), because ten-per-bucket was forcing
+# Japan, China and emerging markets into one row while ten near-identical
+# Europe funds sat in another.
 GROUP_CONTEXT: dict[str, list[str]] = {
-    "uk":     ["FTSE 100", "FTSE 250", "Gold (USD/oz)", "GBP/USD"],
-    "us":     ["S&P 500", "Nasdaq Composite", "US 10yr yield", "GBP/USD"],
-    "global": ["S&P 500", "FTSE 100", "Euro STOXX 50", "GBP/USD"],
-    "europe": ["Euro STOXX 50", "FTSE 100", "GBP/USD"],
-    "asia":   ["Nikkei 225", "Hang Seng", "GBP/USD"],
-    "bonds":  ["US 10yr yield", "Brent crude"],
-    "mixed":  ["FTSE 100", "S&P 500", "US 10yr yield", "Gold (USD/oz)"],
+    "uk-growth":       ["FTSE 100", "FTSE 250", "GBP/USD"],
+    "uk-income":       ["FTSE 100", "GBP/USD"],
+    "uk-smaller":      ["FTSE 250", "FTSE 100", "GBP/USD"],
+    "us":              ["S&P 500", "Nasdaq Composite", "US 10yr yield", "GBP/USD"],
+    "europe":          ["Euro STOXX 50", "FTSE 100", "GBP/USD"],
+    "japan":           ["Nikkei 225", "GBP/USD"],
+    "asia":            ["Hang Seng", "Nikkei 225", "GBP/USD"],
+    "em":              ["Hang Seng", "S&P 500", "GBP/USD"],
+    "global":          ["S&P 500", "FTSE 100", "Euro STOXX 50", "GBP/USD"],
+    "property":        ["FTSE 100", "US 10yr yield", "GBP/USD"],
+    "specialist":      ["Nasdaq Composite", "Gold (USD/oz)", "Brent crude", "GBP/USD"],
+    "bonds-gov":       ["US 10yr yield", "GBP/USD"],
+    "bonds-strategic": ["US 10yr yield", "Brent crude", "GBP/USD"],
+    "cash":            ["US 10yr yield", "GBP/USD"],
+    "mixed":           ["FTSE 100", "S&P 500", "US 10yr yield", "Gold (USD/oz)"],
+    "total-return":    ["FTSE 100", "S&P 500", "Gold (USD/oz)", "US 10yr yield"],
 }

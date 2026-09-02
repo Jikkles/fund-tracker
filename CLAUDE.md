@@ -28,9 +28,9 @@ manual dispatch). So a change to `site/index.html` deploys; a change to only
 that will never start is the easy mistake. Dispatch it by hand from the
 Actions tab when a non-site change needs proving.
 
-When it does run it is not just a page publish: it re-fetches NAVs for all ~70
-funds, rebuilds `funds.json`, commits the refreshed data, then assembles and
-deploys the Pages artifact. Expect minutes, not seconds.
+When it does run it is not just a page publish: it reads HL's Wealth Shortlist,
+re-fetches NAVs for all ~100 funds, rebuilds `funds.json`, commits the refreshed
+data, then assembles and deploys the Pages artifact. Expect minutes, not seconds.
 
 Two consequences worth planning around:
 
