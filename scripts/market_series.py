@@ -21,8 +21,9 @@ fetch is left out of the file and the panel simply does not offer that tab.
 If *nothing* fetches, the run exits non-zero so the workflow fails and the
 previous good deploy stays live rather than being replaced by an empty chart.
 
-Output: data/market.json (a build artifact - not committed; regenerated on
-every deploy).
+Output: data/market.json. The daily run commits it; the chart-refresh
+workflow regenerates it and ships it straight to the Pages artifact without
+committing, so the served copy is usually fresher than the one on main.
 """
 
 from __future__ import annotations
@@ -85,6 +86,34 @@ def slug(label: str) -> str:
     return out.strip("-")
 
 
+# Why the most recent fetch for a ticker failed, keyed by ticker and read by
+# build() when an index comes back with nothing. A module-level note rather
+# than a changed return type: every caller here wants the data or None, and
+# only the run log wants the reason.
+_LAST_ERROR: dict[str, str] = {}
+
+
+def _describe(exc: BaseException) -> str:
+    """Render a failed fetch as one readable line.
+
+    HTTPError subclasses URLError, so catching URLError alone collapses a 429,
+    a 404 and a DNS failure into the same silent None - which is what made a
+    whole-panel failure unreadable from the run log. The distinction is the
+    diagnosis: a status code means Yahoo answered and refused us, which is
+    waited out, while an unreachable host or an unparseable body means
+    something moved and the code has to follow.
+    """
+    if isinstance(exc, urllib.error.HTTPError):
+        return f"HTTP {exc.code} {exc.reason}"
+    if isinstance(exc, urllib.error.URLError):
+        if isinstance(exc.reason, TimeoutError):
+            return f"timeout after {TIMEOUT}s"
+        return f"unreachable ({exc.reason})"
+    if isinstance(exc, TimeoutError):
+        return f"timeout after {TIMEOUT}s"
+    return f"{type(exc).__name__}: {exc}"
+
+
 def _get(url: str) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
@@ -139,9 +168,13 @@ def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
            f"{urllib.parse.quote(ticker)}?interval={interval}&range={rng}")
     try:
         raw = _get(url)
-    except (urllib.error.URLError, TimeoutError, OSError):
+    except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        _LAST_ERROR[ticker] = _describe(exc)
         return None
-    return parse_chart(raw)
+    parsed = parse_chart(raw)
+    if parsed is None:
+        _LAST_ERROR[ticker] = f"{len(raw)} bytes that did not parse as a chart"
+    return parsed
 
 
 def clean_summary(raw: str) -> str:
@@ -252,7 +285,8 @@ def build() -> dict:
         entry = fetch_index(label, ticker)
         if entry is None:
             failed.append(label)
-            print(f"  [chart] {label:20} {ticker:11} FAILED")
+            why = _LAST_ERROR.get(ticker, "no 1y series returned")
+            print(f"  [chart] {label:20} {ticker:11} FAILED  {why}")
             continue
         got = ",".join(sorted(entry["series"]))
         pts = sum(len(s["c"]) for s in entry["series"].values())
@@ -314,6 +348,15 @@ def _selftest_offline() -> bool:
     assert clean_summary("") == ""
     print("  summary clean    OK  (tags stripped, truncation marked)")
 
+    # The pair this exists to separate: a refusal that clears on its own, and
+    # a fault that does not. Both used to print as a bare FAILED.
+    throttled = urllib.error.HTTPError("u", 429, "Too Many Requests", {}, None)
+    assert _describe(throttled) == "HTTP 429 Too Many Requests", _describe(throttled)
+    assert _describe(urllib.error.URLError("nodename nor servname provided")) \
+        .startswith("unreachable"), _describe(urllib.error.URLError("x"))
+    assert _describe(TimeoutError()) == f"timeout after {TIMEOUT}s"
+    print("  fetch reasons    OK  (status, unreachable and timeout kept apart)")
+
     assert slug("FTSE 100") == "ftse-100"
     assert slug("S&P 500") == "s-p-500"
     assert slug("Gold (USD/oz)") == "gold-usd-oz"
@@ -331,8 +374,9 @@ def main(argv: list[str]) -> int:
             print(f"  LIVE OK: {got['label']} {got['price']} {got['currency']}, "
                   f"series {sorted(got['series'])}")
         else:
-            print("  LIVE FAILED: Yahoo unreachable. Check network/DNS before "
-                  "relying on a scheduled run.")
+            why = _LAST_ERROR.get("^FTSE", "no 1y series returned")
+            print(f"  LIVE FAILED: {why}. Check network/DNS before relying "
+                  "on a scheduled run.")
         return 0
 
     dry = "--dry-run" in argv
@@ -341,6 +385,13 @@ def main(argv: list[str]) -> int:
     if not doc["indices"]:
         print("\n[abort] no index fetched - leaving the previous file in place "
               "rather than publishing an empty chart.", file=sys.stderr)
+        # Every index failing at once is nearly always one upstream cause, so
+        # the distinct reasons are a short list and belong in the abort itself.
+        # Without them the log says only FAILED twelve times, and a refusal
+        # that clears on its own reads exactly like an endpoint that moved.
+        seen = sorted(set(_LAST_ERROR.values()))
+        print(f"[abort] reason{'s' if len(seen) > 1 else ''}: "
+              + ("; ".join(seen) if seen else "unknown"), file=sys.stderr)
         return 1
 
     payload = json.dumps(doc, separators=(",", ":"))

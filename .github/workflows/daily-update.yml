@@ -68,7 +68,21 @@ jobs:
 
       # Moved ahead of the commit so the chart data is committed with the rest
       # of the run rather than only written into the Pages artifact.
+      #
+      # continue-on-error because of what sits after it: the commit step. The
+      # chart aborts the whole script when no index fetches - correct on its
+      # own terms, it exists to stop an empty chart reaching the page - but
+      # without this line that abort also skips the commit, and a full NAV
+      # refresh across ~70 funds is computed and then thrown away because
+      # Yahoo throttled a runner for a minute. The two datasets are
+      # independent and the cheap one must not be able to discard the
+      # expensive one. On failure market.json keeps its previous contents, so
+      # the deploy carries a stale chart rather than none, and the fund data
+      # commits normally. Watch the step annotation, not the job colour: a
+      # tolerated failure here still needs reading, and the run log now names
+      # the HTTP status so a throttle is distinguishable from a moved endpoint.
       - name: Fetch index series
+        continue-on-error: true
         run: python scripts/market_series.py
 
       - name: Commit updated data
