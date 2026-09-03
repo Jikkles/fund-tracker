@@ -631,10 +631,19 @@
   .cat-chev { color: var(--ink-soft); font-size: 12px; }
   .cat-body { padding: 0 16px 16px; border-top: 1px solid rgba(51,65,85,.4); }
   .cat-basis { font-size: 12px; color: var(--ink-soft); margin: 12px 0 12px; line-height: 1.55; }
-  .cat-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 8px; }
-  .cat-hit { display: block; text-align: left; background: var(--paper); border: 1px solid var(--rule);
+  .cat-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 8px; }
+  .cat-hit { display: flex; align-items: flex-start; gap: 10px;
+             text-align: left; background: var(--paper); border: 1px solid var(--rule);
              border-radius: 10px; padding: 10px 12px; cursor: pointer; color: var(--ink);
              font-family: "Inter", sans-serif; }
+  /* min-width:0, or a long fund name refuses to wrap and shoves the YTD out. */
+  .ch-main { flex: 1 1 auto; min-width: 0; }
+  .ch-ytd  { flex: 0 0 auto; text-align: right; line-height: 1.15; }
+  .ch-ytd b { display: block; font-family: "JetBrains Mono", ui-monospace, monospace;
+              font-size: 12.5px; font-weight: 600; }
+  .ch-ytd i { display: block; font-style: normal; font-size: 9px; font-weight: 600;
+              letter-spacing: .09em; text-transform: uppercase; color: var(--ink-soft);
+              margin-top: 1px; }
   .cat-hit:hover { border-color: var(--chip); background: var(--hover-bg); }
   .ch-name { display: block; font-size: 13px; font-weight: 600; }
   .ch-cat  { display: block; font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
@@ -1138,6 +1147,14 @@
   .rank-pop-name { font-size: 15px; font-weight: 700; margin: 6px 0 8px; line-height: 1.3; }
   .rank-pop-body { font-size: 14px; line-height: 1.6; color: var(--ink-soft);
                    max-height: 52vh; overflow-y: auto; }
+  .rank-pop-ctx { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); }
+  .rank-pop-ctx-lab { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 9.5px;
+                      letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+  .rank-pop-ctx dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 7px 0 0; }
+  .rank-pop-ctx dt { font-size: 12px; color: var(--ink-soft); white-space: nowrap; }
+  .rank-pop-ctx dd { margin: 0; font-size: 12px; font-weight: 600; text-align: right;
+                     font-family: "JetBrains Mono", ui-monospace, monospace; }
+  .rank-pop-foot { margin: 9px 0 0; font-size: 11px; line-height: 1.45; color: var(--ink-soft); }
   .rank-pop-x { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px;
                 display: grid; place-items: center; padding: 0; cursor: pointer;
                 background: transparent; border: none; border-radius: 6px;
@@ -2190,15 +2207,21 @@ function renderRanks(){
     if(added) return { lab: 'Why it is on the shortlist', text: added };
     return { lab: 'No note yet',
              text: 'The desk has not written a note on this fund. The return '
-                 + 'beside it is the fund’s own published performance; there '
-                 + 'is nothing verified to add about what is behind it.' };
+                 + 'beside it is the fund’s own published performance, and '
+                 + 'what follows is the published context around it — not an '
+                 + 'explanation of the move, which nothing here can verify.' };
   };
 
   // ── List item: num + name + perf. The note opens in a floating panel
   // rather than inside the row - see rankNote().
-  const listItem = (key, num, name, cat, perfStr, pNum, note) => {
+  const listItem = (key, num, name, cat, perfStr, pNum, note, fund) => {
     const perfCol = pNum >= 0 ? 'var(--forest)' : 'var(--oxblood)';
-    RANK_NOTES[key] = { name: name, text: note.text, lab: note.lab };
+    // Held as a reference and read when the panel opens, not resolved here:
+    // market.json arrives on its own fetch and does not re-render this panel,
+    // so a context built now would permanently lose the index line whenever
+    // the funds file won the race.
+    RANK_NOTES[key] = { name: name, text: note.text, lab: note.lab,
+                        fund: fund, period: period.k };
     return `<div class="pulse-row has-note">
       <div class="pr-head" onclick="rankNote(this,'${key}')">
         <span class="pr-num">${num}.</span>
@@ -2214,11 +2237,11 @@ function renderRanks(){
   closeRankNote();
 
   let top5Items = top5.map(({f,p,s},i) =>
-    listItem('t'+i, i+1, f.name, f.category, s, p, rowNote(f))
+    listItem('t'+i, i+1, f.name, f.category, s, p, rowNote(f), f)
   ).join('');
 
   let bot5Items = bot5.map(({f,p,s},i) =>
-    listItem('b'+i, i+1, f.name, f.category, s, p, rowNote(f))
+    listItem('b'+i, i+1, f.name, f.category, s, p, rowNote(f), f)
   ).join('');
 
   const scopeLabel = scope && !emptied ? scope.label : 'all funds';
@@ -2960,11 +2983,22 @@ function renderCatalystCalendar(){
         ? '<p class="cat-basis">' + hits.length + ' fund' + (hits.length===1?'':'s') + ' reached &#8212; ' + basis +
           '. Factsheets publish ten positions only, so a smaller stake outside the top ten is neither shown nor ruled out.</p>' +
           '<div class="cat-hits">' + hits.map(function(h){
-            return '<button type="button" class="cat-hit" onclick="openFund(\'' + esc(h.f.id) + '\')" title="Open ' + esc(h.f.name) + '">' +
+            // The year to date is the fund's own NAV figure - the same one
+            // the fund list ranks on. Where the NAV series cannot carry one it
+            // is left blank rather than filled: the two BlackRock European
+            // lines have no 1 January anchor, and a dash is the honest answer.
+            const ytd = getYtd(h.f);
+            const ytdCell = ytd
+              ? '<b style="color:' + perfColor(parsePerf(ytd)) + '">' + esc(ytd) + '</b><i>ytd</i>'
+              : '<b style="color:var(--ink-soft)">&#8212;</b><i>no ytd</i>';
+            return '<button type="button" class="cat-hit" onclick="openFund(\'' + esc(h.f.id) + '\')" title="Open ' + esc(h.f.name) + (ytd ? ' &#8212; ' + esc(ytd) + ' year to date' : '') + '">' +
+              '<span class="ch-main">' +
               '<span class="ch-name">' + esc(h.f.name) + '</span>' +
               '<span class="ch-cat">' + esc(catGroupLabel(h.f.group)) + '</span>' +
               '<span class="ch-why">' + h.reasons.map(function(r){
                 return '<span class="' + r.cls + '">' + esc(r.text) + '</span>'; }).join('') + '</span>' +
+              '</span>' +
+              '<span class="ch-ytd">' + ytdCell + '</span>' +
             '</button>'; }).join('') + '</div>'
         : '<p class="intel-note">No fund on the desk names this in a published top&#8209;10 holding or country breakdown.</p>';
       const detail = c.detail ? '<p class="cat-detail">' + esc(String(c.detail).replace(/<[^>]*>/g,'')) + '</p>' : '';
@@ -3599,6 +3633,66 @@ function renderNavStamp(){
 const RANK_NOTES = {};
 let rankNoteOpen = null;
 
+/* The index that best stands for a fund's largest published country weight.
+   This map is the desk's own shorthand and is labelled as context, never as
+   attribution: it does not claim the fund tracks the index, and it does not
+   claim the index explains the move. It is the reference point a reader would
+   otherwise go and look up, put next to the figure it belongs beside. */
+const RANK_CTX_INDEX = {
+  'united kingdom':'ftse-100', 'united states':'s-p-500', 'japan':'nikkei-225',
+  'hong kong':'hang-seng', 'china':'hang-seng', 'france':'euro-stoxx-50',
+  'germany':'euro-stoxx-50', 'netherlands':'euro-stoxx-50', 'italy':'euro-stoxx-50',
+  'spain':'euro-stoxx-50', 'switzerland':'euro-stoxx-50'
+};
+/* The ranked window, in the market chart's own range keys. */
+const RANK_CTX_RANGE = { nav1w:'5d', nav1m:'1m', nav1yr:'1y', nav5yr:'5y' };
+
+function pctStr(n){ return (n >= 0 ? '+' : '') + n.toFixed(2) + '%'; }
+
+/* Published facts that bear on the figure the row is ranked by. Every line is
+   read straight off the fund's own record or the market file - nothing here is
+   inferred, and a fact that is missing is simply not listed. */
+function rankContext(f, periodKey){
+  const out = [];
+  const countries = (f.countries || [])
+    .map(c => ({ name: c.name, w: parsePerf(c.weight), weight: c.weight }))
+    .filter(c => c.w !== null)
+    .sort((a, b) => b.w - a.w);
+  const top = countries[0];
+  if(top){
+    out.push({ k: 'Largest country', v: top.weight + ' ' + top.name });
+  } else {
+    const h = (f.holdings || [])[0];
+    if(h && h.weight) out.push({ k: 'Largest holding', v: h.weight + ' ' + h.name });
+  }
+
+  // The same window, on the index that stands for that exposure. Only drawn
+  // when the market file is loaded and actually carries the range.
+  const range = RANK_CTX_RANGE[periodKey];
+  const id = top ? RANK_CTX_INDEX[String(top.name).toLowerCase()] : null;
+  if(id && range && MKT && MKT.indices){
+    const idx = MKT.indices.find(x => x.id === id);
+    const ser = idx ? mktSeries(idx, range) : null;
+    if(ser && ser.c.length > 1){
+      const from = (typeof ser.base === 'number' && ser.base) ? ser.base : ser.c[0];
+      const to = ser.c[ser.c.length - 1];
+      // Not "same window": the fund's figure runs to its own NAV date and the
+      // index runs to the chart's last bar, which can be a session apart. The
+      // label names the period and the footnote names the difference, rather
+      // than implying the two were measured to the same minute.
+      const per = RANK_PERIODS.find(x => x.k === periodKey);
+      if(from) out.push({ k: idx.label + ', ' + (per ? per.full : 'same period'),
+                          v: pctStr((to - from) / from * 100), isIndex: true });
+    }
+  }
+
+  const ocf = f.charges && f.charges.netOngoing;
+  if(ocf && !/not yet verified/i.test(ocf)) out.push({ k: 'Net ongoing charge', v: ocf });
+  const sec = f.iaSector;
+  if(sec && !/not yet verified/i.test(sec)) out.push({ k: 'IA sector', v: sec });
+  return out;
+}
+
 function rankPopEl(){
   let pop = document.getElementById('rankPop');
   if(!pop){
@@ -3627,9 +3721,24 @@ function rankNote(head, key){
   const pop = rankPopEl();
   // The heading says which kind of note this is, so a shortlist reason or an
   // absent one is never presented as commentary on today's move.
+  note.ctx = rankContext(note.fund, note.period);
+  const ctx = (note.ctx || []).length
+    ? '<div class="rank-pop-ctx"><div class="rank-pop-ctx-lab">What the desk can show</div><dl>'
+      + note.ctx.map(function(r){
+          return '<dt>' + esc(r.k) + '</dt><dd>' + esc(r.v) + '</dd>'; }).join('')
+      + '</dl>'
+      + (note.ctx.some(function(r){ return r.isIndex; })
+          ? '<p class="rank-pop-foot">The index is the desk’s own reference point for that '
+            + 'exposure, not a benchmark the fund tracks, and it runs to the chart’s last '
+            + 'bar rather than to the fund’s NAV date. It sits beside the return; it does '
+            + 'not explain it.</p>'
+          : '')
+      + '</div>'
+    : '';
   pop.innerHTML = '<div class="rank-pop-lab">' + esc(note.lab || "Why it's moving") + '</div>'
                 + '<div class="rank-pop-name">' + esc(note.name) + '</div>'
                 + '<div class="rank-pop-body">' + esc(note.text) + '</div>'
+                + ctx
                 + '<button class="rank-pop-x" onclick="closeRankNote()" aria-label="Close">&#10005;</button>';
   pop.hidden = false;
   head.parentElement.classList.add('open');
