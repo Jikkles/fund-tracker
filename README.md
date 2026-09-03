@@ -131,19 +131,29 @@ prices nothing — it earns its place for the run where a NAV lookup fails. Pric
 also beats estimating from headline index moves: in a week where the S&P rises 2% and
 sterling strengthens 2%, the raw index says +2% and a UK investor got roughly nothing.
 
-**The worst fall comes off the same series.** `max_drawdown()` measures peak to trough over
-a fixed five years on the NAV series already fetched for the return windows — no extra
-request, no second source. **88 of 103 funds** carry one; the other 15 lack the history and
-publish nothing rather than a three-year fall wearing a five-year label.
+**The worst fall comes off the same series.** `max_drawdown()` measures peak to trough on
+the NAV series already fetched for the return windows — no extra request, no second source.
+**101 of 103 funds** carry one: 88 over five years, 8 over three, 5 over one. Only the two
+BlackRock European lines, which hold ten weeks of usable history, publish none.
+
+The window is published beside the figure because the figures are not interchangeable. A
+one-year worst fall is shallower than a five-year one for reasons that have nothing to do
+with the fund being safer — it has had less time in which to fall. So the **card shows every
+fund's real figure with the window it was measured over**, while the **watchlist scores only
+the five-year cohort**, and the category peer line compares a fund only against peers
+measured over the same span.
 
 > It used to be researched by hand: 50 funds had a figure tagged `inferred-morningstar` at
 > low or medium confidence, and 53 had none at all. That was not only a gap in the cards. The
 > watchlist scores drawdown at weight 0.5 against a z-score built from whichever funds
 > happened to have the field, and a fund missing it scored the list mean — so half the desk
 > was credited with exactly average downside protection on the strength of nobody having
-> looked it up. A number the desk had invented about itself. The fixed window matters for the
-> same reason: a three-year worst fall and a five-year one are not comparable, and the score
-> compares them.
+> looked it up. A number the desk had invented about itself.
+
+The revisions against the inferred figures were large — Baillie Gifford Japanese −52.4% to
+−26.4%, L&G US Index −8.4% to −21.3% — and the reason is in the periods. Every researched
+figure was labelled 2022; ten funds' worst five-year fall is a **Jan–Apr 2025** episode the
+researched set had never captured.
 
 Coverage is judged exactly as the return windows judge it, including the guard against a
 mid-series hole — a six-year gap in a NAV series is an absence, not a 40% crash.
@@ -161,20 +171,37 @@ stamped on every successful read, not only on a change — a fund confirmed unch
 counts as verified, not stale.
 
 **Two dates, not one.** `perfConfirmed` is when the factsheet was last read. `perfAsAt` is
-what the discrete and cumulative tables say they are *measured to*, read out of their own
-period labels by `perf_dates.py` — `1 yr (trailing, to 26 Jun 26)`, `02/09/25 to 02/09/26`,
-`31 Mar 25 – 31 Mar 26`. A label stating no date yields none, and the fund is reported as
-undated rather than current: **96 of 103** carry a date, 19 of those are past the 120-day
-staleness threshold, and 7 state nothing either way.
+what the tables say they are *measured to*, read out of their own period labels by
+`perf_dates.py` — `1 yr (trailing, to 26 Jun 26)`, `02/09/25 to 02/09/26`,
+`31 Mar 25 – 31 Mar 26`.
 
 > These were one field, holding the read date, and every consumer wanted the other one. So
 > the page's caveat printed "the tables are **NOT refreshed** by the daily run: as-at dates
 > are all as at 3 Sep 2026, **up to 0 days old**" — a sentence contradicting itself in its own
 > second clause — and `research_health()`, the watchdog for exactly this, could never fire:
-> it warns past 120 days, and the weekly refresh reset all 103 stamps to today every Sunday,
-> so no fund could reach 8. A watchdog wired to a clock that was reset faster than it could
-> run. The rule the desk applies to figures applies to dates: a confirmation is not a
-> measurement, and using one as the other invents the number.
+> it warns past 120 days, and the weekly refresh reset all 103 stamps every Sunday, so no
+> fund could reach 8. A watchdog wired to a clock reset faster than it could run.
+
+**And two clocks, because the tables do not age alike.** A **cumulative** table is trailing:
+"1 yr to 26 Jun 26" claims to be the last twelve months and is less true every day, so days
+since measured is the right question. **10 of the 45** funds holding one are past 120 days,
+and 5 more state no date at all.
+
+A **discrete** table is completed annual periods on a fixed year-end — 2 Sep for the 67
+scraped from HL, 31 Mar for five, 30 Jun for three, every dated one strictly consistent
+across five years. The year to 31 Mar 2026 is history. It does not become less true in
+September, and the next period on that basis does not close until 31 Mar 2027. What can go
+wrong is a period closing and never being added, which is what `discreteMissingYears` counts;
+today, across all 84 dated tables, it is **zero**.
+
+> Aged on the trailing clock, those complete annual tables read as 156 days stale and put
+> fourteen funds on a worklist with nothing whatsoever to do — the same fault as the bug
+> above, inverted. Nine of the nineteen first reported were this.
+
+What genuinely needs a person is narrower than "re-research the table": the fund's own
+1/3/5yr totals are computed from its NAV every run and carry the `NAV` chip. It is the
+**sector and benchmark comparators** beside them that age, because nothing free publishes an
+IA or Morningstar category average.
 
 **Central bank dates.** `cb_calendar.py` reads the published Fed and BoE calendars, which
 carries the desk through Dec 2027 untouched. It fails closed: a year is accepted only if it

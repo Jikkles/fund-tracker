@@ -9,7 +9,8 @@ Window: 4 Aug 2026 to 3 Sep 2026
 
 ## Maintenance needed
 
-- 19 funds have factsheet research older than 120 days: man-japan-corealpha (156d), lg-uk-index (156d), lg-future-world-esg-developed (156d), and 16 more. Re-research, or rely on the NAV figures, which refresh every run.
+- 10 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (156d), jupiter-asian-income (156d), artemis-us-smaller-companies (142d), and 7 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run.
+- 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
 
 ## Market context
 
@@ -17,15 +18,15 @@ Window: 4 Aug 2026 to 3 Sep 2026
 |---|---|
 | FTSE 100 | -0.44% |
 | FTSE 250 | +0.15% |
-| S&P 500 | +1.87% |
-| Nasdaq 100 | +2.40% |
+| S&P 500 | +1.95% |
+| Nasdaq 100 | +2.47% |
 | Euro STOXX 50 | -1.60% |
 | Nikkei 225 | +0.58% |
 | Hang Seng | -2.10% |
-| Gold (USD/oz) | +12.48% |
-| Brent crude | +14.03% |
-| US 10yr yield | +1.20% |
-| GBP/USD | +0.86% |
+| Gold (USD/oz) | +12.53% |
+| Brent crude | +14.34% |
+| US 10yr yield | +1.28% |
+| GBP/USD | +0.87% |
 
 ## Fund NAV figures (1 month)
 
