@@ -74,9 +74,22 @@ jobs:
           # Only _site is stamped; the repo keeps its placeholder, which is how
           # the page knows it is being opened locally rather than served.
           sed -i "s/__BUILD__/$GITHUB_SHA/" _site/index.html
-          cp data/funds.json  _site/funds.json
-          cp data/last_run.md _site/last_run.md
-          cp data/market.json _site/market.json
+          # Every file index.html fetches, copied by one list in every
+          # workflow that deploys, and MISSING ONE IS A HARD FAILURE.
+          #
+          # This was three hand-written cp lines per workflow and they drifted:
+          # only the daily run copied movers.json, so each hourly or weekly
+          # deploy published a site without it. The panel 404ed and printed
+          # "the constituent rankings could not be loaded" until the next daily
+          # run happened to put the file back - a page that broke and healed on
+          # a schedule, from a one-line omission nothing checked for.
+          #
+          # constituents.json is deliberately not here: index_movers.py reads
+          # it to build movers.json, and the page never fetches it.
+          for f in funds.json market.json movers.json last_run.md; do
+            test -f "data/$f" || { echo "::error::data/$f missing - refusing to deploy a site without it"; exit 1; }
+            cp "data/$f" "_site/$f"
+          done
 
       # v4 of this action stopped including dotfiles in the artifact, and does
       # so silently. Nothing here is hidden - the four files above are copied
