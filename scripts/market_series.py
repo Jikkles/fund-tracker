@@ -75,6 +75,8 @@ NEWS_URL = ("https://feeds.finance.yahoo.com/rss/2.0/headline"
             "?s={}&region=US&lang=en-US")
 NEWS_PER_INDEX = 6
 NEWS_SUMMARY_MAX = 400
+# Below this an unpunctuated description is short enough to be whole, not cut.
+NEWS_CUT_MIN = 60
 
 # (range key, Yahoo range, Yahoo interval)
 SERIES: list[tuple[str, str, str]] = [
@@ -184,12 +186,42 @@ def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
     return parsed
 
 
+# Words that carry nothing standing at the end of a cut sentence. Several
+# publishers cap the RSS description at exactly 100 characters, so the tail is
+# routinely a half-word behind a preposition: "analyzed comments from the U",
+# "surging inflation and escalat". Dropping back to the last word that says
+# something reads as a summary; leaving it reads as a bug.
+TRAILING_FILLER = {
+    "a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "into",
+    "of", "on", "or", "over", "the", "their", "its", "to", "with", "after",
+    "amid", "about", "against", "while", "when", "that", "this", "these",
+    "those", "is", "are", "was", "were", "has", "have", "had", "will",
+    "would", "could", "said", "says", "near", "up", "down", "before",
+}
+
+
+def _trim_dangling(txt: str) -> str:
+    """Drop the half-word a character-count cut leaves, and any filler behind it."""
+    words = txt.split(" ")
+    # The cut lands on a character, not a word, so the final token is usually a
+    # fragment - "Res" of "Reserve", "escalat" of "escalating". Nothing tells a
+    # fragment from a genuinely short word, so it always goes: losing one real
+    # word reads better than publishing half of one.
+    if len(words) > 1:
+        words.pop()
+    while len(words) > 1 and words[-1].lower().strip(",;:") in TRAILING_FILLER:
+        words.pop()
+    return " ".join(words).rstrip(" ,;:-–—")
+
+
 def clean_summary(raw: str) -> str:
     """Flatten a feed description into one plain-text paragraph.
 
     Descriptions arrive with markup in them and are already truncated by the
     feed, usually mid-sentence. Trailing punctuation is normalised to an
-    ellipsis so the cut is visible rather than reading as a typo.
+    ellipsis so the cut is visible rather than reading as a typo, and the
+    dangling fragment before it is trimmed off - there is no fuller text to
+    fetch, the article page's own meta description is the same 100 characters.
     """
     txt = re.sub(r"<[^>]+>", " ", raw or "")
     txt = re.sub(r"\s+", " ", txt).strip()
@@ -202,6 +234,12 @@ def clean_summary(raw: str) -> str:
         txt = cut
     txt = txt.rstrip(" ,;:-–—")
     if txt and txt[-1] not in ".!?…":
+        # Only a long unpunctuated description is a character-count cut worth
+        # trimming back. A short one is just a headline-ish line with no full
+        # stop, and dropping its last word would gut it: "Hello world" is not
+        # a truncation of anything.
+        if len(txt) >= NEWS_CUT_MIN:
+            txt = _trim_dangling(txt)
         txt += "…"
     return txt
 
@@ -349,6 +387,24 @@ def _selftest_offline() -> bool:
     # earns the ellipsis; one that already ends in a full stop does not.
     assert clean_summary("<p>Hello   <b>world</b></p>") == "Hello world…"
     assert clean_summary("cut off mid clause,").endswith("clause…"),         clean_summary("cut off mid clause,")
+    # The real shape of a 100-character feed cut, from three live headlines.
+    assert clean_summary(
+        "The European stock markets closed higher in Friday trading as "
+        "investors analyzed comments from the U") == (
+        "The European stock markets closed higher in Friday trading as "
+        "investors analyzed comments…")
+    assert clean_summary(
+        "European stocks closed mostly lower in Tuesday trading amid surging "
+        "inflation and escalat") == (
+        "European stocks closed mostly lower in Tuesday trading amid surging "
+        "inflation…")
+    assert clean_summary(
+        "Stocks fell in Wednesday trading as oil prices were flat amid "
+        "possible") == (
+        "Stocks fell in Wednesday trading as oil prices were flat…")
+    # A complete sentence keeps every word, however short.
+    assert clean_summary("Colman's Mustard has been put up for sale.") == (
+        "Colman's Mustard has been put up for sale.")
     assert clean_summary("Ends properly.") == "Ends properly."
     long_txt = "word " * 200
     assert len(clean_summary(long_txt)) <= NEWS_SUMMARY_MAX + 1
