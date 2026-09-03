@@ -44,6 +44,24 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      # A push to site/** is a request to PUBLISH THE PAGE, not to re-price the
+      # desk. It used to be both: every edit to index.html re-read HL's
+      # Shortlist, refetched ~100 fund NAVs, reranked every index constituent
+      # list and committed the result. Nine days of page work left 63 "Daily
+      # update" commits on main, ten of them in one day, each one a full scrape
+      # of someone else's servers for a change that touched no data.
+      #
+      # This is the same argument that already took this workflow's own file
+      # out of the paths filter above - "editing the pipeline is not a reason
+      # to rerun it" - applied to the page it deploys. It also removes the race
+      # CLAUDE.md warns about, where a push triggers a run that commits data on
+      # top of the branch you are about to push to again.
+      #
+      # The schedule and a manual dispatch still do the full run. What a push
+      # keeps is everything needed to publish correctly: the anonymisation
+      # gate, a fresh chart, and the deploy.
+      REFRESH_DATA: ${{ github.event_name != 'push' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -61,12 +79,14 @@ jobs:
       # on failure every fund keeps the status it already had, which is last
       # run's answer rather than a wrong one.
       - name: Refresh Wealth Shortlist status
+        if: env.REFRESH_DATA == 'true'
         run: python scripts/shortlist.py
         continue-on-error: true
 
       # Prices each fund from its own published NAV where a symbol resolves.
       # Runs before run_update.py so the audit summary counts the fresh ones.
       - name: Refresh fund NAVs
+        if: env.REFRESH_DATA == 'true'
         run: python scripts/fund_nav.py
 
       # Ranks the constituents of each index the chart carries. Only indices
@@ -75,10 +95,12 @@ jobs:
       # for the same reason as the chart step below - a movers panel is worth
       # less than the fund data, and must never be able to discard it.
       - name: Refresh index constituent movers
+        if: env.REFRESH_DATA == 'true'
         run: python scripts/index_movers.py
         continue-on-error: true
 
       - name: Run the update
+        if: env.REFRESH_DATA == 'true'
         run: python scripts/run_update.py
         working-directory: ${{ github.workspace }}
 
@@ -104,7 +126,12 @@ jobs:
         continue-on-error: true
         run: python scripts/market_series.py
 
+      # Nothing to commit on a page-only publish: no step above wrote a
+      # tracked file. Gated rather than left to find an empty diff, because
+      # the first thing it does is reset onto FETCH_HEAD, and doing that on a
+      # run that has nothing to add is motion for its own sake.
       - name: Commit updated data
+        if: env.REFRESH_DATA == 'true'
         run: |
           git config user.name  "fund-tracker-bot"
           git config user.email "actions@users.noreply.github.com"

@@ -35,7 +35,7 @@ only, free public endpoints, inside GitHub's free Actions allowance.
 | **Fund cards** | Holdings, sector and country splits, size, charges, managers, discrete annual returns — scraped from HL factsheets |
 | **Headlines** | Split by market, one tab per category, expanding in place |
 | **Catalysts** | Central bank and earnings dates, each labelled `confirmed`, `provisional` or `estimated` |
-| **Data health** | Live signals only — stale, inconsistent, unverified |
+| **Data health** | Live signals only — stale NAVs, researched tables past 120 days, undated tables, inconsistent, unverified |
 
 ---
 
@@ -83,16 +83,20 @@ nothing to configure, no secrets to add.
 
 | Workflow | Schedule | Does |
 |---|---|---|
-| `daily-update.yml` | Daily | Prices every fund, rolls catalysts, deploys the page |
+| `daily-update.yml` | Daily, **and on a push to `site/**`** | Prices every fund, rolls catalysts, deploys the page |
 | `hourly-market.yml` | Weekdays at 08:17, 13:17, 17:17 and 21:17 UTC | Refreshes the index chart and headlines |
 | `weekly-factsheets.yml` | Weekly | Re-scrapes HL factsheet depth |
 
 Weekly is deliberate for factsheets: holdings tables are republished monthly at best, and
 they are someone else's pages — asking once a week rather than seven times is basic courtesy.
 
-`data/market.json` is **not committed**. It is regenerated on every deploy and published
-straight to the Pages artifact, so a chart refresh doesn't leave the repo carrying commits of
-churning price data.
+**A push publishes the page; it does not re-price the desk.** The two used to be the same
+run, so editing a colour in `index.html` re-read HL's Shortlist, refetched ~100 fund NAVs,
+reranked every index constituent list and committed the result — nine days of page work left
+63 `Daily update` commits on `main`, ten of them in one day. The refresh steps are now gated
+on the trigger: the schedule and a manual dispatch do the full run, a push runs the
+anonymisation gate, a fresh chart and the deploy. Which also removes the race where a push
+fires a run that commits on top of the branch you are about to push to again.
 
 ---
 
@@ -127,6 +131,23 @@ prices nothing — it earns its place for the run where a NAV lookup fails. Pric
 also beats estimating from headline index moves: in a week where the S&P rises 2% and
 sterling strengthens 2%, the raw index says +2% and a UK investor got roughly nothing.
 
+**The worst fall comes off the same series.** `max_drawdown()` measures peak to trough over
+a fixed five years on the NAV series already fetched for the return windows — no extra
+request, no second source. **88 of 103 funds** carry one; the other 15 lack the history and
+publish nothing rather than a three-year fall wearing a five-year label.
+
+> It used to be researched by hand: 50 funds had a figure tagged `inferred-morningstar` at
+> low or medium confidence, and 53 had none at all. That was not only a gap in the cards. The
+> watchlist scores drawdown at weight 0.5 against a z-score built from whichever funds
+> happened to have the field, and a fund missing it scored the list mean — so half the desk
+> was credited with exactly average downside protection on the strength of nobody having
+> looked it up. A number the desk had invented about itself. The fixed window matters for the
+> same reason: a three-year worst fall and a five-year one are not comparable, and the score
+> compares them.
+
+Coverage is judged exactly as the return windows judge it, including the guard against a
+mid-series hole — a six-year gap in a NAV series is an absence, not a 40% crash.
+
 ---
 
 ## Where the rest comes from
@@ -138,6 +159,22 @@ it: the page title must match the fund name (this caught a scrape landing on HL'
 discrete history are class-specific and get dropped when the classes differ. The date is
 stamped on every successful read, not only on a change — a fund confirmed unchanged today
 counts as verified, not stale.
+
+**Two dates, not one.** `perfConfirmed` is when the factsheet was last read. `perfAsAt` is
+what the discrete and cumulative tables say they are *measured to*, read out of their own
+period labels by `perf_dates.py` — `1 yr (trailing, to 26 Jun 26)`, `02/09/25 to 02/09/26`,
+`31 Mar 25 – 31 Mar 26`. A label stating no date yields none, and the fund is reported as
+undated rather than current: **96 of 103** carry a date, 19 of those are past the 120-day
+staleness threshold, and 7 state nothing either way.
+
+> These were one field, holding the read date, and every consumer wanted the other one. So
+> the page's caveat printed "the tables are **NOT refreshed** by the daily run: as-at dates
+> are all as at 3 Sep 2026, **up to 0 days old**" — a sentence contradicting itself in its own
+> second clause — and `research_health()`, the watchdog for exactly this, could never fire:
+> it warns past 120 days, and the weekly refresh reset all 103 stamps to today every Sunday,
+> so no fund could reach 8. A watchdog wired to a clock that was reset faster than it could
+> run. The rule the desk applies to figures applies to dates: a confirmation is not a
+> measurement, and using one as the other invents the number.
 
 **Central bank dates.** `cb_calendar.py` reads the published Fed and BoE calendars, which
 carries the desk through Dec 2027 untouched. It fails closed: a year is accepted only if it
@@ -173,6 +210,7 @@ cache-busting query, so neither the browser nor GitHub's CDN can serve yesterday
 | `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
 | `scripts/cb_calendar.py` | Reads the published Fed/BoE calendars |
 | `scripts/calendar_data.py` | Central bank dates + earnings lookup |
+| `scripts/perf_dates.py` | Reads what the performance tables say they are measured to |
 | `scripts/proxies.py` | Fund → ETF mapping. **Edit this** if a proxy looks wrong |
 | `scripts/anonymise.py` | Strips personal references before publishing |
 
@@ -185,6 +223,7 @@ python scripts/cb_calendar.py    --selftest   # Fed/BoE calendar parsing, offlin
 python scripts/calendar_data.py  --selftest   # date rollover + sort anchors, offline
 python scripts/fund_nav.py       --selftest   # resolution guards, offline
 python scripts/hl_factsheet.py   --selftest   # scrape parsing + guards, offline
+python scripts/perf_dates.py                  # period-label date parsing, offline
 
 python scripts/cb_calendar.py                 # what the calendars say today
 python scripts/run_update.py     --dry-run    # full run, writes nothing
