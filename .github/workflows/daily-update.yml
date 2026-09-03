@@ -69,6 +69,15 @@ jobs:
       - name: Refresh fund NAVs
         run: python scripts/fund_nav.py
 
+      # Ranks the constituents of each index the chart carries. Only indices
+      # whose whole constituent list can be priced are ranked; the rest are
+      # written out with the reason, which the page prints. continue-on-error
+      # for the same reason as the chart step below - a movers panel is worth
+      # less than the fund data, and must never be able to discard it.
+      - name: Refresh index constituent movers
+        run: python scripts/index_movers.py
+        continue-on-error: true
+
       - name: Run the update
         run: python scripts/run_update.py
         working-directory: ${{ github.workspace }}
@@ -112,7 +121,7 @@ jobs:
           # nothing else.
           git fetch origin main
           git reset --mixed FETCH_HEAD
-          git add data/funds.json data/last_run.md data/market.json
+          git add data/funds.json data/last_run.md data/market.json data/movers.json data/constituents.json
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
@@ -133,6 +142,7 @@ jobs:
           cp data/funds.json  _site/funds.json
           cp data/last_run.md _site/last_run.md
           cp data/market.json _site/market.json
+          cp data/movers.json _site/movers.json
 
       # v4 of this action stopped including dotfiles in the artifact, and does
       # so silently. Nothing here is hidden - the four files above are copied

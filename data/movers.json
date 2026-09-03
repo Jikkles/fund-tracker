@@ -1,0 +1,137 @@
+{
+  "generated": "2026-09-03T01:03:08+00:00",
+  "indices": {
+    "ftse-100": {
+      "label": "FTSE 100",
+      "asAt": "2026-09-03",
+      "source": "HL market summary (delayed)",
+      "universe": "all 100 FTSE 100 constituents",
+      "top": [
+        {
+          "name": "InterContinental Hotels Group plc",
+          "symbol": "IHG",
+          "pct": 3.14
+        },
+        {
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": 1.92
+        },
+        {
+          "name": "Endeavour Mining plc",
+          "symbol": "EDV",
+          "pct": 1.9
+        },
+        {
+          "name": "ConvaTec Group Plc",
+          "symbol": "CTEC",
+          "pct": 1.65
+        },
+        {
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": 1.61
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Kingfisher",
+          "symbol": "KGF",
+          "pct": -3.82
+        },
+        {
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": -3.45
+        },
+        {
+          "name": "Metlen Energy & Metals Plc",
+          "symbol": "MTLN",
+          "pct": -3.24
+        },
+        {
+          "name": "Experian Plc",
+          "symbol": "EXPN",
+          "pct": -3.16
+        },
+        {
+          "name": "London Stock Exchange Group plc",
+          "symbol": "LSEG",
+          "pct": -3.03
+        }
+      ]
+    },
+    "s-p-500": {
+      "label": "S&P 500",
+      "asAt": "2026-09-03",
+      "source": "Yahoo Finance daily closes",
+      "universe": "501 of 503 S&P 500 constituents",
+      "top": [
+        {
+          "name": "Moderna",
+          "symbol": "MRNA",
+          "pct": 9.925900169636336
+        },
+        {
+          "name": "Edison International",
+          "symbol": "EIX",
+          "pct": 8.929232559649874
+        },
+        {
+          "name": "PG&E Corporation",
+          "symbol": "PCG",
+          "pct": 5.953277578003657
+        },
+        {
+          "name": "HP Inc.",
+          "symbol": "HPQ",
+          "pct": 4.330443761616751
+        },
+        {
+          "name": "CF Industries",
+          "symbol": "CF",
+          "pct": 4.283632528269774
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Axon Enterprise",
+          "symbol": "AXON",
+          "pct": -8.518075750774116
+        },
+        {
+          "name": "Cadence Design Systems",
+          "symbol": "CDNS",
+          "pct": -7.597848257607347
+        },
+        {
+          "name": "Interactive Brokers",
+          "symbol": "IBKR",
+          "pct": -7.092200083202667
+        },
+        {
+          "name": "CrowdStrike",
+          "symbol": "CRWD",
+          "pct": -6.896100725446429
+        },
+        {
+          "name": "Dell Technologies",
+          "symbol": "DELL",
+          "pct": -6.800291463242919
+        }
+      ]
+    }
+  },
+  "unsupported": {
+    "ftse-250": "HL publish only part of the FTSE 250 on one page, so the constituent list would be incomplete and any ranking a guess.",
+    "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. Pricing every one on each run is not a reasonable load to put on a free data source.",
+    "euro-stoxx-50": "Constituents span several European exchanges and mapping their tickers onto price symbols is error-prone - a mis-mapped ticker shows a real price against the wrong company.",
+    "nikkei-225": "Same reason as the Euro STOXX 50: cross-exchange ticker mapping is not reliable enough to publish from.",
+    "hang-seng": "Same reason as the Euro STOXX 50.",
+    "gold-usd-oz": "Not an index - a single commodity price, so it has no constituents to rank.",
+    "brent-crude": "Not an index - a single commodity price.",
+    "us-10yr-yield": "Not an index - a single government bond yield.",
+    "gbp-usd": "Not an index - a single exchange rate.",
+    "dow-jones": "Dow Jones could not be ranked on this run - the constituent list or its prices were unavailable, and a partial index is not a ranking."
+  }
+}

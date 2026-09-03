@@ -189,6 +189,25 @@ def labelled(rs: list[list[str]], *labels: str) -> str | None:
 
 PCT = re.compile(r"^-?\d+(?:\.\d+)?%$")
 
+# Whether HL will actually deal the fund. Every fund on this desk is here
+# because HL lists it, but listed and dealable are not the same thing: a fund
+# can be closed to new investment or have dealing suspended, and its factsheet
+# stays up either way. The desk exists to inform purchases made through HL, so
+# a fund that cannot be bought has to say so rather than sit there looking
+# like any other card.
+DEAL_BUY = re.compile(r"you can buy or sell holdings in this fund", re.I)
+DEAL_PRICES = re.compile(r"Sell:\s*[\d.,]+p?\s*Buy:\s*[\d.,]+p?", re.I)
+DEAL_BLOCKS = [
+    ("closed to new investment", re.compile(r"closed to new investment", re.I)),
+    ("not available to new investors",
+     re.compile(r"not available to new (?:investors|clients)", re.I)),
+    ("dealing suspended",
+     re.compile(r"dealing (?:in this fund )?(?:is|has been) suspended"
+                r"|fund is suspended", re.I)),
+    ("no longer available", re.compile(r"no longer available", re.I)),
+    ("soft closed", re.compile(r"soft[- ]closed", re.I)),
+]
+
 
 def clean_pct(v: str | None) -> str | None:
     """HL appends a tooltip glyph to some charge cells: "0.27% i"."""
@@ -340,6 +359,15 @@ def parse(html: str) -> dict:
         out["discrete"] = v
     if (v := managers(html)):
         out["manager"] = v
+
+    flat = " ".join(text_of(html).split())
+    blocked = [n for n, pat in DEAL_BLOCKS if pat.search(flat)]
+    out["dealing"] = {
+        "tradeable": bool(DEAL_BUY.search(flat)) and bool(DEAL_PRICES.search(flat))
+                     and not blocked,
+        "blocked": blocked,
+        "checked": f"{date.today():%Y-%m-%d}",
+    }
 
     # Wealth Shortlist membership is NOT read from this page. It used to be,
     # by looking for "selected this fund for the wealth shortlist" in the
@@ -501,6 +529,17 @@ def apply(fund: dict, got: dict, class_ok: bool = True) -> list[str]:
         elif existing != got["discrete"]:
             perf["discrete"] = got["discrete"]
             changed.append(f"discrete: {len(got['discrete'])} periods")
+
+    if "dealing" in got:
+        before = (fund.get("dealing") or {}).get("tradeable")
+        now = got["dealing"]["tradeable"]
+        fund["dealing"] = got["dealing"]
+        if before is not None and before != now:
+            changed.append(
+                f"dealing: {'tradeable' if before else 'NOT tradeable'} -> "
+                f"{'tradeable' if now else 'NOT tradeable'}"
+                + (f" ({', '.join(got['dealing']['blocked'])})"
+                   if got["dealing"]["blocked"] else ""))
 
     # Stamp the date on every successful read, not only on a change. A field
     # confirmed unchanged against HL today is verified, not stale, and the

@@ -289,6 +289,41 @@ def research_health(doc: dict, today: date) -> list[str]:
             f"rely on the NAV figures, which refresh every run."]
 
 
+def dealing_health(doc: dict) -> list[str]:
+    """Warn when a fund can no longer be bought through HL.
+
+    This desk exists to inform purchases made through one platform. A fund
+    that HL has closed to new investment, or suspended dealing in, is still a
+    perfectly good factsheet and a completely useless suggestion - and nothing
+    on the card would otherwise say so, because every other field goes on
+    refreshing exactly as before.
+
+    hl_factsheet.py reads the status off the page it is already fetching, so
+    this costs no extra request. Funds with no reading yet are not warned
+    about: silence here means not-yet-checked, not confirmed-tradeable, and
+    saying otherwise would be the same trick the Shortlist badge used to play.
+    """
+    blocked, unchecked = [], 0
+    for fund in doc["funds"]:
+        d = fund.get("dealing")
+        if not d:
+            unchecked += 1
+        elif not d.get("tradeable"):
+            why = ", ".join(d.get("blocked") or []) or "no dealing prices on the factsheet"
+            blocked.append(f"{fund['id']} ({why})")
+    out = []
+    if blocked:
+        out.append(f"{len(blocked)} {plural(len(blocked), 'fund is', 'funds are')} "
+                   f"not dealable through HL: {', '.join(blocked[:3])}"
+                   f"{f', and {len(blocked) - 3} more' if len(blocked) > 3 else ''}. "
+                   f"This desk only covers what can be bought here - drop them or "
+                   f"confirm HL has reopened them.")
+    if unchecked:
+        out.append(f"{unchecked} {plural(unchecked, 'fund has', 'funds have')} no "
+                   f"HL dealing check yet - run hl_factsheet.py to record one.")
+    return out
+
+
 def refresh_catalysts(doc: dict, today: date) -> dict:
     stats = {"refreshed": 0, "confirmed": 0, "provisional": 0,
              "estimated": 0, "failed": 0}
@@ -449,7 +484,8 @@ def main() -> int:
     # factsheet data. Both need a person; neither can be fixed by this run.
     cal_warnings = cal.calendar_health(today)
     res_warnings = research_health(doc, today)
-    warnings = cal_warnings + res_warnings
+    deal_warnings = dealing_health(doc)
+    warnings = cal_warnings + res_warnings + deal_warnings
     for w in warnings:
         print(f"[warn] {w}")
 

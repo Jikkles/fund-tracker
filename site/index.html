@@ -604,6 +604,57 @@
   .rank-scope:hover { color: var(--ink); }
   .rank-scope.on { color: var(--ink); border-color: var(--chip); }
 
+
+  /* ---- catalyst calendar ---- */
+  .cat-row { border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2);
+             margin-bottom: 8px; overflow: hidden; }
+  .cat-row.open { border-color: var(--chip); }
+  .cat-head { display: flex; align-items: center; gap: 14px; width: 100%; background: transparent;
+              border: none; color: var(--ink); cursor: pointer; padding: 13px 16px; text-align: left;
+              font-family: "Inter", sans-serif; }
+  .cat-head:hover { background: var(--hover-bg); }
+  .cat-date { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+              color: var(--amber); white-space: nowrap; flex: 0 0 168px; }
+  .cat-what { flex: 1 1 auto; min-width: 0; font-size: 14px; }
+  .cat-what b { font-weight: 600; }
+  .cat-ev { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+  .cat-n { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+           color: var(--ink-soft); white-space: nowrap; }
+  .cat-chev { color: var(--ink-soft); font-size: 12px; }
+  .cat-body { padding: 0 16px 16px; border-top: 1px solid rgba(51,65,85,.4); }
+  .cat-basis { font-size: 12px; color: var(--ink-soft); margin: 12px 0 12px; line-height: 1.55; }
+  .cat-hits { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 8px; }
+  .cat-hit { display: block; text-align: left; background: var(--paper); border: 1px solid var(--rule);
+             border-radius: 10px; padding: 10px 12px; cursor: pointer; color: var(--ink);
+             font-family: "Inter", sans-serif; }
+  .cat-hit:hover { border-color: var(--chip); background: var(--hover-bg); }
+  .ch-name { display: block; font-size: 13px; font-weight: 600; }
+  .ch-cat  { display: block; font-size: 11px; color: var(--ink-soft); margin-top: 1px; }
+  .ch-why  { display: block; margin-top: 6px; }
+  .ch-why span { display: inline-block; font-family: "JetBrains Mono", ui-monospace, monospace;
+                 font-size: 10.5px; padding: 2px 7px; border-radius: 20px; margin: 2px 4px 0 0; }
+  /* The evidence class says where the claim came from, so the colours are a
+     legend rather than decoration: blue researched, green a holding weight,
+     amber a country weight, grey a category fallback with no figure behind it. */
+  .cr-res  { background: rgba(56,189,248,.15); color: var(--blue); }
+  .cr-hold { background: rgba(16,185,129,.15); color: var(--forest); }
+  .cr-cty  { background: rgba(245,158,11,.15); color: var(--amber); }
+  .cr-cat  { background: rgba(148,163,184,.15); color: var(--ink-soft); }
+  .cat-detail { font-size: 13px; color: var(--ink-soft); line-height: 1.6; margin: 14px 0 0;
+                padding-top: 12px; border-top: 1px solid rgba(51,65,85,.4); }
+  @media (max-width: 720px){
+    .cat-head { flex-wrap: wrap; gap: 6px 12px; }
+    .cat-date { flex: 0 0 100%; }
+  }
+
+
+  /* ---- index constituent movers ---- */
+  .mv-universe { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px;
+                 color: var(--ink-soft); white-space: nowrap; }
+  .mv-src { grid-column: 1 / -1; font-size: 11px; color: var(--ink-soft); margin: 10px 2px 0;
+            line-height: 1.5; }
+  .mv-why { margin: 12px 2px; line-height: 1.6; }
+
   /* ---- table view ---- */
   .ftable-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); }
   table.ftable { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -1162,7 +1213,7 @@
        market-data outage cannot take the fund desk down with it. -->
   <div class="ov-grid sec-anchor" id="markets">
     <div id="marketchart"></div>
-    <div id="ranks"></div>
+    <div id="indexmovers"></div>
   </div>
 
   <!-- HEADLINES, with the health caveat attached directly underneath -->
@@ -1176,7 +1227,13 @@
     <div class="intel-section">
       <div class="intel-tabs" id="intelTabs"></div>
       <div id="intelPanels"></div>
+      <div id="ranks"></div>
     </div>
+
+    <h2 style="margin-top:36px" class="sec-anchor" id="catalysts">Catalyst calendar &#8212; what moves which funds</h2>
+    <div class="h2-rule"></div>
+    <p style="font-size:15px;color:var(--ink-soft);margin:0 0 14px">Every dated catalyst on the desk, soonest first. Open one to see which funds it reaches and why &#8212; a company through the published top&#8209;10 holdings that name it, a rate decision through each fund&#8217;s own country breakdown.</p>
+    <div id="catalystCal"></div>
 
     <h2 style="margin-top:36px" class="sec-anchor" id="watchlist">Watchlist &#8212; top 8 to hold over 6 months to 5 years</h2>
     <div class="h2-rule"></div>
@@ -1375,6 +1432,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
     } catch(e){ cached = null; }
   }
   fetchMarket();
+  loadMovers();
   fetchLatest().then(obj => loadFromObject(obj, 'fetch')).catch(err => {
     // Nothing on screen at all - say so rather than sitting on "Loading…".
     // If the cache painted, leave it up; the provenance chip marks it offline.
@@ -1399,7 +1457,7 @@ const MKT_RANGES = [
 function fetchMarket(){
   return fetch('market.json?t=' + Date.now(), {cache:'no-store'})
     .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
-    .then(obj => { MKT = obj; renderChart(); renderNews(); renderNavStamp(); })
+    .then(obj => { MKT = obj; renderChart(); renderNews(); renderNavStamp(); renderIndexMovers(); })
     .catch(() => { /* the chart is additive - the desk stands without it */ });
 }
 
@@ -1698,7 +1756,7 @@ function mktWireHover(idx, ser){
 
 function newsToggle(head){ head.parentElement.classList.toggle('open'); }
 
-function mktPick(id){ mktId = id; renderChart(); }
+function mktPick(id){ mktId = id; renderChart(); renderIndexMovers(); }
 function mktSetRange(k){ mktRange = k; renderChart(); }
 
 window.addEventListener('resize', function(){
@@ -2080,12 +2138,11 @@ function renderRanks(){
   ).join('');
 
   const scopeLabel = scope && !emptied ? scope.label : 'all funds';
-  const scopeSel =
-    `<select class="rank-scope${rankGroup!=='all'?' on':''}" aria-label="Scope the ranking to a category"
-             onchange="setRankGroup(this.value)">
-       <option value="all"${rankGroup==='all'?' selected':''}>All funds</option>
-       ${cats.map(c=>`<option value="${esc(c.key)}"${c.key===rankGroup?' selected':''}>${esc(c.label)}</option>`).join('')}
-     </select>`;
+  // No scope picker of its own: the panel sits under the intelligence tabs
+  // and those tabs are the control. Two category selectors a few hundred
+  // pixels apart, each able to contradict the other, is worse than one - and
+  // the tab row already names every category.
+  const scopeSel = '';
   const headA = whole
     ? `${esc(scopeLabel)} — all ${ranked.length}, best to worst`
     : `Top 5 — ${esc(scopeLabel)}, ${ranked.length} priced`;
@@ -2110,7 +2167,6 @@ function renderRanks(){
       ${whole ? '' : `<div class="rank-list rank-b">${bot5Items}</div>`}
       ${emptied ? `<p class="intel-note">No fund in ${esc(scope.label)} has a ${esc(period.full)} figure yet — showing all funds instead.</p>` : ''}
     </div>`;
-  if(MKT) renderChart();
 }
 
 /* ---------- render: headlines by market ----------
@@ -2607,6 +2663,7 @@ function renderIntelligence(){
     btn.onclick = ()=>{
       document.querySelectorAll('.itab').forEach(b=>b.classList.toggle('on',b.dataset.k===t.key));
       document.querySelectorAll('.itab-panel').forEach(p=>p.classList.toggle('on',p.dataset.k===t.key));
+      setRankGroup(t.key);
     };
     tabsEl.appendChild(btn);
 
@@ -2617,8 +2674,229 @@ function renderIntelligence(){
     panelsEl.appendChild(panel);
   });
 
+  // The ranking panel sits below the tabs and follows whichever is active.
+  renderRanks();
+  renderCatalystCalendar();
+
   // Top 5 recommendations
   renderRecommendations(funds);
+}
+
+/* ---------- render: index constituent movers ----------
+   The panel beside the chart used to rank FUNDS, which had nothing to do with
+   whichever index was on screen and duplicated what Market Intelligence
+   already said. It now ranks the SHARES inside the index being viewed, so the
+   chart and the list beside it are about the same thing.
+
+   Only indices whose whole constituent list could be priced appear here.
+   "Top 5 in the FTSE 100" is a claim about 100 companies; making it after
+   pricing 30 of them would be exactly the kind of confident, unfounded number
+   this desk refuses to print. Where an index cannot be ranked, the panel says
+   which index and why - see scripts/index_movers.py for the reasons. */
+let MOVERS = null;
+
+function loadMovers(){
+  return fetch('movers.json?t=' + Date.now(), {cache:'no-store'})
+    .then(r => r.ok ? r.json() : null)
+    .then(j => { MOVERS = j; renderIndexMovers(); })
+    .catch(() => { MOVERS = null; renderIndexMovers(); });
+}
+
+function moversRow(m, i, best){
+  const col = m.pct >= 0 ? 'var(--forest)' : 'var(--oxblood)';
+  const sign = m.pct >= 0 ? '+' : '';
+  return '<div class="pulse-row"><div class="pr-head">' +
+    '<span class="pr-num">' + (i+1) + '.</span>' +
+    '<span class="pr-name">' + esc(m.name) +
+      '<span class="pr-cat">' + esc(m.symbol) + '</span></span>' +
+    '<span class="pr-perf" style="color:' + col + '">' + sign + m.pct.toFixed(2) + '%</span>' +
+  '</div></div>';
+}
+
+function renderIndexMovers(){
+  const el = document.getElementById('indexmovers');
+  if(!el) return;
+  const idx = mktCurrent();
+  if(!idx){ el.innerHTML = ''; return; }
+
+  if(!MOVERS){
+    el.innerHTML = '<div class="rank-grid stack"><div class="pulse-box-head rank-head rank-a">' +
+      '<span class="rank-title">Movers in ' + esc(idx.label) + '</span></div>' +
+      '<p class="intel-note">Constituent data has not loaded.</p></div>';
+    return;
+  }
+
+  const data = (MOVERS.indices || {})[idx.id];
+  if(!data){
+    const why = (MOVERS.unsupported || {})[idx.id]
+      || 'This index is not broken down into constituents on the desk.';
+    el.innerHTML = '<div class="rank-grid stack">' +
+      '<div class="pulse-box-head rank-head rank-a" style="color:var(--ink-soft);border-bottom:2px solid var(--rule)">' +
+        '<span class="rank-title">Movers in ' + esc(idx.label) + '</span></div>' +
+      '<p class="intel-note mv-why">' + esc(why) + '</p></div>';
+    return;
+  }
+
+  el.innerHTML =
+    '<div class="rank-grid stack">' +
+      '<div class="pulse-box-head rank-head rank-a" style="color:var(--forest);border-bottom:2px solid var(--forest)">' +
+        '<span class="rank-title">Top 5 &#8212; ' + esc(data.label) + '</span>' +
+        '<span class="rank-controls"><span class="mv-universe" title="' +
+          esc(data.source) + '">' + esc(data.universe) + '</span></span>' +
+      '</div>' +
+      '<div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">' +
+        '<span class="rank-title">Bottom 5 &#8212; weakest on the day</span></div>' +
+      '<div class="rank-list rank-a">' + data.top.map(moversRow).join('') + '</div>' +
+      '<div class="rank-list rank-b">' + data.bottom.map(moversRow).join('') + '</div>' +
+      '<p class="mv-src">' + esc(data.source) + ' &middot; as at ' + esc(data.asAt) +
+        '. Day change on the last two closes, indicative only &#8212; not a dealing price.</p>' +
+    '</div>';
+}
+
+/* ---------- catalyst calendar: what moves which funds ----------
+   Every dated catalyst on the desk pooled into one chronological list, and
+   for each one, the funds it actually reaches.
+
+   Reach is computed from published data, never asserted. A company event
+   reaches a fund because that company is named in the fund's own top-10
+   holdings table; a rate decision reaches it because the fund's own country
+   breakdown puts weight in that country. Each impacted fund carries the
+   figure that put it there, so the claim can be checked against the card.
+
+   THE TOP-10 LIMIT, STATED PLAINLY
+   Factsheets publish the ten largest positions and no more. So "funds holding
+   Microsoft" means "funds whose published top ten names Microsoft" - a fund
+   holding it at 0.4%, outside the ten, is invisible here and is not claimed
+   either way. The panel says so rather than implying the list is exhaustive. */
+
+/* Catalyst labels are written for a person; holdings tables are written by
+   the fund administrator. These bridge the two - "TSMC" is filed as "Taiwan
+   Semiconductor Manufacturing Company Limited". Matching is substring on the
+   lowercased holding name, so only the distinctive stem is needed. */
+const CAT_ALIASES = {
+  'tsmc':                        ['taiwan semiconductor'],
+  'full mega-cap cluster':       ['nvidia','microsoft','apple','alphabet','amazon','meta platforms'],
+  'nvidia + mega-cap cluster':   ['nvidia','microsoft','apple','alphabet','amazon','meta platforms'],
+  'sumitomo mitsui trust group': ['sumitomo mitsui'],
+  'softbank group':              ['softbank'],
+  'meta platforms':              ['meta platforms'],
+  'samsung electronics':         ['samsung electronics']
+};
+
+/* Macro catalysts do not appear in a holdings table, so they reach funds by
+   geography instead. The country name is matched against the fund's own
+   published country breakdown; the groups list is the fallback for funds that
+   publish no breakdown, and is the desk's own categorisation rather than a
+   claim about the portfolio. */
+const CAT_MACRO = {
+  'uk rates (boe)': { country:'United Kingdom', what:'UK rate decision',
+                      groups:['uk-growth','uk-income','uk-smaller','bonds-gov','cash'] },
+  'us rates (fed)': { country:'United States', what:'US rate decision',
+                      groups:['us','global','bonds-strategic','bonds-gov'] }
+};
+
+const CAT_MIN_COUNTRY = 5;   // below this a country weight is not a real exposure story
+
+function catGroupLabel(key){
+  const c = (DATA.categories||[]).find(x=>x.key===key);
+  return c ? c.label : key;
+}
+
+/* One row per distinct event, not per fund that happens to track it. */
+function catalystRows(){
+  const pool = [];
+  (DATA.funds||[]).forEach(f=>(f.catalysts||[]).forEach(c=>{ if(c && c.holding) pool.push(c); }));
+  const seen = new Map();
+  orderCatalysts(pool, true).forEach(c=>{
+    const k = (c.holding + ' | ' + (c.event||'')).toLowerCase();
+    if(!seen.has(k)) seen.set(k, c);
+  });
+  return [...seen.values()];
+}
+
+/* Which funds this catalyst reaches, and on what evidence. */
+function catalystImpact(cat){
+  const key = String(cat.holding||'').toLowerCase().trim();
+  const macro = CAT_MACRO[key];
+  const needles = CAT_ALIASES[key] || [key];
+  const out = [];
+  (DATA.funds||[]).forEach(f=>{
+    const reasons = [];
+    let rank = 0;
+    if((f.catalysts||[]).some(c=>c.holding===cat.holding && c.event===cat.event)){
+      reasons.push({cls:'cr-res', text:'tracked on this fund by the desk'});
+      rank = Math.max(rank, 1000);
+    }
+    if(macro){
+      const cty = (f.countries||[]).find(c=>String(c.name).toLowerCase()===macro.country.toLowerCase());
+      const w = cty ? parsePerf(cty.weight) : null;
+      if(w !== null && w >= CAT_MIN_COUNTRY){
+        reasons.push({cls:'cr-cty', text:cty.weight + ' in ' + macro.country});
+        rank = Math.max(rank, w);
+      } else if(!cty && macro.groups.indexOf(f.group) !== -1){
+        reasons.push({cls:'cr-cat', text:catGroupLabel(f.group) + ' — no country breakdown published'});
+        rank = Math.max(rank, 1);
+      }
+    } else {
+      (f.holdings||[]).forEach(h=>{
+        const hn = String(h.name||'').toLowerCase();
+        if(needles.some(n=>hn.indexOf(n) !== -1)){
+          const w = parsePerf(h.weight);
+          reasons.push({cls:'cr-hold', text:h.name + ' at ' + h.weight});
+          if(w !== null) rank = Math.max(rank, w);
+        }
+      });
+    }
+    if(reasons.length) out.push({f:f, reasons:reasons, rank:rank});
+  });
+  return out.sort((a,b)=>b.rank-a.rank);
+}
+
+const CAT_OPEN = new Set();
+function toggleCatalyst(id){
+  if(CAT_OPEN.has(id)) CAT_OPEN.delete(id); else CAT_OPEN.add(id);
+  renderCatalystCalendar();
+  const el = document.getElementById('cat-'+id);
+  if(el && CAT_OPEN.has(id)) el.scrollIntoView({block:'nearest'});
+}
+
+function renderCatalystCalendar(){
+  const el = document.getElementById('catalystCal');
+  if(!el) return;
+  const rows = catalystRows();
+  if(!rows.length){ el.innerHTML = '<p class="intel-note">No dated catalysts on the desk.</p>'; return; }
+  el.innerHTML = rows.map(function(c,i){
+    const id = 'c'+i;
+    const open = CAT_OPEN.has(id);
+    const hits = catalystImpact(c);
+    const macro = CAT_MACRO[String(c.holding||'').toLowerCase().trim()];
+    const basis = macro
+      ? 'by published country exposure of 5% or more, or by category where a fund publishes no breakdown'
+      : 'because this company is named in the fund&#8217;s published top&#8209;10 holdings';
+    let body = '';
+    if(open){
+      const list = hits.length
+        ? '<p class="cat-basis">' + hits.length + ' fund' + (hits.length===1?'':'s') + ' reached &#8212; ' + basis +
+          '. Factsheets publish ten positions only, so a smaller stake outside the top ten is neither shown nor ruled out.</p>' +
+          '<div class="cat-hits">' + hits.map(function(h){
+            return '<button type="button" class="cat-hit" onclick="openFund(\'' + esc(h.f.id) + '\')" title="Open ' + esc(h.f.name) + '">' +
+              '<span class="ch-name">' + esc(h.f.name) + '</span>' +
+              '<span class="ch-cat">' + esc(catGroupLabel(h.f.group)) + '</span>' +
+              '<span class="ch-why">' + h.reasons.map(function(r){
+                return '<span class="' + r.cls + '">' + esc(r.text) + '</span>'; }).join('') + '</span>' +
+            '</button>'; }).join('') + '</div>'
+        : '<p class="intel-note">No fund on the desk names this in a published top&#8209;10 holding or country breakdown.</p>';
+      const detail = c.detail ? '<p class="cat-detail">' + esc(String(c.detail).replace(/<[^>]*>/g,'')) + '</p>' : '';
+      body = '<div class="cat-body">' + list + detail + '</div>';
+    }
+    return '<div class="cat-row' + (open?' open':'') + '" id="cat-' + id + '">' +
+      '<button type="button" class="cat-head" onclick="toggleCatalyst(\'' + id + '\')" aria-expanded="' + open + '">' +
+        '<span class="cat-date">' + esc(catalystChipDate(c.date)||'date not published') + '</span>' +
+        '<span class="cat-what"><b>' + esc(c.holding) + '</b><span class="cat-ev">' + esc(c.event||'') + '</span></span>' +
+        '<span class="cat-n">' + hits.length + ' fund' + (hits.length===1?'':'s') + '</span>' +
+        '<span class="cat-chev">' + (open?'▾':'▸') + '</span>' +
+      '</button>' + body + '</div>';
+  }).join('');
 }
 
 /* ---------- render: top 5 recommendations ---------- */
@@ -3152,11 +3430,12 @@ function filterToGroup(key){
   active = key; listExpanded = false;
   document.querySelectorAll('.filter').forEach(f=>f.classList.toggle('on', f.dataset.k===key));
   renderList();
-  // Retune the ranking panel to the same corner. Clicking a row in the strip
-  // is the reader asking about one category, and the ranking is the other
-  // thing on the page that can answer per-category - leaving it on "all
-  // funds" makes the two panels disagree about what is being looked at.
-  setRankGroup(key);
+  // Retune the intelligence tabs, and the ranking panel beneath them.
+  // Clicking a row in the strip is the reader asking about one category, and
+  // that section is what answers per-category - leaving it on "all regions"
+  // makes the two halves of the page disagree about what is being looked at.
+  const tab = document.querySelector(`.itab[data-k="${key}"]`);
+  if(tab) tab.click(); else setRankGroup(key);
   const d = document.getElementById('directory');
   if(d) d.scrollIntoView({behavior:'smooth', block:'start'});
 }
