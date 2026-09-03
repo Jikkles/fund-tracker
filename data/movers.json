@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T08:06:59+00:00",
+  "generated": "2026-09-03T08:10:52+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,12 +10,12 @@
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": 3.04
+          "pct": 3.22
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": 2.3
+          "pct": 2.26
         },
         {
           "name": "Metlen Energy & Metals Plc",
@@ -32,12 +32,12 @@
         {
           "name": "Admiral Group",
           "symbol": "ADM",
-          "pct": -2.19
+          "pct": -2.29
         },
         {
           "name": "M&G plc",
           "symbol": "MNG",
-          "pct": -1.75
+          "pct": -1.69
         }
       ]
     },
@@ -50,7 +50,7 @@
         {
           "name": "Hilton Food Group Plc",
           "symbol": "HFG",
-          "pct": 11.09
+          "pct": 12.04
         },
         {
           "name": "Avon Technologies Plc",
@@ -67,17 +67,17 @@
         {
           "name": "Baltic Classifieds Group plc",
           "symbol": "BCG",
-          "pct": -7.41
+          "pct": -5.93
         },
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -5.17
+          "pct": -4.97
         },
         {
           "name": "Hammerson Plc",
           "symbol": "HMSO",
-          "pct": -3.49
+          "pct": -3.43
         }
       ]
     },
@@ -210,7 +210,7 @@
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 5.988584917804519
+          "pct": 6.083644123571529
         },
         {
           "name": "CSPC Pharmaceutical Group Limited",
@@ -232,7 +232,7 @@
         {
           "name": "Chow Tai Fook Jewellery Group Limited",
           "symbol": "1929.HK",
-          "pct": -4.852821571096915
+          "pct": -4.614160205149993
         },
         {
           "name": "Wharf Real Estate Investment Company Limited",
@@ -250,34 +250,34 @@
         {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": 3.3174378013375962
+          "pct": 3.456494657817256
         },
         {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": 2.2116875779684166
+          "pct": 2.279396516450531
         },
         {
           "name": "ING Groep N.V.",
           "symbol": "INGA.AS",
-          "pct": 2.1266141245638104
+          "pct": 2.224767849809387
         }
       ],
       "bottom": [
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": -4.404137345709819
-        },
-        {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -3.889789303079417
+          "pct": -4.14507393101011
         },
         {
           "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
           "symbol": "MC.PA",
-          "pct": -3.8426980007900284
+          "pct": -3.8202247191011236
+        },
+        {
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": -3.6628849270664503
         }
       ]
     },
