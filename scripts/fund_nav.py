@@ -294,6 +294,19 @@ def brand_variant(name: str) -> str | None:
     return None
 
 
+def usable_closes(stamps: list, closes: list) -> list[tuple[int, float]]:
+    """The (timestamp, close) pairs Yahoo actually priced.
+
+    A close of 0 is missing data written as a number, not a price. Six such
+    sessions in February 2020 made every BlackRock European line read as a
+    "224.9 -> 0 share-class change": the split guard cut there, the 2018-2020
+    history came off the front of the series, and the phantom redenomination
+    was published as a note on the card.
+    """
+    return [(int(t), float(c)) for t, c in zip(stamps, closes)
+            if t is not None and c is not None and float(c) > 0]
+
+
 def price(symbol: str, span: str = "10y") -> dict | None:
     """
     Daily NAV series for a symbol.
@@ -310,8 +323,14 @@ def price(symbol: str, span: str = "10y") -> dict | None:
 
     Asking for more than is needed costs one larger response per fund and can
     only add history, never remove it - the return windows are sliced by date
-    afterwards, and _trim_redenomination() still cuts anything before a share
+    afterwards, and split_at_discontinuity() still cuts anything before a share
     class split rather than letting the extra years carry a false return.
+
+    The extra years rescued JPMorgan Emerging Markets, Trojan Ethical and the
+    L&G gilt tracker. They do not rescue the two BlackRock European lines: what
+    10y adds for those is 2018-2020 history sitting on the far side of a
+    redenomination, so it is cut straight back off and both funds are left
+    priced over weeks. That is the honest answer for them, not a bug to fix.
     """
     try:
         raw = _get(CHART_URL.format(urllib.parse.quote(symbol), span))
@@ -322,8 +341,7 @@ def price(symbol: str, span: str = "10y") -> dict | None:
             KeyError, IndexError, TypeError):
         return None
 
-    pairs = [(int(t), float(c)) for t, c in zip(stamps, closes)
-             if t is not None and c is not None]
+    pairs = usable_closes(stamps, closes)
     if len(pairs) < 30:
         return None
     meta = result.get("meta") or {}
@@ -336,6 +354,11 @@ def price(symbol: str, span: str = "10y") -> dict | None:
 # return - it is a share-class redenomination or a data error. Invesco
 # Tactical Bond priced at "-98.86% over 3yr" on exactly this.
 MAX_DAILY_STEP = 0.5
+
+# How far before 1 January a year-end anchor may sit and still be one. A
+# fund prices on 31 December; a fortnight's slack covers a feed that skips the
+# holiday week without admitting an anchor from a previous year.
+YEAR_END_SLACK = 14 * 86400
 
 # A series must reach back past the window's start, or the window is not
 # really covered - a fund launched three months ago would otherwise report
@@ -382,8 +405,15 @@ def pct_over(series: dict, days: int) -> float | None:
             break
     if start is None or not start:
         return None
-    # Refuse to label a short history with a long window.
-    if series["t"][0] > cutoff + _slack(days):
+    # Refuse to label a short history with a long window - and measure that on
+    # the anchor actually used, not on the first date in the series. The two
+    # are the same only when the series is unbroken. BlackRock Continental
+    # European Income runs daily to Feb 2020, stops for six years, and resumes
+    # on 15 Jun 2026: series["t"][0] is 2018, so every window passed, while
+    # `start` came off 15 Jun 2026 whichever window was asked for. 1yr, 3yr and
+    # 5yr all reported the same ten-week return, -0.12%, against a real year of
+    # about +13%.
+    if start_t > cutoff + _slack(days):
         return None
     return (series["c"][-1] - start) / start * 100.0
 
@@ -406,12 +436,20 @@ def pct_ytd(series: dict) -> float | None:
     year = date.today().year
     if date.fromtimestamp(series["t"][-1]).year < year:
         return None
-    base = None
+    turn = datetime(year, 1, 1).timestamp()
+    base = base_t = None
     for stamp, close in zip(series["t"], series["c"]):
         if date.fromtimestamp(stamp).year >= year:
             break
-        base = close
+        base, base_t = close, stamp
     if not base:
+        return None
+    # Third refusal, same spirit: the anchor must be last year's closing price,
+    # not merely the newest close that predates this year. Where a series stops
+    # in 2020 and resumes this June, that 2020 close is six years stale and
+    # spans a redenomination - pricing against it would publish a share-class
+    # change as a -98% year to date.
+    if base_t < turn - YEAR_END_SLACK:
         return None
     return (series["c"][-1] - base) / base * 100.0
 
@@ -712,7 +750,16 @@ def _selftest_offline() -> bool:
     # A real move, however violent, is a return and must survive. 2020 exists.
     kept, note = split_at_discontinuity(_series([100.0, 70.0, 90.0]))
     assert note == "", f"a -30% day is a market, not a redenomination: {note}"
-    print(f"  redenomination   OK  (100:1 split cut, -30% day kept)",
+    # A zero is not a price, and must never be read as one. Left in, it looks
+    # like a 100% fall into a redenomination and takes the history with it.
+    assert usable_closes([1, 2, 3, 4], [10.0, 0.0, None, 12.0]) == [(1, 10.0), (4, 12.0)]
+    assert usable_closes([1, 2], [-1.0, 5.0]) == [(2, 5.0)]
+    kept, note = split_at_discontinuity(
+        _series([c for _, c in usable_closes(list(range(1, 42)),
+                                             [100.0] * 20 + [0.0] * 6 + [100.0] * 15)]))
+    assert note == "", f"a hole must not read as a split: {note}"
+    assert len(kept["c"]) == 35, len(kept["c"])
+    print(f"  redenomination   OK  (100:1 split cut, -30% day kept, zeros dropped)",
           file=_sys.stderr)
 
     # --- window coverage -------------------------------------------------
@@ -731,8 +778,21 @@ def _selftest_offline() -> bool:
     assert pct_over({"t": [], "c": []}, 30) is None
     # A zero start cannot be divided by.
     assert pct_over(_series([0.0] + [1.0] * 40), 30) is not None
-    print("  window coverage  OK  (short history refused a long label)",
-          file=_sys.stderr)
+    # A series can be long and still not cover a window. These two BlackRock
+    # European lines price daily to Feb 2020, stop for six years, and resume in
+    # June 2026. Judged on their first date they cover everything; judged on
+    # the point a window actually anchors on, they cover weeks. The first
+    # reading published the same -0.12% as 1yr, 3yr and 5yr against a real
+    # year of about +13%.
+    _day, _now = 86400, int(time.time())
+    holed = {"t": [_now - 8 * 365 * _day + i * _day for i in range(500)]
+                  + [_now - (60 - i) * _day for i in range(60)],
+             "c": [100.0] * 500 + [110.0] * 60, "currency": "GBP"}
+    assert pct_over(holed, 30) is not None, "the recent stub still prices a month"
+    for _w in (365, 365 * 3, 365 * 5):
+        assert pct_over(holed, _w) is None, f"{_w}d anchors in the hole, must refuse"
+    print("  window coverage  OK  (short history refused a long label, "
+          "mid-series hole refused)", file=_sys.stderr)
 
     # --- year to date ----------------------------------------------------
     # YTD is anchored on last year's final close, so the baseline is the year
@@ -765,9 +825,25 @@ def _selftest_offline() -> bool:
                     start=int((_jan1 - _dt.timedelta(days=60)).timestamp()))
     assert pct_ytd(stale) is None, "a series with nothing this year must refuse"
 
+    # The same hole seen from the YTD side. The newest close before this year
+    # is six years old and sits on the far side of a redenomination; anchoring
+    # on it would publish the share-class change as a -98% year to date.
+    holed_ytd = {"t": [int((_jan1 - _dt.timedelta(days=6 * 365 - i)).timestamp())
+                       for i in range(400)]
+                      + [int((_jan1 + _dt.timedelta(days=i)).timestamp())
+                         for i in range(max(1, min(_days_in, 5)))],
+                 "c": [224.9] * 400 + [4.1] * max(1, min(_days_in, 5)),
+                 "currency": "GBP"}
+    assert pct_ytd(holed_ytd) is None, "a six-year-stale anchor is not a year end"
+    # A feed that skips the holiday week still has a year end.
+    xmas = _spanning([100.0] * 40, [110.0] * max(1, min(_days_in, 5)))
+    xmas["t"] = [t - 6 * 86400 if t < _jan1.timestamp() else t for t in xmas["t"]]
+    assert pct_ytd(xmas) is not None, "a few days' gap must not lose the anchor"
+
     assert pct_ytd(_series([100.0])) is None, "one point is not a series"
     assert pct_ytd({"t": [], "c": []}) is None
-    print("  year to date     OK  (anchored on 31 Dec, no-anchor refused)",
+    print("  year to date     OK  (anchored on 31 Dec, no-anchor and "
+          "stale-anchor refused)",
           file=_sys.stderr)
 
     # --- collisions ------------------------------------------------------

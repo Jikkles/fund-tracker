@@ -10072,10 +10072,7 @@
         "nav1w": "-2.26%",
         "nav1m": "-0.54%",
         "navAsAt": "2026-09-02",
-        "navPoints": 63,
-        "nav1yr": "-0.12%",
-        "nav3yr": "-0.12%",
-        "nav5yr": "-0.12%"
+        "navPoints": 57
       },
       "holdings": [
         {
@@ -10242,7 +10239,7 @@
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
         "value": "-0.54%",
-        "note": "Total return over the 31 days to 2 Sep 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2020-02-07 after a 224.9 -> 0 share-class change Market context: Euro STOXX 50 -1.84%, FTSE 100 -0.97%, GBP/USD +0.51%.",
+        "note": "Total return over the 31 days to 2 Sep 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change Market context: Euro STOXX 50 -1.84%, FTSE 100 -0.97%, GBP/USD +0.51%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "2 Sep 2026",
         "basis": "nav:0P0000T2WM.L",
@@ -10255,7 +10252,7 @@
       "navMatch": "stored",
       "shortlist": true,
       "shortlistStatus": "on",
-      "navNote": "series restarts 2020-02-07 after a 224.9 -> 0 share-class change",
+      "navNote": "series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -14615,17 +14612,14 @@
       "yield": "0.91% (historic)",
       "overview": "A style-flexible European fund that shifts between growth and value as the opportunity set moves, rather than committing to one factor through the cycle.",
       "performance": {
-        "notes": "Headline returns on this entry are priced from the fund's own published NAV series, not researched - see navSymbol. Sector and benchmark comparators are not yet verified.",
-        "perfBasis": "NAV",
+        "notes": "1yr and the discrete years come from the HL factsheet. The fund's own NAV series on Yahoo stops in February 2020 and resumes on 15 June 2026 across a redenomination, so it prices a week and a month honestly and cannot reach a year, a 1 January anchor, three years or five. Sector and benchmark comparators are not yet verified.",
+        "perfBasis": "HL",
         "nav1w": "-2.74%",
         "nav1m": "+0.14%",
         "navAsAt": "2026-09-02",
-        "navPoints": 63,
+        "navPoints": 57,
         "perfAsAt": "2026-09-03",
         "perfAsAtSource": "HL factsheet scrape",
-        "nav1yr": "-2.46%",
-        "nav3yr": "-2.46%",
-        "nav5yr": "-2.46%",
         "discrete": [
           {
             "year": "02/09/25 to 02/09/26",
@@ -14684,7 +14678,7 @@
       "navName": "BlackRock European Dynamic FD Acc",
       "oneMonth": {
         "value": "+0.14%",
-        "note": "Total return over the 31 days to 2 Sep 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2020-02-07 after a 188.3 -> 0 share-class change Market context: Euro STOXX 50 -1.84%, FTSE 100 -0.97%, GBP/USD +0.51%.",
+        "note": "Total return over the 31 days to 2 Sep 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change Market context: Euro STOXX 50 -1.84%, FTSE 100 -0.97%, GBP/USD +0.51%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "2 Sep 2026",
         "basis": "nav:0P0000ZZBQ.L",
@@ -14819,7 +14813,7 @@
       "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 03 Sep 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
-      "navNote": "series restarts 2020-02-07 after a 188.3 -> 0 share-class change",
+      "navNote": "series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change",
       "sedol": "BCZRNN3",
       "isin": "GB00BCZRNN30",
       "isinSource": "SEDOL BCZRNN3 read from the fund's HL factsheet - the class HL deals. ISIN derived as GB00+SEDOL+check digit.",
