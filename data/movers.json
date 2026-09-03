@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T01:08:07+00:00",
+  "generated": "2026-09-03T07:18:48+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,56 +8,56 @@
       "universe": "all 100 FTSE 100 constituents",
       "top": [
         {
-          "name": "InterContinental Hotels Group plc",
-          "symbol": "IHG",
-          "pct": 3.14
-        },
-        {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": 1.92
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": 1.46
         },
         {
           "name": "Endeavour Mining plc",
           "symbol": "EDV",
-          "pct": 1.9
+          "pct": 1.34
         },
         {
-          "name": "ConvaTec Group Plc",
-          "symbol": "CTEC",
-          "pct": 1.65
+          "name": "Associated British Foods plc",
+          "symbol": "ABF",
+          "pct": 1.28
         },
         {
-          "name": "Standard Chartered plc",
-          "symbol": "STAN",
-          "pct": 1.61
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": 1.17
+        },
+        {
+          "name": "International Consolidated Airlines Group SA",
+          "symbol": "IAG",
+          "pct": 1.1
         }
       ],
       "bottom": [
         {
-          "name": "Kingfisher",
-          "symbol": "KGF",
-          "pct": -3.82
+          "name": "M&G plc",
+          "symbol": "MNG",
+          "pct": -2.83
         },
         {
-          "name": "Computacenter plc",
-          "symbol": "CCC",
-          "pct": -3.45
+          "name": "Admiral Group",
+          "symbol": "ADM",
+          "pct": -2.24
         },
         {
-          "name": "Metlen Energy & Metals Plc",
-          "symbol": "MTLN",
-          "pct": -3.24
+          "name": "Aviva Plc",
+          "symbol": "AV.",
+          "pct": -2.05
         },
         {
-          "name": "Experian Plc",
-          "symbol": "EXPN",
-          "pct": -3.16
+          "name": "3i Group Plc",
+          "symbol": "III",
+          "pct": -1.23
         },
         {
-          "name": "London Stock Exchange Group plc",
-          "symbol": "LSEG",
-          "pct": -3.03
+          "name": "Bunzl plc",
+          "symbol": "BNZL",
+          "pct": -0.96
         }
       ]
     },
@@ -68,56 +68,56 @@
       "universe": "501 of 503 S&P 500 constituents",
       "top": [
         {
-          "name": "Moderna",
-          "symbol": "MRNA",
-          "pct": 9.925900169636336
+          "name": "Dell Technologies",
+          "symbol": "DELL",
+          "pct": 15.811767578125
         },
         {
-          "name": "Edison International",
-          "symbol": "EIX",
-          "pct": 8.929232559649874
+          "name": "Reddit",
+          "symbol": "RDDT",
+          "pct": 9.305867512904934
         },
         {
-          "name": "PG&E Corporation",
-          "symbol": "PCG",
-          "pct": 5.953277578003657
+          "name": "Charter Communications",
+          "symbol": "CHTR",
+          "pct": 8.742047038694842
         },
         {
-          "name": "HP Inc.",
-          "symbol": "HPQ",
-          "pct": 4.330443761616751
+          "name": "Skyworks Solutions",
+          "symbol": "SWKS",
+          "pct": 6.319528668458515
         },
         {
-          "name": "CF Industries",
-          "symbol": "CF",
-          "pct": 4.283632528269774
+          "name": "Block, Inc.",
+          "symbol": "XYZ",
+          "pct": 5.8808448800422655
         }
       ],
       "bottom": [
         {
-          "name": "Axon Enterprise",
-          "symbol": "AXON",
-          "pct": -8.518075750774116
+          "name": "Palo Alto Networks",
+          "symbol": "PANW",
+          "pct": -9.282218700181586
         },
         {
-          "name": "Cadence Design Systems",
-          "symbol": "CDNS",
-          "pct": -7.597848257607347
+          "name": "Datadog",
+          "symbol": "DDOG",
+          "pct": -6.526983939142626
         },
         {
-          "name": "Interactive Brokers",
-          "symbol": "IBKR",
-          "pct": -7.092200083202667
+          "name": "Edison International",
+          "symbol": "EIX",
+          "pct": -6.139456899986227
+        },
+        {
+          "name": "Palantir Technologies",
+          "symbol": "PLTR",
+          "pct": -5.813690285421283
         },
         {
           "name": "CrowdStrike",
           "symbol": "CRWD",
-          "pct": -6.896100725446429
-        },
-        {
-          "name": "Dell Technologies",
-          "symbol": "DELL",
-          "pct": -6.800291463242919
+          "pct": -5.416845100912193
         }
       ]
     }
