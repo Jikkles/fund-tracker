@@ -46,6 +46,8 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+import perf_dates
+
 FUNDS = Path(__file__).resolve().parent.parent / "data" / "funds.json"
 
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -542,12 +544,22 @@ def apply(fund: dict, got: dict, class_ok: bool = True) -> list[str]:
                    if got["dealing"]["blocked"] else ""))
 
     # Stamp the date on every successful read, not only on a change. A field
-    # confirmed unchanged against HL today is verified, not stale, and the
-    # 120-day warning in run_update.py should not fire on it.
+    # confirmed unchanged against HL today is verified, not stale.
     fund["asAt"] = (f"{date.today():%d %b %Y} (factsheet "
                     f"{'refreshed' if changed else 'confirmed unchanged'} from HL)")
-    fund.setdefault("performance", {})["perfAsAt"] = f"{date.today():%Y-%m-%d}"
-    fund["performance"]["perfAsAtSource"] = "HL factsheet scrape"
+
+    # Two different dates, which this function used to write as one.
+    #
+    # perfConfirmed is what the line above is: the day the factsheet was last
+    # read. perfAsAt is the day the performance tables are measured to, and it
+    # is read out of their own period labels - see perf_dates. Stamping today
+    # into perfAsAt on every read said a table measured to 31 Mar 2026 was
+    # current, and reset the 120-day staleness clock weekly so it could never
+    # strike. A scrape that reaches HL confirms the page exists; it does not
+    # move the date the numbers on it were struck.
+    perf = fund.setdefault("performance", {})
+    perf["perfConfirmed"] = f"{date.today():%Y-%m-%d}"
+    perf_dates.stamp(fund)
     return changed
 
 

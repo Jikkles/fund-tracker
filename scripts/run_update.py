@@ -30,6 +30,7 @@ from pathlib import Path
 
 import calendar_data as cal
 import market_data as md
+import perf_dates
 from proxies import CONTEXT_TICKERS, FUND_PROXIES, GROUP_CONTEXT
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -229,18 +230,39 @@ def build_caveats(doc: dict, entries: dict, stats: dict,
             f"{plural(stats['unverified'], 'carries', 'carry')} no fund-level "
             f"figure at all - each figure is labelled with the basis it used.")
 
-    perf_dates = sorted(d for f in funds
-                        if (d := (f.get("performance") or {}).get("perfAsAt")))
-    if perf_dates:
-        oldest, newest = (date.fromisoformat(perf_dates[0]),
-                          date.fromisoformat(perf_dates[-1]))
+    # The as-at dates the tables state about themselves, not the date this run
+    # happened to read them. That distinction is the whole of perf_dates: the
+    # two used to be the same field, so this caveat managed to say the tables
+    # were "NOT refreshed by the daily run" and "up to 0 days old" in a single
+    # sentence.
+    #
+    # Counted against the funds that actually hold a researched table rather
+    # than against all 103. Seven funds run on their NAV series alone and have
+    # no discrete or cumulative table at all; folding those in as "undated"
+    # would report an absence of research as an absence of dating.
+    with_tables = [f for f in funds
+                   if (f.get("performance") or {}).get("cumulative")
+                   or (f.get("performance") or {}).get("discrete")]
+    table_dates = sorted(d for f in with_tables
+                         if (d := (f.get("performance") or {}).get("perfAsAt")))
+    undated = len(with_tables) - len(table_dates)
+    if table_dates:
+        oldest, newest = (date.fromisoformat(table_dates[0]),
+                          date.fromisoformat(table_dates[-1]))
         run = (f"are all as at {stamp(oldest)}" if oldest == newest
                else f"run {stamp(oldest)} to {stamp(newest)}")
+        # An unknown age is reported as unknown. Folding these into the range
+        # would put a date on tables that state none, which is the same fault
+        # this caveat was carrying before, one level down.
+        rest = (f" A further {undated} state no as-at date in their period "
+                f"labels, so their age is unknown rather than current."
+                if undated else "")
         lines.append(
-            f"The discrete and cumulative performance tables are hand-entered "
-            f"from published factsheets and are NOT refreshed by the daily "
-            f"run: as-at dates {run}, up to "
-            f"{(today - oldest).days} days old. Their bases differ "
+            f"{len(with_tables)} of {total} funds carry hand-entered discrete "
+            f"and cumulative performance tables, which are NOT refreshed by "
+            f"the daily run. Read from their own period labels, the as-at "
+            f"dates of the {len(table_dates)} that state one {run}, up to "
+            f"{(today - oldest).days} days old.{rest} Their bases differ "
             f"(Trustnet/FE discrete or cumulative, HL rolling 12-month, "
             f"Fidelity annualised) — do not compare across funds without "
             f"adjusting.")
@@ -265,28 +287,56 @@ def research_health(doc: dict, today: date) -> list[str]:
     watching it, so it aged in silence while the NAV figures beside it stayed
     current - the widest gap on the desk between what is fresh and what looks
     fresh.
+
+    It then spent months unable to fire at all. perfAsAt was being stamped with
+    the date of each factsheet read, and the weekly refresh reset all 103 every
+    Sunday, so no fund could reach 8 days let alone 120 - a watchdog wired to a
+    clock that was reset faster than it could run. perf_dates now derives the
+    field from what the tables say about themselves, and this warning works
+    against a real age again.
     """
     aged: list[tuple[int, str]] = []
+    unknown: list[str] = []
     for fund in doc["funds"]:
-        as_at = (fund.get("performance") or {}).get("perfAsAt")
-        if not as_at:
+        perf = fund.get("performance") or {}
+        # A fund with no researched tables has no research to age. Seven funds
+        # run on their NAV series alone, and telling their owner to "date the
+        # periods when re-researching" is a worklist item for periods that do
+        # not exist. Only a fund holding a table can be stale.
+        if not perf.get("cumulative") and not perf.get("discrete"):
             continue
+        as_at = perf.get("perfAsAt")
         try:
-            age = (today - date.fromisoformat(as_at)).days
+            age = (today - date.fromisoformat(as_at)).days if as_at else None
         except ValueError:
-            continue
-        if age > RESEARCH_STALE_DAYS:
+            age = None
+        if age is None:
+            unknown.append(fund["id"])
+        elif age > RESEARCH_STALE_DAYS:
             aged.append((age, fund["id"]))
 
-    if not aged:
-        return []
-    aged.sort(reverse=True)
-    worst = ", ".join(f"{fid} ({age}d)" for age, fid in aged[:3])
-    more = f", and {len(aged) - 3} more" if len(aged) > 3 else ""
-    return [f"{len(aged)} {plural(len(aged), 'fund has', 'funds have')} "
+    out: list[str] = []
+    if aged:
+        aged.sort(reverse=True)
+        worst = ", ".join(f"{fid} ({age}d)" for age, fid in aged[:3])
+        more = f", and {len(aged) - 3} more" if len(aged) > 3 else ""
+        out.append(
+            f"{len(aged)} {plural(len(aged), 'fund has', 'funds have')} "
             f"factsheet research older than "
             f"{RESEARCH_STALE_DAYS} days: {worst}{more}. Re-research, or "
-            f"rely on the NAV figures, which refresh every run."]
+            f"rely on the NAV figures, which refresh every run.")
+    # Reported, not skipped. A fund whose tables state no period they were
+    # measured over cannot be aged at all, and silently omitting it from a
+    # staleness count reads as a clean bill of health it has not earned.
+    if unknown:
+        named = ", ".join(unknown[:3])
+        more = f", and {len(unknown) - 3} more" if len(unknown) > 3 else ""
+        out.append(
+            f"{len(unknown)} {plural(len(unknown), 'fund states', 'funds state')} "
+            f"no measurement date in any performance period label, so the age "
+            f"of {plural(len(unknown), 'its', 'their')} research is unknown: "
+            f"{named}{more}. Date the periods when re-researching.")
+    return out
 
 
 def dealing_health(doc: dict) -> list[str]:
@@ -442,7 +492,18 @@ def main() -> int:
     window_start = today - timedelta(days=args.days)
     doc = json.loads(FUNDS.read_text(encoding="utf-8"))
 
-    print(f"Fund desk update - {today} (window {args.days}d)\n")
+    # Re-derive every fund's perfAsAt from its own period labels before
+    # anything reads it. Done daily rather than only in the weekly factsheet
+    # run so that a stamp written by the old behaviour - the read date, not the
+    # measurement date - is corrected on the next run instead of waiting for
+    # Sunday, and so a hand-edited table is dated by what it says the moment it
+    # lands.
+    restamped = sum(perf_dates.stamp(f, today) for f in doc["funds"])
+    dated = sum(1 for f in doc["funds"]
+                if (f.get("performance") or {}).get("perfAsAt"))
+    print(f"Fund desk update - {today} (window {args.days}d)")
+    print(f"[perfAsAt] {dated} of {len(doc['funds'])} funds dated from their "
+          f"own period labels, {restamped} corrected this run\n")
     print("Market context:")
     quotes = md.fetch_many(CONTEXT_TICKERS, window_start, today)
 
