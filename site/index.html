@@ -440,9 +440,17 @@
          margin: 20px 0; overflow: hidden; }
   .mkt-tabs { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--rule);
               background: rgba(0,0,0,.15); scrollbar-width: none; -ms-overflow-style: none; }
-  /* The row still scrolls by swipe where it has to; at the page's full width
-     all twelve tabs fit and the bar was pure noise. */
+  /* The row still scrolls by swipe where it has to. */
   .mkt-tabs::-webkit-scrollbar { display: none; }
+  /* Twelve tabs stopped fitting once the chart gave a third of the row to the
+     movers panel, and the hidden scrollbar meant the overflow showed as a tab
+     sliced down the middle - "Gold" cut mid-word reads as a broken page, not
+     as "there is more this way". A mouse has no swipe to discover it with
+     either. So above the stacking width the strip wraps and shows all twelve;
+     below it there is a finger available and it goes back to scrolling. */
+  @media (min-width: 761px) {
+    .mkt-tabs { flex-wrap: wrap; overflow-x: visible; }
+  }
   .mkt-tabs button { flex: 0 0 auto; background: transparent; border: none; border-bottom: 2px solid transparent;
                      color: var(--ink-soft); font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
                      padding: 11px 16px; cursor: pointer; white-space: nowrap; transition: color .12s, background .12s; }
@@ -1427,6 +1435,12 @@ function refreshNow(){
   /* Against a warm cache a refresh can finish in tens of milliseconds, which
      reads as a flicker rather than as an answer. Hold the busy state briefly
      so the tap is acknowledged whether the fetch was slow or instant. */
+  /* The market panels ride along with a manual refresh. Neither is fatal to
+     the fund data, so both are fire-and-forget - but a reader who pressed
+     Refresh because the movers panel was empty should get it back. */
+  fetchMarket();
+  loadMovers();
+
   const floor = new Promise(r => setTimeout(r, 450));
   const settle = html => floor.then(() => {
     REFRESHING = false;
@@ -2709,11 +2723,34 @@ function renderIntelligence(){
    which index and why - see scripts/index_movers.py for the reasons. */
 let MOVERS = null;
 
-function loadMovers(){
+/* MOVERS being null used to mean two different things - "the fetch has not
+   come back yet" and "the fetch failed" - and the panel printed the failure
+   message for both. So the pre-load state read as an error, and, worse, one
+   blip left it there for the rest of the session: this ran once on
+   DOMContentLoaded, nothing retried it, and Refresh did not touch it. A
+   single 404 while Pages swapped a deploy in was enough to kill the panel
+   beside a chart that was working fine.
+
+   State is explicit now, the fetch retries before giving up, and Refresh
+   calls it again. */
+let MOVERS_STATE = 'loading';   // 'loading' | 'ok' | 'failed'
+
+function loadMovers(tries){
+  const left = tries == null ? 3 : tries;
+  if(MOVERS_STATE !== 'ok') MOVERS_STATE = 'loading';
   return fetch('movers.json?t=' + Date.now(), {cache:'no-store'})
-    .then(r => r.ok ? r.json() : null)
-    .then(j => { MOVERS = j; renderIndexMovers(); })
-    .catch(() => { MOVERS = null; renderIndexMovers(); });
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(j => { MOVERS = j; MOVERS_STATE = 'ok'; renderIndexMovers(); })
+    .catch(() => {
+      if(left > 1){
+        // 400ms, then 800ms. Long enough to outlast a deploy swap, short
+        // enough that a reader waiting on the panel does not notice.
+        return new Promise(r => setTimeout(r, (4 - left) * 400))
+          .then(() => loadMovers(left - 1));
+      }
+      MOVERS_STATE = 'failed';
+      renderIndexMovers();
+    });
 }
 
 function moversRow(m, i, best){
@@ -2734,9 +2771,13 @@ function renderIndexMovers(){
   if(!idx){ el.innerHTML = ''; return; }
 
   if(!MOVERS){
+    // Still in flight: leave the column empty rather than accusing the data of
+    // failing. The chart is already up and the panel lands a moment later.
+    if(MOVERS_STATE !== 'failed'){ el.innerHTML = ''; return; }
     el.innerHTML = '<div class="rank-grid stack mv-short"><div class="pulse-box-head rank-head rank-a">' +
       '<span class="rank-title">Movers in ' + esc(idx.label) + '</span></div>' +
-      '<p class="intel-note">Constituent data has not loaded.</p></div>';
+      '<p class="intel-note">The constituent rankings could not be loaded. ' +
+      'The chart beside them is unaffected — Refresh will try again.</p></div>';
     return;
   }
 
