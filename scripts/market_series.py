@@ -24,11 +24,30 @@ previous good deploy stays live rather than being replaced by an empty chart.
 Output: data/market.json. The daily run commits it; the chart-refresh
 workflow regenerates it and ships it straight to the Pages artifact without
 committing, so the served copy is usually fresher than the one on main.
+
+HEADLINES, AND WHY THERE ARE TWO SOURCES FOR THEM
+Yahoo's RSS feed is free and needs no key, but several publishers syndicated
+through it cap the <description> at exactly 100 characters - "investors
+analyzed comments from the U" - and that is genuinely all the text that
+exists anywhere reachable: the article page carries no body in its HTML and
+the same 100 characters in its own meta description. There is no fuller
+version of that specific story to go and fetch.
+
+Set GUARDIAN_API_KEY (a free, no-card "Developer" key from
+open-platform.theguardian.com) and headlines come from the Guardian's own
+search instead, whose trailText is written to be a real one- or two-sentence
+teaser. That is a different source, not a longer version of the same
+stories - Guardian's own business coverage of the same topics, not MT
+Newswires or Investing.com re-syndicated through Yahoo. Unset, or if a
+Guardian call fails, every index falls straight back to the Yahoo feed - a
+key is additive, never required, matching how a failed chart fetch or an
+empty news feed already degrade elsewhere in this module.
 """
 
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 import urllib.error
@@ -77,6 +96,27 @@ NEWS_PER_INDEX = 6
 NEWS_SUMMARY_MAX = 400
 # Below this an unpunctuated description is short enough to be whole, not cut.
 NEWS_CUT_MIN = 60
+
+# Read once, not per index - a run either has a key or it does not.
+GUARDIAN_API_KEY = os.environ.get("GUARDIAN_API_KEY", "").strip()
+GUARDIAN_URL = "https://content.guardianapis.com/search"
+# Free text the index's own label rarely searches well as-is - "Gold (USD/oz)"
+# and "US 10yr yield" are chart labels, not phrases a journalist writes. Each
+# maps to how the desk would actually search the Guardian for that market.
+GUARDIAN_QUERY: dict[str, str] = {
+    "FTSE 100":      "FTSE 100",
+    "FTSE 250":      "FTSE 250",
+    "S&P 500":       "S&P 500",
+    "Nasdaq 100":    "Nasdaq",
+    "Dow Jones":     "Dow Jones",
+    "Euro STOXX 50": "European stock markets",
+    "Nikkei 225":    "Nikkei",
+    "Hang Seng":     "Hang Seng",
+    "Gold (USD/oz)": "gold price",
+    "Brent crude":   "oil price",
+    "US 10yr yield": "US bond yields",
+    "GBP/USD":       "pound dollar",
+}
 
 # (range key, Yahoo range, Yahoo interval)
 SERIES: list[tuple[str, str, str]] = [
@@ -274,11 +314,74 @@ def fetch_news(ticker: str) -> list[dict]:
             except (TypeError, ValueError):
                 when = None
 
-        out.append({"t": title, "u": link, "d": when,
+        out.append({"t": title, "u": link, "d": when, "src": "Yahoo Finance",
                     "s": clean_summary(item.findtext("description") or "")})
         if len(out) >= NEWS_PER_INDEX:
             break
     return out
+
+
+def _parse_guardian_result(item: dict) -> dict:
+    """One Guardian search result -> the same shape fetch_news produces.
+
+    Kept apart from the HTTP call so the mapping is testable offline: a
+    malformed field here should fail a self-test assertion, not surface for
+    the first time against a live key in a scheduled run.
+    """
+    when = None
+    stamp = item.get("webPublicationDate")
+    if stamp:
+        try:
+            when = int(datetime.fromisoformat(
+                stamp.replace("Z", "+00:00")).timestamp())
+        except ValueError:
+            when = None
+    trail = ((item.get("fields") or {}).get("trailText") or "")
+    return {"t": (item.get("webTitle") or "").strip(),
+            "u": item.get("webUrl") or "", "d": when, "src": "The Guardian",
+            "s": clean_summary(trail)}
+
+
+def fetch_guardian_news(query: str) -> list[dict] | None:
+    """Headlines for one index from the Guardian's own search.
+
+    None means the call itself failed - network, bad key, malformed response
+    - and the caller should fall back to Yahoo. An empty list means the
+    search genuinely returned nothing, which is also a fall-back case: an
+    index with real Yahoo headlines should not go quiet because the Guardian
+    has not covered it today.
+    """
+    if not GUARDIAN_API_KEY:
+        return None
+    params = {"q": query, "section": "business", "order-by": "newest",
+              "page-size": str(NEWS_PER_INDEX), "show-fields": "trailText",
+              "api-key": GUARDIAN_API_KEY}
+    url = GUARDIAN_URL + "?" + urllib.parse.urlencode(params)
+    try:
+        raw = _get(url)
+        results = json.loads(raw)["response"]["results"]
+    except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError,
+            KeyError, TypeError):
+        return None
+    out, seen = [], set()
+    for item in results:
+        row = _parse_guardian_result(item)
+        if not row["t"] or row["t"].lower() in seen:
+            continue
+        seen.add(row["t"].lower())
+        out.append(row)
+    return out
+
+
+def fetch_index_news(label: str, ticker: str) -> list[dict]:
+    """Headlines for one index: the Guardian when a key is set and it
+    actually returns something, Yahoo otherwise. See the module docstring.
+    """
+    query = GUARDIAN_QUERY.get(label, label)
+    guardian = fetch_guardian_news(query)
+    if guardian:
+        return guardian
+    return fetch_news(ticker)
 
 
 def fetch_index(label: str, ticker: str) -> dict | None:
@@ -311,7 +414,7 @@ def fetch_index(label: str, ticker: str) -> dict | None:
         price = series["1y"]["c"][-1]
 
     return {
-        "news": fetch_news(ticker),
+        "news": fetch_index_news(label, ticker),
         "id": slug(label),
         "label": label,
         "ticker": ticker,
@@ -410,6 +513,41 @@ def _selftest_offline() -> bool:
     assert len(clean_summary(long_txt)) <= NEWS_SUMMARY_MAX + 1
     assert clean_summary("") == ""
     print("  summary clean    OK  (tags stripped, truncation marked)")
+
+    # --- Guardian result mapping ------------------------------------------
+    # Offline on purpose: the shape of a real search result, hand-built, so a
+    # field rename on the Guardian's side fails an assertion here rather than
+    # silently emitting blank headlines against a live key.
+    row = _parse_guardian_result({
+        "webTitle": "Bank of England holds rates amid inflation concerns",
+        "webUrl": "https://www.theguardian.com/business/2026/sep/03/example",
+        "webPublicationDate": "2026-09-03T10:15:00Z",
+        "fields": {"trailText": "The Bank of England left rates unchanged "
+                                 "on Wednesday, <strong>citing</strong> "
+                                 "persistent inflation pressure."},
+    })
+    assert row["t"] == "Bank of England holds rates amid inflation concerns"
+    assert row["src"] == "The Guardian"
+    assert row["s"] == ("The Bank of England left rates unchanged on "
+                         "Wednesday, citing persistent inflation pressure.")
+    assert row["d"] == int(datetime(2026, 9, 3, 10, 15, tzinfo=timezone.utc)
+                            .timestamp())
+    # A result with no trailText (some content types do not carry one) must
+    # not raise - an empty summary is a row Yahoo can still be asked to fill.
+    bare = _parse_guardian_result({"webTitle": "Headline only", "webUrl": "u"})
+    assert bare["s"] == "" and bare["d"] is None
+    # No key means no call, ever - not a call made and then ignored. Saved
+    # and restored around the assertion so a key set in this shell (a real
+    # scheduled run, or a developer testing locally) cannot make the test
+    # pass or fail depending on what happens to be in the environment.
+    global GUARDIAN_API_KEY
+    _saved_key, GUARDIAN_API_KEY = GUARDIAN_API_KEY, ""
+    try:
+        assert fetch_guardian_news("anything") is None
+    finally:
+        GUARDIAN_API_KEY = _saved_key
+    print("  guardian mapping OK  (fields parsed, missing trailText handled, "
+          "no key -> no call)")
 
     # The pair this exists to separate: a refusal that clears on its own, and
     # a fault that does not. Both used to print as a bare FAILED.

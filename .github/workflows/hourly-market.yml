@@ -60,6 +60,8 @@ jobs:
       # always fresh, and the committed copy exists so a clone can render the
       # page at all.
       - name: Fetch index series
+        env:
+          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
         run: python scripts/market_series.py
 
       # funds.json is whatever the daily run last committed; only the chart
