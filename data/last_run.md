@@ -7,21 +7,25 @@ Window: 4 Aug 2026 to 3 Sep 2026
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **48** catalyst dates refreshed (2 confirmed, 0 provisional, 19 estimated)
 
+## Maintenance needed
+
+- 19 funds have factsheet research older than 120 days: man-japan-corealpha (156d), lg-uk-index (156d), lg-future-world-esg-developed (156d), and 16 more. Re-research, or rely on the NAV figures, which refresh every run.
+
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.29% |
-| FTSE 250 | -0.06% |
-| S&P 500 | -0.45% |
-| Nasdaq 100 | -1.54% |
-| Euro STOXX 50 | -1.85% |
-| Nikkei 225 | +0.40% |
-| Hang Seng | -2.47% |
-| Gold (USD/oz) | +10.16% |
-| Brent crude | +21.47% |
-| US 10yr yield | +2.79% |
-| GBP/USD | +0.65% |
+| FTSE 100 | -0.44% |
+| FTSE 250 | +0.15% |
+| S&P 500 | +1.87% |
+| Nasdaq 100 | +2.40% |
+| Euro STOXX 50 | -1.60% |
+| Nikkei 225 | +0.58% |
+| Hang Seng | -2.10% |
+| Gold (USD/oz) | +12.48% |
+| Brent crude | +14.03% |
+| US 10yr yield | +1.20% |
+| GBP/USD | +0.86% |
 
 ## Fund NAV figures (1 month)
 
