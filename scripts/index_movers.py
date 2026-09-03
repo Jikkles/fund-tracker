@@ -16,18 +16,23 @@ where its full constituent list can be obtained and priced:
   Hang Seng    same. Its tickers are SEHK board lot numbers, which map onto
                Yahoo symbols by zero-padding to four digits and adding .HK -
                one exchange, one mechanical rule, no guesswork.
+  Euro STOXX   same. This one was left out for years on the grounds that its
+  50           constituents span eight exchanges and mapping their tickers
+               would be error-prone - but the article's ticker column already
+               carries the exchange suffix (ADS.DE, ADYEN.AS, NDA-FI.HE), so
+               nothing is mapped at all. All 50 price, and every name Yahoo
+               returns matches the name beside it in the list.
+  Nikkei 225   same, from the Components list rather than a table: each entry
+               carries its Tokyo code as "(TYO: 7203)", which is 7203.T. The
+               list runs to 223 of the 225, so the panel says 223 of 225.
 
 Deliberately absent, with the reason recorded in the output so the page can
 say it rather than showing an empty panel:
 
   Nasdaq Composite   ~3,000 constituents. Pricing them per symbol every run
-                     is not a reasonable thing to do to a free endpoint.
-  Nikkei 225         Wikipedia lists the 225 by company name only, with no
-                     Tokyo ticker codes to price them by.
-  Euro STOXX 50      the constituent list is available, but its 50 names are
-                     spread across eight exchanges and mapping their tickers
-                     onto price symbols is error-prone - a mis-mapped ticker
-                     prices the wrong company.
+                     is not a reasonable thing to do to a free endpoint, and
+                     ranking the Nasdaq-100 instead would be a different index
+                     under this one's name.
 
   Gold, Brent,       not indices. They have no constituents, and saying so is
   10yr, GBP/USD      the correct output rather than an empty list.
@@ -74,14 +79,9 @@ PRICED_FLOOR = 0.9          # of the constituent list, below which it is a guess
 UNSUPPORTED = {
     "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. "
                         "Pricing every one on each run is not a reasonable "
-                        "load to put on a free data source.",
-    "euro-stoxx-50": "The 50 constituents are spread across eight European "
-                     "exchanges and mapping their tickers onto price symbols "
-                     "is error-prone - a mis-mapped ticker would price the "
-                     "wrong company.",
-    "nikkei-225": "The Nikkei 225 is published as a list of company names "
-                  "without Tokyo ticker codes, so there is nothing reliable "
-                  "to price the constituents by.",
+                        "load to put on a free data source, and ranking the "
+                        "Nasdaq-100 in its place would be a different index "
+                        "under this one's name.",
     "gold-usd-oz": "Not an index - a single commodity price, so it has no "
                    "constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
@@ -192,29 +192,55 @@ def hk_symbol(s: str) -> str | None:
     return f"{int(m.group(1)):04d}.HK" if m else None
 
 
-# key -> (article, symbol column, name column, symbol mapper, floor, label)
+def eu_symbol(s: str) -> str | None:
+    """Already a Yahoo symbol, suffix and all - ADS.DE, AD.AS, NDA-FI.HE."""
+    s = (s or "").strip()
+    return s if re.fullmatch(r"[A-Z0-9]{1,6}(?:-[A-Z0-9]{1,4})?\.[A-Z]{2}", s) else None
+
+
+def jp_symbol(s: str) -> str | None:
+    """A Tokyo securities code - 7203 is Yahoo's 7203.T."""
+    m = re.search(r"\b(\d{4})\b", s or "")
+    return f"{m.group(1)}.T" if m else None
+
+
+# Each index: where the list lives, how to read it, how many the index is
+# meant to hold, and the fewest rows worth trusting. `nominal` is what the
+# panel counts against, so a source that quietly drops names says "223 of 225"
+# rather than a confident "all 223".
 WIKI = {
-    "s-p-500": ("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
-                "symbol", "security", us_symbol, 480, "S&P 500"),
-    "dow-jones": ("https://en.wikipedia.org/wiki/"
-                  "List_of_Dow_Jones_Industrial_Average_companies",
-                  "symbol", "company", us_symbol, 28, "Dow Jones"),
-    "hang-seng": ("https://en.wikipedia.org/wiki/Hang_Seng_Index",
-                  "ticker", "name", hk_symbol, 75, "Hang Seng"),
+    "s-p-500": {
+        "label": "S&P 500", "nominal": 503, "floor": 480,
+        "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
+        "table": ("symbol", "security"), "map": us_symbol},
+    "dow-jones": {
+        "label": "Dow Jones", "nominal": 30, "floor": 28,
+        "url": "https://en.wikipedia.org/wiki/"
+               "List_of_Dow_Jones_Industrial_Average_companies",
+        "table": ("symbol", "company"), "map": us_symbol},
+    "hang-seng": {
+        "label": "Hang Seng", "nominal": None, "floor": 75,
+        "url": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
+        "table": ("ticker", "name"), "map": hk_symbol},
+    "euro-stoxx-50": {
+        "label": "Euro STOXX 50", "nominal": 50, "floor": 45,
+        "url": "https://en.wikipedia.org/wiki/EURO_STOXX_50",
+        "table": ("ticker", "name"), "map": eu_symbol},
+    "nikkei-225": {
+        "label": "Nikkei 225", "nominal": 225, "floor": 200,
+        "url": "https://en.wikipedia.org/wiki/Nikkei_225",
+        "list": ("Components", r"\(\s*TYO\s*:\s*\d{4}\s*\)"), "map": jp_symbol},
 }
 
 
-def wiki_tickers(url: str, sym_col: str, name_col: str,
-                 mapper, floor: int) -> list[tuple[str, str]] | None:
+def wiki_table(h: str, sym_col: str, name_col: str,
+               mapper, floor: int) -> list[tuple[str, str]] | None:
     """(symbol, company) from the table whose HEADER names both columns.
 
     Reading the header rather than sniffing cells for something ticker-shaped
     is what stops an Exchange column of "NYSE" being taken for 30 tickers, and
     a GICS Sector of "Industrials" being taken for 3M's company name.
     """
-    h = get(url)
-    if not h:
-        return None
     for table in tables_of(h):
         rows = rows_of(table)
         if len(rows) < 2:
@@ -236,12 +262,52 @@ def wiki_tickers(url: str, sym_col: str, name_col: str,
     return None
 
 
+def wiki_list(h: str, anchor: str, pattern: str,
+              mapper, floor: int) -> list[tuple[str, str]] | None:
+    """(symbol, company) from a bulleted list, for an index published as prose.
+
+    The Nikkei's constituents are list items reading "Toyota Motor Corp
+    (TYO: 7203)" grouped under sector headings, not a table. The name is
+    whatever precedes the code, trimmed back past any citation bracket or
+    section heading the list item swallowed - and it is only ever the cache's
+    label anyway, since what the page shows comes from the price response.
+    """
+    start = h.find('id="' + anchor + '"')
+    if start < 0:
+        return None
+    got: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for item in re.findall(r"<li[^>]*>(.*?)</li>", h[start:], re.S | re.I):
+        text = text_of(item)
+        m = re.search(pattern, text)
+        if not m:
+            continue
+        sym = mapper(m.group(0))
+        if not sym or sym in seen:
+            continue
+        name = re.split(r"[\]\n]", text[:m.start()])[-1].strip(" ., ")
+        if name:
+            seen.add(sym)
+            got.append((sym, name))
+    return got if len(got) >= floor else None
+
+
+def wiki_tickers(cfg: dict) -> list[tuple[str, str]] | None:
+    h = get(cfg["url"])
+    if not h:
+        return None
+    if "table" in cfg:
+        return wiki_table(h, *cfg["table"], cfg["map"], cfg["floor"])
+    return wiki_list(h, *cfg["list"], cfg["map"], cfg["floor"])
+
+
 def load_constituents(today: date) -> dict:
     try:
         cache = json.loads(CACHE.read_text(encoding="utf-8"))
     except Exception:
         cache = {}
-    for key, (url, sym_col, name_col, mapper, floor, label) in WIKI.items():
+    for key, cfg in WIKI.items():
+        label = cfg["label"]
         entry = cache.get(key) or {}
         fetched = entry.get("fetched")
         fresh = False
@@ -252,10 +318,10 @@ def load_constituents(today: date) -> dict:
                 fresh = False
         if fresh and entry.get("tickers"):
             continue
-        got = wiki_tickers(url, sym_col, name_col, mapper, floor)
+        got = wiki_tickers(cfg)
         if got:
             cache[key] = {"fetched": today.isoformat(), "label": label,
-                          "source": url,
+                          "source": cfg["url"], "nominal": cfg["nominal"],
                           "tickers": [{"symbol": t, "name": n} for t, n in got]}
             print(f"  [list] {label:12} {len(got)} constituents refreshed")
         elif entry.get("tickers"):
@@ -292,21 +358,27 @@ def priced_index(key: str, cache: dict) -> dict | None:
     if not entry or not entry.get("tickers"):
         return None
     names = {t["symbol"]: t["name"] for t in entry["tickers"]}
+    # Counted against the index's own size where it has a fixed one, so a
+    # source that publishes 223 of the Nikkei's 225 cannot be reported as a
+    # complete sweep of the index.
+    total = entry.get("nominal") or len(names)
     with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         results = [r for r in pool.map(day_move, list(names)) if r]
     # A ranking is only honest if nearly the whole index priced.
-    if len(results) < len(names) * PRICED_FLOOR:
+    if len(results) < total * PRICED_FLOOR:
         print(f"  [skip] {entry['label']:12} only {len(results)} of "
-              f"{len(names)} priced - too incomplete to rank")
+              f"{total} priced - too incomplete to rank")
         return None
     # Yahoo's own name for the symbol it has just priced, so a label cannot
     # belong to a different company than the figure beside it. The list's name
     # is the fallback for the rare symbol Yahoo prices without naming.
     movers = [{"name": nm or names[s], "symbol": s, "pct": v}
               for s, v, nm in results]
+    universe = (f"all {total} {entry['label']} constituents"
+                if len(movers) >= total else
+                f"{len(movers)} of {total} {entry['label']} constituents")
     return {"movers": movers, "source": "Yahoo Finance daily closes",
-            "universe": f"{len(movers)} of {len(names)} "
-                        f"{entry['label']} constituents"}
+            "universe": universe}
 
 
 def rank(out: dict, key: str, label: str, got: dict, today: date) -> None:
@@ -340,7 +412,8 @@ def main(argv: list[str]) -> int:
         print(f"  [ok]   {label:12} {got['universe']}")
 
     cache = load_constituents(today)
-    for key, (_url, _sym, _name, _map, _floor, label) in WIKI.items():
+    for key, cfg in WIKI.items():
+        label = cfg["label"]
         got = priced_index(key, cache)
         if not got:
             out["unsupported"].setdefault(

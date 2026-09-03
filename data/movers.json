@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T07:36:52+00:00",
+  "generated": "2026-09-03T07:52:47+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,34 +10,34 @@
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": 2.87
+          "pct": 3.04
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": 1.93
+          "pct": 2.14
         },
         {
-          "name": "SSE plc",
-          "symbol": "SSE",
-          "pct": 1.48
+          "name": "Metlen Energy & Metals Plc",
+          "symbol": "MTLN",
+          "pct": 1.67
         }
       ],
       "bottom": [
         {
           "name": "Admiral Group",
           "symbol": "ADM",
-          "pct": -2.54
-        },
-        {
-          "name": "Barratt Redrow Plc",
-          "symbol": "BTRW",
-          "pct": -1.87
+          "pct": -2.44
         },
         {
           "name": "Burberry Group plc",
           "symbol": "BRBY",
-          "pct": -1.81
+          "pct": -2.14
+        },
+        {
+          "name": "Barratt Redrow Plc",
+          "symbol": "BTRW",
+          "pct": -2.13
         }
       ]
     },
@@ -50,7 +50,7 @@
         {
           "name": "Hilton Food Group Plc",
           "symbol": "HFG",
-          "pct": 9.51
+          "pct": 10.46
         },
         {
           "name": "Avon Technologies Plc",
@@ -58,26 +58,26 @@
           "pct": 5.16
         },
         {
-          "name": "Ashoka India Equity Inv Trust Plc",
-          "symbol": "AIE",
-          "pct": 3.8
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": 4.11
         }
       ],
       "bottom": [
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -5.45
+          "pct": -4.9
+        },
+        {
+          "name": "Baltic Classifieds Group plc",
+          "symbol": "BCG",
+          "pct": -4.44
         },
         {
           "name": "Vistry Group Plc",
           "symbol": "VTY",
-          "pct": -3.39
-        },
-        {
-          "name": "AEP Plantations Plc",
-          "symbol": "AEP",
-          "pct": -3.07
+          "pct": -4.17
         }
       ]
     },
@@ -85,7 +85,7 @@
       "label": "S&P 500",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "503 of 503 S&P 500 constituents",
+      "universe": "all 503 S&P 500 constituents",
       "top": [
         {
           "name": "Dell Technologies Inc.",
@@ -125,7 +125,7 @@
       "label": "Dow Jones",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "30 of 30 Dow Jones constituents",
+      "universe": "all 30 Dow Jones constituents",
       "top": [
         {
           "name": "NVIDIA Corporation",
@@ -165,47 +165,125 @@
       "label": "Hang Seng",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "85 of 85 Hang Seng constituents",
+      "universe": "all 85 Hang Seng constituents",
       "top": [
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 6.558931087061759
+          "pct": 6.273762535105548
         },
         {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": 4.689207214811342
+          "pct": 4.743723689457021
         },
         {
           "name": "China Resources Mixc Lifestyle Services Limited",
           "symbol": "1209.HK",
-          "pct": 3.688520986013233
+          "pct": 3.8422130246503308
         }
       ],
       "bottom": [
         {
           "name": "Trip.com Group Limited",
           "symbol": "9961.HK",
-          "pct": -5.584637106216266
+          "pct": -5.642814015504492
         },
         {
           "name": "Chow Tai Fook Jewellery Group Limited",
           "symbol": "1929.HK",
-          "pct": -4.455047569913358
+          "pct": -4.614160205149993
         },
         {
           "name": "Wharf Real Estate Investment Company Limited",
           "symbol": "1997.HK",
-          "pct": -3.4047917625627506
+          "pct": -3.2156323218632847
+        }
+      ]
+    },
+    "euro-stoxx-50": {
+      "label": "Euro STOXX 50",
+      "asAt": "2026-09-03",
+      "source": "Yahoo Finance daily closes",
+      "universe": "all 50 Euro STOXX 50 constituents",
+      "top": [
+        {
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": 3.5955515142969157
+        },
+        {
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": 2.3696682138043172
+        },
+        {
+          "name": "ING Groep N.V.",
+          "symbol": "INGA.AS",
+          "pct": 2.2084057754503115
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": -4.468908140702644
+        },
+        {
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": -3.6304700162074557
+        },
+        {
+          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+          "symbol": "MC.PA",
+          "pct": -3.48314606741573
+        }
+      ]
+    },
+    "nikkei-225": {
+      "label": "Nikkei 225",
+      "asAt": "2026-09-03",
+      "source": "Yahoo Finance daily closes",
+      "universe": "223 of 225 Nikkei 225 constituents",
+      "top": [
+        {
+          "name": "Nitori Holdings Co., Ltd.",
+          "symbol": "9843.T",
+          "pct": 8.407811982787157
+        },
+        {
+          "name": "Sumitomo Heavy Industries, Ltd.",
+          "symbol": "6302.T",
+          "pct": 5.091834879068922
+        },
+        {
+          "name": "The Kansai Electric Power Company, Incorporated",
+          "symbol": "9503.T",
+          "pct": 4.236996210816397
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Inpex Corporation",
+          "symbol": "1605.T",
+          "pct": -3.999012589484078
+        },
+        {
+          "name": "Yokogawa Electric Corporation",
+          "symbol": "6841.T",
+          "pct": -3.7494849608570253
+        },
+        {
+          "name": "Furukawa Electric Co., Ltd.",
+          "symbol": "5801.T",
+          "pct": -3.704690831556503
         }
       ]
     }
   },
   "unsupported": {
-    "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. Pricing every one on each run is not a reasonable load to put on a free data source.",
-    "euro-stoxx-50": "The 50 constituents are spread across eight European exchanges and mapping their tickers onto price symbols is error-prone - a mis-mapped ticker would price the wrong company.",
-    "nikkei-225": "The Nikkei 225 is published as a list of company names without Tokyo ticker codes, so there is nothing reliable to price the constituents by.",
+    "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. Pricing every one on each run is not a reasonable load to put on a free data source, and ranking the Nasdaq-100 in its place would be a different index under this one's name.",
     "gold-usd-oz": "Not an index - a single commodity price, so it has no constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
     "us-10yr-yield": "Not an index - a single government bond yield.",

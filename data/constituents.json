@@ -3,6 +3,7 @@
     "fetched": "2026-09-03",
     "label": "S&P 500",
     "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
+    "nominal": 503,
     "tickers": [
       {
         "symbol": "MMM",
@@ -2022,6 +2023,7 @@
     "fetched": "2026-09-03",
     "label": "Dow Jones",
     "source": "https://en.wikipedia.org/wiki/List_of_Dow_Jones_Industrial_Average_companies",
+    "nominal": 30,
     "tickers": [
       {
         "symbol": "MMM",
@@ -2149,6 +2151,7 @@
     "fetched": "2026-09-03",
     "label": "Hang Seng",
     "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
+    "nominal": null,
     "tickers": [
       {
         "symbol": "0005.HK",
@@ -2489,6 +2492,1114 @@
       {
         "symbol": "9999.HK",
         "name": "NetEase"
+      }
+    ]
+  },
+  "euro-stoxx-50": {
+    "fetched": "2026-09-03",
+    "label": "Euro STOXX 50",
+    "source": "https://en.wikipedia.org/wiki/EURO_STOXX_50",
+    "nominal": 50,
+    "tickers": [
+      {
+        "symbol": "ADS.DE",
+        "name": "Adidas"
+      },
+      {
+        "symbol": "ADYEN.AS",
+        "name": "Adyen"
+      },
+      {
+        "symbol": "AD.AS",
+        "name": "Ahold Delhaize"
+      },
+      {
+        "symbol": "AI.PA",
+        "name": "Air Liquide"
+      },
+      {
+        "symbol": "AIR.PA",
+        "name": "Airbus"
+      },
+      {
+        "symbol": "ALV.DE",
+        "name": "Allianz"
+      },
+      {
+        "symbol": "ABI.BR",
+        "name": "Anheuser-Busch InBev"
+      },
+      {
+        "symbol": "ARGX.BR",
+        "name": "Argenx"
+      },
+      {
+        "symbol": "ASML.AS",
+        "name": "ASML Holding"
+      },
+      {
+        "symbol": "CS.PA",
+        "name": "Axa"
+      },
+      {
+        "symbol": "BAS.DE",
+        "name": "BASF"
+      },
+      {
+        "symbol": "BAYN.DE",
+        "name": "Bayer"
+      },
+      {
+        "symbol": "BBVA.MC",
+        "name": "BBVA"
+      },
+      {
+        "symbol": "SAN.MC",
+        "name": "Banco Santander"
+      },
+      {
+        "symbol": "BMW.DE",
+        "name": "BMW"
+      },
+      {
+        "symbol": "BNP.PA",
+        "name": "BNP Paribas"
+      },
+      {
+        "symbol": "BN.PA",
+        "name": "Danone"
+      },
+      {
+        "symbol": "DBK.DE",
+        "name": "Deutsche Bank"
+      },
+      {
+        "symbol": "DB1.DE",
+        "name": "Deutsche Börse"
+      },
+      {
+        "symbol": "DHL.DE",
+        "name": "Deutsche Post"
+      },
+      {
+        "symbol": "DTE.DE",
+        "name": "Deutsche Telekom"
+      },
+      {
+        "symbol": "ENEL.MI",
+        "name": "Enel"
+      },
+      {
+        "symbol": "ENI.MI",
+        "name": "Eni"
+      },
+      {
+        "symbol": "EL.PA",
+        "name": "EssilorLuxottica"
+      },
+      {
+        "symbol": "RACE.MI",
+        "name": "Ferrari"
+      },
+      {
+        "symbol": "RMS.PA",
+        "name": "Hermès"
+      },
+      {
+        "symbol": "IBE.MC",
+        "name": "Iberdrola"
+      },
+      {
+        "symbol": "ITX.MC",
+        "name": "Inditex"
+      },
+      {
+        "symbol": "IFX.DE",
+        "name": "Infineon Technologies"
+      },
+      {
+        "symbol": "INGA.AS",
+        "name": "ING Group"
+      },
+      {
+        "symbol": "ISP.MI",
+        "name": "Intesa Sanpaolo"
+      },
+      {
+        "symbol": "OR.PA",
+        "name": "L'Oréal"
+      },
+      {
+        "symbol": "MC.PA",
+        "name": "LVMH Moët Hennessy Louis Vuitton"
+      },
+      {
+        "symbol": "MBG.DE",
+        "name": "Mercedes-Benz Group"
+      },
+      {
+        "symbol": "MUV2.DE",
+        "name": "Munich Re"
+      },
+      {
+        "symbol": "NDA-FI.HE",
+        "name": "Nordea"
+      },
+      {
+        "symbol": "PRX.AS",
+        "name": "Prosus"
+      },
+      {
+        "symbol": "RHM.DE",
+        "name": "Rheinmetall"
+      },
+      {
+        "symbol": "SAF.PA",
+        "name": "Safran"
+      },
+      {
+        "symbol": "SGO.PA",
+        "name": "Saint-Gobain"
+      },
+      {
+        "symbol": "SAN.PA",
+        "name": "Sanofi"
+      },
+      {
+        "symbol": "SAP.DE",
+        "name": "SAP"
+      },
+      {
+        "symbol": "SU.PA",
+        "name": "Schneider Electric"
+      },
+      {
+        "symbol": "SIE.DE",
+        "name": "Siemens"
+      },
+      {
+        "symbol": "ENR.DE",
+        "name": "Siemens Energy"
+      },
+      {
+        "symbol": "TTE.PA",
+        "name": "TotalEnergies"
+      },
+      {
+        "symbol": "DG.PA",
+        "name": "Vinci SA"
+      },
+      {
+        "symbol": "UCG.MI",
+        "name": "UniCredit"
+      },
+      {
+        "symbol": "VOW.DE",
+        "name": "Volkswagen Group"
+      },
+      {
+        "symbol": "WKL.AS",
+        "name": "Wolters Kluwer"
+      }
+    ]
+  },
+  "nikkei-225": {
+    "fetched": "2026-09-03",
+    "label": "Nikkei 225",
+    "source": "https://en.wikipedia.org/wiki/Nikkei_225",
+    "nominal": 225,
+    "tickers": [
+      {
+        "symbol": "9202.T",
+        "name": "ANA Holdings  Inc"
+      },
+      {
+        "symbol": "9201.T",
+        "name": "Japan Airlines  Co., Ltd"
+      },
+      {
+        "symbol": "7267.T",
+        "name": "Honda Motor  Co., Ltd"
+      },
+      {
+        "symbol": "7202.T",
+        "name": "Isuzu Motors  Ltd"
+      },
+      {
+        "symbol": "7261.T",
+        "name": "Mazda Motor  Corp"
+      },
+      {
+        "symbol": "7211.T",
+        "name": "Mitsubishi Motors  Corp"
+      },
+      {
+        "symbol": "7201.T",
+        "name": "Nissan  Motor Co., Ltd"
+      },
+      {
+        "symbol": "7270.T",
+        "name": "Subaru  Corp"
+      },
+      {
+        "symbol": "7269.T",
+        "name": "Suzuki Motor  Corp"
+      },
+      {
+        "symbol": "7203.T",
+        "name": "Toyota Motor  Corp"
+      },
+      {
+        "symbol": "7272.T",
+        "name": "Yamaha Motor Company , Ltd"
+      },
+      {
+        "symbol": "8304.T",
+        "name": "Aozora Bank , Ltd"
+      },
+      {
+        "symbol": "8331.T",
+        "name": "The  Chiba Bank , Ltd"
+      },
+      {
+        "symbol": "8354.T",
+        "name": "Fukuoka Financial Group , Inc"
+      },
+      {
+        "symbol": "8306.T",
+        "name": "Mitsubishi UFJ Financial Group , Inc"
+      },
+      {
+        "symbol": "8411.T",
+        "name": "Mizuho Financial Group , Inc"
+      },
+      {
+        "symbol": "8308.T",
+        "name": "Resona Holdings , Inc"
+      },
+      {
+        "symbol": "5831.T",
+        "name": "Shizuoka Financial Group"
+      },
+      {
+        "symbol": "8316.T",
+        "name": "Sumitomo Mitsui Financial Group , Inc"
+      },
+      {
+        "symbol": "8309.T",
+        "name": "Sumitomo Mitsui Trust Holdings , Inc"
+      },
+      {
+        "symbol": "7186.T",
+        "name": "Yokohama Financial Group"
+      },
+      {
+        "symbol": "3407.T",
+        "name": "Asahi Kasei  Corp"
+      },
+      {
+        "symbol": "4061.T",
+        "name": "Denka  Co., Ltd"
+      },
+      {
+        "symbol": "4901.T",
+        "name": "Fujifilm Holdings  Corp"
+      },
+      {
+        "symbol": "4452.T",
+        "name": "Kao Corp"
+      },
+      {
+        "symbol": "3405.T",
+        "name": "Kuraray  Co., Ltd"
+      },
+      {
+        "symbol": "4188.T",
+        "name": "Mitsubishi Chemical Holdings  Corp"
+      },
+      {
+        "symbol": "4183.T",
+        "name": "Mitsui Chemicals , Inc"
+      },
+      {
+        "symbol": "4021.T",
+        "name": "Nissan Chemical Industries , Ltd"
+      },
+      {
+        "symbol": "6988.T",
+        "name": "Nitto Denko"
+      },
+      {
+        "symbol": "4004.T",
+        "name": "Resonac  Corp"
+      },
+      {
+        "symbol": "4063.T",
+        "name": "Shin-Etsu Chemical  Co., Ltd"
+      },
+      {
+        "symbol": "4911.T",
+        "name": "Shiseido  Co., Ltd"
+      },
+      {
+        "symbol": "4005.T",
+        "name": "Sumitomo Chemical  Co., Ltd"
+      },
+      {
+        "symbol": "4043.T",
+        "name": "Tokuyama Corporation"
+      },
+      {
+        "symbol": "4042.T",
+        "name": "Tosoh  Corp"
+      },
+      {
+        "symbol": "4208.T",
+        "name": "Ube Industries , Ltd"
+      },
+      {
+        "symbol": "9433.T",
+        "name": "KDDI  Corp"
+      },
+      {
+        "symbol": "9432.T",
+        "name": "Nippon Telegraph & Telephone  Corp"
+      },
+      {
+        "symbol": "9434.T",
+        "name": "SoftBank  Corp"
+      },
+      {
+        "symbol": "9984.T",
+        "name": "SoftBank Group  Corp"
+      },
+      {
+        "symbol": "1721.T",
+        "name": "Comsys Holdings  Corp"
+      },
+      {
+        "symbol": "1925.T",
+        "name": "Daiwa House Industry  Co., Ltd"
+      },
+      {
+        "symbol": "1808.T",
+        "name": "Haseko Corp"
+      },
+      {
+        "symbol": "1963.T",
+        "name": "JGC Corporation"
+      },
+      {
+        "symbol": "1812.T",
+        "name": "Kajima  Corp"
+      },
+      {
+        "symbol": "1802.T",
+        "name": "Obayashi Corp"
+      },
+      {
+        "symbol": "1928.T",
+        "name": "Sekisui House , Ltd"
+      },
+      {
+        "symbol": "1803.T",
+        "name": "Shimizu  Corp"
+      },
+      {
+        "symbol": "1801.T",
+        "name": "Taisei  Corp"
+      },
+      {
+        "symbol": "6857.T",
+        "name": "Advantest  Corp"
+      },
+      {
+        "symbol": "6770.T",
+        "name": "Alps Alpine  Co., Ltd"
+      },
+      {
+        "symbol": "7751.T",
+        "name": "Canon Inc"
+      },
+      {
+        "symbol": "6902.T",
+        "name": "Denso  Corp"
+      },
+      {
+        "symbol": "6954.T",
+        "name": "FANUC  Corp"
+      },
+      {
+        "symbol": "6504.T",
+        "name": "Fuji Electric  Co., Ltd"
+      },
+      {
+        "symbol": "6702.T",
+        "name": "Fujitsu  Ltd"
+      },
+      {
+        "symbol": "6501.T",
+        "name": "Hitachi , Ltd"
+      },
+      {
+        "symbol": "6861.T",
+        "name": "Keyence  Corp"
+      },
+      {
+        "symbol": "6971.T",
+        "name": "Kyocera  Corp"
+      },
+      {
+        "symbol": "6920.T",
+        "name": "Lasertec"
+      },
+      {
+        "symbol": "6479.T",
+        "name": "MinebeaMitsumi , Inc"
+      },
+      {
+        "symbol": "6503.T",
+        "name": "Mitsubishi Electric  Corp"
+      },
+      {
+        "symbol": "6981.T",
+        "name": "Murata Manufacturing  Co., Ltd"
+      },
+      {
+        "symbol": "6701.T",
+        "name": "NEC  Corp"
+      },
+      {
+        "symbol": "6594.T",
+        "name": "Nidec"
+      },
+      {
+        "symbol": "6645.T",
+        "name": "Omron  Corp"
+      },
+      {
+        "symbol": "6752.T",
+        "name": "Panasonic  Corp"
+      },
+      {
+        "symbol": "6723.T",
+        "name": "Renesas Electronics"
+      },
+      {
+        "symbol": "7752.T",
+        "name": "Ricoh  Co., Ltd"
+      },
+      {
+        "symbol": "6963.T",
+        "name": "Rohm  Co., Ltd"
+      },
+      {
+        "symbol": "7735.T",
+        "name": "SCREEN Holdings"
+      },
+      {
+        "symbol": "6724.T",
+        "name": "Seiko Epson  Corp"
+      },
+      {
+        "symbol": "6753.T",
+        "name": "Sharp Corporation"
+      },
+      {
+        "symbol": "6758.T",
+        "name": "Sony  Corp"
+      },
+      {
+        "symbol": "6526.T",
+        "name": "Socionext  Inc"
+      },
+      {
+        "symbol": "6976.T",
+        "name": "Taiyo Yuden  Co., Ltd"
+      },
+      {
+        "symbol": "6762.T",
+        "name": "TDK  Corp"
+      },
+      {
+        "symbol": "8035.T",
+        "name": "Tokyo Electron  Ltd"
+      },
+      {
+        "symbol": "6506.T",
+        "name": "Yaskawa Electric Corporation , Limited"
+      },
+      {
+        "symbol": "6841.T",
+        "name": "Yokogawa Electric  Corp"
+      },
+      {
+        "symbol": "9502.T",
+        "name": "Chubu Electric Power  Co., Inc"
+      },
+      {
+        "symbol": "9503.T",
+        "name": "The  Kansai Electric Power  Co., Inc"
+      },
+      {
+        "symbol": "9501.T",
+        "name": "Tokyo Electric Power Company  Holdings, Incorporated"
+      },
+      {
+        "symbol": "1332.T",
+        "name": "Nissui  Corporation"
+      },
+      {
+        "symbol": "2802.T",
+        "name": "Ajinomoto  Co., Inc"
+      },
+      {
+        "symbol": "2502.T",
+        "name": "Asahi Group Holdings , Ltd"
+      },
+      {
+        "symbol": "2914.T",
+        "name": "Japan Tobacco  Inc"
+      },
+      {
+        "symbol": "2801.T",
+        "name": "Kikkoman  Corp"
+      },
+      {
+        "symbol": "2503.T",
+        "name": "Kirin Holdings  Co, Ltd"
+      },
+      {
+        "symbol": "2269.T",
+        "name": "Meiji Holdings  Company, Limited"
+      },
+      {
+        "symbol": "2282.T",
+        "name": "NH Foods  Ltd"
+      },
+      {
+        "symbol": "2871.T",
+        "name": "Nichirei  Corp"
+      },
+      {
+        "symbol": "2002.T",
+        "name": "Nisshin Seifun Group  Inc"
+      },
+      {
+        "symbol": "2501.T",
+        "name": "Sapporo Holdings  Ltd"
+      },
+      {
+        "symbol": "9532.T",
+        "name": "Osaka Gas  Co., Ltd"
+      },
+      {
+        "symbol": "9531.T",
+        "name": "Tokyo Gas  Co., Ltd"
+      },
+      {
+        "symbol": "5201.T",
+        "name": "AGC Inc"
+      },
+      {
+        "symbol": "5333.T",
+        "name": "NGK Insulators , Ltd"
+      },
+      {
+        "symbol": "5214.T",
+        "name": "Nippon Electric Glass  Co., Ltd"
+      },
+      {
+        "symbol": "5233.T",
+        "name": "Taiheiyo Cement  Corp"
+      },
+      {
+        "symbol": "5301.T",
+        "name": "Tokai Carbon  Co., Ltd"
+      },
+      {
+        "symbol": "5332.T",
+        "name": "Toto Ltd"
+      },
+      {
+        "symbol": "8750.T",
+        "name": "Dai-ichi Life  Insurance Company, Limited"
+      },
+      {
+        "symbol": "8725.T",
+        "name": "MS&AD Insurance Group , Inc"
+      },
+      {
+        "symbol": "8630.T",
+        "name": "Sompo Holdings , Inc"
+      },
+      {
+        "symbol": "8795.T",
+        "name": "T&D Holdings , Inc"
+      },
+      {
+        "symbol": "8766.T",
+        "name": "Tokio Marine Holdings , Inc"
+      },
+      {
+        "symbol": "9147.T",
+        "name": "Nippon Express Holdings  Inc"
+      },
+      {
+        "symbol": "9064.T",
+        "name": "Yamato Holdings  Co., Ltd"
+      },
+      {
+        "symbol": "6113.T",
+        "name": "Amada Co. Ltd"
+      },
+      {
+        "symbol": "6367.T",
+        "name": "Daikin Industries , Ltd"
+      },
+      {
+        "symbol": "6361.T",
+        "name": "Ebara  Corp"
+      },
+      {
+        "symbol": "6305.T",
+        "name": "Hitachi Construction Machinery  Co., Ltd"
+      },
+      {
+        "symbol": "7004.T",
+        "name": "Kanadevia  Corp"
+      },
+      {
+        "symbol": "7013.T",
+        "name": "IHI  Corp"
+      },
+      {
+        "symbol": "5631.T",
+        "name": "The  Japan Steel Works , Ltd"
+      },
+      {
+        "symbol": "6473.T",
+        "name": "JTEKT  Corp"
+      },
+      {
+        "symbol": "6301.T",
+        "name": "Komatsu  Ltd"
+      },
+      {
+        "symbol": "6326.T",
+        "name": "Kubota  Corp"
+      },
+      {
+        "symbol": "7011.T",
+        "name": "Mitsubishi Heavy Industries , Ltd"
+      },
+      {
+        "symbol": "6471.T",
+        "name": "NSK Ltd"
+      },
+      {
+        "symbol": "6472.T",
+        "name": "NTN  Corp"
+      },
+      {
+        "symbol": "6103.T",
+        "name": "Okuma Holdings , Inc"
+      },
+      {
+        "symbol": "6302.T",
+        "name": "Sumitomo Heavy Industries , Ltd"
+      },
+      {
+        "symbol": "6273.T",
+        "name": "SMC Corporation"
+      },
+      {
+        "symbol": "9107.T",
+        "name": "Kawasaki Kisen Kaisha , Ltd"
+      },
+      {
+        "symbol": "9104.T",
+        "name": "Mitsui O.S.K. Lines , Ltd"
+      },
+      {
+        "symbol": "9101.T",
+        "name": "Nippon Yusen  K.K"
+      },
+      {
+        "symbol": "1605.T",
+        "name": "Inpex  Corp"
+      },
+      {
+        "symbol": "5714.T",
+        "name": "Dowa Holdings  Co., Ltd"
+      },
+      {
+        "symbol": "5803.T",
+        "name": "Fujikura  Ltd"
+      },
+      {
+        "symbol": "5801.T",
+        "name": "The  Furukawa Electric  Co., Ltd"
+      },
+      {
+        "symbol": "5711.T",
+        "name": "Mitsubishi Materials  Corp"
+      },
+      {
+        "symbol": "5706.T",
+        "name": "Mitsui Mining & Smelting  Co., Ltd"
+      },
+      {
+        "symbol": "3436.T",
+        "name": "SUMCO  Corp"
+      },
+      {
+        "symbol": "5802.T",
+        "name": "Sumitomo Electric Industries , Ltd"
+      },
+      {
+        "symbol": "5713.T",
+        "name": "Sumitomo Metal Mining  Co., Ltd"
+      },
+      {
+        "symbol": "8253.T",
+        "name": "Credit Saison  Co., Ltd"
+      },
+      {
+        "symbol": "8697.T",
+        "name": "Japan Exchange Group  Inc"
+      },
+      {
+        "symbol": "8591.T",
+        "name": "Orix  Co"
+      },
+      {
+        "symbol": "7832.T",
+        "name": "Bandai Namco Holdings , Inc"
+      },
+      {
+        "symbol": "7912.T",
+        "name": "Dai Nippon Printing  Co., Ltd"
+      },
+      {
+        "symbol": "7911.T",
+        "name": "Toppan Printing  Co., Ltd"
+      },
+      {
+        "symbol": "7951.T",
+        "name": "Yamaha Corporation"
+      },
+      {
+        "symbol": "5020.T",
+        "name": "Eneos Holdings"
+      },
+      {
+        "symbol": "5019.T",
+        "name": "Idemitsu Kosan  Co., Ltd"
+      },
+      {
+        "symbol": "4503.T",
+        "name": "Astellas Pharma  Inc"
+      },
+      {
+        "symbol": "4519.T",
+        "name": "Chugai Pharmaceutical  Co., Ltd"
+      },
+      {
+        "symbol": "4568.T",
+        "name": "Daiichi Sankyo  Company, Limited"
+      },
+      {
+        "symbol": "4523.T",
+        "name": "Eisai Co. , Ltd"
+      },
+      {
+        "symbol": "4151.T",
+        "name": "Kyowa Hakko Kirin  Co., Ltd"
+      },
+      {
+        "symbol": "4578.T",
+        "name": "Otsuka Holdings  Co., Ltd"
+      },
+      {
+        "symbol": "4506.T",
+        "name": "Sumitomo Dainippon Pharma  Co., Ltd"
+      },
+      {
+        "symbol": "4507.T",
+        "name": "Shionogi  & Co., Ltd"
+      },
+      {
+        "symbol": "4502.T",
+        "name": "Takeda Pharmaceutical Company  Limited"
+      },
+      {
+        "symbol": "6146.T",
+        "name": "Disco Corporation  Ltd"
+      },
+      {
+        "symbol": "7741.T",
+        "name": "Hoya Corporation"
+      },
+      {
+        "symbol": "4902.T",
+        "name": "Konica Minolta Holdings , Inc"
+      },
+      {
+        "symbol": "7731.T",
+        "name": "Nikon  Corp"
+      },
+      {
+        "symbol": "7733.T",
+        "name": "Olympus  Corp"
+      },
+      {
+        "symbol": "4543.T",
+        "name": "Terumo  Corp"
+      },
+      {
+        "symbol": "3861.T",
+        "name": "Oji Holdings Corporation"
+      },
+      {
+        "symbol": "9022.T",
+        "name": "Central Japan Railway Company"
+      },
+      {
+        "symbol": "9020.T",
+        "name": "East Japan Railway Company"
+      },
+      {
+        "symbol": "9008.T",
+        "name": "Keio  Corp"
+      },
+      {
+        "symbol": "9009.T",
+        "name": "Keisei Electric Railway  Co., Ltd"
+      },
+      {
+        "symbol": "9007.T",
+        "name": "Odakyu Electric Railway  Co., Ltd"
+      },
+      {
+        "symbol": "9001.T",
+        "name": "Tobu Railway  Co., Ltd"
+      },
+      {
+        "symbol": "9005.T",
+        "name": "Tokyu  Corp"
+      },
+      {
+        "symbol": "9021.T",
+        "name": "West Japan Railway Company"
+      },
+      {
+        "symbol": "8802.T",
+        "name": "Mitsubishi Estate  Co., Ltd"
+      },
+      {
+        "symbol": "8801.T",
+        "name": "Mitsui Fudosan  Co., Ltd"
+      },
+      {
+        "symbol": "8830.T",
+        "name": "Sumitomo Realty & Development  Co., Ltd"
+      },
+      {
+        "symbol": "8804.T",
+        "name": "Tokyo Tatemono  Co., Ltd"
+      },
+      {
+        "symbol": "3289.T",
+        "name": "Tokyu Land  Corp"
+      },
+      {
+        "symbol": "8267.T",
+        "name": "Aeon  Co., Ltd"
+      },
+      {
+        "symbol": "9983.T",
+        "name": "Fast Retailing  Co., Ltd"
+      },
+      {
+        "symbol": "3099.T",
+        "name": "Isetan Mitsukoshi Holdings  Ltd"
+      },
+      {
+        "symbol": "3086.T",
+        "name": "J. Front Retailing  Co., Ltd"
+      },
+      {
+        "symbol": "8252.T",
+        "name": "Marui Group  Co., Ltd"
+      },
+      {
+        "symbol": "7453.T",
+        "name": "Muji  Co., Ltd"
+      },
+      {
+        "symbol": "9843.T",
+        "name": "Nitori  Holdings Co., Ltd"
+      },
+      {
+        "symbol": "7532.T",
+        "name": "Pan Pacific International Holdings  Corp"
+      },
+      {
+        "symbol": "3382.T",
+        "name": "Seven & I Holdings Co. , Ltd"
+      },
+      {
+        "symbol": "8233.T",
+        "name": "Takashimaya  Co., Ltd"
+      },
+      {
+        "symbol": "3092.T",
+        "name": "ZOZO  Co., Ltd"
+      },
+      {
+        "symbol": "5108.T",
+        "name": "Bridgestone  Corp"
+      },
+      {
+        "symbol": "5101.T",
+        "name": "The  Yokohama Rubber  Co., Ltd"
+      },
+      {
+        "symbol": "8601.T",
+        "name": "Daiwa Securities Group  Inc"
+      },
+      {
+        "symbol": "8604.T",
+        "name": "Nomura Holdings , Inc"
+      },
+      {
+        "symbol": "6532.T",
+        "name": "Baycurrent  Inc"
+      },
+      {
+        "symbol": "4751.T",
+        "name": "CyberAgent  Inc"
+      },
+      {
+        "symbol": "2432.T",
+        "name": "Dena  Co., Ltd"
+      },
+      {
+        "symbol": "4324.T",
+        "name": "Dentsu  Inc"
+      },
+      {
+        "symbol": "6178.T",
+        "name": "Japan Post Holdings  Co., Ltd"
+      },
+      {
+        "symbol": "9766.T",
+        "name": "Konami  Corp"
+      },
+      {
+        "symbol": "4689.T",
+        "name": "LY Corporation"
+      },
+      {
+        "symbol": "4385.T",
+        "name": "Mercari  Inc"
+      },
+      {
+        "symbol": "2413.T",
+        "name": "M3  Inc"
+      },
+      {
+        "symbol": "3659.T",
+        "name": "Nexon  Co., Ltd"
+      },
+      {
+        "symbol": "7974.T",
+        "name": "Nintendo  Co., Ltd"
+      },
+      {
+        "symbol": "4307.T",
+        "name": "Nomura Research Institute  Ltd"
+      },
+      {
+        "symbol": "4661.T",
+        "name": "Oriental Land  Co., Ltd"
+      },
+      {
+        "symbol": "4755.T",
+        "name": "Rakuten  Inc"
+      },
+      {
+        "symbol": "6098.T",
+        "name": "Recruit Holdings  Co., Ltd"
+      },
+      {
+        "symbol": "9735.T",
+        "name": "Secom  Co., Ltd"
+      },
+      {
+        "symbol": "3697.T",
+        "name": "SHIFT Inc"
+      },
+      {
+        "symbol": "9602.T",
+        "name": "Toho  Co., Ltd"
+      },
+      {
+        "symbol": "4704.T",
+        "name": "Trend Micro  Inc"
+      },
+      {
+        "symbol": "7012.T",
+        "name": "Kawasaki Heavy Industries , Ltd"
+      },
+      {
+        "symbol": "5411.T",
+        "name": "JFE Holdings , Inc"
+      },
+      {
+        "symbol": "5406.T",
+        "name": "Kobe Steel , Ltd"
+      },
+      {
+        "symbol": "5401.T",
+        "name": "Nippon Steel  Corp"
+      },
+      {
+        "symbol": "3401.T",
+        "name": "Teijin  Ltd"
+      },
+      {
+        "symbol": "3402.T",
+        "name": "Toray Industries , Inc"
+      },
+      {
+        "symbol": "8001.T",
+        "name": "Itochu  Corp"
+      },
+      {
+        "symbol": "8002.T",
+        "name": "Marubeni  Corp"
+      },
+      {
+        "symbol": "8058.T",
+        "name": "Mitsubishi  Corp"
+      },
+      {
+        "symbol": "8031.T",
+        "name": "Mitsui & Co. , Ltd"
+      },
+      {
+        "symbol": "2768.T",
+        "name": "Sojitz  Corp"
+      },
+      {
+        "symbol": "8053.T",
+        "name": "Sumitomo  Corp"
+      },
+      {
+        "symbol": "8015.T",
+        "name": "Toyota Tsusho  Corp"
       }
     ]
   }
