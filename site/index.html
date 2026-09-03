@@ -1155,6 +1155,13 @@
   .rank-pop-ctx dd { margin: 0; font-size: 12px; font-weight: 600; text-align: right;
                      font-family: "JetBrains Mono", ui-monospace, monospace; }
   .rank-pop-foot { margin: 9px 0 0; font-size: 11px; line-height: 1.45; color: var(--ink-soft); }
+  /* Only the ranking panel opens a fund - the news panel is about a headline,
+     not a holding, and stays inert here. */
+  .rank-pop.rank-pop-link { cursor: pointer; }
+  .rank-pop.rank-pop-link:hover { border-color: var(--chip); }
+  .rank-pop-open { font-family: "Inter", sans-serif; font-size: 11px; font-weight: 600;
+                   color: var(--chip); text-transform: uppercase; letter-spacing: .05em;
+                   margin: 12px 0 0; text-align: right; }
   .rank-pop-x { position: absolute; top: 10px; right: 10px; width: 24px; height: 24px;
                 display: grid; place-items: center; padding: 0; cursor: pointer;
                 background: transparent; border: none; border-radius: 6px;
@@ -3771,6 +3778,15 @@ function rankNote(head, key){
   // The heading says which kind of note this is, so a shortlist reason or an
   // absent one is never presented as commentary on today's move.
   note.ctx = rankContext(note.fund, note.period);
+  pop.classList.add('rank-pop-link');
+  // A fresh handler every open - the element is reused across rows, so a
+  // stale closure from a previous fund would otherwise still be attached.
+  pop.onclick = function(e){
+    if(e.target.closest('.rank-pop-x')) return;
+    const fid = note.fund && note.fund.id;
+    closeRankNote();
+    if(fid) openFund(fid);
+  };
   const ctx = (note.ctx || []).length
     ? '<div class="rank-pop-ctx"><div class="rank-pop-ctx-lab">What the desk can show</div><dl>'
       + note.ctx.map(function(r){
@@ -3788,6 +3804,7 @@ function rankNote(head, key){
                 + '<div class="rank-pop-name">' + esc(note.name) + '</div>'
                 + '<div class="rank-pop-body">' + esc(note.text) + '</div>'
                 + ctx
+                + '<div class="rank-pop-open">Open fund &#8250;</div>'
                 + '<button class="rank-pop-x" onclick="closeRankNote()" aria-label="Close">&#10005;</button>';
   pop.hidden = false;
   head.parentElement.classList.add('open');
