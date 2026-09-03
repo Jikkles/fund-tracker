@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T07:52:47+00:00",
+  "generated": "2026-09-03T07:56:50+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,34 +10,34 @@
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": 3.04
+          "pct": 3.16
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": 2.14
+          "pct": 2.3
         },
         {
           "name": "Metlen Energy & Metals Plc",
           "symbol": "MTLN",
-          "pct": 1.67
+          "pct": 1.5
         }
       ],
       "bottom": [
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": -2.44
-        },
-        {
           "name": "Burberry Group plc",
           "symbol": "BRBY",
-          "pct": -2.14
+          "pct": -2.32
+        },
+        {
+          "name": "Admiral Group",
+          "symbol": "ADM",
+          "pct": -2.19
         },
         {
           "name": "Barratt Redrow Plc",
           "symbol": "BTRW",
-          "pct": -2.13
+          "pct": -1.94
         }
       ]
     },
@@ -50,7 +50,7 @@
         {
           "name": "Hilton Food Group Plc",
           "symbol": "HFG",
-          "pct": 10.46
+          "pct": 10.06
         },
         {
           "name": "Avon Technologies Plc",
@@ -60,24 +60,24 @@
         {
           "name": "Raspberry Pi Holdings plc",
           "symbol": "RPI",
-          "pct": 4.11
+          "pct": 4.38
         }
       ],
       "bottom": [
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -4.9
-        },
-        {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": -4.44
+          "pct": -5.03
         },
         {
           "name": "Vistry Group Plc",
           "symbol": "VTY",
-          "pct": -4.17
+          "pct": -3.95
+        },
+        {
+          "name": "Baltic Classifieds Group plc",
+          "symbol": "BCG",
+          "pct": -3.7
         }
       ]
     },
@@ -170,24 +170,24 @@
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 6.273762535105548
+          "pct": 6.083644123571529
         },
         {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": 4.743723689457021
+          "pct": 4.852777438624247
         },
         {
           "name": "China Resources Mixc Lifestyle Services Limited",
           "symbol": "1209.HK",
-          "pct": 3.8422130246503308
+          "pct": 3.7397516655589325
         }
       ],
       "bottom": [
         {
           "name": "Trip.com Group Limited",
           "symbol": "9961.HK",
-          "pct": -5.642814015504492
+          "pct": -5.584637106216266
         },
         {
           "name": "Chow Tai Fook Jewellery Group Limited",
@@ -197,7 +197,7 @@
         {
           "name": "Wharf Real Estate Investment Company Limited",
           "symbol": "1997.HK",
-          "pct": -3.2156323218632847
+          "pct": -3.3417386156629285
         }
       ]
     },
@@ -210,17 +210,17 @@
         {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": 3.5955515142969157
+          "pct": 3.4962269203234766
         },
         {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": 2.3696682138043172
+          "pct": 2.3245289214829077
         },
         {
           "name": "ING Groep N.V.",
           "symbol": "INGA.AS",
-          "pct": 2.2084057754503115
+          "pct": 2.224767849809387
         }
       ],
       "bottom": [
@@ -230,14 +230,14 @@
           "pct": -4.468908140702644
         },
         {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -3.6304700162074557
-        },
-        {
           "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
           "symbol": "MC.PA",
-          "pct": -3.48314606741573
+          "pct": -3.539325842696629
+        },
+        {
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": -3.500810372771475
         }
       ]
     },
