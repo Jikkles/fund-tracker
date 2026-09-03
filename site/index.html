@@ -1048,8 +1048,37 @@
      340px the fund names start wrapping, and above 430px the column is just
      padding around a figure. */
   .ov-grid { display: grid; grid-template-columns: minmax(0, 1fr) clamp(360px, 30%, 430px);
-             gap: 18px; align-items: start; margin: 0 0 22px; }
+             gap: 18px; align-items: stretch; margin: 0 0 22px; }
   .ov-grid .mkt { margin: 0; }
+
+  /* ---- making the two columns end level ----
+     Six rows of movers is a shorter card than the chart beside it, and the
+     chart cannot shrink to meet it: its SVG floors at 260px, below which the
+     price axis stops being readable. So the chart sets the height and the
+     movers card stretches to it, the slack going into the two lists rather
+     than into a gap under one column or the other.
+
+     The pairing is stable in both directions. If the list ever grows past the
+     chart - long names wrapping in a narrow column - the row grows with it,
+     chartHeight() measures the taller column and the chart matches it on the
+     next pass, after which the two agree and nothing moves again. */
+  .ov-grid #indexmovers { display: flex; flex-direction: column; }
+  .ov-grid #indexmovers > .rank-grid { flex: 1 1 auto; }
+  .rank-grid.stack { grid-template-rows: auto 1fr auto 1fr auto; }
+  .rank-grid.stack .rank-list { display: flex; flex-direction: column; }
+  .rank-grid.stack .rank-list .pulse-row { flex: 1 1 auto; display: flex; }
+  .rank-grid.stack .rank-list .pr-head { flex: 1 1 auto; }
+  /* The source line and the "why this index is not ranked" note carry no
+     order of their own, which put them in the grid's first row - ahead of the
+     heading they belong to, and, once the rows were sized, in the 1fr slot
+     meant for a list. Ordered last, they read as the footnotes they are and
+     the slack lands on the two lists. */
+  .rank-grid.stack .mv-src, .rank-grid.stack .intel-note { order: 5; }
+  /* An index the desk does not rank shows one line saying why. Stretching a
+     sentence down 500px of bordered card would look like a panel that failed
+     to load, so the short form keeps its own height and the column simply
+     ends early - which is what a one-line answer should look like. */
+  .ov-grid #indexmovers > .rank-grid.mv-short { flex: 0 0 auto; }
   /* Both tracks are minmax(0,…) and both items clear their auto minimum: a
      grid item defaults to min-width:auto, and the chart card's tab strip has a
      min-content width of about 1,100px, which pushed the whole page sideways
@@ -1465,7 +1494,9 @@ const MKT_RANGES = [
 function fetchMarket(){
   return fetch('market.json?t=' + Date.now(), {cache:'no-store'})
     .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
-    .then(obj => { MKT = obj; renderChart(); renderNews(); renderNavStamp(); renderIndexMovers(); })
+    // Movers first: the chart is drawn to the height of the panel beside it,
+    // so that panel has to be in the document before the plot is sized.
+    .then(obj => { MKT = obj; renderIndexMovers(); renderChart(); renderNews(); renderNavStamp(); })
     .catch(() => { /* the chart is additive - the desk stands without it */ });
 }
 
@@ -1636,18 +1667,28 @@ function mktChartSvg(idx, ser, width, height){
 }
 
 /* How tall to draw the plot. Where the chart shares the overview row with the
-   ranking pair, the answer is "whatever makes the two cards the same height" -
+   movers panel, the answer is "whatever makes the two cards the same height" -
    the card is measured with an empty plot, so the difference is exactly the
    room the chart has to fill. Stacked on a narrow window there is nothing
-   beside it and the plot keeps its own default. */
+   beside it and the plot keeps its own default.
+
+   Measured against #indexmovers, which is what actually sits beside it. It
+   used to measure #ranks, and when the ranking pair moved out of this row and
+   into the intelligence panel that measurement started coming back either 0
+   (the panel is display:none until the funds load) or from an element a
+   thousand pixels down the page - so the plot fell back to DEFAULT_H on every
+   render and left a gap under the chart. */
 function chartHeight(el){
   const DEFAULT_H = 300;
-  const ranks = document.getElementById('ranks');
+  const beside = document.getElementById('indexmovers');
   const card = el.querySelector('.mkt');
-  if(!ranks || !card || !ranks.offsetHeight) return DEFAULT_H;
+  if(!beside || !card || !beside.offsetHeight) return DEFAULT_H;
   // Same row, not stacked: their tops line up to within a card's border.
-  if(Math.abs(card.getBoundingClientRect().top - ranks.getBoundingClientRect().top) > 40) return DEFAULT_H;
-  return Math.min(600, Math.max(DEFAULT_H, ranks.offsetHeight - card.offsetHeight));
+  if(Math.abs(card.getBoundingClientRect().top - beside.getBoundingClientRect().top) > 40) return DEFAULT_H;
+  // Never shrinks below the default: the movers card is the one that stretches
+  // to meet the chart, so a short column beside it is not a reason to draw a
+  // smaller chart. This only ever grows the plot, to a column taller than it.
+  return Math.min(600, Math.max(DEFAULT_H, beside.offsetHeight - card.offsetHeight));
 }
 
 function renderChart(){
@@ -1764,7 +1805,7 @@ function mktWireHover(idx, ser){
 
 function newsToggle(head){ head.parentElement.classList.toggle('open'); }
 
-function mktPick(id){ mktId = id; renderChart(); renderIndexMovers(); }
+function mktPick(id){ mktId = id; renderIndexMovers(); renderChart(); }
 function mktSetRange(k){ mktRange = k; renderChart(); }
 
 window.addEventListener('resize', function(){
@@ -1772,20 +1813,22 @@ window.addEventListener('resize', function(){
   mktResizeTimer = setTimeout(function(){ if(MKT) renderChart(); }, 150);
 });
 
-/* Re-fit whenever the ranking column's height moves. Drawing the chart changes
-   the chart card's height and nothing else, so this settles in one pass rather
-   than feeding back into itself. */
+/* Re-fit whenever the movers column's height moves - it changes with the index
+   being viewed, since an unranked index shows one line of explanation where a
+   ranked one shows six rows. Drawing the chart changes the chart card's height
+   and nothing else, so this settles in one pass rather than feeding back into
+   itself. */
 (function(){
-  const ranks = document.getElementById('ranks');
-  if(!ranks || !window.ResizeObserver) return;
+  const beside = document.getElementById('indexmovers');
+  if(!beside || !window.ResizeObserver) return;
   let lastH = 0, fitTimer = null;
   new ResizeObserver(function(){
-    const h = Math.round(ranks.offsetHeight);
+    const h = Math.round(beside.offsetHeight);
     if(h === lastH) return;
     lastH = h;
     clearTimeout(fitTimer);
     fitTimer = setTimeout(function(){ if(MKT) renderChart(); }, 60);
-  }).observe(ranks);
+  }).observe(beside);
 })();
 
 /* ---------- helpers ---------- */
@@ -2117,18 +2160,37 @@ function renderRanks(){
   const sectionHead = (label, colour) =>
     `<span style="color:${colour};font-weight:600">${label}</span>`;
 
+  // ── What a row opens. Roughly a third of the desk has no "why now" written
+  // for it, and those rows used to have no chevron and no click - which reads
+  // as a page where some rows are broken rather than as an absent note. Every
+  // row opens now, and the panel is labelled with what it is actually showing:
+  // the moving note where there is one, otherwise the reason the fund is on
+  // the shortlist, otherwise a plain statement that nothing has been written.
+  // Nothing is filled in - "not yet verified" is treated as absent, as always.
+  const said = s => { const t = strip(s || '').trim();
+                      return t && !/not yet verified/i.test(t) ? t : ''; };
+  const rowNote = f => {
+    const why = said(f.whyNow);
+    if(why) return { lab: "Why it's moving", text: why };
+    const added = said(f.addedReason);
+    if(added) return { lab: 'Why it is on the shortlist', text: added };
+    return { lab: 'No note yet',
+             text: 'The desk has not written a note on this fund. The return '
+                 + 'beside it is the fund’s own published performance; there '
+                 + 'is nothing verified to add about what is behind it.' };
+  };
+
   // ── List item: num + name + perf. The note opens in a floating panel
   // rather than inside the row - see rankNote().
-  const listItem = (key, num, name, cat, perfStr, pNum, fullNote) => {
+  const listItem = (key, num, name, cat, perfStr, pNum, note) => {
     const perfCol = pNum >= 0 ? 'var(--forest)' : 'var(--oxblood)';
-    if(fullNote) RANK_NOTES[key] = { name: name, text: fullNote };
-    const toggle = fullNote ? ` onclick="rankNote(this,'${key}')"` : '';
-    return `<div class="pulse-row${fullNote?' has-note':''}">
-      <div class="pr-head"${toggle}>
+    RANK_NOTES[key] = { name: name, text: note.text, lab: note.lab };
+    return `<div class="pulse-row has-note">
+      <div class="pr-head" onclick="rankNote(this,'${key}')">
         <span class="pr-num">${num}.</span>
         <span class="pr-name">${esc(name)}${cat?`<span class="pr-cat">${esc(cat)}</span>`:''}</span>
         <span class="pr-perf" style="color:${perfCol}">${esc(perfStr)}</span>
-        ${fullNote?'<span class="pr-chev">▸</span>':''}
+        <span class="pr-chev">▸</span>
       </div>
     </div>`;
   };
@@ -2138,11 +2200,11 @@ function renderRanks(){
   closeRankNote();
 
   let top5Items = top5.map(({f,p,s},i) =>
-    listItem('t'+i, i+1, f.name, f.category, s, p, strip(f.whyNow||''))
+    listItem('t'+i, i+1, f.name, f.category, s, p, rowNote(f))
   ).join('');
 
   let bot5Items = bot5.map(({f,p,s},i) =>
-    listItem('b'+i, i+1, f.name, f.category, s, p, strip(f.whyNow||''))
+    listItem('b'+i, i+1, f.name, f.category, s, p, rowNote(f))
   ).join('');
 
   const scopeLabel = scope && !emptied ? scope.label : 'all funds';
@@ -2672,7 +2734,7 @@ function renderIndexMovers(){
   if(!idx){ el.innerHTML = ''; return; }
 
   if(!MOVERS){
-    el.innerHTML = '<div class="rank-grid stack"><div class="pulse-box-head rank-head rank-a">' +
+    el.innerHTML = '<div class="rank-grid stack mv-short"><div class="pulse-box-head rank-head rank-a">' +
       '<span class="rank-title">Movers in ' + esc(idx.label) + '</span></div>' +
       '<p class="intel-note">Constituent data has not loaded.</p></div>';
     return;
@@ -2682,22 +2744,27 @@ function renderIndexMovers(){
   if(!data){
     const why = (MOVERS.unsupported || {})[idx.id]
       || 'This index is not broken down into constituents on the desk.';
-    el.innerHTML = '<div class="rank-grid stack">' +
+    el.innerHTML = '<div class="rank-grid stack mv-short">' +
       '<div class="pulse-box-head rank-head rank-a" style="color:var(--ink-soft);border-bottom:2px solid var(--rule)">' +
         '<span class="rank-title">Movers in ' + esc(idx.label) + '</span></div>' +
       '<p class="intel-note mv-why">' + esc(why) + '</p></div>';
     return;
   }
 
+  // The count comes from the list, never from a hard-coded "5": scripts/
+  // index_movers.py owns how many rows it publishes, and a heading that
+  // disagreed with the rows under it would be the page inventing a figure.
+  const nTop = (data.top || []).length, nBot = (data.bottom || []).length;
+
   el.innerHTML =
     '<div class="rank-grid stack">' +
       '<div class="pulse-box-head rank-head rank-a" style="color:var(--forest);border-bottom:2px solid var(--forest)">' +
-        '<span class="rank-title">Top 5 &#8212; ' + esc(data.label) + '</span>' +
+        '<span class="rank-title">Top ' + nTop + ' &#8212; ' + esc(data.label) + '</span>' +
         '<span class="rank-controls"><span class="mv-universe" title="' +
           esc(data.source) + '">' + esc(data.universe) + '</span></span>' +
       '</div>' +
       '<div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">' +
-        '<span class="rank-title">Bottom 5 &#8212; weakest on the day</span></div>' +
+        '<span class="rank-title">Bottom ' + nBot + ' &#8212; weakest on the day</span></div>' +
       '<div class="rank-list rank-a">' + data.top.map(moversRow).join('') + '</div>' +
       '<div class="rank-list rank-b">' + data.bottom.map(moversRow).join('') + '</div>' +
       '<p class="mv-src">' + esc(data.source) + ' &middot; as at ' + esc(data.asAt) +
@@ -3506,7 +3573,9 @@ function rankNote(head, key){
   closeRankNote();
 
   const pop = rankPopEl();
-  pop.innerHTML = '<div class="rank-pop-lab">Why it\'s moving</div>'
+  // The heading says which kind of note this is, so a shortlist reason or an
+  // absent one is never presented as commentary on today's move.
+  pop.innerHTML = '<div class="rank-pop-lab">' + esc(note.lab || "Why it's moving") + '</div>'
                 + '<div class="rank-pop-name">' + esc(note.name) + '</div>'
                 + '<div class="rank-pop-body">' + esc(note.text) + '</div>'
                 + '<button class="rank-pop-x" onclick="closeRankNote()" aria-label="Close">&#10005;</button>';

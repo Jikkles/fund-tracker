@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T07:18:48+00:00",
+  "generated": "2026-09-03T07:36:52+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,54 +10,74 @@
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": 1.46
+          "pct": 2.87
         },
         {
-          "name": "Endeavour Mining plc",
-          "symbol": "EDV",
-          "pct": 1.34
+          "name": "Vodafone Group plc",
+          "symbol": "VOD",
+          "pct": 1.93
         },
         {
-          "name": "Associated British Foods plc",
-          "symbol": "ABF",
-          "pct": 1.28
-        },
-        {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": 1.17
-        },
-        {
-          "name": "International Consolidated Airlines Group SA",
-          "symbol": "IAG",
-          "pct": 1.1
+          "name": "SSE plc",
+          "symbol": "SSE",
+          "pct": 1.48
         }
       ],
       "bottom": [
         {
-          "name": "M&G plc",
-          "symbol": "MNG",
-          "pct": -2.83
-        },
-        {
           "name": "Admiral Group",
           "symbol": "ADM",
-          "pct": -2.24
+          "pct": -2.54
         },
         {
-          "name": "Aviva Plc",
-          "symbol": "AV.",
-          "pct": -2.05
+          "name": "Barratt Redrow Plc",
+          "symbol": "BTRW",
+          "pct": -1.87
         },
         {
-          "name": "3i Group Plc",
-          "symbol": "III",
-          "pct": -1.23
+          "name": "Burberry Group plc",
+          "symbol": "BRBY",
+          "pct": -1.81
+        }
+      ]
+    },
+    "ftse-250": {
+      "label": "FTSE 250",
+      "asAt": "2026-09-03",
+      "source": "HL market summary (delayed)",
+      "universe": "all 250 FTSE 250 constituents",
+      "top": [
+        {
+          "name": "Hilton Food Group Plc",
+          "symbol": "HFG",
+          "pct": 9.51
         },
         {
-          "name": "Bunzl plc",
-          "symbol": "BNZL",
-          "pct": -0.96
+          "name": "Avon Technologies Plc",
+          "symbol": "AVON",
+          "pct": 5.16
+        },
+        {
+          "name": "Ashoka India Equity Inv Trust Plc",
+          "symbol": "AIE",
+          "pct": 3.8
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": -5.45
+        },
+        {
+          "name": "Vistry Group Plc",
+          "symbol": "VTY",
+          "pct": -3.39
+        },
+        {
+          "name": "AEP Plantations Plc",
+          "symbol": "AEP",
+          "pct": -3.07
         }
       ]
     },
@@ -65,42 +85,32 @@
       "label": "S&P 500",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "501 of 503 S&P 500 constituents",
+      "universe": "503 of 503 S&P 500 constituents",
       "top": [
         {
-          "name": "Dell Technologies",
+          "name": "Dell Technologies Inc.",
           "symbol": "DELL",
           "pct": 15.811767578125
         },
         {
-          "name": "Reddit",
+          "name": "Reddit, Inc.",
           "symbol": "RDDT",
           "pct": 9.305867512904934
         },
         {
-          "name": "Charter Communications",
+          "name": "Charter Communications, Inc.",
           "symbol": "CHTR",
           "pct": 8.742047038694842
-        },
-        {
-          "name": "Skyworks Solutions",
-          "symbol": "SWKS",
-          "pct": 6.319528668458515
-        },
-        {
-          "name": "Block, Inc.",
-          "symbol": "XYZ",
-          "pct": 5.8808448800422655
         }
       ],
       "bottom": [
         {
-          "name": "Palo Alto Networks",
+          "name": "Palo Alto Networks, Inc.",
           "symbol": "PANW",
           "pct": -9.282218700181586
         },
         {
-          "name": "Datadog",
+          "name": "Datadog, Inc.",
           "symbol": "DDOG",
           "pct": -6.526983939142626
         },
@@ -108,30 +118,97 @@
           "name": "Edison International",
           "symbol": "EIX",
           "pct": -6.139456899986227
+        }
+      ]
+    },
+    "dow-jones": {
+      "label": "Dow Jones",
+      "asAt": "2026-09-03",
+      "source": "Yahoo Finance daily closes",
+      "universe": "30 of 30 Dow Jones constituents",
+      "top": [
+        {
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 3.2054824974449385
         },
         {
-          "name": "Palantir Technologies",
-          "symbol": "PLTR",
-          "pct": -5.813690285421283
+          "name": "American Express Company",
+          "symbol": "AXP",
+          "pct": 1.7859923197256384
         },
         {
-          "name": "CrowdStrike",
-          "symbol": "CRWD",
-          "pct": -5.416845100912193
+          "name": "Caterpillar Inc.",
+          "symbol": "CAT",
+          "pct": 1.683871939595905
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Honeywell International Inc.",
+          "symbol": "HON",
+          "pct": -1.862076618190689
+        },
+        {
+          "name": "3M Company",
+          "symbol": "MMM",
+          "pct": -0.875238160882163
+        },
+        {
+          "name": "Microsoft Corporation",
+          "symbol": "MSFT",
+          "pct": -0.838286252355196
+        }
+      ]
+    },
+    "hang-seng": {
+      "label": "Hang Seng",
+      "asAt": "2026-09-03",
+      "source": "Yahoo Finance daily closes",
+      "universe": "85 of 85 Hang Seng constituents",
+      "top": [
+        {
+          "name": "Sino Biopharmaceutical Limited",
+          "symbol": "1177.HK",
+          "pct": 6.558931087061759
+        },
+        {
+          "name": "CSPC Pharmaceutical Group Limited",
+          "symbol": "1093.HK",
+          "pct": 4.689207214811342
+        },
+        {
+          "name": "China Resources Mixc Lifestyle Services Limited",
+          "symbol": "1209.HK",
+          "pct": 3.688520986013233
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Trip.com Group Limited",
+          "symbol": "9961.HK",
+          "pct": -5.584637106216266
+        },
+        {
+          "name": "Chow Tai Fook Jewellery Group Limited",
+          "symbol": "1929.HK",
+          "pct": -4.455047569913358
+        },
+        {
+          "name": "Wharf Real Estate Investment Company Limited",
+          "symbol": "1997.HK",
+          "pct": -3.4047917625627506
         }
       ]
     }
   },
   "unsupported": {
-    "ftse-250": "HL publish only part of the FTSE 250 on one page, so the constituent list would be incomplete and any ranking a guess.",
     "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. Pricing every one on each run is not a reasonable load to put on a free data source.",
-    "euro-stoxx-50": "Constituents span several European exchanges and mapping their tickers onto price symbols is error-prone - a mis-mapped ticker shows a real price against the wrong company.",
-    "nikkei-225": "Same reason as the Euro STOXX 50: cross-exchange ticker mapping is not reliable enough to publish from.",
-    "hang-seng": "Same reason as the Euro STOXX 50.",
+    "euro-stoxx-50": "The 50 constituents are spread across eight European exchanges and mapping their tickers onto price symbols is error-prone - a mis-mapped ticker would price the wrong company.",
+    "nikkei-225": "The Nikkei 225 is published as a list of company names without Tokyo ticker codes, so there is nothing reliable to price the constituents by.",
     "gold-usd-oz": "Not an index - a single commodity price, so it has no constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
     "us-10yr-yield": "Not an index - a single government bond yield.",
-    "gbp-usd": "Not an index - a single exchange rate.",
-    "dow-jones": "Dow Jones could not be ranked on this run - the constituent list or its prices were unavailable, and a partial index is not a ranking."
+    "gbp-usd": "Not an index - a single exchange rate."
   }
 }

@@ -6,7 +6,7 @@
     "tickers": [
       {
         "symbol": "MMM",
-        "name": "Industrials"
+        "name": "3M"
       },
       {
         "symbol": "AOS",
@@ -245,7 +245,7 @@
         "name": "Becton Dickinson"
       },
       {
-        "symbol": "BRK.B",
+        "symbol": "BRK-B",
         "name": "Berkshire Hathaway"
       },
       {
@@ -305,7 +305,7 @@
         "name": "Brown & Brown"
       },
       {
-        "symbol": "BF.B",
+        "symbol": "BF-B",
         "name": "Brown–Forman"
       },
       {
@@ -978,7 +978,7 @@
       },
       {
         "symbol": "IBM",
-        "name": "Information Technology"
+        "name": "IBM"
       },
       {
         "symbol": "IEX",
@@ -2015,6 +2015,480 @@
       {
         "symbol": "ZTS",
         "name": "Zoetis"
+      }
+    ]
+  },
+  "dow-jones": {
+    "fetched": "2026-09-03",
+    "label": "Dow Jones",
+    "source": "https://en.wikipedia.org/wiki/List_of_Dow_Jones_Industrial_Average_companies",
+    "tickers": [
+      {
+        "symbol": "MMM",
+        "name": "3M"
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet  (Class A)"
+      },
+      {
+        "symbol": "AXP",
+        "name": "American Express"
+      },
+      {
+        "symbol": "AMGN",
+        "name": "Amgen"
+      },
+      {
+        "symbol": "AMZN",
+        "name": "Amazon"
+      },
+      {
+        "symbol": "AAPL",
+        "name": "Apple"
+      },
+      {
+        "symbol": "BA",
+        "name": "Boeing"
+      },
+      {
+        "symbol": "CAT",
+        "name": "Caterpillar"
+      },
+      {
+        "symbol": "CVX",
+        "name": "Chevron"
+      },
+      {
+        "symbol": "CSCO",
+        "name": "Cisco"
+      },
+      {
+        "symbol": "KO",
+        "name": "Coca-Cola"
+      },
+      {
+        "symbol": "DIS",
+        "name": "Disney"
+      },
+      {
+        "symbol": "GS",
+        "name": "Goldman Sachs"
+      },
+      {
+        "symbol": "HD",
+        "name": "Home Depot"
+      },
+      {
+        "symbol": "HON",
+        "name": "Honeywell Technologies"
+      },
+      {
+        "symbol": "IBM",
+        "name": "IBM"
+      },
+      {
+        "symbol": "JNJ",
+        "name": "Johnson & Johnson"
+      },
+      {
+        "symbol": "JPM",
+        "name": "JPMorgan Chase"
+      },
+      {
+        "symbol": "MCD",
+        "name": "McDonald's"
+      },
+      {
+        "symbol": "MRK",
+        "name": "Merck"
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft"
+      },
+      {
+        "symbol": "NKE",
+        "name": "Nike"
+      },
+      {
+        "symbol": "NVDA",
+        "name": "Nvidia"
+      },
+      {
+        "symbol": "PG",
+        "name": "Procter & Gamble"
+      },
+      {
+        "symbol": "CRM",
+        "name": "Salesforce"
+      },
+      {
+        "symbol": "SHW",
+        "name": "Sherwin-Williams"
+      },
+      {
+        "symbol": "TRV",
+        "name": "Travelers"
+      },
+      {
+        "symbol": "UNH",
+        "name": "UnitedHealth Group"
+      },
+      {
+        "symbol": "V",
+        "name": "Visa"
+      },
+      {
+        "symbol": "WMT",
+        "name": "Walmart"
+      }
+    ]
+  },
+  "hang-seng": {
+    "fetched": "2026-09-03",
+    "label": "Hang Seng",
+    "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
+    "tickers": [
+      {
+        "symbol": "0005.HK",
+        "name": "HSBC Holdings plc"
+      },
+      {
+        "symbol": "0388.HK",
+        "name": "HKEx Limited"
+      },
+      {
+        "symbol": "0939.HK",
+        "name": "China Construction Bank"
+      },
+      {
+        "symbol": "1299.HK",
+        "name": "AIA Group Limited"
+      },
+      {
+        "symbol": "1398.HK",
+        "name": "Industrial and Commercial Bank of China"
+      },
+      {
+        "symbol": "2318.HK",
+        "name": "Ping An Insurance"
+      },
+      {
+        "symbol": "2388.HK",
+        "name": "BOC Hong Kong (Holdings) Ltd"
+      },
+      {
+        "symbol": "2628.HK",
+        "name": "China Life"
+      },
+      {
+        "symbol": "3968.HK",
+        "name": "China Merchants Bank"
+      },
+      {
+        "symbol": "3988.HK",
+        "name": "Bank of China Ltd"
+      },
+      {
+        "symbol": "0002.HK",
+        "name": "CLP Holdings Limited"
+      },
+      {
+        "symbol": "0003.HK",
+        "name": "Hong Kong and China Gas Company Limited"
+      },
+      {
+        "symbol": "0006.HK",
+        "name": "Power Assets Holdings Limited"
+      },
+      {
+        "symbol": "0836.HK",
+        "name": "China Resources Power"
+      },
+      {
+        "symbol": "1038.HK",
+        "name": "Cheung Kong Infrastructure Holdings Limited"
+      },
+      {
+        "symbol": "2688.HK",
+        "name": "ENN Energy"
+      },
+      {
+        "symbol": "0012.HK",
+        "name": "Henderson Land Development Company Limited"
+      },
+      {
+        "symbol": "0016.HK",
+        "name": "Sun Hung Kai Properties Limited"
+      },
+      {
+        "symbol": "0101.HK",
+        "name": "Hang Lung Properties Limited"
+      },
+      {
+        "symbol": "0688.HK",
+        "name": "China Overseas Land & Investment Limited"
+      },
+      {
+        "symbol": "0823.HK",
+        "name": "Link REIT"
+      },
+      {
+        "symbol": "0960.HK",
+        "name": "Longfor Properties"
+      },
+      {
+        "symbol": "1109.HK",
+        "name": "China Resources Land Limited"
+      },
+      {
+        "symbol": "1113.HK",
+        "name": "CK Asset Holdings"
+      },
+      {
+        "symbol": "1209.HK",
+        "name": "China Resources Mixc Lifestyle"
+      },
+      {
+        "symbol": "1997.HK",
+        "name": "Wharf Real Estate Investment Company Limited"
+      },
+      {
+        "symbol": "0001.HK",
+        "name": "CK Hutchison Holdings Limited"
+      },
+      {
+        "symbol": "0027.HK",
+        "name": "Galaxy Entertainment Group Ltd."
+      },
+      {
+        "symbol": "0066.HK",
+        "name": "MTR Corporation Ltd"
+      },
+      {
+        "symbol": "0175.HK",
+        "name": "Geely Auto"
+      },
+      {
+        "symbol": "0241.HK",
+        "name": "Alibaba Health"
+      },
+      {
+        "symbol": "0267.HK",
+        "name": "CITIC Limited"
+      },
+      {
+        "symbol": "0285.HK",
+        "name": "BYD Electronics"
+      },
+      {
+        "symbol": "0288.HK",
+        "name": "WH Group"
+      },
+      {
+        "symbol": "0291.HK",
+        "name": "China Resources Beer"
+      },
+      {
+        "symbol": "0300.HK",
+        "name": "Midea Group"
+      },
+      {
+        "symbol": "0316.HK",
+        "name": "Orient Overseas (International) Limited"
+      },
+      {
+        "symbol": "0322.HK",
+        "name": "Tingyi"
+      },
+      {
+        "symbol": "0386.HK",
+        "name": "Sinopec Corp"
+      },
+      {
+        "symbol": "0669.HK",
+        "name": "Techtronic Industries"
+      },
+      {
+        "symbol": "0700.HK",
+        "name": "Tencent Holdings Limited"
+      },
+      {
+        "symbol": "0762.HK",
+        "name": "China Unicom"
+      },
+      {
+        "symbol": "0857.HK",
+        "name": "PetroChina Company Limited"
+      },
+      {
+        "symbol": "0868.HK",
+        "name": "Xinyi Glass"
+      },
+      {
+        "symbol": "0881.HK",
+        "name": "Zhongsheng Group"
+      },
+      {
+        "symbol": "0883.HK",
+        "name": "CNOOC Limited"
+      },
+      {
+        "symbol": "0941.HK",
+        "name": "China Mobile Ltd"
+      },
+      {
+        "symbol": "0968.HK",
+        "name": "Xinyi Solar"
+      },
+      {
+        "symbol": "0981.HK",
+        "name": "Semiconductor Manufacturing International Corporation"
+      },
+      {
+        "symbol": "0992.HK",
+        "name": "Lenovo"
+      },
+      {
+        "symbol": "1024.HK",
+        "name": "Kuaishou"
+      },
+      {
+        "symbol": "1044.HK",
+        "name": "Hengan International Group Co. Ltd"
+      },
+      {
+        "symbol": "1088.HK",
+        "name": "China Shenhua Energy"
+      },
+      {
+        "symbol": "1093.HK",
+        "name": "CSPC Pharmaceutical Group"
+      },
+      {
+        "symbol": "1099.HK",
+        "name": "Sinopharm Group"
+      },
+      {
+        "symbol": "1177.HK",
+        "name": "Sino Biopharm"
+      },
+      {
+        "symbol": "1211.HK",
+        "name": "BYD Company"
+      },
+      {
+        "symbol": "1378.HK",
+        "name": "China Hongqiao Group"
+      },
+      {
+        "symbol": "1810.HK",
+        "name": "Xiaomi"
+      },
+      {
+        "symbol": "1876.HK",
+        "name": "Budweiser Brewing Company APAC"
+      },
+      {
+        "symbol": "1928.HK",
+        "name": "Sands China"
+      },
+      {
+        "symbol": "1929.HK",
+        "name": "Chow Tai Fook"
+      },
+      {
+        "symbol": "2015.HK",
+        "name": "Li Auto"
+      },
+      {
+        "symbol": "2020.HK",
+        "name": "Anta Sports"
+      },
+      {
+        "symbol": "2057.HK",
+        "name": "ZTO Express"
+      },
+      {
+        "symbol": "2269.HK",
+        "name": "WuXi Biologics"
+      },
+      {
+        "symbol": "2313.HK",
+        "name": "Shenzhou International"
+      },
+      {
+        "symbol": "2319.HK",
+        "name": "Mengniu Dairy"
+      },
+      {
+        "symbol": "2331.HK",
+        "name": "Li-Ning"
+      },
+      {
+        "symbol": "2359.HK",
+        "name": "WuXi AppTec"
+      },
+      {
+        "symbol": "2382.HK",
+        "name": "Sunny Optical"
+      },
+      {
+        "symbol": "2618.HK",
+        "name": "JD Logistics"
+      },
+      {
+        "symbol": "2899.HK",
+        "name": "Zijin Mining"
+      },
+      {
+        "symbol": "3690.HK",
+        "name": "Meituan"
+      },
+      {
+        "symbol": "3692.HK",
+        "name": "Hansoh Pharmaceutical Group"
+      },
+      {
+        "symbol": "6618.HK",
+        "name": "JD Health"
+      },
+      {
+        "symbol": "6690.HK",
+        "name": "Haier"
+      },
+      {
+        "symbol": "6862.HK",
+        "name": "Haidilao"
+      },
+      {
+        "symbol": "9618.HK",
+        "name": "JD.com"
+      },
+      {
+        "symbol": "9633.HK",
+        "name": "Nongfu Spring"
+      },
+      {
+        "symbol": "9888.HK",
+        "name": "Baidu"
+      },
+      {
+        "symbol": "9961.HK",
+        "name": "Trip.com Group"
+      },
+      {
+        "symbol": "9988.HK",
+        "name": "Alibaba Group"
+      },
+      {
+        "symbol": "9992.HK",
+        "name": "Pop Mart"
+      },
+      {
+        "symbol": "9999.HK",
+        "name": "NetEase"
       }
     ]
   }
