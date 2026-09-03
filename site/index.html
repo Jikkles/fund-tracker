@@ -648,6 +648,14 @@
   }
 
 
+  .rank-stat { grid-column: 1 / -1; font-family: "JetBrains Mono", ui-monospace, monospace;
+               font-size: 12px; color: var(--ink-soft); padding: 10px 2px 2px; }
+  .rank-stat b { color: var(--ink); font-size: 14px; }
+  .cat-more { display: block; width: 100%; margin-top: 4px; padding: 11px; background: var(--paper-2);
+              border: 1px solid var(--rule); border-radius: 12px; color: var(--ink-soft);
+              font-family: "Inter", sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; }
+  .cat-more:hover { color: var(--ink); border-color: var(--chip); }
+
   /* ---- index constituent movers ---- */
   .mv-universe { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px;
                  color: var(--ink-soft); white-space: nowrap; }
@@ -1226,8 +1234,8 @@
     <div class="h2-rule"></div>
     <div class="intel-section">
       <div class="intel-tabs" id="intelTabs"></div>
-      <div id="intelPanels"></div>
       <div id="ranks"></div>
+      <div id="intelPanels"></div>
     </div>
 
     <h2 style="margin-top:36px" class="sec-anchor" id="catalysts">Catalyst calendar &#8212; what moves which funds</h2>
@@ -2138,6 +2146,15 @@ function renderRanks(){
   ).join('');
 
   const scopeLabel = scope && !emptied ? scope.label : 'all funds';
+  // The category's own summary line, which used to head the intelligence
+  // panel below. It belongs on the ranking, because it is the same set of
+  // funds measured the same way.
+  const statPool = scope && !emptied ? pool : DATA.funds;
+  const avg = statPool.reduce((a,f)=>{ const p=parsePerf(getPerf1(f));
+    return p!==null?{s:a.s+p,n:a.n+1}:a; },{s:0,n:0});
+  const avgStr = avg.n ? ((avg.s/avg.n>0?'+':'') + (avg.s/avg.n).toFixed(1) + '%') : '—';
+  const statLine = `<div class="rank-stat">${statPool.length} fund${statPool.length===1?'':'s'}`
+    + ` &middot; avg 1yr <b>${esc(avgStr)}</b></div>`;
   // No scope picker of its own: the panel sits under the intelligence tabs
   // and those tabs are the control. Two category selectors a few hundred
   // pixels apart, each able to contradict the other, is worse than one - and
@@ -2163,6 +2180,7 @@ function renderRanks(){
       ${whole ? '' : `<div class="pulse-box-head rank-head rank-b" style="color:var(--oxblood);border-bottom:2px solid var(--oxblood)">
         <span class="rank-title">Bottom 5 — weakest over ${esc(period.full)}</span>
       </div>`}
+      ${statLine}
       <div class="rank-list rank-a">${top5Items}</div>
       ${whole ? '' : `<div class="rank-list rank-b">${bot5Items}</div>`}
       ${emptied ? `<p class="intel-note">No fund in ${esc(scope.label)} has a ${esc(period.full)} figure yet — showing all funds instead.</p>` : ''}
@@ -2528,113 +2546,47 @@ function recDrivers(f){
 
 /* ---------- intelligence: build panel HTML for one group ---------- */
 function buildGroupPanel(groupKey, label, funds){
+  // WHAT USED TO BE HERE, AND WHY IT IS NOT
+  // Three columns: Winning, Lagging, Upcoming catalysts. All three were saying
+  // something the page now says better elsewhere, in the same scope:
+  //
+  //   Winning / Lagging  were the two ends of one sorted list, three deep, on
+  //                      the 1yr figure only. The ranking panel above is the
+  //                      same computation five deep with a period control, and
+  //                      it follows these same tabs - so the two sat inches
+  //                      apart, ranking identical funds, able to disagree only
+  //                      by being cut at different depths.
+  //   Catalysts          were six chips per category. The catalyst calendar
+  //                      below carries every one of them in date order, and
+  //                      opening one names the funds it reaches, which a chip
+  //                      could never do.
+  //
+  // What is left is the part nothing else says: the thesis behind the funds
+  // leading this category.
   const sorted = [...funds].sort((a,b)=>{
     const pa = parsePerf(getPerf1(a)), pb = parsePerf(getPerf1(b));
     if(pa===null&&pb===null) return 0; if(pa===null) return 1; if(pb===null) return -1;
     return pb-pa;
   });
-  const top3 = sorted.slice(0,3);
-  // Lagging draws only from priced funds the Winning column has not already taken.
-  // Both columns used to slice the two ends of one sorted list, so a category with
-  // fewer than six priced funds showed the same fund as both winning and lagging.
-  const shown = new Set(top3);
-  const bot3 = sorted.filter(f=>parsePerf(getPerf1(f))!==null && !shown.has(f)).slice(-3).reverse();
+  const themes = sorted.slice(0,2).map(f=>{
+    const full = (f.whyNow||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&');
+    return {name:f.name, note: full.substring(0,120)+(full.length>120?'…':''), full: full};
+  }).filter(t=>t.full);
 
-  // Catalyst chips for this group. Pooled across the whole category and then
-  // ordered once - ordering per fund and concatenating would leave the list
-  // sorted within each fund and arbitrary between them.
-  const pool = [];
-  funds.forEach(f=>{ if(f.catalysts) f.catalysts.forEach(c=>{ if(c.date) pool.push(c); }); });
-  const seen = new Set();
-  const uniqueChips = orderCatalysts(pool, true).filter(c=>{
-    const k = `${c.holding} · ${c.event}`.toLowerCase();
-    if(seen.has(k)) return false; seen.add(k); return true;
-  }).slice(0,6);
-  // Holdings whose calendar has stopped rolling. Shown after the real
-  // chips, and never allowed to push one off the list.
-  const stalled = stalledCatalysts(pool).slice(0, Math.max(0, 6 - uniqueChips.length));
+  if(!themes.length) return '<p class="intel-note">No research thesis recorded for this category yet.</p>';
 
-  // Key themes: collect whyNow snippets from top 2
-  const themes = top3.slice(0,2).map(f=>{
-    const wn = f.whyNow||'';
-    const full = wn.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&');
-    const short = full.substring(0,120)+(full.length>120?'…':'');
-    return {name:f.name, note: short, full: full};
-  });
-
-  const avg = funds.reduce((s,f)=>{ const p=parsePerf(getPerf1(f)); return p!==null?{sum:s.sum+p,n:s.n+1}:s; },{sum:0,n:0});
-  const avgStr = avg.n ? (avg.sum/avg.n > 0 ? '+' : '') + (avg.sum/avg.n).toFixed(1)+'%' : '—';
-
-  let h = `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:var(--ink-soft);margin-bottom:14px">${funds.length} funds · avg 1yr: <b style="color:var(--ink);font-size:14px">${avgStr}</b></div>`;
-
-  // Three columns: Winning | Lagging | Catalysts
-  h += `<div class="intel-3col">`;
-
-  // Col 1 — Winning
-  h += `<div class="i3">`;
-  h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);border-bottom:2px solid var(--forest);padding-bottom:7px;margin-bottom:12px">Winning</div>`;
-  if(top3.length){
-    top3.forEach(f=>{
-      const p = getPerf1(f); const pn = parsePerf(p);
-      h += `<div class="intel-row"><span class="iname">${esc(f.name)}</span><span class="iperf" style="color:${pn>=0?'var(--forest)':'var(--oxblood)'}">${esc(p)}</span></div>`;
-    });
-  } else { h += `<p class="intel-note">No data yet.</p>`; }
-  h += `</div>`;
-
-  // Col 2 — Lagging
-  h += `<div class="i3">`;
-  h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--oxblood);border-bottom:2px solid var(--oxblood);padding-bottom:7px;margin-bottom:12px">Lagging</div>`;
-  if(bot3.length){
-    bot3.forEach(f=>{
-      const p = getPerf1(f); const pn = parsePerf(p);
-      h += `<div class="intel-row"><span class="iname">${esc(f.name)}</span><span class="iperf" style="color:${pn>=0?'var(--forest)':'var(--oxblood)'}">${esc(p)}</span></div>`;
-    });
-  } else { h += `<p class="intel-note">Not enough data.</p>`; }
-  h += `</div>`;
-
-  // Col 3 — Upcoming catalysts
-  h += `<div class="i3">`;
-  h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);border-bottom:2px solid var(--amber);padding-bottom:7px;margin-bottom:12px">Upcoming catalysts</div>`;
-  const chipRow = (name, date, muted) => {
-    let r = `<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 8px;border-bottom:1px solid var(--rule);gap:10px;border-radius:6px;transition:background .12s" onmouseover="this.style.background='var(--hover-bg)'" onmouseout="this.style.background=''">`;
-    r += `<span style="font-size:15px;flex:1;min-width:0${muted?';opacity:.62':''}">${esc(name)}</span>`;
-    r += `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:${muted?'var(--ink-soft)':'var(--amber)'};white-space:nowrap;text-align:right${muted?';font-style:italic':''}">${esc(date)}</span>`;
-    return r + `</div>`;
-  };
-  if(uniqueChips.length || stalled.length){
-    uniqueChips.forEach(c=>{
-      h += chipRow(c.holding||c.event, catalystChipDate(c.date), false);
-    });
-    // Named, not dropped: the next date genuinely is not published yet.
-    stalled.forEach(c=>{
-      h += chipRow(c.holding||c.event, 'next date not published', true);
-    });
-  } else if(pool.length){
-    // Distinguishing the two empty states matters: "logged but all in the
-    // past" says the calendar has stopped rolling forward, which is a
-    // maintenance signal. "None logged" is just an unresearched category.
-    h += `<p class="intel-note">Every logged catalyst for this category has already passed — the calendar has not rolled forward.</p>`;
-  } else { h += `<p class="intel-note">No catalysts logged.</p>`; }
-  h += `</div>`;
-
-  h += `</div>`; // end three-col grid
-
-  // Key thesis — full width below
-  if(themes.length){
-    h += `<div style="margin-top:12px;background:var(--paper-3);border:1px solid var(--rule);border-radius:10px;padding:16px 20px">`;
-    h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:10px">Key thesis</div>`;
-    themes.forEach((t,ti)=>{
-      const uid = groupKey+'-'+ti;
-      h += `<div class="theme-line" style="cursor:pointer;user-select:none" onclick="var f=this.querySelector('.tf-${uid}'),s=this.querySelector('.ts-${uid}'),a=this.querySelector('.ta-${uid}'),o=f.style.display!=='none';f.style.display=o?'none':'block';s.style.display=o?'inline':'none';a.textContent=o?'▸':'▾'">`;
-      h += `<span class="theme-tag">${esc(t.name)}</span>`;
-      h += `<span class="ta-${uid}" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;color:var(--ink-soft);margin-right:6px">▸</span>`;
-      h += `<span class="ts-${uid}">${esc(t.note)}</span>`;
-      h += `<span class="tf-${uid}" style="display:none">${esc(t.full)}</span>`;
-      h += `</div>`;
-    });
+  let h = `<div style="background:var(--paper-3);border:1px solid var(--rule);border-radius:10px;padding:16px 20px">`;
+  h += `<div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:10px">Key thesis</div>`;
+  themes.forEach((t,ti)=>{
+    const uid = groupKey+'-'+ti;
+    h += `<div class="theme-line" style="cursor:pointer;user-select:none" onclick="var f=this.querySelector('.tf-${uid}'),s=this.querySelector('.ts-${uid}'),a=this.querySelector('.ta-${uid}'),o=f.style.display!=='none';f.style.display=o?'none':'block';s.style.display=o?'inline':'none';a.textContent=o?'▸':'▾'">`;
+    h += `<span class="theme-tag">${esc(t.name)}</span>`;
+    h += `<span class="ta-${uid}" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9px;color:var(--ink-soft);margin-right:6px">▸</span>`;
+    h += `<span class="ts-${uid}">${esc(t.note)}</span>`;
+    h += `<span class="tf-${uid}" style="display:none">${esc(t.full)}</span>`;
     h += `</div>`;
-  }
-
+  });
+  h += `</div>`;
   return h;
 }
 
@@ -2853,6 +2805,14 @@ function catalystImpact(cat){
 }
 
 const CAT_OPEN = new Set();
+/* Five is what fits above the fold and what anyone actually plans around.
+   The other sixteen are a scroll of dates months out, and burying the panel
+   under them made the near ones harder to see, not easier. They stay one
+   click away rather than being dropped - a date the desk holds is still
+   information. */
+const CAT_PREVIEW = 5;
+let catExpanded = false;
+function toggleCatalystList(){ catExpanded = !catExpanded; renderCatalystCalendar(); }
 function toggleCatalyst(id){
   if(CAT_OPEN.has(id)) CAT_OPEN.delete(id); else CAT_OPEN.add(id);
   renderCatalystCalendar();
@@ -2863,8 +2823,10 @@ function toggleCatalyst(id){
 function renderCatalystCalendar(){
   const el = document.getElementById('catalystCal');
   if(!el) return;
-  const rows = catalystRows();
-  if(!rows.length){ el.innerHTML = '<p class="intel-note">No dated catalysts on the desk.</p>'; return; }
+  const all = catalystRows();
+  if(!all.length){ el.innerHTML = '<p class="intel-note">No dated catalysts on the desk.</p>'; return; }
+  const capped = !catExpanded && all.length > CAT_PREVIEW;
+  const rows = capped ? all.slice(0, CAT_PREVIEW) : all;
   el.innerHTML = rows.map(function(c,i){
     const id = 'c'+i;
     const open = CAT_OPEN.has(id);
@@ -2896,7 +2858,11 @@ function renderCatalystCalendar(){
         '<span class="cat-n">' + hits.length + ' fund' + (hits.length===1?'':'s') + '</span>' +
         '<span class="cat-chev">' + (open?'▾':'▸') + '</span>' +
       '</button>' + body + '</div>';
-  }).join('');
+  }).join('') + (all.length > CAT_PREVIEW
+    ? '<button type="button" class="cat-more" onclick="toggleCatalystList()">' +
+      (capped ? 'Show all ' + all.length + ' catalysts ▾' : 'Show fewer ▴') +
+      '</button>'
+    : '');
 }
 
 /* ---------- render: top 5 recommendations ---------- */
