@@ -230,42 +230,50 @@ def build_caveats(doc: dict, entries: dict, stats: dict,
             f"{plural(stats['unverified'], 'carries', 'carry')} no fund-level "
             f"figure at all - each figure is labelled with the basis it used.")
 
-    # The as-at dates the tables state about themselves, not the date this run
-    # happened to read them. That distinction is the whole of perf_dates: the
-    # two used to be the same field, so this caveat managed to say the tables
-    # were "NOT refreshed by the daily run" and "up to 0 days old" in a single
-    # sentence.
-    #
-    # Counted against the funds that actually hold a researched table rather
-    # than against all 103. Seven funds run on their NAV series alone and have
-    # no discrete or cumulative table at all; folding those in as "undated"
-    # would report an absence of research as an absence of dating.
-    with_tables = [f for f in funds
-                   if (f.get("performance") or {}).get("cumulative")
-                   or (f.get("performance") or {}).get("discrete")]
-    table_dates = sorted(d for f in with_tables
-                         if (d := (f.get("performance") or {}).get("perfAsAt")))
-    undated = len(with_tables) - len(table_dates)
-    if table_dates:
-        oldest, newest = (date.fromisoformat(table_dates[0]),
-                          date.fromisoformat(table_dates[-1]))
+    # Two tables, two clocks - see research_health. The trailing figures age
+    # by the calendar; the discrete years are completed history and age only
+    # when a period closes without being added. The first cut of this caveat
+    # reported both on one clock and put fourteen complete annual tables on a
+    # staleness list, which is the same fault it was written to fix, inverted.
+    cum_funds = [f for f in funds if (f.get("performance") or {}).get("cumulative")]
+    dis_funds = [f for f in funds if (f.get("performance") or {}).get("discrete")]
+    cum_dates = sorted(d for f in cum_funds
+                       if (d := (f.get("performance") or {}).get("perfAsAt")))
+    undated = len(cum_funds) - len(cum_dates)
+    if cum_dates:
+        oldest, newest = (date.fromisoformat(cum_dates[0]),
+                          date.fromisoformat(cum_dates[-1]))
         run = (f"are all as at {stamp(oldest)}" if oldest == newest
                else f"run {stamp(oldest)} to {stamp(newest)}")
-        # An unknown age is reported as unknown. Folding these into the range
-        # would put a date on tables that state none, which is the same fault
-        # this caveat was carrying before, one level down.
-        rest = (f" A further {undated} state no as-at date in their period "
-                f"labels, so their age is unknown rather than current."
+        rest = (f" A further {undated} state no date and their age is unknown."
                 if undated else "")
         lines.append(
-            f"{len(with_tables)} of {total} funds carry hand-entered discrete "
-            f"and cumulative performance tables, which are NOT refreshed by "
-            f"the daily run. Read from their own period labels, the as-at "
-            f"dates of the {len(table_dates)} that state one {run}, up to "
-            f"{(today - oldest).days} days old.{rest} Their bases differ "
-            f"(Trustnet/FE discrete or cumulative, HL rolling 12-month, "
-            f"Fidelity annualised) — do not compare across funds without "
-            f"adjusting.")
+            f"{len(cum_funds)} of {total} funds carry a hand-entered "
+            f"cumulative table of trailing 1/3/5yr figures, which the daily "
+            f"run does NOT refresh. Read from their own period labels, the "
+            f"{len(cum_dates)} that state a date {run}, up to "
+            f"{(today - oldest).days} days old.{rest} The fund's own totals "
+            f"over those windows are computed from its NAV series every run "
+            f"and carry the NAV chip; it is the sector and benchmark "
+            f"comparators beside them that age, because nothing free "
+            f"publishes those. Bases differ (Trustnet/FE, HL rolling "
+            f"12-month, Fidelity annualised) — do not compare across funds "
+            f"without adjusting.")
+
+    if dis_funds:
+        behind = sum(1 for f in dis_funds
+                     if (f.get("performance") or {}).get("discreteMissingYears"))
+        bases = sorted({b for f in dis_funds
+                        if (b := (f.get("performance") or {}).get("discreteBasis"))})
+        state = (f"{behind} are missing a period that has since closed"
+                 if behind else
+                 "every one carries the most recent year that has closed on "
+                 "its own basis")
+        lines.append(
+            f"{len(dis_funds)} funds carry discrete annual returns, kept to "
+            f"a fixed year-end ({', '.join(bases)}) rather than to the run "
+            f"date: {state}. A completed year is history and does not go out "
+            f"of date on the calendar, so these are not aged in days.")
 
     derived = sum(1 for f in funds
                   if (f.get("performance") or {}).get("perfBasis") == "DRV")
@@ -280,40 +288,57 @@ def build_caveats(doc: dict, entries: dict, stats: dict,
 
 
 def research_health(doc: dict, today: date) -> list[str]:
-    """Warn when hand-researched factsheet data has gone stale.
+    """Warn where hand-researched factsheet data has genuinely gone out of date.
 
     calendar_data.calendar_health does this for the central bank tables. The
-    researched half of each card ages exactly the same way but had nothing
-    watching it, so it aged in silence while the NAV figures beside it stayed
-    current - the widest gap on the desk between what is fresh and what looks
-    fresh.
+    researched half of each card ages the same way but had nothing watching it,
+    so it aged in silence while the NAV figures beside it stayed current - the
+    widest gap on the desk between what is fresh and what looks fresh.
 
-    It then spent months unable to fire at all. perfAsAt was being stamped with
-    the date of each factsheet read, and the weekly refresh reset all 103 every
-    Sunday, so no fund could reach 8 days let alone 120 - a watchdog wired to a
-    clock that was reset faster than it could run. perf_dates now derives the
-    field from what the tables say about themselves, and this warning works
-    against a real age again.
+    It then spent months unable to fire at all, because perfAsAt was stamped
+    with the date of each factsheet read and the weekly refresh reset all 103
+    every Sunday: a watchdog wired to a clock reset faster than it could run.
+    Fixing that overcorrected in the other direction, flagging 19 funds when
+    only 10 had anything wrong, because it aged both tables on one clock.
+
+    They need two, and the distinction is the whole of this function now:
+
+      * a CUMULATIVE table is trailing. "1 yr (trailing, to 26 Jun 26)" claims
+        to be the last twelve months and is less true every day. Days since
+        measured is the right question, and 120 of them means a quarter was
+        missed.
+      * a DISCRETE table is completed annual periods on a fixed basis. The
+        year to 31 Mar 2026 is a historical fact that does not decay, and the
+        next one on that basis does not close until 31 Mar 2027. Asking how
+        many days old it is puts fourteen funds on a worklist with nothing to
+        do. The right question is whether a year has closed without being
+        added - which today, across all 96 tables, none has.
     """
     aged: list[tuple[int, str]] = []
+    behind: list[tuple[int, str]] = []
     unknown: list[str] = []
     for fund in doc["funds"]:
         perf = fund.get("performance") or {}
-        # A fund with no researched tables has no research to age. Seven funds
-        # run on their NAV series alone, and telling their owner to "date the
-        # periods when re-researching" is a worklist item for periods that do
-        # not exist. Only a fund holding a table can be stale.
+        # A fund with no researched tables has no research to age. Seven run
+        # on their NAV series alone, and telling their owner to re-research a
+        # table is a worklist item for a table that does not exist.
         if not perf.get("cumulative") and not perf.get("discrete"):
             continue
-        as_at = perf.get("perfAsAt")
-        try:
-            age = (today - date.fromisoformat(as_at)).days if as_at else None
-        except ValueError:
-            age = None
-        if age is None:
-            unknown.append(fund["id"])
-        elif age > RESEARCH_STALE_DAYS:
-            aged.append((age, fund["id"]))
+
+        if perf.get("cumulative"):
+            as_at = perf.get("perfAsAt")
+            try:
+                age = (today - date.fromisoformat(as_at)).days if as_at else None
+            except ValueError:
+                age = None
+            if age is None:
+                unknown.append(fund["id"])
+            elif age > RESEARCH_STALE_DAYS:
+                aged.append((age, fund["id"]))
+
+        missing = perf.get("discreteMissingYears")
+        if missing:
+            behind.append((missing, fund["id"]))
 
     out: list[str] = []
     if aged:
@@ -322,19 +347,28 @@ def research_health(doc: dict, today: date) -> list[str]:
         more = f", and {len(aged) - 3} more" if len(aged) > 3 else ""
         out.append(
             f"{len(aged)} {plural(len(aged), 'fund has', 'funds have')} "
-            f"factsheet research older than "
-            f"{RESEARCH_STALE_DAYS} days: {worst}{more}. Re-research, or "
-            f"rely on the NAV figures, which refresh every run.")
-    # Reported, not skipped. A fund whose tables state no period they were
-    # measured over cannot be aged at all, and silently omitting it from a
-    # staleness count reads as a clean bill of health it has not earned.
+            f"trailing cumulative figures older than {RESEARCH_STALE_DAYS} "
+            f"days: {worst}{more}. Only the sector and benchmark comparators "
+            f"need a person - the fund's own 1/3/5yr totals are computed from "
+            f"its NAV series every run.")
+    if behind:
+        behind.sort(reverse=True)
+        worst = ", ".join(f"{fid} ({n})" for n, fid in behind[:3])
+        more = f", and {len(behind) - 3} more" if len(behind) > 3 else ""
+        out.append(
+            f"{len(behind)} {plural(len(behind), 'fund is', 'funds are')} "
+            f"missing a completed discrete year: {worst}{more}. The period "
+            f"closed and was never added.")
+    # Reported, not skipped. A table stating no period it was measured over
+    # cannot be aged at all, and quietly omitting it from a staleness count
+    # reads as a clean bill of health it has not earned.
     if unknown:
         named = ", ".join(unknown[:3])
         more = f", and {len(unknown) - 3} more" if len(unknown) > 3 else ""
         out.append(
-            f"{len(unknown)} {plural(len(unknown), 'fund states', 'funds state')} "
-            f"no measurement date in any performance period label, so the age "
-            f"of {plural(len(unknown), 'its', 'their')} research is unknown: "
+            f"{len(unknown)} {plural(len(unknown), 'fund has', 'funds have')} "
+            f"a cumulative table stating no measurement date, so "
+            f"{plural(len(unknown), 'its', 'their')} age is unknown: "
             f"{named}{more}. Date the periods when re-researching.")
     return out
 
@@ -499,11 +533,14 @@ def main() -> int:
     # Sunday, and so a hand-edited table is dated by what it says the moment it
     # lands.
     restamped = sum(perf_dates.stamp(f, today) for f in doc["funds"])
-    dated = sum(1 for f in doc["funds"]
-                if (f.get("performance") or {}).get("perfAsAt"))
+    perfs = [f.get("performance") or {} for f in doc["funds"]]
+    trailing = sum(1 for p in perfs if p.get("perfAsAt"))
+    annual = sum(1 for p in perfs if p.get("discreteAsAt"))
+    behind = sum(1 for p in perfs if p.get("discreteMissingYears"))
     print(f"Fund desk update - {today} (window {args.days}d)")
-    print(f"[perfAsAt] {dated} of {len(doc['funds'])} funds dated from their "
-          f"own period labels, {restamped} corrected this run\n")
+    print(f"[tables] {trailing} trailing tables dated, {annual} annual tables "
+          f"dated ({behind} missing a closed year); {restamped} funds "
+          f"restamped this run\n")
     print("Market context:")
     quotes = md.fetch_many(CONTEXT_TICKERS, window_start, today)
 

@@ -31,6 +31,25 @@ The tables already carry it. Every period label states the window it covers -
 26" - so the measurement date is read from the data rather than assumed. A
 label that states no date yields nothing, and a table of such labels has no
 known as-at: absent, not today.
+
+TWO TABLES, TWO CLOCKS
+----------------------
+They do not age the same way, and treating them alike over-reported staleness
+badly on the first cut of this module.
+
+A CUMULATIVE table is trailing: "1 yr (trailing, to 26 Jun 26)" claims to be
+the last twelve months, and every day that passes makes it less so. It ages by
+the calendar, and days-since-measured is the right measure of it.
+
+A DISCRETE table is a run of completed annual periods on a fixed basis - every
+dated one on this desk is strictly consistent, five consecutive years ending
+the same month and day: 2 Sep for the 67 scraped from HL, 31 Mar for five,
+30 Jun for three. The year to 31 Mar 2026 is a historical fact. It does not
+become less true in September, and the next period on that basis does not
+close until 31 Mar 2027, so nothing is missing from the table at all. Aged by
+the calendar it read as 156 days stale and put fourteen funds on a worklist
+with nothing to do. What can genuinely go wrong is a period completing and not
+being added - so a discrete table is measured in MISSING YEARS, not in days.
 """
 
 from __future__ import annotations
@@ -119,53 +138,108 @@ def table_as_at(rows: list[dict] | None, key: str,
 
 def perf_as_at(perf: dict | None,
                today: date | None = None) -> tuple[date | None, str]:
-    """(measurement date, source note) for a fund's performance tables.
+    """(measurement date, source note) for a fund's TRAILING figures.
 
-    The OLDER of the cumulative and discrete tables where both carry a date.
-    They are frequently on different bases and different vintages - a fund can
-    hold an HL discrete table scraped this morning beside a cumulative table
-    researched in June - and the pair is only as current as its older half.
-    Taking the newer would let a fresh table vouch for a stale one sitting
-    directly beneath it on the same card, which is the exact failure this
-    module exists to end.
+    The cumulative table only. A trailing figure is a claim about the last
+    twelve months, or three years, or five, and it decays from the day it is
+    struck - so the day it was struck is the thing worth knowing.
+
+    The discrete table is deliberately not folded in here. It is a run of
+    completed annual periods, and a completed year does not decay; see
+    discrete_status() for the check that does apply to it. An earlier cut of
+    this function took the older of the two, which meant a complete and
+    perfectly good 31 Mar 2026 annual table dragged its fund onto a staleness
+    worklist 156 days later with nothing whatsoever to re-research.
     """
     if not perf:
         return None, ""
+    got = table_as_at(perf.get("cumulative"), "period", today or date.today())
+    return (got, "period labels (cumulative table)") if got else (None, "")
+
+
+def _add_year(d: date) -> date:
+    """The same day next year, stepping back off 29 February."""
+    try:
+        return d.replace(year=d.year + 1)
+    except ValueError:
+        return d.replace(year=d.year + 1, day=28)
+
+
+def discrete_status(rows: list[dict] | None,
+                    today: date | None = None) -> dict | None:
+    """How a discrete annual table stands, or None if it cannot be judged.
+
+    Returns the basis it is kept on, the newest period it carries, and how
+    many further annual periods have closed since without being added. A table
+    whose newest year is the newest year that has closed is complete, however
+    many months ago that was.
+    """
+    if not rows:
+        return None
     today = today or date.today()
-    dated = {"cumulative": table_as_at(perf.get("cumulative"), "period", today),
-             "discrete": table_as_at(perf.get("discrete"), "year", today)}
-    have = {k: v for k, v in dated.items() if v}
-    if not have:
-        return None, ""
-    note = ("oldest of the cumulative and discrete tables" if len(have) == 2
-            else f"the {next(iter(have))} table")
-    return min(have.values()), f"period labels ({note})"
+    ends = sorted({e for r in rows if (e := period_end(r.get("year"), today))})
+    if not ends:
+        return None
+    newest = ends[-1]
+    # Only call it a fixed annual basis when the table really is one. Every
+    # dated discrete table on the desk is - five consecutive years ending the
+    # same month and day - but a table that is not cannot have its next period
+    # predicted, so it reports the fact rather than a guess.
+    consistent = all((e.month, e.day) == (newest.month, newest.day)
+                     for e in ends)
+    missing, cur = 0, newest
+    while _add_year(cur) <= today:
+        cur = _add_year(cur)
+        missing += 1
+    return {"basis": f"{newest:%d %b}", "newest": newest,
+            "consistent": consistent, "missing": missing,
+            "nextDue": _add_year(newest)}
+
+
+FIELDS = ("perfAsAt", "perfAsAtSource", "discreteAsAt", "discreteBasis",
+          "discreteMissingYears")
 
 
 def stamp(fund: dict, today: date | None = None) -> bool:
-    """Set performance.perfAsAt from the fund's own period labels.
+    """Date a fund's tables from their own period labels. True if changed.
 
-    Returns True if anything changed. Called from the daily run as well as the
-    weekly factsheet refresh, so a fund whose stored stamp predates this module
-    is corrected on the next run rather than on the next scrape.
+    Called from the daily run as well as the weekly factsheet refresh, so a
+    fund whose stored stamp predates this module is corrected on the next run
+    rather than on the next scrape.
 
-    Where no table carries a date the field is REMOVED, not left holding the
-    old wrong value and not set to today. research_health() skips a fund with
-    no perfAsAt, which is the correct behaviour for "we do not know how old
-    this is" - an unknown age cannot be reported as a number of days.
+    perfAsAt dates the trailing (cumulative) figures. discreteAsAt records the
+    newest annual period the discrete table carries, with the basis it is kept
+    on and how many further years have closed without being added - which is
+    what "out of date" means for an annual table, and is almost always zero.
+
+    Any field the tables cannot support is REMOVED, not left holding an old
+    value and not set to today. An unknown age cannot be reported as a number.
     """
     perf = fund.get("performance")
     if not perf:
         return False
+    before = tuple(perf.get(k) for k in FIELDS)
+
     got, note = perf_as_at(perf, today)
-    before = (perf.get("perfAsAt"), perf.get("perfAsAtSource"))
     if got:
-        perf["perfAsAt"] = got.isoformat()
-        perf["perfAsAtSource"] = note
+        perf["perfAsAt"], perf["perfAsAtSource"] = got.isoformat(), note
     else:
         perf.pop("perfAsAt", None)
         perf.pop("perfAsAtSource", None)
-    return before != (perf.get("perfAsAt"), perf.get("perfAsAtSource"))
+
+    dis = discrete_status(perf.get("discrete"), today)
+    if dis:
+        perf["discreteAsAt"] = dis["newest"].isoformat()
+        perf["discreteMissingYears"] = dis["missing"]
+        if dis["consistent"]:
+            perf["discreteBasis"] = dis["basis"]
+        else:
+            perf.pop("discreteBasis", None)
+    else:
+        for key in ("discreteAsAt", "discreteBasis", "discreteMissingYears"):
+            perf.pop(key, None)
+
+    return before != tuple(perf.get(k) for k in FIELDS)
 
 
 def _selftest() -> bool:
@@ -221,41 +295,71 @@ def _selftest() -> bool:
     assert table_as_at([], "year", today) is None
     assert table_as_at(None, "year", today) is None
 
-    # A fresh discrete table does not vouch for a stale cumulative one.
+    # The cumulative table alone sets the trailing clock. A fresh discrete
+    # table beside a stale cumulative one does not rescue it...
     got, note = perf_as_at({
         "cumulative": [{"period": "1 yr (trailing, to 26 Jun 26)"}],
         "discrete": [{"year": "02/09/25 to 02/09/26"}]}, today)
     assert got == date(2026, 6, 26), got
-    assert "oldest" in note
+    assert "cumulative" in note
 
-    # One dated table is enough, and the note says which one carried it.
-    got, note = perf_as_at({
-        "cumulative": [{"period": "3 yr (derived)"}],
-        "discrete": [{"year": "2025–26 (to 31 Mar 26)"}]}, today)
-    assert got == date(2026, 3, 31) and "discrete" in note, (got, note)
-
-    # No dated table anywhere is an absent as-at, not today's date.
-    assert perf_as_at({"cumulative": [{"period": "3 yr"}],
-                       "discrete": [{"year": "2024–25"}]}, today) == (None, "")
+    # ...and a complete annual table on its own does not set one at all. This
+    # is the case that mattered: fourteen funds carry a 31 Mar discrete table
+    # and no cumulative table, and taking the older of the two put every one
+    # of them 156 days stale with nothing to re-research.
+    assert perf_as_at({"discrete": [{"year": "2025–26 (to 31 Mar 26)"}]},
+                      today) == (None, "")
+    assert perf_as_at({"cumulative": [{"period": "3 yr (derived)"}]},
+                      today) == (None, "")
     assert perf_as_at({}, today) == (None, "")
     assert perf_as_at(None, today) == (None, "")
+
+    # --- the discrete table's own clock: missing years, not days ---------
+    def ds(labels, when=today):
+        return discrete_status([{"year": l} for l in labels], when)
+
+    # A 31 Mar table in September is complete: the year to 31 Mar 2026 has
+    # closed and been added, and the next does not close until 31 Mar 2027.
+    st = ds(["2025–26 (to 31 Mar 26)", "2024–25 (to 31 Mar 25)"])
+    assert st["missing"] == 0 and st["consistent"], st
+    assert st["nextDue"] == date(2027, 3, 31) and st["basis"] == "31 Mar"
+
+    # HL's 2 Sep basis, one day after the newest period closed.
+    assert ds(["02/09/25 to 02/09/26", "02/09/24 to 02/09/25"])["missing"] == 0
+
+    # A year that closed and was never added is what "out of date" means here.
+    assert ds(["2024–25 (to 31 Mar 25)"])["missing"] == 1
+    assert ds(["2021–22 (to 31 Mar 22)"])["missing"] == 4
+
+    # A table that is not on one fixed basis cannot have its next period
+    # predicted, and says so rather than guessing.
+    assert ds(["to 31 Mar 26", "to 30 Jun 25"])["consistent"] is False
+
+    # Undated and empty tables yield nothing.
+    assert ds(["2025–26", "2024–25"]) is None
+    assert discrete_status([], today) is None
+    assert discrete_status(None, today) is None
 
     # stamp() corrects a stored stamp rather than trusting it...
     f = {"performance": {"perfAsAt": "2026-09-03",
                          "perfAsAtSource": "HL factsheet scrape",
+                         "cumulative": [{"period": "1 yr (to 30 Apr 26)"}],
                          "discrete": [{"year": "2025–26 (to 31 Mar 26)"}]}}
     assert stamp(f, today) is True
-    assert f["performance"]["perfAsAt"] == "2026-03-31"
-    assert "period labels" in f["performance"]["perfAsAtSource"]
-    # ...is idempotent once corrected...
+    assert f["performance"]["perfAsAt"] == "2026-04-30"
+    assert f["performance"]["discreteAsAt"] == "2026-03-31"
+    assert f["performance"]["discreteMissingYears"] == 0
+    assert f["performance"]["discreteBasis"] == "31 Mar"
+    # ...and is idempotent once corrected.
     assert stamp(f, today) is False
 
-    # ...and removes the field outright where nothing carries a date, rather
-    # than leaving today's date standing in for an unknown one.
+    # A discrete-only fund carries no trailing clock at all - the 46 funds
+    # this describes have nothing that decays by the calendar.
     g = {"performance": {"perfAsAt": "2026-09-03",
-                         "discrete": [{"year": "2024–25"}]}}
+                         "discrete": [{"year": "02/09/25 to 02/09/26"}]}}
     assert stamp(g, today) is True
     assert "perfAsAt" not in g["performance"]
+    assert g["performance"]["discreteMissingYears"] == 0
     assert stamp({}, today) is False
 
     print("  period labels    OK  (dated forms read, undated ones refused, "
