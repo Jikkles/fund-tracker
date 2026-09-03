@@ -527,6 +527,17 @@ def resolve_url(fund: dict) -> tuple[str | None, str | None, str]:
     if stored:
         stored = re.sub(r"/(?:research|charts|key-features|fund-analysis"
                         r"|security-details|our-view)/?$", "", stored)
+        # A monthly fund update is an article about the fund, not the fund's
+        # factsheet. Its title carries the fund name, so page_is_ours() waves
+        # it through, and the scrape then reads an article that has none of
+        # the tables - leaving the fund with two holdings, three sectors and
+        # a blank fund size, stamped "factsheet confirmed unchanged".
+        #
+        # Two funds sat like that. Nothing announced it, because every guard
+        # in the scrape is about whether the page is the RIGHT FUND, and this
+        # page was. None asked whether it was a factsheet at all.
+        if "/funds/research-and-news/" in stored:
+            stored = None
     tried = []
     urls = ([stored] if stored else []) + [
         BASE.format(letter=s[0], slug=s) for s in slug_candidates(fund)]

@@ -294,8 +294,25 @@ def brand_variant(name: str) -> str | None:
     return None
 
 
-def price(symbol: str, span: str = "5y") -> dict | None:
-    """Daily NAV series for a symbol."""
+def price(symbol: str, span: str = "10y") -> dict | None:
+    """
+    Daily NAV series for a symbol.
+
+    The span is 10y to compute five-year returns, which reads like a mistake
+    and is not. Yahoo does not simply clip a longer history to the window you
+    ask for: for some fund lines range=5y returns a short recent stub while
+    range=10y returns years more of the same series. BlackRock Continental
+    European Income and BlackRock European Dynamic both returned 57 points
+    from June 2026 at 5y and 560 points from January 2018 at 10y, which is
+    why both had a 1-week figure and nothing beyond it. JPMorgan Emerging
+    Markets, Trojan Ethical and the L&G All Stocks Gilt tracker were each
+    losing a year or more the same way.
+
+    Asking for more than is needed costs one larger response per fund and can
+    only add history, never remove it - the return windows are sliced by date
+    afterwards, and _trim_redenomination() still cuts anything before a share
+    class split rather than letting the extra years carry a false return.
+    """
     try:
         raw = _get(CHART_URL.format(urllib.parse.quote(symbol), span))
         result = json.loads(raw)["chart"]["result"][0]
