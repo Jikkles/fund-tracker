@@ -83,8 +83,6 @@ jobs:
       # rather than left waiting for the next daily run - a data-only commit
       # does not match the daily workflow's site/** push trigger.
       - name: Fetch index series
-        env:
-          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
         run: python scripts/market_series.py
 
       - name: Assemble site

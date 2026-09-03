@@ -102,13 +102,6 @@ jobs:
       # the HTTP status so a throttle is distinguishable from a moved endpoint.
       - name: Fetch index series
         continue-on-error: true
-        # Optional: a free, no-card Guardian Open Platform key gives headlines
-        # with a real one- or two-sentence summary instead of Yahoo's feed,
-        # which several publishers truncate at exactly 100 characters. Unset
-        # (no repo secret added yet), this step behaves exactly as before -
-        # see the module docstring in market_series.py.
-        env:
-          GUARDIAN_API_KEY: ${{ secrets.GUARDIAN_API_KEY }}
         run: python scripts/market_series.py
 
       - name: Commit updated data
