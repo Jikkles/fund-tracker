@@ -1834,7 +1834,45 @@ function mktWireHover(idx, ser){
   hit.addEventListener('touchend', leave);
 }
 
-function newsToggle(head){ head.parentElement.classList.toggle('open'); }
+/* News summaries open in the same floating panel as the ranking notes rather
+   than expanding inside the row. */
+const NEWS_NOTES = {};
+let newsNoteOpen = null;
+
+function closeNewsNote(){
+  const pop = document.getElementById('newsPop');
+  if(pop) pop.hidden = true;
+  document.querySelectorAll('#newsbox .pulse-row.open').forEach(r => r.classList.remove('open'));
+  newsNoteOpen = null;
+}
+
+function newsToggle(head, key){
+  const note = NEWS_NOTES[key];
+  if(!note) return;
+  if(newsNoteOpen === key){ closeNewsNote(); return; }
+  closeNewsNote();
+  const pop = sidePanelEl('newsPop');
+  // The publisher's own words, and labelled as theirs. Several feeds cap the
+  // description at 100 characters, so the panel says where it stops and where
+  // the rest of it lives rather than presenting a fragment as the whole thing.
+  pop.innerHTML = '<div class="rank-pop-lab">' + esc(note.when ? 'Headline · ' + note.when : 'Headline') + '</div>'
+                + '<div class="rank-pop-name">' + esc(note.title) + '</div>'
+                + '<div class="rank-pop-body">' + esc(note.text) + '</div>'
+                + (note.cut
+                    ? '<p class="rank-pop-foot">This is the whole of the summary the '
+                      + 'feed publishes — it stops here, and the desk will not write the '
+                      + 'rest. Open the full story for the article itself.</p>'
+                    : '')
+                + (note.url
+                    ? '<p class="rank-pop-foot"><a class="news-link" href="' + esc(note.url)
+                      + '" target="_blank" rel="noopener noreferrer">Full story ↗</a></p>'
+                    : '')
+                + '<button class="rank-pop-x" onclick="closeNewsNote()" aria-label="Close">&#10005;</button>';
+  pop.hidden = false;
+  head.parentElement.classList.add('open');
+  newsNoteOpen = key;
+  placeSidePanel('newsPop', 'newsbox', head);
+}
 
 function mktPick(id){ mktId = id; renderIndexMovers(); renderChart(); }
 function mktSetRange(k){ mktRange = k; renderChart(); }
@@ -2385,22 +2423,28 @@ function renderNews(){
     box.innerHTML = head + `<div class="news-empty">No headlines published for ${esc(market.label)} right now — not every index has a feed.</div>`;
     return;
   }
-  box.innerHTML = head + items.map(n => {
+  // Keys are per-repaint; a tab switch rebuilds the list and any open panel
+  // with it, so the registry is cleared rather than left holding dead rows.
+  Object.keys(NEWS_NOTES).forEach(k => delete NEWS_NOTES[k]);
+  closeNewsNote();
+  box.innerHTML = head + items.map((n, i) => {
     const ago = n.d ? mktAgo(new Date(n.d * 1000)) : '';
     const summary = (n.s || '').trim();
+    const key = 'n' + i;
+    if(summary) NEWS_NOTES[key] = { title: n.t || '', text: summary, url: n.u || '',
+                                    when: ago, cut: /…$/.test(summary) };
     const link = n.u
       ? `<a class="news-link" href="${esc(n.u)}" target="_blank" rel="noopener noreferrer"
             onclick="event.stopPropagation()" title="Open the full story on the publisher's site">Full story ↗</a>`
       : '';
     return `<div class="pulse-row news-row${summary ? ' has-note' : ''}">
-      <div class="pr-head"${summary ? ' onclick="newsToggle(this)"' : ''}>
+      <div class="pr-head"${summary ? ` onclick="newsToggle(this,'${key}')"` : ''}>
         <span class="news-when">${esc(ago)}</span>
         <span class="news-title">${esc(n.t || '')}</span>
         <span class="news-src">${esc(n.src || '')}</span>
         ${link}
         ${summary ? '<span class="pr-chev">▸</span>' : '<span class="news-nochev"></span>'}
       </div>
-      ${summary ? `<div class="pr-note"><div class="pr-note-box"><div class="pr-note-lab">Summary</div>${esc(summary)}</div></div>` : ''}
     </div>`;
   }).join('');
 }
@@ -3693,17 +3737,22 @@ function rankContext(f, periodKey){
   return out;
 }
 
-function rankPopEl(){
-  let pop = document.getElementById('rankPop');
+/* One floating panel implementation, two callers: the ranking notes and the
+   news summaries. Both want the same behaviour - open beside the row, take no
+   part in the layout, never widen the page - and the news summary previously
+   expanded inline, which pushed every row below it down the list. */
+function sidePanelEl(id){
+  let pop = document.getElementById(id);
   if(!pop){
     pop = document.createElement('div');
-    pop.id = 'rankPop';
+    pop.id = id;
     pop.className = 'rank-pop';
     pop.hidden = true;
     document.body.appendChild(pop);
   }
   return pop;
 }
+function rankPopEl(){ return sidePanelEl('rankPop'); }
 
 function closeRankNote(){
   const pop = document.getElementById('rankPop');
@@ -3746,9 +3795,15 @@ function rankNote(head, key){
   placeRankNote(head);
 }
 
-function placeRankNote(head){
-  const pop = document.getElementById('rankPop');
-  const ranks = document.getElementById('ranks');
+function placeRankNote(head){ placeSidePanel('rankPop', 'ranks', head); }
+
+/* Preferred to the right of its column, flipped to the left when the window
+   has no room there, and clamped into the viewport either way. A full-width
+   column - the news list is one - has no room on either side, so the clamp
+   floats the panel over its right-hand edge rather than off the page. */
+function placeSidePanel(popId, colId, head){
+  const pop = document.getElementById(popId);
+  const ranks = document.getElementById(colId);
   if(!pop || pop.hidden || !ranks) return;
   // Below 760px the stylesheet pins it to the foot of the screen instead.
   if(window.matchMedia('(max-width: 760px)').matches){ pop.style.left = pop.style.top = ''; return; }
@@ -3775,16 +3830,23 @@ function placeRankNote(head){
 // A click anywhere else closes it, as does Escape. Scrolling or resizing
 // re-places it against the row it belongs to rather than leaving it stranded.
 document.addEventListener('click', function(e){
-  if(!rankNoteOpen) return;
-  if(e.target.closest('#rankPop') || e.target.closest('#ranks .pr-head')) return;
-  closeRankNote();
+  if(rankNoteOpen && !e.target.closest('#rankPop') && !e.target.closest('#ranks .pr-head')) closeRankNote();
+  if(newsNoteOpen && !e.target.closest('#newsPop') && !e.target.closest('#newsbox .pr-head')) closeNewsNote();
 });
-document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeRankNote(); });
+document.addEventListener('keydown', function(e){
+  if(e.key !== 'Escape') return;
+  closeRankNote(); closeNewsNote();
+});
 ['scroll','resize'].forEach(function(ev){
   window.addEventListener(ev, function(){
-    if(!rankNoteOpen) return;
-    const head = document.querySelector('#ranks .pulse-row.open .pr-head');
-    if(head) placeRankNote(head); else closeRankNote();
+    if(rankNoteOpen){
+      const head = document.querySelector('#ranks .pulse-row.open .pr-head');
+      if(head) placeRankNote(head); else closeRankNote();
+    }
+    if(newsNoteOpen){
+      const head = document.querySelector('#newsbox .pulse-row.open .pr-head');
+      if(head) placeSidePanel('newsPop', 'newsbox', head); else closeNewsNote();
+    }
   }, {passive:true});
 });
 
