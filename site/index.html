@@ -2107,6 +2107,27 @@ function staleInfo(f){
   return { iso, days, stale: days > STALE_DAYS,
            label: then.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'}) };
 }
+/* Age of the RESEARCHED half of a card - the discrete and cumulative tables -
+   which is a different thing from the age of its NAV figures and ages very
+   much faster. 120 days to match RESEARCH_STALE_DAYS in run_update.py, where
+   the same check runs: at least one full quarterly factsheet was missed.
+
+   perfAsAt is the date the tables state they are measured to, read from their
+   own period labels by scripts/perf_dates.py. It used to be the date the
+   factsheet was last fetched, which made every table on the desk look a day
+   old and this panel unable to say otherwise. A fund whose labels carry no
+   date at all has no perfAsAt and is reported as unknown, not as current. */
+const RESEARCH_STALE_DAYS = 120;
+function researchInfo(f){
+  const p = f.performance || {};
+  if(!p.cumulative && !p.discrete) return null;
+  if(!p.perfAsAt) return { unknown:true };
+  const then = new Date(p.perfAsAt + 'T00:00:00');
+  if(isNaN(then)) return { unknown:true };
+  const days = Math.round((Date.now() - then.getTime()) / 86400000);
+  return { days, stale: days > RESEARCH_STALE_DAYS, unknown:false,
+           label: then.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'}) };
+}
 const BASIS_LABEL = { NAV:"live NAV", HL:'HL rolling', FID:'Fidelity trailing', FE:'FE/Trustnet', DRV:'derived' };
 function basisChip(f){
   if(f.performance && f.performance.nav1yr){
@@ -2532,6 +2553,15 @@ function renderHealth(){
   // unverified 1yr
   const unver = funds.filter(isUnverified1yr);
 
+  // researched tables, aged against what they say they measure - see
+  // researchInfo. Split from the NAV staleness list above because the two age
+  // on completely different clocks and a reader fixing one is not fixing the
+  // other: a NAV figure goes stale when a fetch fails, a researched table goes
+  // stale every day nobody re-reads the factsheet.
+  const research = funds.map(f => ({f, r: researchInfo(f)})).filter(x => x.r);
+  const resStale = research.filter(x => x.r.stale).sort((a,b) => b.r.days - a.r.days);
+  const resUnknown = research.filter(x => x.r.unknown);
+
   // last automated run stamp
   const al = DATA.auditLog || {};
   const runDate = al.runDate || '';
@@ -2541,6 +2571,8 @@ function renderHealth(){
     incons.length ? `<span class="hchip bad">${incons.length} inconsistent ⚠</span>` : '',
     stale.length ? `<span class="hchip warn">${stale.length} stale (>${STALE_DAYS}d)</span>` : `<span class="hchip ok">0 stale</span>`,
     unver.length ? `<span class="hchip warn">${unver.length} unverified 1yr</span>` : '',
+    resStale.length ? `<span class="hchip warn">${resStale.length} research >${RESEARCH_STALE_DAYS}d</span>` : '',
+    resUnknown.length ? `<span class="hchip neu">${resUnknown.length} undated</span>` : '',
     runDate ? `<span class="hchip neu">audit ${esc(runDate)}</span>` : '',
     provenanceChip(),
     oldAuditChip()
@@ -2552,6 +2584,13 @@ function renderHealth(){
   const staleRows = stale.slice(0, 15).map(({f,s}) =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">1yr figure as at ${esc(s.label)}${f.performance.perfBasis?` (${BASIS_LABEL[f.performance.perfBasis]||f.performance.perfBasis})`:''}</span><span class="hs" style="color:var(--amber)">${s.days}d old</span></div>`).join('') +
     (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more, stalest first. The daily run does not refresh 1yr figures — it recomputes the rolling 1-month figure for tracker funds and rolls the catalyst calendar forward. These keep ageing until they are re-researched by hand.</span></div>` : '');
+
+  const resRows = resStale.slice(0, 15).map(({f,r}) =>
+    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Discrete and cumulative tables measured to ${esc(r.label)}. Re-read the factsheet, or rely on the NAV figures, which refresh every run.</span><span class="hs" style="color:var(--amber)">${r.days}d old</span></div>`).join('') +
+    (resStale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${resStale.length-15} more, stalest first.</span></div>` : '');
+
+  const resUnknownRows = resUnknown.map(({f}) =>
+    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">No period label on either table states the date it is measured to, so nothing here can age it. Date the periods when re-researching.</span><span class="hs" style="color:var(--ink-soft)">unknown</span></div>`).join('');
 
   const unverRows = unver.map(f =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">${esc((f.performance&&f.performance.notes)||'1yr not yet verified.')}</span><span class="hs" style="color:var(--amber)">NYV</span></div>`).join('');
@@ -2567,6 +2606,8 @@ function renderHealth(){
       ${gaps.length?`<div class="health-sec-h">Window gaps — trailing 1yr runs months past the 31-Mar discrete year-end; the gap is the market move in between, not an error</div>${gaps.map(({f,m})=>`<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing (${BASIS_LABEL[f.performance.perfBasis]||''}) vs discrete year-end.</span><span class="hs" style="color:var(--ink-soft)">Δ ${fmtPP(m)}</span></div>`).join('')}`:''}
       ${unver.length?`<div class="health-sec-h">Unverified 1yr figures</div>${unverRows}`:''}
       ${stale.length?`<div class="health-sec-h">Staleness hit list — figures older than ${STALE_DAYS} days</div>${staleRows}`:''}
+      ${resStale.length?`<div class="health-sec-h">Researched tables older than ${RESEARCH_STALE_DAYS} days — the discrete and cumulative tables, dated by the periods they state. The NAV figures beside them are current; these are not</div>${resRows}`:''}
+      ${resUnknown.length?`<div class="health-sec-h">Researched tables with no stated measurement date — their age cannot be checked either way</div>${resUnknownRows}`:''}
     </div>
   </div>`;
 }
@@ -2590,7 +2631,17 @@ function renderHealth(){
      1yr       0.4       recent, and the least predictive of the three
      cost      0.4       see the caveat below
      drawdown  0.5       shallower falls, because a fund only compounds
-                         over five years if it is actually held through one
+                         over five years if it is actually held through one.
+                         Computed peak-to-trough off each fund's own NAV
+                         series over a fixed five years, so the z-score
+                         below compares like with like. It used to be a
+                         hand-researched figure present on 50 of 103 funds
+                         and absent on the rest, which meant this weight
+                         was scoring half the desk at the list average on
+                         the strength of nobody having looked it up. 88
+                         funds now carry one; the 15 without the history
+                         still score 0 here, but they are the funds a
+                         five-year horizon has least to say about anyway
      badge     +/-0.5    the desk's own verdict
 
    COST CAVEAT: NAV total returns are already net of ongoing charges, so
@@ -3269,18 +3320,29 @@ function dossier(f){
     if(dd || srri || fe || rNotes){
       h += `<div class="sec"><div class="sec-h">Risk</div>`;
       if(dd){
-        // Every one of these is inferred from a peer/index proxy rather than
-        // measured off the fund's own NAV series, so the chip says so and the
-        // confidence rides with it. Claiming a computed drawdown here would be
-        // exactly the confident-but-wrong number this desk refuses elsewhere.
+        // These used to be inferred from a peer or index proxy for the 50
+        // funds that had one at all, and the chip said so. fund_nav.py now
+        // computes the worst fall peak-to-trough off the fund's OWN NAV
+        // series, over a fixed five years so the figures are comparable, on
+        // the same fetch that produces the return windows. A fund without the
+        // history to cover five years publishes nothing rather than a shorter
+        // fall wearing a five-year label - so this branch can now carry
+        // either kind, and must say which it is holding.
         const conf = verified(rk.maxDrawdownConfidence);
-        const chip = conf === 'low' ? 'warn' : 'isin';
+        const computed = conf === 'computed';
+        const chip = computed ? 'basis' : (conf === 'low' ? 'warn' : 'isin');
+        const chipText = computed
+          ? `NAV${verified(rk.maxDrawdownWindow) ? ' &middot; 5yr' : ''}`
+          : `inferred${conf?` &middot; ${esc(conf)} confidence`:''}`;
+        const chipTip = computed
+          ? "Measured peak to trough on the fund's own published NAV series over the last five years — not a researched or inferred figure. Funds without five years of history publish none."
+          : "Inferred from category and index behaviour over the period, not measured from this fund's own NAV series";
         const peer = drawdownPeer(f);
         h += `<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px">`+
              `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:20px;font-weight:700">${esc(dd)}</span>`+
              (verified(rk.maxDrawdownPeriod)?`<span style="font-size:13px;color:var(--ink-soft)">worst fall &middot; ${esc(rk.maxDrawdownPeriod)}</span>`:`<span style="font-size:13px;color:var(--ink-soft)">worst fall</span>`)+
              `</div>`+
-             `<div style="margin-bottom:8px"><span class="fchip ${chip}" style="margin-left:0" title="Inferred from category and index behaviour over the period, not measured from this fund's own NAV series">inferred${conf?` &middot; ${esc(conf)} confidence`:''}</span></div>`+
+             `<div style="margin-bottom:8px"><span class="fchip ${chip}" style="margin-left:0" title="${esc(chipTip)}">${chipText}</span></div>`+
              (peer?`<p class="prose soft" style="margin:0 0 8px">${esc(peer)}</p>`:'')+
              (verified(rk.maxDrawdownNote)?`<p class="prose soft" style="margin:0 0 14px">${esc(rk.maxDrawdownNote)}</p>`:'');
       }
