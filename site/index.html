@@ -2107,26 +2107,41 @@ function staleInfo(f){
   return { iso, days, stale: days > STALE_DAYS,
            label: then.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'}) };
 }
-/* Age of the RESEARCHED half of a card - the discrete and cumulative tables -
-   which is a different thing from the age of its NAV figures and ages very
-   much faster. 120 days to match RESEARCH_STALE_DAYS in run_update.py, where
-   the same check runs: at least one full quarterly factsheet was missed.
+/* Age of the RESEARCHED half of a card, which needs two clocks rather than
+   one. 120 days to match RESEARCH_STALE_DAYS in run_update.py.
 
-   perfAsAt is the date the tables state they are measured to, read from their
-   own period labels by scripts/perf_dates.py. It used to be the date the
-   factsheet was last fetched, which made every table on the desk look a day
-   old and this panel unable to say otherwise. A fund whose labels carry no
-   date at all has no perfAsAt and is reported as unknown, not as current. */
+   A CUMULATIVE table is trailing - "1 yr (trailing, to 26 Jun 26)" claims to
+   be the last twelve months and is less true every day - so days since
+   measured is the right question for it.
+
+   A DISCRETE table is completed annual periods on a fixed year-end. The year
+   to 31 Mar 2026 is history; it does not decay, and the next period on that
+   basis does not close until 31 Mar 2027. The first cut of this panel aged
+   both on the trailing clock and listed fourteen complete tables as stale
+   with nothing to re-research. What can actually go wrong is a period closing
+   and never being added, which is what discreteMissingYears counts.
+
+   perfAsAt is the date the cumulative table states it is measured to, read
+   from its own period labels by scripts/perf_dates.py. */
 const RESEARCH_STALE_DAYS = 120;
 function researchInfo(f){
   const p = f.performance || {};
-  if(!p.cumulative && !p.discrete) return null;
-  if(!p.perfAsAt) return { unknown:true };
-  const then = new Date(p.perfAsAt + 'T00:00:00');
-  if(isNaN(then)) return { unknown:true };
-  const days = Math.round((Date.now() - then.getTime()) / 86400000);
-  return { days, stale: days > RESEARCH_STALE_DAYS, unknown:false,
-           label: then.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'}) };
+  const hasCum = !!p.cumulative, hasDis = !!p.discrete;
+  if(!hasCum && !hasDis) return null;
+  const out = { behind: p.discreteMissingYears || 0, basis: p.discreteBasis || '' };
+  if(hasCum){
+    if(!p.perfAsAt){ out.unknown = true; }
+    else {
+      const then = new Date(p.perfAsAt + 'T00:00:00');
+      if(isNaN(then)) out.unknown = true;
+      else {
+        out.days = Math.round((Date.now() - then.getTime()) / 86400000);
+        out.stale = out.days > RESEARCH_STALE_DAYS;
+        out.label = then.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'});
+      }
+    }
+  }
+  return out;
 }
 const BASIS_LABEL = { NAV:"live NAV", HL:'HL rolling', FID:'Fidelity trailing', FE:'FE/Trustnet', DRV:'derived' };
 function basisChip(f){
@@ -2561,6 +2576,7 @@ function renderHealth(){
   const research = funds.map(f => ({f, r: researchInfo(f)})).filter(x => x.r);
   const resStale = research.filter(x => x.r.stale).sort((a,b) => b.r.days - a.r.days);
   const resUnknown = research.filter(x => x.r.unknown);
+  const resBehind = research.filter(x => x.r.behind).sort((a,b) => b.r.behind - a.r.behind);
 
   // last automated run stamp
   const al = DATA.auditLog || {};
@@ -2571,7 +2587,8 @@ function renderHealth(){
     incons.length ? `<span class="hchip bad">${incons.length} inconsistent ⚠</span>` : '',
     stale.length ? `<span class="hchip warn">${stale.length} stale (>${STALE_DAYS}d)</span>` : `<span class="hchip ok">0 stale</span>`,
     unver.length ? `<span class="hchip warn">${unver.length} unverified 1yr</span>` : '',
-    resStale.length ? `<span class="hchip warn">${resStale.length} research >${RESEARCH_STALE_DAYS}d</span>` : '',
+    resStale.length ? `<span class="hchip warn">${resStale.length} trailing >${RESEARCH_STALE_DAYS}d</span>` : '',
+    resBehind.length ? `<span class="hchip bad">${resBehind.length} missing a year ⚠</span>` : '',
     resUnknown.length ? `<span class="hchip neu">${resUnknown.length} undated</span>` : '',
     runDate ? `<span class="hchip neu">audit ${esc(runDate)}</span>` : '',
     provenanceChip(),
@@ -2586,11 +2603,14 @@ function renderHealth(){
     (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more, stalest first. The daily run does not refresh 1yr figures — it recomputes the rolling 1-month figure for tracker funds and rolls the catalyst calendar forward. These keep ageing until they are re-researched by hand.</span></div>` : '');
 
   const resRows = resStale.slice(0, 15).map(({f,r}) =>
-    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Discrete and cumulative tables measured to ${esc(r.label)}. Re-read the factsheet, or rely on the NAV figures, which refresh every run.</span><span class="hs" style="color:var(--amber)">${r.days}d old</span></div>`).join('') +
+    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing 1/3/5yr table measured to ${esc(r.label)}. The fund's own totals over those windows are computed from its NAV every run — it is the sector and benchmark comparators beside them that need re-reading.</span><span class="hs" style="color:var(--amber)">${r.days}d old</span></div>`).join('') +
     (resStale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${resStale.length-15} more, stalest first.</span></div>` : '');
 
+  const resBehindRows = resBehind.map(({f,r}) =>
+    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">A discrete year closed on the ${esc(r.basis||'table')} basis and was never added.</span><span class="hs" style="color:var(--oxblood)">${r.behind} missing</span></div>`).join('');
+
   const resUnknownRows = resUnknown.map(({f}) =>
-    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">No period label on either table states the date it is measured to, so nothing here can age it. Date the periods when re-researching.</span><span class="hs" style="color:var(--ink-soft)">unknown</span></div>`).join('');
+    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">The trailing table states no date it is measured to, so nothing here can age it. Date the periods when re-researching.</span><span class="hs" style="color:var(--ink-soft)">unknown</span></div>`).join('');
 
   const unverRows = unver.map(f =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">${esc((f.performance&&f.performance.notes)||'1yr not yet verified.')}</span><span class="hs" style="color:var(--amber)">NYV</span></div>`).join('');
@@ -2606,8 +2626,9 @@ function renderHealth(){
       ${gaps.length?`<div class="health-sec-h">Window gaps — trailing 1yr runs months past the 31-Mar discrete year-end; the gap is the market move in between, not an error</div>${gaps.map(({f,m})=>`<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing (${BASIS_LABEL[f.performance.perfBasis]||''}) vs discrete year-end.</span><span class="hs" style="color:var(--ink-soft)">Δ ${fmtPP(m)}</span></div>`).join('')}`:''}
       ${unver.length?`<div class="health-sec-h">Unverified 1yr figures</div>${unverRows}`:''}
       ${stale.length?`<div class="health-sec-h">Staleness hit list — figures older than ${STALE_DAYS} days</div>${staleRows}`:''}
-      ${resStale.length?`<div class="health-sec-h">Researched tables older than ${RESEARCH_STALE_DAYS} days — the discrete and cumulative tables, dated by the periods they state. The NAV figures beside them are current; these are not</div>${resRows}`:''}
-      ${resUnknown.length?`<div class="health-sec-h">Researched tables with no stated measurement date — their age cannot be checked either way</div>${resUnknownRows}`:''}
+      ${resBehind.length?`<div class="health-sec-h" style="color:var(--oxblood)">Discrete tables missing a year that has closed — the only way an annual table goes out of date</div>${resBehindRows}`:''}
+      ${resStale.length?`<div class="health-sec-h">Trailing tables older than ${RESEARCH_STALE_DAYS} days — a "last 12 months" figure struck months ago. Discrete annual tables are not listed here: a completed year is history and does not age on the calendar</div>${resRows}`:''}
+      ${resUnknown.length?`<div class="health-sec-h">Trailing tables with no stated measurement date — their age cannot be checked either way</div>${resUnknownRows}`:''}
     </div>
   </div>`;
 }
@@ -2680,8 +2701,25 @@ function buildRecScales(funds){
     nav3yr:   scale(col(f => recNum((f.performance||{}).nav3yr))),
     nav1yr:   scale(col(f => recNum((f.performance||{}).nav1yr))),
     cost:     scale(col(f => recNum((f.charges||{}).ocf))),
-    drawdown: scale(col(f => recNum((f.risk||{}).maxDrawdown))),
+    drawdown: scale(col(rankedDrawdown)),
   };
+}
+
+/* The drawdown that may be SCORED, as opposed to the one that may be shown.
+   fund_nav.py publishes the worst fall over the longest window each fund's
+   history covers - five years where it can, three or one where it cannot -
+   and records which. Every one of those is a real figure worth printing on
+   its card, but they are not interchangeable: a one-year worst fall is
+   shallower than a five-year one for reasons that have nothing to do with
+   the fund being safer. Feeding both into one z-score would rank a young
+   fund above an old one for having less history to have fallen in.
+   So the score reads only the five-year cohort, and a fund outside it scores
+   the list average here - the same treatment as any other missing input. */
+const RANKED_DRAWDOWN_YEARS = 5;
+function rankedDrawdown(f){
+  const rk = f.risk || {};
+  if(rk.maxDrawdownYears !== RANKED_DRAWDOWN_YEARS) return null;
+  return recNum(rk.maxDrawdown);
 }
 
 /* parsePerf, but the "not yet verified" sentinel reads as absent rather than
@@ -2700,7 +2738,7 @@ function scoreForRec(f){
        // Cost is a drag, so a high charge scores negative.
        - W.cost     * REC_Z.cost(recNum((f.charges||{}).ocf))
        // Drawdowns are negative; the shallower fall is the larger number.
-       + W.drawdown * REC_Z.drawdown(recNum((f.risk||{}).maxDrawdown))
+       + W.drawdown * REC_Z.drawdown(rankedDrawdown(f))
        + (REC_BADGE[(f.badge||{}).type] || 0);
 }
 
@@ -3213,20 +3251,29 @@ function verified(v){
    drawdown is unverified drop out of both the fund's own line and the peer
    count, so the denominator never implies more evidence than exists. */
 function drawdownPeer(f){
-  const dd = parsePerf(verified((f.risk||{}).maxDrawdown));
+  const rk = f.risk || {};
+  const dd = parsePerf(verified(rk.maxDrawdown));
   if(dd === null || !DATA || !DATA.funds) return '';
+  // Same window, or there is no comparison. Falls measured over different
+  // spans do not rank against each other: a fund with one year of history has
+  // had one year in which to fall, and would take the "shallowest in its
+  // category" line off a fund that genuinely held up through five.
+  const yrs = rk.maxDrawdownYears;
+  if(!yrs) return '';
   const peers = DATA.funds
-    .filter(o => o !== f && o.group === f.group)
+    .filter(o => o !== f && o.group === f.group
+                 && (o.risk||{}).maxDrawdownYears === yrs)
     .map(o => parsePerf(verified((o.risk||{}).maxDrawdown)))
     .filter(v => v !== null);
   if(peers.length < 3) return '';   // too few to be a comparison worth drawing
   const cat = (DATA.categories||[]).find(c => c.key === f.group);
   const label = cat ? cat.label : (f.group || '');
+  const over = `${label} funds measured over the same ${yrs} years`;
   // Drawdowns are negative, so a larger number is the shallower fall.
   const shallower = peers.filter(v => dd > v).length;
-  if(shallower === peers.length) return `The shallowest fall of the ${peers.length+1} ${label} funds with a figure on file.`;
-  if(shallower === 0)            return `The deepest fall of the ${peers.length+1} ${label} funds with a figure on file.`;
-  return `Shallower than ${shallower} of the ${peers.length} other ${label} funds with a figure on file.`;
+  if(shallower === peers.length) return `The shallowest fall of the ${peers.length+1} ${over}.`;
+  if(shallower === 0)            return `The deepest fall of the ${peers.length+1} ${over}.`;
+  return `Shallower than ${shallower} of the ${peers.length} other ${over}.`;
 }
 
 /* ---------- render: one fund dossier ---------- */
@@ -3331,11 +3378,15 @@ function dossier(f){
         const conf = verified(rk.maxDrawdownConfidence);
         const computed = conf === 'computed';
         const chip = computed ? 'basis' : (conf === 'low' ? 'warn' : 'isin');
+        const yrs = rk.maxDrawdownYears;
         const chipText = computed
-          ? `NAV${verified(rk.maxDrawdownWindow) ? ' &middot; 5yr' : ''}`
+          ? `NAV${yrs ? ` &middot; ${yrs}yr` : ''}`
           : `inferred${conf?` &middot; ${esc(conf)} confidence`:''}`;
         const chipTip = computed
-          ? "Measured peak to trough on the fund's own published NAV series over the last five years — not a researched or inferred figure. Funds without five years of history publish none."
+          ? `Measured peak to trough on the fund's own published NAV series over the last ${yrs || 5} years — not a researched or inferred figure.`
+            + (yrs && yrs !== RANKED_DRAWDOWN_YEARS
+                ? ` This fund has under ${RANKED_DRAWDOWN_YEARS} years of history, so its worst fall is measured over the longest window it does cover. A shorter window has had less time to contain a crash, so it is not comparable with the ${RANKED_DRAWDOWN_YEARS}-year figures and the watchlist does not score it.`
+                : '')
           : "Inferred from category and index behaviour over the period, not measured from this fund's own NAV series";
         const peer = drawdownPeer(f);
         h += `<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px">`+

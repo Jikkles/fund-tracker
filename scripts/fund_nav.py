@@ -481,8 +481,15 @@ def max_drawdown(series: dict, days: int) -> tuple[float, date, date] | None:
 
 
 def drawdown_period(peak: date, trough: date) -> str:
-    """"Jan-Sep 2022", or "Nov 2021 - Oct 2022" across a year boundary."""
+    """"Jan-Sep 2022", or "Nov 2021 - Oct 2022" across a year boundary.
+
+    A fall that peaks and troughs inside one month is named once. On the
+    shorter windows several do, and "Mar-Mar 2026" reads as a fault rather
+    than as a fortnight.
+    """
     if peak.year == trough.year:
+        if peak.month == trough.month:
+            return f"{trough:%b %Y}"
         return f"{peak:%b}–{trough:%b} {trough.year}"
     return f"{peak:%b %Y}–{trough:%b %Y}"
 
@@ -559,35 +566,46 @@ def reject_collisions(picks: dict[int, tuple[dict, str]],
     return refusals
 
 
-# The window every published drawdown is measured over. Fixed, because the
-# figure is z-scored against the rest of the desk in the watchlist and a
-# three-year worst fall is not comparable to a five-year one. Five years also
-# reaches back over the 2022 drawdown that dominates most of these funds'
-# recent history, and 88 of 103 funds have the history to cover it.
-DRAWDOWN_DAYS = 365 * 5
+# The window a published drawdown is measured over, longest first. Five years
+# is the one that counts: it is what the watchlist z-scores, it reaches back
+# over the 2022 drawdown that dominates most of these funds, and 88 of 103
+# funds have the history to cover it.
+#
+# The shorter rungs exist because refusing outright was the wrong trade for
+# the other 15. A fund with four years of history HAS a worst fall, it is a
+# real and useful number, and printing nothing on its card taught the reader
+# nothing. What is not allowed is letting a three-year fall pass as a
+# five-year one - so the window is published beside the figure, and only the
+# five-year cohort is scored. See RANKED_DRAWDOWN_YEARS in the page.
+DRAWDOWN_LADDER = [(5, 365 * 5), (3, 365 * 3), (1, 365)]
 
 
-def apply_drawdown(fund: dict, series: dict) -> bool:
-    """Write the computed worst fall onto the fund. True if one was published.
+def apply_drawdown(fund: dict, series: dict) -> int | None:
+    """Write the computed worst fall onto the fund. Returns the window in years.
 
-    Where the series cannot cover the window the field is REMOVED rather than
-    left holding an inferred figure the run can no longer stand behind. A gap
-    is the honest answer for a fund with three years of history; a five-year
-    label on a three-year number is not.
+    Takes the longest window the series genuinely covers, and records it. A
+    figure without its window would be the same fault as a researched figure
+    without its date: readable, plausible, and not comparable to the one
+    beside it.
+
+    Where not even a year is covered the fields are REMOVED rather than left
+    holding an inferred figure the run can no longer stand behind.
     """
-    got = max_drawdown(series, DRAWDOWN_DAYS)
     risk = fund.get("risk")
-    if not got:
+    for years, days in DRAWDOWN_LADDER:
+        got = max_drawdown(series, days)
+        if got:
+            break
+    else:
         if risk:
             for key in ("maxDrawdown", "maxDrawdownPeriod", "maxDrawdownNote",
                         "maxDrawdownSource", "maxDrawdownConfidence",
-                        "maxDrawdownWindow"):
+                        "maxDrawdownWindow", "maxDrawdownYears"):
                 risk.pop(key, None)
-        return False
+        return None
 
     pct, peak, trough = got
     risk = fund.setdefault("risk", {})
-    period = drawdown_period(peak, trough)
     # The prose note was written about the researched figure. Keep it only
     # where the computed fall lands in the same episode - it reads as a
     # caption to the period printed above it, and a 2022 caption under a 2020
@@ -596,22 +614,23 @@ def apply_drawdown(fund: dict, series: dict) -> bool:
     if str(trough.year) not in old_period and str(peak.year) not in old_period:
         risk.pop("maxDrawdownNote", None)
     # A drawdown is always a fall, so the minus is written rather than
-    # formatted - and as the desk's U+2212, matching the researched
-    # figures it replaces.
+    # formatted - and as the desk's U+2212, matching the researched figures
+    # it replaces.
     #
     # Precision follows the number rather than being fixed at one decimal.
     # The Royal London short-term money market fund's worst five-year fall
-    # rounds to nothing at 1dp and printed as "−0.0%", which reads as a
+    # rounds to nothing at 1dp and printed as "-0.0%", which reads as a
     # formatting fault rather than as the real and rather useful answer for a
     # cash fund. A number this desk publishes should never render as a signed
     # zero; give it the digits it needs to be a figure.
     digits = 1 if abs(pct) >= 0.05 else 2 if abs(pct) >= 0.005 else 3
     risk["maxDrawdown"] = f"−{abs(pct):.{digits}f}%"
-    risk["maxDrawdownPeriod"] = period
-    risk["maxDrawdownWindow"] = "worst fall in the last 5 years"
+    risk["maxDrawdownPeriod"] = drawdown_period(peak, trough)
+    risk["maxDrawdownYears"] = years
+    risk["maxDrawdownWindow"] = f"worst fall in the last {years} years"
     risk["maxDrawdownSource"] = "computed from the fund's own NAV series"
     risk["maxDrawdownConfidence"] = "computed"
-    return True
+    return years
 
 
 def main(argv: list[str]) -> int:
@@ -621,7 +640,9 @@ def main(argv: list[str]) -> int:
     doc = json.loads(FUNDS.read_text(encoding="utf-8"))
     funds = doc["funds"]
 
-    resolved = refused = priced = partial = drawn = 0
+    resolved = refused = priced = partial = 0
+    # Worst falls by the window each fund's history could support.
+    drawn: dict[int, int] = {years: 0 for years, _ in DRAWDOWN_LADDER}
     refusals: list[tuple[str, str]] = []
     today = date.today()
 
@@ -728,8 +749,8 @@ def main(argv: list[str]) -> int:
                 perf[key] = fmt(value)
         perf["navAsAt"] = date.fromtimestamp(series["t"][-1]).isoformat()
         perf["navPoints"] = len(series["c"])
-        if apply_drawdown(fund, series):
-            drawn += 1
+        if (window := apply_drawdown(fund, series)):
+            drawn[window] += 1
         print(f"  [nav] {fund['name'][:38]:40} {symbol:14} "
               f"1w {fmt(vals['nav1w']) or '  n/a':>8}  "
               f"1m {fmt(vals['nav1m']) or '  n/a':>8}  "
@@ -740,9 +761,13 @@ def main(argv: list[str]) -> int:
           f"of {len(funds)} funds"
           + (f" (+{partial} priced over short windows only - history too "
              f"short for a 1-year figure)" if partial else ""))
-    print(f"{drawn} worst-fall figures computed over 5 years; "
-          f"{len(funds) - drawn} funds have too little history for one "
-          f"and publish none")
+    total_drawn = sum(drawn.values())
+    by_window = ", ".join(f"{drawn[y]} over {y}yr"
+                          for y, _ in DRAWDOWN_LADDER if drawn[y])
+    print(f"{total_drawn} worst-fall figures computed ({by_window}); "
+          f"{len(funds) - total_drawn} funds lack even a year of history "
+          f"and publish none. Only the {drawn[DRAWDOWN_LADDER[0][0]]} "
+          f"five-year figures are comparable enough to be scored.")
     if refusals:
         print("\nNeeds a hand-checked symbol in `navSymbol` "
               "(left unverified for now):")
@@ -968,19 +993,37 @@ def _selftest_offline() -> bool:
 
     # The period reads as the episode it was.
     assert drawdown_period(date(2022, 1, 5), date(2022, 9, 30)) == "Jan–Sep 2022"
+    assert drawdown_period(date(2026, 3, 2), date(2026, 3, 27)) == "Mar 2026"
     assert (drawdown_period(date(2021, 11, 8), date(2022, 10, 3))
             == "Nov 2021–Oct 2022")
 
-    # apply_drawdown clears an inferred figure it can no longer stand behind,
-    # rather than leaving it in place beside computed ones.
+    # The ladder takes the longest window the history actually covers, and
+    # says which one it took. 1200 days is not five years but is comfortably
+    # three, and that fall is real - refusing it taught the reader nothing.
     _f = {"risk": {"maxDrawdown": "−16.2%", "maxDrawdownPeriod": "Jan–Sep 2022",
                    "maxDrawdownNote": "held up better than growth peers",
                    "maxDrawdownConfidence": "medium", "srri": "6"}}
-    _short = {"t": [_now - (900 - i) * _day for i in range(900)],
-              "c": [100.0] * 899 + [50.0], "currency": "GBP"}
-    assert apply_drawdown(_f, _short) is False
-    assert "maxDrawdown" not in _f["risk"]
-    assert _f["risk"]["srri"] == "6", "only the drawdown fields are cleared"
+    _short = {"t": [_now - (1200 - i) * _day for i in range(1200)],
+              "c": [100.0] * 1199 + [50.0], "currency": "GBP"}
+    assert apply_drawdown(_f, _short) == 3
+    assert _f["risk"]["maxDrawdownYears"] == 3
+    assert _f["risk"]["maxDrawdown"] == "−50.0%"
+    assert "3 years" in _f["risk"]["maxDrawdownWindow"]
+    assert _f["risk"]["srri"] == "6", "the other risk fields are untouched"
+
+    # 900 days is 2.5 years, not 3, and drops to the one-year rung rather
+    # than rounding itself up into a window it does not cover.
+    _mid = {"t": [_now - (900 - i) * _day for i in range(900)],
+            "c": [100.0] * 899 + [50.0], "currency": "GBP"}
+    assert apply_drawdown({}, _mid) == 1
+
+    # Under a year of history clears the fields outright rather than leaving
+    # an inferred figure standing beside computed ones.
+    _n = {"risk": {"maxDrawdown": "−16.2%", "srri": "6"}}
+    _tiny = {"t": [_now - (40 - i) * _day for i in range(40)],
+             "c": [100.0] * 39 + [50.0], "currency": "GBP"}
+    assert apply_drawdown(_n, _tiny) is None
+    assert "maxDrawdown" not in _n["risk"] and _n["risk"]["srri"] == "6"
 
     # A note written about the researched episode survives only if the
     # computed trough lands in it.
@@ -989,7 +1032,7 @@ def _selftest_offline() -> bool:
     _t = date.fromtimestamp(_now).year
     _long = {"t": [_now - (six - i) * _day for i in range(six)],
              "c": [100.0] * (six - 1) + [70.0], "currency": "GBP"}
-    assert apply_drawdown(_g, _long) is True
+    assert apply_drawdown(_g, _long) == 5
     assert _g["risk"]["maxDrawdownConfidence"] == "computed"
     assert str(_t) not in "Jan–Sep 2022"
     assert "maxDrawdownNote" not in _g["risk"], "a 2022 caption under a later trough"
@@ -1001,7 +1044,7 @@ def _selftest_offline() -> bool:
     _flat[-3] = 99.98
     assert apply_drawdown(_cash, {"t": [_now - (six - i) * _day
                                         for i in range(six)],
-                                  "c": _flat, "currency": "GBP"}) is True
+                                  "c": _flat, "currency": "GBP"}) == 5
     assert _cash["risk"]["maxDrawdown"] == "−0.02%", _cash["risk"]["maxDrawdown"]
     print("  worst fall       OK  (peak to trough, deepest wins, short "
           "history and holes refused)", file=_sys.stderr)
