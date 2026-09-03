@@ -3053,7 +3053,11 @@ function renderCatalystCalendar(){
             '</button>'; }).join('') + '</div>'
         : '<p class="intel-note">No fund on the desk names this in a published top&#8209;10 holding or country breakdown.</p>';
       const detail = c.detail ? '<p class="cat-detail">' + esc(String(c.detail).replace(/<[^>]*>/g,'')) + '</p>' : '';
-      body = '<div class="cat-body">' + list + detail + '</div>';
+      // The detail paragraph is the actual thesis - what the catalyst is and
+      // why it matters. It read as a footnote sitting under a grid of a
+      // dozen-plus fund cards; opening on it instead means the reason for
+      // the row is the first thing seen, and the funds it reaches follow.
+      body = '<div class="cat-body">' + detail + list + '</div>';
     }
     return '<div class="cat-row' + (open?' open':'') + '" id="cat-' + id + '">' +
       '<button type="button" class="cat-head" onclick="toggleCatalyst(\'' + id + '\')" aria-expanded="' + open + '">' +
