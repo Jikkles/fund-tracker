@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-03T09:29:20+00:00",
+  "generated": "2026-09-03T10:26:58+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,34 +10,34 @@
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": 4.04
+          "pct": 3.45
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": 3.31
+          "pct": 3.18
         },
         {
-          "name": "Metlen Energy & Metals Plc",
-          "symbol": "MTLN",
-          "pct": 2.4
+          "name": "London Stock Exchange Group plc",
+          "symbol": "LSEG",
+          "pct": 2.71
         }
       ],
       "bottom": [
         {
           "name": "Admiral Group",
           "symbol": "ADM",
-          "pct": -2.44
+          "pct": -1.98
         },
         {
           "name": "Aviva Plc",
           "symbol": "AV.",
-          "pct": -1.67
+          "pct": -1.89
         },
         {
-          "name": "Bunzl plc",
-          "symbol": "BNZL",
-          "pct": -1.18
+          "name": "Burberry Group plc",
+          "symbol": "BRBY",
+          "pct": -1.86
         }
       ]
     },
@@ -50,17 +50,17 @@
         {
           "name": "Hilton Food Group Plc",
           "symbol": "HFG",
-          "pct": 14.5
+          "pct": 16.72
+        },
+        {
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": 8.28
         },
         {
           "name": "Rosebank Industries plc",
           "symbol": "ROSE",
-          "pct": 4.68
-        },
-        {
-          "name": "WPP plc",
-          "symbol": "WPP",
-          "pct": 4.46
+          "pct": 6.14
         }
       ],
       "bottom": [
@@ -72,12 +72,12 @@
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -4.55
+          "pct": -4.48
         },
         {
-          "name": "Hammerson Plc",
-          "symbol": "HMSO",
-          "pct": -3.54
+          "name": "Chesnara plc",
+          "symbol": "CSN",
+          "pct": -3.93
         }
       ]
     },
@@ -250,34 +250,34 @@
         {
           "name": "Wolters Kluwer N.V.",
           "symbol": "WKL.AS",
-          "pct": 2.02940772561466
-        },
-        {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 1.8904280366116744
+          "pct": 1.7941194422104778
         },
         {
           "name": "Deutsche Telekom AG",
           "symbol": "DTE.DE",
-          "pct": 1.7574691971584326
+          "pct": 1.7223190087097113
+        },
+        {
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 1.6754812859499049
         }
       ],
       "bottom": [
         {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": -2.6779230180115277
-        },
-        {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -2.610966057441253
+          "pct": -2.9699738903394257
+        },
+        {
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": -2.5128415077564017
         },
         {
           "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
           "symbol": "MC.PA",
-          "pct": -2.095674762421697
+          "pct": -2.243737153420416
         }
       ]
     },
