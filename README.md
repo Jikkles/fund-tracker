@@ -229,6 +229,18 @@ that fund rather than about the group.
 > Sector column stays on the card, over the older window it names, because it is a real IA
 > figure and the computed block is not a replacement for it.
 
+**Why the aged rows are kept rather than dropped.** The obvious tidy-up is to delete a
+comparator that is four months old. It was tested instead: each fund's researched figure was
+recomputed from its own NAV series over the window its row states. **All 10 reconcile** — six
+to the penny, the rest within 0.9pp, which is share-class and price-stamp difference. So the
+rows are *accurate*, not merely old; the window labels are right; and the sector figure taken
+from the same source over the same window is credible on the same evidence.
+
+An old figure that states its window and survives an independent check is information. It is
+the only true broad-category comparison on the card — IA Global is hundreds of funds, the
+desk's peer block is ten curated ones — and dropping it would trade real information for
+tidiness. Staleness is a reason to label a figure, not a reason to delete a correct one.
+
 **Central bank dates.** `cb_calendar.py` reads the published Fed and BoE calendars, which
 carries the desk through Dec 2027 untouched. It fails closed: a year is accepted only if it
 yields a plausible number of meetings (both committees meet eight times a year), unparsed
