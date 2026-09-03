@@ -73,7 +73,7 @@ def _stooq_symbol(ticker: str) -> str:
     if t.endswith(".L"):
         return t[:-2].lower() + ".uk"
     return {
-        "^FTSE": "^ukx", "^FTMC": "^mcx", "^GSPC": "^spx", "^IXIC": "^ndq",
+        "^FTSE": "^ukx", "^FTMC": "^mcx", "^GSPC": "^spx", "^NDX": "^ndx",
         "^STOXX50E": "^stx50", "^N225": "^nkx", "^HSI": "^hsi",
         "GC=F": "gc.f", "BZ=F": "cb.f", "^TNX": "10usy.b",
         "GBPUSD=X": "gbpusd",

@@ -46,11 +46,18 @@ OUT = Path(__file__).resolve().parent.parent / "data" / "market.json"
 
 # Tab order on the page. Equities first, then the commodity / rate / FX lines,
 # which behave differently on a price chart and are better read last.
+#
+# The Nasdaq line here is the 100, not the Composite. The desk charts an index
+# beside a ranking of its own constituents, and the Composite is the one index
+# that cannot be ranked - ~3,000 names is not a load to put on a free price
+# endpoint - so its tab only ever answered "this index is not broken down".
+# The 100 is the same market read through the names that drive it, and all of
+# it prices. See scripts/index_movers.py.
 INDICES: list[tuple[str, str]] = [
     ("FTSE 100",         "^FTSE"),
     ("FTSE 250",         "^FTMC"),
     ("S&P 500",          "^GSPC"),
-    ("Nasdaq Composite", "^IXIC"),
+    ("Nasdaq 100",       "^NDX"),
     ("Dow Jones",        "^DJI"),
     ("Euro STOXX 50",    "^STOXX50E"),
     ("Nikkei 225",       "^N225"),

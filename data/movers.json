@@ -1,16 +1,16 @@
 {
-  "generated": "2026-09-03T07:56:50+00:00",
+  "generated": "2026-09-03T08:06:59+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
       "asAt": "2026-09-03",
       "source": "HL market summary (delayed)",
-      "universe": "all 100 FTSE 100 constituents",
+      "universe": "all 100 constituents",
       "top": [
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": 3.16
+          "pct": 3.04
         },
         {
           "name": "Vodafone Group plc",
@@ -20,14 +20,14 @@
         {
           "name": "Metlen Energy & Metals Plc",
           "symbol": "MTLN",
-          "pct": 1.5
+          "pct": 1.46
         }
       ],
       "bottom": [
         {
           "name": "Burberry Group plc",
           "symbol": "BRBY",
-          "pct": -2.32
+          "pct": -2.6
         },
         {
           "name": "Admiral Group",
@@ -35,9 +35,9 @@
           "pct": -2.19
         },
         {
-          "name": "Barratt Redrow Plc",
-          "symbol": "BTRW",
-          "pct": -1.94
+          "name": "M&G plc",
+          "symbol": "MNG",
+          "pct": -1.75
         }
       ]
     },
@@ -45,12 +45,12 @@
       "label": "FTSE 250",
       "asAt": "2026-09-03",
       "source": "HL market summary (delayed)",
-      "universe": "all 250 FTSE 250 constituents",
+      "universe": "all 250 constituents",
       "top": [
         {
           "name": "Hilton Food Group Plc",
           "symbol": "HFG",
-          "pct": 10.06
+          "pct": 11.09
         },
         {
           "name": "Avon Technologies Plc",
@@ -60,24 +60,24 @@
         {
           "name": "Raspberry Pi Holdings plc",
           "symbol": "RPI",
-          "pct": 4.38
+          "pct": 4.11
         }
       ],
       "bottom": [
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": -5.03
-        },
-        {
-          "name": "Vistry Group Plc",
-          "symbol": "VTY",
-          "pct": -3.95
-        },
-        {
           "name": "Baltic Classifieds Group plc",
           "symbol": "BCG",
-          "pct": -3.7
+          "pct": -7.41
+        },
+        {
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": -5.17
+        },
+        {
+          "name": "Hammerson Plc",
+          "symbol": "HMSO",
+          "pct": -3.49
         }
       ]
     },
@@ -85,7 +85,7 @@
       "label": "S&P 500",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "all 503 S&P 500 constituents",
+      "universe": "all 503 constituents",
       "top": [
         {
           "name": "Dell Technologies Inc.",
@@ -121,11 +121,51 @@
         }
       ]
     },
+    "nasdaq-100": {
+      "label": "Nasdaq 100",
+      "asAt": "2026-09-03",
+      "source": "Yahoo Finance daily closes",
+      "universe": "all 102 constituents",
+      "top": [
+        {
+          "name": "Alnylam Pharmaceuticals, Inc.",
+          "symbol": "ALNY",
+          "pct": 8.650600639280702
+        },
+        {
+          "name": "PayPal Holdings, Inc.",
+          "symbol": "PYPL",
+          "pct": 4.3320545361917935
+        },
+        {
+          "name": "Constellation Energy Corporation",
+          "symbol": "CEG",
+          "pct": 3.4711608829771556
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Palo Alto Networks, Inc.",
+          "symbol": "PANW",
+          "pct": -9.282218700181586
+        },
+        {
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": -6.526983939142626
+        },
+        {
+          "name": "Palantir Technologies Inc.",
+          "symbol": "PLTR",
+          "pct": -5.813690285421283
+        }
+      ]
+    },
     "dow-jones": {
       "label": "Dow Jones",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "all 30 Dow Jones constituents",
+      "universe": "all 30 constituents",
       "top": [
         {
           "name": "NVIDIA Corporation",
@@ -165,22 +205,22 @@
       "label": "Hang Seng",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "all 85 Hang Seng constituents",
+      "universe": "all 85 constituents",
       "top": [
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 6.083644123571529
+          "pct": 5.988584917804519
         },
         {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": 4.852777438624247
+          "pct": 4.580153465644117
         },
         {
           "name": "China Resources Mixc Lifestyle Services Limited",
           "symbol": "1209.HK",
-          "pct": 3.7397516655589325
+          "pct": 3.5860596269218346
         }
       ],
       "bottom": [
@@ -192,12 +232,12 @@
         {
           "name": "Chow Tai Fook Jewellery Group Limited",
           "symbol": "1929.HK",
-          "pct": -4.614160205149993
+          "pct": -4.852821571096915
         },
         {
           "name": "Wharf Real Estate Investment Company Limited",
           "symbol": "1997.HK",
-          "pct": -3.3417386156629285
+          "pct": -3.4047917625627506
         }
       ]
     },
@@ -205,39 +245,39 @@
       "label": "Euro STOXX 50",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "all 50 Euro STOXX 50 constituents",
+      "universe": "all 50 constituents",
       "top": [
         {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": 3.4962269203234766
+          "pct": 3.3174378013375962
         },
         {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": 2.3245289214829077
+          "pct": 2.2116875779684166
         },
         {
           "name": "ING Groep N.V.",
           "symbol": "INGA.AS",
-          "pct": 2.224767849809387
+          "pct": 2.1266141245638104
         }
       ],
       "bottom": [
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": -4.468908140702644
-        },
-        {
-          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
-          "symbol": "MC.PA",
-          "pct": -3.539325842696629
+          "pct": -4.404137345709819
         },
         {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -3.500810372771475
+          "pct": -3.889789303079417
+        },
+        {
+          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+          "symbol": "MC.PA",
+          "pct": -3.8426980007900284
         }
       ]
     },
@@ -245,7 +285,7 @@
       "label": "Nikkei 225",
       "asAt": "2026-09-03",
       "source": "Yahoo Finance daily closes",
-      "universe": "223 of 225 Nikkei 225 constituents",
+      "universe": "223 of 225 constituents",
       "top": [
         {
           "name": "Nitori Holdings Co., Ltd.",
@@ -283,7 +323,6 @@
     }
   },
   "unsupported": {
-    "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. Pricing every one on each run is not a reasonable load to put on a free data source, and ranking the Nasdaq-100 in its place would be a different index under this one's name.",
     "gold-usd-oz": "Not an index - a single commodity price, so it has no constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
     "us-10yr-yield": "Not an index - a single government bond yield.",

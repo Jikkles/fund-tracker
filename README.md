@@ -28,7 +28,8 @@ only, free public endpoints, inside GitHub's free Actions allowance.
 
 | Panel | What it shows |
 |---|---|
-| **Index chart** | 12 indices (FTSE 100/250, S&P 500, Nasdaq, Dow, Euro STOXX 50, Nikkei, Hang Seng, gold, Brent, US 10yr, GBP/USD) across 1D · 5D · 1M · 6M · YTD · 1Y · 5Y, inline SVG with a crosshair readout |
+| **Index chart** | 12 indices (FTSE 100/250, S&P 500, Nasdaq 100, Dow, Euro STOXX 50, Nikkei, Hang Seng, gold, Brent, US 10yr, GBP/USD) across 1D · 5D · 1M · 6M · YTD · 1Y · 5Y, inline SVG with a crosshair readout |
+| **Index movers** | Beside the chart: the best and worst three CONSTITUENTS of whichever index is shown. Every equity index on the desk is ranked off its full list — all 100 of the FTSE 100, all 250 of the FTSE 250, 503 of the S&P 500, 102 of the Nasdaq 100, 30 of the Dow, 85 of the Hang Seng, 50 of the Euro STOXX 50, 223 of the Nikkei's 225. An index is ranked only where the whole list can be priced, and the count says how many |
 | **Top 5 / Bottom 5** | Ranked over 1W · 1M · 1Y · 5Y from each fund's own NAV series. Only priced funds appear, and the header says how many |
 | **Watchlist** | Top 8 to hold over six months to five years, scored on 1yr vs sector, OCF, max drawdown and badge signal. Capped at two per group, and a fund with no three-year record sits out rather than being ranked on one year and a run of blanks |
 | **Fund cards** | Holdings, sector and country splits, size, charges, managers, discrete annual returns — scraped from HL factsheets |

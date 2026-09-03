@@ -26,13 +26,19 @@ where its full constituent list can be obtained and priced:
                carries its Tokyo code as "(TYO: 7203)", which is 7203.T. The
                list runs to 223 of the 225, so the panel says 223 of 225.
 
+  Nasdaq 100   same. The desk charted the Nasdaq COMPOSITE until the panel
+               went in beside it, and the Composite is the one index that
+               cannot be ranked: ~3,000 names is not a load to put on a free
+               price endpoint, and ranking the 100 while the tab said
+               Composite would have been a different index under this one's
+               name. Charting the 100 instead settles it honestly - the same
+               market read through the names that drive it, all of which price.
+
+Which is every equity index the desk charts, so the only entries below are
+the lines that are not indices at all.
+
 Deliberately absent, with the reason recorded in the output so the page can
 say it rather than showing an empty panel:
-
-  Nasdaq Composite   ~3,000 constituents. Pricing them per symbol every run
-                     is not a reasonable thing to do to a free endpoint, and
-                     ranking the Nasdaq-100 instead would be a different index
-                     under this one's name.
 
   Gold, Brent,       not indices. They have no constituents, and saying so is
   10yr, GBP/USD      the correct output rather than an empty list.
@@ -77,11 +83,6 @@ PRICED_FLOOR = 0.9          # of the constituent list, below which it is a guess
 # Indices the desk charts but deliberately does not rank, and why. The page
 # prints these, so an absent panel explains itself instead of looking broken.
 UNSUPPORTED = {
-    "nasdaq-composite": "The Nasdaq Composite has around 3,000 constituents. "
-                        "Pricing every one on each run is not a reasonable "
-                        "load to put on a free data source, and ranking the "
-                        "Nasdaq-100 in its place would be a different index "
-                        "under this one's name.",
     "gold-usd-oz": "Not an index - a single commodity price, so it has no "
                    "constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
@@ -172,8 +173,11 @@ def hl_index(slug: str, label: str, expect: int) -> dict | None:
     if len(seen) < expect * PRICED_FLOOR:   # a partial scrape is not a ranking
         print(f"  [fail] {label:12} HL returned {len(seen)} of {expect} constituents")
         return None
-    universe = (f"all {len(seen)} {label} constituents" if len(seen) >= expect
-                else f"{len(seen)} of {expect} {label} constituents")
+    # No index name in the chip: the heading beside it already reads "Top 3 -
+    # Euro STOXX 50", and repeating it there ran "ALL 50 EURO STOXX 50
+    # CONSTITUENTS" wide enough to break the header onto a second line.
+    universe = (f"all {len(seen)} constituents" if len(seen) >= expect
+                else f"{len(seen)} of {expect} constituents")
     return {"movers": list(seen.values()),
             "source": "HL market summary (delayed)", "universe": universe}
 
@@ -213,6 +217,13 @@ WIKI = {
         "label": "S&P 500", "nominal": 503, "floor": 480,
         "url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
         "table": ("symbol", "security"), "map": us_symbol},
+    # No nominal: the "100" holds ~102 securities, because a few members list
+    # more than one share class. Counting against the list keeps the panel
+    # honest about that rather than forcing it to a round number.
+    "nasdaq-100": {
+        "label": "Nasdaq 100", "nominal": None, "floor": 95,
+        "url": "https://en.wikipedia.org/wiki/List_of_NASDAQ-100_companies",
+        "table": ("ticker", "company"), "map": us_symbol},
     "dow-jones": {
         "label": "Dow Jones", "nominal": 30, "floor": 28,
         "url": "https://en.wikipedia.org/wiki/"
@@ -374,9 +385,8 @@ def priced_index(key: str, cache: dict) -> dict | None:
     # is the fallback for the rare symbol Yahoo prices without naming.
     movers = [{"name": nm or names[s], "symbol": s, "pct": v}
               for s, v, nm in results]
-    universe = (f"all {total} {entry['label']} constituents"
-                if len(movers) >= total else
-                f"{len(movers)} of {total} {entry['label']} constituents")
+    universe = (f"all {total} constituents" if len(movers) >= total
+                else f"{len(movers)} of {total} constituents")
     return {"movers": movers, "source": "Yahoo Finance daily closes",
             "universe": universe}
 
