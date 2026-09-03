@@ -1277,7 +1277,7 @@
 
     <h2 style="margin-top:36px" class="sec-anchor" id="catalysts">Catalyst calendar &#8212; what moves which funds</h2>
     <div class="h2-rule"></div>
-    <p style="font-size:15px;color:var(--ink-soft);margin:0 0 14px">Every dated catalyst on the desk, soonest first. Open one to see which funds it reaches and why &#8212; a company through the published top&#8209;10 holdings that name it, a rate decision through each fund&#8217;s own country breakdown.</p>
+    <p style="font-size:15px;color:var(--ink-soft);margin:0 0 14px">Every dated catalyst on the desk, soonest first. Open one to see which funds it reaches and why &#8212; a company through the published top&#8209;10 holdings that name it, a rate decision through each fund&#8217;s own country breakdown. Most exposed first.</p>
     <div id="catalystCal"></div>
 
     <h2 style="margin-top:36px" class="sec-anchor" id="watchlist">Watchlist &#8212; top 8 to hold over 6 months to 5 years</h2>
@@ -2883,17 +2883,21 @@ function catalystImpact(cat){
   (DATA.funds||[]).forEach(f=>{
     const reasons = [];
     let rank = 0;
-    if((f.catalysts||[]).some(c=>c.holding===cat.holding && c.event===cat.event)){
-      reasons.push({cls:'cr-res', text:'tracked on this fund by the desk'});
-      rank = Math.max(rank, 1000);
-    }
+    // The desk's own note on a fund is a reason to list it. It is not a reason
+    // to list it first, and ranking it at 1000 did exactly that: the seven
+    // funds carrying a hand-written Fed note sat above every US tracker, so
+    // Artemis Corporate Bond, at 4.44% in the US, outranked HSBC American
+    // Index at 94.70%. This panel answers "what does this move, most first",
+    // so rank is published exposure and nothing else. The note only lifts a
+    // fund over the floor that would otherwise have kept it out.
+    const noted = (f.catalysts||[]).some(c=>c.holding===cat.holding && c.event===cat.event);
     if(macro){
       const cty = (f.countries||[]).find(c=>String(c.name).toLowerCase()===macro.country.toLowerCase());
       const w = cty ? parsePerf(cty.weight) : null;
-      if(w !== null && w >= CAT_MIN_COUNTRY){
+      if(w !== null && (w >= CAT_MIN_COUNTRY || noted)){
         reasons.push({cls:'cr-cty', text:cty.weight + ' in ' + macro.country});
         rank = Math.max(rank, w);
-      } else if(!cty && macro.groups.indexOf(f.group) !== -1){
+      } else if(!cty && (macro.groups.indexOf(f.group) !== -1 || noted)){
         reasons.push({cls:'cr-cat', text:catGroupLabel(f.group) + ' — no country breakdown published'});
         rank = Math.max(rank, 1);
       }
@@ -2906,6 +2910,13 @@ function catalystImpact(cat){
           if(w !== null) rank = Math.max(rank, w);
         }
       });
+    }
+    // Three funds across the whole calendar are reached by the desk's note and
+    // nothing else - a position that has since dropped out of the published top
+    // ten, say. Without a reason of their own they would leave the list
+    // silently, so they keep a chip and sort to the bottom on rank 0.
+    if(!reasons.length && noted){
+      reasons.push({cls:'cr-res', text:'desk note — not in the published top ten'});
     }
     if(reasons.length) out.push({f:f, reasons:reasons, rank:rank});
   });
@@ -2941,8 +2952,8 @@ function renderCatalystCalendar(){
     const hits = catalystImpact(c);
     const macro = CAT_MACRO[String(c.holding||'').toLowerCase().trim()];
     const basis = macro
-      ? 'by published country exposure of 5% or more, or by category where a fund publishes no breakdown'
-      : 'because this company is named in the fund&#8217;s published top&#8209;10 holdings';
+      ? 'by published country exposure of 5% or more, or by category where a fund publishes no breakdown, heaviest first'
+      : 'because this company is named in the fund&#8217;s published top&#8209;10 holdings, largest position first';
     let body = '';
     if(open){
       const list = hits.length
