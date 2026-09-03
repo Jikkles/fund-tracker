@@ -418,6 +418,75 @@ def pct_over(series: dict, days: int) -> float | None:
     return (series["c"][-1] - start) / start * 100.0
 
 
+# A drawdown is a peak-to-trough fall measured on a continuously priced
+# series. A hole in the middle of one is not a fall - it is an absence - and
+# measuring across it reports the market's move over months nobody was priced
+# through. Two months of slack tolerates a fund that suspends dealing over a
+# holiday or reprices weekly; more than that and the window is not really a
+# window. The coverage check below catches a series that STARTS late; this
+# catches one that stops in the middle, which is a different fault and the one
+# a peak-to-trough scan is uniquely exposed to.
+MAX_SERIES_GAP_DAYS = 62
+
+
+def max_drawdown(series: dict, days: int) -> tuple[float, date, date] | None:
+    """Worst peak-to-trough fall over a trailing window, as (pct, peak, trough).
+
+    Computed from the fund's own NAV series - the same series the return
+    windows come off, on the same run, at no extra request. It replaces a
+    figure that was researched by hand for 50 funds, absent for the other 53,
+    and carried "inferred-morningstar" with low or medium confidence where it
+    existed at all.
+
+    That gap was not merely cosmetic. The watchlist scores drawdown at weight
+    0.5 against a z-score built from whichever funds happened to have the
+    field, and a fund missing it scored 0 - the list mean. Half the desk was
+    being credited with exactly average downside protection on the strength of
+    nobody having looked it up, which is a number the desk invented about
+    itself.
+
+    Coverage is judged exactly as pct_over judges it, and for the same reason:
+    a fund launched last year must not report a five-year worst fall. Returns
+    None rather than a shorter-window answer wearing a five-year label.
+    """
+    if not series or len(series["t"]) < 2:
+        return None
+    end = series["t"][-1]
+    cutoff = end - days * 86400
+    window = [(t, c) for t, c in zip(series["t"], series["c"]) if t >= cutoff]
+    if len(window) < 2:
+        return None
+    # The window must genuinely reach back, measured on the first point
+    # actually inside it - see pct_over's note on the six-year hole.
+    if window[0][0] > cutoff + _slack(days):
+        return None
+    gap = MAX_SERIES_GAP_DAYS * 86400
+    if any(b[0] - a[0] > gap for a, b in zip(window, window[1:])):
+        return None
+
+    peak_t, peak_c = window[0]
+    worst = 0.0
+    worst_peak = worst_trough = window[0][0]
+    for t, c in window:
+        if c > peak_c:
+            peak_t, peak_c = t, c
+        fall = (c - peak_c) / peak_c * 100.0
+        if fall < worst:
+            worst, worst_peak, worst_trough = fall, peak_t, t
+    if worst == 0.0:
+        # A series that only ever rose. Real, and rare enough to be worth
+        # saying plainly rather than printing as a suspiciously round zero.
+        return None
+    return worst, date.fromtimestamp(worst_peak), date.fromtimestamp(worst_trough)
+
+
+def drawdown_period(peak: date, trough: date) -> str:
+    """"Jan-Sep 2022", or "Nov 2021 - Oct 2022" across a year boundary."""
+    if peak.year == trough.year:
+        return f"{peak:%b}–{trough:%b} {trough.year}"
+    return f"{peak:%b %Y}–{trough:%b %Y}"
+
+
 def pct_ytd(series: dict) -> float | None:
     """
     Calendar year-to-date total return, or None if the series cannot carry one.
@@ -490,6 +559,61 @@ def reject_collisions(picks: dict[int, tuple[dict, str]],
     return refusals
 
 
+# The window every published drawdown is measured over. Fixed, because the
+# figure is z-scored against the rest of the desk in the watchlist and a
+# three-year worst fall is not comparable to a five-year one. Five years also
+# reaches back over the 2022 drawdown that dominates most of these funds'
+# recent history, and 88 of 103 funds have the history to cover it.
+DRAWDOWN_DAYS = 365 * 5
+
+
+def apply_drawdown(fund: dict, series: dict) -> bool:
+    """Write the computed worst fall onto the fund. True if one was published.
+
+    Where the series cannot cover the window the field is REMOVED rather than
+    left holding an inferred figure the run can no longer stand behind. A gap
+    is the honest answer for a fund with three years of history; a five-year
+    label on a three-year number is not.
+    """
+    got = max_drawdown(series, DRAWDOWN_DAYS)
+    risk = fund.get("risk")
+    if not got:
+        if risk:
+            for key in ("maxDrawdown", "maxDrawdownPeriod", "maxDrawdownNote",
+                        "maxDrawdownSource", "maxDrawdownConfidence",
+                        "maxDrawdownWindow"):
+                risk.pop(key, None)
+        return False
+
+    pct, peak, trough = got
+    risk = fund.setdefault("risk", {})
+    period = drawdown_period(peak, trough)
+    # The prose note was written about the researched figure. Keep it only
+    # where the computed fall lands in the same episode - it reads as a
+    # caption to the period printed above it, and a 2022 caption under a 2020
+    # trough is a caption about a different event.
+    old_period = risk.get("maxDrawdownPeriod") or ""
+    if str(trough.year) not in old_period and str(peak.year) not in old_period:
+        risk.pop("maxDrawdownNote", None)
+    # A drawdown is always a fall, so the minus is written rather than
+    # formatted - and as the desk's U+2212, matching the researched
+    # figures it replaces.
+    #
+    # Precision follows the number rather than being fixed at one decimal.
+    # The Royal London short-term money market fund's worst five-year fall
+    # rounds to nothing at 1dp and printed as "−0.0%", which reads as a
+    # formatting fault rather than as the real and rather useful answer for a
+    # cash fund. A number this desk publishes should never render as a signed
+    # zero; give it the digits it needs to be a figure.
+    digits = 1 if abs(pct) >= 0.05 else 2 if abs(pct) >= 0.005 else 3
+    risk["maxDrawdown"] = f"−{abs(pct):.{digits}f}%"
+    risk["maxDrawdownPeriod"] = period
+    risk["maxDrawdownWindow"] = "worst fall in the last 5 years"
+    risk["maxDrawdownSource"] = "computed from the fund's own NAV series"
+    risk["maxDrawdownConfidence"] = "computed"
+    return True
+
+
 def main(argv: list[str]) -> int:
     dry = "--dry-run" in argv
     only_resolve = "--resolve-only" in argv
@@ -497,7 +621,7 @@ def main(argv: list[str]) -> int:
     doc = json.loads(FUNDS.read_text(encoding="utf-8"))
     funds = doc["funds"]
 
-    resolved = refused = priced = partial = 0
+    resolved = refused = priced = partial = drawn = 0
     refusals: list[tuple[str, str]] = []
     today = date.today()
 
@@ -604,6 +728,8 @@ def main(argv: list[str]) -> int:
                 perf[key] = fmt(value)
         perf["navAsAt"] = date.fromtimestamp(series["t"][-1]).isoformat()
         perf["navPoints"] = len(series["c"])
+        if apply_drawdown(fund, series):
+            drawn += 1
         print(f"  [nav] {fund['name'][:38]:40} {symbol:14} "
               f"1w {fmt(vals['nav1w']) or '  n/a':>8}  "
               f"1m {fmt(vals['nav1m']) or '  n/a':>8}  "
@@ -614,6 +740,9 @@ def main(argv: list[str]) -> int:
           f"of {len(funds)} funds"
           + (f" (+{partial} priced over short windows only - history too "
              f"short for a 1-year figure)" if partial else ""))
+    print(f"{drawn} worst-fall figures computed over 5 years; "
+          f"{len(funds) - drawn} funds have too little history for one "
+          f"and publish none")
     if refusals:
         print("\nNeeds a hand-checked symbol in `navSymbol` "
               "(left unverified for now):")
@@ -793,6 +922,89 @@ def _selftest_offline() -> bool:
         assert pct_over(holed, _w) is None, f"{_w}d anchors in the hole, must refuse"
     print("  window coverage  OK  (short history refused a long label, "
           "mid-series hole refused)", file=_sys.stderr)
+
+    # --- worst fall ------------------------------------------------------
+    _5y = 365 * 5
+
+    def _dd(closes, days=_5y):
+        """A daily series ending today, so the trailing window is covered."""
+        n = len(closes)
+        s = {"t": [_now - (n - 1 - i) * _day for i in range(n)],
+             "c": list(closes), "currency": "GBP"}
+        return max_drawdown(s, days)
+
+    # 100 -> 50 -> 80 is a 50% fall, measured peak to trough and not to the
+    # recovery. The later rise does not reduce the fall that happened.
+    six = 6 * 365
+    got = _dd([100.0] * six + [50.0] + [80.0] * 10)
+    assert got and abs(got[0] + 50.0) < 0.01, got
+
+    # The deepest fall wins, not the most recent one. A 20% dip after a 40%
+    # crash must not overwrite it.
+    got = _dd([100.0] * 2000 + [60.0] + [100.0] * 100 + [80.0] + [100.0] * 10)
+    assert got and abs(got[0] + 40.0) < 0.01, got
+
+    # A new peak resets the reference: the second fall is measured from 200,
+    # not from the original 100.
+    got = _dd([100.0] * 2000 + [200.0] * 100 + [150.0] + [180.0] * 10)
+    assert got and abs(got[0] + 25.0) < 0.01, got
+
+    # Coverage is judged exactly as pct_over judges it. Three years of history
+    # does not carry a five-year worst fall, and never reports one.
+    assert _dd([100.0] * 900 + [50.0]) is None, "3yr of data, 5yr label"
+    assert _dd([100.0] * 900 + [50.0], 365 * 2) is not None, "2yr IS covered"
+    assert max_drawdown(_series([100.0]), 30) is None
+    assert max_drawdown({"t": [], "c": []}, 30) is None
+    assert max_drawdown(None, 30) is None
+
+    # A hole in the middle is an absence, not a fall. Measuring across the
+    # BlackRock six-year gap would publish the market's move over years the
+    # fund was not priced through at all.
+    assert max_drawdown(holed, _5y) is None, "mid-series hole must refuse"
+
+    # A series that only ever rose has no worst fall, and says nothing rather
+    # than publishing a round zero that reads like a measurement.
+    assert _dd([100.0 + i * 0.01 for i in range(six)]) is None
+
+    # The period reads as the episode it was.
+    assert drawdown_period(date(2022, 1, 5), date(2022, 9, 30)) == "Jan–Sep 2022"
+    assert (drawdown_period(date(2021, 11, 8), date(2022, 10, 3))
+            == "Nov 2021–Oct 2022")
+
+    # apply_drawdown clears an inferred figure it can no longer stand behind,
+    # rather than leaving it in place beside computed ones.
+    _f = {"risk": {"maxDrawdown": "−16.2%", "maxDrawdownPeriod": "Jan–Sep 2022",
+                   "maxDrawdownNote": "held up better than growth peers",
+                   "maxDrawdownConfidence": "medium", "srri": "6"}}
+    _short = {"t": [_now - (900 - i) * _day for i in range(900)],
+              "c": [100.0] * 899 + [50.0], "currency": "GBP"}
+    assert apply_drawdown(_f, _short) is False
+    assert "maxDrawdown" not in _f["risk"]
+    assert _f["risk"]["srri"] == "6", "only the drawdown fields are cleared"
+
+    # A note written about the researched episode survives only if the
+    # computed trough lands in it.
+    _g = {"risk": {"maxDrawdownPeriod": "Jan–Sep 2022",
+                   "maxDrawdownNote": "bank/energy heavy"}}
+    _t = date.fromtimestamp(_now).year
+    _long = {"t": [_now - (six - i) * _day for i in range(six)],
+             "c": [100.0] * (six - 1) + [70.0], "currency": "GBP"}
+    assert apply_drawdown(_g, _long) is True
+    assert _g["risk"]["maxDrawdownConfidence"] == "computed"
+    assert str(_t) not in "Jan–Sep 2022"
+    assert "maxDrawdownNote" not in _g["risk"], "a 2022 caption under a later trough"
+
+    # A cash fund's worst fall is real and nearly nothing. It must not publish
+    # as "−0.0%": the desk does not print signed zeros.
+    _cash = {}
+    _flat = [100.0] * six
+    _flat[-3] = 99.98
+    assert apply_drawdown(_cash, {"t": [_now - (six - i) * _day
+                                        for i in range(six)],
+                                  "c": _flat, "currency": "GBP"}) is True
+    assert _cash["risk"]["maxDrawdown"] == "−0.02%", _cash["risk"]["maxDrawdown"]
+    print("  worst fall       OK  (peak to trough, deepest wins, short "
+          "history and holes refused)", file=_sys.stderr)
 
     # --- year to date ----------------------------------------------------
     # YTD is anchored on last year's final close, so the baseline is the year
