@@ -203,6 +203,32 @@ What genuinely needs a person is narrower than "re-research the table": the fund
 **sector and benchmark comparators** beside them that age, because nothing free publishes an
 IA or Morningstar category average.
 
+**So the desk computes its own peer group instead.** Where four or more of its funds share an
+IA sector, each card carries an *Against the desk's own peers* block: the fund's NAV return
+over 1, 3 and 5 years against the median of those peers over the same windows, with its rank.
+Every figure is computed each run, so the block never goes stale. **71 of 103 funds** get one,
+including 6 of the 10 whose researched comparator has aged out.
+
+It is deliberately *not* presented as the sector average, and the block says so on every card.
+Two reasons, both stated there rather than left for the reader to infer:
+
+- **It is a different population.** The IA Global sector holds hundreds of funds; this desk
+  holds ten of them. A median of ten is not the category average and must never be read as one.
+- **The population is curated.** These are HL's Shortlist plus the desk's own additions —
+  somebody already picked them — so the peer group is *stronger* than the sector at large, and
+  beating it is a harder test than beating the IA average, not an easier one.
+
+The floor is three peers, the same one `drawdownPeer` uses. Below that it is not a comparison
+but two other funds: IA Japan holds three of the desk's funds, and IA Global Equity Income's
+three span −4.2% to +36.8% over a year. Those sectors correctly produce nothing. The median is
+used rather than the mean because cohorts run from 4 to 11, where one outlier tells you about
+that fund rather than about the group.
+
+> This is the same move the desk keeps making: read or compute what can be had, label it for
+> exactly what it is, and leave the gap visible where neither is possible. The researched
+> Sector column stays on the card, over the older window it names, because it is a real IA
+> figure and the computed block is not a replacement for it.
+
 **Central bank dates.** `cb_calendar.py` reads the published Fed and BoE calendars, which
 carries the desk through Dec 2027 untouched. It fails closed: a year is accepted only if it
 yields a plausible number of meetings (both committees meet eight times a year), unparsed

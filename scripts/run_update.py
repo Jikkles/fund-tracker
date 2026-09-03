@@ -350,7 +350,9 @@ def research_health(doc: dict, today: date) -> list[str]:
             f"trailing cumulative figures older than {RESEARCH_STALE_DAYS} "
             f"days: {worst}{more}. Only the sector and benchmark comparators "
             f"need a person - the fund's own 1/3/5yr totals are computed from "
-            f"its NAV series every run.")
+            f"its NAV series every run, and where the desk tracks four or more "
+            f"funds in the same IA sector the card also carries a peer "
+            f"comparison computed over the same windows.")
     if behind:
         behind.sort(reverse=True)
         worst = ", ".join(f"{fid} ({n})" for n, fid in behind[:3])

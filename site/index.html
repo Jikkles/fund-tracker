@@ -2603,7 +2603,7 @@ function renderHealth(){
     (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more, stalest first. The daily run does not refresh 1yr figures — it recomputes the rolling 1-month figure for tracker funds and rolls the catalyst calendar forward. These keep ageing until they are re-researched by hand.</span></div>` : '');
 
   const resRows = resStale.slice(0, 15).map(({f,r}) =>
-    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing 1/3/5yr table measured to ${esc(r.label)}. The fund's own totals over those windows are computed from its NAV every run — it is the sector and benchmark comparators beside them that need re-reading.</span><span class="hs" style="color:var(--amber)">${r.days}d old</span></div>`).join('') +
+    `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing 1/3/5yr table measured to ${esc(r.label)}. The fund's own totals are computed from its NAV every run, and where the desk tracks enough funds in the same IA sector the card carries a computed peer comparison too — it is the researched sector and benchmark comparators that need re-reading.</span><span class="hs" style="color:var(--amber)">${r.days}d old</span></div>`).join('') +
     (resStale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${resStale.length-15} more, stalest first.</span></div>` : '');
 
   const resBehindRows = resBehind.map(({f,r}) =>
@@ -3276,6 +3276,91 @@ function drawdownPeer(f){
   return `Shallower than ${shallower} of the ${peers.length} other ${over}.`;
 }
 
+/* ---------- the desk's own peer group, computed ----------
+
+   WHAT THIS IS, AND WHAT IT IS EMPHATICALLY NOT
+
+   The cumulative table's "Sector" column is a real IA or Morningstar category
+   average, researched by hand from Trustnet or Fidelity, measured over the
+   window its row states. It cannot be refreshed: nothing free publishes an IA
+   sector average, HL's factsheet carries only the fund's own annual return
+   row, and the desk checked. So on 10 funds that column is months old and
+   will stay months old.
+
+   What CAN be computed, every run, is how a fund did against the other funds
+   THIS DESK TRACKS in the same IA sector - because every one of them is
+   priced from its own NAV series over exactly the same window. That is a
+   different statistic from the IA sector average and it is labelled as one
+   everywhere it appears. It is not a substitute and it does not overwrite the
+   researched figure: both are shown, each saying what it is.
+
+   Why it is different, and why the difference cuts one way: this desk holds
+   the HL Wealth Shortlist plus funds HL dropped plus asset-class fillers.
+   Those are curated - somebody already picked them. So the peer group is
+   stronger than the sector at large, and beating it is a harder test than
+   beating the IA average, not an easier one. Stated on the card rather than
+   left for the reader to work out.
+
+   THE FLOOR. Three peers minimum, the same floor drawdownPeer uses. Below
+   that it is not a comparison, it is two other funds: IA Japan holds three of
+   the desk's funds and IA Global Equity Income's three span -4.2% to +36.8%
+   over a year. Those sectors correctly produce nothing at all.
+
+   MEDIAN, NOT MEAN. Cohorts run from 4 to 11. One Ninety One Global Gold at
+   +23.9% in a month drags a mean of five and tells the reader about that
+   fund rather than about the group. */
+const PEER_MIN = 3;                 // peers, excluding the fund itself
+
+function peerCohort(f, key){
+  const mine = verified(f.iaSector);
+  if(!mine || !DATA || !DATA.funds) return null;
+  const own = recNum((f.performance||{})[key]);
+  if(own === null) return null;
+  const peers = DATA.funds
+    .filter(o => o !== f && verified(o.iaSector) === mine)
+    .map(o => recNum((o.performance||{})[key]))
+    .filter(v => v !== null)
+    .sort((a,b) => a - b);
+  if(peers.length < PEER_MIN) return null;
+  const mid = Math.floor(peers.length / 2);
+  const median = peers.length % 2 ? peers[mid] : (peers[mid-1] + peers[mid]) / 2;
+  // Rank among the whole cohort, the fund included, best first.
+  const better = peers.filter(v => v > own).length;
+  return { sector: mine, own, median, peers: peers.length,
+           rank: better + 1, of: peers.length + 1 };
+}
+
+const PEER_WINDOWS = [["nav1yr","1 year"],["nav3yr","3 years"],["nav5yr","5 years"]];
+
+/* A total return, not a difference: fmtPP is for percentage POINTS and would
+   print "+18.7pp" where the fund actually made 18.7%. */
+function fmtPct(n){ return (n > 0 ? '+' : '') + n.toFixed(1) + '%'; }
+
+function peerBlock(f){
+  const got = PEER_WINDOWS.map(([key,label]) => [label, peerCohort(f, key)])
+                          .filter(x => x[1]);
+  if(!got.length) return '';
+  const first = got[0][1];
+  const body = got.map(([label, c]) => {
+    const delta = c.own - c.median;
+    const own = fmtPct(c.own), med = fmtPct(c.median);
+    return `<tr>`
+      + `<td>${esc(label)}</td>`
+      + `<td class="num ${perfClass(own)}">${own}</td>`
+      + `<td class="num">${med}</td>`
+      + `<td class="num ${perfClass(fmtPct(delta))}">${fmtPP(delta)}</td>`
+      + `<td class="num">${c.rank} of ${c.of}</td>`
+    + `</tr>`;
+  }).join('');
+  return `<div class="sec"><div class="sec-h">Against the desk's own peers</div>`
+    + `<div class="tbl-scroll"><table class="data perf-tbl"><thead><tr>`
+    + `<th>Window</th><th class="num">Fund</th><th class="num">Peer median</th>`
+    + `<th class="num">Difference</th><th class="num">Rank</th>`
+    + `</tr></thead><tbody>${body}</tbody></table></div>`
+    + `<p class="prose soft" style="margin-top:10px">Computed from each fund's own NAV series over the same window and refreshed every run, so nothing in this block goes stale. <strong>It is not the ${esc(first.sector)} sector average.</strong> It is the ${first.peers} other ${esc(first.sector)} funds this desk happens to track — a curated group, being HL's Shortlist plus the desk's own additions — so beating it is a harder test than beating the sector at large, not an easier one. The researched Sector column in the table above is the real category average, over the older window that row names.</p>`
+    + `</div>`;
+}
+
 /* ---------- render: one fund dossier ---------- */
 function dossier(f){
   let h = '';
@@ -3309,6 +3394,13 @@ function dossier(f){
     if(f.performance.notes) h += `<p class="flag">${f.performance.notes}</p>`;
     h += `</div>`;
   }
+  // Directly after the researched tables, because it is the answer to the
+  // question those tables raise and can no longer answer: how is this fund
+  // doing against comparable funds NOW. The Sector column above is a real IA
+  // average over the window its row names, and on ten funds that window is
+  // months old with no free source to refresh it. This block is computed from
+  // NAV every run and says plainly that it is a different measure.
+  h += peerBlock(f);
   // 1-month change (rolling, overwritten each update cycle)
   const omView = oneMonthView(f);
   if(omView){
