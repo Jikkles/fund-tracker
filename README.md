@@ -248,6 +248,17 @@ rows are dropped rather than guessed at, and dates outside a sane horizon are re
 hand-maintained table in `calendar_data.py` is a **floor, not a legacy** — where it and the
 scrape disagree on a future date, the hand-entered one wins and the run says so.
 
+**Statistical release dates.** `stat_calendar.py` reads the ONS release calendar for UK CPI,
+the labour market overview and monthly GDP — the prints the MPC is reacting to, which the
+panel used to omit while carrying the meeting itself. Discovery is the calendar filtered by
+keyword; the date and its confirmed/provisional status come from that release's own JSON
+record. **Title matching is the load-bearing guard**: a keyword search for "consumer price
+inflation" also returns producer price inflation, so each statistic declares the prefix its
+title must start with and anything else is dropped rather than taken as near enough. ONS's
+own `finalised` flag becomes confirmed/provisional, exactly as the Bank's "provisional dates"
+heading does. Anything unreadable, cancelled or unmatched resolves to no date, never a guess.
+ONS rate-limits (429 on four quick requests), so calls are spaced.
+
 **Catalyst ordering.** Every resolved catalyst carries `dateISO`, a machine-readable sort
 anchor that is never displayed. The visible date stays honestly fuzzy (`~mid Oct 2026` for a
 pattern estimate) while the anchor keeps the panel in date order.
@@ -274,7 +285,8 @@ cache-busting query, so neither the browser nor GitHub's CDN can serve yesterday
 | `scripts/market_series.py` | Index chart series + per-index headlines — **edit `INDICES`** to change the tabs |
 | `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
 | `scripts/cb_calendar.py` | Reads the published Fed/BoE calendars |
-| `scripts/calendar_data.py` | Central bank dates + earnings lookup |
+| `scripts/stat_calendar.py` | Reads the ONS release calendar for UK CPI / labour market / GDP |
+| `scripts/calendar_data.py` | Central bank dates + ONS releases + earnings lookup |
 | `scripts/perf_dates.py` | Reads what the performance tables say they are measured to |
 | `scripts/proxies.py` | Fund → ETF mapping. **Edit this** if a proxy looks wrong |
 | `scripts/anonymise.py` | Strips personal references before publishing |
@@ -285,6 +297,7 @@ cache-busting query, so neither the browser nor GitHub's CDN can serve yesterday
 python scripts/market_data.py    --selftest   # endpoints reachable?
 python scripts/market_series.py  --selftest   # same, for the chart endpoint
 python scripts/cb_calendar.py    --selftest   # Fed/BoE calendar parsing, offline
+python scripts/stat_calendar.py  --selftest   # ONS release parsing + title guard, offline
 python scripts/calendar_data.py  --selftest   # date rollover + sort anchors, offline
 python scripts/fund_nav.py       --selftest   # resolution guards, offline
 python scripts/hl_factsheet.py   --selftest   # scrape parsing + guards, offline
@@ -316,6 +329,13 @@ python scripts/market_series.py  --dry-run    # chart fetch, writes nothing
   table rather than to nothing, and the run warns when the merged calendar is within 75 days
   of exhausting. If the scrape breaks *and* the table runs out, the rate chip says "next date
   not published" — top up `calendar_data.py`.
+- **The ONS release calendar is scraped too, and has no fallback table.** There is nothing
+  hand-maintained behind it: a statistic that will not resolve simply carries no date, and
+  the run warns which one. That is deliberate — a stale hardcoded release date is worse than
+  a visibly undated catalyst.
+- **US macro prints are not covered.** `www.bls.gov` refuses GitHub Actions runner IPs with a
+  403 on any user-agent, so US CPI and payrolls have no keyless route. BEA, Census and the
+  Fed's own events calendar do respond, so PCE and GDP are reachable if that gap matters.
 
 #### Coverage gaps
 
