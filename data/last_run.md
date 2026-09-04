@@ -5,10 +5,11 @@ Window: 5 Aug 2026 to 4 Sep 2026
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
-- **48** catalyst dates refreshed (2 confirmed, 0 provisional, 19 estimated)
+- **62** catalyst dates refreshed (4 confirmed, 0 provisional, 19 estimated)
 
 ## Maintenance needed
 
+- UK labour market: no upcoming release resolved from the ONS release calendar. The catalyst will show no date until it does.
 - 10 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (157d), jupiter-asian-income (157d), artemis-us-smaller-companies (143d), and 7 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 - 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
 
@@ -16,17 +17,17 @@ Window: 5 Aug 2026 to 4 Sep 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.55% |
-| FTSE 250 | -0.24% |
-| S&P 500 | +0.31% |
-| Nasdaq 100 | -0.02% |
-| Euro STOXX 50 | -1.38% |
-| Nikkei 225 | -1.93% |
-| Hang Seng | -1.02% |
-| Gold (USD/oz) | +6.29% |
-| Brent crude | +19.79% |
-| US 10yr yield | +3.14% |
-| GBP/USD | +0.64% |
+| FTSE 100 | -0.53% |
+| FTSE 250 | -0.19% |
+| S&P 500 | -0.14% |
+| Nasdaq 100 | -0.01% |
+| Euro STOXX 50 | -1.30% |
+| Nikkei 225 | -3.15% |
+| Hang Seng | -2.71% |
+| Gold (USD/oz) | +5.33% |
+| Brent crude | +21.11% |
+| US 10yr yield | +3.62% |
+| GBP/USD | +0.49% |
 
 ## Fund NAV figures (1 month)
 
@@ -53,7 +54,7 @@ Window: 5 Aug 2026 to 4 Sep 2026
 | bny-mellon-multi-asset-balanced | 0P0000X2GH.L | -0.25% | 3 Sep 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | -0.29% | 3 Sep 2026 |
 | bny-mellon-real-return | 0P000156WB.L | +1.74% | 3 Sep 2026 |
-| bny-mellon-us-equity-income | 0P00019MND.L | -0.67% | 1 Sep 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | +0.19% | 2 Sep 2026 |
 | ct-european-select | 0P0000X3IE.L | -0.30% | 3 Sep 2026 |
 | ct-latin-america | 0P00000R15.L | +2.83% | 3 Sep 2026 |
 | fidelity-american-special-situations | 0P0000WUU7.L | +0.75% | 3 Sep 2026 |
@@ -89,7 +90,7 @@ Window: 5 Aug 2026 to 4 Sep 2026
 | jupiter-european | 0P0000U20D.L | +0.31% | 3 Sep 2026 |
 | jupiter-india-class-x | 0P00018LFD.L | -1.49% | 3 Sep 2026 |
 | jupiter-strategic-bond | 0P0000FY9K.L | +0.21% | 3 Sep 2026 |
-| lazard-global-equity-franchise | 0P0001BM5B.L | +3.73% | 1 Sep 2026 |
+| lazard-global-equity-franchise | 0P0001BM5B.L | +3.50% | 2 Sep 2026 |
 | lg-active-global-high-yield | 0P00001SDH.L | +0.57% | 3 Sep 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | -0.72% | 3 Sep 2026 |
 | lg-european-index | 0P000102LY.L | -0.10% | 3 Sep 2026 |
@@ -112,7 +113,7 @@ Window: 5 Aug 2026 to 4 Sep 2026
 | mg-emerging-market-bond | 0P0000VPQE.L | +0.27% | 3 Sep 2026 |
 | ninety-one-diversified-income-class-i | 0P0000XTGS.L | +0.34% | 3 Sep 2026 |
 | ninety-one-global-gold-class-i | 0P00009NF8.L | +27.86% | 3 Sep 2026 |
-| polar-capital-european-income | 0P00016CNI.L | -1.12% | 1 Sep 2026 |
+| polar-capital-european-income | 0P00016CNI.L | -1.47% | 2 Sep 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | +0.32% | 3 Sep 2026 |
 | pyrford-global-total-return | 0P0000N9AE.L | -0.19% | 3 Sep 2026 |
 | rathbone-global-opportunities | 0P0001FE43.L | -0.40% | 3 Sep 2026 |
@@ -130,10 +131,10 @@ Window: 5 Aug 2026 to 4 Sep 2026
 | trojan-fund | 0P0001CBJA.L | +0.84% | 3 Sep 2026 |
 | trojan-global-income | 0P00018VXM.L | -0.42% | 3 Sep 2026 |
 | trowe-global-value | 0P0001P4VD.L | +2.87% | 3 Sep 2026 |
-| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | +0.08% | 1 Sep 2026 |
-| vanguard-global-bond-index | 0P0000CV2L | -0.39% | 1 Sep 2026 |
-| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -0.05% | 1 Sep 2026 |
-| vanguard-global-small-cap-index | 0P0000N47O.L | -0.07% | 1 Sep 2026 |
+| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | +0.14% | 2 Sep 2026 |
+| vanguard-global-bond-index | 0P0000CV2L | -0.47% | 2 Sep 2026 |
+| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -0.31% | 2 Sep 2026 |
+| vanguard-global-small-cap-index | 0P0000N47O.L | +0.41% | 2 Sep 2026 |
 | ws-amati-uk-listed-smaller-companies | 0P0000GBB2.L | +0.30% | 3 Sep 2026 |
 
 ---

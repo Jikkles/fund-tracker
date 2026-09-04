@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T11:29:15+00:00",
+  "generated": "2026-09-04T19:18:47+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,34 +10,34 @@
         {
           "name": "Computacenter plc",
           "symbol": "CCC",
-          "pct": 2.98
+          "pct": 4.1
         },
         {
           "name": "Kingfisher",
           "symbol": "KGF",
-          "pct": 2.02
+          "pct": 3.29
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": 1.88
+          "pct": 2.7
         }
       ],
       "bottom": [
         {
           "name": "Experian Plc",
           "symbol": "EXPN",
-          "pct": -3.19
+          "pct": -4.38
         },
         {
-          "name": "Rentokil Initial Plc",
-          "symbol": "RTO",
-          "pct": -2.02
+          "name": "Coca-Cola Europacific Partners Plc",
+          "symbol": "CCEP",
+          "pct": -2.3
         },
         {
-          "name": "IG Group Holdings Plc",
-          "symbol": "IGG",
-          "pct": -1.98
+          "name": "RELX plc",
+          "symbol": "REL",
+          "pct": -2.06
         }
       ]
     },
@@ -48,36 +48,36 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Renishaw plc",
-          "symbol": "RSW",
-          "pct": 5.54
-        },
-        {
           "name": "RHI Magnesita NV",
           "symbol": "RHIM",
-          "pct": 4.79
+          "pct": 6.81
+        },
+        {
+          "name": "Renishaw plc",
+          "symbol": "RSW",
+          "pct": 5.64
         },
         {
           "name": "Watches Of Switzerland Group plc",
           "symbol": "WOSG",
-          "pct": 3.69
+          "pct": 4.75
         }
       ],
       "bottom": [
         {
           "name": "Oxford Nanopore Technologies plc",
           "symbol": "ONT",
-          "pct": -6.06
-        },
-        {
-          "name": "Rosebank Industries plc",
-          "symbol": "ROSE",
-          "pct": -2.54
+          "pct": -6.87
         },
         {
           "name": "GlobalData plc",
           "symbol": "DATA",
-          "pct": -2.18
+          "pct": -4.88
+        },
+        {
+          "name": "Alfa Financial Software Holdings Ltd",
+          "symbol": "ALFA",
+          "pct": -4.62
         }
       ]
     },
@@ -88,36 +88,36 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Robinhood Markets, Inc.",
-          "symbol": "HOOD",
-          "pct": 16.571645678046675
+          "name": "Sandisk Corporation",
+          "symbol": "SNDK",
+          "pct": 10.046365036702188
         },
         {
-          "name": "Coinbase Global, Inc.",
-          "symbol": "COIN",
-          "pct": 10.139454477380825
+          "name": "KLA Corporation",
+          "symbol": "KLAC",
+          "pct": 6.7075232340515045
         },
         {
-          "name": "Palantir Technologies Inc.",
-          "symbol": "PLTR",
-          "pct": 7.712729580790315
+          "name": "NRG Energy, Inc.",
+          "symbol": "NRG",
+          "pct": 6.1740045017795095
         }
       ],
       "bottom": [
         {
-          "name": "Ciena Corporation",
-          "symbol": "CIEN",
-          "pct": -10.362551340508043
+          "name": "Amphenol Corporation",
+          "symbol": "APH",
+          "pct": -48.12362130756319
         },
         {
-          "name": "Tyson Foods, Inc.",
-          "symbol": "TSN",
-          "pct": -7.256769310340891
+          "name": "lululemon athletica inc.",
+          "symbol": "LULU",
+          "pct": -17.947767372943822
         },
         {
-          "name": "Charter Communications, Inc.",
-          "symbol": "CHTR",
-          "pct": -4.774483411718158
+          "name": "Fair Isaac Corporation",
+          "symbol": "FICO",
+          "pct": -16.445180839544964
         }
       ]
     },
@@ -128,36 +128,36 @@
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Strategy Inc",
-          "symbol": "MSTR",
-          "pct": 17.558246979579803
+          "name": "Astera Labs, Inc.",
+          "symbol": "ALAB",
+          "pct": 10.347565014136581
         },
         {
-          "name": "Palantir Technologies Inc.",
-          "symbol": "PLTR",
-          "pct": 7.712729580790315
+          "name": "Sandisk Corporation",
+          "symbol": "SNDK",
+          "pct": 10.040257556671998
         },
         {
-          "name": "Space Exploration Technologies Corp.",
-          "symbol": "SPCX",
-          "pct": 6.417453164975903
+          "name": "KLA Corporation",
+          "symbol": "KLAC",
+          "pct": 6.7075232340515045
         }
       ],
       "bottom": [
         {
-          "name": "The Kraft Heinz Company",
-          "symbol": "KHC",
-          "pct": -3.1987819697884987
+          "name": "Autodesk, Inc.",
+          "symbol": "ADSK",
+          "pct": -7.675147633214231
         },
         {
-          "name": "Broadcom Inc.",
-          "symbol": "AVGO",
-          "pct": -2.7447954580960836
+          "name": "Adobe Inc.",
+          "symbol": "ADBE",
+          "pct": -6.001747645313867
         },
         {
-          "name": "Lumentum Holdings Inc.",
-          "symbol": "LITE",
-          "pct": -2.666041204373403
+          "name": "Tesla, Inc.",
+          "symbol": "TSLA",
+          "pct": -5.964870202382377
         }
       ]
     },
@@ -168,36 +168,36 @@
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "The Goldman Sachs Group, Inc.",
-          "symbol": "GS",
-          "pct": 3.33626086407509
+          "name": "Caterpillar Inc.",
+          "symbol": "CAT",
+          "pct": 1.0785618422801064
         },
         {
-          "name": "Salesforce, Inc.",
-          "symbol": "CRM",
-          "pct": 2.9190831019343917
+          "name": "The Home Depot, Inc.",
+          "symbol": "HD",
+          "pct": 1.018640601052452
         },
         {
-          "name": "Microsoft Corporation",
-          "symbol": "MSFT",
-          "pct": 2.6770233881280343
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 0.7507097223902244
         }
       ],
       "bottom": [
         {
-          "name": "Cisco Systems, Inc.",
-          "symbol": "CSCO",
-          "pct": -0.7765379876032444
+          "name": "Apple Inc.",
+          "symbol": "AAPL",
+          "pct": -1.956059558605774
         },
         {
-          "name": "The Walt Disney Company",
-          "symbol": "DIS",
-          "pct": -0.7593995826372282
+          "name": "Microsoft Corporation",
+          "symbol": "MSFT",
+          "pct": -1.943662008905208
         },
         {
-          "name": "McDonald's Corporation",
-          "symbol": "MCD",
-          "pct": -0.5058468145123093
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": -1.6414501992864114
         }
       ]
     },
@@ -250,34 +250,34 @@
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": 8.896323111543687
+          "pct": 5.901430793523346
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 4.045412389288842
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 3.091190055171767
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 3.852640267088872
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 2.3951050968698184
         }
       ],
       "bottom": [
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": -4.8834279451987355
-        },
-        {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -3.622715404699739
-        },
-        {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -3.4482735458615044
+          "pct": -3.38254091043789
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -3.2900244230150624
+        },
+        {
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": -2.460905218605827
         }
       ]
     },
