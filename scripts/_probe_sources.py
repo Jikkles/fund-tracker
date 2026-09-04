@@ -1,57 +1,48 @@
-"""TEMPORARY probe v2. Narrow the ONS query params and test whether BLS's
-403 is a User-Agent block. Prints compact summaries, not raw markup."""
-import re, urllib.error, urllib.request
+"""TEMPORARY probe v3. BLS is a hard 403 from runner IPs on any UA, so test
+whether any other keyless US release calendar is reachable, and work out how
+to narrow the ONS list to the releases the desk actually cares about."""
+import re, urllib.request
 
-FT_UA = "fund-tracker/1.0 (+github actions; personal research desk)"
-BROWSER_UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
-              "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")
-
+UA = "fund-tracker/1.0 (+github actions; personal research desk)"
 REL = re.compile(
     r'data-gtm-release-title\s*=\s*"([^"]*)".*?'
-    r'data-gtm-release-date="(\d{8})".*?'
-    r'data-gtm-release-time="([^"]*)"', re.S)
+    r'data-gtm-release-date="(\d{8})"', re.S)
 
-ONS_URLS = [
-    "https://www.ons.gov.uk/releasecalendar/data?view=upcoming&size=50",
-    "https://www.ons.gov.uk/releasecalendar?release-type=type-upcoming&size=50",
-    "https://www.ons.gov.uk/releasecalendar?view=upcoming&size=50&sortBy=date-oldest",
-    "https://www.ons.gov.uk/releasecalendar?release-type=type-upcoming&query=consumer%20price",
+US = [
+    "https://www.bea.gov/news/schedule",
+    "https://www.census.gov/economic-indicators/calendar.html",
+    "https://www.federalreserve.gov/newsevents/calendar.htm",
+    "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SA0",
 ]
-BLS_URLS = [
-    "https://www.bls.gov/schedule/news_release/2026_sched.htm",
-    "https://www.bls.gov/schedule/news_release/cpi.htm",
-]
-
-def get(url, ua):
+print("########## keyless US sources")
+for u in US:
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": ua})
+        req = urllib.request.Request(u, headers={"User-Agent": UA})
         with urllib.request.urlopen(req, timeout=30) as r:
-            return r.status, r.read().decode("utf-8", "replace")
+            b = r.read().decode("utf-8", "replace")
+        print(f"  OK  {r.status} bytes={len(b):>7}  {u}")
     except Exception as e:                            # noqa: BLE001 - probe
-        return None, f"{type(e).__name__}: {e}"
-
-print("########## ONS query shapes")
-for u in ONS_URLS:
-    st, body = get(u, FT_UA)
-    print("-" * 70)
-    print(u)
-    if st is None:
-        print("  FAILED", body); continue
-    hits = REL.findall(body)
-    print(f"  status={st} bytes={len(body)} releases={len(hits)} "
-          f"json={body.lstrip()[:1] in '{['}")
-    for t, d, tm in hits[:8]:
-        # Status word sits in the block after the date.
-        print(f"    {d} {tm}  {t[:72]}")
-    for word in ("Provisional", "Confirmed", "Published", "Cancelled"):
-        print(f"    [{word}: {body.count(word)}]", end="")
-    print()
+        print(f"  --  {type(e).__name__}: {e}  {u}")
 
 print()
-print("########## BLS user-agent test")
-for u in BLS_URLS:
-    for name, ua in (("ft-ua", FT_UA), ("browser-ua", BROWSER_UA)):
-        st, body = get(u, ua)
-        print(f"  {name:11s} {u.rsplit('/',1)[-1]:16s} -> "
-              f"{st if st else body[:60]}"
-              + (f" bytes={len(body)}" if st else ""))
+print("########## ONS: does the upcoming list carry the big releases?")
+u = "https://www.ons.gov.uk/releasecalendar?release-type=type-upcoming&size=100"
+req = urllib.request.Request(u, headers={"User-Agent": UA})
+with urllib.request.urlopen(req, timeout=30) as r:
+    body = r.read().decode("utf-8", "replace")
+hits = REL.findall(body)
+print(f"  {u}\n  releases={len(hits)}")
+WANT = ("consumer price", "inflation", "labour market", "gross domestic",
+        "gdp", "retail sales", "public sector finances")
+for t, d in hits:
+    if any(w in t.lower() for w in WANT):
+        print(f"    *** {d}  {t}")
+print("  --- first 25 titles for shape ---")
+for t, d in hits[:25]:
+    print(f"    {d}  {t[:78]}")
+# Pagination: how many pages does the calendar expose?
+for pat in (r'of\s*<?[^>]*>?\s*(\d+)\s*(?:results|releases)',
+            r'"totalResults?"\s*:\s*(\d+)', r'(\d+)\s+results'):
+    m = re.search(pat, body, re.I)
+    if m:
+        print(f"  total-ish via {pat!r}: {m.group(1)}")
