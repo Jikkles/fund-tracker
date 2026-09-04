@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T08:13:06+00:00",
+  "generated": "2026-09-04T11:29:15+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,34 +10,34 @@
         {
           "name": "Computacenter plc",
           "symbol": "CCC",
-          "pct": 3.45
+          "pct": 2.98
+        },
+        {
+          "name": "Kingfisher",
+          "symbol": "KGF",
+          "pct": 2.02
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": 1.64
-        },
-        {
-          "name": "Melrose Industries plc",
-          "symbol": "MRO",
-          "pct": 1.55
+          "pct": 1.88
         }
       ],
       "bottom": [
         {
           "name": "Experian Plc",
           "symbol": "EXPN",
-          "pct": -4.25
+          "pct": -3.19
         },
         {
-          "name": "Coca-Cola Europacific Partners Plc",
-          "symbol": "CCEP",
-          "pct": -1.55
+          "name": "Rentokil Initial Plc",
+          "symbol": "RTO",
+          "pct": -2.02
         },
         {
-          "name": "Coca-Cola HBC AG",
-          "symbol": "CCH",
-          "pct": -1.49
+          "name": "IG Group Holdings Plc",
+          "symbol": "IGG",
+          "pct": -1.98
         }
       ]
     },
@@ -50,34 +50,34 @@
         {
           "name": "Renishaw plc",
           "symbol": "RSW",
-          "pct": 5.95
+          "pct": 5.54
         },
         {
-          "name": "XPS Pensions Group Plc",
-          "symbol": "XPS",
-          "pct": 4.78
+          "name": "RHI Magnesita NV",
+          "symbol": "RHIM",
+          "pct": 4.79
         },
         {
           "name": "Watches Of Switzerland Group plc",
           "symbol": "WOSG",
-          "pct": 2.86
+          "pct": 3.69
         }
       ],
       "bottom": [
         {
           "name": "Oxford Nanopore Technologies plc",
           "symbol": "ONT",
-          "pct": -7.73
+          "pct": -6.06
         },
         {
-          "name": "Wickes Group Plc",
-          "symbol": "WIX",
-          "pct": -2.24
+          "name": "Rosebank Industries plc",
+          "symbol": "ROSE",
+          "pct": -2.54
         },
         {
-          "name": "Hilton Food Group Plc",
-          "symbol": "HFG",
-          "pct": -1.91
+          "name": "GlobalData plc",
+          "symbol": "DATA",
+          "pct": -2.18
         }
       ]
     },
@@ -88,36 +88,36 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Dell Technologies Inc.",
-          "symbol": "DELL",
-          "pct": 15.811767578125
+          "name": "Robinhood Markets, Inc.",
+          "symbol": "HOOD",
+          "pct": 16.571645678046675
         },
         {
-          "name": "Reddit, Inc.",
-          "symbol": "RDDT",
-          "pct": 9.305867512904934
+          "name": "Coinbase Global, Inc.",
+          "symbol": "COIN",
+          "pct": 10.139454477380825
         },
         {
-          "name": "Charter Communications, Inc.",
-          "symbol": "CHTR",
-          "pct": 8.742047038694842
+          "name": "Palantir Technologies Inc.",
+          "symbol": "PLTR",
+          "pct": 7.712729580790315
         }
       ],
       "bottom": [
         {
-          "name": "Palo Alto Networks, Inc.",
-          "symbol": "PANW",
-          "pct": -9.282218700181586
+          "name": "Ciena Corporation",
+          "symbol": "CIEN",
+          "pct": -10.362551340508043
         },
         {
-          "name": "Datadog, Inc.",
-          "symbol": "DDOG",
-          "pct": -6.526983939142626
+          "name": "Tyson Foods, Inc.",
+          "symbol": "TSN",
+          "pct": -7.256769310340891
         },
         {
-          "name": "Edison International",
-          "symbol": "EIX",
-          "pct": -6.139456899986227
+          "name": "Charter Communications, Inc.",
+          "symbol": "CHTR",
+          "pct": -4.774483411718158
         }
       ]
     },
@@ -128,36 +128,36 @@
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Alnylam Pharmaceuticals, Inc.",
-          "symbol": "ALNY",
-          "pct": 8.650600639280702
-        },
-        {
-          "name": "PayPal Holdings, Inc.",
-          "symbol": "PYPL",
-          "pct": 4.3320545361917935
-        },
-        {
-          "name": "Constellation Energy Corporation",
-          "symbol": "CEG",
-          "pct": 3.4711608829771556
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Palo Alto Networks, Inc.",
-          "symbol": "PANW",
-          "pct": -9.282218700181586
-        },
-        {
-          "name": "Datadog, Inc.",
-          "symbol": "DDOG",
-          "pct": -6.526983939142626
+          "name": "Strategy Inc",
+          "symbol": "MSTR",
+          "pct": 17.558246979579803
         },
         {
           "name": "Palantir Technologies Inc.",
           "symbol": "PLTR",
-          "pct": -5.813690285421283
+          "pct": 7.712729580790315
+        },
+        {
+          "name": "Space Exploration Technologies Corp.",
+          "symbol": "SPCX",
+          "pct": 6.417453164975903
+        }
+      ],
+      "bottom": [
+        {
+          "name": "The Kraft Heinz Company",
+          "symbol": "KHC",
+          "pct": -3.1987819697884987
+        },
+        {
+          "name": "Broadcom Inc.",
+          "symbol": "AVGO",
+          "pct": -2.7447954580960836
+        },
+        {
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": -2.666041204373403
         }
       ]
     },
@@ -168,36 +168,36 @@
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": 3.2054824974449385
+          "name": "The Goldman Sachs Group, Inc.",
+          "symbol": "GS",
+          "pct": 3.33626086407509
         },
         {
-          "name": "American Express Company",
-          "symbol": "AXP",
-          "pct": 1.7859923197256384
-        },
-        {
-          "name": "Caterpillar Inc.",
-          "symbol": "CAT",
-          "pct": 1.683871939595905
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Honeywell International Inc.",
-          "symbol": "HON",
-          "pct": -1.862076618190689
-        },
-        {
-          "name": "3M Company",
-          "symbol": "MMM",
-          "pct": -0.875238160882163
+          "name": "Salesforce, Inc.",
+          "symbol": "CRM",
+          "pct": 2.9190831019343917
         },
         {
           "name": "Microsoft Corporation",
           "symbol": "MSFT",
-          "pct": -0.838286252355196
+          "pct": 2.6770233881280343
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": -0.7765379876032444
+        },
+        {
+          "name": "The Walt Disney Company",
+          "symbol": "DIS",
+          "pct": -0.7593995826372282
+        },
+        {
+          "name": "McDonald's Corporation",
+          "symbol": "MCD",
+          "pct": -0.5058468145123093
         }
       ]
     },
@@ -210,24 +210,24 @@
         {
           "name": "Longfor Group Holdings Limited",
           "symbol": "0960.HK",
-          "pct": 8.483288471687478
+          "pct": 8.397596708050301
         },
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 6.1558519877519995
+          "pct": 6.090375096897555
         },
         {
           "name": "Meituan",
           "symbol": "3690.HK",
-          "pct": 5.21570552836823
+          "pct": 5.2801009575700535
         }
       ],
       "bottom": [
         {
           "name": "WuXi Biologics (Cayman) Inc.",
           "symbol": "2269.HK",
-          "pct": -3.195264117370483
+          "pct": -2.998028471184477
         },
         {
           "name": "Orient Overseas (International) Limited",
@@ -235,9 +235,9 @@
           "pct": -2.477175974031012
         },
         {
-          "name": "Semiconductor Manufacturing International Corporation",
-          "symbol": "0981.HK",
-          "pct": -1.9103644282999512
+          "name": "Hengan International Group Company Limited",
+          "symbol": "1044.HK",
+          "pct": -1.5755336134843714
         }
       ]
     },
@@ -250,34 +250,34 @@
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": 9.56521943261392
+          "pct": 8.896323111543687
         },
         {
-          "name": "Bayerische Motoren Werke Aktiengesellschaft",
-          "symbol": "BMW.DE",
-          "pct": 3.691492835372428
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 4.045412389288842
         },
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 3.374569465409247
+          "pct": 3.852640267088872
         }
       ],
       "bottom": [
         {
           "name": "EssilorLuxottica Société anonyme",
           "symbol": "EL.PA",
-          "pct": -5.009449969198783
+          "pct": -4.8834279451987355
         },
         {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -3.6553524804177546
+          "pct": -3.622715404699739
         },
         {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -2.6595744085372197
+          "pct": -3.4482735458615044
         }
       ]
     },
