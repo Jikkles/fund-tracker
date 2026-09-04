@@ -3103,7 +3103,17 @@ const CAT_MACRO = {
   'uk rates (boe)': { country:'United Kingdom', what:'UK rate decision',
                       groups:['uk-growth','uk-income','uk-smaller','bonds-gov','cash'] },
   'us rates (fed)': { country:'United States', what:'US rate decision',
-                      groups:['us','global','bonds-strategic','bonds-gov'] }
+                      groups:['us','global','bonds-strategic','bonds-gov'] },
+  /* The scheduled prints the committees above are reacting to. They reach
+     funds on the same evidence a rate decision does — the fund's own UK
+     country weight — so they carry the same country and the same fallback
+     groups, and differ only in what the row says the event is. */
+  'uk inflation (ons)':     { country:'United Kingdom', what:'UK inflation print',
+                      groups:['uk-growth','uk-income','uk-smaller','bonds-gov','cash'] },
+  'uk labour market (ons)': { country:'United Kingdom', what:'UK labour market data',
+                      groups:['uk-growth','uk-income','uk-smaller','bonds-gov','cash'] },
+  'uk gdp (ons)':           { country:'United Kingdom', what:'UK growth data',
+                      groups:['uk-growth','uk-income','uk-smaller','bonds-gov','cash'] }
 };
 
 const CAT_MIN_COUNTRY = 5;   // below this a country weight is not a real exposure story

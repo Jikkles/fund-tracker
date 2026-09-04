@@ -6516,6 +6516,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "navSymbol": "0P0001GZXO.L",
@@ -6756,6 +6786,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "navSymbol": "0P0001IAS1.L",
@@ -7023,6 +7083,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "navSymbol": "0P0000FY9K.L",
@@ -7280,6 +7370,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "navSymbol": "0P00008Y97.L",
@@ -7523,6 +7643,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "Fed published calendar",
           "dateISO": "2026-09-16"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "navSymbol": "0P00000QX1.L",
@@ -7766,6 +7916,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "navSymbol": "0P00001SDH.L",
@@ -8009,6 +8189,36 @@
           "refreshedAt": "4 Sep 2026",
           "dateSource": "BoE published calendar",
           "dateISO": "2026-09-17"
+        },
+        {
+          "holding": "UK inflation (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "CPI release",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly inflation print the MPC is reacting to, and the scheduled event with the clearest read-through to a sterling bond book. ONS publishes each release on a dated schedule and marks that date confirmed or provisional; both come through here from the ONS release calendar unchanged. No forecast or consensus figure is shown — the desk does not publish a number it cannot source, and a market expectation is not a published statistic.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK labour market (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Labour market overview",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "Employment, unemployment and average earnings, released monthly. It sits alongside the inflation print as the MPC's other standing scheduled input, and wage growth in particular is what the Committee has repeatedly pointed at when explaining the pace of cuts. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
+        },
+        {
+          "holding": "UK GDP (ONS)",
+          "weight": "macro driver — not a holding",
+          "event": "Monthly GDP estimate",
+          "date": "",
+          "tracking": "tbd",
+          "detail": "The monthly GDP estimate. It moves the growth side of the rate debate rather than the inflation side, which makes it the softer of the three for a bond book but the one that matters most when the argument is about how much room the MPC has. Date and confirmed/provisional status from the ONS release calendar.",
+          "refreshedAt": "",
+          "dateSource": "ONS release calendar"
         }
       ],
       "isin": "IE00BDFB5M56",

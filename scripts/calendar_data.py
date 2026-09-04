@@ -39,6 +39,7 @@ import urllib.request
 from datetime import date, timedelta
 
 import cb_calendar as cb
+import stat_calendar as sc
 from market_data import USER_AGENT, TIMEOUT
 
 # ---------------------------------------------------------------------------
@@ -74,6 +75,19 @@ CALENDAR_LOW_WATER = timedelta(days=75)
 # calendar_health runs afterwards; without this the pages would be pulled
 # several times for the same answer.
 _CALENDAR_CACHE: dict[str, tuple[list[cb.Meeting], list[str]]] = {}
+
+# Same reasoning for the ONS releases: next_event resolves one per
+# holding and calendar_health asks again afterwards. ONS rate-limits, so
+# asking twice for the same answer is the one thing to avoid. A miss is
+# cached as None, which is a result too - "read it, nothing there".
+_RELEASE_CACHE: dict[str, sc.Release | None] = {}
+
+
+def load_release(holding: str, today: date) -> sc.Release | None:
+    """Next scheduled ONS release for a tracked statistic, cached."""
+    if holding not in _RELEASE_CACHE:
+        _RELEASE_CACHE[holding] = sc.next_release(holding, today)
+    return _RELEASE_CACHE[holding]
 
 
 def load_calendar(holding: str, today: date
@@ -116,6 +130,17 @@ def calendar_health(today: date) -> list[str]:
             warnings.append(
                 f"{label} calendar runs out on {max(remaining):%d %b %Y}. "
                 f"Top it up from the published calendar.")
+
+    # A statistical release that will not resolve is worth saying out loud.
+    # It is not fatal - the catalyst simply carries no date - but silence
+    # here is how a permanently unresolvable catalyst would sit on the page
+    # looking merely undated rather than broken.
+    for holding, stat in sc.STATISTICS.items():
+        if load_release(holding, today) is None:
+            warnings.append(
+                f"{stat.label}: no upcoming release resolved from the ONS "
+                f"release calendar. The catalyst will show no date until it "
+                f"does.")
     return warnings
 
 
@@ -293,6 +318,18 @@ def next_event(holding: str, today: date) -> tuple[str, str, str | None] | None:
                     source, nxt.day.isoformat())
         return None
 
+    # Scheduled statistical releases - the prints the committees above are
+    # reacting to. ONS publishes its own confirmed/provisional flag and it is
+    # carried through unchanged, exactly as the Bank's is.
+    if holding in sc.STATISTICS:
+        release = load_release(holding, today)
+        if release:
+            return (f"{fmt_date(release.day, with_weekday=True)} "
+                    f"({release.status})",
+                    "ONS release calendar",
+                    release.day.isoformat())
+        return None
+
     # Aggregate "cluster" entries track a reporting season, not one company.
     # Anchor them to the earliest upcoming date among their constituents so
     # the panel shows when the season actually starts.
@@ -417,6 +454,34 @@ def _selftest_offline() -> bool:
         [cb.Meeting(date(2026, 10, 28), "confirmed")], [])
     assert next_event("US rates (Fed)", date(2026, 10, 29)) is None
     assert any("EXHAUSTED" in w for w in calendar_health(date(2026, 10, 29)))
+    _CALENDAR_CACHE.clear()
+
+    # Statistical releases resolve the same way, and carry ONS's own
+    # confirmed/provisional word rather than a label of our choosing. Seed
+    # the cache so this stays offline; reading the calendar is
+    # stat_calendar's business and has its own self-test.
+    _RELEASE_CACHE["UK inflation (ONS)"] = sc.Release(
+        date(2026, 9, 16), "Consumer price inflation, UK: August 2026",
+        "/releases/consumerpriceinflationukaugust2026", "confirmed")
+    hit = next_event("UK inflation (ONS)", date(2026, 9, 4))
+    assert hit == ("Wed 16 Sep 2026 (confirmed)", "ONS release calendar",
+                   "2026-09-16"), hit
+
+    # A provisional release must say so - the same rule as a provisional MPC
+    # date, and the same failure if it were relabelled.
+    _RELEASE_CACHE["UK GDP (ONS)"] = sc.Release(
+        date(2026, 10, 9), "GDP monthly estimate, UK: August 2026",
+        "/releases/gdpmonthlyestimateukaugust2026", "provisional")
+    hit = next_event("UK GDP (ONS)", date(2026, 9, 4))
+    assert hit and hit[0].endswith("(provisional)"), hit
+
+    # A statistic that will not resolve gives no date and says so, rather
+    # than falling back to anything.
+    _RELEASE_CACHE["UK labour market (ONS)"] = None
+    assert next_event("UK labour market (ONS)", date(2026, 9, 4)) is None
+    assert any("no upcoming release resolved" in w
+               for w in calendar_health(date(2026, 9, 4)))
+    _RELEASE_CACHE.clear()
     _CALENDAR_CACHE.clear()
 
     # An annual policy event rolls with the calendar instead of naming a
