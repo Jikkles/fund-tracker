@@ -97,14 +97,28 @@ class Statistic:
     prefix: str
 
 
+# ONS's own titles, which are not what you would guess them to be: the labour
+# market release is "UK Labour Market: September 2026", not "Labour market
+# overview". Guessing it cost a live run - the guard correctly published
+# nothing rather than pick up one of the same-day near misses sitting beside
+# it ("Labour market in the regions of the UK", "Labour market statistics
+# time series"), which is the failure it exists to prevent. These prefixes
+# are copied from what ONS actually served.
 STATISTICS: dict[str, Statistic] = {
     "UK inflation (ONS)": Statistic(
         "UK CPI", "consumer price inflation", "consumer price inflation"),
     "UK labour market (ONS)": Statistic(
-        "UK labour market", "labour market overview", "labour market overview"),
+        "UK labour market", "labour market", "uk labour market"),
     "UK GDP (ONS)": Statistic(
         "UK monthly GDP", "gdp monthly estimate", "gdp monthly estimate"),
 }
+
+# Most bulletins ship a companion dataset released the same minute, titled
+# the same way with a suffix - "GDP monthly estimate, UK: July 2026 time
+# series". It shares the bulletin's date, so matching it would not produce a
+# wrong date, but it is not the release the catalyst names and it should not
+# be what the desk points at.
+EXCLUDE_TERMS = ("time series",)
 
 
 # ---------------------------------------------------------------------------
@@ -241,7 +255,10 @@ def next_release(holding: str, today: date) -> Release | None:
         # The guard. A search for "consumer price inflation" returns producer
         # price inflation and a shelf of index time-series; only a title that
         # actually starts with this statistic's name is this statistic.
-        if not title.lower().startswith(stat.prefix):
+        low = title.lower()
+        if not low.startswith(stat.prefix):
+            continue
+        if any(term in low for term in EXCLUDE_TERMS):
             continue
 
         time.sleep(PAUSE_SECONDS)
@@ -389,6 +406,39 @@ def _selftest_offline() -> bool:
     assert not matched, f"producer price inflation must not match CPI: {titles}"
     print("  title guard      OK  (producer price inflation rejected)",
           file=_sys.stderr)
+
+    # The same guard against the real thing. These are the titles ONS served
+    # for 15 Sep 2026 - the release and the two near misses beside it, all on
+    # the same day. Guessing the prefix as "labour market overview" matched
+    # none of them on a live run, which is why the desk showed no date rather
+    # than the wrong release: the failure was visible instead of silent.
+    SAME_DAY = [
+        "UK Labour Market: September 2026",
+        "Labour market in the regions of the UK: September 2026",
+        "Labour market statistics time series: September 2026",
+    ]
+
+    def _picks(names, holding):
+        st = STATISTICS[holding]
+        return [n for n in names
+                if n.lower().startswith(st.prefix)
+                and not any(x in n.lower() for x in EXCLUDE_TERMS)]
+
+    picked = _picks(SAME_DAY, "UK labour market (ONS)")
+    assert picked == ["UK Labour Market: September 2026"], picked
+
+    # ONS drops the colon some months; the prefix must not depend on it.
+    assert _picks(["UK Labour Market February 2027"],
+                  "UK labour market (ONS)") == ["UK Labour Market February 2027"]
+
+    # Most bulletins ship a same-minute dataset companion. It carries the
+    # bulletin's date so it would not produce a wrong one, but it is not the
+    # release the catalyst names.
+    gdp = ["GDP monthly estimate, UK: July 2026",
+           "GDP monthly estimate, UK: July 2026 time series"]
+    assert _picks(gdp, "UK GDP (ONS)") == ["GDP monthly estimate, UK: July 2026"]
+    print("  real-title guard OK  (same-day near misses and dataset "
+          "companions rejected)", file=_sys.stderr)
 
     print("  stat_calendar self-test: OK", file=_sys.stderr)
     return True
