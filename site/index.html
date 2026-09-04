@@ -852,7 +852,7 @@
     /* ---- fund cards ----
        One column: identity first, then a single wrapping metric row. The
        two-column head squeezed a 40-character fund name into ~180px. */
-    .fund { margin-bottom: 12px; scroll-margin-top: 12px; }
+    .fund { margin-bottom: 12px; }
     .fhead { grid-template-columns: 1fr; gap: 10px; padding: 14px; }
     .fname { font-size: 17px; line-height: 1.32; }
     .badge { font-size: 10px; padding: 3px 8px; margin-left: 6px; }
@@ -892,8 +892,19 @@
     table.data th { padding: 9px 11px; font-size: 10.5px; }
     table.data td { padding: 9px 11px; }
     /* Period labels like "2025-26 (to 31 Mar 26)" wrapped to five lines and
-       dragged every row's height with them; the wrapper scrolls instead. */
-    .perf-tbl th:first-child, .perf-tbl td:first-child { white-space: nowrap; }
+       dragged every row's height with them, so the column was pinned to one
+       line and the wrapper left to scroll. That is right for a short label
+       and wrong for a qualified one: "1 yr (trailing, Fidelity price stamp
+       17 Apr 26 - as-at approximate)" measures about 600px and pushed every
+       figure in its row off the screen, leaving a table of labels and no
+       numbers. Capped and wrapping, the fund and sector figures are on
+       screen and only the fourth and fifth columns need the swipe. */
+    .perf-tbl th:first-child, .perf-tbl td:first-child {
+      white-space: normal; min-width: 92px; max-width: 132px; }
+    /* Plain figures - the peer table's five columns, and every heading -
+       stay on their line; the .perf-* cells are left free to wrap because
+       some of them name their source in brackets after the number. */
+    .perf-tbl th.num, .perf-tbl td.num { white-space: nowrap; }
     .perf-tbl { min-width: 100%; }
 
     /* ---- table view ----
@@ -1204,22 +1215,99 @@
 
   /* ---- mobile shell ---- */
   @media (max-width: 760px) {
-    .topnav-in { padding: 8px 14px; gap: 12px; flex-wrap: wrap; }
+    .topnav-in { padding: 8px 14px; gap: 10px; flex-wrap: wrap; }
     .brand small { display: none; }
+    /* The logo is also the way back to the top, and at 26px it was the
+       smallest target in the bar. Padding grows it without growing the row,
+       which is set by the taller Refresh button beside it. */
+    .brand { padding: 5px 0; }
     .navlinks { order: 3; flex: 1 0 100%; margin: 0 -14px; padding: 4px 14px 2px; }
+    .navlinks a { padding: 9px 10px; }
     /* Two provenance stamps and a button will not share a phone's nav row.
        The market refresh time is also printed under the chart, so it is the
        one that gives way; the fund data's as-at date is not repeated anywhere. */
     .navstamp { font-size: 9.5px; }
     .navstamp:not(.data) { display: none; }
-    .navstamp.data { max-width: 150px; }
-    .navbtn { padding: 7px 12px; font-size: 11px; }
-    .sec-anchor { scroll-margin-top: 118px; }
+    /* flex-basis 0, not auto. A wrapping flex line is broken on each item's
+       hypothetical size, before any shrinking is applied, so a stamp whose
+       nowrap text measures ~240px pushed the whole meta group onto a row of
+       its own - a third sticky row, mostly empty, on every screen of the
+       page. Starting the group from zero lets it share row one with the
+       brand and take whatever is left, and the stamp ellipses into it. The
+       full sentence is on the title attribute either way. */
+    .navmeta { flex: 1 1 0; min-width: 0; gap: 10px; }
+    .navstamp.data { flex: 1 1 auto; min-width: 0; max-width: none; }
+    .navstamp.data b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .navbtn { flex: 0 0 auto; padding: 9px 14px; font-size: 11.5px; }
+    /* Both offsets are the nav's real height (105px) plus a little air. The
+       section offset was set against the three-row bar and was short of it
+       even then; the card offset was never set for a phone at all - the
+       84px desktop value comes later in the sheet than the mobile block and
+       won it - so openFund scrolled a card 50px under the bar. */
+    .sec-anchor { scroll-margin-top: 113px; }
+    .fund { scroll-margin-top: 113px; }
     .kpis { grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
     .kpi { padding: 14px 16px; }
     .kpi-val { font-size: 26px; }
     .ov-grid { gap: 14px; margin-bottom: 16px; }
     .rec-grid { grid-template-columns: 1fr; gap: 14px; }
+
+    /* ---- tab strips scroll rather than wrap ----
+       Sixteen categories wrapped to eight rows in the intelligence panel and
+       six in the headlines: 465px of tab, ahead of the content they select,
+       on a 844px screen. The market chart's own strip already scrolls on a
+       phone for exactly this reason, so these follow it - one row, swiped -
+       and the seven chart ranges join them rather than dropping "5Y" onto a
+       line of its own. */
+    .intel-tabs { flex-wrap: nowrap; overflow-x: auto;
+                  scrollbar-width: none; -ms-overflow-style: none; }
+    .intel-tabs::-webkit-scrollbar { display: none; }
+    .itab { flex: 0 0 auto; padding: 11px 14px; }
+    .news-tabs { flex-wrap: nowrap; overflow-x: auto;
+                 scrollbar-width: none; -ms-overflow-style: none;
+                 margin: 0 -14px; padding: 2px 14px; }
+    .news-tabs::-webkit-scrollbar { display: none; }
+    .news-tabs button { flex: 0 0 auto; padding: 12px 13px; }
+    .mkt-ranges { flex-wrap: nowrap; overflow-x: auto; gap: 4px;
+                  scrollbar-width: none; -ms-overflow-style: none; }
+    .mkt-ranges::-webkit-scrollbar { display: none; }
+    .mkt-ranges button { flex: 0 0 auto; padding: 12px 13px; }
+
+    /* ---- thumb-sized controls ----
+       These landed between 27px and 33px tall, small enough to miss with a
+       thumb. Widths are already generous, so only the vertical padding
+       moves; the tab strips above take the same treatment. Nothing here
+       reaches 44px without pushing the panels apart, but everything
+       interactive on a phone now clears 36px. */
+    .seg button { padding: 11px 14px; }
+    .news-link { padding: 10px 13px; }
+
+    /* ---- group strip ----
+       Three columns in 318px left the label 132px, which truncated six of
+       the sixteen category names - and the name is what the row is, since
+       tapping it filters the directory to that group. Label and figure take
+       the first line, the bar the second, so nothing is cut and the bar gets
+       the full width to make its comparison in. */
+    .grp-sub { display: block; margin-left: 0; margin-top: 2px; }
+    .grp-row { grid-template-columns: minmax(0, 1fr) auto;
+               grid-template-areas: "lab val" "bar bar";
+               gap: 5px 10px; align-items: center; padding: 9px 8px; }
+    .grp-lab { grid-area: lab; white-space: normal; overflow: visible; }
+    .grp-track { grid-area: bar; }
+    .grp-val { grid-area: val; }
+
+    /* ---- ranking pair ----
+       .stack is the desktop condensation for a 42%-wide column, and it
+       out-specifies the mobile rules above it, so a phone inherited row
+       padding of 7px and 22px-tall period buttons even though the panel is
+       full width here. Put the comfortable sizes back. */
+    .rank-grid.stack .pulse-box-head { padding: 12px 14px; font-size: 12px; }
+    .rank-grid.stack .pr-head { padding: 12px 14px; }
+    .rank-grid.stack .pulse-row .pr-name { font-size: 15px; line-height: 1.35; }
+    .rank-grid.stack .pulse-row .pr-perf { font-size: 14px; }
+    .rank-grid.stack .pulse-row .pr-num { font-size: 12px; min-width: 16px; margin-right: 2px; }
+    .rank-grid.stack .rank-title { font-size: 12.5px; letter-spacing: .05em; }
+    .rank-grid.stack .rank-head .seg button { padding: 11px 14px; font-size: 13px; }
   }
 </style>
 </head>
