@@ -1,323 +1,323 @@
 {
-  "generated": "2026-09-03T14:19:03+00:00",
+  "generated": "2026-09-04T08:13:06+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "RELX plc",
-          "symbol": "REL",
-          "pct": 4.83
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": 3.45
         },
         {
-          "name": "London Stock Exchange Group plc",
-          "symbol": "LSEG",
-          "pct": 4.81
+          "name": "Vodafone Group plc",
+          "symbol": "VOD",
+          "pct": 1.64
         },
         {
-          "name": "Experian Plc",
-          "symbol": "EXPN",
-          "pct": 3.69
+          "name": "Melrose Industries plc",
+          "symbol": "MRO",
+          "pct": 1.55
         }
       ],
       "bottom": [
         {
-          "name": "Haleon plc",
-          "symbol": "HLN",
-          "pct": -1.45
+          "name": "Experian Plc",
+          "symbol": "EXPN",
+          "pct": -4.25
         },
         {
-          "name": "Reckitt Benckiser Group Plc",
-          "symbol": "RKT",
-          "pct": -1.34
+          "name": "Coca-Cola Europacific Partners Plc",
+          "symbol": "CCEP",
+          "pct": -1.55
         },
         {
-          "name": "Centrica plc",
-          "symbol": "CNA",
-          "pct": -1.2
+          "name": "Coca-Cola HBC AG",
+          "symbol": "CCH",
+          "pct": -1.49
         }
       ]
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "HL market summary (delayed)",
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Hilton Food Group Plc",
-          "symbol": "HFG",
-          "pct": 13.95
+          "name": "Renishaw plc",
+          "symbol": "RSW",
+          "pct": 5.95
         },
         {
-          "name": "Ceres Power Holdings",
-          "symbol": "CWR",
-          "pct": 9.0
+          "name": "XPS Pensions Group Plc",
+          "symbol": "XPS",
+          "pct": 4.78
         },
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": 6.51
+          "name": "Watches Of Switzerland Group plc",
+          "symbol": "WOSG",
+          "pct": 2.86
         }
       ],
       "bottom": [
         {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": -10.37
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": -7.73
         },
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": -4.62
+          "name": "Wickes Group Plc",
+          "symbol": "WIX",
+          "pct": -2.24
         },
         {
-          "name": "Chesnara plc",
-          "symbol": "CSN",
-          "pct": -4.61
+          "name": "Hilton Food Group Plc",
+          "symbol": "HFG",
+          "pct": -1.91
         }
       ]
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "Yahoo Finance daily closes",
-      "universe": "502 of 503 constituents",
+      "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Robinhood Markets, Inc.",
-          "symbol": "HOOD",
-          "pct": 13.417145194461854
+          "name": "Dell Technologies Inc.",
+          "symbol": "DELL",
+          "pct": 15.811767578125
         },
         {
-          "name": "Palantir Technologies Inc.",
-          "symbol": "PLTR",
-          "pct": 9.26472107058959
+          "name": "Reddit, Inc.",
+          "symbol": "RDDT",
+          "pct": 9.305867512904934
         },
         {
-          "name": "Principal Financial Group, Inc.",
-          "symbol": "PFG",
-          "pct": 7.79804195090977
+          "name": "Charter Communications, Inc.",
+          "symbol": "CHTR",
+          "pct": 8.742047038694842
         }
       ],
       "bottom": [
         {
-          "name": "Ciena Corporation",
-          "symbol": "CIEN",
-          "pct": -10.630562471806613
+          "name": "Palo Alto Networks, Inc.",
+          "symbol": "PANW",
+          "pct": -9.282218700181586
         },
         {
-          "name": "Hewlett Packard Enterprise Company",
-          "symbol": "HPE",
-          "pct": -6.733554997437243
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": -6.526983939142626
         },
         {
-          "name": "Broadcom Inc.",
-          "symbol": "AVGO",
-          "pct": -6.540679025272318
+          "name": "Edison International",
+          "symbol": "EIX",
+          "pct": -6.139456899986227
         }
       ]
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Palantir Technologies Inc.",
-          "symbol": "PLTR",
-          "pct": 9.258814210428831
+          "name": "Alnylam Pharmaceuticals, Inc.",
+          "symbol": "ALNY",
+          "pct": 8.650600639280702
         },
         {
-          "name": "Strategy Inc",
-          "symbol": "MSTR",
-          "pct": 8.872467293748096
+          "name": "PayPal Holdings, Inc.",
+          "symbol": "PYPL",
+          "pct": 4.3320545361917935
         },
         {
-          "name": "Space Exploration Technologies Corp.",
-          "symbol": "SPCX",
-          "pct": 5.5691812165193975
+          "name": "Constellation Energy Corporation",
+          "symbol": "CEG",
+          "pct": 3.4711608829771556
         }
       ],
       "bottom": [
         {
-          "name": "Broadcom Inc.",
-          "symbol": "AVGO",
-          "pct": -6.54612206366776
+          "name": "Palo Alto Networks, Inc.",
+          "symbol": "PANW",
+          "pct": -9.282218700181586
         },
         {
-          "name": "Lumentum Holdings Inc.",
-          "symbol": "LITE",
-          "pct": -4.191457363833477
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": -6.526983939142626
         },
         {
-          "name": "Western Digital Corporation",
-          "symbol": "WDC",
-          "pct": -3.549787875975854
+          "name": "Palantir Technologies Inc.",
+          "symbol": "PLTR",
+          "pct": -5.813690285421283
         }
       ]
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Salesforce, Inc.",
-          "symbol": "CRM",
-          "pct": 3.711129075592802
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 3.2054824974449385
         },
         {
-          "name": "Microsoft Corporation",
-          "symbol": "MSFT",
-          "pct": 2.8803182938756366
+          "name": "American Express Company",
+          "symbol": "AXP",
+          "pct": 1.7859923197256384
         },
         {
-          "name": "The Goldman Sachs Group, Inc.",
-          "symbol": "GS",
-          "pct": 2.2819122777455143
+          "name": "Caterpillar Inc.",
+          "symbol": "CAT",
+          "pct": 1.683871939595905
         }
       ],
       "bottom": [
         {
+          "name": "Honeywell International Inc.",
+          "symbol": "HON",
+          "pct": -1.862076618190689
+        },
+        {
           "name": "3M Company",
           "symbol": "MMM",
-          "pct": -1.6622178819444444
+          "pct": -0.875238160882163
         },
         {
-          "name": "McDonald's Corporation",
-          "symbol": "MCD",
-          "pct": -1.4830524827472487
-        },
-        {
-          "name": "Merck & Co., Inc.",
-          "symbol": "MRK",
-          "pct": -1.002376865325086
+          "name": "Microsoft Corporation",
+          "symbol": "MSFT",
+          "pct": -0.838286252355196
         }
       ]
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Sino Biopharmaceutical Limited",
-          "symbol": "1177.HK",
-          "pct": 6.273762535105548
+          "name": "Longfor Group Holdings Limited",
+          "symbol": "0960.HK",
+          "pct": 8.483288471687478
         },
         {
-          "name": "CSPC Pharmaceutical Group Limited",
-          "symbol": "1093.HK",
-          "pct": 4.798250564040634
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": 6.1558519877519995
         },
         {
-          "name": "China Resources Mixc Lifestyle Services Limited",
-          "symbol": "1209.HK",
-          "pct": 3.5860596269218346
+          "name": "Meituan",
+          "symbol": "3690.HK",
+          "pct": 5.21570552836823
         }
       ],
       "bottom": [
         {
-          "name": "Trip.com Group Limited",
-          "symbol": "9961.HK",
-          "pct": -5.410115254901675
+          "name": "WuXi Biologics (Cayman) Inc.",
+          "symbol": "2269.HK",
+          "pct": -3.195264117370483
         },
         {
-          "name": "Chow Tai Fook Jewellery Group Limited",
-          "symbol": "1929.HK",
-          "pct": -4.216386203966436
+          "name": "Orient Overseas (International) Limited",
+          "symbol": "0316.HK",
+          "pct": -2.477175974031012
         },
         {
-          "name": "Zhongsheng Group Holdings Limited",
-          "symbol": "0881.HK",
-          "pct": -3.3244680935384565
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": -1.9103644282999512
         }
       ]
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 5.294115403119255
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": 9.56521943261392
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 3.317903544674511
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 3.691492835372428
         },
         {
-          "name": "Deutsche Börse AG",
-          "symbol": "DB1.DE",
-          "pct": 2.2947271554476174
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": 3.374569465409247
         }
       ],
       "bottom": [
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": -3.306131360755502
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -5.009449969198783
         },
         {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -3.035248041775457
+          "pct": -3.6553524804177546
         },
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": -2.6149930537414177
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": -2.6595744085372197
         }
       ]
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-03",
+      "asAt": "2026-09-04",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Nitori Holdings Co., Ltd.",
-          "symbol": "9843.T",
-          "pct": 8.407811982787157
+          "name": "SoftBank Group Corp.",
+          "symbol": "9984.T",
+          "pct": 11.777644471105779
         },
         {
-          "name": "Sumitomo Heavy Industries, Ltd.",
-          "symbol": "6302.T",
-          "pct": 5.091834879068922
-        },
-        {
-          "name": "The Kansai Electric Power Company, Incorporated",
-          "symbol": "9503.T",
-          "pct": 4.236996210816397
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Inpex Corporation",
-          "symbol": "1605.T",
-          "pct": -3.999012589484078
-        },
-        {
-          "name": "Yokogawa Electric Corporation",
-          "symbol": "6841.T",
-          "pct": -3.7494849608570253
+          "name": "Taiyo Yuden Co., Ltd.",
+          "symbol": "6976.T",
+          "pct": 6.424297166083324
         },
         {
           "name": "Furukawa Electric Co., Ltd.",
           "symbol": "5801.T",
-          "pct": -3.704690831556503
+          "pct": 6.393578743426516
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Sumitomo Chemical Company, Limited",
+          "symbol": "4005.T",
+          "pct": -5.106111277596202
+        },
+        {
+          "name": "Mitsui & Co., Ltd.",
+          "symbol": "8031.T",
+          "pct": -4.454597372929754
+        },
+        {
+          "name": "Nissui Corporation",
+          "symbol": "1332.T",
+          "pct": -4.244548286604362
         }
       ]
     }
