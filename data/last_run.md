@@ -5,11 +5,10 @@ Window: 5 Aug 2026 to 4 Sep 2026
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
-- **62** catalyst dates refreshed (4 confirmed, 0 provisional, 19 estimated)
+- **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
 ## Maintenance needed
 
-- UK labour market: no upcoming release resolved from the ONS release calendar. The catalyst will show no date until it does.
 - 10 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (157d), jupiter-asian-income (157d), artemis-us-smaller-companies (143d), and 7 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 - 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
 
@@ -20,14 +19,14 @@ Window: 5 Aug 2026 to 4 Sep 2026
 | FTSE 100 | -0.53% |
 | FTSE 250 | -0.19% |
 | S&P 500 | -0.14% |
-| Nasdaq 100 | -0.01% |
+| Nasdaq 100 | +0.02% |
 | Euro STOXX 50 | -1.30% |
 | Nikkei 225 | -3.15% |
 | Hang Seng | -2.71% |
-| Gold (USD/oz) | +5.33% |
-| Brent crude | +21.11% |
+| Gold (USD/oz) | +5.41% |
+| Brent crude | +21.07% |
 | US 10yr yield | +3.62% |
-| GBP/USD | +0.49% |
+| GBP/USD | +0.50% |
 
 ## Fund NAV figures (1 month)
 

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T19:18:47+00:00",
+  "generated": "2026-09-04T19:24:07+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -90,34 +90,34 @@
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": 10.046365036702188
+          "pct": 10.063086029586895
         },
         {
           "name": "KLA Corporation",
           "symbol": "KLAC",
-          "pct": 6.7075232340515045
+          "pct": 6.681503708025096
         },
         {
-          "name": "NRG Energy, Inc.",
-          "symbol": "NRG",
-          "pct": 6.1740045017795095
+          "name": "Marvell Technology, Inc.",
+          "symbol": "MRVL",
+          "pct": 6.02882546928101
         }
       ],
       "bottom": [
         {
           "name": "Amphenol Corporation",
           "symbol": "APH",
-          "pct": -48.12362130756319
+          "pct": -48.04793367320669
         },
         {
           "name": "lululemon athletica inc.",
           "symbol": "LULU",
-          "pct": -17.947767372943822
+          "pct": -17.70559032199028
         },
         {
           "name": "Fair Isaac Corporation",
           "symbol": "FICO",
-          "pct": -16.445180839544964
+          "pct": -16.340612735271414
         }
       ]
     },
@@ -130,34 +130,34 @@
         {
           "name": "Astera Labs, Inc.",
           "symbol": "ALAB",
-          "pct": 10.347565014136581
+          "pct": 10.798379618289657
         },
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": 10.040257556671998
+          "pct": 10.097171734331214
         },
         {
           "name": "KLA Corporation",
           "symbol": "KLAC",
-          "pct": 6.7075232340515045
+          "pct": 6.684397707528881
         }
       ],
       "bottom": [
         {
           "name": "Autodesk, Inc.",
           "symbol": "ADSK",
-          "pct": -7.675147633214231
+          "pct": -7.666725491036265
         },
         {
           "name": "Adobe Inc.",
           "symbol": "ADBE",
-          "pct": -6.001747645313867
+          "pct": -6.0892367091808834
         },
         {
           "name": "Tesla, Inc.",
           "symbol": "TSLA",
-          "pct": -5.964870202382377
+          "pct": -5.849293093623134
         }
       ]
     },
@@ -170,34 +170,34 @@
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": 1.0785618422801064
+          "pct": 1.2122893530444423
         },
         {
           "name": "The Home Depot, Inc.",
           "symbol": "HD",
-          "pct": 1.018640601052452
+          "pct": 1.0469063234047666
         },
         {
           "name": "NVIDIA Corporation",
           "symbol": "NVDA",
-          "pct": 0.7507097223902244
+          "pct": 0.6638658712013914
         }
       ],
       "bottom": [
         {
-          "name": "Apple Inc.",
-          "symbol": "AAPL",
-          "pct": -1.956059558605774
-        },
-        {
           "name": "Microsoft Corporation",
           "symbol": "MSFT",
-          "pct": -1.943662008905208
+          "pct": -1.9701223024320018
+        },
+        {
+          "name": "Apple Inc.",
+          "symbol": "AAPL",
+          "pct": -1.919499088080329
         },
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -1.6414501992864114
+          "pct": -1.6549595119166431
         }
       ]
     },
