@@ -24484,24 +24484,6 @@
         "fundName": "Automated daily run",
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
-        "description": "Priced 70 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 48 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 48 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
         "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 48 catalyst dates refreshed.",
         "status": "corrected",
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
@@ -24728,6 +24710,24 @@
         "check": "RESEARCH-STALE",
         "severity": "MEDIUM",
         "description": "10 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (157d), jupiter-asian-income (157d), artemis-us-smaller-companies (143d), and 7 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows. 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Research maintenance",
+        "check": "RESEARCH-STALE",
+        "severity": "MEDIUM",
+        "description": "10 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (158d), jupiter-asian-income (158d), artemis-us-smaller-companies (144d), and 7 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows. 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.",
         "status": "flagged",
         "source": null
       },

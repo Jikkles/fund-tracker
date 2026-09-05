@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-05T08:10:21+00:00",
+  "generated": "2026-09-05T10:45:33+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -248,36 +248,36 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 3.7941203397863053
-        },
-        {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": 3.1438106677205266
+          "pct": 5.901430793523346
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 2.2817456646504386
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 3.091190055171767
+        },
+        {
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 2.3951050968698184
         }
       ],
       "bottom": [
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": -3.6231884754700303
-        },
-        {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -3.296344647519582
-        },
-        {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -1.8525378567413562
+          "pct": -3.38254091043789
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -3.2900244230150624
+        },
+        {
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": -2.460905218605827
         }
       ]
     },
