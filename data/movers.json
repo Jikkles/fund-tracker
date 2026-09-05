@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-04T19:24:07+00:00",
+  "generated": "2026-09-05T08:10:21+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
@@ -43,7 +43,7 @@
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "HL market summary (delayed)",
       "universe": "all 250 constituents",
       "top": [
@@ -83,127 +83,127 @@
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": 10.063086029586895
+          "pct": 11.897826412229154
         },
         {
           "name": "KLA Corporation",
           "symbol": "KLAC",
-          "pct": 6.681503708025096
+          "pct": 7.320459976516252
         },
         {
           "name": "Marvell Technology, Inc.",
           "symbol": "MRVL",
-          "pct": 6.02882546928101
+          "pct": 7.0487961938590304
         }
       ],
       "bottom": [
         {
-          "name": "Amphenol Corporation",
-          "symbol": "APH",
-          "pct": -48.04793367320669
-        },
-        {
           "name": "lululemon athletica inc.",
           "symbol": "LULU",
-          "pct": -17.70559032199028
+          "pct": -17.377019476102365
         },
         {
           "name": "Fair Isaac Corporation",
           "symbol": "FICO",
-          "pct": -16.340612735271414
+          "pct": -16.682905542327717
+        },
+        {
+          "name": "Autodesk, Inc.",
+          "symbol": "ADSK",
+          "pct": -8.260361242445207
         }
       ]
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Astera Labs, Inc.",
-          "symbol": "ALAB",
-          "pct": 10.798379618289657
-        },
-        {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": 10.097171734331214
+          "pct": 11.897826412229154
         },
         {
-          "name": "KLA Corporation",
-          "symbol": "KLAC",
-          "pct": 6.684397707528881
+          "name": "Astera Labs, Inc.",
+          "symbol": "ALAB",
+          "pct": 9.751780587661369
+        },
+        {
+          "name": "Nebius Group N.V.",
+          "symbol": "NBIS",
+          "pct": 7.482312178459225
         }
       ],
       "bottom": [
         {
           "name": "Autodesk, Inc.",
           "symbol": "ADSK",
-          "pct": -7.666725491036265
+          "pct": -8.260361242445207
         },
         {
           "name": "Adobe Inc.",
           "symbol": "ADBE",
-          "pct": -6.0892367091808834
+          "pct": -6.733154937664041
         },
         {
           "name": "Tesla, Inc.",
           "symbol": "TSLA",
-          "pct": -5.849293093623134
+          "pct": -5.922365978717725
         }
       ]
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": 1.2122893530444423
+          "pct": 1.7246966206323446
+        },
+        {
+          "name": "Honeywell International Inc.",
+          "symbol": "HON",
+          "pct": 0.9536173390048239
         },
         {
           "name": "The Home Depot, Inc.",
           "symbol": "HD",
-          "pct": 1.0469063234047666
-        },
-        {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": 0.6638658712013914
+          "pct": 0.9368945201150048
         }
       ],
       "bottom": [
         {
-          "name": "Microsoft Corporation",
-          "symbol": "MSFT",
-          "pct": -1.9701223024320018
-        },
-        {
           "name": "Apple Inc.",
           "symbol": "AAPL",
-          "pct": -1.919499088080329
+          "pct": -2.5105848234065116
         },
         {
-          "name": "Amgen Inc.",
-          "symbol": "AMGN",
-          "pct": -1.6549595119166431
+          "name": "Microsoft Corporation",
+          "symbol": "MSFT",
+          "pct": -2.042653299203164
+        },
+        {
+          "name": "Salesforce, Inc.",
+          "symbol": "CRM",
+          "pct": -1.9664870980913443
         }
       ]
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
@@ -243,47 +243,47 @@
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": 3.7941203397863053
+        },
+        {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": 5.901430793523346
+          "pct": 3.1438106677205266
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 3.091190055171767
-        },
-        {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 2.3951050968698184
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 2.2817456646504386
         }
       ],
       "bottom": [
         {
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -3.6231884754700303
+        },
+        {
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": -3.296344647519582
+        },
+        {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -3.38254091043789
-        },
-        {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": -3.2900244230150624
-        },
-        {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": -2.460905218605827
+          "pct": -1.8525378567413562
         }
       ]
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-04",
+      "asAt": "2026-09-05",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
