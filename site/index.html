@@ -475,6 +475,14 @@
                        cursor: pointer; transition: background .12s, color .12s; }
   .mkt-ranges button:hover { background: var(--hover-bg); color: var(--ink); }
   .mkt-ranges button.on { background: var(--blue); color: #06263a; }
+  /* A range this index has no series for. Dimmed and inert rather than
+     removed: the row keeps the same seven positions whichever tab is open,
+     so 5D does not slide under the cursor where 1D was a moment ago. */
+  .mkt-ranges button[disabled] { opacity: .38; cursor: not-allowed; }
+  .mkt-ranges button[disabled]:hover { background: transparent; color: var(--ink-soft); }
+  /* Amber for the same reason .mkt-closed is: a range the refresh could not
+     fill is a caveat about what is on screen, not a fall in it. */
+  .mkt-miss { margin: 8px 0 0 20px; font-size: 11px; color: var(--amber); }
   /* No overflow property here on purpose. `overflow-x: auto` forced overflow-y
      to compute to `auto` as well, and the absolutely-positioned tooltip sits
      ~4px past the box, so a vertical scrollbar appeared and flickered on every
@@ -777,6 +785,7 @@
     .mkt-chg { font-size: 13px; }
     .mkt-asof { margin: 6px 14px 0; font-size: 10.5px; line-height: 1.5; }
     .mkt-ranges { padding: 12px 14px 4px; gap: 6px; }
+    .mkt-miss { margin-left: 14px; margin-right: 14px; }
     .mkt-ranges button { padding: 8px 14px; }
     .mkt-plot { padding: 4px 4px 10px; }
     .mkt-note { padding: 0 14px 14px; line-height: 1.5; }
@@ -1704,12 +1713,46 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
    x is positioned by bar index, not by timestamp, so overnight and weekend
    gaps do not open dead space in the line - the same thing a quote page does. */
-let MKT = null, mktId = null, mktRange = '1d', mktResizeTimer = null;
+let MKT = null, mktId = null, mktRange = '1d', mktShown = '1d', mktResizeTimer = null;
 
 const MKT_RANGES = [
   ['1d','1D'], ['5d','5D'], ['1m','1M'], ['6m','6M'],
   ['ytd','YTD'], ['1y','1Y'], ['5y','5Y']
 ];
+
+/* Which of the seven ranges this index can actually draw.
+
+   An index can arrive missing a range. Yahoo publishes no intraday bars for a
+   continuously-traded contract until its own day has begun, so a weekend
+   refresh brings GC=F and BZ=F back with no 1d series at all while every
+   equity index still carries Friday's session. The chart used to answer that
+   by silently resetting to 1Y, which read as a 1D button that refused to be
+   clicked - the range is unavailable, so say so on the button rather than
+   moving the selection out from under the click. */
+function mktAvailable(idx){
+  const out = {};
+  MKT_RANGES.forEach(r => { out[r[0]] = !!mktSeries(idx, r[0]); });
+  return out;
+}
+
+/* The range actually drawn: the one asked for where the file has it, else the
+   nearest one it does have - a step longer tried first, so a missing 1D lands
+   on 5D rather than at the far end of the list. Null when nothing draws. */
+function mktNearestRange(avail, want){
+  if(avail[want]) return want;
+  const keys = MKT_RANGES.map(r => r[0]);
+  const i = keys.indexOf(want);
+  if(i < 0) return keys.find(k => avail[k]) || null;
+  for(let d = 1; d < keys.length; d++){
+    if(i + d < keys.length && avail[keys[i + d]]) return keys[i + d];
+    if(i - d >= 0 && avail[keys[i - d]]) return keys[i - d];
+  }
+  return null;
+}
+
+function mktRangeLabel(k){
+  return (MKT_RANGES.find(r => r[0] === k) || ['', k])[1];
+}
 
 function fetchMarket(){
   return fetch('market.json?t=' + Date.now(), {cache:'no-store'})
@@ -1849,7 +1892,7 @@ function mktChartSvg(idx, ser, width, height){
           + '<text x="' + (padL+pw+6).toFixed(1) + '" y="' + (y+4).toFixed(1) + '" fill="var(--ink-soft)" font-size="' + fs + '" font-family="JetBrains Mono, monospace">' + lab + '</text>';
   });
 
-  const mode = mktRange === '1d' ? 'time' : mktRange === '5y' ? 'month' : 'day';
+  const mode = mktShown === '1d' ? 'time' : mktShown === '5y' ? 'month' : 'day';
   let xlab = '';
   const ticks = Math.min(W < 420 ? 3 : W < 700 ? 4 : 6, n);
   for(let k = 0; k < ticks; k++){
@@ -1918,11 +1961,13 @@ function renderChart(){
   if(!idx){ el.innerHTML = ''; return; }
   mktId = idx.id;
 
-  let ser = mktSeries(idx, mktRange);
-  if(!ser){                 // e.g. a session that has not opened yet
-    mktRange = '1y';
-    ser = mktSeries(idx, mktRange);
-  }
+  // mktRange is what was asked for and is left alone; mktShown is what this
+  // index can draw. Keeping the two apart means leaving a tab that has no 1D
+  // and coming back returns to 1D, rather than stranding the reader on the
+  // range some other index happened to force.
+  const avail = mktAvailable(idx);
+  mktShown = mktNearestRange(avail, mktRange);
+  const ser = mktShown ? mktSeries(idx, mktShown) : null;
   if(!ser){ el.innerHTML = ''; return; }
 
   const last = ser.c[ser.c.length - 1];
@@ -1930,14 +1975,26 @@ function renderChart(){
   const pct = ser.base ? chg / ser.base * 100 : 0;
   const cls = chg > 0 ? 'perf-pos' : chg < 0 ? 'perf-neg' : 'perf-neu';
   const sign = chg >= 0 ? '+' : '';
-  const rangeLabel = (MKT_RANGES.find(r => r[0] === mktRange) || ['',''])[1];
+  const rangeLabel = mktRangeLabel(mktShown);
 
   const tabs = MKT.indices.map(x =>
     '<button class="' + (x.id === idx.id ? 'on' : '') + '" onclick="mktPick(\'' + x.id + '\')">' + esc(x.label) + '</button>'
   ).join('');
-  const ranges = MKT_RANGES.map(r =>
-    '<button class="' + (r[0] === mktRange ? 'on' : '') + '" onclick="mktSetRange(\'' + r[0] + '\')">' + r[1] + '</button>'
-  ).join('');
+  const ranges = MKT_RANGES.map(r => {
+    if(!avail[r[0]]){
+      return '<button disabled title="' + esc(idx.label) + ' has no ' + r[1]
+           + ' series in this refresh, so that range cannot be drawn.">' + r[1] + '</button>';
+    }
+    return '<button class="' + (r[0] === mktShown ? 'on' : '')
+         + '" onclick="mktSetRange(\'' + r[0] + '\')">' + r[1] + '</button>';
+  }).join('');
+
+  /* Why the highlight is not on the button that was clicked. Said on screen
+     rather than left to a hover title, which a phone never shows. */
+  const missing = (mktShown !== mktRange && !avail[mktRange])
+    ? '<div class="mkt-miss">No ' + esc(mktRangeLabel(mktRange)) + ' series for '
+      + esc(idx.label) + ' in this refresh &mdash; showing ' + esc(rangeLabel) + ' instead.</div>'
+    : '';
 
   const lastT = ser.t[ser.t.length - 1];
 
@@ -1947,7 +2004,7 @@ function renderChart(){
      as-of line said so in 11px grey, which reads as a stale page rather than a
      shut market. Only 1D and 5D make the claim; on a 1Y chart a bar from Friday
      is just the last daily bar. */
-  const lastSession = ((mktRange === '1d' || mktRange === '5d') && mktMissedSession(lastT))
+  const lastSession = ((mktShown === '1d' || mktShown === '5d') && mktMissedSession(lastT))
     ? '<span class="mkt-closed" title="' + esc(idx.label) + ' has not traded today, so this is the last completed session - its exchange is shut for a holiday or the weekend, or has not opened yet.">'
       + 'Last session &middot; ' + esc(mktStamp(lastT, idx.tz, 'wday')) + '</span>'
     : '';
@@ -1971,7 +2028,7 @@ function renderChart(){
   + '</div></div>'
   + '<div class="mkt-asof">' + esc(idx.currency) + ' · change over ' + esc(rangeLabel)
   +   ' · last point ' + esc(mktStamp(lastT, idx.tz, 'full')) + ' ' + esc(idx.tz) + '</div>'
-  + '<div class="mkt-ranges">' + ranges + '</div>'
+  + '<div class="mkt-ranges">' + ranges + '</div>' + missing
   + '<div class="mkt-plot" id="mktPlot"><div class="mkt-tip" id="mktTip"></div></div>'
   + '<div class="mkt-note">Index levels from Yahoo Finance, delayed and unofficial — indicative only, not a dealing price. ' + esc(genTxt) + '</div>'
   + '</div>';
@@ -1994,7 +2051,7 @@ function mktWireHover(idx, ser){
   const c = ser.c, n = c.length;
   const { lo, hi } = mktBounds(ser);
   const Y = v => padT + (hi - v) / (hi - lo) * ph;
-  const mode = (mktRange === '1d' || mktRange === '5d') ? 'full' : 'date';
+  const mode = (mktShown === '1d' || mktShown === '5d') ? 'full' : 'date';
 
   function move(ev){
     const r = svg.getBoundingClientRect();
