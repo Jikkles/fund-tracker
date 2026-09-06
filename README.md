@@ -32,7 +32,9 @@ only, free public endpoints, inside GitHub's free Actions allowance.
 | **Index movers** | Beside the chart: the best and worst three CONSTITUENTS of whichever index is shown. Every equity index on the desk is ranked off its full list — all 100 of the FTSE 100, all 250 of the FTSE 250, 503 of the S&P 500, 102 of the Nasdaq 100, 30 of the Dow, 85 of the Hang Seng, 50 of the Euro STOXX 50, 223 of the Nikkei's 225. An index is ranked only where the whole list can be priced, and the count says how many |
 | **Top 5 / Bottom 5** | Ranked over 1W · 1M · 1Y · 5Y from each fund's own NAV series. Only priced funds appear, and the header says how many |
 | **Watchlist** | Top 8 to hold over six months to five years, scored on 1yr vs sector, OCF, max drawdown and badge signal. Capped at two per group, and a fund with no three-year record sits out rather than being ranked on one year and a run of blanks |
-| **Fund cards** | Holdings, sector and country splits, size, charges, managers, discrete annual returns — scraped from HL factsheets |
+| **Risk map** | Every fund's five-year return plotted against its worst fall over the same five years, both off its own NAV. Median crosshair, category filter, hover for the fund |
+| **Overlap** | What the desk actually owns: the companies appearing in the most published top-tens, and the pairs of funds holding the most portfolio in common |
+| **Fund cards** | Holdings, sector and country splits, size, charges, managers, discrete annual returns — scraped from HL factsheets — plus calendar-year returns, annualised volatility and the funds this one overlaps, all computed |
 | **Headlines** | Split by market, one tab per category, expanding in place |
 | **Catalysts** | Central bank and earnings dates, each labelled `confirmed`, `provisional` or `estimated` |
 | **Data health** | Live signals only — stale NAVs, researched tables past 120 days, undated tables, inconsistent, unverified |
@@ -241,6 +243,70 @@ the only true broad-category comparison on the card — IA Global is hundreds of
 desk's peer block is ten curated ones — and dropping it would trade real information for
 tidiness. Staleness is a reason to label a figure, not a reason to delete a correct one.
 
+**Holdings overlap, from the top tens already scraped.** Every card carries a top-10
+holdings list. Read one at a time they say what a single fund holds; read together they
+answer a question no card can, which is how much of this desk is the same twenty companies
+bought eleven times over. Overlap between two funds is the sum, across the companies both
+name, of the **smaller** of the two weights — the standard calculation. Two funds holding
+Nvidia at 5% and 8% share five points of portfolio, not thirteen.
+
+**It is a floor, and every place it appears says so.** HL publish ten lines out of a book
+that runs to fifty or five hundred. Two funds sharing nothing in their top tens can still
+hold the same mid-caps further down and nothing here would see it. So a figure in this
+section is the overlap that can be *proven*; the true overlap is higher, never lower, and a
+zero means "nothing shared in the published top ten" rather than "nothing shared".
+
+Names are normalised — upper-cased, punctuation dropped, a trailing `PLC`/`LTD`/`INC`/`CO`/
+`SA`/`NV`/`AG`/ADR/share-class tag removed — but `GROUP`, `HOLDINGS` and `TRUST` are
+deliberately kept, because those separate real companies rather than decorate one. Nothing
+is fuzzy-matched: two spellings either normalise to the same string or they are two
+companies. A near-match here would silently invent a shared holding.
+
+What it turns up on the current data: **630 distinct companies across the 103 top-tens, 135
+of them in more than one fund**, TSMC in nineteen. Stewart Investors Asia Pacific Leaders and
+FSSA Asia Focus share **50.4%** of published portfolio; Trojan Fund and Trojan Ethical 31.8%;
+the three US index trackers 33% of each other. Two index funds on one market belong at the
+top of that list. Two active funds bought to diversify each other do not.
+
+**The risk map — the two computed figures, against each other.** Five-year total return on
+one axis, the worst peak-to-trough fall inside those same five years on the other, both off
+each fund's own NAV series. Nothing extra is fetched and nothing is estimated; it is the
+existing data asking what the tables cannot, which is whether a fund's return was paid for in
+falls its neighbours did not take.
+
+Only the **88 funds carrying a five-year worst fall** are plotted, on the rule the watchlist
+already uses: a fund with two years of history has had two years in which to fall and would
+sit in the calm corner for no better reason. The crosshair is the median of what is plotted,
+labelled as a median and not as a target.
+
+**Annualised volatility, computed the same way.** A worst fall is one episode; two funds can
+share a −20% where one shook the whole way there and the other did it once. `annual_vol()`
+takes the standard deviation of the fund's own NAV moves over the same 5/3/1-year ladder,
+with the same coverage and continuity guards. **The annualisation factor is measured, not
+assumed** — the usual √252 is a claim that the series is priced every trading day, and a
+weekly-priced line scaled by it would publish more than twice its real volatility, so the
+factor comes from the window's own observation density.
+
+**Calendar-year returns, because year-ends do not line up.** The scraped discrete table runs
+to whatever year-end the fund uses — 2 September for 67 of them, 31 March for five, 30 June
+for three. Those are real and they are kept, and they cannot lay two funds side by side,
+because a year ending in March and one ending in September are different years of market.
+`calendar_years()` computes each completed calendar year from one 31 December close to the
+next, refuses a year whose anchor is really from mid-January, and gives a year-by-year record
+to the seven funds HL publish no discrete history for at all. It is shown below the scraped
+table and labelled as the desk's own arithmetic, never as the fund's official record.
+
+**"Not yet verified" is an absence, and the page now treats it as one everywhere.** It is the
+sentinel a run writes where it could not source a value, and it was reaching the page as a
+value: 340 discrete rows across 68 funds printed the phrase in the Sector column beside two
+real returns, 32 cards published a Benchmark tile whose value was the phrase, and 33 printed
+it as their entire Overview under an "Overview" heading. Now an unverified cell prints a
+dash, a column unverified in *every* row is dropped rather than shown as a header promising
+something the table cannot keep — that is 21 empty Sector columns and 39 empty Benchmark ones
+— a section with nothing to put in it is not opened, and the watchlist's risk pill falls back
+to the computed volatility rather than reading "Risk n/a" on half the desk. The JSON still
+records exactly what it did not verify; the change is what the reader is shown.
+
 **Central bank dates.** `cb_calendar.py` reads the published Fed and BoE calendars, which
 carries the desk through Dec 2027 untouched. It fails closed: a year is accepted only if it
 yields a plausible number of meetings (both committees meet eight times a year), unparsed
@@ -299,7 +365,7 @@ python scripts/market_series.py  --selftest   # same, for the chart endpoint
 python scripts/cb_calendar.py    --selftest   # Fed/BoE calendar parsing, offline
 python scripts/stat_calendar.py  --selftest   # ONS release parsing + title guard, offline
 python scripts/calendar_data.py  --selftest   # date rollover + sort anchors, offline
-python scripts/fund_nav.py       --selftest   # resolution guards, offline
+python scripts/fund_nav.py       --selftest   # resolution guards, volatility, calendar years, offline
 python scripts/hl_factsheet.py   --selftest   # scrape parsing + guards, offline
 python scripts/perf_dates.py                  # period-label date parsing, offline
 

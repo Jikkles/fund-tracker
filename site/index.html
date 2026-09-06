@@ -971,10 +971,16 @@
   .navlinks { display: flex; align-items: center; gap: 2px; min-width: 0;
               overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
   .navlinks::-webkit-scrollbar { display: none; }
+  /* Two sections were added to the page and the row lost exactly one link's
+     width off the end of its scroll - "About", the last one, which is the
+     link a reader is least likely to go looking for by scrolling a nav bar
+     sideways. The row is tightened by two pixels a side and a hair of
+     tracking rather than by renaming sections, which recovers more than the
+     50px needed and leaves every label as it was. */
   .navlinks a { flex: 0 0 auto; font-family: "JetBrains Mono", ui-monospace, monospace;
-                font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+                font-size: 10px; letter-spacing: .04em; text-transform: uppercase;
                 color: var(--ink-soft); text-decoration: none; white-space: nowrap;
-                padding: 7px 9px; border-radius: 20px; border: 1px solid transparent;
+                padding: 7px 7px; border-radius: 20px; border: 1px solid transparent;
                 transition: color .12s, background .12s, border-color .12s; }
   .navlinks a:hover { color: var(--ink); background: var(--hover-bg); }
   .navlinks a.on { color: var(--blue); background: rgba(56,189,248,.12);
@@ -1309,6 +1315,78 @@
     .rank-grid.stack .rank-title { font-size: 12.5px; letter-spacing: .05em; }
     .rank-grid.stack .rank-head .seg button { padding: 11px 14px; font-size: 13px; }
   }
+
+  /* ---- return vs risk: the whole desk on one chart ----
+     A single-series scatter, so there is no legend and no categorical
+     palette: every fund is drawn in the one accent, and the category filter
+     recedes the funds it excludes rather than recolouring the survivors. */
+  .rr-box { background: var(--paper-2); border: 1px solid var(--rule);
+            border-radius: 14px; padding: 18px 22px 14px; margin-top: 16px; }
+  .rr-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; margin-bottom: 4px; }
+  .rr-title { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+              letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+  .rr-sub { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; color: var(--ink-soft); }
+  .rr-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 6px; }
+  .rr-filters .filter { font-size: 11.5px; padding: 5px 12px; }
+  .rr-plot { position: relative; }
+  .rr-plot svg { display: block; width: 100%; height: auto; }
+  /* Below a phone's width the whole 1000-unit plot scaled to 380px and the
+     axis labels went to five pixels. The desk's rule for wide content applies
+     here as it does to the tables: the plot keeps a legible minimum and
+     scrolls inside its own box rather than shrinking the page to fit it. */
+  @media (max-width: 760px) {
+    .rr-plot { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .rr-plot svg { width: 720px; max-width: none; }
+  }
+  .rr-dot { cursor: pointer; }
+  .rr-tip { position: absolute; pointer-events: none; opacity: 0;
+            transform: translate(-50%, -100%);
+            background: var(--paper); border: 1px solid var(--hover-border);
+            border-radius: 8px; padding: 8px 11px; font-size: 12px; line-height: 1.45;
+            box-shadow: 0 8px 24px rgba(0,0,0,.5); white-space: nowrap; z-index: 5;
+            transition: opacity .12s; }
+  .rr-tip b { display: block; font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .rr-tip .m { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11.5px; color: var(--ink-soft); }
+  .rr-quad { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px;
+             letter-spacing: .06em; text-transform: uppercase; }
+
+  /* ---- holdings overlap ---- */
+  .ovl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 16px; }
+  @media (max-width: 900px) { .ovl-grid { grid-template-columns: 1fr; } }
+  .ovl-card { background: var(--paper-2); border: 1px solid var(--rule); border-radius: 14px; padding: 18px 22px; }
+  .ovl-card > .lab { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px;
+                     letter-spacing: .1em; text-transform: uppercase; color: var(--blue);
+                     font-weight: 600; margin-bottom: 4px; }
+  .ovl-note { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 12px; line-height: 1.5; }
+  .ovl-row { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center;
+             padding: 8px 8px; border-bottom: 1px solid var(--rule); border-radius: 6px;
+             cursor: pointer; transition: background .15s; }
+  .ovl-row:last-child { border-bottom: none; }
+  .ovl-row:hover { background: var(--hover-bg); }
+  /* The pair rows carry two links rather than one row-wide action, so the row
+     must not claim to be clickable. */
+  .ovl-row.pair { cursor: default; }
+  .ovl-row.pair a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; }
+  .ovl-row.pair a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+  .ovl-name { font-size: 14px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ovl-bar { width: 96px; height: 6px; background: var(--chip); border-radius: 3px; overflow: hidden; }
+  .ovl-bar i { display: block; height: 100%; background: var(--blue); border-radius: 3px; }
+  .ovl-n { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+           color: var(--ink-soft); text-align: right; min-width: 74px; }
+  .ovl-detail { display: none; padding: 4px 8px 12px; }
+  .ovl-detail.on { display: block; }
+  .ovl-detail a { display: inline-block; font-size: 12.5px; color: var(--blue); text-decoration: none;
+                  border: 1px solid var(--rule); border-radius: 16px; padding: 3px 10px; margin: 3px 6px 3px 0; }
+  .ovl-detail a:hover { border-color: var(--blue); background: rgba(56,189,248,.1); }
+  /* the per-card block */
+  .twin { display: grid; grid-template-columns: 1fr auto auto; gap: 10px 14px; align-items: center;
+          padding: 9px 10px; border-bottom: 1px solid var(--rule); border-radius: 6px;
+          cursor: pointer; transition: background .15s; }
+  .twin:last-of-type { border-bottom: none; }
+  .twin:hover { background: var(--hover-bg); }
+  .twin-n { font-size: 14px; font-weight: 500; }
+  .twin-c { font-size: 11.5px; color: var(--ink-soft); display: block; margin-top: 1px; }
+  .twin-v { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 15px; font-weight: 600; color: var(--amber); }
 </style>
 </head>
 <body>
@@ -1330,6 +1408,8 @@
       <a href="#health">Data health</a>
       <a href="#intelligence">Intelligence</a>
       <a href="#watchlist">Watchlist</a>
+      <a href="#riskmap">Risk map</a>
+      <a href="#overlap">Overlap</a>
       <a href="#directory">Funds</a>
       <a href="#footer">About</a>
     </div>
@@ -1396,6 +1476,14 @@
     <div class="h2-rule"></div>
     <p style="font-size:15px;color:var(--ink-soft);margin:0 0 14px">Not advice &#8212; do your own due diligence before acting.</p>
     <div class="rec-grid" id="recGrid"></div>
+
+    <h2 style="margin-top:44px" class="sec-anchor" id="riskmap">Return vs risk &#8212; the whole desk on one chart</h2>
+    <div class="h2-rule"></div>
+    <div id="riskMap"></div>
+
+    <h2 style="margin-top:44px" class="sec-anchor" id="overlap">What the desk actually owns</h2>
+    <div class="h2-rule"></div>
+    <div id="overlapBox"></div>
   </div>
 
   <!-- DIRECTORY -->
@@ -1413,6 +1501,9 @@
           <option value="perf-asc">1yr ↑ worst first</option>
           <option value="rel-desc">vs sector ↓ best first</option>
           <option value="rel-asc">vs sector ↑ worst first</option>
+          <option value="fall-desc">Worst fall ↓ shallowest first</option>
+          <option value="fall-asc">Worst fall ↑ deepest first</option>
+          <option value="charge-asc">Net charge ↑ cheapest first</option>
           <option value="name-asc">Name A→Z</option>
         </select>
       </div>
@@ -1459,6 +1550,9 @@ function parseRunDate(obj){
 }
 function loadFromObject(obj, kind){
   DATA = obj;
+  // The overlap index is derived from DATA, so a new payload invalidates it.
+  // Leaving it in place would draw yesterday's holdings against today's funds.
+  OVL = null;
   DATA_SOURCE = {kind: kind || 'fetch', at: new Date().toISOString()};
   try { localStorage.setItem(LS_KEY, JSON.stringify(obj)); } catch(e){}
   try { localStorage.setItem(LS_KEY + "_src", JSON.stringify(DATA_SOURCE)); } catch(e){}
@@ -1996,7 +2090,27 @@ window.addEventListener('resize', function(){
 })();
 
 /* ---------- helpers ---------- */
-const esc = s => (s==null?'':String(s));
+/* esc() is wrapped round every plain-text value the page interpolates into
+   markup - fund names, holdings, manager names, headline titles, period
+   labels. It was a null guard and nothing else: it returned the string
+   unchanged, so anything angle-bracketed in the source data was parsed as
+   markup rather than shown as text.
+
+   Nothing on this desk is typed by hand into the data. Holdings, sector names
+   and manager names are scraped out of HL's factsheets; headline titles and
+   summaries come off Yahoo's feeds. Those are other people's pages and other
+   people's feeds, and the desk has no say in what lands in them. A fund
+   renamed to something containing a tag would, until now, have had that tag
+   run on this page.
+
+   The fields that legitimately CARRY markup - overview, whyNow, process, the
+   manager bio, the various notes, all written for this desk - are
+   interpolated directly and never went through esc(), so escaping here
+   changes nothing about them. Verified by diffing the rendered text of all
+   103 dossiers before and against after: identical. */
+const esc = s => (s==null ? '' : String(s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;'));
 const trackClass = t => ({over:"over-t",on:"on-t",under:"under-t"}[t]||"tbd-t");
 const trackLabel = t => ({over:"Over target",on:"On target",under:"Under target"}[t]||"To confirm");
 
@@ -2269,12 +2383,45 @@ function sparkline(f, w, hgt){
 }
 function fmtPP(n){ return (n>0?'+':'') + n.toFixed(1) + 'pp'; }
 
+/* "not yet verified" is a sentinel this desk writes wherever a run could not
+   source a figure. It is an ABSENCE, and it was being rendered as a value:
+   340 discrete rows, on 68 of the 103 funds, printed the phrase in the Sector
+   column of a table whose other two columns held real returns. A reader
+   scanning that table sees a sentence where a number should be, three
+   hundred times.
+
+   Two rules here, and they are different.
+
+   A CELL that is unverified prints an em-dash, the same as any other gap in
+   the table. It is not an em-dash in the data - the JSON still says exactly
+   what it did not verify - it is an em-dash on the page because a gap is what
+   the reader is being told about.
+
+   A COLUMN that is unverified in EVERY row is dropped entirely. A column of
+   nothing but dashes is a header making a promise the table cannot keep, and
+   it costs a third of the width of a table that is trying to show a fund
+   against its sector. Where even one row has a figure the column stays, so a
+   partial comparator is never silently hidden. */
+/* A cell holds a figure, or it holds one of the two ways this desk records
+   not having one: the "not yet verified" sentinel a run writes when it cannot
+   source a value, and the bare dash a researched row carries where the
+   factsheet published no comparator at all. Both are absences and the table
+   treats them alike. */
+function cellGap(v){
+  if(verified(v) === null) return true;
+  const t = String(v).trim();
+  return t === '—' || t === '–' || t === '-';
+}
+
 function rows(arr, cols){ // cols: [{key,label,num}]
   if(!arr || !arr.length) return '<p class="flag">Not yet verified — to be pulled in the next research run.</p>';
-  return `<div class="tbl-scroll"><table class="data perf-tbl"><thead><tr>${cols.map(c=>`<th class="${c.num?'num':''}">${c.label}</th>`).join('')}</tr></thead>
-    <tbody>${arr.map(o=>`<tr>${cols.map(c=>{
-      const val = esc(o[c.key]);
-      if(c.num && PERF_KEYS.has(c.key)) return `<td class="${perfClass(val)}">${val}</td>`;
+  const live = cols.filter(c => arr.some(o => !cellGap(o[c.key])));
+  if(!live.length) return '<p class="flag">Not yet verified — to be pulled in the next research run.</p>';
+  return `<div class="tbl-scroll"><table class="data perf-tbl"><thead><tr>${live.map(c=>`<th class="${c.num?'num':''}">${c.label}</th>`).join('')}</tr></thead>
+    <tbody>${arr.map(o=>`<tr>${live.map(c=>{
+      const gap = cellGap(o[c.key]);
+      const val = gap ? '—' : esc(o[c.key]);
+      if(c.num && PERF_KEYS.has(c.key) && !gap) return `<td class="${perfClass(val)}">${val}</td>`;
       return `<td class="${c.num?'num':''}">${val}</td>`;
     }).join('')}</tr>`).join('')}</tbody></table></div>`;
 }
@@ -2896,7 +3043,7 @@ function buildGroupPanel(groupKey, label, funds){
     return pb-pa;
   });
   const themes = sorted.slice(0,2).map(f=>{
-    const full = (f.whyNow||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&');
+    const full = (verified(f.whyNow)||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&');
     return {name:f.name, note: full.substring(0,120)+(full.length>120?'…':''), full: full};
   }).filter(t=>t.full);
 
@@ -3287,7 +3434,7 @@ function renderRecommendations(funds){
   const grid = document.getElementById('recGrid');
   grid.innerHTML = scored.map(({f},i)=>{
     // Extract first sentence of whyNow for thesis
-    const thesis = (f.whyNow||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').split(/\.[\s]/)[0].trim();
+    const thesis = (verified(f.whyNow)||'').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').split(/\.[\s]/)[0].trim();
     return `<div class="rec-card" role="link" tabindex="0"
                  title="Open ${esc(f.name)} in full"
                  onclick="openFund('${esc(f.id)}')"
@@ -3307,9 +3454,17 @@ function renderRecommendations(funds){
         // Shown even when unknown: a card that simply omitted the pill would
         // look like a rendering fault rather than a gap in the data, and the
         // desk's rule is to say the figure is missing, never to guess it.
+        // SRRI is verified on fewer than half the desk, so this pill read
+        // "Risk n/a" on most cards. Where the run has computed an annualised
+        // volatility off the fund's own NAV there is a real, measured risk
+        // figure to show instead - a different statistic from SRRI, labelled
+        // as one. Only where neither exists does the card say so.
         const s = recSrri(f);
-        return s ? `<span class="rec-risk" title="SRRI — the fund's 1–7 volatility grade">Risk ${s} / 7</span>`
-                 : `<span class="rec-risk unknown" title="No SRRI verified for this share class">Risk n/a</span>`;
+        if(s) return `<span class="rec-risk" title="SRRI — the fund's 1–7 volatility grade">Risk ${s} / 7</span>`;
+        const v = verified((f.performance||{}).navVol);
+        const vy = (f.performance||{}).navVolYears;
+        if(v) return `<span class="rec-risk" title="No SRRI verified for this share class. This is the annualised volatility of the fund's own NAV over ${vy||5} years — a measured figure, not the 1–7 grade.">Vol ${esc(v)}</span>`;
+        return `<span class="rec-risk unknown" title="No SRRI verified for this share class, and not enough NAV history to compute a volatility">Risk n/a</span>`;
       })()}
       <span class="rec-open">Open full factsheet ▸</span>
     </div>`;
@@ -3372,6 +3527,28 @@ function drawdownPeer(f){
   if(shallower === peers.length) return `The shallowest fall of the ${peers.length+1} ${over}.`;
   if(shallower === 0)            return `The deepest fall of the ${peers.length+1} ${over}.`;
   return `Shallower than ${shallower} of the ${peers.length} other ${over}.`;
+}
+
+/* The same comparison drawdownPeer makes, on the other risk figure. Same
+   floor, same rule about windows: a one-year volatility and a five-year one
+   are not the same statistic and do not rank against each other. */
+function volPeer(f){
+  const pf = f.performance || {};
+  const mine = parsePerf(verified(pf.navVol));
+  const yrs = pf.navVolYears;
+  if(mine === null || !yrs || !DATA || !DATA.funds) return '';
+  const peers = DATA.funds
+    .filter(o => o !== f && o.group === f.group
+                 && (o.performance||{}).navVolYears === yrs)
+    .map(o => parsePerf(verified((o.performance||{}).navVol)))
+    .filter(v => v !== null);
+  if(peers.length < 3) return '';
+  const label = catGroupLabel(f.group);
+  const over = `${label} funds measured over the same ${yrs} years`;
+  const calmer = peers.filter(v => mine < v).length;
+  if(calmer === peers.length) return `The steadiest of the ${peers.length+1} ${over}.`;
+  if(calmer === 0)            return `The most volatile of the ${peers.length+1} ${over}.`;
+  return `Steadier than ${calmer} of the ${peers.length} other ${over}.`;
 }
 
 /* ---------- the desk's own peer group, computed ----------
@@ -3439,6 +3616,12 @@ function peerBlock(f){
                           .filter(x => x[1]);
   if(!got.length) return '';
   const first = got[0][1];
+  // The closing sentence used to point at "the researched Sector column in the
+  // table above" unconditionally. On a fund whose cumulative table carries no
+  // verified sector figure - or has no cumulative table at all - it was
+  // directing the reader to something that is not on the card.
+  const hasSector = ((f.performance||{}).cumulative || [])
+    .some(r => !cellGap(r.sector));
   const body = got.map(([label, c]) => {
     const delta = c.own - c.median;
     const own = fmtPct(c.own), med = fmtPct(c.median);
@@ -3455,8 +3638,407 @@ function peerBlock(f){
     + `<th>Window</th><th class="num">Fund</th><th class="num">Peer median</th>`
     + `<th class="num">Difference</th><th class="num">Rank</th>`
     + `</tr></thead><tbody>${body}</tbody></table></div>`
-    + `<p class="prose soft" style="margin-top:10px">Computed from each fund's own NAV series over the same window and refreshed every run, so nothing in this block goes stale. <strong>It is not the ${esc(first.sector)} sector average.</strong> It is the ${first.peers} other ${esc(first.sector)} funds this desk happens to track — a curated group, being HL's Shortlist plus the desk's own additions — so beating it is a harder test than beating the sector at large, not an easier one. The researched Sector column in the table above is the real category average, over the older window that row names.</p>`
+    + `<p class="prose soft" style="margin-top:10px">Computed from each fund's own NAV series over the same window and refreshed every run, so nothing in this block goes stale. <strong>It is not the ${esc(first.sector)} sector average.</strong> It is the ${first.peers} other ${esc(first.sector)} funds this desk happens to track — a curated group, being HL's Shortlist plus the desk's own additions — so beating it is a harder test than beating the sector at large, not an easier one. ${hasSector ? 'The researched Sector column in the table above is the real category average, over the older window that row names.' : 'No researched category average has been sourced for this fund, so this block is the only peer comparison on the card — read it as the desk\'s own group and not as the sector.'}</p>`
     + `</div>`;
+}
+
+/* ---------- holdings overlap: what the desk actually owns ----------
+
+   Every fund on the desk publishes a top-10 holdings list, read off its HL
+   factsheet. One at a time they say what a single fund holds. Read together
+   they answer a question no individual card can: how much of this desk is the
+   same twenty companies, bought eleven times over.
+
+   THE METRIC. Overlap between two funds is the sum, across the companies both
+   of them name, of the SMALLER of the two weights - the standard fund-overlap
+   calculation. Two funds holding Nvidia at 5% and at 8% share five points of
+   portfolio, not thirteen and not six and a half.
+
+   IT IS A FLOOR, AND EVERY PLACE IT APPEARS SAYS SO. HL publish ten lines; the
+   funds hold fifty to five hundred. Two funds sharing nothing in their top tens
+   can still hold the same mid-caps further down, and nothing here would see it.
+   So a figure in this section is the overlap that can be PROVEN from published
+   data. The true overlap is higher - never lower. A zero means "nothing shared
+   in the published top ten", which is a different claim from "nothing shared",
+   and the panel is worded so the two cannot be confused.
+
+   NAME MATCHING. HL are consistent enough that the raw strings already agree
+   on all but one pair, but consistency today is not a guarantee, so names are
+   normalised: upper-cased, punctuation dropped, and a trailing corporate suffix
+   (PLC, LTD, INC, CO, SA, NV, AG, an ADR or share-class tag) removed. What is
+   deliberately NOT stripped is GROUP, HOLDINGS or TRUST, because those separate
+   real companies rather than decorate one. Nothing is fuzzy-matched: two
+   spellings either normalise to the same string or they are treated as two
+   companies, because a near-match here would silently invent a shared holding. */
+
+const HOLD_SUFFIX = /\s+(P L C|PLC|LTD|LIMITED|INC|INCORPORATED|CORP|CORPORATION|CO|COMPANY|SA|S A|NV|N V|AG|SE|SPA|ASA|AB|OYJ|A S|LP|LLC|PT|TBK|CLASS [A-Z]|CL [A-Z]|ADR|ADS|ORD|NPV|COM)$/;
+
+function holdKey(name){
+  let s = String(name || '').toUpperCase().replace(/&AMP;/g, '&');
+  s = s.replace(/[.,'’"()]/g, ' ').replace(/\s+/g, ' ').trim();
+  let prev = null;
+  while(prev !== s){
+    prev = s;
+    s = s.replace(HOLD_SUFFIX, '').replace(/[\s&\-]+$/, '').trim();
+  }
+  return s;
+}
+
+/* The same trim applied to the published name with its own casing left alone,
+   so a row reads "Taiwan Semiconductor Manufacturing" rather than running to
+   "... Company Limited" and pushing everything after it off the line. It is a
+   display tidy and nothing more - the published name is on the row's title
+   attribute, and the weights and counts are untouched. Casing is HL's, kept as
+   theirs: "Asml Holding" is how they print it and this desk does not rewrite
+   somebody else's data to look neater. */
+function holdLabel(name){
+  const raw = String(name || '').trim();
+  let s = raw.replace(/[.,]+$/, '');
+  let prev = null;
+  while(prev !== s){
+    prev = s;
+    const m = s.toUpperCase().replace(/[.,'’"()]/g, ' ').replace(/\s+/g, ' ').trim();
+    const cut = m.replace(HOLD_SUFFIX, '');
+    if(cut === m) break;
+    // Drop the same number of trailing words the key-stripper just dropped.
+    const drop = m.split(' ').length - cut.trim().split(' ').length;
+    if(drop <= 0) break;
+    s = s.split(/\s+/).slice(0, -drop).join(' ').replace(/[\s&\-.,]+$/, '');
+  }
+  return s || raw;
+}
+
+/* Built once per data load, thrown away on refresh. 103 funds is 5,253 pairs
+   of ten-line lists - small enough to do in full rather than approximate. */
+let OVL = null;
+
+function buildOverlap(){
+  const funds = (DATA && DATA.funds) || [];
+  const books = new Map();        // fund id -> Map(key -> weight)
+  const company = new Map();      // key -> { label, rows: [{id, weight}] }
+  funds.forEach(f => {
+    const book = new Map();
+    (f.holdings || []).forEach(h => {
+      const w = parsePerf(h && h.weight);
+      const k = holdKey(h && h.name);
+      if(w === null || !k) return;
+      book.set(k, (book.get(k) || 0) + w);
+      if(!company.has(k)) company.set(k, { label: holdLabel(h.name), published: String(h.name).trim(), rows: [] });
+    });
+    if(!book.size) return;
+    books.set(f.id, book);
+    book.forEach((w, k) => company.get(k).rows.push({ id: f.id, weight: w }));
+  });
+  // A company can only be counted once per fund, and the rows above already
+  // guarantee that - the book is keyed, so a fund holding two share classes of
+  // the same issuer contributes one merged line, not two.
+  const companies = [...company.entries()]
+    .map(([key, v]) => ({
+      key, label: v.label, published: v.published, rows: v.rows,
+      funds: v.rows.length,
+      heaviest: Math.max.apply(null, v.rows.map(r => r.weight)),
+      mean: v.rows.reduce((a, r) => a + r.weight, 0) / v.rows.length
+    }))
+    .sort((a, b) => b.funds - a.funds || b.mean - a.mean);
+  OVL = { books, companies, covered: books.size };
+  return OVL;
+}
+
+function overlapPairs(fid){
+  if(!OVL) buildOverlap();
+  const mine = OVL.books.get(fid);
+  if(!mine) return [];
+  const out = [];
+  OVL.books.forEach((book, id) => {
+    if(id === fid) return;
+    let w = 0; const shared = [];
+    mine.forEach((v, k) => {
+      if(!book.has(k)) return;
+      w += Math.min(v, book.get(k));
+      shared.push(k);
+    });
+    if(w > 0) out.push({ id, weight: w, shared });
+  });
+  return out.sort((a, b) => b.weight - a.weight);
+}
+
+/* On the card: the funds this one is quietly buying twice. Three is enough to
+   make the point; a longer list turns a warning into a directory. */
+function overlapBlock(f){
+  if(!OVL) buildOverlap();
+  if(!OVL.books.has(f.id)) return '';
+  const top = overlapPairs(f.id).slice(0, 3);
+  const byId = id => (DATA.funds || []).find(x => x.id === id);
+  if(!top.length){
+    return `<div class="sec"><div class="sec-h">Overlap with the rest of the desk</div>`
+      + `<p class="prose soft">No company in this fund's published top ten appears in any other fund's published top ten. `
+      + `That is a real signal — it is one of ${OVL.covered} funds compared — but it is not proof of no overlap: `
+      + `HL publish ten lines out of a book that runs to dozens, so shared holdings further down would not show here.</p></div>`;
+  }
+  const body = top.map(o => {
+    const g = byId(o.id); if(!g) return '';
+    const names = o.shared
+      .map(k => (OVL.companies.find(c => c.key === k) || {}).label)
+      .filter(Boolean).slice(0, 6).join(', ');
+    return `<div class="twin" onclick="openFund('${o.id}')">`
+      + `<div><span class="twin-n">${esc(g.name)}</span>`
+      + `<span class="twin-c">${o.shared.length} shared${names ? ' · ' + esc(names) : ''}</span></div>`
+      + `<span class="twin-v">${o.weight.toFixed(1)}%</span>`
+      + `<span style="font-size:11px;color:var(--ink-soft)">&#9654;</span></div>`;
+  }).join('');
+  return `<div class="sec"><div class="sec-h">Overlap with the rest of the desk</div>${body}`
+    + `<p class="prose soft" style="margin-top:10px">The percentage is the portfolio the two funds provably hold in common: `
+    + `for every company in both published top tens, the smaller of the two weights. `
+    + `<strong>Read it as a floor.</strong> HL publish ten holdings and these funds hold far more, so the real overlap is higher — never lower — `
+    + `and the desk will not estimate the part it cannot see. Computed from the top-ten lists of the ${OVL.covered} funds that publish one.</p></div>`;
+}
+
+let ovlOpen = null;
+function ovlToggle(key){
+  const el = document.getElementById('ovld-' + key);
+  if(!el) return;
+  if(ovlOpen && ovlOpen !== key){
+    const prev = document.getElementById('ovld-' + ovlOpen);
+    if(prev) prev.classList.remove('on');
+  }
+  const now = !el.classList.contains('on');
+  el.classList.toggle('on', now);
+  ovlOpen = now ? key : null;
+}
+
+function renderOverlap(){
+  const el = document.getElementById('overlapBox');
+  if(!el) return;
+  buildOverlap();
+  const funds = (DATA.funds || []);
+  if(!OVL.covered){ el.innerHTML = '<p class="prose soft">No fund on the desk is publishing a holdings list right now.</p>'; return; }
+  const byId = id => funds.find(x => x.id === id);
+  const shared = OVL.companies.filter(c => c.funds > 1);
+  const most = OVL.companies.slice(0, 12);
+
+  // Bars are scaled against the most widely held company, not against the
+  // fund count: 19 of 103 is 18% and eleven near-identical 18% slivers compare
+  // nothing. The absolute share is on the bar's title where it belongs.
+  const topCount = most.length ? most[0].funds : 1;
+  const rowsHtml = most.map((c, i) => {
+    const pct = Math.round(100 * c.funds / topCount);
+    const share = Math.round(100 * c.funds / OVL.covered);
+    const chips = c.rows.slice().sort((a, b) => b.weight - a.weight).map(r => {
+      const g = byId(r.id);
+      return g ? `<a href="#" onclick="openFund('${r.id}');return false;">${esc(g.name)} · ${r.weight.toFixed(2)}%</a>` : '';
+    }).join('');
+    const safe = 'c' + i;
+    return `<div class="ovl-row" onclick="ovlToggle('${safe}')">`
+      + `<div class="ovl-name" title="${esc(c.published)}">${esc(c.label)}</div>`
+      + `<div class="ovl-bar" title="In ${c.funds} of the ${OVL.covered} funds that publish a top ten — ${share}%"><i style="width:${pct}%"></i></div>`
+      + `<div class="ovl-n">${c.funds} fund${c.funds === 1 ? '' : 's'}</div></div>`
+      + `<div class="ovl-detail" id="ovld-${safe}">${chips}`
+      + `<div style="font-size:11.5px;color:var(--ink-soft);margin-top:6px">Heaviest single weight ${c.heaviest.toFixed(2)}% · average where held ${c.mean.toFixed(2)}%</div></div>`;
+  }).join('');
+
+  // The other half: the pairs of funds standing closest together.
+  const seen = new Set(); const pairs = [];
+  OVL.books.forEach((_, id) => {
+    overlapPairs(id).forEach(o => {
+      const k = id < o.id ? id + '|' + o.id : o.id + '|' + id;
+      if(seen.has(k)) return;
+      seen.add(k); pairs.push({ a: id, b: o.id, weight: o.weight, shared: o.shared.length });
+    });
+  });
+  pairs.sort((x, y) => y.weight - x.weight);
+  const maxPair = pairs.length ? pairs[0].weight : 1;
+  const pairHtml = pairs.slice(0, 12).map(pr => {
+    const a = byId(pr.a), b = byId(pr.b);
+    if(!a || !b) return '';
+    const full = a.name + ' ↔ ' + b.name + ' — ' + pr.shared + ' shared holdings, ' + pr.weight.toFixed(1) + '% of portfolio in common';
+    // Two funds, two links: the row itself is not clickable, because picking
+    // one of the pair for it would be arbitrary.
+    return `<div class="ovl-row pair" title="${esc(full)}">`
+      + `<div class="ovl-name"><a href="#" onclick="openFund('${pr.a}');return false;">${esc(a.name)}</a>`
+      + ` <span style="color:var(--ink-soft)">&#8596;</span> `
+      + `<a href="#" onclick="openFund('${pr.b}');return false;">${esc(b.name)}</a></div>`
+      + `<div class="ovl-bar"><i style="width:${Math.round(100 * pr.weight / maxPair)}%"></i></div>`
+      + `<div class="ovl-n">${pr.weight.toFixed(1)}%</div></div>`;
+  }).join('');
+
+  const lead = OVL.companies.length
+    ? `The ${OVL.covered} funds that publish a top ten name <b>${OVL.companies.length}</b> distinct companies between them. `
+      + `<b>${shared.length}</b> of those turn up in more than one fund, and the most widely held — `
+      + `${esc(OVL.companies[0].label)} — sits in <b>${OVL.companies[0].funds}</b> of them.`
+    : '';
+
+  el.innerHTML = `<p class="prose">${lead}</p>`
+    + `<div class="ovl-grid">`
+    + `<div class="ovl-card"><div class="lab">Most widely held</div>`
+    + `<p class="ovl-note">Companies appearing in the most published top-ten lists. Open a row for the funds holding it, and their weights.</p>`
+    + rowsHtml + `</div>`
+    + `<div class="ovl-card"><div class="lab">Funds standing closest together</div>`
+    + `<p class="ovl-note">The pairs sharing the most portfolio by weight. Two index trackers on the same market should be near the top; two active funds you were counting on to diversify each other should not.</p>`
+    + pairHtml + `</div></div>`
+    + `<p class="prose soft" style="margin-top:14px">Every figure here is computed from the published top-ten holdings and nothing else. `
+    + `<strong>Treat all of them as floors.</strong> A fund holds far more than ten companies, HL publish ten, and the desk will not estimate the rest: `
+    + `two funds shown sharing 4% may share a great deal more further down their books. `
+    + `What the section can say honestly is that the overlap it shows definitely exists — and where it is large, it is large on the biggest positions both funds hold.</p>`;
+}
+
+/* ---------- return vs risk ----------
+
+   The two numbers the desk computes for every fund off its own NAV series -
+   five-year total return, and the worst peak-to-trough fall inside those same
+   five years - plotted against each other. Nothing new is fetched and nothing
+   is estimated; this is the existing data asking a question the tables cannot,
+   which is whether a fund's return was paid for in falls its neighbours did
+   not take.
+
+   ONLY THE FIVE-YEAR COHORT IS PLOTTED, for the reason the watchlist gives:
+   a fund with two years of history has had two years in which to fall, and
+   putting its shallower drawdown on the same axis as a five-year one would
+   flatter it for being young. The count under the title says how many of the
+   desk made the cut and the rest are simply absent.
+
+   Single series, so no legend and no categorical palette: every fund is the
+   one accent, and the category filter recedes what it excludes rather than
+   recolouring what survives. */
+
+// One source of truth with the watchlist: the same five-year cohort it scores.
+const RR_MIN_YEARS = RANKED_DRAWDOWN_YEARS;
+let rrGroup = 'all';
+let rrData = null;
+
+function rrPoints(){
+  return (DATA.funds || []).map(f => {
+    const rk = f.risk || {}, pf = f.performance || {};
+    if(rk.maxDrawdownYears !== RR_MIN_YEARS) return null;
+    const ret = parsePerf(verified(pf.nav5yr));
+    const dd = parsePerf(verified(rk.maxDrawdown));
+    if(ret === null || dd === null) return null;
+    return { f, ret, fall: Math.abs(dd) };
+  }).filter(Boolean);
+}
+
+function rrSetGroup(k){ rrGroup = k; renderRiskMap(); }
+
+function median(a){
+  if(!a.length) return 0;
+  const s = a.slice().sort((x, y) => x - y), m = s.length >> 1;
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+}
+
+function renderRiskMap(){
+  const host = document.getElementById('riskMap');
+  if(!host) return;
+  const pts = rrPoints();
+  rrData = pts;
+  if(pts.length < 6){
+    host.innerHTML = `<p class="prose soft">Fewer than six funds currently carry both a five-year NAV return and a worst fall measured over the same five years, which is too few to plot. The figures are on the individual cards.</p>`;
+    return;
+  }
+  const groups = (DATA.categories || []).filter(c => pts.some(p => p.f.group === c.key));
+  const chips = [{ key: 'all', label: 'All' }].concat(groups.map(c => ({ key: c.key, label: c.label })))
+    .map(c => `<button class="filter${rrGroup === c.key ? ' on' : ''}" onclick="rrSetGroup('${c.key}')">${esc(c.label)}</button>`).join('');
+
+  const W = 1000, H = 460, padL = 58, padR = 24, padT = 26, padB = 52;
+  const pw = W - padL - padR, ph = H - padT - padB;
+  const falls = pts.map(p => p.fall), rets = pts.map(p => p.ret);
+  const xMax = Math.max.apply(null, falls) * 1.06;
+  const yLo = Math.min(0, Math.min.apply(null, rets)) - 8;
+  const yHi = Math.max.apply(null, rets) + 12;
+  const X = v => padL + (v / xMax) * pw;
+  const Y = v => padT + ph - ((v - yLo) / (yHi - yLo)) * ph;
+  const mFall = median(falls), mRet = median(rets);
+
+  const xTicks = niceTicks(0, xMax, 6), yTicks = niceTicks(yLo, yHi, 8);
+  let g = '';
+  xTicks.forEach(t => {
+    if(t < 0 || t > xMax) return;
+    g += `<line x1="${X(t).toFixed(1)}" y1="${padT}" x2="${X(t).toFixed(1)}" y2="${padT + ph}" stroke="var(--rule)" stroke-width="1" opacity=".35"/>`
+      + `<text x="${X(t).toFixed(1)}" y="${padT + ph + 20}" fill="var(--ink-soft)" font-size="11" font-family="JetBrains Mono, ui-monospace, monospace" text-anchor="middle">${t > 0 ? '&#8722;' : ''}${t.toFixed(0)}%</text>`;
+  });
+  yTicks.forEach(t => {
+    if(t < yLo || t > yHi) return;
+    g += `<line x1="${padL}" y1="${Y(t).toFixed(1)}" x2="${padL + pw}" y2="${Y(t).toFixed(1)}" stroke="var(--rule)" stroke-width="1" opacity=".35"/>`
+      + `<text x="${padL - 10}" y="${(Y(t) + 4).toFixed(1)}" fill="var(--ink-soft)" font-size="11" font-family="JetBrains Mono, ui-monospace, monospace" text-anchor="end">${t > 0 ? '+' : ''}${t.toFixed(0)}%</text>`;
+  });
+  // The break-even line, where it falls inside the plot: above it the five
+  // years made money, below it they did not.
+  if(yLo < 0 && yHi > 0){
+    g += `<line x1="${padL}" y1="${Y(0).toFixed(1)}" x2="${padL + pw}" y2="${Y(0).toFixed(1)}" stroke="var(--ink-soft)" stroke-width="1" stroke-dasharray="2 4" opacity=".7"/>`;
+  }
+  // Median crosshair - the quadrant split. Dashed and recessive: it is a
+  // reference, not data.
+  g += `<line x1="${X(mFall).toFixed(1)}" y1="${padT}" x2="${X(mFall).toFixed(1)}" y2="${padT + ph}" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 5" opacity=".55"/>`
+    + `<line x1="${padL}" y1="${Y(mRet).toFixed(1)}" x2="${padL + pw}" y2="${Y(mRet).toFixed(1)}" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 5" opacity=".55"/>`
+    + `<text class="rr-quad" x="${padL + 8}" y="${padT + 16}" fill="var(--forest)">More return, shallower falls</text>`
+    + `<text class="rr-quad" x="${padL + pw - 8}" y="${padT + ph - 7}" fill="var(--oxblood)" text-anchor="end" opacity=".85">Less return, deeper falls</text>`;
+
+  const shown = pts.filter(p => rrGroup === 'all' || p.f.group === rrGroup);
+  const dim = pts.filter(p => !(rrGroup === 'all' || p.f.group === rrGroup));
+  const dot = (p, on) => `<circle cx="${X(p.fall).toFixed(1)}" cy="${Y(p.ret).toFixed(1)}" r="${on ? 5 : 3.5}" pointer-events="none"`
+    + ` fill="${on ? 'var(--blue)' : 'var(--rule)'}" fill-opacity="${on ? .9 : .5}"`
+    + ` stroke="var(--paper-2)" stroke-width="1.5"/>`;
+  // A 5px dot is a 5px hover target. The hit circles are drawn last, over
+  // everything, at twice the radius and invisible, so a point in a cluster can
+  // still be picked up without enlarging the mark itself.
+  const hit = p => `<circle class="rr-dot" data-id="${p.f.id}" cx="${X(p.fall).toFixed(1)}" cy="${Y(p.ret).toFixed(1)}" r="10" fill="transparent"><title>${esc(p.f.name)}</title></circle>`;
+  const marks = dim.map(p => dot(p, false)).join('') + shown.map(p => dot(p, true)).join('');
+
+  // Selective direct labels only: the best return, the shallowest fall, and
+  // the deepest. Labelling eighty-eight points would be a wall of text.
+  const pick = [];
+  if(shown.length){
+    const best = shown.reduce((a, b) => b.ret > a.ret ? b : a);
+    const calm = shown.reduce((a, b) => b.fall < a.fall ? b : a);
+    const worst = shown.reduce((a, b) => b.fall > a.fall ? b : a);
+    [best, calm, worst].forEach(p => { if(p && pick.indexOf(p) < 0) pick.push(p); });
+  }
+  const labels = pick.map(p => {
+    const x = X(p.fall), y = Y(p.ret);
+    const right = x < padL + pw * 0.72;
+    return `<text x="${(right ? x + 10 : x - 10).toFixed(1)}" y="${(y + 4).toFixed(1)}" fill="var(--ink)" font-size="11.5"`
+      + ` stroke="var(--paper-2)" stroke-width="3.5" paint-order="stroke" stroke-linejoin="round"`
+      + ` text-anchor="${right ? 'start' : 'end'}">${esc(p.f.name.length > 30 ? p.f.name.slice(0, 29) + '…' : p.f.name)}</text>`;
+  }).join('');
+
+  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Five-year return against worst fall, ${shown.length} funds">`
+    + g + marks + labels + shown.map(hit).join('')
+    + `<text x="${padL + pw / 2}" y="${H - 8}" fill="var(--ink-soft)" font-size="11.5" text-anchor="middle">Worst peak-to-trough fall in the last five years &#8594;</text>`
+    + `<text x="14" y="${padT + ph / 2}" fill="var(--ink-soft)" font-size="11.5" text-anchor="middle" transform="rotate(-90 14 ${padT + ph / 2})">Five-year total return &#8594;</text>`
+    + `</svg>`;
+
+  host.innerHTML = `<div class="rr-box">`
+    + `<div class="rr-head"><span class="rr-title">Five-year return against worst fall</span>`
+    + `<span class="rr-sub">${pts.length} of ${(DATA.funds || []).length} funds &middot; both figures from each fund's own NAV series</span></div>`
+    + `<div class="rr-filters">${chips}</div>`
+    + `<div class="rr-plot" id="rrPlot">${svg}<div class="rr-tip" id="rrTip"></div></div>`
+    + `<p class="prose soft" style="margin:12px 0 0">Only the ${pts.length} funds carrying a worst fall measured over a full five years are plotted, because a fund with two years of history has had two years in which to fall and would sit in the calm corner for no better reason. `
+    + `The amber crosshair is the median of the funds plotted, not a target. Up and to the left is the better corner — more return for a shallower worst fall — but a shallow five-year fall is a record, not a promise, and a fund can only be as calm as the markets it happened to live through.</p>`
+    + `</div>`;
+  rrWireHover();
+}
+
+function rrWireHover(){
+  const plot = document.getElementById('rrPlot');
+  const tip = document.getElementById('rrTip');
+  if(!plot || !tip) return;
+  const byId = id => (DATA.funds || []).find(f => f.id === id);
+  plot.querySelectorAll('.rr-dot').forEach(c => {
+    const show = () => {
+      const f = byId(c.dataset.id); if(!f) return;
+      const p = (rrData || []).find(x => x.f.id === f.id); if(!p) return;
+      const r = c.getBoundingClientRect(), pr = plot.getBoundingClientRect();
+      tip.innerHTML = `<b>${esc(f.name)}</b>`
+        + `<span class="m">${catGroupLabel(f.group)}</span><br>`
+        + `<span class="m">5yr ${fmtPct(p.ret)} &middot; worst fall &#8722;${p.fall.toFixed(1)}%</span>`;
+      tip.style.left = (r.left - pr.left + r.width / 2) + 'px';
+      tip.style.top = (r.top - pr.top - 8) + 'px';
+      tip.style.opacity = '1';
+    };
+    c.addEventListener('mouseenter', show);
+    c.addEventListener('focus', show);
+    c.addEventListener('mouseleave', () => { tip.style.opacity = '0'; });
+    c.addEventListener('click', () => openFund(c.dataset.id));
+  });
+  plot.addEventListener('mouseleave', () => { tip.style.opacity = '0'; });
 }
 
 /* ---------- render: one fund dossier ---------- */
@@ -3473,23 +4055,49 @@ function dossier(f){
   ].filter(Boolean).join(' ');
   if(strip) h += `<div style="margin-bottom:14px">${strip}</div>`;
   // key facts
+  // verified(), not truthiness: "not yet verified" is a non-empty string, so
+  // the plain filter kept it and 32 cards published a Benchmark tile whose
+  // value was the phrase "not yet verified" set in the same weight as a real
+  // one. An absent tile says the same thing and does not look like an answer.
   const kf = [
     ["IA sector", f.iaSector],["Fund size", f.fundSize],["HL net charge", f.charges&&f.charges.netOngoing],
     ["Yield", f.yield],["Launched", f.launched],["Benchmark", f.benchmark]
-  ].filter(x=>x[1]);
+  ].map(x=>[x[0], verified(x[1])]).filter(x=>x[1]);
   if(kf.length){
     h += `<div class="keyfacts">`+kf.map(x=>`<div class="kf"><div class="k">${x[0]}</div><div class="v" style="font-size:${String(x[1]).length>12?'13px':'15px'}">${esc(x[1])}</div></div>`).join('')+`</div>`;
   }
   // overview
-  if(f.overview) h += `<div class="sec"><div class="sec-h">Overview</div><p class="prose">${f.overview}</p></div>`;
+  const overview = verified(f.overview);
+  if(overview) h += `<div class="sec"><div class="sec-h">Overview</div><p class="prose">${overview}</p></div>`;
   // performance
-  if(f.performance){
+  // A heading with nothing under it is worse than no heading: three funds
+  // carry a performance object holding only NAV figures the header already
+  // shows, and the card printed "PERFORMANCE" over an empty rule.
+  const perfHasBody = f.performance && (
+    (f.performance.cumulative||[]).length || (f.performance.discrete||[]).length
+    || (f.performance.navYears||[]).length || verified(f.performance.notes));
+  if(perfHasBody){
     h += `<div class="sec"><div class="sec-h">Performance</div>`;
     if(f.performance.cumulative) h += `<div class="lab" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px">Cumulative total return</div>`+
       rows(f.performance.cumulative,[{key:"period",label:"Period"},{key:"fund",label:"Fund",num:1},{key:"sector",label:"Sector",num:1},{key:"benchmark",label:"Benchmark",num:1}]);
     if(f.performance.discrete) h += `<div class="lab" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 8px">Discrete annual return</div>`+
       rows(f.performance.discrete,[{key:"year",label:"Year"},{key:"fund",label:"Fund",num:1},{key:"sector",label:"Sector",num:1}]);
-    if(f.performance.notes) h += `<p class="flag">${f.performance.notes}</p>`;
+    // Calendar years, computed off the fund's own NAV. Deliberately BELOW the
+    // scraped discrete table rather than instead of it: the manager's own
+    // year-end is what the factsheet reports against and that table is the
+    // official record. What this one adds is the same twelve months for every
+    // fund on the desk - a 2 September year and a 31 March year cannot be laid
+    // side by side, and 67 of the desk use the first while five use the second.
+    // It also gives a year-by-year record to the seven funds HL publish no
+    // discrete history for at all.
+    const cy = f.performance.navYears;
+    if(cy && cy.length){
+      h += `<div class="lab" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 8px">Calendar year, from NAV</div>`
+        + rows(cy, [{key:"year",label:"Year"},{key:"fund",label:"Fund",num:1}])
+        + `<p class="prose soft" style="margin-top:8px">Complete calendar years only, each computed from this fund's own published NAV between one 31 December close and the next, and recomputed every run. It is <strong>not</strong> the fund's official discrete record — that is the table above, on the year-end the manager reports against. This one exists because the same twelve months for every fund is the only basis on which two of them can be read side by side.</p>`;
+    }
+    const pNotes = verified(f.performance.notes);
+    if(pNotes) h += `<p class="flag">${pNotes}</p>`;
     h += `</div>`;
   }
   // Directly after the researched tables, because it is the answer to the
@@ -3520,21 +4128,32 @@ function dossier(f){
     if(f.holdingsNote) h += `<p class="flag">${f.holdingsNote}</p>`;
     h += `</div>`;
   }
+  // Straight after the holdings, because it is the question the top-ten list
+  // raises and cannot answer on its own: who else on this desk owns the same
+  // names, and how much of the two books is the same book.
+  h += overlapBlock(f);
   // manager & process
-  if(f.manager||f.process){
+  const mNames = verified((f.manager||{}).names), mTen = verified((f.manager||{}).tenure);
+  const mBio = verified((f.manager||{}).bio), mProc = verified(f.process);
+  if(mNames || mBio || mProc){
     h += `<div class="sec"><div class="sec-h">Manager &amp; process</div>`;
-    if(f.manager){ if(f.manager.names) h+=`<p class="prose"><b>${esc(f.manager.names)}</b>${f.manager.tenure?` · ${esc(f.manager.tenure)}`:''}</p>`; if(f.manager.bio) h+=`<p class="prose soft">${f.manager.bio}</p>`; }
-    if(f.process) h += `<p class="prose soft">${f.process}</p>`;
+    if(mNames) h += `<p class="prose"><b>${esc(mNames)}</b>${mTen?` · ${esc(mTen)}`:''}</p>`;
+    if(mBio)   h += `<p class="prose soft">${mBio}</p>`;
+    if(mProc)  h += `<p class="prose soft">${mProc}</p>`;
     h += `</div>`;
   }
   // why now
-  if(f.whyNow) h += `<div class="sec"><div class="sec-h">Why it's doing what it's doing — &amp; outlook</div><p class="prose">${f.whyNow}</p></div>`;
+  const whyNow = verified(f.whyNow);
+  if(whyNow) h += `<div class="sec"><div class="sec-h">Why it's doing what it's doing — &amp; outlook</div><p class="prose">${whyNow}</p></div>`;
   // costs
   if(f.charges){
-    const c=f.charges; const items=[["OCF",c.ocf],["HL saving",c.hlSaving],["Net ongoing",c.netOngoing],["Transaction costs",c.transaction]].filter(x=>x[1]);
+    const c=f.charges;
+    const items=[["OCF",c.ocf],["HL saving",c.hlSaving],["Net ongoing",c.netOngoing],["Transaction costs",c.transaction]]
+      .map(x=>[x[0], verified(x[1])]).filter(x=>x[1]);
     if(items.length){ h += `<div class="sec"><div class="sec-h">Costs (HL)</div><div class="costgrid">`+
       items.map(x=>`<div class="kf"><div class="k">${x[0]}</div><div class="v">${esc(x[1])}</div></div>`).join('')+`</div>`;
-      if(c.notes) h += `<p class="flag">${c.notes}</p>`; h += `</div>`; }
+      const cNotes = verified(c.notes);
+      if(cNotes) h += `<p class="flag">${cNotes}</p>`; h += `</div>`; }
   }
   // risk
   //
@@ -3586,6 +4205,19 @@ function dossier(f){
              `<div style="margin-bottom:8px"><span class="fchip ${chip}" style="margin-left:0" title="${esc(chipTip)}">${chipText}</span></div>`+
              (peer?`<p class="prose soft" style="margin:0 0 8px">${esc(peer)}</p>`:'')+
              (verified(rk.maxDrawdownNote)?`<p class="prose soft" style="margin:0 0 14px">${esc(rk.maxDrawdownNote)}</p>`:'');
+      }
+      // Annualised volatility, computed off the same NAV series the returns
+      // and the worst fall come from. It answers what a drawdown cannot: the
+      // worst fall is one episode, and two funds can share a -20% while one
+      // of them shook the whole way there and the other did it once.
+      const vol = verified((f.performance||{}).navVol);
+      if(vol){
+        const vy = (f.performance||{}).navVolYears;
+        h += `<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:14px 0 6px">`
+          + `<span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:20px;font-weight:700">${esc(vol)}</span>`
+          + `<span style="font-size:13px;color:var(--ink-soft)">annualised volatility${vy?` · over ${vy} year${vy===1?'':'s'}`:''}</span></div>`
+          + `<div style="margin-bottom:8px"><span class="fchip basis" style="margin-left:0" title="The standard deviation of this fund's own NAV movements, scaled to a year off the series' own observation density — not a researched or inferred figure.">NAV${vy?` &middot; ${vy}yr`:''}</span></div>`
+          + (volPeer(f)?`<p class="prose soft" style="margin:0 0 8px">${esc(volPeer(f))}</p>`:'');
       }
       const tiles = [["SRRI (1–7)",srri],["FE risk score",fe]].filter(x=>x[1]);
       if(tiles.length) h += `<div class="costgrid">`+
@@ -3651,6 +4283,26 @@ function renderList(){
       if(pa===null&&pb===null) return 0;
       if(pa===null) return 1; if(pb===null) return -1;
       return sortMode==='rel-desc'?pb-pa:pa-pb;
+    });
+  } else if(sortMode==='fall-desc'||sortMode==='fall-asc'){
+    // Only five-year falls rank against each other, for the reason the
+    // watchlist gives: a fund with one year of history has had one year in
+    // which to fall. Everything measured over a shorter window sorts to the
+    // bottom rather than being credited with a shallowness it has not earned.
+    items.sort((a,b)=>{
+      const va=(a.risk||{}).maxDrawdownYears===RANKED_DRAWDOWN_YEARS?parsePerf(verified((a.risk||{}).maxDrawdown)):null;
+      const vb=(b.risk||{}).maxDrawdownYears===RANKED_DRAWDOWN_YEARS?parsePerf(verified((b.risk||{}).maxDrawdown)):null;
+      if(va===null&&vb===null) return 0;
+      if(va===null) return 1; if(vb===null) return -1;
+      return sortMode==='fall-desc'?vb-va:va-vb;
+    });
+  } else if(sortMode==='charge-asc'){
+    items.sort((a,b)=>{
+      const va=parsePerf(verified((a.charges||{}).netOngoing));
+      const vb=parsePerf(verified((b.charges||{}).netOngoing));
+      if(va===null&&vb===null) return 0;
+      if(va===null) return 1; if(vb===null) return -1;
+      return va-vb;
     });
   } else if(sortMode==='name-asc'){
     items.sort((a,b)=>a.name.localeCompare(b.name));
@@ -3737,6 +4389,8 @@ function renderTable(items, listEl, limit){
     {k:'om',     label:'1mo', num:1},
     {k:'spark',  label:'5yr shape'},
     {k:'charge', label:'Net charge', num:1},
+    {k:'fall',   label:'Worst fall', num:1},
+    {k:'vol',    label:'Volatility', num:1},
     {k:'asat',   label:'1yr as at'},
     {k:'flags',  label:'Flags'}
   ];
@@ -3747,8 +4401,18 @@ function renderTable(items, listEl, limit){
       p1n: parsePerf(getPerf1(f)), p1: getPerf1(f),
       reln: vsSector(f),
       omn: (v=>v?parsePerf(v.value):null)(oneMonthView(f)), om: (v=>v?v.value:'—')(oneMonthView(f)),
-      chargen: f.charges&&f.charges.netOngoing?parsePerf(f.charges.netOngoing):null,
-      charge: f.charges&&f.charges.netOngoing?f.charges.netOngoing:'—',
+      chargen: parsePerf(verified((f.charges||{}).netOngoing)),
+      charge: verified((f.charges||{}).netOngoing) || '—',
+      // Both risk figures carry the window they were measured over, because
+      // neither compares against one measured over a different span. The
+      // column shows the window beside the number rather than letting a
+      // one-year fall sit in a list of five-year ones looking safest.
+      falln: parsePerf(verified((f.risk||{}).maxDrawdown)),
+      fall: verified((f.risk||{}).maxDrawdown) || '—',
+      fallYrs: (f.risk||{}).maxDrawdownYears || null,
+      voln: parsePerf(verified((f.performance||{}).navVol)),
+      vol: verified((f.performance||{}).navVol) || '—',
+      volYrs: (f.performance||{}).navVolYears || null,
       asatIso: st?st.iso:'', asat: st?st.label:'—', stale: st?st.stale:false,
       incons: (mc&&mc.cls==='incons')?true:false, unver: isUnverified1yr(f)
     };
@@ -3761,6 +4425,10 @@ function renderTable(items, listEl, limit){
     rel:  (a,b)=>(b.reln??-1e9)-(a.reln??-1e9),
     om:   (a,b)=>(b.omn??-1e9)-(a.omn??-1e9),
     charge:(a,b)=>(a.chargen??1e9)-(b.chargen??1e9),
+    // Shallowest first: a drawdown is negative, so the larger number is the
+    // smaller fall. A missing figure sorts last either way round.
+    fall: (a,b)=>(b.falln??-1e9)-(a.falln??-1e9),
+    vol:  (a,b)=>(a.voln??1e9)-(b.voln??1e9),
     asat: (a,b)=>(b.asatIso||'').localeCompare(a.asatIso||''),
     flags:(a,b)=>((b.incons?2:0)+(b.unver?1:0)+(b.stale?1:0))-((a.incons?2:0)+(a.unver?1:0)+(a.stale?1:0)),
     spark:(a,b)=>0
@@ -3781,6 +4449,8 @@ function renderTable(items, listEl, limit){
     <td class="num mono" style="color:${pcol(r.omn)}">${esc(r.om)}</td>
     <td>${sparkline(r.f,64,20)||'—'}</td>
     <td class="num mono">${esc(r.charge)}</td>
+    <td class="num mono" title="${r.fallYrs?`Worst peak-to-trough fall over the last ${r.fallYrs} years, from the fund's own NAV`:'No worst fall on file'}">${esc(r.fall)}${r.fallYrs?`<span style="font-size:10px;color:var(--ink-soft)"> ${r.fallYrs}yr</span>`:''}</td>
+    <td class="num mono" title="${r.volYrs?`Annualised volatility over the last ${r.volYrs} years, from the fund's own NAV`:'No volatility on file'}">${esc(r.vol)}${r.volYrs?`<span style="font-size:10px;color:var(--ink-soft)"> ${r.volYrs}yr</span>`:''}</td>
     <td class="mono" style="font-size:11px;color:${r.stale?'var(--amber)':'var(--ink-soft)'}">${esc(r.asat)}</td>
     <td>${r.incons?'<span class="fchip bad" style="margin-left:0">⚠</span>':''}${r.unver?'<span class="fchip warn" style="margin-left:'+(r.incons?'6px':'0')+'">NYV</span>':''}${r.stale&&!r.unver?'<span class="fchip warn" style="margin-left:'+(r.incons?'6px':'0')+'">stale</span>':''}</td>
   </tr>`).join('');
@@ -4196,7 +4866,7 @@ function renderDataStamp(){
    Ordered down the page, so the last section whose top has passed under the
    bar is the current one. A hidden section has no offsetParent and is skipped,
    which is what keeps "Intelligence" from lighting up before the data loads. */
-const NAV_SECTIONS = ['top','markets','newsbox','health','intelligence','watchlist','directory','footer'];
+const NAV_SECTIONS = ['top','markets','newsbox','health','intelligence','watchlist','riskmap','overlap','directory','footer'];
 let spyTick = 0;
 function scrollSpy(){
   const links = document.querySelectorAll('#navlinks a');
@@ -4230,6 +4900,8 @@ function renderAll(){
   renderNews();
   renderHealth();
   renderIntelligence();
+  renderRiskMap();
+  renderOverlap();
   renderFilters();
   document.getElementById('directory').style.display = (DATA.funds&&DATA.funds.length)?'block':'none';
   renderList();

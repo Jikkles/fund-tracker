@@ -480,6 +480,147 @@ def max_drawdown(series: dict, days: int) -> tuple[float, date, date] | None:
     return worst, date.fromtimestamp(worst_peak), date.fromtimestamp(worst_trough)
 
 
+# Minimum observations before a spread is a spread. Below this the standard
+# deviation is describing the sample rather than the fund.
+MIN_VOL_POINTS = 80
+
+
+def annual_vol(series: dict, days: int) -> float | None:
+    """Annualised volatility of the NAV over a trailing window, in percent.
+
+    The standard deviation of the fund's own period returns, scaled up to a
+    year. Computed off the series already fetched for the return windows, so
+    it costs no request and cannot disagree with the numbers beside it.
+
+    THE ANNUALISATION FACTOR IS MEASURED, NOT ASSUMED. The usual root-252 is
+    a claim that the series is priced every trading day, and not every fund
+    on this desk is: a weekly-priced line scaled by root-252 would publish a
+    volatility more than twice its real one. So the factor comes from the
+    window's own observation density - how many prices actually landed in how
+    many years - which is right for a daily series and right for a weekly one
+    without having to know in advance which it is.
+
+    The coverage and continuity guards are pct_over's and max_drawdown's, for
+    the same reasons: a series that starts late must not label a short history
+    with a long window, and a hole in the middle is an absence rather than a
+    move.
+    """
+    if not series or len(series["t"]) < 2:
+        return None
+    end = series["t"][-1]
+    cutoff = end - days * 86400
+    window = [(t, c) for t, c in zip(series["t"], series["c"])
+              if t >= cutoff and c]
+    if len(window) < MIN_VOL_POINTS:
+        return None
+    if window[0][0] > cutoff + _slack(days):
+        return None
+    gap = MAX_SERIES_GAP_DAYS * 86400
+    if any(b[0] - a[0] > gap for a, b in zip(window, window[1:])):
+        return None
+
+    rets = [(b[1] - a[1]) / a[1] for a, b in zip(window, window[1:]) if a[1]]
+    if len(rets) < MIN_VOL_POINTS - 1:
+        return None
+    mean = sum(rets) / len(rets)
+    var = sum((r - mean) ** 2 for r in rets) / (len(rets) - 1)
+    span_years = (window[-1][0] - window[0][0]) / (365.25 * 86400)
+    if span_years <= 0:
+        return None
+    per_year = len(rets) / span_years
+    return (var ** 0.5) * (per_year ** 0.5) * 100.0
+
+
+VOL_LADDER = [(5, 365 * 5), (3, 365 * 3), (1, 365)]
+
+
+def apply_volatility(fund: dict, series: dict) -> int | None:
+    """Write the annualised volatility onto the fund. Returns the window used.
+
+    Same ladder and same rule as the worst fall: take the longest window the
+    series genuinely covers, record which one it was, and publish nothing at
+    all rather than a short window wearing a long label. A one-year volatility
+    and a five-year volatility are not interchangeable and the page compares
+    only like with like.
+    """
+    perf = fund.setdefault("performance", {})
+    for years, days in VOL_LADDER:
+        got = annual_vol(series, days)
+        if got is not None:
+            break
+    else:
+        for key in ("navVol", "navVolYears"):
+            perf.pop(key, None)
+        return None
+    # Precision follows the number, for the reason apply_drawdown gives: the
+    # Royal London short-term money market fund's real volatility rounds to
+    # nothing at one decimal and would print "0.0%", which reads as a
+    # formatting fault rather than as the correct and rather useful answer for
+    # a cash fund. A figure this desk publishes never renders as a bare zero.
+    digits = 1 if got >= 0.05 else 2 if got >= 0.005 else 3
+    perf["navVol"] = f"{got:.{digits}f}%"
+    perf["navVolYears"] = years
+    return years
+
+
+# A completed calendar year is anchored on the last price of the year before
+# it. If the series does not reach that far back, the "start" is really some
+# date in January and the figure would be a partial year wearing a full year's
+# label - the same fault the trailing windows guard against. Ten days of slack
+# covers the Christmas break and a fund that reprices weekly.
+YEAR_ANCHOR_SLACK_DAYS = 10
+
+
+def calendar_years(series: dict, want: int = 5) -> list[dict]:
+    """Completed calendar-year total returns, newest first, computed from NAV.
+
+    WHY THIS EXISTS. The discrete table on a card is scraped from HL and runs
+    to whatever year-end that fund happens to use - 2 September for 67 of
+    them, 31 March for five, 30 June for three. Those are real, they are
+    labelled, and they are kept. What they cannot do is line two funds up
+    beside each other, because a "2025-26" ending in March and one ending in
+    September are different years of market.
+
+    A calendar year is the same twelve months for every fund on the desk, it
+    is computed from each fund's own NAV every run so it never goes stale, and
+    it also gives a table to the seven funds HL publish no discrete history
+    for at all.
+
+    It is NOT presented as the fund's official discrete record and the page
+    says so where it renders: the manager's own year-end is what the factsheet
+    reports against, and this is the desk's own arithmetic on published prices.
+    """
+    if not series or len(series["t"]) < 2:
+        return []
+    this_year = date.fromtimestamp(series["t"][-1]).year
+    # Last price on or before 31 December of each year, with the date it came
+    # from, so an anchor that is really from the following January is caught.
+    last: dict[int, tuple[int, float]] = {}
+    for stamp, close in zip(series["t"], series["c"]):
+        if not close:
+            continue
+        year = date.fromtimestamp(stamp).year
+        prev = last.get(year)
+        if prev is None or stamp > prev[0]:
+            last[year] = (stamp, close)
+
+    out: list[dict] = []
+    for year in range(this_year - 1, this_year - 1 - want, -1):
+        end, start = last.get(year), last.get(year - 1)
+        if not end or not start or not start[1]:
+            continue
+        # Both ends must sit near their year's close, or the window is not the
+        # year it claims to be.
+        for stamp, boundary in ((end[0], date(year, 12, 31)),
+                                (start[0], date(year - 1, 12, 31))):
+            if (boundary - date.fromtimestamp(stamp)).days > YEAR_ANCHOR_SLACK_DAYS:
+                break
+        else:
+            pct = (end[1] - start[1]) / start[1] * 100.0
+            out.append({"year": str(year), "fund": fmt(pct)})
+    return out
+
+
 def drawdown_period(peak: date, trough: date) -> str:
     """"Jan-Sep 2022", or "Nov 2021 - Oct 2022" across a year boundary.
 
@@ -643,6 +784,7 @@ def main(argv: list[str]) -> int:
     resolved = refused = priced = partial = 0
     # Worst falls by the window each fund's history could support.
     drawn: dict[int, int] = {years: 0 for years, _ in DRAWDOWN_LADDER}
+    volled = yeared = 0
     refusals: list[tuple[str, str]] = []
     today = date.today()
 
@@ -751,6 +893,16 @@ def main(argv: list[str]) -> int:
         perf["navPoints"] = len(series["c"])
         if (window := apply_drawdown(fund, series)):
             drawn[window] += 1
+        if apply_volatility(fund, series):
+            volled += 1
+        # Calendar years are written only where at least one complete one can
+        # be anchored; an empty list would render as a table with no rows.
+        years = calendar_years(series)
+        if years:
+            perf["navYears"] = years
+            yeared += 1
+        else:
+            perf.pop("navYears", None)
         print(f"  [nav] {fund['name'][:38]:40} {symbol:14} "
               f"1w {fmt(vals['nav1w']) or '  n/a':>8}  "
               f"1m {fmt(vals['nav1m']) or '  n/a':>8}  "
@@ -768,6 +920,8 @@ def main(argv: list[str]) -> int:
           f"{len(funds) - total_drawn} funds lack even a year of history "
           f"and publish none. Only the {drawn[DRAWDOWN_LADDER[0][0]]} "
           f"five-year figures are comparable enough to be scored.")
+    print(f"{volled} annualised volatilities and {yeared} calendar-year "
+          f"tables computed off the same series - no extra requests.")
     if refusals:
         print("\nNeeds a hand-checked symbol in `navSymbol` "
               "(left unverified for now):")
@@ -1100,6 +1254,95 @@ def _selftest_offline() -> bool:
     print("  year to date     OK  (anchored on 31 Dec, no-anchor and "
           "stale-anchor refused)",
           file=_sys.stderr)
+
+    # --- volatility ------------------------------------------------------
+    # A perfectly flat series has no spread. Anything but zero here would be
+    # arithmetic noise being published as risk.
+    _5y_days = 365 * 5
+    flat = _series([100.0] * 1900)
+    assert annual_vol(flat, _5y_days) == 0.0, annual_vol(flat, _5y_days)
+
+    # A series alternating +/-1% has a per-observation standard deviation of
+    # about 1%. This fixture is priced every calendar day, so there are ~365
+    # observations a year and the annualised figure is root-365 x 1%, near 19%
+    # - NOT the root-252 x 1% = 15.9% a hardcoded trading-day factor would
+    # give. That is the whole point: the factor is read off the series.
+    zig = [100.0]
+    for i in range(1900):
+        zig.append(zig[-1] * (1.01 if i % 2 == 0 else 1 / 1.01))
+    vd = annual_vol(_series(zig), _5y_days)
+    assert vd is not None and 18.0 < vd < 20.0, vd
+
+    # And the same 1% wobble sampled WEEKLY is a much less volatile fund per
+    # year - 52 observations, not 365 - so it must come out near root-52 x 1%,
+    # around 7%. A fixed factor would have printed the same number for both.
+    vw = annual_vol(_series(zig[:280], step=7 * 86400), _5y_days)
+    assert vw is not None and 5.0 < vw < 10.0, vw
+
+    # The coverage and continuity guards are the ones pct_over uses.
+    short = _series([100.0 + (i % 3) for i in range(200)],
+                    start=int(time.time()) - 200 * 86400)
+    assert annual_vol(short, _5y_days) is None, "short history must refuse a 5yr label"
+    holed = {"t": [i * 86400 for i in range(950)]
+                  + [(950 + 400) * 86400 + i * 86400 for i in range(950)],
+             "c": [100.0 + (i % 5) for i in range(1900)], "currency": "GBP"}
+    assert annual_vol(holed, _5y_days) is None, "a mid-series hole is not volatility"
+    assert annual_vol(_series([100.0] * 20), _5y_days) is None, "too few points"
+
+    # The ladder records the window it actually used, exactly as the worst
+    # fall does, so a one-year figure never wears a five-year label.
+    f_short = {}
+    yrs = apply_volatility(f_short, _series([100.0 + (i % 7) for i in range(400)]))
+    assert yrs == 1 and f_short["performance"]["navVolYears"] == 1, f_short
+    print("  volatility       OK  (flat is zero, weekly rescaled, short "
+          "history and holes refused)", file=_sys.stderr)
+
+    # --- calendar years --------------------------------------------------
+    # Priced daily from 20 Dec of the year before the first full one, so the
+    # earliest complete year has a real 31 Dec anchor behind it. The level
+    # steps 10% on each 1 January, so every completed year is +10% and the
+    # current, unfinished one is never reported at all.
+    _y0 = _today.year - 3
+    _cal_from = date(_y0 - 1, 12, 20)
+    closes, level = [], 100.0
+    for n in range((_today - _cal_from).days + 1):
+        d = _cal_from + _dt.timedelta(days=n)
+        if d.month == 1 and d.day == 1:
+            level *= 1.10
+        closes.append(level)
+    cal = calendar_years(_series(closes, start=int(
+        _dt.datetime(_cal_from.year, _cal_from.month, _cal_from.day).timestamp())))
+    got = {r["year"]: r["fund"] for r in cal}
+    assert str(_today.year) not in got, "the current year is not complete"
+    assert got.get(str(_y0), "").startswith("+10"), cal
+    assert got.get(str(_y0 + 2), "").startswith("+10"), cal
+    assert cal == sorted(cal, key=lambda r: r["year"], reverse=True), "newest first"
+
+    # A year whose anchor is really mid-January is not that year. Cut the run
+    # back to 20 Jan and the earliest year loses its 31 Dec anchor - it must
+    # drop out rather than report eleven months as twelve.
+    cut = (date(_y0, 1, 20) - _cal_from).days
+    late = calendar_years(_series(closes[cut:], start=int(
+        _dt.datetime(_y0, 1, 20).timestamp())))
+    late_years = {r["year"] for r in late}
+    assert str(_y0) not in late_years, late
+    assert str(_y0 + 2) in late_years, "the later years still stand"
+
+    # A feed that skips the holiday week still has a year end - the same few
+    # days of slack pct_ytd allows.
+    full = _series(closes, start=int(
+        _dt.datetime(_cal_from.year, _cal_from.month, _cal_from.day).timestamp()))
+    keep = [(t, c) for t, c in zip(full["t"], full["c"])
+            if not (date.fromtimestamp(t).month == 12
+                    and date.fromtimestamp(t).day > 27)]
+    xmas_cal = {"t": [t for t, _ in keep], "c": [c for _, c in keep],
+                "currency": "GBP"}
+    assert calendar_years(xmas_cal), "a few days' gap must not lose the year end"
+
+    assert calendar_years(_series([100.0])) == []
+    assert calendar_years({"t": [], "c": []}) == []
+    print("  calendar years   OK  (complete years only, January anchors "
+          "refused, holiday gap tolerated)", file=_sys.stderr)
 
     # --- collisions ------------------------------------------------------
     funds = [{"name": "BlackRock Continental European"},
