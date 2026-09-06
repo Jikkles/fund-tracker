@@ -3744,6 +3744,19 @@ function buildOverlap(){
   return OVL;
 }
 
+/* A published line reading "Aviva PLC 4% 06/03/2055" names a security, not a
+   company, and two funds holding different Aviva bonds hold different things.
+   The desk will not fuzzy-match those onto one issuer - that would invent an
+   overlap - so a bond fund correctly reads as zero, and the card says why
+   rather than leaving the reader to wonder. Coupon, maturity or one of the
+   debt tags in most of the ten lines is enough to tell. */
+function holdsDebt(f){
+  const hs = (f.holdings || []).map(h => String(h.name || ''));
+  if(hs.length < 4) return false;
+  const mark = /(\d+([.¼½¾/]\d*)?\s*%)|\b(FRN|VRN|PERP|GTD|GILT|TREASURY)\b|\d{2}[/-]\d{2}[/-]\d{2,4}/i;
+  return hs.filter(h => mark.test(h)).length * 2 >= hs.length;
+}
+
 function overlapPairs(fid){
   if(!OVL) buildOverlap();
   const mine = OVL.books.get(fid);
@@ -3771,9 +3784,11 @@ function overlapBlock(f){
   const byId = id => (DATA.funds || []).find(x => x.id === id);
   if(!top.length){
     return `<div class="sec"><div class="sec-h">Overlap with the rest of the desk</div>`
-      + `<p class="prose soft">No company in this fund's published top ten appears in any other fund's published top ten. `
-      + `That is a real signal — it is one of ${OVL.covered} funds compared — but it is not proof of no overlap: `
-      + `HL publish ten lines out of a book that runs to dozens, so shared holdings further down would not show here.</p></div>`;
+      + `<p class="prose soft">Nothing in this fund's published top ten appears in any other fund's published top ten, across the ${OVL.covered} compared. `
+      + (holdsDebt(f)
+          ? `That is mostly a fact about what it holds. This fund's published lines are individual <strong>bonds</strong> — issuer, coupon and maturity — not companies, and two funds holding different Aviva bonds are holding different securities. The desk matches a name exactly or not at all, because treating "Aviva 4% 2032" and "Aviva 4% 2055" as the same holding would invent an overlap that does not exist. So a bond fund reads as zero here whether or not it shares an issuer with anything.`
+          : `It is not proof of no overlap: HL publish ten lines out of a book that runs to dozens, so shared holdings further down would not show here.`)
+      + `</p></div>`;
   }
   const body = top.map(o => {
     const g = byId(o.id); if(!g) return '';
@@ -3861,6 +3876,7 @@ function renderOverlap(){
       + `<div class="ovl-n">${pr.weight.toFixed(1)}%</div></div>`;
   }).join('');
 
+  const debtFunds = funds.filter(f => OVL.books.has(f.id) && holdsDebt(f)).length;
   const lead = OVL.companies.length
     ? `The ${OVL.covered} funds that publish a top ten name <b>${OVL.companies.length}</b> distinct companies between them. `
       + `<b>${shared.length}</b> of those turn up in more than one fund, and the most widely held — `
@@ -3878,7 +3894,9 @@ function renderOverlap(){
     + `<p class="prose soft" style="margin-top:14px">Every figure here is computed from the published top-ten holdings and nothing else. `
     + `<strong>Treat all of them as floors.</strong> A fund holds far more than ten companies, HL publish ten, and the desk will not estimate the rest: `
     + `two funds shown sharing 4% may share a great deal more further down their books. `
-    + `What the section can say honestly is that the overlap it shows definitely exists — and where it is large, it is large on the biggest positions both funds hold.</p>`;
+    + `What the section can say honestly is that the overlap it shows definitely exists — and where it is large, it is large on the biggest positions both funds hold.`
+    + (debtFunds ? ` It is also, in practice, a picture of the equity side: ${debtFunds} of the ${OVL.covered} funds publish individual <strong>bonds</strong> — issuer, coupon and maturity — rather than companies, and since two funds holding different Aviva bonds hold different securities, those lists contribute almost nothing to either column. That is the correct answer rather than a gap: collapsing bond lines onto their issuer would report an overlap the funds do not have.` : '')
+    + `</p>`;
 }
 
 /* ---------- return vs risk ----------

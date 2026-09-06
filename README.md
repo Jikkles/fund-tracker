@@ -301,10 +301,11 @@ sentinel a run writes where it could not source a value, and it was reaching the
 value: 340 discrete rows across 68 funds printed the phrase in the Sector column beside two
 real returns, 32 cards published a Benchmark tile whose value was the phrase, and 33 printed
 it as their entire Overview under an "Overview" heading. Now an unverified cell prints a
-dash, a column unverified in *every* row is dropped rather than shown as a header promising
-something the table cannot keep — that is 21 empty Sector columns and 39 empty Benchmark ones
-— a section with nothing to put in it is not opened, and the watchlist's risk pill falls back
-to the computed volatility rather than reading "Risk n/a" on half the desk. The JSON still
+dash, and a column unverified in *every* row is dropped rather than shown as a header
+promising something the table cannot keep — **130 columns across the desk**: 70 discrete
+Sector columns, 39 cumulative Benchmark, 21 cumulative Sector. A section with nothing to put
+in it is not opened, and the watchlist's risk pill falls back to the computed volatility
+rather than reading "Risk n/a" on half the desk. The JSON still
 records exactly what it did not verify; the change is what the reader is shown.
 
 **Central bank dates.** `cb_calendar.py` reads the published Fed and BoE calendars, which
