@@ -14,7 +14,8 @@ Four series are fetched per index and the rest are derived in the browser:
     5y   1wk bars
 
 That is 4 requests per index rather than 7, and it keeps the payload small
-enough to ship as one JSON file.
+enough to ship as one JSON file. An index whose 1d range comes back empty
+costs one more - see rebuild_intraday().
 
 Failure is per-index, matching the rest of the desk: an index that will not
 fetch is left out of the file and the panel simply does not offer that tab.
@@ -99,6 +100,10 @@ def slug(label: str) -> str:
 # only the run log wants the reason.
 _LAST_ERROR: dict[str, str] = {}
 
+# Tickers whose 1D line was rebuilt from the 5-day series this run, so the log
+# says which tabs are showing a reconstructed session rather than a live one.
+_REBUILT: set[str] = set()
+
 
 def _describe(exc: BaseException) -> str:
     """Render a failed fetch as one readable line.
@@ -168,6 +173,67 @@ def parse_chart(raw: bytes) -> dict | None:
         "c": [_round(p[1]) for p in pairs],
         "meta": meta,
     }
+
+
+def trading_periods(meta: dict) -> list[tuple[int, int]]:
+    """Yahoo's own session boundaries for an intraday request.
+
+    Arrives as a list of one-element lists, one per day. Anything that is not
+    a pair of integers is dropped rather than repaired.
+    """
+    out: list[tuple[int, int]] = []
+    for row in meta.get("tradingPeriods") or []:
+        for p in (row if isinstance(row, list) else [row]):
+            if not isinstance(p, dict):
+                continue
+            start, end = p.get("start"), p.get("end")
+            if isinstance(start, int) and isinstance(end, int) and end > start:
+                out.append((start, end))
+    return sorted(set(out))
+
+
+def last_session(parsed: dict) -> dict | None:
+    """The most recent session in an intraday series, or None.
+
+    Yahoo's 1d range means the *current* trading day. For a contract that
+    trades nearly around the clock that day has not begun at 06:23 UTC on a
+    Saturday, so GC=F and BZ=F come back with no bars at all, while ^FTSE
+    still returns Friday because an index's current day resolves to the last
+    day it actually traded. That asymmetry is upstream, not ours, and it left
+    Gold and Brent as the only two tabs with no 1D line at the weekend.
+
+    The session boundary is not inferred from gaps in the timestamps.
+    meta.tradingPeriods is Yahoo's own statement of where a session starts and
+    ends, so the slice is the source's definition of a session rather than
+    this desk's guess at one. No tradingPeriods, no rebuild.
+    """
+    periods = trading_periods(parsed.get("meta") or {})
+    if not periods:
+        return None
+    t, c = parsed["t"], parsed["c"]
+    for start, end in reversed(periods):
+        keep = [i for i, stamp in enumerate(t) if start <= stamp <= end]
+        if len(keep) >= 2:
+            return {"t": [t[i] for i in keep], "c": [c[i] for i in keep],
+                    "start": start}
+    return None
+
+
+def prev_daily_close(daily: dict | None, start: int) -> float | None:
+    """The daily close immediately before a session opens, or None.
+
+    This is the baseline a rebuilt 1D line is measured from, and it is read
+    off the daily series rather than taken from meta. chartPreviousClose on an
+    empty 1d window is not the previous close: GC=F returned 4539.9 there on
+    6 Sept 2026, a level that session neither opened nor closed at, while the
+    daily bar for the day before said 4491.70. A baseline is a published
+    figure or it is nothing - a wrong one silently rewrites the headline
+    change printed beside it.
+    """
+    if not daily:
+        return None
+    earlier = [c for t, c in zip(daily["t"], daily["c"]) if t < start]
+    return earlier[-1] if earlier else None
 
 
 def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
@@ -279,6 +345,22 @@ def fetch_index(label: str, ticker: str) -> dict | None:
     if "1y" not in series:
         return None
 
+    # An empty 1d window is not the same as a broken feed - see last_session().
+    # Rebuild the line from the 5-day series at 5m, sliced at Yahoo's own
+    # session boundary. One extra request, only for the indices that came back
+    # short, which in practice is the two commodity contracts at a weekend.
+    if "1d" not in series:
+        intraday = fetch_series(ticker, "5d", "5m")
+        time.sleep(0.25)
+        sess = last_session(intraday) if intraday else None
+        if sess:
+            entry = {"t": sess["t"], "c": sess["c"]}
+            prev = prev_daily_close(series["1y"], sess["start"])
+            if prev is not None:
+                entry["prevClose"] = prev
+            series["1d"] = entry
+            _REBUILT.add(ticker)
+
     price = meta.get("regularMarketPrice")
     prev = meta.get("chartPreviousClose")
     if not isinstance(price, (int, float)):
@@ -307,12 +389,17 @@ def build() -> dict:
             why = _LAST_ERROR.get(ticker, "no 1y series returned")
             print(f"  [chart] {label:20} {ticker:11} FAILED  {why}")
             continue
-        got = ",".join(sorted(entry["series"]))
+        got = ",".join(k + ("*" if k == "1d" and ticker in _REBUILT else "")
+                       for k in sorted(entry["series"]))
         pts = sum(len(s["c"]) for s in entry["series"].values())
         print(f"  [chart] {label:20} {ticker:11} "
               f"{entry['price']:>12}  {pts:5} pts  [{got}]  "
               f"{len(entry['news'])} headlines")
         out.append(entry)
+
+    if _REBUILT:
+        print("  [chart] * 1D rebuilt from the last completed session "
+              "(Yahoo returned no bars for the current day)")
 
     return {
         "generated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -396,6 +483,42 @@ def _selftest_offline() -> bool:
         .startswith("unreachable"), _describe(urllib.error.URLError("x"))
     assert _describe(TimeoutError()) == f"timeout after {TIMEOUT}s"
     print("  fetch reasons    OK  (status, unreachable and timeout kept apart)")
+
+    # The weekend shape this exists for: an intraday series spanning several
+    # sessions, of which only the last one is the 1D line. Boundaries are
+    # Yahoo's, shaped the way it sends them - a list of one-element lists.
+    day = 86400
+    meta = {"tradingPeriods": [
+        [{"start": 100, "end": 100 + day - 1}],
+        [{"start": 100 + day, "end": 100 + 2 * day - 1}],
+    ]}
+    parsed = {"meta": meta,
+              "t": [200, 300, 400, 100 + day + 50, 100 + day + 60, 100 + day + 70],
+              "c": [10.0, 11.0, 12.0, 20.0, 21.0, 22.0]}
+    sess = last_session(parsed)
+    assert sess is not None and sess["c"] == [20.0, 21.0, 22.0], sess
+    assert sess["start"] == 100 + day, sess["start"]
+    print(f"  last session     OK  ({len(sess['c'])} of {len(parsed['c'])} bars kept, "
+          "cut at Yahoo's own boundary)")
+
+    # A session with a single print is not a line; fall back to the one before
+    # it rather than drawing a dot and calling it a day.
+    thin = {"meta": meta, "t": [200, 300, 100 + day + 50], "c": [10.0, 11.0, 20.0]}
+    assert last_session(thin)["c"] == [10.0, 11.0], last_session(thin)
+    # No boundaries published, no rebuild - the desk does not guess where a
+    # 23-hour contract's day starts.
+    assert last_session({"meta": {}, "t": [1, 2], "c": [1.0, 2.0]}) is None
+    assert trading_periods({"tradingPeriods": [[{"start": 5, "end": 5}]]}) == []
+    assert trading_periods({"tradingPeriods": [{"start": 1, "end": 2}]}) == [(1, 2)]
+    print("  session guards   OK  (thin session skipped, no boundaries -> None)")
+
+    # The baseline is the daily close *before* the session opens. The bar
+    # stamped at the open belongs to the session being drawn, not before it.
+    daily = {"t": [100 - day, 100, 100 + day], "c": [8.0, 9.0, 22.0]}
+    assert prev_daily_close(daily, 100 + day) == 9.0
+    assert prev_daily_close(daily, 100 - day) is None
+    assert prev_daily_close(None, 100) is None
+    print("  rebuilt baseline OK  (previous daily close, never the empty-window meta)")
 
     assert slug("FTSE 100") == "ftse-100"
     assert slug("S&P 500") == "s-p-500"
