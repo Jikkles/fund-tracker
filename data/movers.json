@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-05T10:45:33+00:00",
+  "generated": "2026-09-06T08:10:32+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
@@ -43,7 +43,7 @@
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "HL market summary (delayed)",
       "universe": "all 250 constituents",
       "top": [
@@ -83,7 +83,7 @@
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
@@ -123,7 +123,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
@@ -163,7 +163,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -203,7 +203,7 @@
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
@@ -243,7 +243,7 @@
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
@@ -283,7 +283,7 @@
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-05",
+      "asAt": "2026-09-06",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
