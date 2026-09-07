@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T08:13:09+00:00",
+  "generated": "2026-09-07T12:47:11+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,36 +8,36 @@
       "universe": "all 100 constituents",
       "top": [
         {
+          "name": "Standard Life Plc",
+          "symbol": "SDLF",
+          "pct": 2.31
+        },
+        {
           "name": "Admiral Group",
           "symbol": "ADM",
-          "pct": 1.36
+          "pct": 2.04
         },
         {
           "name": "Diploma plc",
           "symbol": "DPLM",
-          "pct": 1.33
-        },
-        {
-          "name": "Halma plc",
-          "symbol": "HLMA",
-          "pct": 1.28
+          "pct": 2.04
         }
       ],
       "bottom": [
         {
           "name": "Fresnillo",
           "symbol": "FRES",
-          "pct": -2.73
+          "pct": -2.19
         },
         {
-          "name": "Haleon plc",
-          "symbol": "HLN",
-          "pct": -2.38
+          "name": "Entain plc",
+          "symbol": "ENT",
+          "pct": -1.82
         },
         {
-          "name": "RELX plc",
-          "symbol": "REL",
-          "pct": -2.1
+          "name": "Diageo plc",
+          "symbol": "DGE",
+          "pct": -1.42
         }
       ]
     },
@@ -48,36 +48,36 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Ceres Power Holdings",
-          "symbol": "CWR",
-          "pct": 4.74
+          "name": "Aston Martin Lagonda",
+          "symbol": "AML",
+          "pct": 4.93
         },
         {
-          "name": "Spire Healthcare Group plc",
-          "symbol": "SPI",
-          "pct": 3.15
+          "name": "B&M European Value Retail",
+          "symbol": "BME",
+          "pct": 3.52
         },
         {
-          "name": "AEP Plantations Plc",
-          "symbol": "AEP",
-          "pct": 2.85
+          "name": "Goodwin plc",
+          "symbol": "GDWN",
+          "pct": 3.24
         }
       ],
       "bottom": [
         {
           "name": "Hollywood Bowl Group Plc",
           "symbol": "BOWL",
-          "pct": -5.68
-        },
-        {
-          "name": "Rank Group",
-          "symbol": "RNK",
-          "pct": -4.48
+          "pct": -5.51
         },
         {
           "name": "Hays plc",
           "symbol": "HAS",
-          "pct": -3.58
+          "pct": -4.58
+        },
+        {
+          "name": "Michael Page Plc",
+          "symbol": "PAGE",
+          "pct": -4.45
         }
       ]
     },
@@ -215,29 +215,29 @@
         {
           "name": "Li Auto Inc.",
           "symbol": "2015.HK",
-          "pct": 5.186113672235656
+          "pct": 5.395235983939024
         },
         {
           "name": "WH Group Limited",
           "symbol": "0288.HK",
-          "pct": 2.4776367306783644
+          "pct": 2.2023444898790734
         }
       ],
       "bottom": [
         {
           "name": "Longfor Group Holdings Limited",
           "symbol": "0960.HK",
-          "pct": -4.8221318187527205
+          "pct": -4.901185013878412
         },
         {
           "name": "Baidu, Inc.",
           "symbol": "9888.HK",
-          "pct": -4.53597331064404
+          "pct": -4.692387829405468
         },
         {
-          "name": "China Resources Mixc Lifestyle Services Limited",
-          "symbol": "1209.HK",
-          "pct": -3.538534037483701
+          "name": "Xiaomi Corporation",
+          "symbol": "1810.HK",
+          "pct": -3.305205753888587
         }
       ]
     },
@@ -250,34 +250,34 @@
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": 3.6581041048718363
+          "pct": 4.115371311061656
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 2.1703471082814754
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": 1.5451431274414062
         },
         {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": 1.7309543404297552
+          "pct": 1.485615809943664
         }
       ],
       "bottom": [
         {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": -3.2005345084286025
+          "pct": -3.1110103572619474
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": -2.617398504559722
+          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
+          "symbol": "MUV2.DE",
+          "pct": -2.2744504464150403
         },
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": -2.352603444994016
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -2.240405274398397
         }
       ]
     },
