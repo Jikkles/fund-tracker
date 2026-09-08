@@ -1,71 +1,69 @@
 """
-One-off: find out what Yahoo will actually answer for a BATCH of symbols.
+One-off: why did the batched sweep get nothing out of Yahoo's spark endpoint?
 
-The sandbox this desk is edited in cannot reach Yahoo, so the batching work
-went in behind a per-symbol fallback and the first live run reported which
-path it took. It took the fallback: spark returned nothing usable. This
-prints what each candidate actually answers, from a runner that can reach it,
-so the next change is made on evidence rather than on another guess.
+Round one established that spark itself is fine - four URL variants, all HTTP
+200, all the flat {"SYM": {"close": [...]}} shape the parser handles. So the
+fault is in this repo, and round two runs THE REAL CODE PATH against THE REAL
+symbols instead of three hand-picked American tickers.
 
-Deleted once it has answered. Not wired into any scheduled workflow.
+Deleted once it has answered.
 """
 from __future__ import annotations
 
+import json
 import sys
-import urllib.error
-import urllib.request
+import urllib.parse
+from pathlib import Path
 
-SYMS = ["AAPL", "MSFT", "NVDA"]
-UA_DESK = "fund-tracker/1.0 (+github actions; personal research desk)"
-UA_BROWSER = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-              "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
-BROWSERISH = {"Accept": "application/json",
-              "Origin": "https://finance.yahoo.com",
-              "Referer": "https://finance.yahoo.com/"}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-q = ",".join(SYMS)
-CASES = [
-    ("spark q1 minimal", UA_DESK, {},
-     f"https://query1.finance.yahoo.com/v8/finance/spark?symbols={q}"
-     "&range=5d&interval=1d"),
-    ("spark q1 full params", UA_DESK, {},
-     f"https://query1.finance.yahoo.com/v8/finance/spark?symbols={q}&range=5d"
-     "&interval=1d&indicators=close&includeTimestamps=false"
-     "&includePrePost=false&corsDomain=finance.yahoo.com&.tsrc=finance"),
-    ("spark q2 minimal", UA_DESK, {},
-     f"https://query2.finance.yahoo.com/v8/finance/spark?symbols={q}"
-     "&range=5d&interval=1d"),
-    ("spark q1 browser UA", UA_BROWSER, BROWSERISH,
-     f"https://query1.finance.yahoo.com/v8/finance/spark?symbols={q}"
-     "&range=5d&interval=1d"),
-    ("v7 quote", UA_BROWSER, BROWSERISH,
-     f"https://query1.finance.yahoo.com/v7/finance/quote?symbols={q}"),
-    ("v6 quote", UA_BROWSER, BROWSERISH,
-     f"https://query1.finance.yahoo.com/v6/finance/quote?symbols={q}"),
-    ("chart (control, 1 symbol)", UA_DESK, {},
-     "https://query1.finance.yahoo.com/v8/finance/chart/AAPL"
-     "?interval=1d&range=5d"),
-    ("stooq batch CSV", UA_DESK, {},
-     "https://stooq.com/q/l/?s=aapl.us+msft.us+nvda.us&f=sd2t2ohlcv&h&e=csv"),
-]
+import index_movers as im
+import netfetch
+
+CACHE = Path(__file__).resolve().parent.parent / "data" / "constituents.json"
+
+
+def report(label: str, symbols: list[str]) -> None:
+    url = im.SPARK_URL.format(urllib.parse.quote(",".join(symbols), safe=","))
+    res = netfetch.fetch(url, ua=im.USER_AGENT)
+    print(f"\n=== {label}: {len(symbols)} symbols, URL {len(url)} chars")
+    print(f"    {url[:160]}")
+    print(f"    HTTP {res.status}  error={res.error!r}  "
+          f"bytes={len(res.body) if res.body else 0}")
+    doc = res.json()
+    if doc is None:
+        print(f"    body did not parse. first 300: {(res.body or b'')[:300]!r}")
+        return
+    if isinstance(doc, dict):
+        print(f"    top-level keys: {list(doc)[:8]}{' ...' if len(doc) > 8 else ''}")
+    parsed = im.parse_spark(doc)
+    print(f"    parse_spark -> {len(parsed)} symbols")
+    wanted = set(symbols)
+    hit = [k for k in parsed if k in wanted]
+    print(f"    of which we asked for: {len(hit)}")
+    if parsed and not hit:
+        print(f"    RETURNED KEYS NOT IN OUR LIST: {list(parsed)[:6]}")
+    if hit:
+        k = hit[0]
+        print(f"    sample {k}: closes={parsed[k][:5]} -> "
+              f"day_pct={im.day_pct(parsed[k])}")
 
 
 def main() -> int:
-    for name, ua, extra, url in CASES:
-        hdrs = {"User-Agent": ua, "Accept-Encoding": "identity"}
-        hdrs.update(extra)
-        req = urllib.request.Request(url, headers=hdrs)
-        print(f"\n=== {name}\n    {url[:120]}")
-        try:
-            with urllib.request.urlopen(req, timeout=25) as r:
-                body = r.read()
-                print(f"    HTTP {r.status}  {len(body)} bytes")
-                print(f"    {body[:450]!r}")
-        except urllib.error.HTTPError as e:
-            print(f"    HTTP {e.code} {e.reason}")
-            print(f"    {e.read()[:300]!r}")
-        except Exception as e:
-            print(f"    {type(e).__name__}: {e}")
+    cache = json.loads(CACHE.read_text(encoding="utf-8"))
+    dow = [t["symbol"] for t in cache["dow-jones"]["tickers"]]
+    spx = [t["symbol"] for t in cache["s-p-500"]["tickers"]]
+    nikkei = [t["symbol"] for t in cache["nikkei-225"]["tickers"]]
+
+    # The exact call the run makes, at the exact size it makes it.
+    report("Dow, one batch (what the run sent)", dow)
+    report("S&P first 50 (what the run sent)", spx[:50])
+    # Then walk the size down, to find where it stops answering.
+    for n in (25, 10, 5, 2):
+        report(f"S&P first {n}", spx[:n])
+    # A non-US board, in case the suffix is the problem rather than the count.
+    report("Nikkei first 5 (.T suffix)", nikkei[:5])
+    report("Nikkei first 50 (.T suffix)", nikkei[:50])
     return 0
 
 
