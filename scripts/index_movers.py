@@ -55,8 +55,9 @@ HOW THE INDEX IS PRICED, AND WHY IT IS TWO PASSES
 -------------------------------------------------
 It used to be one request per constituent: 993 of them every daily run, 83%
 of this desk's entire request load, to publish six rows per index and throw
-the other ~987 prices away. Yahoo's spark endpoint takes fifty symbols at a
-time, so the sweep is now twenty requests instead of a thousand.
+the other ~987 prices away. Yahoo's spark endpoint takes twenty symbols at a
+time - a measured limit, see SPARK_BATCH - so the sweep is now about fifty
+requests instead of a thousand.
 
 Spark does not return company names, which is what the paragraph above is
 about. So the ends of the ranking - and only the ends, because the middle is
@@ -127,13 +128,43 @@ PRICED_FLOOR = 0.9          # of the constituent list, below which it is a guess
 # disagree is dropped rather than shown.
 SPARK_URL = ("https://query1.finance.yahoo.com/v8/finance/spark"
              "?symbols={}&range=5d&interval=1d")
-SPARK_BATCH = 50            # symbols per request; keeps the URL well short of 2KB
+
+# Symbols per request. MEASURED, NOT GUESSED, and the guess was wrong.
+#
+# This was 50, on the reasoning that the URL stays well short of 2KB - true,
+# and beside the point. Yahoo caps the number of SYMBOLS, and answers an
+# over-long list with HTTP 400 and an EMPTY BODY. So every batch was rejected,
+# every index fell through to the per-symbol path the batching existed to
+# avoid, and the first live run priced all 993 constituents one at a time
+# while the log could only report that spark had "returned nothing usable".
+#
+# Bisected against this desk's own constituent lists, on two exchanges so the
+# answer is about the count rather than about one board's symbols:
+#
+#   2, 5, 10, 11, 12, 14, 15, 16, 18, 20   HTTP 200, every symbol returned
+#   24, 25, 30, 50                         HTTP 400, empty body
+#
+# 20 is the largest proven value. What sits above it is a hard 400 rather than
+# a short answer, so there is nothing to be gained by feeling for 21-23.
+SPARK_BATCH = 20
 
 # How far the confirmation read may differ from the sweep before the row is
-# refused. Both are last-close-against-previous-close from Yahoo, minutes
-# apart, so any real disagreement means they are not describing the same
-# thing and neither can be trusted.
-CONFIRM_TOLERANCE = 0.75    # percentage points
+# refused.
+#
+# DELIBERATELY GENEROUS, and the first value here was not. This is a check
+# that the two responses describe the SAME INSTRUMENT - a mis-mapped ticker
+# priced by two endpoints disagrees wildly - and not a check on intraday
+# drift. The two reads are seconds to a minute apart on a live session, and
+# the rows this runs on are the day's biggest movers, which are precisely the
+# names capable of moving a percentage point in that gap. Set tight enough to
+# catch drift, it would silently drop the true top mover and promote the
+# fourth-placed name in its stead, which is a worse answer than the one it
+# was protecting against.
+#
+# Drift itself needs no policing: the PUBLISHED figure is the confirmation's,
+# which is the fresher of the two. The sweep only decides which rows to look
+# at more closely.
+CONFIRM_TOLERANCE = 5.0     # percentage points
 
 # Indices the desk charts but deliberately does not rank, and why. The page
 # prints these, so an absent panel explains itself instead of looking broken.
@@ -466,6 +497,7 @@ def sweep(symbols: list[str], label: str) -> tuple[dict[str, float], str]:
     batches = netfetch.chunked(symbols, SPARK_BATCH)
     spark_ok, sent = True, 0
     missed: list[str] = []
+    why = "no reason recorded"
 
     for n, batch in enumerate(batches):
         wanted = set(batch)
@@ -473,8 +505,20 @@ def sweep(symbols: list[str], label: str) -> tuple[dict[str, float], str]:
             url = SPARK_URL.format(
                 urllib.parse.quote(",".join(batch), safe=","))
             sent += 1
-            for sym, closes in parse_spark(
-                    netfetch.fetch_json(url, ua=USER_AGENT)).items():
+            # The Result, not just its body. WHY a batch produced nothing is
+            # the whole diagnosis, and the first version of this threw it
+            # away: SPARK_BATCH was set to 50, Yahoo caps a spark request well
+            # below that and answers an over-long one with HTTP 400 and an
+            # empty body, and the run log could only say "nothing usable" -
+            # which reads like an endpoint that has moved, and cost a whole
+            # extra round trip through a runner to tell apart from one.
+            res = netfetch.fetch(url, ua=USER_AGENT)
+            if not res:
+                why = res.error or f"HTTP {res.status}"
+            got = parse_spark(res.json())
+            if res and not got:
+                why = f"HTTP {res.status} with {len(res.body)} bytes we could not read"
+            for sym, closes in got.items():
                 # Only symbols we asked for. A batch endpoint answering with
                 # something else is not a reason to price something else.
                 if sym in wanted:
@@ -485,9 +529,9 @@ def sweep(symbols: list[str], label: str) -> tuple[dict[str, float], str]:
                 # Two batches in and spark has produced nothing at all. It is
                 # not having a bad moment; it has moved, or is refusing us.
                 spark_ok = False
-                print(f"  [warn] {label:12} spark returned nothing usable "
-                      f"after {sent} batches - falling back to one request "
-                      f"per symbol")
+                print(f"  [warn] {label:12} spark gave nothing after {sent} "
+                      f"batches of {SPARK_BATCH} ({why}) - falling back to "
+                      f"one request per symbol")
         missed += [s for s in batch if s not in out]
 
     if missed:
@@ -613,7 +657,13 @@ def priced_index(key: str, cache: dict) -> dict | None:
         return kept, refused
 
     top, refused_top = survivors(ranked[:pool])
-    bottom, refused_bot = survivors(ranked[-pool:][::-1])
+    # Exclude anything already in the top: on an index small enough for the
+    # two pools to overlap, the same company would otherwise appear as both a
+    # best and a worst performer. No index the desk ranks is that small, but a
+    # panel that can print a contradiction should not be able to.
+    taken = {row["symbol"] for row in top}
+    bottom, refused_bot = survivors(
+        [(sym, v) for sym, v in ranked[-pool:][::-1] if sym not in taken])
     refused = refused_top + refused_bot
     if refused:
         print(f"  [drop] {entry['label']:12} {len(refused)} row(s) refused - "
@@ -721,16 +771,26 @@ def _selftest() -> bool:
     assert breadth_of({"a": -3.0})["median"] == -3.0
     print("  breadth          OK  (up/down/flat/median over what priced)")
 
-    # The confirmation tolerance is what keeps a mis-mapped ticker off the
-    # page: two reads of the same symbol minutes apart agree, two reads of
-    # different things do not.
-    assert CONFIRM_TOLERANCE > 0
+    # The confirmation tolerance separates two responses describing DIFFERENT
+    # INSTRUMENTS from the same one read a minute apart. A day's biggest
+    # mover drifting while the run reads it must pass; a ticker mapped to the
+    # wrong company must not.
     assert abs(0.31 - 0.28) <= CONFIRM_TOLERANCE, "normal drift must pass"
-    assert abs(4.20 - (-1.10)) > CONFIRM_TOLERANCE, "a real disagreement must fail"
+    assert abs(12.40 - 11.10) <= CONFIRM_TOLERANCE, \
+        "a fast-moving top gainer must not be dropped for moving"
+    assert abs(4.20 - (-8.10)) > CONFIRM_TOLERANCE, \
+        "two different instruments must be refused"
 
-    # Batching is what turns 993 requests into 20.
-    assert len(netfetch.chunked(list(range(993)), SPARK_BATCH)) == 20
-    print("  batching         OK  (993 symbols -> 20 requests)")
+    # Batching is the whole point, and the batch size is a measured limit
+    # rather than a preference - see SPARK_BATCH. Pinned here so raising it
+    # past what Yahoo accepts is a deliberate act rather than a plausible
+    # tidy-up: above 20 the endpoint answers HTTP 400 with an empty body and
+    # every index silently falls back to one request per symbol.
+    assert SPARK_BATCH <= 20, "measured cap - above this Yahoo returns HTTP 400"
+    batches = len(netfetch.chunked(list(range(993)), SPARK_BATCH))
+    assert batches == 50, batches
+    print(f"  batching         OK  (993 symbols -> {batches} requests "
+          f"at {SPARK_BATCH} a batch)")
     print("  index_movers self-test: OK")
     return True
 
