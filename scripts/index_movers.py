@@ -51,6 +51,30 @@ whatever the endpoint that produced the figure calls it, and the two cannot
 disagree - the mis-mapping risk above stays a risk of pricing the wrong
 company, never of labelling the right price with the wrong name.
 
+HOW THE INDEX IS PRICED, AND WHY IT IS TWO PASSES
+-------------------------------------------------
+It used to be one request per constituent: 993 of them every daily run, 83%
+of this desk's entire request load, to publish six rows per index and throw
+the other ~987 prices away. Yahoo's spark endpoint takes fifty symbols at a
+time, so the sweep is now twenty requests instead of a thousand.
+
+Spark does not return company names, which is what the paragraph above is
+about. So the ends of the ranking - and only the ends, because the middle is
+never shown - are read a second time through the per-symbol chart endpoint,
+which returns Yahoo's own name alongside its own price. That is ~18 requests
+per index, and it makes the guarantee stronger rather than weaker: every
+published row is now priced twice from two different endpoints, and a row
+whose two readings disagree by more than CONFIRM_TOLERANCE is dropped
+instead of shown.
+
+WHAT ELSE THE SWEEP PAYS FOR
+----------------------------
+Having priced every constituent, the run also records BREADTH - how many rose,
+how many fell, and the median move - which costs nothing and answers a
+question the top and bottom three cannot. A day where 62 of 100 names rose is
+a different market from one where 12 did, and both can produce the same top
+three.
+
 The constituent lists change rarely, so they are cached in data/ and only
 refetched when older than CONSTITUENT_MAX_AGE. Prices are always fresh.
 """
@@ -61,24 +85,55 @@ import html
 import json
 import re
 import sys
-import urllib.error
 import urllib.parse
-import urllib.request
-from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timezone
 from pathlib import Path
+from statistics import median
+
+import netfetch
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "movers.json"
 CACHE = ROOT / "data" / "constituents.json"
 
-USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-              "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
-TIMEOUT = 25
-WORKERS = 8                 # polite concurrency against a free endpoint
+USER_AGENT = netfetch.UA_BROWSER
+WORKERS = 6                 # polite concurrency against a free endpoint
 CONSTITUENT_MAX_AGE = 7     # days before a cached constituent list is refetched
 SHOWN = 3                   # rows per list; the panel sits beside the chart
 PRICED_FLOOR = 0.9          # of the constituent list, below which it is a guess
+
+# ---------------------------------------------------------------------------
+# Batch pricing
+# ---------------------------------------------------------------------------
+# This module used to ask Yahoo's chart endpoint for ONE SYMBOL AT A TIME:
+# 993 requests every daily run, across the six Wikipedia-sourced indices, to
+# publish six rows each and discard the other 957 prices. It was 83% of the
+# desk's entire daily request load and the single least defensible thing the
+# automation did to a free endpoint.
+#
+# Yahoo's spark endpoint takes a comma-separated list and returns a close
+# series per symbol - the same closes, in batches. 993 requests becomes 20.
+#
+# What spark does NOT return is a company name, and the name is load-bearing
+# here: the docstring above promises that the label beside a figure comes from
+# the same response as the figure, so a mis-mapped ticker can only ever price
+# the wrong company, never mislabel the right price. That promise is kept by
+# confirming ONLY THE ROWS ACTUALLY PUBLISHED - six per index - with the
+# per-symbol chart call this module already had. The bulk sweep chooses which
+# names to show; the confirmation says what they are and re-reads the figure.
+#
+# So the guarantee is strictly stronger than before: every published row is
+# now priced twice, from two different endpoints, and a row whose two readings
+# disagree is dropped rather than shown.
+SPARK_URL = ("https://query1.finance.yahoo.com/v8/finance/spark"
+             "?symbols={}&range=5d&interval=1d")
+SPARK_BATCH = 50            # symbols per request; keeps the URL well short of 2KB
+
+# How far the confirmation read may differ from the sweep before the row is
+# refused. Both are last-close-against-previous-close from Yahoo, minutes
+# apart, so any real disagreement means they are not describing the same
+# thing and neither can be trusted.
+CONFIRM_TOLERANCE = 0.75    # percentage points
 
 # Indices the desk charts but deliberately does not rank, and why. The page
 # prints these, so an absent panel explains itself instead of looking broken.
@@ -92,21 +147,18 @@ UNSUPPORTED = {
 
 
 def get(url: str, tries: int = 3) -> str | None:
-    req = urllib.request.Request(url, headers={
-        "User-Agent": USER_AGENT,
+    """A page, or None. Retries, backoff and rate limiting live in netfetch.
+
+    What was here retried three times with NO PAUSE between attempts and
+    swallowed every exception identically - so a 429 was answered with two
+    more requests inside a few milliseconds, which is the one reply certain
+    to extend a throttle rather than clear it.
+    """
+    r = netfetch.fetch(url, ua=USER_AGENT, tries=tries, headers={
         "Accept": "text/html,application/json",
         "Accept-Language": "en-GB,en;q=0.9",
     })
-    for attempt in range(tries):
-        try:
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-                return r.read().decode("utf-8", "replace")
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None
-        except Exception:
-            pass
-    return None
+    return r.text if r else None
 
 
 def text_of(fragment: str) -> str:
@@ -179,7 +231,9 @@ def hl_index(slug: str, label: str, expect: int) -> dict | None:
     universe = (f"all {len(seen)} constituents" if len(seen) >= expect
                 else f"{len(seen)} of {expect} constituents")
     return {"movers": list(seen.values()),
-            "source": "HL market summary (delayed)", "universe": universe}
+            "source": "HL market summary (delayed)", "universe": universe,
+            "breadth": breadth_of({k: v["pct"] for k, v in seen.items()}),
+            "how": f"{len(seen)} rows from HL's own summary pages"}
 
 
 # ------------------------------------------------- Wikipedia + Yahoo pairs
@@ -345,23 +399,166 @@ def load_constituents(today: date) -> dict:
     return cache
 
 
-def day_move(symbol: str) -> tuple[str, float, str] | None:
-    """Last close against the one before it, with the name Yahoo files it under."""
-    u = (f"https://query1.finance.yahoo.com/v8/finance/chart/"
-         f"{urllib.parse.quote(symbol)}?interval=1d&range=5d")
-    raw = get(u, tries=2)
-    if not raw:
+def day_pct(closes: list) -> float | None:
+    """Last close against the one before it, as a percentage."""
+    usable = [float(c) for c in closes
+              if isinstance(c, (int, float)) and c is not None]
+    if len(usable) < 2 or not usable[-2]:
+        return None
+    return (usable[-1] - usable[-2]) / usable[-2] * 100.0
+
+
+def parse_spark(doc) -> dict[str, list]:
+    """symbol -> close series, from either shape Yahoo has shipped for spark.
+
+    The endpoint has served two formats over the years and neither is
+    documented, so both are read and anything else is simply no data rather
+    than an exception:
+
+      flat        {"AAPL": {"symbol": "AAPL", "close": [...], ...}, ...}
+      chart-like  {"spark": {"result": [{"symbol": "AAPL",
+                              "response": [{"indicators": {"quote":
+                              [{"close": [...]}]}}]}]}}
+    """
+    out: dict[str, list] = {}
+    if not isinstance(doc, dict):
+        return out
+
+    results = ((doc.get("spark") or {}).get("result")
+               if isinstance(doc.get("spark"), dict) else None)
+    if isinstance(results, list):
+        for row in results:
+            if not isinstance(row, dict):
+                continue
+            sym = row.get("symbol")
+            for resp in (row.get("response") or []):
+                if not isinstance(resp, dict):
+                    continue
+                try:
+                    closes = resp["indicators"]["quote"][0]["close"]
+                except (KeyError, IndexError, TypeError):
+                    closes = resp.get("close")
+                sym = sym or (resp.get("meta") or {}).get("symbol")
+                if sym and isinstance(closes, list):
+                    out[str(sym)] = closes
+                    break
+        return out
+
+    for key, row in doc.items():
+        if not isinstance(row, dict):
+            continue
+        closes = row.get("close")
+        if isinstance(closes, list):
+            out[str(row.get("symbol") or key)] = closes
+    return out
+
+
+def sweep(symbols: list[str], label: str) -> tuple[dict[str, float], str]:
+    """Day moves for a whole constituent list. (symbol -> pct, how).
+
+    Batched through spark, with a per-symbol fallback for whatever a batch
+    could not price. If the first two batches yield nothing at all, spark is
+    treated as unavailable for this run and the rest goes straight to the
+    per-symbol path - one bad endpoint should cost twenty wasted requests,
+    not twenty on top of a thousand.
+    """
+    out: dict[str, float] = {}
+    batches = netfetch.chunked(symbols, SPARK_BATCH)
+    spark_ok, sent = True, 0
+    missed: list[str] = []
+
+    for n, batch in enumerate(batches):
+        wanted = set(batch)
+        if spark_ok:
+            url = SPARK_URL.format(
+                urllib.parse.quote(",".join(batch), safe=","))
+            sent += 1
+            for sym, closes in parse_spark(
+                    netfetch.fetch_json(url, ua=USER_AGENT)).items():
+                # Only symbols we asked for. A batch endpoint answering with
+                # something else is not a reason to price something else.
+                if sym in wanted:
+                    v = day_pct(closes)
+                    if v is not None:
+                        out[sym] = v
+            if not out and n >= 1:
+                # Two batches in and spark has produced nothing at all. It is
+                # not having a bad moment; it has moved, or is refusing us.
+                spark_ok = False
+                print(f"  [warn] {label:12} spark returned nothing usable "
+                      f"after {sent} batches - falling back to one request "
+                      f"per symbol")
+        missed += [s for s in batch if s not in out]
+
+    if missed:
+        for sym, v, _name in _confirm(missed):
+            out[sym] = v
+
+    if not spark_ok:
+        how = f"{len(symbols)} per-symbol chart reads"
+    elif missed:
+        how = f"{sent} spark batches + {len(missed)} per-symbol"
+    else:
+        how = f"{sent} spark batches"
+    return out, how
+
+
+def read_move(doc) -> tuple[float, str] | None:
+    """(day move, Yahoo's own name) from one chart response, or None.
+
+    The name is the reason this path still exists at all now the sweep is
+    batched: spark returns closes and nothing else, and a figure whose label
+    came from somewhere other than the response that produced it is exactly
+    the mislabelling the module docstring undertakes to prevent.
+    """
+    if not doc:
         return None
     try:
-        r = json.loads(raw)["chart"]["result"][0]
-        closes = [c for c in r["indicators"]["quote"][0]["close"] if c is not None]
-        if len(closes) < 2 or not closes[-2]:
-            return None
-        meta = r.get("meta") or {}
-        name = (meta.get("longName") or meta.get("shortName") or "").strip()
-        return symbol, (closes[-1] - closes[-2]) / closes[-2] * 100.0, name
-    except Exception:
+        r = doc["chart"]["result"][0]
+        v = day_pct(r["indicators"]["quote"][0]["close"])
+    except (KeyError, IndexError, TypeError):
         return None
+    if v is None:
+        return None
+    meta = r.get("meta") or {}
+    return v, (meta.get("longName") or meta.get("shortName") or "").strip()
+
+
+def _confirm(symbols: list[str]) -> list[tuple[str, float, str]]:
+    """Per-symbol chart reads, in input order, concurrent and rate-limited."""
+    if not symbols:
+        return []
+    urls = [f"https://query1.finance.yahoo.com/v8/finance/chart/"
+            f"{urllib.parse.quote(s)}?interval=1d&range=5d" for s in symbols]
+    out: list[tuple[str, float, str]] = []
+    for sym, res in zip(symbols, netfetch.fetch_all(
+            urls, workers=WORKERS, ua=USER_AGENT, tries=2)):
+        hit = read_move(res.json())
+        if hit:
+            out.append((sym, hit[0], hit[1]))
+    return out
+
+
+def breadth_of(moves: dict[str, float]) -> dict:
+    """How the whole index moved, not just its ends.
+
+    The sweep prices every constituent and the panel shows six of them. That
+    left the other ~987 readings on the floor, when between them they answer
+    a question the top and bottom three cannot: was this a broad move or a
+    handful of names? A day where 60 of 100 rose is a different market from
+    one where 12 did, and both can show the same top three.
+
+    Costs nothing - it is arithmetic on prices already fetched - and it is
+    computed over exactly the constituents that priced, which the panel
+    already states beside it.
+    """
+    vals = list(moves.values())
+    if not vals:
+        return {}
+    up = sum(1 for v in vals if v > 0)
+    down = sum(1 for v in vals if v < 0)
+    return {"up": up, "down": down, "flat": len(vals) - up - down,
+            "priced": len(vals), "median": round(median(vals), 2)}
 
 
 def priced_index(key: str, cache: dict) -> dict | None:
@@ -373,33 +570,176 @@ def priced_index(key: str, cache: dict) -> dict | None:
     # source that publishes 223 of the Nikkei's 225 cannot be reported as a
     # complete sweep of the index.
     total = entry.get("nominal") or len(names)
-    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
-        results = [r for r in pool.map(day_move, list(names)) if r]
+    moves, how = sweep(list(names), entry["label"])
     # A ranking is only honest if nearly the whole index priced.
-    if len(results) < total * PRICED_FLOOR:
-        print(f"  [skip] {entry['label']:12} only {len(results)} of "
+    if len(moves) < total * PRICED_FLOOR:
+        print(f"  [skip] {entry['label']:12} only {len(moves)} of "
               f"{total} priced - too incomplete to rank")
         return None
-    # Yahoo's own name for the symbol it has just priced, so a label cannot
-    # belong to a different company than the figure beside it. The list's name
-    # is the fallback for the rare symbol Yahoo prices without naming.
-    movers = [{"name": nm or names[s], "symbol": s, "pct": v}
-              for s, v, nm in results]
-    universe = (f"all {total} constituents" if len(movers) >= total
-                else f"{len(movers)} of {total} constituents")
-    return {"movers": movers, "source": "Yahoo Finance daily closes",
-            "universe": universe}
+
+    ranked = sorted(moves.items(), key=lambda kv: -kv[1])
+    breadth = breadth_of(moves)
+
+    # Only the ends of the ranking are read a second time. The middle is
+    # never published - rank() slices the top and bottom SHOWN - so naming
+    # and re-checking all 500 would be buying nothing.
+    #
+    # CONFIRM_POOL, not SHOWN, because a refused row promotes the one behind
+    # it. Confirming exactly three at each end and then dropping one would
+    # push a fourth row into view carrying a Wikipedia name and a single
+    # unchecked reading, which is the state this pass exists to prevent.
+    pool = SHOWN * 3
+    ends = [s for s, _ in ranked[:pool]] + [s for s, _ in ranked[-pool:]]
+    ends = list(dict.fromkeys(ends))
+    confirmed = {s: (v, nm) for s, v, nm in _confirm(ends)}
+
+    def survivors(seq: list[tuple[str, float]]) -> tuple[list[dict], list[str]]:
+        """Walk one end of the ranking, keeping rows both reads agree on."""
+        kept: list[dict] = []
+        refused: list[str] = []
+        for sym, swept in seq:
+            if len(kept) >= SHOWN:
+                break
+            hit = confirmed.get(sym)
+            if hit is None:
+                continue
+            v, nm = hit
+            if abs(v - swept) > CONFIRM_TOLERANCE:
+                # The two reads describe different things. Which one is right
+                # is not knowable from here, so neither is printed.
+                refused.append(f"{sym} ({swept:+.2f}% sweep vs {v:+.2f}% read)")
+                continue
+            kept.append({"name": nm or names[sym], "symbol": sym, "pct": v})
+        return kept, refused
+
+    top, refused_top = survivors(ranked[:pool])
+    bottom, refused_bot = survivors(ranked[-pool:][::-1])
+    refused = refused_top + refused_bot
+    if refused:
+        print(f"  [drop] {entry['label']:12} {len(refused)} row(s) refused - "
+              f"the two reads disagree: {', '.join(refused[:3])}")
+    if len(top) < SHOWN or len(bottom) < SHOWN:
+        # Neither end could be filled with rows that check out. A ranking
+        # nobody can confirm is not a ranking.
+        print(f"  [skip] {entry['label']:12} only {len(top)}/{len(bottom)} of "
+              f"{SHOWN} top/bottom rows could be confirmed")
+        return None
+
+    universe = (f"all {total} constituents" if len(moves) >= total
+                else f"{len(moves)} of {total} constituents")
+    # Both ends, in one list: rank() sorts and slices it, and the middle of
+    # the index was never going to be shown.
+    return {"movers": top + bottom, "source": "Yahoo Finance daily closes",
+            "universe": universe, "breadth": breadth, "how": how}
+
+
+def breadth_line(got: dict) -> str:
+    b = got.get("breadth") or {}
+    if not b:
+        return ""
+    return (f"{b['up']} up / {b['down']} down / {b['flat']} flat, "
+            f"median {b['median']:+.2f}%")
 
 
 def rank(out: dict, key: str, label: str, got: dict, today: date) -> None:
     got["movers"].sort(key=lambda m: -m["pct"])
-    out["indices"][key] = {
+    entry = {
         "label": label, "asAt": today.isoformat(),
         "source": got["source"], "universe": got["universe"],
         "top": got["movers"][:SHOWN], "bottom": got["movers"][-SHOWN:][::-1]}
+    # Breadth describes the whole index rather than its ends, and every price
+    # it is computed from was already fetched to build the ranking above.
+    if got.get("breadth"):
+        entry["breadth"] = got["breadth"]
+    out["indices"][key] = entry
+
+
+# ---------------------------------------------------------------------------
+# Self-test - the batch parsing and the breadth arithmetic, offline
+# ---------------------------------------------------------------------------
+def _selftest() -> bool:
+    # Both shapes Yahoo has served for spark, and everything else read as
+    # "no data" rather than as an exception. This is the parser the whole
+    # constituent sweep now runs through, and the sandbox it was written in
+    # cannot reach Yahoo - so it is pinned against captured shapes instead.
+    flat = {"AAPL": {"symbol": "AAPL", "close": [100.0, 110.0],
+                     "timestamp": [1, 2]},
+            "MSFT": {"symbol": "MSFT", "close": [50.0, 49.0]}}
+    got = parse_spark(flat)
+    assert got == {"AAPL": [100.0, 110.0], "MSFT": [50.0, 49.0]}, got
+
+    nested = {"spark": {"result": [
+        {"symbol": "AAPL", "response": [
+            {"meta": {"symbol": "AAPL"},
+             "indicators": {"quote": [{"close": [100.0, 110.0]}]}}]},
+        {"symbol": "MSFT", "response": [
+            {"meta": {"symbol": "MSFT"},
+             "indicators": {"quote": [{"close": [50.0, 49.0]}]}}]},
+    ], "error": None}}
+    assert parse_spark(nested) == {"AAPL": [100.0, 110.0],
+                                   "MSFT": [50.0, 49.0]}, parse_spark(nested)
+
+    assert parse_spark(None) == {}
+    assert parse_spark({}) == {}
+    assert parse_spark({"spark": {"result": []}}) == {}
+    assert parse_spark({"finance": {"error": "x"}}) == {}
+    assert parse_spark({"spark": {"result": [{"symbol": "A", "response": []}]}}) == {}
+    print("  spark parse      OK  (both shapes read, junk -> no data)")
+
+    # A day move is the last two closes. Nulls are padding, not prices.
+    assert abs(day_pct([100.0, 110.0]) - 10.0) < 1e-9
+    assert abs(day_pct([90.0, 100.0, None, 95.0]) + 5.0) < 1e-9
+    assert day_pct([100.0]) is None, "one close is not a move"
+    assert day_pct([]) is None
+    assert day_pct([None, None]) is None
+    assert day_pct([0.0, 5.0]) is None, "cannot divide by a zero close"
+    print("  day move         OK  (nulls dropped, zero base refused)")
+
+    # The per-symbol read that names a published row. Both the figure and
+    # the label come out of the same response, which is the whole point.
+    doc = {"chart": {"result": [{
+        "meta": {"longName": "Antofagasta plc", "shortName": "ANTO.L"},
+        "indicators": {"quote": [{"close": [100.0, 104.0]}]}}]}}
+    got = read_move(doc)
+    assert got and abs(got[0] - 4.0) < 1e-9 and got[1] == "Antofagasta plc", got
+    assert read_move({"chart": {"result": []}}) is None
+    assert read_move(None) is None
+    assert read_move({"chart": {"result": [{"indicators": {"quote": [
+        {"close": [100.0]}]}}]}}) is None, "one close is not a move"
+    # A response with a price but no name still prices; the caller falls back
+    # to the constituent list's label rather than dropping the row.
+    got = read_move({"chart": {"result": [{
+        "indicators": {"quote": [{"close": [10.0, 9.0]}]}}]}})
+    assert got and got[1] == "", got
+    print("  per-symbol read  OK  (figure and label from one response)")
+
+    # Breadth is arithmetic on prices already fetched, over exactly the
+    # constituents that priced.
+    b = breadth_of({"a": 1.0, "b": 2.0, "c": -1.0, "d": 0.0})
+    assert b == {"up": 2, "down": 1, "flat": 1, "priced": 4, "median": 0.5}, b
+    assert breadth_of({}) == {}
+    assert breadth_of({"a": -3.0})["median"] == -3.0
+    print("  breadth          OK  (up/down/flat/median over what priced)")
+
+    # The confirmation tolerance is what keeps a mis-mapped ticker off the
+    # page: two reads of the same symbol minutes apart agree, two reads of
+    # different things do not.
+    assert CONFIRM_TOLERANCE > 0
+    assert abs(0.31 - 0.28) <= CONFIRM_TOLERANCE, "normal drift must pass"
+    assert abs(4.20 - (-1.10)) > CONFIRM_TOLERANCE, "a real disagreement must fail"
+
+    # Batching is what turns 993 requests into 20.
+    assert len(netfetch.chunked(list(range(993)), SPARK_BATCH)) == 20
+    print("  batching         OK  (993 symbols -> 20 requests)")
+    print("  index_movers self-test: OK")
+    return True
 
 
 def main(argv: list[str]) -> int:
+    if "--selftest" in argv:
+        print("Offline self-test:")
+        _selftest()
+        return 0
     today = date.today()
     out: dict = {"generated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                  "indices": {}, "unsupported": dict(UNSUPPORTED)}
@@ -419,7 +759,7 @@ def main(argv: list[str]) -> int:
             continue
         rank(out, key, label, got, today)
         built += 1
-        print(f"  [ok]   {label:12} {got['universe']}")
+        print(f"  [ok]   {label:12} {got['universe']}  {breadth_line(got)}")
 
     cache = load_constituents(today)
     for key, cfg in WIKI.items():
@@ -433,7 +773,8 @@ def main(argv: list[str]) -> int:
             continue
         rank(out, key, cache[key]["label"], got, today)
         built += 1
-        print(f"  [ok]   {label:12} {got['universe']}")
+        print(f"  [ok]   {label:12} {got['universe']}  {breadth_line(got)}"
+              f"  [{got.get('how', '')}]")
 
     if "--dry-run" in argv:
         print(f"\n[dry-run] {built} index/indices built, nothing written")

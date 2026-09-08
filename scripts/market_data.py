@@ -27,14 +27,13 @@ from __future__ import annotations
 import csv
 import io
 import json
-import time
-import urllib.error
-import urllib.request
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date, datetime, time as dtime, timedelta, timezone
 
-USER_AGENT = "fund-tracker/1.0 (+github actions; personal research desk)"
-TIMEOUT = 20
+import netfetch
+
+USER_AGENT = netfetch.UA_DESK
+TIMEOUT = netfetch.DEFAULT_TIMEOUT
 
 
 @dataclass
@@ -58,10 +57,9 @@ class Quote:
         return f"{'+' if v >= 0 else ''}{v:.2f}%"
 
 
-def _get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-        return resp.read()
+def _get(url: str) -> bytes | None:
+    """Bytes, or None. Retries and per-host pacing come from netfetch."""
+    return netfetch.fetch(url, ua=USER_AGENT).body
 
 
 # ---------------------------------------------------------------------------
@@ -84,11 +82,10 @@ def fetch_stooq(ticker: str, start: date, end: date) -> Quote | None:
     sym = _stooq_symbol(ticker)
     url = (f"https://stooq.com/q/d/l/?s={sym}"
            f"&d1={start:%Y%m%d}&d2={end:%Y%m%d}&i=d")
-    try:
-        raw = _get(url).decode("utf-8", errors="replace")
-    except (urllib.error.URLError, TimeoutError, OSError):
+    raw = _get(url)
+    if raw is None:
         return None
-    return _parse_stooq(raw, ticker)
+    return _parse_stooq(raw.decode("utf-8", errors="replace"), ticker)
 
 
 def _parse_stooq(raw: str, ticker: str) -> Quote | None:
@@ -116,13 +113,17 @@ def _parse_stooq(raw: str, ticker: str) -> Quote | None:
 # Yahoo fallback
 # ---------------------------------------------------------------------------
 def fetch_yahoo(ticker: str, start: date, end: date) -> Quote | None:
-    p1 = int(time.mktime(start.timetuple()))
-    p2 = int(time.mktime((end + timedelta(days=1)).timetuple()))
+    # A calendar date, not time.mktime on a date tuple: mktime reads the
+    # struct in LOCAL time, and a runner in a different zone than the author
+    # shifts the window by an hour either way. UTC midnight is the same
+    # instant everywhere.
+    p1 = int(datetime.combine(start, dtime.min, tzinfo=timezone.utc).timestamp())
+    p2 = int(datetime.combine(end + timedelta(days=1), dtime.min,
+                              tzinfo=timezone.utc).timestamp())
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
            f"?period1={p1}&period2={p2}&interval=1d")
-    try:
-        raw = _get(url)
-    except (urllib.error.URLError, TimeoutError, OSError):
+    raw = _get(url)
+    if raw is None:
         return None
     return _parse_yahoo(raw, ticker)
 
@@ -158,7 +159,6 @@ def fetch(ticker: str, start: date, end: date) -> Quote | None:
         quote = fetcher(ticker, start, end)
         if quote is not None:
             return quote
-        time.sleep(0.3)          # be polite to free endpoints
     return None
 
 
@@ -175,7 +175,6 @@ def fetch_many(tickers: dict[str, str], start: date,
         else:
             print(f"  [data] {label:20} {ticker:12} "
                   f"{'FAILED':>8}  (all sources)")
-        time.sleep(0.2)
     return out
 
 

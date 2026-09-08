@@ -36,14 +36,22 @@ import sys
 import time
 import urllib.error
 import urllib.parse
-import urllib.request
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 from pathlib import Path
+
+import netfetch
 
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
               "fund-tracker/1.0 (+github actions; personal research desk)")
-TIMEOUT = 25
+TIMEOUT = netfetch.DEFAULT_TIMEOUT
 FUNDS = Path(__file__).resolve().parent.parent / "data" / "funds.json"
+
+# How many NAV series are fetched at once. The pricing pass used to be 103
+# sequential requests each followed by a flat 0.3s sleep, so the run spent
+# over half a minute asleep on top of the round trips. netfetch's shared rate
+# limiter enforces the politeness now - centrally, and across every script -
+# so the sleep is gone and the round trips overlap.
+PRICE_WORKERS = 6
 
 # FT's search API is the way in for funds Yahoo cannot find by name. It
 # returns ISINs, and an ISIN then resolves on Yahoo reliably - name search is
@@ -114,9 +122,14 @@ ALIASES = [
 
 
 def _get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-        return resp.read()
+    """Bytes, or b"" - callers here treat an empty body as a failed parse.
+
+    Retries, backoff and rate limiting come from netfetch. This module had
+    NO retry at all: a single 429 while resolving or pricing printed
+    "would not price", the fund kept yesterday's figures for a day, and
+    nothing in the log distinguished that from a symbol that had gone away.
+    """
+    return netfetch.fetch(url, ua=USER_AGENT).body or b""
 
 
 def words(name: str) -> set[str]:
@@ -143,11 +156,9 @@ def overlap(ours: str, theirs: str) -> float:
 
 
 def search(query: str) -> list[dict]:
-    try:
-        raw = _get(SEARCH_URL.format(urllib.parse.quote(query)))
-        payload = json.loads(raw)
-    except (urllib.error.URLError, TimeoutError, OSError,
-            json.JSONDecodeError):
+    payload = netfetch.fetch_json(SEARCH_URL.format(urllib.parse.quote(query)),
+                                  ua=USER_AGENT)
+    if not isinstance(payload, dict):
         return []
     return [q for q in payload.get("quotes", [])
             if q.get("quoteType") == "MUTUALFUND"]
@@ -159,11 +170,11 @@ def _label(quote: dict) -> str:
 
 def ft_isins(name: str) -> list[str]:
     """Candidate ISINs for a fund name, via FT's search API."""
+    doc = netfetch.fetch_json(FT_SEARCH.format(urllib.parse.quote(name)),
+                              ua=USER_AGENT)
     try:
-        raw = _get(FT_SEARCH.format(urllib.parse.quote(name)))
-        items = (json.loads(raw).get("data") or {}).get("security") or []
-    except (urllib.error.URLError, TimeoutError, OSError,
-            json.JSONDecodeError, AttributeError):
+        items = (doc.get("data") or {}).get("security") or []
+    except AttributeError:
         return []
     out = []
     for item in items:
@@ -246,7 +257,6 @@ def resolve(fund: dict) -> tuple[dict | None, str]:
     # 1. an ISIN we already hold
     for isin in filter(None, [fund.get("isin")]):
         got = judge(search(isin), f"isin {isin}")
-        time.sleep(0.35)
         if got:
             return got[1], got[2]
 
@@ -257,7 +267,6 @@ def resolve(fund: dict) -> tuple[dict | None, str]:
         if isin == fund.get("isin"):
             continue
         got = judge(search(isin), f"isin {isin} (recovered)")
-        time.sleep(0.35)
         if got:
             fund["isin"] = isin
             return got[1], got[2]
@@ -268,14 +277,12 @@ def resolve(fund: dict) -> tuple[dict | None, str]:
         if not query:
             continue
         got = judge(search(query), "name match")
-        time.sleep(0.35)
         if got:
             return got[1], got[2]
 
     # 4. ask FT for an ISIN, then come back to Yahoo with it
     for isin in ft_isins(name)[:4]:
         got = judge(search(isin), f"isin {isin} (via FT)")
-        time.sleep(0.35)
         if got:
             fund["isin"] = isin
             return got[1], got[2]
@@ -332,13 +339,23 @@ def price(symbol: str, span: str = "10y") -> dict | None:
     redenomination, so it is cut straight back off and both funds are left
     priced over weeks. That is the honest answer for them, not a bug to fix.
     """
+    return read_price(netfetch.fetch(price_url(symbol, span), ua=USER_AGENT))
+
+
+def price_url(symbol: str, span: str = "10y") -> str:
+    return CHART_URL.format(urllib.parse.quote(symbol), span)
+
+
+def read_price(res) -> dict | None:
+    """Turn one fetched chart response into a NAV series, or None."""
+    doc = res.json() if res else None
+    if not doc:
+        return None
     try:
-        raw = _get(CHART_URL.format(urllib.parse.quote(symbol), span))
-        result = json.loads(raw)["chart"]["result"][0]
+        result = doc["chart"]["result"][0]
         closes = result["indicators"]["quote"][0]["close"]
         stamps = result["timestamp"]
-    except (urllib.error.URLError, TimeoutError, OSError, json.JSONDecodeError,
-            KeyError, IndexError, TypeError):
+    except (KeyError, IndexError, TypeError):
         return None
 
     pairs = usable_closes(stamps, closes)
@@ -807,6 +824,24 @@ def main(argv: list[str]) -> int:
 
     refusals.extend(reject_collisions(picks, funds))
 
+    # Fetch every NAV series before applying any of them. The apply loop below
+    # is unchanged and still runs in fund order - only the round trips overlap,
+    # so the run log diffs against yesterday's exactly as before.
+    #
+    # This was 103 sequential requests with a 0.3s sleep after each: half a
+    # minute of the run spent asleep, on top of 103 serial round trips, on a
+    # step whose requests are entirely independent of one another.
+    series_by_index: dict[int, dict] = {}
+    if not only_resolve and picks:
+        order = sorted(picks)
+        fetched = netfetch.fetch_all(
+            [price_url(picks[i][0]["symbol"]) for i in order],
+            workers=PRICE_WORKERS, ua=USER_AGENT)
+        for i, res in zip(order, fetched):
+            got = read_price(res)
+            if got is not None:
+                series_by_index[i] = got
+
     for i, fund in enumerate(funds):
         if i not in picks:
             refused += 1
@@ -833,8 +868,7 @@ def main(argv: list[str]) -> int:
                   f"{label[:40]}")
             continue
 
-        series = price(symbol)
-        time.sleep(0.3)
+        series = series_by_index.get(i)
         if not series:
             refusals.append((fund["name"], f"{symbol} would not price"))
             print(f"  [nav] {fund['name'][:38]:40} {symbol:14} NO PRICE DATA")

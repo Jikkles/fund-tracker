@@ -15,7 +15,15 @@ Four series are fetched per index and the rest are derived in the browser:
 
 That is 4 requests per index rather than 7, and it keeps the payload small
 enough to ship as one JSON file. An index whose 1d range comes back empty
-costs one more - see rebuild_intraday().
+costs one more - see last_session(). The four go out together rather than
+one after another: they are independent requests about the same index, and
+netfetch's shared per-host rate limit is what keeps them polite, so the run
+no longer sleeps a quarter of a second between each one.
+
+The same responses also carry each index's 52-WEEK HIGH AND LOW, which were
+being read past and dropped. They are published now - see range52() - because
+a level means more against the year it sits in than on its own, and it costs
+no request at all.
 
 Failure is per-index, matching the rest of the desk: an index that will not
 fetch is left out of the file and the panel simply does not offer that tab.
@@ -31,18 +39,18 @@ from __future__ import annotations
 
 import json
 import sys
-import time
 import urllib.error
 import urllib.parse
-import urllib.request
 import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
-USER_AGENT = "fund-tracker/1.0 (+github actions; personal research desk)"
-TIMEOUT = 25
+import netfetch
+
+USER_AGENT = netfetch.UA_DESK
+TIMEOUT = netfetch.DEFAULT_TIMEOUT
 OUT = Path(__file__).resolve().parent.parent / "data" / "market.json"
 
 # Tab order on the page. Equities first, then the commodity / rate / FX lines,
@@ -103,33 +111,6 @@ _LAST_ERROR: dict[str, str] = {}
 # Tickers whose 1D line was rebuilt from the 5-day series this run, so the log
 # says which tabs are showing a reconstructed session rather than a live one.
 _REBUILT: set[str] = set()
-
-
-def _describe(exc: BaseException) -> str:
-    """Render a failed fetch as one readable line.
-
-    HTTPError subclasses URLError, so catching URLError alone collapses a 429,
-    a 404 and a DNS failure into the same silent None - which is what made a
-    whole-panel failure unreadable from the run log. The distinction is the
-    diagnosis: a status code means Yahoo answered and refused us, which is
-    waited out, while an unreachable host or an unparseable body means
-    something moved and the code has to follow.
-    """
-    if isinstance(exc, urllib.error.HTTPError):
-        return f"HTTP {exc.code} {exc.reason}"
-    if isinstance(exc, urllib.error.URLError):
-        if isinstance(exc.reason, TimeoutError):
-            return f"timeout after {TIMEOUT}s"
-        return f"unreachable ({exc.reason})"
-    if isinstance(exc, TimeoutError):
-        return f"timeout after {TIMEOUT}s"
-    return f"{type(exc).__name__}: {exc}"
-
-
-def _get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-        return resp.read()
 
 
 def _round(v: float) -> float:
@@ -236,18 +217,26 @@ def prev_daily_close(daily: dict | None, start: int) -> float | None:
     return earlier[-1] if earlier else None
 
 
-def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
-    url = ("https://query1.finance.yahoo.com/v8/finance/chart/"
-           f"{urllib.parse.quote(ticker)}?interval={interval}&range={rng}")
-    try:
-        raw = _get(url)
-    except (urllib.error.URLError, TimeoutError, OSError) as exc:
-        _LAST_ERROR[ticker] = _describe(exc)
+def series_url(ticker: str, rng: str, interval: str) -> str:
+    return ("https://query1.finance.yahoo.com/v8/finance/chart/"
+            f"{urllib.parse.quote(ticker)}?interval={interval}&range={rng}")
+
+
+def read_series(ticker: str, res: netfetch.Result) -> dict | None:
+    """Turn one fetched chart response into a series, recording why not."""
+    if not res:
+        _LAST_ERROR[ticker] = res.error or "no response"
         return None
-    parsed = parse_chart(raw)
+    parsed = parse_chart(res.body)
     if parsed is None:
-        _LAST_ERROR[ticker] = f"{len(raw)} bytes that did not parse as a chart"
+        _LAST_ERROR[ticker] = (f"{len(res.body)} bytes that did not parse "
+                               f"as a chart")
     return parsed
+
+
+def fetch_series(ticker: str, rng: str, interval: str) -> dict | None:
+    return read_series(ticker, netfetch.fetch(
+        series_url(ticker, rng, interval), ua=USER_AGENT))
 
 
 def clean_summary(raw: str) -> str:
@@ -292,10 +281,13 @@ def fetch_news(ticker: str) -> list[dict]:
     than propagating. Not every symbol has a feed: ^FTMC returns nothing at
     all, and the panel says so rather than showing another index's news.
     """
+    res = netfetch.fetch(NEWS_URL.format(urllib.parse.quote(ticker)),
+                         ua=USER_AGENT, tries=2)
+    if not res:
+        return []
     try:
-        raw = _get(NEWS_URL.format(urllib.parse.quote(ticker)))
-        root = ET.fromstring(raw)
-    except (urllib.error.URLError, TimeoutError, OSError, ET.ParseError):
+        root = ET.fromstring(res.body)
+    except ET.ParseError:
         return []
 
     out, seen = [], set()
@@ -321,14 +313,54 @@ def fetch_news(ticker: str) -> list[dict]:
     return out
 
 
+def range52(meta: dict, daily: dict | None) -> dict | None:
+    """The 52-week high and low, and which basis they are on.
+
+    Both numbers arrive in the meta of every chart response this module
+    already fetches, and were being read past and dropped. A price means
+    more against the year it sits in than on its own - 26,140 is a different
+    fact at the top of its range than at the bottom - and this costs nothing
+    to publish.
+
+    TWO BASES, NEVER MIXED, AND THE PAGE IS TOLD WHICH.
+    Yahoo's fiftyTwoWeekHigh/Low are INTRADAY extremes: the highest price
+    touched, not the highest close. The 1y series here is closes. Where Yahoo
+    states the figures they are used as they come; where it does not, the
+    range is computed from the closing series and labelled as closes, because
+    quietly filling an intraday field with a closing number would make two
+    indices incomparable while looking identical.
+
+    Nothing is published at all when neither is available - the page then
+    simply does not draw the band, which is the honest answer.
+    """
+    lo, hi = meta.get("fiftyTwoWeekLow"), meta.get("fiftyTwoWeekHigh")
+    if isinstance(lo, (int, float)) and isinstance(hi, (int, float)) and hi > lo:
+        return {"low": _round(float(lo)), "high": _round(float(hi)),
+                "basis": "intraday"}
+    if not daily or len(daily.get("c") or []) < 30:
+        return None
+    closes = [c for c in daily["c"] if isinstance(c, (int, float))]
+    if len(closes) < 30 or max(closes) <= min(closes):
+        return None
+    return {"low": _round(min(closes)), "high": _round(max(closes)),
+            "basis": "closes"}
+
+
 def fetch_index(label: str, ticker: str) -> dict | None:
     """Build one index entry. None if not even the 1y series can be had."""
     series: dict[str, dict] = {}
     meta: dict = {}
 
-    for key, rng, interval in SERIES:
-        got = fetch_series(ticker, rng, interval)
-        time.sleep(0.25)                       # be polite to a free endpoint
+    # The four ranges are independent requests about the same index, so they
+    # go out together rather than one after another behind a fixed 0.25s
+    # sleep. netfetch.fetch_all keeps them in SERIES order and the shared
+    # rate limiter - not a sleep in this loop - is what keeps them polite.
+    fetched = netfetch.fetch_all(
+        [series_url(ticker, rng, interval) for _, rng, interval in SERIES],
+        workers=len(SERIES), ua=USER_AGENT)
+
+    for (key, _rng, _interval), res in zip(SERIES, fetched):
+        got = read_series(ticker, res)
         if got is None:
             continue
         meta = meta or got["meta"]
@@ -351,7 +383,6 @@ def fetch_index(label: str, ticker: str) -> dict | None:
     # short, which in practice is the two commodity contracts at a weekend.
     if "1d" not in series:
         intraday = fetch_series(ticker, "5d", "5m")
-        time.sleep(0.25)
         sess = last_session(intraday) if intraday else None
         if sess:
             entry = {"t": sess["t"], "c": sess["c"]}
@@ -376,6 +407,7 @@ def fetch_index(label: str, ticker: str) -> dict | None:
         "price": _round(float(price)),
         "prevClose": _round(float(prev)) if isinstance(prev, (int, float)) else None,
         "asOf": int(meta.get("regularMarketTime") or 0) or None,
+        "range52": range52(meta, series.get("1y")),
         "series": series,
     }
 
@@ -478,10 +510,11 @@ def _selftest_offline() -> bool:
     # The pair this exists to separate: a refusal that clears on its own, and
     # a fault that does not. Both used to print as a bare FAILED.
     throttled = urllib.error.HTTPError("u", 429, "Too Many Requests", {}, None)
-    assert _describe(throttled) == "HTTP 429 Too Many Requests", _describe(throttled)
-    assert _describe(urllib.error.URLError("nodename nor servname provided")) \
-        .startswith("unreachable"), _describe(urllib.error.URLError("x"))
-    assert _describe(TimeoutError()) == f"timeout after {TIMEOUT}s"
+    assert netfetch.describe(throttled) == "HTTP 429 Too Many Requests"
+    assert netfetch.describe(
+        urllib.error.URLError("nodename nor servname provided")
+    ).startswith("unreachable")
+    assert netfetch.describe(TimeoutError()) == "timed out"
     print("  fetch reasons    OK  (status, unreachable and timeout kept apart)")
 
     # The weekend shape this exists for: an intraday series spanning several
@@ -519,6 +552,27 @@ def _selftest_offline() -> bool:
     assert prev_daily_close(daily, 100 - day) is None
     assert prev_daily_close(None, 100) is None
     print("  rebuilt baseline OK  (previous daily close, never the empty-window meta)")
+
+    # The 52-week range comes out of meta that was already being fetched.
+    # The two bases are never mixed and the basis travels with the numbers.
+    got = range52({"fiftyTwoWeekLow": 7200.5, "fiftyTwoWeekHigh": 9100.25},
+                  {"c": [1.0] * 300})
+    assert got == {"low": 7200.5, "high": 9100.25, "basis": "intraday"}, got
+    # No meta figures: computed from the closing series, and SAID to be.
+    closes = {"c": [100.0 + (i % 37) for i in range(300)]}
+    got = range52({}, closes)
+    assert got == {"low": 100.0, "high": 136.0, "basis": "closes"}, got
+    # Not enough history, a flat line, or nothing at all -> no band drawn.
+    assert range52({}, {"c": [100.0] * 10}) is None
+    assert range52({}, {"c": [100.0] * 300}) is None, "a flat year is not a range"
+    assert range52({}, None) is None
+    # A partial or inverted meta pair falls through to the closes rather than
+    # being half-trusted.
+    assert range52({"fiftyTwoWeekLow": 5.0}, closes)["basis"] == "closes"
+    assert range52({"fiftyTwoWeekLow": 9.0, "fiftyTwoWeekHigh": 4.0},
+                   closes)["basis"] == "closes"
+    print("  52-week range    OK  (Yahoo's intraday figures preferred, "
+          "closes labelled as such)")
 
     assert slug("FTSE 100") == "ftse-100"
     assert slug("S&P 500") == "s-p-500"

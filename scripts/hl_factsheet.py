@@ -40,12 +40,10 @@ import json
 import re
 import sys
 import time
-import urllib.error
-import urllib.parse
-import urllib.request
 from datetime import date
 from pathlib import Path
 
+import netfetch
 import perf_dates
 
 FUNDS = Path(__file__).resolve().parent.parent / "data" / "funds.json"
@@ -72,23 +70,20 @@ STOP = {"class", "accumulation", "income", "acc", "inc", "fund", "trust",
 # ---------------------------------------------------------------- fetching
 
 def _get(url: str) -> str | None:
-    """Fetch a page, retrying transient failures. None on a hard failure."""
-    req = urllib.request.Request(url, headers={
-        "User-Agent": USER_AGENT,
-        "Accept": "text/html,application/xhtml+xml",
-        "Accept-Language": "en-GB,en;q=0.9",
-    })
-    for attempt in range(RETRIES):
-        try:
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-                return r.read().decode("utf-8", "replace")
-        except urllib.error.HTTPError as e:
-            if e.code == 404:
-                return None                      # a wrong slug, not a blip
-            time.sleep(2.0 * (attempt + 1))      # 403/429/5xx: back off
-        except Exception:
-            time.sleep(2.0 * (attempt + 1))
-    return None
+    """Fetch a page, retrying transient failures. None on a hard failure.
+
+    The retry policy this module worked out - a 404 is a wrong slug and not
+    retried, everything else backs off - is now netfetch's, applied to every
+    script on the desk. The per-host rate limit lives there too, so this run
+    and the Shortlist read no longer pace hl.co.uk independently of each
+    other.
+    """
+    res = netfetch.fetch(url, ua=USER_AGENT, timeout=TIMEOUT, tries=RETRIES,
+                         headers={
+                             "Accept": "text/html,application/xhtml+xml",
+                             "Accept-Language": "en-GB,en;q=0.9",
+                         })
+    return res.text if res else None
 
 
 def slug_candidates(fund: dict) -> list[str]:

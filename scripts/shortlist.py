@@ -34,13 +34,13 @@ import io
 import json
 import re
 import sys
-import urllib.request
 from pathlib import Path
+
+import netfetch
 
 FUNDS = Path(__file__).resolve().parent.parent / "data" / "funds.json"
 URL = "https://www.hl.co.uk/ajax/funds/wealth-150/all-data"
-USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-              "(KHTML, like Gecko) Chrome/125.0 Safari/537.36")
+USER_AGENT = netfetch.UA_BROWSER
 TIMEOUT = 30
 
 ON = {"type": "", "label": "Wealth Shortlist"}
@@ -58,13 +58,18 @@ MONTHS = ("january|february|march|april|may|june|july|august|september"
 
 
 def fetch() -> list[dict]:
-    req = urllib.request.Request(URL, headers={
-        "User-Agent": USER_AGENT,
+    """HL's own Shortlist feed. Empty on failure - never a partial list.
+
+    This ran with no retry: one blip and every fund on the desk was scored
+    against an empty list. `main` refuses to write on an empty read for that
+    reason, and netfetch now retries before it comes to that.
+    """
+    doc = netfetch.fetch_json(URL, ua=USER_AGENT, timeout=TIMEOUT, headers={
         "Accept": "application/json",
         "Referer": "https://www.hl.co.uk/funds/help-choosing-funds/wealth-shortlist",
     })
-    with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
-        doc = json.loads(r.read().decode("utf-8", "replace"))
+    if not isinstance(doc, dict):
+        return []
     rows = (doc.get("data") or {}).get("fundData") or []
     # One row in the feed is an empty template with no SEDOL. Drop it rather
     # than letting it match a fund whose identifiers are also missing.
