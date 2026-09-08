@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T11:29:12+00:00",
+  "generated": "2026-09-08T16:11:07+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,36 +10,43 @@
         {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": 4.03
+          "pct": 4.69
         },
         {
-          "name": "Halma plc",
-          "symbol": "HLMA",
-          "pct": 2.58
+          "name": "Glencore plc",
+          "symbol": "GLEN",
+          "pct": 4.17
         },
         {
-          "name": "Coca-Cola HBC AG",
-          "symbol": "CCH",
-          "pct": 2.46
+          "name": "Weir plc",
+          "symbol": "WEIR",
+          "pct": 3.82
         }
       ],
       "bottom": [
         {
           "name": "Computacenter plc",
           "symbol": "CCC",
-          "pct": -5.89
+          "pct": -7.77
         },
         {
-          "name": "GSK plc",
-          "symbol": "GSK",
-          "pct": -1.25
+          "name": "Smith & Nephew plc",
+          "symbol": "SN.",
+          "pct": -3.57
         },
         {
-          "name": "Lloyds Banking Group plc",
-          "symbol": "LLOY",
-          "pct": -1.24
+          "name": "JD Sports Fashion plc",
+          "symbol": "JD.",
+          "pct": -2.55
         }
-      ]
+      ],
+      "breadth": {
+        "up": 33,
+        "down": 60,
+        "flat": 7,
+        "priced": 100,
+        "median": -0.24
+      }
     },
     "ftse-250": {
       "label": "FTSE 250",
@@ -48,38 +55,45 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Aston Martin Lagonda",
-          "symbol": "AML",
-          "pct": 3.93
-        },
-        {
-          "name": "Hansa Investment Company Limited",
-          "symbol": "HAN",
-          "pct": 2.41
+          "name": "RHI Magnesita NV",
+          "symbol": "RHIM",
+          "pct": 3.48
         },
         {
           "name": "Atalaya Mining Copper SA",
           "symbol": "ATYM",
-          "pct": 2.13
+          "pct": 3.39
+        },
+        {
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": 2.82
         }
       ],
       "bottom": [
         {
-          "name": "Dunelm Group Plc",
-          "symbol": "DNLM",
-          "pct": -12.46
+          "name": "Goodwin plc",
+          "symbol": "GDWN",
+          "pct": -23.18
         },
         {
-          "name": "Johnson Service Group plc",
-          "symbol": "JSG",
-          "pct": -8.0
+          "name": "Dunelm Group Plc",
+          "symbol": "DNLM",
+          "pct": -14.27
         },
         {
           "name": "Funding Circle PLC",
           "symbol": "FCH",
-          "pct": -7.17
+          "pct": -8.7
         }
-      ]
+      ],
+      "breadth": {
+        "up": 79,
+        "down": 154,
+        "flat": 17,
+        "priced": 250,
+        "median": -0.47
+      }
     },
     "s-p-500": {
       "label": "S&P 500",
@@ -88,38 +102,45 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Sandisk Corporation",
-          "symbol": "SNDK",
-          "pct": 11.897826412229154
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 11.396246502921844
         },
         {
-          "name": "KLA Corporation",
-          "symbol": "KLAC",
-          "pct": 7.320459976516252
+          "name": "Intel Corporation",
+          "symbol": "INTC",
+          "pct": 9.070975506458783
         },
         {
-          "name": "Marvell Technology, Inc.",
-          "symbol": "MRVL",
-          "pct": 7.0487961938590304
+          "name": "Coherent Corp.",
+          "symbol": "COHR",
+          "pct": 8.851917087809122
         }
       ],
       "bottom": [
         {
-          "name": "lululemon athletica inc.",
-          "symbol": "LULU",
-          "pct": -17.377019476102365
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": -9.772890678280605
         },
         {
-          "name": "Fair Isaac Corporation",
-          "symbol": "FICO",
-          "pct": -16.682905542327717
+          "name": "Stryker Corporation",
+          "symbol": "SYK",
+          "pct": -7.396170971726063
         },
         {
-          "name": "Autodesk, Inc.",
-          "symbol": "ADSK",
-          "pct": -8.260361242445207
+          "name": "Howmet Aerospace Inc.",
+          "symbol": "HWM",
+          "pct": -6.830714006835646
         }
-      ]
+      ],
+      "breadth": {
+        "up": 172,
+        "down": 331,
+        "flat": 0,
+        "priced": 503,
+        "median": -0.75
+      }
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
@@ -128,38 +149,45 @@
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Sandisk Corporation",
-          "symbol": "SNDK",
-          "pct": 11.897826412229154
+          "name": "CoreWeave, Inc.",
+          "symbol": "CRWV",
+          "pct": 14.508724540439122
         },
         {
-          "name": "Astera Labs, Inc.",
-          "symbol": "ALAB",
-          "pct": 9.751780587661369
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 11.302628628134176
         },
         {
           "name": "Nebius Group N.V.",
           "symbol": "NBIS",
-          "pct": 7.482312178459225
+          "pct": 9.545474918774026
         }
       ],
       "bottom": [
         {
-          "name": "Autodesk, Inc.",
-          "symbol": "ADSK",
-          "pct": -8.260361242445207
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": -9.807196168003511
         },
         {
-          "name": "Adobe Inc.",
-          "symbol": "ADBE",
-          "pct": -6.733154937664041
+          "name": "Shopify Inc.",
+          "symbol": "SHOP",
+          "pct": -7.5539263434497
         },
         {
-          "name": "Tesla, Inc.",
-          "symbol": "TSLA",
-          "pct": -5.922365978717725
+          "name": "Thomson Reuters Corporation",
+          "symbol": "TRI",
+          "pct": -5.791069955440091
         }
-      ]
+      ],
+      "breadth": {
+        "up": 37,
+        "down": 65,
+        "flat": 0,
+        "priced": 102,
+        "median": -0.62
+      }
     },
     "dow-jones": {
       "label": "Dow Jones",
@@ -170,36 +198,43 @@
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": 1.7246966206323446
+          "pct": 1.406739092892232
         },
         {
-          "name": "Honeywell International Inc.",
-          "symbol": "HON",
-          "pct": 0.9536173390048239
+          "name": "Chevron Corporation",
+          "symbol": "CVX",
+          "pct": 1.0786193356501919
         },
         {
-          "name": "The Home Depot, Inc.",
-          "symbol": "HD",
-          "pct": 0.9368945201150048
+          "name": "American Express Company",
+          "symbol": "AXP",
+          "pct": 0.38171299460655894
         }
       ],
       "bottom": [
         {
-          "name": "Apple Inc.",
-          "symbol": "AAPL",
-          "pct": -2.5105848234065116
-        },
-        {
-          "name": "Microsoft Corporation",
-          "symbol": "MSFT",
-          "pct": -2.042653299203164
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": -9.807196168003511
         },
         {
           "name": "Salesforce, Inc.",
           "symbol": "CRM",
-          "pct": -1.9664870980913443
+          "pct": -4.123757762275105
+        },
+        {
+          "name": "Johnson & Johnson",
+          "symbol": "JNJ",
+          "pct": -2.40889605717519
         }
-      ]
+      ],
+      "breadth": {
+        "up": 6,
+        "down": 24,
+        "flat": 0,
+        "priced": 30,
+        "median": -0.92
+      }
     },
     "hang-seng": {
       "label": "Hang Seng",
@@ -208,38 +243,45 @@
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Sino Biopharmaceutical Limited",
-          "symbol": "1177.HK",
-          "pct": 6.855576131326711
+          "name": "BYD Electronic (International) Company Limited",
+          "symbol": "0285.HK",
+          "pct": 6.836245325062698
         },
         {
-          "name": "China Petroleum & Chemical Corporation",
-          "symbol": "0386.HK",
-          "pct": 4.021165313340552
+          "name": "Li Auto Inc.",
+          "symbol": "2015.HK",
+          "pct": 5.395235983939024
         },
         {
-          "name": "CNOOC Limited",
-          "symbol": "0883.HK",
-          "pct": 3.938912711582122
+          "name": "WH Group Limited",
+          "symbol": "0288.HK",
+          "pct": 2.2023444898790734
         }
       ],
       "bottom": [
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": -6.180469599126722
+          "name": "Longfor Group Holdings Limited",
+          "symbol": "0960.HK",
+          "pct": -4.901185013878412
         },
         {
-          "name": "BYD Electronic (International) Company Limited",
-          "symbol": "0285.HK",
-          "pct": -5.0595191423515775
+          "name": "Baidu, Inc.",
+          "symbol": "9888.HK",
+          "pct": -4.692387829405468
         },
         {
-          "name": "Semiconductor Manufacturing International Corporation",
-          "symbol": "0981.HK",
-          "pct": -4.319186597109231
+          "name": "Xiaomi Corporation",
+          "symbol": "1810.HK",
+          "pct": -3.305205753888587
         }
-      ]
+      ],
+      "breadth": {
+        "up": 26,
+        "down": 59,
+        "flat": 0,
+        "priced": 85,
+        "median": -0.72
+      }
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
@@ -250,36 +292,43 @@
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": 3.1423568725585938
+          "pct": 4.027779897054037
         },
         {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": 3.093909203946679
+          "pct": 3.4482741409345574
         },
         {
-          "name": "Bayerische Motoren Werke Aktiengesellschaft",
-          "symbol": "BMW.DE",
-          "pct": 2.547774376204355
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 2.796342130707655
         }
       ],
       "bottom": [
         {
           "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
           "symbol": "MUV2.DE",
-          "pct": -4.965880004136879
-        },
-        {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": -3.312441404950651
+          "pct": -4.776342466935626
         },
         {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": -3.117085599162987
+          "pct": -3.604130224032204
+        },
+        {
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": -3.1110103572619474
         }
-      ]
+      ],
+      "breadth": {
+        "up": 23,
+        "down": 27,
+        "flat": 0,
+        "priced": 50,
+        "median": -0.09
+      }
     },
     "nikkei-225": {
       "label": "Nikkei 225",
@@ -288,38 +337,45 @@
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Nitori Holdings Co., Ltd.",
-          "symbol": "9843.T",
-          "pct": 5.472636815920398
-        },
-        {
           "name": "SoftBank Group Corp.",
           "symbol": "9984.T",
-          "pct": 5.452790735081229
+          "pct": 11.216457960644007
         },
         {
-          "name": "Oriental Land Co., Ltd.",
-          "symbol": "4661.T",
-          "pct": 3.1047865459249677
+          "name": "ROHM Co., Ltd.",
+          "symbol": "6963.T",
+          "pct": 7.76978417266187
+        },
+        {
+          "name": "Nidec Corporation",
+          "symbol": "6594.T",
+          "pct": 7.698199923400996
         }
       ],
       "bottom": [
         {
-          "name": "JTEKT Corporation",
-          "symbol": "6473.T",
-          "pct": -8.675902793549852
+          "name": "SHIFT Inc.",
+          "symbol": "3697.T",
+          "pct": -5.912848933914782
         },
         {
-          "name": "Alps Alpine Co., Ltd.",
-          "symbol": "6770.T",
-          "pct": -8.287170396631952
+          "name": "Konica Minolta, Inc.",
+          "symbol": "4902.T",
+          "pct": -5.649204587248481
         },
         {
-          "name": "Okuma Corporation",
-          "symbol": "6103.T",
-          "pct": -7.987220447284344
+          "name": "Nomura Research Institute, Ltd.",
+          "symbol": "4307.T",
+          "pct": -5.606407322654462
         }
-      ]
+      ],
+      "breadth": {
+        "up": 104,
+        "down": 119,
+        "flat": 0,
+        "priced": 223,
+        "median": -0.25
+      }
     }
   },
   "unsupported": {
