@@ -469,6 +469,20 @@
                 color: var(--amber); background: rgba(245,158,11,.13);
                 border: 1px solid rgba(245,158,11,.34); cursor: help; }
   .mkt-asof { font-size: 11px; color: var(--ink-soft); margin: 6px 0 0 20px; }
+  /* 52-week range. The number on its own says less than the number in its
+     year: the same level reads differently at the top of the range than at
+     the bottom. Both figures come out of chart metadata the refresh already
+     fetched, so the band costs nothing and is drawn only when present. */
+  .mkt-52 { display: flex; align-items: center; gap: 8px; margin: 10px 0 0 20px;
+            max-width: 340px; font-family: "JetBrains Mono", ui-monospace, monospace;
+            font-size: 10.5px; color: var(--ink-soft); }
+  .mkt-52 .lo, .mkt-52 .hi { white-space: nowrap; }
+  .mkt-52-track { position: relative; flex: 1 1 auto; height: 4px; border-radius: 2px;
+                  background: linear-gradient(90deg, rgba(239,68,68,.45), rgba(148,163,184,.35), rgba(16,185,129,.45)); }
+  .mkt-52-mark { position: absolute; top: -3px; width: 2px; height: 10px;
+                 border-radius: 1px; background: var(--ink); transform: translateX(-1px); }
+  .mkt-52-cap { margin: 5px 0 0 20px; font-size: 10.5px; color: var(--ink-soft); }
+  @media(max-width:640px){ .mkt-52 { margin-left: 14px; } .mkt-52-cap { margin-left: 14px; } }
   .mkt-ranges { display: flex; gap: 4px; flex-wrap: wrap; padding: 14px 20px 4px; }
   .mkt-ranges button { background: transparent; border: none; border-radius: 6px; color: var(--ink-soft);
                        font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600; padding: 5px 12px;
@@ -687,6 +701,25 @@
   .mv-src { grid-column: 1 / -1; font-size: 11px; color: var(--ink-soft); margin: 10px 2px 0;
             line-height: 1.5; }
   .mv-why { margin: 12px 2px; line-height: 1.6; }
+
+  /* Breadth: how the whole index moved, under the two ranked ends.
+     The bar is the point - three counts read as three numbers, but a bar
+     shows at a glance whether a green top three sat on a green market or a
+     red one. Rendered only when the run published breadth; a deploy whose
+     movers.json predates that field simply has no bar. */
+  .mv-breadth { grid-column: 1 / -1; margin: 14px 16px 2px; }
+  .mv-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden;
+            background: var(--rule); }
+  .mv-bar span { display: block; height: 100%; }
+  .mv-bar .up   { background: var(--forest); }
+  .mv-bar .flat { background: var(--ink-soft); }
+  .mv-bar .down { background: var(--oxblood); }
+  .mv-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 7px;
+               font-family: "JetBrains Mono", ui-monospace, monospace;
+               font-size: 10.5px; color: var(--ink-soft); }
+  .mv-legend b { font-weight: 600; }
+  .mv-legend .up   { color: var(--forest); }
+  .mv-legend .down { color: var(--oxblood); }
 
   /* ---- table view ---- */
   .ftable-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); }
@@ -1115,8 +1148,14 @@
      order of their own, which put them in the grid's first row - ahead of the
      heading they belong to, and, once the rows were sized, in the 1fr slot
      meant for a list. Ordered last, they read as the footnotes they are and
-     the slack lands on the two lists. */
-  .rank-grid.stack .mv-src, .rank-grid.stack .intel-note { order: 5; }
+     the slack lands on the two lists.
+
+     The breadth bar arrived later and landed in the first row for exactly the
+     same reason - above the "Top 3" heading, which is the one place it makes
+     no sense. It sits between the two lists and the source line: after the
+     ranking it summarises, before the footnote about it. */
+  .rank-grid.stack .mv-breadth { order: 5; }
+  .rank-grid.stack .mv-src, .rank-grid.stack .intel-note { order: 6; }
   /* An index the desk does not rank shows one line saying why. Stretching a
      sentence down 500px of bordered card would look like a panel that failed
      to load, so the short form keeps its own height and the column simply
@@ -2009,6 +2048,33 @@ function renderChart(){
       + 'Last session &middot; ' + esc(mktStamp(lastT, idx.tz, 'wday')) + '</span>'
     : '';
 
+  /* The 52-week band. Both numbers come out of chart metadata the refresh
+     already fetched, and the basis travels with them because the two are not
+     interchangeable: Yahoo's own figures are INTRADAY extremes, while the
+     fallback is computed from the closing series when Yahoo states none.
+     Saying which is what stops two indices being compared across bases.
+
+     The marker is clamped to the track. A price above the stated high is a
+     real thing - the metadata can lag a session - and the caption says so
+     rather than letting the marker fall off the end or silently pretending
+     the level is at the top of a range it has passed. */
+  const r52 = idx.range52;
+  let band = '';
+  if(r52 && typeof r52.low === 'number' && typeof r52.high === 'number' && r52.high > r52.low){
+    const raw = (last - r52.low) / (r52.high - r52.low);
+    const posPct = Math.max(0, Math.min(1, raw)) * 100;
+    const basis = r52.basis === 'closes'
+      ? 'measured on this refresh\u2019s daily closes \u2014 Yahoo published no 52-week figures for this line'
+      : 'Yahoo\u2019s own figures, measured intraday';
+    const beyond = raw > 1 ? ' Now above that high.' : raw < 0 ? ' Now below that low.' : '';
+    band = '<div class="mkt-52" title="52-week range \u2014 ' + esc(basis) + '">'
+         +   '<span class="lo">' + mktNum(r52.low) + '</span>'
+         +   '<span class="mkt-52-track"><span class="mkt-52-mark" style="left:' + posPct.toFixed(1) + '%"></span></span>'
+         +   '<span class="hi">' + mktNum(r52.high) + '</span>'
+         + '</div>'
+         + '<div class="mkt-52-cap">52-week range \u00b7 ' + esc(basis) + '.' + beyond + '</div>';
+  }
+
   const gen = MKT.generated ? new Date(MKT.generated) : null;
   const genTxt = gen && !isNaN(gen)
     ? 'Data refreshed ' + gen.toLocaleString('en-GB', {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', hour12:false}) + ' UTC.'
@@ -2028,6 +2094,7 @@ function renderChart(){
   + '</div></div>'
   + '<div class="mkt-asof">' + esc(idx.currency) + ' · change over ' + esc(rangeLabel)
   +   ' · last point ' + esc(mktStamp(lastT, idx.tz, 'full')) + ' ' + esc(idx.tz) + '</div>'
+  + band
   + '<div class="mkt-ranges">' + ranges + '</div>' + missing
   + '<div class="mkt-plot" id="mktPlot"><div class="mkt-tip" id="mktTip"></div></div>'
   + '<div class="mkt-note">Index levels from Yahoo Finance, delayed and unofficial — indicative only, not a dealing price. ' + esc(genTxt) + '</div>'
@@ -3219,6 +3286,38 @@ function moversRow(m, i, best){
   '</div></div>';
 }
 
+/* Breadth: what the other ~987 constituents did.
+
+   The sweep behind this panel prices every name in the index and the panel
+   shows six of them. Between them the rest answer a question the top and
+   bottom three cannot - a day where 62 of 100 names rose is a different
+   market from one where 12 did, and both can produce an identical top three.
+
+   Drawn only when the run published it. A deploy whose movers.json predates
+   the field renders the panel exactly as before rather than an empty bar. */
+function moversBreadth(b){
+  if(!b || !b.priced) return '';
+  const n = b.priced;
+  const w = k => (Math.max(0, b[k] || 0) / n * 100).toFixed(2) + '%';
+  const med = (b.median >= 0 ? '+' : '') + Number(b.median).toFixed(2) + '%';
+  const medCls = b.median > 0 ? 'up' : b.median < 0 ? 'down' : '';
+  return '<div class="mv-breadth">' +
+    '<div class="mv-bar" title="' + b.up + ' of ' + n + ' priced constituents rose, ' +
+      b.down + ' fell, ' + b.flat + ' finished unchanged. The median is the typical ' +
+      'constituent\u2019s day, which is not the same thing as the index move beside ' +
+      'the chart \u2014 that one is weighted by company size.">' +
+      '<span class="up" style="width:' + w('up') + '"></span>' +
+      '<span class="flat" style="width:' + w('flat') + '"></span>' +
+      '<span class="down" style="width:' + w('down') + '"></span>' +
+    '</div>' +
+    '<div class="mv-legend">' +
+      '<span class="up"><b>' + b.up + '</b> rose</span>' +
+      (b.flat ? '<span><b>' + b.flat + '</b> unchanged</span>' : '') +
+      '<span class="down"><b>' + b.down + '</b> fell</span>' +
+      '<span>median <b class="' + medCls + '">' + med + '</b></span>' +
+    '</div></div>';
+}
+
 function renderIndexMovers(){
   const el = document.getElementById('indexmovers');
   if(!el) return;
@@ -3263,6 +3362,7 @@ function renderIndexMovers(){
         '<span class="rank-title">Bottom ' + nBot + ' &#8212; weakest on the day</span></div>' +
       '<div class="rank-list rank-a">' + data.top.map(moversRow).join('') + '</div>' +
       '<div class="rank-list rank-b">' + data.bottom.map(moversRow).join('') + '</div>' +
+      moversBreadth(data.breadth) +
       '<p class="mv-src">' + esc(data.source) + ' &middot; as at ' + esc(data.asAt) +
         '. Day change on the last two closes, indicative only &#8212; not a dealing price.</p>' +
     '</div>';
