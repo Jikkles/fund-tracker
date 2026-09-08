@@ -1,89 +1,89 @@
 {
-  "generated": "2026-09-07T12:47:11+00:00",
+  "generated": "2026-09-08T08:11:56+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Standard Life Plc",
-          "symbol": "SDLF",
-          "pct": 2.31
+          "name": "Autotrader Group Plc",
+          "symbol": "AUTO",
+          "pct": 3.32
         },
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": 2.04
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": 2.41
         },
         {
-          "name": "Diploma plc",
-          "symbol": "DPLM",
-          "pct": 2.04
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": 1.72
         }
       ],
       "bottom": [
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": -2.19
+          "name": "Lloyds Banking Group plc",
+          "symbol": "LLOY",
+          "pct": -1.9
         },
         {
-          "name": "Entain plc",
-          "symbol": "ENT",
-          "pct": -1.82
+          "name": "Standard Life Plc",
+          "symbol": "SDLF",
+          "pct": -1.89
         },
         {
-          "name": "Diageo plc",
-          "symbol": "DGE",
-          "pct": -1.42
+          "name": "Barclays plc",
+          "symbol": "BARC",
+          "pct": -1.59
         }
       ]
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "HL market summary (delayed)",
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Aston Martin Lagonda",
-          "symbol": "AML",
-          "pct": 4.93
+          "name": "ME Group International plc",
+          "symbol": "MEGP",
+          "pct": 4.68
         },
         {
-          "name": "B&M European Value Retail",
-          "symbol": "BME",
-          "pct": 3.52
+          "name": "Harbour Energy plc",
+          "symbol": "HBR",
+          "pct": 2.74
         },
         {
-          "name": "Goodwin plc",
-          "symbol": "GDWN",
-          "pct": 3.24
+          "name": "SDCL Efficiency Income Trust Plc",
+          "symbol": "SEIT",
+          "pct": 2.68
         }
       ],
       "bottom": [
         {
-          "name": "Hollywood Bowl Group Plc",
-          "symbol": "BOWL",
-          "pct": -5.51
+          "name": "Dunelm Group Plc",
+          "symbol": "DNLM",
+          "pct": -10.43
         },
         {
-          "name": "Hays plc",
-          "symbol": "HAS",
-          "pct": -4.58
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": -10.0
         },
         {
-          "name": "Michael Page Plc",
-          "symbol": "PAGE",
-          "pct": -4.45
+          "name": "Johnson Service Group plc",
+          "symbol": "JSG",
+          "pct": -6.96
         }
       ]
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
@@ -123,7 +123,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
@@ -163,7 +163,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -203,121 +203,121 @@
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "BYD Electronic (International) Company Limited",
-          "symbol": "0285.HK",
-          "pct": 6.836245325062698
+          "name": "Sino Biopharmaceutical Limited",
+          "symbol": "1177.HK",
+          "pct": 7.03839567914036
         },
         {
-          "name": "Li Auto Inc.",
-          "symbol": "2015.HK",
-          "pct": 5.395235983939024
+          "name": "CNOOC Limited",
+          "symbol": "0883.HK",
+          "pct": 4.09968043476511
         },
         {
-          "name": "WH Group Limited",
-          "symbol": "0288.HK",
-          "pct": 2.2023444898790734
+          "name": "PetroChina Company Limited",
+          "symbol": "0857.HK",
+          "pct": 3.815262178569387
         }
       ],
       "bottom": [
         {
-          "name": "Longfor Group Holdings Limited",
-          "symbol": "0960.HK",
-          "pct": -4.901185013878412
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": -6.180469599126722
         },
         {
-          "name": "Baidu, Inc.",
-          "symbol": "9888.HK",
-          "pct": -4.692387829405468
+          "name": "BYD Electronic (International) Company Limited",
+          "symbol": "0285.HK",
+          "pct": -4.985112675133886
         },
         {
-          "name": "Xiaomi Corporation",
-          "symbol": "1810.HK",
-          "pct": -3.305205753888587
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": -4.392386333755501
         }
       ]
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": 4.115371311061656
+          "pct": 3.693279021419465
+        },
+        {
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": 2.365312861826048
         },
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": 1.5451431274414062
-        },
-        {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 1.485615809943664
+          "pct": 2.1180576748318143
         }
       ],
       "bottom": [
         {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": -3.1110103572619474
-        },
-        {
           "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
           "symbol": "MUV2.DE",
-          "pct": -2.2744504464150403
+          "pct": -3.6770212806323963
         },
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -2.240405274398397
+          "name": "Compagnie de Saint-Gobain S.A.",
+          "symbol": "SGO.PA",
+          "pct": -3.1934523725625303
+        },
+        {
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": -3.088627611906555
         }
       ]
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-07",
+      "asAt": "2026-09-08",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
+          "name": "Nitori Holdings Co., Ltd.",
+          "symbol": "9843.T",
+          "pct": 5.472636815920398
+        },
+        {
           "name": "SoftBank Group Corp.",
           "symbol": "9984.T",
-          "pct": 11.216457960644007
+          "pct": 5.452790735081229
         },
         {
-          "name": "ROHM Co., Ltd.",
-          "symbol": "6963.T",
-          "pct": 7.76978417266187
-        },
-        {
-          "name": "Nidec Corporation",
-          "symbol": "6594.T",
-          "pct": 7.698199923400996
+          "name": "Oriental Land Co., Ltd.",
+          "symbol": "4661.T",
+          "pct": 3.1047865459249677
         }
       ],
       "bottom": [
         {
-          "name": "SHIFT Inc.",
-          "symbol": "3697.T",
-          "pct": -5.912848933914782
+          "name": "JTEKT Corporation",
+          "symbol": "6473.T",
+          "pct": -8.675902793549852
         },
         {
-          "name": "Konica Minolta, Inc.",
-          "symbol": "4902.T",
-          "pct": -5.649204587248481
+          "name": "Alps Alpine Co., Ltd.",
+          "symbol": "6770.T",
+          "pct": -8.287170396631952
         },
         {
-          "name": "Nomura Research Institute, Ltd.",
-          "symbol": "4307.T",
-          "pct": -5.606407322654462
+          "name": "Okuma Corporation",
+          "symbol": "6103.T",
+          "pct": -7.987220447284344
         }
       ]
     }
