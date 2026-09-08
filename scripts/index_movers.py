@@ -701,6 +701,13 @@ def rank(out: dict, key: str, label: str, got: dict, today: date) -> None:
     # it is computed from was already fetched to build the ranking above.
     if got.get("breadth"):
         entry["breadth"] = got["breadth"]
+    # How the sweep was actually done, recorded in the DATA rather than only
+    # in the run log. When the batch size was wrong every index silently fell
+    # back to one request per symbol, and finding that out meant fishing a
+    # line out of an Actions log that expires. The file the run produces
+    # should be able to answer how it was produced.
+    if got.get("how"):
+        entry["built"] = got["how"]
     out["indices"][key] = entry
 
 
