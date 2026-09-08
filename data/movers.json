@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T16:11:07+00:00",
+  "generated": "2026-09-08T17:52:09+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -104,42 +104,42 @@
         {
           "name": "Lumentum Holdings Inc.",
           "symbol": "LITE",
-          "pct": 11.396246502921844
+          "pct": 11.97553177681698
         },
         {
           "name": "Intel Corporation",
           "symbol": "INTC",
-          "pct": 9.070975506458783
+          "pct": 9.845510340377702
         },
         {
-          "name": "Coherent Corp.",
-          "symbol": "COHR",
-          "pct": 8.851917087809122
+          "name": "Corning Incorporated",
+          "symbol": "GLW",
+          "pct": 8.998700085688533
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -9.772890678280605
-        },
-        {
-          "name": "Stryker Corporation",
-          "symbol": "SYK",
-          "pct": -7.396170971726063
+          "pct": -8.99869639139053
         },
         {
           "name": "Howmet Aerospace Inc.",
           "symbol": "HWM",
-          "pct": -6.830714006835646
+          "pct": -7.883668781094191
+        },
+        {
+          "name": "GoDaddy Inc.",
+          "symbol": "GDDY",
+          "pct": -7.60536411740005
         }
       ],
       "breadth": {
-        "up": 172,
-        "down": 331,
-        "flat": 0,
+        "up": 175,
+        "down": 325,
+        "flat": 3,
         "priced": 503,
-        "median": -0.75
+        "median": -0.67
       }
     },
     "nasdaq-100": {
@@ -151,42 +151,42 @@
         {
           "name": "CoreWeave, Inc.",
           "symbol": "CRWV",
-          "pct": 14.508724540439122
+          "pct": 15.101718714061121
         },
         {
           "name": "Lumentum Holdings Inc.",
           "symbol": "LITE",
-          "pct": 11.302628628134176
+          "pct": 11.97553177681698
         },
         {
           "name": "Nebius Group N.V.",
           "symbol": "NBIS",
-          "pct": 9.545474918774026
+          "pct": 10.33172819148739
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -9.807196168003511
+          "pct": -9.00098575062331
         },
         {
           "name": "Shopify Inc.",
           "symbol": "SHOP",
-          "pct": -7.5539263434497
+          "pct": -6.813008998784051
         },
         {
-          "name": "Thomson Reuters Corporation",
-          "symbol": "TRI",
-          "pct": -5.791069955440091
+          "name": "Booking Holdings Inc.",
+          "symbol": "BKNG",
+          "pct": -6.177350727095652
         }
       ],
       "breadth": {
-        "up": 37,
-        "down": 65,
+        "up": 40,
+        "down": 62,
         "flat": 0,
         "priced": 102,
-        "median": -0.62
+        "median": -0.66
       }
     },
     "dow-jones": {
@@ -198,42 +198,42 @@
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": 1.406739092892232
+          "pct": 1.5910278605533328
+        },
+        {
+          "name": "UnitedHealth Group Incorporated",
+          "symbol": "UNH",
+          "pct": 1.483123197446587
         },
         {
           "name": "Chevron Corporation",
           "symbol": "CVX",
-          "pct": 1.0786193356501919
-        },
-        {
-          "name": "American Express Company",
-          "symbol": "AXP",
-          "pct": 0.38171299460655894
+          "pct": 0.7830772280501302
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -9.807196168003511
+          "pct": -9.018141985361641
         },
         {
           "name": "Salesforce, Inc.",
           "symbol": "CRM",
-          "pct": -4.123757762275105
+          "pct": -4.251594188157466
         },
         {
-          "name": "Johnson & Johnson",
-          "symbol": "JNJ",
-          "pct": -2.40889605717519
+          "name": "The Sherwin-Williams Company",
+          "symbol": "SHW",
+          "pct": -2.3703226947504112
         }
       ],
       "breadth": {
-        "up": 6,
-        "down": 24,
+        "up": 8,
+        "down": 22,
         "flat": 0,
         "priced": 30,
-        "median": -0.92
+        "median": -0.81
       }
     },
     "hang-seng": {
