@@ -55,15 +55,14 @@ def main() -> int:
     spx = [t["symbol"] for t in cache["s-p-500"]["tickers"]]
     nikkei = [t["symbol"] for t in cache["nikkei-225"]["tickers"]]
 
-    # The exact call the run makes, at the exact size it makes it.
-    report("Dow, one batch (what the run sent)", dow)
-    report("S&P first 50 (what the run sent)", spx[:50])
-    # Then walk the size down, to find where it stops answering.
-    for n in (25, 10, 5, 2):
+    # Round two found the cap sits between 10 (HTTP 200) and 25 (HTTP 400,
+    # empty body). Bisect it, on two different boards so the answer is about
+    # the count rather than about one exchange's symbols.
+    for n in (11, 12, 14, 15, 16, 18, 20, 24):
         report(f"S&P first {n}", spx[:n])
-    # A non-US board, in case the suffix is the problem rather than the count.
-    report("Nikkei first 5 (.T suffix)", nikkei[:5])
-    report("Nikkei first 50 (.T suffix)", nikkei[:50])
+    for n in (10, 15, 20):
+        report(f"Nikkei first {n} (.T suffix)", nikkei[:n])
+    report(f"Dow all {len(dow)}", dow)
     return 0
 
 
