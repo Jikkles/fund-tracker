@@ -1,0 +1,18 @@
+# TEMPORARY. Dispatch-only, no schedule, writes nothing, deploys nothing.
+# Exists to ask Yahoo what it answers for a batched request from a runner,
+# because the sandbox this repo is edited in cannot reach Yahoo at all.
+# Delete once it has answered.
+name: Probe batch endpoints
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python scripts/probe_batch.py
