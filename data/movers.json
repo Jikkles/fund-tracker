@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T17:52:09+00:00",
+  "generated": "2026-09-08T17:55:04+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -46,7 +46,8 @@
         "flat": 7,
         "priced": 100,
         "median": -0.24
-      }
+      },
+      "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
@@ -93,7 +94,8 @@
         "flat": 17,
         "priced": 250,
         "median": -0.47
-      }
+      },
+      "built": "250 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
@@ -104,43 +106,44 @@
         {
           "name": "Lumentum Holdings Inc.",
           "symbol": "LITE",
-          "pct": 11.97553177681698
+          "pct": 12.123054210269473
         },
         {
           "name": "Intel Corporation",
           "symbol": "INTC",
-          "pct": 9.845510340377702
+          "pct": 9.697278695402247
         },
         {
           "name": "Corning Incorporated",
           "symbol": "GLW",
-          "pct": 8.998700085688533
+          "pct": 8.794619966664046
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -8.99869639139053
+          "pct": -8.847745256855985
         },
         {
           "name": "Howmet Aerospace Inc.",
           "symbol": "HWM",
-          "pct": -7.883668781094191
+          "pct": -7.904885249216697
         },
         {
           "name": "GoDaddy Inc.",
           "symbol": "GDDY",
-          "pct": -7.60536411740005
+          "pct": -7.876809712608813
         }
       ],
       "breadth": {
-        "up": 175,
-        "down": 325,
-        "flat": 3,
+        "up": 171,
+        "down": 330,
+        "flat": 2,
         "priced": 503,
-        "median": -0.67
-      }
+        "median": -0.68
+      },
+      "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
@@ -151,43 +154,44 @@
         {
           "name": "CoreWeave, Inc.",
           "symbol": "CRWV",
-          "pct": 15.101718714061121
+          "pct": 15.062666732920139
         },
         {
           "name": "Lumentum Holdings Inc.",
           "symbol": "LITE",
-          "pct": 11.97553177681698
+          "pct": 12.103190626272207
         },
         {
           "name": "Nebius Group N.V.",
           "symbol": "NBIS",
-          "pct": 10.33172819148739
+          "pct": 10.022528602225766
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -9.00098575062331
+          "pct": -8.847745256855985
         },
         {
           "name": "Shopify Inc.",
           "symbol": "SHOP",
-          "pct": -6.813008998784051
+          "pct": -7.017844233515323
         },
         {
           "name": "Booking Holdings Inc.",
           "symbol": "BKNG",
-          "pct": -6.177350727095652
+          "pct": -6.239328458530693
         }
       ],
       "breadth": {
-        "up": 40,
-        "down": 62,
+        "up": 38,
+        "down": 64,
         "flat": 0,
         "priced": 102,
-        "median": -0.66
-      }
+        "median": -0.67
+      },
+      "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
@@ -198,34 +202,34 @@
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": 1.5910278605533328
+          "pct": 1.6807126612217393
         },
         {
           "name": "UnitedHealth Group Incorporated",
           "symbol": "UNH",
-          "pct": 1.483123197446587
+          "pct": 1.5007280141121317
         },
         {
           "name": "Chevron Corporation",
           "symbol": "CVX",
-          "pct": 0.7830772280501302
+          "pct": 0.7166802844893609
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -9.018141985361641
+          "pct": -8.847745256855985
         },
         {
           "name": "Salesforce, Inc.",
           "symbol": "CRM",
-          "pct": -4.251594188157466
+          "pct": -4.200908146013944
         },
         {
           "name": "The Sherwin-Williams Company",
           "symbol": "SHW",
-          "pct": -2.3703226947504112
+          "pct": -2.3253661702518946
         }
       ],
       "breadth": {
@@ -233,8 +237,9 @@
         "down": 22,
         "flat": 0,
         "priced": 30,
-        "median": -0.81
-      }
+        "median": -0.85
+      },
+      "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
@@ -281,7 +286,8 @@
         "flat": 0,
         "priced": 85,
         "median": -0.72
-      }
+      },
+      "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
@@ -328,7 +334,8 @@
         "flat": 0,
         "priced": 50,
         "median": -0.09
-      }
+      },
+      "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
@@ -375,7 +382,8 @@
         "flat": 0,
         "priced": 223,
         "median": -0.25
-      }
+      },
+      "built": "12 spark batches"
     }
   },
   "unsupported": {
