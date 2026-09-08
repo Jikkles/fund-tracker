@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T08:11:56+00:00",
+  "generated": "2026-09-08T11:29:12+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,36 +8,36 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Autotrader Group Plc",
-          "symbol": "AUTO",
-          "pct": 3.32
-        },
-        {
-          "name": "Computacenter plc",
-          "symbol": "CCC",
-          "pct": 2.41
-        },
-        {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": 1.72
+          "pct": 4.03
+        },
+        {
+          "name": "Halma plc",
+          "symbol": "HLMA",
+          "pct": 2.58
+        },
+        {
+          "name": "Coca-Cola HBC AG",
+          "symbol": "CCH",
+          "pct": 2.46
         }
       ],
       "bottom": [
         {
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": -5.89
+        },
+        {
+          "name": "GSK plc",
+          "symbol": "GSK",
+          "pct": -1.25
+        },
+        {
           "name": "Lloyds Banking Group plc",
           "symbol": "LLOY",
-          "pct": -1.9
-        },
-        {
-          "name": "Standard Life Plc",
-          "symbol": "SDLF",
-          "pct": -1.89
-        },
-        {
-          "name": "Barclays plc",
-          "symbol": "BARC",
-          "pct": -1.59
+          "pct": -1.24
         }
       ]
     },
@@ -48,36 +48,36 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "ME Group International plc",
-          "symbol": "MEGP",
-          "pct": 4.68
+          "name": "Aston Martin Lagonda",
+          "symbol": "AML",
+          "pct": 3.93
         },
         {
-          "name": "Harbour Energy plc",
-          "symbol": "HBR",
-          "pct": 2.74
+          "name": "Hansa Investment Company Limited",
+          "symbol": "HAN",
+          "pct": 2.41
         },
         {
-          "name": "SDCL Efficiency Income Trust Plc",
-          "symbol": "SEIT",
-          "pct": 2.68
+          "name": "Atalaya Mining Copper SA",
+          "symbol": "ATYM",
+          "pct": 2.13
         }
       ],
       "bottom": [
         {
           "name": "Dunelm Group Plc",
           "symbol": "DNLM",
-          "pct": -10.43
-        },
-        {
-          "name": "Funding Circle PLC",
-          "symbol": "FCH",
-          "pct": -10.0
+          "pct": -12.46
         },
         {
           "name": "Johnson Service Group plc",
           "symbol": "JSG",
-          "pct": -6.96
+          "pct": -8.0
+        },
+        {
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": -7.17
         }
       ]
     },
@@ -210,17 +210,17 @@
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 7.03839567914036
+          "pct": 6.855576131326711
+        },
+        {
+          "name": "China Petroleum & Chemical Corporation",
+          "symbol": "0386.HK",
+          "pct": 4.021165313340552
         },
         {
           "name": "CNOOC Limited",
           "symbol": "0883.HK",
-          "pct": 4.09968043476511
-        },
-        {
-          "name": "PetroChina Company Limited",
-          "symbol": "0857.HK",
-          "pct": 3.815262178569387
+          "pct": 3.938912711582122
         }
       ],
       "bottom": [
@@ -232,12 +232,12 @@
         {
           "name": "BYD Electronic (International) Company Limited",
           "symbol": "0285.HK",
-          "pct": -4.985112675133886
+          "pct": -5.0595191423515775
         },
         {
           "name": "Semiconductor Manufacturing International Corporation",
           "symbol": "0981.HK",
-          "pct": -4.392386333755501
+          "pct": -4.319186597109231
         }
       ]
     },
@@ -248,36 +248,36 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 3.693279021419465
-        },
-        {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 2.365312861826048
-        },
-        {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": 2.1180576748318143
+          "pct": 3.1423568725585938
+        },
+        {
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 3.093909203946679
+        },
+        {
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 2.547774376204355
         }
       ],
       "bottom": [
         {
           "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
           "symbol": "MUV2.DE",
-          "pct": -3.6770212806323963
-        },
-        {
-          "name": "Compagnie de Saint-Gobain S.A.",
-          "symbol": "SGO.PA",
-          "pct": -3.1934523725625303
+          "pct": -4.965880004136879
         },
         {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": -3.088627611906555
+          "pct": -3.312441404950651
+        },
+        {
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -3.117085599162987
         }
       ]
     },
