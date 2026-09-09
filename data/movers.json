@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09T08:12:07+00:00",
+  "generated": "2026-09-09T11:34:15+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Computacenter plc",
-          "symbol": "CCC",
-          "pct": 3.0
-        },
-        {
           "name": "Aberdeen Group Plc",
           "symbol": "ABDN",
-          "pct": 1.86
+          "pct": 1.62
         },
         {
           "name": "BP Plc",
           "symbol": "BP.",
-          "pct": 1.73
+          "pct": 1.56
+        },
+        {
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": 1.55
         }
       ],
       "bottom": [
         {
           "name": "Autotrader Group Plc",
           "symbol": "AUTO",
-          "pct": -2.88
+          "pct": -4.85
         },
         {
           "name": "Burberry Group plc",
           "symbol": "BRBY",
-          "pct": -2.5
+          "pct": -3.94
         },
         {
           "name": "Lion Finance Group Plc",
           "symbol": "BGEO",
-          "pct": -1.61
+          "pct": -2.92
         }
       ],
       "breadth": {
-        "up": 35,
-        "down": 63,
-        "flat": 2,
+        "up": 20,
+        "down": 79,
+        "flat": 1,
         "priced": 100,
-        "median": -0.38
+        "median": -1.08
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Victrex",
           "symbol": "VCT",
-          "pct": 15.3
+          "pct": 14.04
         },
         {
           "name": "Energean",
           "symbol": "ENOG",
-          "pct": 6.0
+          "pct": 7.71
         },
         {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": 5.19
+          "name": "Harbour Energy plc",
+          "symbol": "HBR",
+          "pct": 2.83
         }
       ],
       "bottom": [
         {
-          "name": "Funding Circle PLC",
-          "symbol": "FCH",
-          "pct": -5.24
-        },
-        {
-          "name": "4imprint Group plc",
-          "symbol": "FOUR",
-          "pct": -4.06
-        },
-        {
           "name": "Rightmove plc",
           "symbol": "RMV",
-          "pct": -3.23
+          "pct": -5.71
+        },
+        {
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": -5.71
+        },
+        {
+          "name": "Trustpilot Group plc",
+          "symbol": "TRST",
+          "pct": -4.46
         }
       ],
       "breadth": {
-        "up": 68,
-        "down": 146,
-        "flat": 36,
+        "up": 42,
+        "down": 192,
+        "flat": 16,
         "priced": 250,
-        "median": -0.17
+        "median": -0.77
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -250,24 +250,24 @@
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 6.653492810125081
+          "pct": 6.785235563833856
         },
         {
           "name": "China Hongqiao Group Limited",
           "symbol": "1378.HK",
-          "pct": 3.741492957650536
+          "pct": 3.996592722848787
         },
         {
           "name": "Sunny Optical Technology (Group) Company Limited",
           "symbol": "2382.HK",
-          "pct": 3.3432390757391386
+          "pct": 3.4175264755849186
         }
       ],
       "bottom": [
         {
           "name": "Haidilao International Holding Ltd.",
           "symbol": "6862.HK",
-          "pct": -9.314590588374308
+          "pct": -9.13883964318502
         },
         {
           "name": "Zhongsheng Group Holdings Limited",
@@ -281,11 +281,11 @@
         }
       ],
       "breadth": {
-        "up": 30,
-        "down": 52,
-        "flat": 3,
+        "up": 35,
+        "down": 50,
+        "flat": 0,
         "priced": 85,
-        "median": -0.54
+        "median": -0.47
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 3.4034218386560475
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 2.465600331746402
         },
         {
           "name": "Eni S.p.A.",
           "symbol": "ENI.MI",
-          "pct": 3.358611453547569
+          "pct": 1.2765924981299868
         },
         {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 2.7777777777777777
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": 1.1061101097769293
         }
       ],
       "bottom": [
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -5.932199963685687
-        },
-        {
-          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
-          "symbol": "MUV2.DE",
-          "pct": -5.705075242376447
-        },
-        {
           "name": "Industria de Diseño Textil, S.A.",
           "symbol": "ITX.MC",
-          "pct": -4.52645984728858
+          "pct": -4.564759041328519
+        },
+        {
+          "name": "Siemens Aktiengesellschaft",
+          "symbol": "SIE.DE",
+          "pct": -3.761467889908257
+        },
+        {
+          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+          "symbol": "MC.PA",
+          "pct": -3.575196445065138
         }
       ],
       "breadth": {
-        "up": 17,
-        "down": 33,
+        "up": 4,
+        "down": 46,
         "flat": 0,
         "priced": 50,
-        "median": -1.04
+        "median": -2.03
       },
       "built": "3 spark batches"
     },
