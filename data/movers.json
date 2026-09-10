@@ -1,6 +1,102 @@
 {
-  "generated": "2026-09-10T08:11:31+00:00",
+  "generated": "2026-09-10T11:31:35+00:00",
   "indices": {
+    "ftse-100": {
+      "label": "FTSE 100",
+      "asAt": "2026-09-10",
+      "source": "HL market summary (delayed)",
+      "universe": "all 100 constituents",
+      "top": [
+        {
+          "name": "Compass Group plc",
+          "symbol": "CPG",
+          "pct": 2.0
+        },
+        {
+          "name": "Hiscox Ltd",
+          "symbol": "HSX",
+          "pct": 1.46
+        },
+        {
+          "name": "Whitbread plc",
+          "symbol": "WTB",
+          "pct": 1.34
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Associated British Foods plc",
+          "symbol": "ABF",
+          "pct": -11.04
+        },
+        {
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": -4.53
+        },
+        {
+          "name": "Anglo American Plc",
+          "symbol": "AAL",
+          "pct": -4.41
+        }
+      ],
+      "breadth": {
+        "up": 37,
+        "down": 55,
+        "flat": 8,
+        "priced": 100,
+        "median": -0.1
+      },
+      "built": "100 rows from HL's own summary pages"
+    },
+    "ftse-250": {
+      "label": "FTSE 250",
+      "asAt": "2026-09-10",
+      "source": "HL market summary (delayed)",
+      "universe": "all 250 constituents",
+      "top": [
+        {
+          "name": "Dunelm Group Plc",
+          "symbol": "DNLM",
+          "pct": 6.47
+        },
+        {
+          "name": "Pollen Street Group Limited",
+          "symbol": "POLN",
+          "pct": 4.12
+        },
+        {
+          "name": "Hansa Investment Company Limited",
+          "symbol": "HAN",
+          "pct": 3.68
+        }
+      ],
+      "bottom": [
+        {
+          "name": "THG plc",
+          "symbol": "THG",
+          "pct": -9.34
+        },
+        {
+          "name": "Genus plc",
+          "symbol": "GNS",
+          "pct": -6.54
+        },
+        {
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": -4.87
+        }
+      ],
+      "breadth": {
+        "up": 91,
+        "down": 131,
+        "flat": 28,
+        "priced": 250,
+        "median": -0.13
+      },
+      "built": "250 rows from HL's own summary pages"
+    },
     "s-p-500": {
       "label": "S&P 500",
       "asAt": "2026-09-10",
@@ -154,12 +250,12 @@
         {
           "name": "China Life Insurance Company Limited",
           "symbol": "2628.HK",
-          "pct": 2.1709677982868802
+          "pct": 2.23880548731529
         },
         {
           "name": "China Construction Bank Corporation",
           "symbol": "0939.HK",
-          "pct": 1.821021820882888
+          "pct": 1.6129104285431457
         },
         {
           "name": "China Unicom (Hong Kong) Limited",
@@ -171,25 +267,25 @@
         {
           "name": "China Resources Mixc Lifestyle Services Limited",
           "symbol": "1209.HK",
-          "pct": -5.226831052274235
+          "pct": -5.128209469007514
         },
         {
           "name": "Orient Overseas (International) Limited",
           "symbol": "0316.HK",
-          "pct": -4.905166971476542
+          "pct": -4.774354535233633
         },
         {
-          "name": "Haidilao International Holding Ltd.",
-          "symbol": "6862.HK",
-          "pct": -4.2553242511074245
+          "name": "Hansoh Pharmaceutical Group Company Limited",
+          "symbol": "3692.HK",
+          "pct": -4.19539976000292
         }
       ],
       "breadth": {
         "up": 11,
-        "down": 74,
-        "flat": 0,
+        "down": 72,
+        "flat": 2,
         "priced": 85,
-        "median": -1.61
+        "median": -1.52
       },
       "built": "5 spark batches"
     },
@@ -200,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 2.0212782190201133
+          "name": "Ferrari N.V.",
+          "symbol": "RACE.MI",
+          "pct": 1.8930600557713149
         },
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 1.9922632996302252
+          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
+          "symbol": "MUV2.DE",
+          "pct": 1.6935471565492692
         },
         {
-          "name": "Iberdrola, S.A.",
-          "symbol": "IBE.MC",
-          "pct": 1.3581512533286257
+          "name": "Deutsche Börse AG",
+          "symbol": "DB1.DE",
+          "pct": 1.6075972598627968
         }
       ],
       "bottom": [
         {
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": -3.44827801774729
+        },
+        {
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": -2.3296480873984984
+        },
+        {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": -4.971700928220409
-        },
-        {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": -4.487551915858532
-        },
-        {
-          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
-          "symbol": "MC.PA",
-          "pct": -3.950293299296926
+          "pct": -1.6393417387733726
         }
       ],
       "breadth": {
-        "up": 8,
-        "down": 41,
-        "flat": 1,
+        "up": 29,
+        "down": 21,
+        "flat": 0,
         "priced": 50,
-        "median": -1.36
+        "median": 0.23
       },
       "built": "3 spark batches"
     },
@@ -294,8 +390,6 @@
     "gold-usd-oz": "Not an index - a single commodity price, so it has no constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
     "us-10yr-yield": "Not an index - a single government bond yield.",
-    "gbp-usd": "Not an index - a single exchange rate.",
-    "ftse-100": "FTSE 100 could not be ranked on this run - HL's market summary did not return the full constituent list, and a partial index is not a ranking.",
-    "ftse-250": "FTSE 250 could not be ranked on this run - HL's market summary did not return the full constituent list, and a partial index is not a ranking."
+    "gbp-usd": "Not an index - a single exchange rate."
   }
 }
