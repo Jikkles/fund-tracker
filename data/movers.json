@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-11T08:11:29+00:00",
+  "generated": "2026-09-11T11:33:04+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "British American Tobacco plc",
-          "symbol": "BATS",
-          "pct": 1.3
-        },
-        {
           "name": "Games Workshop Group",
           "symbol": "GAW",
-          "pct": 1.21
+          "pct": 2.83
         },
         {
-          "name": "Hiscox Ltd",
-          "symbol": "HSX",
-          "pct": 1.14
+          "name": "Howden Joinery Group Plc",
+          "symbol": "HWDN",
+          "pct": 2.39
+        },
+        {
+          "name": "Lion Finance Group Plc",
+          "symbol": "BGEO",
+          "pct": 1.94
         }
       ],
       "bottom": [
         {
-          "name": "RELX plc",
-          "symbol": "REL",
-          "pct": -2.33
-        },
-        {
           "name": "Sage Group plc",
           "symbol": "SGE",
-          "pct": -1.98
+          "pct": -1.86
+        },
+        {
+          "name": "London Stock Exchange Group plc",
+          "symbol": "LSEG",
+          "pct": -1.29
         },
         {
           "name": "Compass Group plc",
           "symbol": "CPG",
-          "pct": -1.91
+          "pct": -0.94
         }
       ],
       "breadth": {
-        "up": 55,
-        "down": 42,
-        "flat": 3,
+        "up": 82,
+        "down": 17,
+        "flat": 1,
         "priced": 100,
-        "median": 0.08
+        "median": 0.53
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "XP Power Limited",
           "symbol": "XPP",
-          "pct": 10.11
-        },
-        {
-          "name": "SDCL Efficiency Income Trust Plc",
-          "symbol": "SEIT",
-          "pct": 3.45
+          "pct": 7.0
         },
         {
           "name": "Chemring Group plc",
           "symbol": "CHG",
-          "pct": 3.19
+          "pct": 3.96
+        },
+        {
+          "name": "Baltic Classifieds Group plc",
+          "symbol": "BCG",
+          "pct": 3.89
         }
       ],
       "bottom": [
         {
-          "name": "Playtech plc",
-          "symbol": "PTEC",
-          "pct": -4.08
+          "name": "Gamma Communications plc",
+          "symbol": "GAMA",
+          "pct": -4.68
         },
         {
-          "name": "Harbour Energy plc",
-          "symbol": "HBR",
-          "pct": -3.24
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": -2.91
         },
         {
-          "name": "Applied Nutrition plc",
-          "symbol": "APN",
-          "pct": -2.73
+          "name": "THG plc",
+          "symbol": "THG",
+          "pct": -2.75
         }
       ],
       "breadth": {
-        "up": 97,
-        "down": 107,
-        "flat": 46,
+        "up": 161,
+        "down": 64,
+        "flat": 25,
         "priced": 250,
-        "median": 0.0
+        "median": 0.38
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -248,44 +248,44 @@
       "universe": "all 85 constituents",
       "top": [
         {
+          "name": "Orient Overseas (International) Limited",
+          "symbol": "0316.HK",
+          "pct": 2.266475037523415
+        },
+        {
           "name": "Galaxy Entertainment Group Limited",
           "symbol": "0027.HK",
-          "pct": 2.0573560154014827
+          "pct": 2.1820352502740925
         },
         {
           "name": "Shenzhou International Group Holdings Limited",
           "symbol": "2313.HK",
-          "pct": 1.928531870520557
-        },
-        {
-          "name": "Orient Overseas (International) Limited",
-          "symbol": "0316.HK",
-          "pct": 1.9230684585123397
+          "pct": 2.0419774673200193
         }
       ],
       "bottom": [
         {
           "name": "Sun Hung Kai Properties Limited",
           "symbol": "0016.HK",
-          "pct": -7.197938402868914
+          "pct": -7.283633438113841
         },
         {
           "name": "Zijin Mining Group Company Limited",
           "symbol": "2899.HK",
-          "pct": -7.016601288640283
+          "pct": -6.748796056416246
         },
         {
           "name": "Longfor Group Holdings Limited",
           "symbol": "0960.HK",
-          "pct": -5.337776495960286
+          "pct": -5.421181242188262
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 62,
-        "flat": 0,
+        "up": 24,
+        "down": 60,
+        "flat": 1,
         "priced": 85,
-        "median": -0.78
+        "median": -0.68
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
-          "symbol": "MUV2.DE",
-          "pct": 1.8548411707724293
+          "name": "Safran SA",
+          "symbol": "SAF.PA",
+          "pct": 2.5776359605493013
         },
         {
-          "name": "Intesa Sanpaolo S.p.A.",
-          "symbol": "ISP.MI",
-          "pct": 1.5775242924742547
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": 2.0735676871699185
         },
         {
-          "name": "Deutsche Börse AG",
-          "symbol": "DB1.DE",
-          "pct": 1.534520095774124
+          "name": "Siemens Aktiengesellschaft",
+          "symbol": "SIE.DE",
+          "pct": 1.9953482273142131
         }
       ],
       "bottom": [
         {
+          "name": "BASF SE",
+          "symbol": "BAS.DE",
+          "pct": -2.99962217762286
+        },
+        {
           "name": "SAP SE",
           "symbol": "SAP.DE",
-          "pct": -4.604614536170281
+          "pct": -1.0235109938446552
         },
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -3.6149605150761843
-        },
-        {
-          "name": "adidas AG",
-          "symbol": "ADS.DE",
-          "pct": -2.731307670435572
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -1.0185027483898346
         }
       ],
       "breadth": {
-        "up": 25,
-        "down": 25,
+        "up": 37,
+        "down": 13,
         "flat": 0,
         "priced": 50,
-        "median": -0.17
+        "median": 0.57
       },
       "built": "3 spark batches"
     },
