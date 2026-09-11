@@ -1,387 +1,387 @@
 {
-  "generated": "2026-09-10T11:31:35+00:00",
+  "generated": "2026-09-11T08:11:29+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Compass Group plc",
-          "symbol": "CPG",
-          "pct": 2.0
+          "name": "British American Tobacco plc",
+          "symbol": "BATS",
+          "pct": 1.3
+        },
+        {
+          "name": "Games Workshop Group",
+          "symbol": "GAW",
+          "pct": 1.21
         },
         {
           "name": "Hiscox Ltd",
           "symbol": "HSX",
-          "pct": 1.46
-        },
-        {
-          "name": "Whitbread plc",
-          "symbol": "WTB",
-          "pct": 1.34
+          "pct": 1.14
         }
       ],
       "bottom": [
         {
-          "name": "Associated British Foods plc",
-          "symbol": "ABF",
-          "pct": -11.04
+          "name": "RELX plc",
+          "symbol": "REL",
+          "pct": -2.33
         },
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": -4.53
+          "name": "Sage Group plc",
+          "symbol": "SGE",
+          "pct": -1.98
         },
         {
-          "name": "Anglo American Plc",
-          "symbol": "AAL",
-          "pct": -4.41
+          "name": "Compass Group plc",
+          "symbol": "CPG",
+          "pct": -1.91
         }
       ],
       "breadth": {
-        "up": 37,
-        "down": 55,
-        "flat": 8,
+        "up": 55,
+        "down": 42,
+        "flat": 3,
         "priced": 100,
-        "median": -0.1
+        "median": 0.08
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "HL market summary (delayed)",
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Dunelm Group Plc",
-          "symbol": "DNLM",
-          "pct": 6.47
+          "name": "XP Power Limited",
+          "symbol": "XPP",
+          "pct": 10.11
         },
         {
-          "name": "Pollen Street Group Limited",
-          "symbol": "POLN",
-          "pct": 4.12
+          "name": "SDCL Efficiency Income Trust Plc",
+          "symbol": "SEIT",
+          "pct": 3.45
         },
         {
-          "name": "Hansa Investment Company Limited",
-          "symbol": "HAN",
-          "pct": 3.68
+          "name": "Chemring Group plc",
+          "symbol": "CHG",
+          "pct": 3.19
         }
       ],
       "bottom": [
         {
-          "name": "THG plc",
-          "symbol": "THG",
-          "pct": -9.34
+          "name": "Playtech plc",
+          "symbol": "PTEC",
+          "pct": -4.08
         },
         {
-          "name": "Genus plc",
-          "symbol": "GNS",
-          "pct": -6.54
+          "name": "Harbour Energy plc",
+          "symbol": "HBR",
+          "pct": -3.24
         },
         {
-          "name": "Ceres Power Holdings",
-          "symbol": "CWR",
-          "pct": -4.87
+          "name": "Applied Nutrition plc",
+          "symbol": "APN",
+          "pct": -2.73
         }
       ],
       "breadth": {
-        "up": 91,
-        "down": 131,
-        "flat": 28,
+        "up": 97,
+        "down": 107,
+        "flat": 46,
         "priced": 250,
-        "median": -0.13
+        "median": 0.0
       },
       "built": "250 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Datadog, Inc.",
-          "symbol": "DDOG",
-          "pct": 7.154073562563323
+          "name": "Skyworks Solutions, Inc.",
+          "symbol": "SWKS",
+          "pct": 9.785730042041413
         },
         {
-          "name": "Meta Platforms, Inc.",
-          "symbol": "META",
-          "pct": 6.554414692054405
-        },
-        {
-          "name": "Fair Isaac Corporation",
-          "symbol": "FICO",
-          "pct": 5.3455496947359284
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Casey's General Stores, Inc.",
-          "symbol": "CASY",
-          "pct": -14.241497815685458
-        },
-        {
-          "name": "Vertiv Holdings Co",
-          "symbol": "VRT",
-          "pct": -9.60697768931251
+          "name": "Reddit, Inc.",
+          "symbol": "RDDT",
+          "pct": 6.077570163962167
         },
         {
           "name": "Charter Communications, Inc.",
           "symbol": "CHTR",
-          "pct": -8.130921954762414
+          "pct": 4.981700051797144
+        }
+      ],
+      "bottom": [
+        {
+          "name": "The Cooper Companies, Inc.",
+          "symbol": "COO",
+          "pct": -14.66603881604728
+        },
+        {
+          "name": "Baker Hughes Company",
+          "symbol": "BKR",
+          "pct": -6.6624731370742305
+        },
+        {
+          "name": "Freeport-McMoRan Inc.",
+          "symbol": "FCX",
+          "pct": -6.5853391727606905
         }
       ],
       "breadth": {
-        "up": 98,
-        "down": 405,
-        "flat": 0,
+        "up": 167,
+        "down": 332,
+        "flat": 4,
         "priced": 503,
-        "median": -0.89
+        "median": -0.62
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Datadog, Inc.",
-          "symbol": "DDOG",
-          "pct": 7.154073562563323
+          "name": "Apple Inc.",
+          "symbol": "AAPL",
+          "pct": 3.5612390171702266
         },
         {
-          "name": "Meta Platforms, Inc.",
-          "symbol": "META",
-          "pct": 6.554414692054405
+          "name": "AppLovin Corporation",
+          "symbol": "APP",
+          "pct": 3.091192798547769
         },
         {
-          "name": "Marvell Technology, Inc.",
-          "symbol": "MRVL",
-          "pct": 4.258901862721671
+          "name": "Take-Two Interactive Software, Inc.",
+          "symbol": "TTWO",
+          "pct": 2.7564683816628293
         }
       ],
       "bottom": [
         {
-          "name": "Comcast Corporation",
-          "symbol": "CMCSA",
-          "pct": -6.608430596885668
-        },
-        {
-          "name": "Shopify Inc.",
-          "symbol": "SHOP",
-          "pct": -5.451159474478681
+          "name": "Baker Hughes Company",
+          "symbol": "BKR",
+          "pct": -6.6624731370742305
         },
         {
           "name": "CoreWeave, Inc.",
           "symbol": "CRWV",
-          "pct": -4.898326454930784
+          "pct": -6.1301870077537925
+        },
+        {
+          "name": "Lam Research Corporation",
+          "symbol": "LRCX",
+          "pct": -5.645259238538878
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 79,
+        "up": 33,
+        "down": 69,
         "flat": 0,
         "priced": 102,
-        "median": -0.95
+        "median": -0.9
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "International Business Machines Corporation",
-          "symbol": "IBM",
-          "pct": 3.3823112703604474
+          "name": "Apple Inc.",
+          "symbol": "AAPL",
+          "pct": 3.5612390171702266
         },
         {
-          "name": "Chevron Corporation",
-          "symbol": "CVX",
-          "pct": 1.9113414911851403
+          "name": "The Walt Disney Company",
+          "symbol": "DIS",
+          "pct": 1.574197912117841
         },
         {
-          "name": "JPMorgan Chase & Co.",
-          "symbol": "JPM",
-          "pct": 0.3394477260343224
+          "name": "Alphabet Inc.",
+          "symbol": "GOOGL",
+          "pct": 0.5897511698251338
         }
       ],
       "bottom": [
         {
-          "name": "Alphabet Inc.",
-          "symbol": "GOOGL",
-          "pct": -2.2786357101497376
+          "name": "International Business Machines Corporation",
+          "symbol": "IBM",
+          "pct": -2.467282699303542
         },
         {
-          "name": "The Boeing Company",
-          "symbol": "BA",
-          "pct": -2.0452700830337944
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": -2.3740321017854766
         },
         {
-          "name": "The Procter & Gamble Company",
-          "symbol": "PG",
-          "pct": -2.0195098258194264
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": -2.2490832519897808
         }
       ],
       "breadth": {
-        "up": 5,
-        "down": 25,
+        "up": 7,
+        "down": 23,
         "flat": 0,
         "priced": 30,
-        "median": -0.88
+        "median": -0.48
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "China Life Insurance Company Limited",
-          "symbol": "2628.HK",
-          "pct": 2.23880548731529
+          "name": "Galaxy Entertainment Group Limited",
+          "symbol": "0027.HK",
+          "pct": 2.0573560154014827
         },
         {
-          "name": "China Construction Bank Corporation",
-          "symbol": "0939.HK",
-          "pct": 1.6129104285431457
-        },
-        {
-          "name": "China Unicom (Hong Kong) Limited",
-          "symbol": "0762.HK",
-          "pct": 1.5584359179998635
-        }
-      ],
-      "bottom": [
-        {
-          "name": "China Resources Mixc Lifestyle Services Limited",
-          "symbol": "1209.HK",
-          "pct": -5.128209469007514
+          "name": "Shenzhou International Group Holdings Limited",
+          "symbol": "2313.HK",
+          "pct": 1.928531870520557
         },
         {
           "name": "Orient Overseas (International) Limited",
           "symbol": "0316.HK",
-          "pct": -4.774354535233633
+          "pct": 1.9230684585123397
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Sun Hung Kai Properties Limited",
+          "symbol": "0016.HK",
+          "pct": -7.197938402868914
         },
         {
-          "name": "Hansoh Pharmaceutical Group Company Limited",
-          "symbol": "3692.HK",
-          "pct": -4.19539976000292
+          "name": "Zijin Mining Group Company Limited",
+          "symbol": "2899.HK",
+          "pct": -7.016601288640283
+        },
+        {
+          "name": "Longfor Group Holdings Limited",
+          "symbol": "0960.HK",
+          "pct": -5.337776495960286
         }
       ],
       "breadth": {
-        "up": 11,
-        "down": 72,
-        "flat": 2,
+        "up": 23,
+        "down": 62,
+        "flat": 0,
         "priced": 85,
-        "median": -1.52
+        "median": -0.78
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Ferrari N.V.",
-          "symbol": "RACE.MI",
-          "pct": 1.8930600557713149
-        },
-        {
           "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
           "symbol": "MUV2.DE",
-          "pct": 1.6935471565492692
+          "pct": 1.8548411707724293
+        },
+        {
+          "name": "Intesa Sanpaolo S.p.A.",
+          "symbol": "ISP.MI",
+          "pct": 1.5775242924742547
         },
         {
           "name": "Deutsche Börse AG",
           "symbol": "DB1.DE",
-          "pct": 1.6075972598627968
+          "pct": 1.534520095774124
         }
       ],
       "bottom": [
         {
-          "name": "adidas AG",
-          "symbol": "ADS.DE",
-          "pct": -3.44827801774729
-        },
-        {
           "name": "SAP SE",
           "symbol": "SAP.DE",
-          "pct": -2.3296480873984984
+          "pct": -4.604614536170281
         },
         {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": -1.6393417387733726
+          "pct": -3.6149605150761843
+        },
+        {
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": -2.731307670435572
         }
       ],
       "breadth": {
-        "up": 29,
-        "down": 21,
+        "up": 25,
+        "down": 25,
         "flat": 0,
         "priced": 50,
-        "median": 0.23
+        "median": -0.17
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-10",
+      "asAt": "2026-09-11",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Sharp Corporation",
-          "symbol": "6753.T",
-          "pct": 6.2897138114149325
+          "name": "LY Corporation",
+          "symbol": "4689.T",
+          "pct": 3.4391102110786638
         },
         {
-          "name": "Nidec Corporation",
-          "symbol": "6594.T",
-          "pct": 5.634890003859513
+          "name": "Kawasaki Kisen Kaisha, Ltd.",
+          "symbol": "9107.T",
+          "pct": 2.9393939393939394
         },
         {
-          "name": "Murata Manufacturing Co., Ltd.",
-          "symbol": "6981.T",
-          "pct": 5.569584736251403
+          "name": "Daiichi Life Group, Inc.",
+          "symbol": "8750.T",
+          "pct": 2.7277686852154934
         }
       ],
       "bottom": [
         {
-          "name": "The Japan Steel Works, Ltd.",
-          "symbol": "5631.T",
-          "pct": -6.5098468271334795
+          "name": "Resonac Holdings Corporation",
+          "symbol": "4004.T",
+          "pct": -10.684161199625116
         },
         {
-          "name": "Mitsui Kinzoku Company, Limited",
-          "symbol": "5706.T",
-          "pct": -5.706106870229008
+          "name": "TOPPAN Holdings Inc.",
+          "symbol": "7911.T",
+          "pct": -6.951555730602599
         },
         {
-          "name": "Shimizu Corporation",
-          "symbol": "1803.T",
-          "pct": -5.604894414841128
+          "name": "Sumitomo Metal Mining Co., Ltd.",
+          "symbol": "5713.T",
+          "pct": -6.928361138370952
         }
       ],
       "breadth": {
-        "up": 109,
-        "down": 111,
-        "flat": 3,
+        "up": 95,
+        "down": 127,
+        "flat": 1,
         "priced": 223,
-        "median": 0.0
+        "median": -0.32
       },
       "built": "12 spark batches"
     }
