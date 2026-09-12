@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-12T08:10:00+00:00",
+  "generated": "2026-09-12T10:57:21+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Deutsche Börse AG",
-          "symbol": "DB1.DE",
-          "pct": 2.1921811225428445
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 4.9462404551385095
         },
         {
-          "name": "Ferrari N.V.",
-          "symbol": "RACE.MI",
-          "pct": 1.5028937014541186
+          "name": "Intesa Sanpaolo S.p.A.",
+          "symbol": "ISP.MI",
+          "pct": 2.551780169343752
         },
         {
-          "name": "BASF SE",
-          "symbol": "BAS.DE",
-          "pct": 1.2144200766283637
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": 2.5466320415834853
         }
       ],
       "bottom": [
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -3.425806685825566
+          "name": "BASF SE",
+          "symbol": "BAS.DE",
+          "pct": -2.8308929831526117
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -2.976431089703997
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": -2.5383754632432534
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": -2.7562032534782253
+          "name": "Deutsche Börse AG",
+          "symbol": "DB1.DE",
+          "pct": -1.2155968057469495
         }
       ],
       "breadth": {
-        "up": 18,
-        "down": 31,
-        "flat": 1,
+        "up": 34,
+        "down": 16,
+        "flat": 0,
         "priced": 50,
-        "median": -0.29
+        "median": 0.49
       },
       "built": "3 spark batches"
     },
