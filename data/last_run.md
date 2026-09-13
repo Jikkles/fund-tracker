@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-09-12
+# Fund tracker - automated run 2026-09-13
 
-Window: 13 Aug 2026 to 12 Sep 2026
+Window: 14 Aug 2026 to 13 Sep 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -10,24 +10,24 @@ Window: 13 Aug 2026 to 12 Sep 2026
 ## Maintenance needed
 
 - UK monthly GDP: no upcoming release resolved from the ONS release calendar. The catalyst will show no date until it does.
-- 14 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (165d), jupiter-asian-income (165d), artemis-us-smaller-companies (151d), and 11 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 17 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (166d), jupiter-asian-income (166d), artemis-us-smaller-companies (152d), and 14 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 - 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -1.14% |
-| FTSE 250 | -3.47% |
-| S&P 500 | -1.82% |
-| Nasdaq 100 | -2.38% |
-| Euro STOXX 50 | -3.37% |
-| Nikkei 225 | -6.29% |
-| Hang Seng | -2.33% |
-| Gold (USD/oz) | +0.06% |
-| Brent crude | +20.14% |
-| US 10yr yield | +7.20% |
-| GBP/USD | +0.23% |
+| FTSE 100 | -0.93% |
+| FTSE 250 | -3.59% |
+| S&P 500 | -1.65% |
+| Nasdaq 100 | -2.26% |
+| Euro STOXX 50 | -3.28% |
+| Nikkei 225 | -6.84% |
+| Hang Seng | -1.24% |
+| Gold (USD/oz) | +0.65% |
+| Brent crude | +18.18% |
+| US 10yr yield | +5.94% |
+| GBP/USD | +0.29% |
 
 ## Fund NAV figures (1 month)
 
