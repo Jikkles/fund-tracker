@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T08:12:17+00:00",
+  "generated": "2026-09-14T13:02:27+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Smith & Nephew plc",
-          "symbol": "SN.",
-          "pct": 3.57
-        },
-        {
           "name": "Sage Group plc",
           "symbol": "SGE",
-          "pct": 3.38
+          "pct": 6.32
         },
         {
           "name": "RELX plc",
           "symbol": "REL",
-          "pct": 3.27
+          "pct": 6.18
+        },
+        {
+          "name": "GSK plc",
+          "symbol": "GSK",
+          "pct": 4.94
         }
       ],
       "bottom": [
         {
-          "name": "Halma plc",
-          "symbol": "HLMA",
-          "pct": -4.62
-        },
-        {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": -3.77
+          "pct": -5.83
         },
         {
-          "name": "Polar Capital Technology Trust plc",
-          "symbol": "PCT",
-          "pct": -3.44
+          "name": "Halma plc",
+          "symbol": "HLMA",
+          "pct": -5.06
+        },
+        {
+          "name": "Anglo American Plc",
+          "symbol": "AAL",
+          "pct": -4.04
         }
       ],
       "breadth": {
-        "up": 49,
-        "down": 49,
+        "up": 47,
+        "down": 51,
         "flat": 2,
         "priced": 100,
-        "median": 0.0
+        "median": -0.07
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "WAG Payment Solutions plc",
-          "symbol": "EWG",
-          "pct": 4.83
-        },
-        {
-          "name": "THG plc",
-          "symbol": "THG",
-          "pct": 3.88
-        },
-        {
           "name": "WPP plc",
           "symbol": "WPP",
-          "pct": 2.91
+          "pct": 5.15
+        },
+        {
+          "name": "Trainline plc",
+          "symbol": "TRN",
+          "pct": 4.14
+        },
+        {
+          "name": "Hays plc",
+          "symbol": "HAS",
+          "pct": 3.96
         }
       ],
       "bottom": [
         {
           "name": "GlobalData plc",
           "symbol": "DATA",
-          "pct": -24.02
+          "pct": -20.39
         },
         {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -6.7
+          "pct": -12.61
         },
         {
-          "name": "Oxford Instruments plc",
-          "symbol": "OXIG",
-          "pct": -6.01
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": -7.23
         }
       ],
       "breadth": {
-        "up": 64,
-        "down": 163,
-        "flat": 23,
+        "up": 89,
+        "down": 153,
+        "flat": 8,
         "priced": 250,
-        "median": -0.46
+        "median": -0.41
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -248,19 +248,19 @@
       "universe": "all 85 constituents",
       "top": [
         {
+          "name": "Hansoh Pharmaceutical Group Company Limited",
+          "symbol": "3692.HK",
+          "pct": 5.13447506876248
+        },
+        {
           "name": "WuXi AppTec Co., Ltd.",
           "symbol": "2359.HK",
           "pct": 4.819910327136956
         },
         {
-          "name": "Hansoh Pharmaceutical Group Company Limited",
-          "symbol": "3692.HK",
-          "pct": 4.584351907208658
-        },
-        {
           "name": "WuXi Biologics (Cayman) Inc.",
           "symbol": "2269.HK",
-          "pct": 4.468081859832115
+          "pct": 4.553190190741356
         }
       ],
       "bottom": [
@@ -272,20 +272,20 @@
         {
           "name": "Sunny Optical Technology (Group) Company Limited",
           "symbol": "2382.HK",
-          "pct": -3.5455817689485842
+          "pct": -3.1114349831485333
         },
         {
-          "name": "CITIC Limited",
-          "symbol": "0267.HK",
-          "pct": -2.9861606779436864
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": -2.9295364119036917
         }
       ],
       "breadth": {
         "up": 45,
-        "down": 40,
-        "flat": 0,
+        "down": 39,
+        "flat": 1,
         "priced": 85,
-        "median": 0.12
+        "median": 0.24
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Wolters Kluwer N.V.",
           "symbol": "WKL.AS",
-          "pct": 4.106282168512645
-        },
-        {
-          "name": "Deutsche Börse AG",
-          "symbol": "DB1.DE",
-          "pct": 2.42490499567143
+          "pct": 7.336957679779419
         },
         {
           "name": "SAP SE",
           "symbol": "SAP.DE",
-          "pct": 2.324275360291561
+          "pct": 4.975746134234823
+        },
+        {
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": 3.030938249258997
         }
       ],
       "bottom": [
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -6.676912151158939
-        },
-        {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": -5.808949080215264
+          "pct": -8.512407629902532
+        },
+        {
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": -8.418716170700662
         },
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": -4.500173764633052
+          "pct": -7.07660792565914
         }
       ],
       "breadth": {
-        "up": 26,
-        "down": 24,
+        "up": 27,
+        "down": 23,
         "flat": 0,
         "priced": 50,
-        "median": 0.22
+        "median": 0.15
       },
       "built": "3 spark batches"
     },
