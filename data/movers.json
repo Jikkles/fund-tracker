@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T08:10:49+00:00",
+  "generated": "2026-09-15T11:53:54+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Marks & Spencer Group plc",
           "symbol": "MKS",
-          "pct": 2.08
+          "pct": 2.64
+        },
+        {
+          "name": "Persimmon plc",
+          "symbol": "PSN",
+          "pct": 2.44
         },
         {
           "name": "Kingfisher",
           "symbol": "KGF",
-          "pct": 1.49
-        },
-        {
-          "name": "BAE Systems plc",
-          "symbol": "BA.",
-          "pct": 0.98
+          "pct": 2.26
         }
       ],
       "bottom": [
         {
-          "name": "Aberdeen Group Plc",
-          "symbol": "ABDN",
-          "pct": -3.16
+          "name": "RELX plc",
+          "symbol": "REL",
+          "pct": -3.84
         },
         {
-          "name": "London Stock Exchange Group plc",
-          "symbol": "LSEG",
-          "pct": -2.69
+          "name": "Experian Plc",
+          "symbol": "EXPN",
+          "pct": -2.59
         },
         {
-          "name": "ICG Plc",
-          "symbol": "ICG",
-          "pct": -2.67
+          "name": "Informa plc",
+          "symbol": "INF",
+          "pct": -2.52
         }
       ],
       "breadth": {
-        "up": 13,
-        "down": 86,
-        "flat": 1,
+        "up": 52,
+        "down": 44,
+        "flat": 4,
         "priced": 100,
-        "median": -0.8
+        "median": 0.08
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Wickes Group Plc",
           "symbol": "WIX",
-          "pct": 8.15
-        },
-        {
-          "name": "Kier Group plc",
-          "symbol": "KIE",
-          "pct": 3.39
+          "pct": 8.95
         },
         {
           "name": "IP Group Plc",
           "symbol": "IPO",
-          "pct": 3.2
+          "pct": 4.41
+        },
+        {
+          "name": "Kier Group plc",
+          "symbol": "KIE",
+          "pct": 3.71
         }
       ],
       "bottom": [
         {
           "name": "Trustpilot Group plc",
           "symbol": "TRST",
-          "pct": -16.73
+          "pct": -16.2
+        },
+        {
+          "name": "CMC Markets Plc",
+          "symbol": "CMCX",
+          "pct": -4.51
         },
         {
           "name": "Pollen Street Group Limited",
           "symbol": "POLN",
-          "pct": -5.2
-        },
-        {
-          "name": "Bridgepoint Group plc",
-          "symbol": "BPT",
-          "pct": -3.93
+          "pct": -3.51
         }
       ],
       "breadth": {
-        "up": 45,
-        "down": 182,
-        "flat": 23,
+        "up": 113,
+        "down": 118,
+        "flat": 19,
         "priced": 250,
-        "median": -0.5
+        "median": 0.0
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -137,11 +137,11 @@
         }
       ],
       "breadth": {
-        "up": 285,
-        "down": 217,
+        "up": 284,
+        "down": 218,
         "flat": 1,
         "priced": 503,
-        "median": 0.28
+        "median": 0.27
       },
       "built": "26 spark batches"
     },
@@ -248,14 +248,14 @@
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Techtronic Industries Company Limited",
-          "symbol": "0669.HK",
-          "pct": 2.6107558406062568
-        },
-        {
           "name": "NetEase, Inc.",
           "symbol": "9999.HK",
-          "pct": 2.5809976884736905
+          "pct": 2.745744004620036
+        },
+        {
+          "name": "Techtronic Industries Company Limited",
+          "symbol": "0669.HK",
+          "pct": 2.53164916060666
         },
         {
           "name": "Tencent Holdings Limited",
@@ -267,12 +267,12 @@
         {
           "name": "BOC Hong Kong (Holdings) Limited",
           "symbol": "2388.HK",
-          "pct": -4.753034444048952
+          "pct": -4.566636893304947
         },
         {
-          "name": "Hengan International Group Company Limited",
-          "symbol": "1044.HK",
-          "pct": -3.753612419978329
+          "name": "Zijin Mining Group Company Limited",
+          "symbol": "2899.HK",
+          "pct": -3.8128241928063975
         },
         {
           "name": "Chow Tai Fook Jewellery Group Limited",
@@ -281,11 +281,11 @@
         }
       ],
       "breadth": {
-        "up": 12,
-        "down": 70,
+        "up": 14,
+        "down": 68,
         "flat": 3,
         "priced": 85,
-        "median": -1.38
+        "median": -1.36
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 4.710149225847938
-        },
-        {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 3.9490015891487853
-        },
-        {
-          "name": "Koninklijke Ahold Delhaize N.V.",
-          "symbol": "AD.AS",
-          "pct": 3.1178923544251353
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -8.637177269882464
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": 2.478179181751695
         },
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": -8.35041511214174
+          "pct": 1.424871289264592
         },
         {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": -6.887673613932202
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 1.340248950246366
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": -3.8461555058724333
+        },
+        {
+          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+          "symbol": "MC.PA",
+          "pct": -2.0122228215187046
+        },
+        {
+          "name": "Deutsche Bank Aktiengesellschaft",
+          "symbol": "DBK.DE",
+          "pct": -1.7716056512475455
         }
       ],
       "breadth": {
-        "up": 19,
-        "down": 31,
+        "up": 18,
+        "down": 32,
         "flat": 0,
         "priced": 50,
-        "median": -0.99
+        "median": -0.33
       },
       "built": "3 spark batches"
     },
