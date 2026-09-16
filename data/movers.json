@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T08:09:53+00:00",
+  "generated": "2026-09-16T11:49:12+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Barratt Redrow Plc",
           "symbol": "BTRW",
-          "pct": 7.45
+          "pct": 9.26
         },
         {
           "name": "Persimmon plc",
           "symbol": "PSN",
-          "pct": 3.32
+          "pct": 4.51
         },
         {
           "name": "Fresnillo",
           "symbol": "FRES",
-          "pct": 3.09
+          "pct": 4.35
         }
       ],
       "bottom": [
         {
           "name": "Marks & Spencer Group plc",
           "symbol": "MKS",
-          "pct": -4.29
+          "pct": -3.04
         },
         {
           "name": "JD Sports Fashion plc",
           "symbol": "JD.",
-          "pct": -1.77
+          "pct": -1.72
         },
         {
-          "name": "Tesco plc",
-          "symbol": "TSCO",
-          "pct": -1.61
+          "name": "Sainsbury (J) plc",
+          "symbol": "SBRY",
+          "pct": -1.66
         }
       ],
       "breadth": {
-        "up": 56,
-        "down": 41,
+        "up": 65,
+        "down": 32,
         "flat": 3,
         "priced": 100,
-        "median": 0.14
+        "median": 0.54
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,29 +58,29 @@
         {
           "name": "Kier Group plc",
           "symbol": "KIE",
-          "pct": 7.14
+          "pct": 10.71
         },
         {
           "name": "Pan African Resources plc",
           "symbol": "PAF",
-          "pct": 5.85
+          "pct": 7.94
         },
         {
-          "name": "Vistry Group Plc",
-          "symbol": "VTY",
-          "pct": 3.76
+          "name": "Bellway plc",
+          "symbol": "BWY",
+          "pct": 5.02
         }
       ],
       "bottom": [
         {
-          "name": "Moonpig Group Plc",
-          "symbol": "MOON",
-          "pct": -6.13
-        },
-        {
           "name": "Frasers Group plc",
           "symbol": "FRAS",
-          "pct": -4.28
+          "pct": -4.47
+        },
+        {
+          "name": "Oxford Biomedica plc",
+          "symbol": "OXB",
+          "pct": -3.04
         },
         {
           "name": "Hansa Investment Company Limited",
@@ -89,11 +89,11 @@
         }
       ],
       "breadth": {
-        "up": 142,
-        "down": 74,
-        "flat": 34,
+        "up": 184,
+        "down": 49,
+        "flat": 17,
         "priced": 250,
-        "median": 0.15
+        "median": 0.5
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -250,12 +250,12 @@
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 8.076924346607786
+          "pct": 8.333328238919375
         },
         {
           "name": "Longfor Group Holdings Limited",
           "symbol": "0960.HK",
-          "pct": 5.904760814848401
+          "pct": 6.095241364978608
         },
         {
           "name": "Semiconductor Manufacturing International Corporation",
@@ -267,25 +267,25 @@
         {
           "name": "Sands China Ltd.",
           "symbol": "1928.HK",
-          "pct": -5.468748428393179
+          "pct": -5.625002002343506
+        },
+        {
+          "name": "Shenzhou International Group Holdings Limited",
+          "symbol": "2313.HK",
+          "pct": -2.378256398204284
         },
         {
           "name": "JD Logistics, Inc.",
           "symbol": "2618.HK",
           "pct": -2.2620148810949656
-        },
-        {
-          "name": "Zhongsheng Group Holdings Limited",
-          "symbol": "0881.HK",
-          "pct": -2.218698379637799
         }
       ],
       "breadth": {
         "up": 43,
-        "down": 42,
-        "flat": 0,
+        "down": 41,
+        "flat": 1,
         "priced": 85,
-        "median": 0.1
+        "median": 0.06
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": 2.739037569841836
-        },
-        {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 2.095207668735124
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 2.930076944665533
         },
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 1.944822674380487
+          "pct": 2.1654172051221803
+        },
+        {
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 1.6933519932617551
         }
       ],
       "bottom": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": -3.8461555058724333
+          "name": "Mercedes-Benz Group AG",
+          "symbol": "MBG.DE",
+          "pct": -2.5343648418633515
         },
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -3.2054650551760377
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": -2.0948916151216386
         },
         {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -3.1117397454031117
+          "name": "Prosus N.V.",
+          "symbol": "PRX.AS",
+          "pct": -1.9755830065362214
         }
       ],
       "breadth": {
-        "up": 19,
-        "down": 30,
+        "up": 30,
+        "down": 19,
         "flat": 1,
         "priced": 50,
-        "median": -0.33
+        "median": 0.37
       },
       "built": "3 spark batches"
     },
