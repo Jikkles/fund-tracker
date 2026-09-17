@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T08:09:41+00:00",
+  "generated": "2026-09-17T11:52:10+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Sage Group plc",
-          "symbol": "SGE",
-          "pct": 1.78
-        },
-        {
-          "name": "Spirax Group plc",
-          "symbol": "SPX",
-          "pct": 1.75
-        },
-        {
           "name": "SSE plc",
           "symbol": "SSE",
-          "pct": 1.71
+          "pct": 2.21
+        },
+        {
+          "name": "Kingfisher",
+          "symbol": "KGF",
+          "pct": 2.03
+        },
+        {
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": 1.99
         }
       ],
       "bottom": [
         {
           "name": "Marks & Spencer Group plc",
           "symbol": "MKS",
-          "pct": -2.26
+          "pct": -2.21
         },
         {
           "name": "JD Sports Fashion plc",
           "symbol": "JD.",
-          "pct": -1.39
+          "pct": -1.26
         },
         {
-          "name": "Reckitt Benckiser Group Plc",
-          "symbol": "RKT",
-          "pct": -0.87
+          "name": "Glencore plc",
+          "symbol": "GLEN",
+          "pct": -0.88
         }
       ],
       "breadth": {
-        "up": 78,
-        "down": 21,
-        "flat": 1,
+        "up": 74,
+        "down": 22,
+        "flat": 4,
         "priced": 100,
-        "median": 0.41
+        "median": 0.46
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Bytes Technology Group plc",
           "symbol": "BYIT",
-          "pct": 8.21
+          "pct": 12.49
+        },
+        {
+          "name": "Galliford Try Holdings Plc",
+          "symbol": "GFRD",
+          "pct": 6.21
         },
         {
           "name": "Man Group plc",
           "symbol": "EMG",
-          "pct": 4.42
-        },
-        {
-          "name": "Wizz Air Holdings plc",
-          "symbol": "WIZZ",
-          "pct": 4.04
+          "pct": 5.31
         }
       ],
       "bottom": [
         {
           "name": "Foresight Group Holdings Ltd",
           "symbol": "FSG",
-          "pct": -4.73
+          "pct": -5.05
         },
         {
-          "name": "Avon Technologies Plc",
-          "symbol": "AVON",
-          "pct": -4.58
+          "name": "Goodwin plc",
+          "symbol": "GDWN",
+          "pct": -3.47
         },
         {
-          "name": "JPMorgan Emerging Markets Dividend Income Plc",
-          "symbol": "JEMI",
-          "pct": -3.83
+          "name": "Unite Group",
+          "symbol": "UTG",
+          "pct": -3.17
         }
       ],
       "breadth": {
-        "up": 147,
-        "down": 71,
-        "flat": 32,
+        "up": 183,
+        "down": 51,
+        "flat": 16,
         "priced": 250,
-        "median": 0.24
+        "median": 0.58
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -250,42 +250,42 @@
         {
           "name": "BYD Company Limited",
           "symbol": "1211.HK",
-          "pct": 2.3358663823240025
+          "pct": 2.4621270868369627
         },
         {
           "name": "BYD Electronic (International) Company Limited",
           "symbol": "0285.HK",
-          "pct": 1.7123270893795304
+          "pct": 1.5410902979317678
         },
         {
-          "name": "Budweiser Brewing Company APAC Limited",
-          "symbol": "1876.HK",
-          "pct": 1.199660174871344
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": 1.5384629275183803
         }
       ],
       "bottom": [
         {
-          "name": "PetroChina Company Limited",
-          "symbol": "0857.HK",
-          "pct": -2.7579111863270183
-        },
-        {
-          "name": "China Petroleum & Chemical Corporation",
-          "symbol": "0386.HK",
-          "pct": -2.6058606962443767
-        },
-        {
           "name": "ENN Energy Holdings Limited",
           "symbol": "2688.HK",
-          "pct": -2.5620598608222624
+          "pct": -2.52233700407987
+        },
+        {
+          "name": "PetroChina Company Limited",
+          "symbol": "0857.HK",
+          "pct": -2.3493313905263222
+        },
+        {
+          "name": "Chow Tai Fook Jewellery Group Limited",
+          "symbol": "1929.HK",
+          "pct": -2.302924975733677
         }
       ],
       "breadth": {
-        "up": 31,
-        "down": 50,
-        "flat": 4,
+        "up": 34,
+        "down": 49,
+        "flat": 2,
         "priced": 85,
-        "median": -0.33
+        "median": -0.22
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 5.187965335702538
+          "pct": 3.1213527798327587
+        },
+        {
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 2.735759220529775
         },
         {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": 2.930076944665533
-        },
-        {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 2.8332795700712667
+          "pct": 1.9911223177447854
         }
       ],
       "bottom": [
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -2.318589110347713
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -1.7918718085103025
         },
         {
-          "name": "Prosus N.V.",
-          "symbol": "PRX.AS",
-          "pct": -2.236242649289218
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": -1.3090931285511362
         },
         {
-          "name": "Mercedes-Benz Group AG",
-          "symbol": "MBG.DE",
-          "pct": -1.6859961861221548
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -0.7839922808851167
         }
       ],
       "breadth": {
-        "up": 38,
-        "down": 12,
+        "up": 35,
+        "down": 15,
         "flat": 0,
         "priced": 50,
-        "median": 0.56
+        "median": 0.37
       },
       "built": "3 spark batches"
     },
