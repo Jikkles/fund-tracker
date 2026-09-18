@@ -16,17 +16,17 @@ Window: 19 Aug 2026 to 18 Sep 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +0.28% |
-| FTSE 250 | -1.24% |
+| FTSE 100 | -0.20% |
+| FTSE 250 | -1.16% |
 | S&P 500 | -0.91% |
 | Nasdaq 100 | +0.07% |
-| Euro STOXX 50 | -2.14% |
+| Euro STOXX 50 | -2.82% |
 | Nikkei 225 | -0.47% |
 | Hang Seng | -2.92% |
-| Gold (USD/oz) | -2.42% |
-| Brent crude | +7.40% |
+| Gold (USD/oz) | -2.71% |
+| Brent crude | +7.92% |
 | US 10yr yield | +6.32% |
-| GBP/USD | -1.23% |
+| GBP/USD | -1.35% |
 
 ## Fund NAV figures (1 month)
 
@@ -67,7 +67,7 @@ Window: 19 Aug 2026 to 18 Sep 2026
 | fidelity-special-situations | 0P0000WUU1.L | -0.46% | 17 Sep 2026 |
 | first-sentier-global-listed-infrastructure | 0P00009VDK.L | -2.15% | 17 Sep 2026 |
 | fssa-asia-focus | 0P00015W87.L | +0.76% | 17 Sep 2026 |
-| fssa-greater-china-growth | 0P00000EU6.L | -2.32% | 15 Sep 2026 |
+| fssa-greater-china-growth | 0P00000EU6.L | -1.87% | 17 Sep 2026 |
 | ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | -2.62% | 17 Sep 2026 |
 | ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -7.73% | 17 Sep 2026 |
 | hsbc-american-index | 0P0000WN7H.L | -1.79% | 17 Sep 2026 |

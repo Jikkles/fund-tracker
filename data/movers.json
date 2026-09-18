@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18T08:10:43+00:00",
+  "generated": "2026-09-18T11:28:21+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Fresnillo",
           "symbol": "FRES",
-          "pct": 3.3
+          "pct": 2.06
         },
         {
           "name": "IG Group Holdings Plc",
           "symbol": "IGG",
-          "pct": 2.36
+          "pct": 1.98
         },
         {
           "name": "Endeavour Mining plc",
           "symbol": "EDV",
-          "pct": 2.31
+          "pct": 1.07
         }
       ],
       "bottom": [
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": -6.45
+          "pct": -8.41
         },
         {
           "name": "Coca-Cola HBC AG",
           "symbol": "CCH",
-          "pct": -3.73
+          "pct": -5.38
         },
         {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": -3.55
+          "name": "Vodafone Group plc",
+          "symbol": "VOD",
+          "pct": -4.63
         }
       ],
       "breadth": {
-        "up": 20,
+        "up": 24,
         "down": 75,
-        "flat": 5,
+        "flat": 1,
         "priced": 100,
-        "median": -0.48
+        "median": -0.77
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,42 +56,42 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Rank Group",
-          "symbol": "RNK",
-          "pct": 4.62
+          "name": "Ocado Group plc",
+          "symbol": "OCDO",
+          "pct": 5.63
         },
         {
-          "name": "Auction Technology Group plc",
-          "symbol": "ATG",
-          "pct": 3.33
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": 4.61
         },
         {
-          "name": "Galliford Try Holdings Plc",
-          "symbol": "GFRD",
-          "pct": 3.08
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 4.16
         }
       ],
       "bottom": [
         {
-          "name": "Saga plc",
-          "symbol": "SAGA",
-          "pct": -2.1
+          "name": "Softcat plc",
+          "symbol": "SCT",
+          "pct": -3.25
         },
         {
-          "name": "B&M European Value Retail",
-          "symbol": "BME",
-          "pct": -1.95
+          "name": "Schiehallion Fund Limited",
+          "symbol": "MNTN",
+          "pct": -3.12
         },
         {
-          "name": "Caledonia Investments plc",
-          "symbol": "CLDN",
-          "pct": -1.7
+          "name": "Playtech plc",
+          "symbol": "PTEC",
+          "pct": -2.79
         }
       ],
       "breadth": {
-        "up": 88,
-        "down": 121,
-        "flat": 41,
+        "up": 106,
+        "down": 123,
+        "flat": 21,
         "priced": 250,
         "median": 0.0
       },
@@ -250,42 +250,42 @@
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 10.023306111007246
-        },
-        {
-          "name": "Semiconductor Manufacturing International Corporation",
-          "symbol": "0981.HK",
-          "pct": 4.086531025653472
+          "pct": 9.498840807746593
         },
         {
           "name": "JD Health International Inc.",
           "symbol": "6618.HK",
-          "pct": 3.9193100301141213
+          "pct": 4.553308304375897
+        },
+        {
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": 4.407051174284833
         }
       ],
       "bottom": [
         {
           "name": "China Unicom (Hong Kong) Limited",
           "symbol": "0762.HK",
-          "pct": -2.476515464631184
+          "pct": -2.13492740551315
         },
         {
           "name": "China Mengniu Dairy Company Limited",
           "symbol": "2319.HK",
-          "pct": -1.713650985779762
+          "pct": -1.7689314103098046
         },
         {
           "name": "Tencent Holdings Limited",
           "symbol": "0700.HK",
-          "pct": -1.0798136393229165
+          "pct": -1.643192488262911
         }
       ],
       "breadth": {
-        "up": 53,
+        "up": 51,
         "down": 29,
-        "flat": 3,
+        "flat": 5,
         "priced": 85,
-        "median": 0.4
+        "median": 0.29
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 3.9235742957943964
+          "pct": 3.063019513267758
+        },
+        {
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": 2.8281876844774345
         },
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": 3.2927746628512047
-        },
-        {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 3.2373639036621973
+          "pct": 2.6664324873934766
         }
       ],
       "bottom": [
         {
           "name": "Deutsche Telekom AG",
           "symbol": "DTE.DE",
-          "pct": -5.166434685280202
+          "pct": -5.513176644158983
         },
         {
           "name": "EssilorLuxottica Société anonyme",
           "symbol": "EL.PA",
-          "pct": -3.4803603303469854
+          "pct": -4.066167406681099
         },
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": -1.959976767101208
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -2.9189911283162884
         }
       ],
       "breadth": {
-        "up": 30,
-        "down": 20,
-        "flat": 0,
+        "up": 21,
+        "down": 28,
+        "flat": 1,
         "priced": 50,
-        "median": 0.49
+        "median": -0.32
       },
       "built": "3 spark batches"
     },
