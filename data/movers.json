@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T08:10:03+00:00",
+  "generated": "2026-09-19T11:11:43+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,31 +296,31 @@
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": 2.6867840542161368
+        },
+        {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 3.0977406896146618
+          "pct": 2.2462091166371554
         },
         {
           "name": "adidas AG",
           "symbol": "ADS.DE",
           "pct": 1.9379845794821646
-        },
-        {
-          "name": "Enel SpA",
-          "symbol": "ENEL.MI",
-          "pct": 1.796128416210041
         }
       ],
       "bottom": [
         {
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -3.8919903953205717
+        },
+        {
           "name": "Mercedes-Benz Group AG",
           "symbol": "MBG.DE",
           "pct": -2.566580024865992
-        },
-        {
-          "name": "Prosus N.V.",
-          "symbol": "PRX.AS",
-          "pct": -2.4146002894334195
         },
         {
           "name": "Volkswagen AG",
@@ -333,7 +333,7 @@
         "down": 17,
         "flat": 0,
         "priced": 50,
-        "median": 0.41
+        "median": 0.45
       },
       "built": "3 spark batches"
     },
