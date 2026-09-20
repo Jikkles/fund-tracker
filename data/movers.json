@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-20T08:16:40+00:00",
+  "generated": "2026-09-20T11:36:24+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 3.5668278591706173
+        },
+        {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
           "pct": 2.6867840542161368
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 2.2462091166371554
-        },
-        {
-          "name": "adidas AG",
-          "symbol": "ADS.DE",
-          "pct": 1.9379845794821646
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": 2.2727295068833304
         }
       ],
       "bottom": [
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -3.8919903953205717
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": -5.998611418457606
         },
         {
-          "name": "Mercedes-Benz Group AG",
-          "symbol": "MBG.DE",
-          "pct": -2.566580024865992
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -4.204001272862682
         },
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": -2.279726973918941
+          "pct": -3.972259022263785
         }
       ],
       "breadth": {
-        "up": 33,
-        "down": 17,
+        "up": 11,
+        "down": 39,
         "flat": 0,
         "priced": 50,
-        "median": 0.45
+        "median": -1.06
       },
       "built": "3 spark batches"
     },
