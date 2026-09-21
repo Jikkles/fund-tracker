@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T08:16:56+00:00",
+  "generated": "2026-09-21T13:01:31+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Metlen Energy & Metals Plc",
           "symbol": "MTLN",
-          "pct": 4.93
+          "pct": 7.96
         },
         {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": 2.73
+          "pct": 4.7
         },
         {
           "name": "Anglo American Plc",
           "symbol": "AAL",
-          "pct": 2.68
+          "pct": 3.99
         }
       ],
       "bottom": [
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": -1.43
-        },
-        {
-          "name": "Barratt Redrow Plc",
-          "symbol": "BTRW",
-          "pct": -1.28
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": -3.48
         },
         {
           "name": "Entain plc",
           "symbol": "ENT",
-          "pct": -1.22
+          "pct": -1.41
+        },
+        {
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": -1.13
         }
       ],
       "breadth": {
-        "up": 67,
-        "down": 32,
-        "flat": 1,
+        "up": 86,
+        "down": 12,
+        "flat": 2,
         "priced": 100,
-        "median": 0.42
+        "median": 0.9
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 250 constituents",
       "top": [
         {
-          "name": "Syncona Limited",
-          "symbol": "SYNC",
-          "pct": 7.71
-        },
-        {
           "name": "Raspberry Pi Holdings plc",
           "symbol": "RPI",
-          "pct": 5.58
+          "pct": 9.05
         },
         {
-          "name": "Schroder Asian Total Return Investment Company plc",
-          "symbol": "ATR",
-          "pct": 3.16
+          "name": "Syncona Limited",
+          "symbol": "SYNC",
+          "pct": 6.63
+        },
+        {
+          "name": "Renishaw plc",
+          "symbol": "RSW",
+          "pct": 5.02
         }
       ],
       "bottom": [
         {
-          "name": "Energean",
-          "symbol": "ENOG",
-          "pct": -2.24
-        },
-        {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -1.62
+          "pct": -2.57
         },
         {
-          "name": "Bridgepoint Group plc",
-          "symbol": "BPT",
-          "pct": -1.37
+          "name": "Trustpilot Group plc",
+          "symbol": "TRST",
+          "pct": -1.8
+        },
+        {
+          "name": "Energean",
+          "symbol": "ENOG",
+          "pct": -1.62
         }
       ],
       "breadth": {
-        "up": 174,
-        "down": 40,
-        "flat": 36,
+        "up": 217,
+        "down": 22,
+        "flat": 11,
         "priced": 250,
-        "median": 0.51
+        "median": 1.35
       },
       "built": "250 rows from HL's own summary pages"
     },
@@ -250,12 +250,12 @@
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 8.318106361888383
+          "pct": 8.226696587981559
         },
         {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": 7.334823186865481
+          "pct": 7.558781791634664
         },
         {
           "name": "WuXi Biologics (Cayman) Inc.",
@@ -267,25 +267,25 @@
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -4.736568672871149
+          "pct": -4.8962215618291545
         },
         {
           "name": "Alibaba Health Information Technology Limited",
           "symbol": "0241.HK",
-          "pct": -4.567703174241895
+          "pct": -4.40456730645818
         },
         {
           "name": "Li Auto Inc.",
           "symbol": "2015.HK",
-          "pct": -4.457532980166382
+          "pct": -4.373426768281772
         }
       ],
       "breadth": {
-        "up": 58,
-        "down": 25,
-        "flat": 2,
+        "up": 62,
+        "down": 22,
+        "flat": 1,
         "priced": 85,
-        "median": 0.53
+        "median": 0.67
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 2.9322285210278354
-        },
-        {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": 2.738988117757641
+          "pct": 3.956317687657016
         },
         {
-          "name": "Siemens Aktiengesellschaft",
-          "symbol": "SIE.DE",
-          "pct": 2.1969650730942236
+          "name": "DHL AG",
+          "symbol": "DHL.DE",
+          "pct": 3.428568158830915
+        },
+        {
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": 3.307090886100175
         }
       ],
       "bottom": [
         {
           "name": "Eni S.p.A.",
           "symbol": "ENI.MI",
-          "pct": -2.6096032571620342
+          "pct": -2.192073107117811
         },
         {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -1.4645137063462261
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": -0.8216038114733729
         },
         {
-          "name": "adidas AG",
-          "symbol": "ADS.DE",
-          "pct": -1.1247846070408611
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": -0.3939632905402623
         }
       ],
       "breadth": {
-        "up": 35,
-        "down": 14,
+        "up": 41,
+        "down": 8,
         "flat": 1,
         "priced": 50,
-        "median": 0.58
+        "median": 1.01
       },
       "built": "3 spark batches"
     },
