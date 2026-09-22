@@ -1,345 +1,345 @@
 {
-  "generated": "2026-09-21T13:01:31+00:00",
+  "generated": "2026-09-22T08:16:55+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Metlen Energy & Metals Plc",
-          "symbol": "MTLN",
-          "pct": 7.96
+          "name": "Kingfisher",
+          "symbol": "KGF",
+          "pct": 9.16
         },
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": 4.7
+          "name": "Smiths Group Plc",
+          "symbol": "SMIN",
+          "pct": 5.33
         },
         {
-          "name": "Anglo American Plc",
-          "symbol": "AAL",
-          "pct": 3.99
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": 2.18
         }
       ],
       "bottom": [
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": -3.48
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": -2.68
         },
         {
-          "name": "Entain plc",
-          "symbol": "ENT",
-          "pct": -1.41
+          "name": "Admiral Group",
+          "symbol": "ADM",
+          "pct": -2.19
         },
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": -1.13
+          "name": "Endeavour Mining plc",
+          "symbol": "EDV",
+          "pct": -2.12
         }
       ],
       "breadth": {
-        "up": 86,
-        "down": 12,
-        "flat": 2,
+        "up": 44,
+        "down": 51,
+        "flat": 5,
         "priced": 100,
-        "median": 0.9
+        "median": -0.06
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "HL market summary (delayed)",
-      "universe": "all 250 constituents",
+      "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Raspberry Pi Holdings plc",
-          "symbol": "RPI",
-          "pct": 9.05
+          "name": "Trustpilot Group plc",
+          "symbol": "TRST",
+          "pct": 2.73
         },
         {
-          "name": "Syncona Limited",
-          "symbol": "SYNC",
-          "pct": 6.63
+          "name": "Atalaya Mining Copper SA",
+          "symbol": "ATYM",
+          "pct": 2.46
         },
         {
-          "name": "Renishaw plc",
-          "symbol": "RSW",
-          "pct": 5.02
+          "name": "Wickes Group Plc",
+          "symbol": "WIX",
+          "pct": 1.94
         }
       ],
       "bottom": [
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": -2.57
+          "name": "Goodwin plc",
+          "symbol": "GDWN",
+          "pct": -4.99
         },
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": -1.8
+          "name": "JPMorgan Emerging Markets Dividend Income Plc",
+          "symbol": "JEMI",
+          "pct": -3.74
         },
         {
-          "name": "Energean",
-          "symbol": "ENOG",
-          "pct": -1.62
+          "name": "TP ICAP Group plc",
+          "symbol": "TCAP",
+          "pct": -3.65
         }
       ],
       "breadth": {
-        "up": 217,
-        "down": 22,
-        "flat": 11,
-        "priced": 250,
-        "median": 1.35
+        "up": 91,
+        "down": 119,
+        "flat": 41,
+        "priced": 251,
+        "median": 0.0
       },
-      "built": "250 rows from HL's own summary pages"
+      "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Coinbase Global, Inc.",
-          "symbol": "COIN",
-          "pct": 11.657181489335688
+          "name": "Akamai Technologies, Inc.",
+          "symbol": "AKAM",
+          "pct": 12.332575041178075
         },
         {
-          "name": "Sandisk Corporation",
-          "symbol": "SNDK",
-          "pct": 10.990524596329564
+          "name": "Moderna, Inc.",
+          "symbol": "MRNA",
+          "pct": 12.269546857332198
         },
         {
-          "name": "Robinhood Markets, Inc.",
-          "symbol": "HOOD",
-          "pct": 9.115747526439213
+          "name": "Intel Corporation",
+          "symbol": "INTC",
+          "pct": 12.136280377864386
         }
       ],
       "bottom": [
         {
-          "name": "Nucor Corporation",
-          "symbol": "NUE",
-          "pct": -6.321192139876715
+          "name": "Marathon Petroleum Corporation",
+          "symbol": "MPC",
+          "pct": -5.297843910088175
         },
         {
-          "name": "QUALCOMM Incorporated",
-          "symbol": "QCOM",
-          "pct": -5.823753432337975
+          "name": "Valero Energy Corporation",
+          "symbol": "VLO",
+          "pct": -4.841756151937783
         },
         {
-          "name": "Alexandria Real Estate Equities, Inc.",
-          "symbol": "ARE",
-          "pct": -5.395812757000332
+          "name": "United Parcel Service, Inc.",
+          "symbol": "UPS",
+          "pct": -4.350896088044417
         }
       ],
       "breadth": {
-        "up": 156,
-        "down": 346,
-        "flat": 1,
+        "up": 291,
+        "down": 210,
+        "flat": 2,
         "priced": 503,
-        "median": -0.63
+        "median": 0.29
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
         {
-          "name": "Strategy Inc",
-          "symbol": "MSTR",
-          "pct": 16.385631885780956
+          "name": "Arm Holdings plc",
+          "symbol": "ARM",
+          "pct": 17.158307412048117
         },
         {
-          "name": "Sandisk Corporation",
-          "symbol": "SNDK",
-          "pct": 10.990524596329564
+          "name": "Astera Labs, Inc.",
+          "symbol": "ALAB",
+          "pct": 12.362733795342127
         },
         {
-          "name": "Lam Research Corporation",
-          "symbol": "LRCX",
-          "pct": 6.980798322898665
+          "name": "Intel Corporation",
+          "symbol": "INTC",
+          "pct": 12.136280377864386
         }
       ],
       "bottom": [
         {
-          "name": "QUALCOMM Incorporated",
-          "symbol": "QCOM",
-          "pct": -5.823753432337975
+          "name": "CSX Corporation",
+          "symbol": "CSX",
+          "pct": -2.356681171155834
         },
         {
-          "name": "Thomson Reuters Corporation",
-          "symbol": "TRI",
-          "pct": -5.116610168399629
+          "name": "O'Reilly Automotive, Inc.",
+          "symbol": "ORLY",
+          "pct": -2.1603138364218526
         },
         {
-          "name": "Rocket Lab Corporation",
-          "symbol": "RKLB",
-          "pct": -4.792096748192744
+          "name": "Roper Technologies, Inc.",
+          "symbol": "ROP",
+          "pct": -1.9692001207799872
         }
       ],
       "breadth": {
-        "up": 43,
-        "down": 59,
+        "up": 79,
+        "down": 23,
         "flat": 0,
         "priced": 102,
-        "median": -0.33
+        "median": 1.57
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Amgen Inc.",
-          "symbol": "AMGN",
-          "pct": 1.5456304007728314
-        },
-        {
           "name": "NVIDIA Corporation",
           "symbol": "NVDA",
-          "pct": 1.3358292985729199
+          "pct": 2.2990059441793456
         },
         {
-          "name": "Caterpillar Inc.",
-          "symbol": "CAT",
-          "pct": 1.3048302358700714
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": 1.9473641603740894
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "symbol": "AMZN",
+          "pct": 1.8682769176344771
         }
       ],
       "bottom": [
         {
-          "name": "International Business Machines Corporation",
-          "symbol": "IBM",
-          "pct": -3.4489997679252102
+          "name": "Chevron Corporation",
+          "symbol": "CVX",
+          "pct": -2.787454771137458
         },
         {
-          "name": "The Walt Disney Company",
-          "symbol": "DIS",
-          "pct": -2.543901607966435
+          "name": "The Coca-Cola Company",
+          "symbol": "KO",
+          "pct": -1.280450145516112
         },
         {
-          "name": "NIKE, Inc.",
-          "symbol": "NKE",
-          "pct": -2.3377400290151997
+          "name": "The Travelers Companies, Inc.",
+          "symbol": "TRV",
+          "pct": -0.9316081041758788
         }
       ],
       "breadth": {
-        "up": 11,
-        "down": 19,
+        "up": 21,
+        "down": 9,
         "flat": 0,
         "priced": 30,
-        "median": -0.09
+        "median": 0.67
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Sino Biopharmaceutical Limited",
-          "symbol": "1177.HK",
-          "pct": 8.226696587981559
+          "name": "Tencent Holdings Limited",
+          "symbol": "0700.HK",
+          "pct": 4.790699093840843
         },
         {
-          "name": "CSPC Pharmaceutical Group Limited",
-          "symbol": "1093.HK",
-          "pct": 7.558781791634664
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": 2.9658576071986986
         },
         {
-          "name": "WuXi Biologics (Cayman) Inc.",
-          "symbol": "2269.HK",
-          "pct": 5.263161084783259
+          "name": "China Life Insurance Company Limited",
+          "symbol": "2628.HK",
+          "pct": 2.06327504485516
         }
       ],
       "bottom": [
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": -4.8962215618291545
+          "name": "Zhongsheng Group Holdings Limited",
+          "symbol": "0881.HK",
+          "pct": -5.815834090251331
         },
         {
-          "name": "Alibaba Health Information Technology Limited",
-          "symbol": "0241.HK",
-          "pct": -4.40456730645818
+          "name": "ZTO Express (Cayman) Inc.",
+          "symbol": "2057.HK",
+          "pct": -5.118835370411043
         },
         {
-          "name": "Li Auto Inc.",
-          "symbol": "2015.HK",
-          "pct": -4.373426768281772
+          "name": "Xinyi Solar Holdings Limited",
+          "symbol": "0968.HK",
+          "pct": -3.4398058722200657
         }
       ],
       "breadth": {
-        "up": 62,
-        "down": 22,
-        "flat": 1,
+        "up": 23,
+        "down": 60,
+        "flat": 2,
         "priced": 85,
-        "median": 0.67
+        "median": -0.61
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "Prosus N.V.",
+          "symbol": "PRX.AS",
+          "pct": 5.4114435815295
+        },
+        {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": 3.956317687657016
+          "pct": 4.547083579975202
         },
         {
-          "name": "DHL AG",
-          "symbol": "DHL.DE",
-          "pct": 3.428568158830915
-        },
-        {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 3.307090886100175
+          "name": "Siemens Aktiengesellschaft",
+          "symbol": "SIE.DE",
+          "pct": 3.5416689786044038
         }
       ],
       "bottom": [
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": -2.192073107117811
-        },
-        {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": -0.8216038114733729
+          "name": "Mercedes-Benz Group AG",
+          "symbol": "MBG.DE",
+          "pct": -1.9434016660850035
         },
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": -0.3939632905402623
+          "pct": -1.9041425457410495
+        },
+        {
+          "name": "Allianz SE",
+          "symbol": "ALV.DE",
+          "pct": -1.8723185250447232
         }
       ],
       "breadth": {
-        "up": 41,
-        "down": 8,
-        "flat": 1,
+        "up": 34,
+        "down": 16,
+        "flat": 0,
         "priced": 50,
-        "median": 1.01
+        "median": 0.79
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-21",
+      "asAt": "2026-09-22",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
