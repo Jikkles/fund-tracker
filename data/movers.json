@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-22T08:16:55+00:00",
+  "generated": "2026-09-22T11:51:03+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Kingfisher",
           "symbol": "KGF",
-          "pct": 9.16
+          "pct": 10.04
         },
         {
           "name": "Smiths Group Plc",
           "symbol": "SMIN",
-          "pct": 5.33
+          "pct": 6.29
         },
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": 2.18
+          "name": "JD Sports Fashion plc",
+          "symbol": "JD.",
+          "pct": 4.41
         }
       ],
       "bottom": [
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": -2.68
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": -2.58
         },
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": -2.19
+          "name": "BT Group plc",
+          "symbol": "BT.A",
+          "pct": -2.46
         },
         {
-          "name": "Endeavour Mining plc",
-          "symbol": "EDV",
-          "pct": -2.12
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": -2.03
         }
       ],
       "breadth": {
-        "up": 44,
-        "down": 51,
-        "flat": 5,
+        "up": 68,
+        "down": 29,
+        "flat": 3,
         "priced": 100,
-        "median": -0.06
+        "median": 0.48
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": 4.72
+        },
+        {
           "name": "Trustpilot Group plc",
           "symbol": "TRST",
-          "pct": 2.73
+          "pct": 4.33
         },
         {
           "name": "Atalaya Mining Copper SA",
           "symbol": "ATYM",
-          "pct": 2.46
-        },
-        {
-          "name": "Wickes Group Plc",
-          "symbol": "WIX",
-          "pct": 1.94
+          "pct": 3.65
         }
       ],
       "bottom": [
         {
           "name": "Goodwin plc",
           "symbol": "GDWN",
-          "pct": -4.99
+          "pct": -5.66
         },
         {
-          "name": "JPMorgan Emerging Markets Dividend Income Plc",
-          "symbol": "JEMI",
-          "pct": -3.74
+          "name": "Harbour Energy plc",
+          "symbol": "HBR",
+          "pct": -3.54
         },
         {
-          "name": "TP ICAP Group plc",
-          "symbol": "TCAP",
-          "pct": -3.65
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": -2.73
         }
       ],
       "breadth": {
-        "up": 91,
-        "down": 119,
-        "flat": 41,
+        "up": 177,
+        "down": 56,
+        "flat": 18,
         "priced": 251,
-        "median": 0.0
+        "median": 0.47
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,24 +250,24 @@
         {
           "name": "Tencent Holdings Limited",
           "symbol": "0700.HK",
-          "pct": 4.790699093840843
+          "pct": 5.023257233375727
         },
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 2.9658576071986986
+          "pct": 2.7979853190731543
         },
         {
           "name": "China Life Insurance Company Limited",
           "symbol": "2628.HK",
-          "pct": 2.06327504485516
+          "pct": 2.1320524101101284
         }
       ],
       "bottom": [
         {
           "name": "Zhongsheng Group Holdings Limited",
           "symbol": "0881.HK",
-          "pct": -5.815834090251331
+          "pct": -5.169631158373026
         },
         {
           "name": "ZTO Express (Cayman) Inc.",
@@ -275,17 +275,17 @@
           "pct": -5.118835370411043
         },
         {
-          "name": "Xinyi Solar Holdings Limited",
-          "symbol": "0968.HK",
-          "pct": -3.4398058722200657
+          "name": "Li Ning Company Limited",
+          "symbol": "2331.HK",
+          "pct": -3.512886402800899
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 60,
-        "flat": 2,
+        "up": 22,
+        "down": 58,
+        "flat": 5,
         "priced": 85,
-        "median": -0.61
+        "median": -0.53
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Prosus N.V.",
           "symbol": "PRX.AS",
-          "pct": 5.4114435815295
+          "pct": 5.1282007900097755
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 4.547083579975202
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": 3.0038443835822033
         },
         {
-          "name": "Siemens Aktiengesellschaft",
-          "symbol": "SIE.DE",
-          "pct": 3.5416689786044038
+          "name": "Industria de Diseño Textil, S.A.",
+          "symbol": "ITX.MC",
+          "pct": 2.7810013042758204
         }
       ],
       "bottom": [
         {
-          "name": "Mercedes-Benz Group AG",
-          "symbol": "MBG.DE",
-          "pct": -1.9434016660850035
-        },
-        {
-          "name": "Volkswagen AG",
-          "symbol": "VOW.DE",
-          "pct": -1.9041425457410495
-        },
-        {
           "name": "Allianz SE",
           "symbol": "ALV.DE",
-          "pct": -1.8723185250447232
+          "pct": -1.4154163613023403
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -1.3421330887289344
+        },
+        {
+          "name": "Sanofi",
+          "symbol": "SAN.PA",
+          "pct": -1.0323055112891315
         }
       ],
       "breadth": {
-        "up": 34,
-        "down": 16,
+        "up": 35,
+        "down": 15,
         "flat": 0,
         "priced": 50,
-        "median": 0.79
+        "median": 0.49
       },
       "built": "3 spark batches"
     },
