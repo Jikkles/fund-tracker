@@ -1,105 +1,105 @@
 {
-  "generated": "2026-09-22T11:51:03+00:00",
+  "generated": "2026-09-23T08:19:45+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Kingfisher",
-          "symbol": "KGF",
-          "pct": 10.04
+          "name": "Rentokil Initial Plc",
+          "symbol": "RTO",
+          "pct": 2.4
         },
         {
-          "name": "Smiths Group Plc",
-          "symbol": "SMIN",
-          "pct": 6.29
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": 1.54
         },
         {
-          "name": "JD Sports Fashion plc",
-          "symbol": "JD.",
-          "pct": 4.41
+          "name": "Lloyds Banking Group plc",
+          "symbol": "LLOY",
+          "pct": 1.29
         }
       ],
       "bottom": [
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": -2.58
+          "name": "IG Group Holdings Plc",
+          "symbol": "IGG",
+          "pct": -1.69
         },
         {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": -2.46
+          "name": "Autotrader Group Plc",
+          "symbol": "AUTO",
+          "pct": -1.4
         },
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": -2.03
+          "name": "Vodafone Group plc",
+          "symbol": "VOD",
+          "pct": -1.36
         }
       ],
       "breadth": {
-        "up": 68,
-        "down": 29,
-        "flat": 3,
+        "up": 50,
+        "down": 45,
+        "flat": 5,
         "priced": 100,
-        "median": 0.48
+        "median": 0.02
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Raspberry Pi Holdings plc",
-          "symbol": "RPI",
-          "pct": 4.72
+          "name": "Foresight Environmental Infrastructure Ltd",
+          "symbol": "FGEN",
+          "pct": 3.08
         },
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": 4.33
+          "name": "Hays plc",
+          "symbol": "HAS",
+          "pct": 3.02
         },
         {
-          "name": "Atalaya Mining Copper SA",
-          "symbol": "ATYM",
-          "pct": 3.65
+          "name": "Pollen Street Group Limited",
+          "symbol": "POLN",
+          "pct": 2.58
         }
       ],
       "bottom": [
         {
-          "name": "Goodwin plc",
-          "symbol": "GDWN",
-          "pct": -5.66
-        },
-        {
-          "name": "Harbour Energy plc",
-          "symbol": "HBR",
-          "pct": -3.54
+          "name": "Cordiant Digital Infrastructure Limited",
+          "symbol": "CORD",
+          "pct": -2.37
         },
         {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -2.73
+          "pct": -1.9
+        },
+        {
+          "name": "WAG Payment Solutions plc",
+          "symbol": "EWG",
+          "pct": -1.81
         }
       ],
       "breadth": {
-        "up": 177,
-        "down": 56,
-        "flat": 18,
+        "up": 100,
+        "down": 122,
+        "flat": 29,
         "priced": 251,
-        "median": 0.47
+        "median": 0.0
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
@@ -147,7 +147,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "Yahoo Finance daily closes",
       "universe": "all 102 constituents",
       "top": [
@@ -195,7 +195,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -243,103 +243,103 @@
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Tencent Holdings Limited",
-          "symbol": "0700.HK",
-          "pct": 5.023257233375727
+          "name": "Li Auto Inc.",
+          "symbol": "2015.HK",
+          "pct": 2.6619274611819876
         },
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": 2.7979853190731543
+          "name": "China Overseas Land & Investment Limited",
+          "symbol": "0688.HK",
+          "pct": 1.7699059368718257
         },
         {
-          "name": "China Life Insurance Company Limited",
-          "symbol": "2628.HK",
-          "pct": 2.1320524101101284
+          "name": "China Resources Mixc Lifestyle Services Limited",
+          "symbol": "1209.HK",
+          "pct": 1.7094103307181667
         }
       ],
       "bottom": [
         {
-          "name": "Zhongsheng Group Holdings Limited",
-          "symbol": "0881.HK",
-          "pct": -5.169631158373026
+          "name": "Alibaba Group Holding Limited",
+          "symbol": "9988.HK",
+          "pct": -4.442513909356149
         },
         {
-          "name": "ZTO Express (Cayman) Inc.",
-          "symbol": "2057.HK",
-          "pct": -5.118835370411043
+          "name": "Xiaomi Corporation",
+          "symbol": "1810.HK",
+          "pct": -3.8235326704268546
         },
         {
-          "name": "Li Ning Company Limited",
-          "symbol": "2331.HK",
-          "pct": -3.512886402800899
+          "name": "Sunny Optical Technology (Group) Company Limited",
+          "symbol": "2382.HK",
+          "pct": -3.204175223205276
         }
       ],
       "breadth": {
-        "up": 22,
-        "down": 58,
-        "flat": 5,
+        "up": 27,
+        "down": 55,
+        "flat": 3,
         "priced": 85,
-        "median": -0.53
+        "median": -0.43
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Prosus N.V.",
-          "symbol": "PRX.AS",
-          "pct": 5.1282007900097755
-        },
-        {
-          "name": "adidas AG",
-          "symbol": "ADS.DE",
-          "pct": 3.0038443835822033
-        },
-        {
           "name": "Industria de Diseño Textil, S.A.",
           "symbol": "ITX.MC",
-          "pct": 2.7810013042758204
+          "pct": 2.7423754675914274
+        },
+        {
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": 2.44247571556969
+        },
+        {
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 2.295126194118162
         }
       ],
       "bottom": [
         {
           "name": "Allianz SE",
           "symbol": "ALV.DE",
-          "pct": -1.4154163613023403
+          "pct": -3.9766371521717776
         },
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": -1.3421330887289344
+          "name": "Deutsche Bank Aktiengesellschaft",
+          "symbol": "DBK.DE",
+          "pct": -2.4555548672217498
         },
         {
-          "name": "Sanofi",
-          "symbol": "SAN.PA",
-          "pct": -1.0323055112891315
+          "name": "AXA SA",
+          "symbol": "CS.PA",
+          "pct": -2.0963394815125427
         }
       ],
       "breadth": {
-        "up": 35,
-        "down": 15,
+        "up": 28,
+        "down": 22,
         "flat": 0,
         "priced": 50,
-        "median": 0.49
+        "median": 0.17
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-09-22",
+      "asAt": "2026-09-23",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
