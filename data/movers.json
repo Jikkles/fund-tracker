@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-23T08:19:45+00:00",
+  "generated": "2026-09-23T11:50:42+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Rentokil Initial Plc",
           "symbol": "RTO",
-          "pct": 2.4
+          "pct": 2.81
         },
         {
-          "name": "Standard Chartered plc",
-          "symbol": "STAN",
-          "pct": 1.54
+          "name": "Burberry Group plc",
+          "symbol": "BRBY",
+          "pct": 2.34
         },
         {
-          "name": "Lloyds Banking Group plc",
-          "symbol": "LLOY",
-          "pct": 1.29
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": 1.25
         }
       ],
       "bottom": [
         {
-          "name": "IG Group Holdings Plc",
-          "symbol": "IGG",
-          "pct": -1.69
-        },
-        {
           "name": "Autotrader Group Plc",
           "symbol": "AUTO",
-          "pct": -1.4
+          "pct": -4.88
         },
         {
-          "name": "Vodafone Group plc",
-          "symbol": "VOD",
-          "pct": -1.36
+          "name": "JD Sports Fashion plc",
+          "symbol": "JD.",
+          "pct": -3.71
+        },
+        {
+          "name": "Melrose Industries plc",
+          "symbol": "MRO",
+          "pct": -3.08
         }
       ],
       "breadth": {
-        "up": 50,
-        "down": 45,
-        "flat": 5,
+        "up": 29,
+        "down": 68,
+        "flat": 3,
         "priced": 100,
-        "median": 0.02
+        "median": -0.48
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Foresight Environmental Infrastructure Ltd",
-          "symbol": "FGEN",
-          "pct": 3.08
-        },
-        {
-          "name": "Hays plc",
-          "symbol": "HAS",
-          "pct": 3.02
-        },
-        {
           "name": "Pollen Street Group Limited",
           "symbol": "POLN",
-          "pct": 2.58
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Cordiant Digital Infrastructure Limited",
-          "symbol": "CORD",
-          "pct": -2.37
+          "pct": 15.46
         },
         {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -1.9
+          "pct": 4.3
         },
         {
-          "name": "WAG Payment Solutions plc",
-          "symbol": "EWG",
-          "pct": -1.81
+          "name": "Hays plc",
+          "symbol": "HAS",
+          "pct": 3.17
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Mony Group Plc",
+          "symbol": "MONY",
+          "pct": -8.73
+        },
+        {
+          "name": "Softcat plc",
+          "symbol": "SCT",
+          "pct": -3.97
+        },
+        {
+          "name": "Baltic Classifieds Group plc",
+          "symbol": "BCG",
+          "pct": -3.26
         }
       ],
       "breadth": {
-        "up": 100,
-        "down": 122,
-        "flat": 29,
+        "up": 67,
+        "down": 163,
+        "flat": 21,
         "priced": 251,
-        "median": 0.0
+        "median": -0.44
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,12 +250,12 @@
         {
           "name": "Li Auto Inc.",
           "symbol": "2015.HK",
-          "pct": 2.6619274611819876
+          "pct": 2.573202751320674
         },
         {
-          "name": "China Overseas Land & Investment Limited",
-          "symbol": "0688.HK",
-          "pct": 1.7699059368718257
+          "name": "China Resources Land Limited",
+          "symbol": "1109.HK",
+          "pct": 1.7170329175483734
         },
         {
           "name": "China Resources Mixc Lifestyle Services Limited",
@@ -267,25 +267,25 @@
         {
           "name": "Alibaba Group Holding Limited",
           "symbol": "9988.HK",
-          "pct": -4.442513909356149
+          "pct": -4.355400581083382
         },
         {
           "name": "Xiaomi Corporation",
           "symbol": "1810.HK",
-          "pct": -3.8235326704268546
+          "pct": -3.7500015777699645
         },
         {
           "name": "Sunny Optical Technology (Group) Company Limited",
           "symbol": "2382.HK",
-          "pct": -3.204175223205276
+          "pct": -3.1296550251502824
         }
       ],
       "breadth": {
         "up": 27,
-        "down": 55,
-        "flat": 3,
+        "down": 54,
+        "flat": 4,
         "priced": 85,
-        "median": -0.43
+        "median": -0.4
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Industria de Diseño Textil, S.A.",
-          "symbol": "ITX.MC",
-          "pct": 2.7423754675914274
-        },
-        {
           "name": "EssilorLuxottica Société anonyme",
           "symbol": "EL.PA",
-          "pct": 2.44247571556969
+          "pct": 1.522489237537846
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 2.295126194118162
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 1.2724835301833097
+        },
+        {
+          "name": "Ferrari N.V.",
+          "symbol": "RACE.MI",
+          "pct": 1.233031943000706
         }
       ],
       "bottom": [
         {
+          "name": "Prosus N.V.",
+          "symbol": "PRX.AS",
+          "pct": -4.112866299552604
+        },
+        {
           "name": "Allianz SE",
           "symbol": "ALV.DE",
-          "pct": -3.9766371521717776
+          "pct": -3.207814486045551
         },
         {
-          "name": "Deutsche Bank Aktiengesellschaft",
-          "symbol": "DBK.DE",
-          "pct": -2.4555548672217498
-        },
-        {
-          "name": "AXA SA",
-          "symbol": "CS.PA",
-          "pct": -2.0963394815125427
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -2.8460700118528517
         }
       ],
       "breadth": {
-        "up": 28,
-        "down": 22,
-        "flat": 0,
+        "up": 13,
+        "down": 36,
+        "flat": 1,
         "priced": 50,
-        "median": 0.17
+        "median": -0.4
       },
       "built": "3 spark batches"
     },
