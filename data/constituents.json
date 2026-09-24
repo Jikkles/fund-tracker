@@ -1,6 +1,6 @@
 {
   "s-p-500": {
-    "fetched": "2026-09-17",
+    "fetched": "2026-09-24",
     "label": "S&P 500",
     "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
     "nominal": 503,
@@ -274,6 +274,10 @@
         "name": "Block, Inc."
       },
       {
+        "symbol": "BE",
+        "name": "Bloom Energy"
+      },
+      {
         "symbol": "BNY",
         "name": "BNY Mellon"
       },
@@ -308,10 +312,6 @@
       {
         "symbol": "BF-B",
         "name": "Brown–Forman"
-      },
-      {
-        "symbol": "BLDR",
-        "name": "Builders FirstSource"
       },
       {
         "symbol": "BG",
@@ -722,6 +722,10 @@
         "name": "Evergy"
       },
       {
+        "symbol": "P",
+        "name": "Everpure"
+      },
+      {
         "symbol": "ES",
         "name": "Eversource Energy"
       },
@@ -992,6 +996,10 @@
       {
         "symbol": "ITW",
         "name": "Illinois Tool Works"
+      },
+      {
+        "symbol": "ILMN",
+        "name": "Illumina, Inc."
       },
       {
         "symbol": "INCY",
@@ -1272,10 +1280,6 @@
       {
         "symbol": "MRNA",
         "name": "Moderna"
-      },
-      {
-        "symbol": "TAP",
-        "name": "Molson Coors Beverage Company"
       },
       {
         "symbol": "MDLZ",
@@ -1782,10 +1786,6 @@
         "name": "TKO Group Holdings"
       },
       {
-        "symbol": "TTD",
-        "name": "Trade Desk (The)"
-      },
-      {
         "symbol": "TSCO",
         "name": "Tractor Supply"
       },
@@ -2020,7 +2020,7 @@
     ]
   },
   "nasdaq-100": {
-    "fetched": "2026-09-17",
+    "fetched": "2026-09-24",
     "label": "Nasdaq 100",
     "source": "https://en.wikipedia.org/wiki/List_of_NASDAQ-100_companies",
     "nominal": null,
@@ -2230,10 +2230,6 @@
         "name": "KLA Corporation"
       },
       {
-        "symbol": "KHC",
-        "name": "Kraft Heinz"
-      },
-      {
         "symbol": "LRCX",
         "name": "Lam Research"
       },
@@ -2436,7 +2432,7 @@
     ]
   },
   "dow-jones": {
-    "fetched": "2026-09-17",
+    "fetched": "2026-09-24",
     "label": "Dow Jones",
     "source": "https://en.wikipedia.org/wiki/List_of_Dow_Jones_Industrial_Average_companies",
     "nominal": 30,
@@ -2564,7 +2560,7 @@
     ]
   },
   "hang-seng": {
-    "fetched": "2026-09-17",
+    "fetched": "2026-09-24",
     "label": "Hang Seng",
     "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
     "nominal": null,
@@ -2912,7 +2908,7 @@
     ]
   },
   "euro-stoxx-50": {
-    "fetched": "2026-09-17",
+    "fetched": "2026-09-24",
     "label": "Euro STOXX 50",
     "source": "https://en.wikipedia.org/wiki/EURO_STOXX_50",
     "nominal": 50,
@@ -3120,7 +3116,7 @@
     ]
   },
   "nikkei-225": {
-    "fetched": "2026-09-17",
+    "fetched": "2026-09-24",
     "label": "Nikkei 225",
     "source": "https://en.wikipedia.org/wiki/Nikkei_225",
     "nominal": 225,
