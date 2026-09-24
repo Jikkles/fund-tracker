@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-24T08:19:44+00:00",
+  "generated": "2026-09-24T11:58:13+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,19 +8,19 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "British American Tobacco plc",
-          "symbol": "BATS",
-          "pct": 2.1
-        },
-        {
           "name": "JD Sports Fashion plc",
           "symbol": "JD.",
-          "pct": 2.05
+          "pct": 3.02
         },
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": 1.53
+          "name": "Sainsbury (J) plc",
+          "symbol": "SBRY",
+          "pct": 2.04
+        },
+        {
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": 1.72
         }
       ],
       "bottom": [
@@ -30,14 +30,14 @@
           "pct": -3.67
         },
         {
-          "name": "Kingfisher",
-          "symbol": "KGF",
-          "pct": -2.8
+          "name": "St James's Place Plc",
+          "symbol": "STJ",
+          "pct": -3.24
         },
         {
           "name": "Computacenter plc",
           "symbol": "CCC",
-          "pct": -1.73
+          "pct": -3.1
         }
       ],
       "breadth": {
@@ -58,7 +58,7 @@
         {
           "name": "Raspberry Pi Holdings plc",
           "symbol": "RPI",
-          "pct": 11.16
+          "pct": 12.11
         },
         {
           "name": "Schroder Asian Total Return Investment Company plc",
@@ -66,34 +66,34 @@
           "pct": 3.32
         },
         {
-          "name": "Brunner Investment Trust plc",
-          "symbol": "BUT",
-          "pct": 2.05
+          "name": "Telecom Plus plc",
+          "symbol": "TEP",
+          "pct": 2.41
         }
       ],
       "bottom": [
         {
-          "name": "AO World plc",
-          "symbol": "AO.",
-          "pct": -7.74
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": -8.98
         },
         {
-          "name": "Vistry Group Plc",
-          "symbol": "VTY",
-          "pct": -7.39
+          "name": "Victrex",
+          "symbol": "VCT",
+          "pct": -7.65
         },
         {
           "name": "CVS Group plc",
           "symbol": "CVSG",
-          "pct": -5.38
+          "pct": -6.37
         }
       ],
       "breadth": {
-        "up": 75,
-        "down": 149,
-        "flat": 27,
+        "up": 74,
+        "down": 162,
+        "flat": 15,
         "priced": 251,
-        "median": -0.2
+        "median": -0.37
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,7 +250,7 @@
         {
           "name": "PetroChina Company Limited",
           "symbol": "0857.HK",
-          "pct": 2.7272636402450954
+          "pct": 2.834217955473305
         },
         {
           "name": "CNOOC Limited",
@@ -258,9 +258,9 @@
           "pct": 2.142245058831163
         },
         {
-          "name": "Industrial and Commercial Bank of China Limited",
-          "symbol": "1398.HK",
-          "pct": 1.7904539730084872
+          "name": "WH Group Limited",
+          "symbol": "0288.HK",
+          "pct": 1.6291701516963601
         }
       ],
       "bottom": [
@@ -272,20 +272,20 @@
         {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": -3.5233079000406966
+          "pct": -3.212429825873887
         },
         {
           "name": "Trip.com Group Limited",
           "symbol": "9961.HK",
-          "pct": -3.215829960656481
+          "pct": -3.0921460076467575
         }
       ],
       "breadth": {
-        "up": 33,
-        "down": 50,
+        "up": 34,
+        "down": 49,
         "flat": 2,
         "priced": 85,
-        "median": -0.25
+        "median": -0.28
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 3.2506426696420654
+          "name": "Koninklijke Ahold Delhaize N.V.",
+          "symbol": "AD.AS",
+          "pct": 2.49599609375
         },
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": 2.9757806586559257
+          "name": "Anheuser-Busch InBev SA/NV",
+          "symbol": "ABI.BR",
+          "pct": 1.3641727989921597
         },
         {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 2.1752999552779837
+          "name": "Allianz SE",
+          "symbol": "ALV.DE",
+          "pct": 1.307188045679
         }
       ],
       "bottom": [
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": -4.950167464787514
-        },
-        {
-          "name": "BNP Paribas SA",
-          "symbol": "BNP.PA",
-          "pct": -4.69891608374228
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": -3.463414634146342
         },
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": -4.6399482221309665
+          "pct": -3.4147174499246895
+        },
+        {
+          "name": "BNP Paribas SA",
+          "symbol": "BNP.PA",
+          "pct": -3.2235487284570485
         }
       ],
       "breadth": {
-        "up": 17,
-        "down": 31,
+        "up": 23,
+        "down": 25,
         "flat": 2,
         "priced": 50,
-        "median": -0.49
+        "median": -0.04
       },
       "built": "3 spark batches"
     },
