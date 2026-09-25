@@ -44,7 +44,19 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # A healthy run finishes in about two minutes. Without a cap, a stall runs
+    # to GitHub's six-hour limit, and because this job holds the
+    # fund-tracker-pages concurrency group the market chart refreshes queue
+    # behind it the whole time. On 2026-09-25 "Run the update" sat silent for
+    # 36 minutes until it was cancelled by hand. Twenty minutes still leaves
+    # room for a slow day where every source is retrying.
+    timeout-minutes: 20
     env:
+      # Python block-buffers stdout when it is not a terminal, so a script
+      # that stalls or is killed loses every line it had printed. That is why
+      # the 2026-09-25 stall left an empty log and no clue which ticker it
+      # was on. Unbuffered, the log shows how far a stuck step actually got.
+      PYTHONUNBUFFERED: "1"
       # A push to site/** is a request to PUBLISH THE PAGE, not to re-price the
       # desk. It used to be both: every edit to index.html re-read HL's
       # Shortlist, refetched ~100 fund NAVs, reranked every index constituent
@@ -99,8 +111,13 @@ jobs:
         run: python scripts/index_movers.py
         continue-on-error: true
 
+      # Usually seconds. Its worst honest case is every ticker working through
+      # the full retry ladder on both sources (28 x 2 x 3 tries x 25s), which is
+      # over an hour and no better than a hang. Ten minutes fails it loudly
+      # instead, and the job cap above catches anything else.
       - name: Run the update
         if: env.REFRESH_DATA == 'true'
+        timeout-minutes: 10
         run: python scripts/run_update.py
         working-directory: ${{ github.workspace }}
 
