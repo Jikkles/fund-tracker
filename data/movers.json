@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-26T08:16:39+00:00",
+  "generated": "2026-09-26T11:34:30+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
-          "symbol": "MUV2.DE",
-          "pct": 1.9896477041351803
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": 3.793716656787196
         },
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 1.955555103443287
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": 2.987697715289982
         },
         {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 1.7960314692869925
+          "name": "Deutsche Bank Aktiengesellschaft",
+          "symbol": "DBK.DE",
+          "pct": 2.6834785500055873
         }
       ],
       "bottom": [
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -3.9440009993634138
+          "name": "BASF SE",
+          "symbol": "BAS.DE",
+          "pct": -3.5946483662337
         },
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": -3.5011671269404077
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": -1.3106586535050824
         },
         {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": -3.414634146341464
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": -1.307841021685553
         }
       ],
       "breadth": {
-        "up": 20,
-        "down": 29,
+        "up": 32,
+        "down": 17,
         "flat": 1,
         "priced": 50,
-        "median": -0.26
+        "median": 0.46
       },
       "built": "3 spark batches"
     },
