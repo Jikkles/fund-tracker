@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-09-26
+# Fund tracker - automated run 2026-09-27
 
-Window: 27 Aug 2026 to 26 Sep 2026
+Window: 28 Aug 2026 to 27 Sep 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -9,24 +9,24 @@ Window: 27 Aug 2026 to 26 Sep 2026
 
 ## Maintenance needed
 
-- 21 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (179d), jupiter-asian-income (179d), artemis-us-smaller-companies (165d), and 18 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 23 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (180d), jupiter-asian-income (180d), artemis-us-smaller-companies (166d), and 20 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 - 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.90% |
-| FTSE 250 | -2.56% |
-| S&P 500 | +0.16% |
-| Nasdaq 100 | +3.26% |
-| Euro STOXX 50 | -1.90% |
-| Nikkei 225 | +0.35% |
-| Hang Seng | -4.13% |
-| Gold (USD/oz) | -7.35% |
-| Brent crude | +16.30% |
-| US 10yr yield | +10.96% |
-| GBP/USD | -2.58% |
+| FTSE 100 | -1.19% |
+| FTSE 250 | -2.72% |
+| S&P 500 | +0.41% |
+| Nasdaq 100 | +3.99% |
+| Euro STOXX 50 | -2.82% |
+| Nikkei 225 | -0.06% |
+| Hang Seng | -4.20% |
+| Gold (USD/oz) | -4.61% |
+| Brent crude | +9.10% |
+| US 10yr yield | +9.83% |
+| GBP/USD | -2.53% |
 
 ## Fund NAV figures (1 month)
 
@@ -53,7 +53,7 @@ Window: 27 Aug 2026 to 26 Sep 2026
 | bny-mellon-multi-asset-balanced | 0P0000X2GH.L | -0.33% | 25 Sep 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | -0.34% | 25 Sep 2026 |
 | bny-mellon-real-return | 0P000156WB.L | -0.73% | 25 Sep 2026 |
-| bny-mellon-us-equity-income | 0P00019MND.L | -1.17% | 24 Sep 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | -1.01% | 23 Sep 2026 |
 | ct-european-select | 0P0000X3IE.L | -1.45% | 25 Sep 2026 |
 | ct-latin-america | 0P00000R15.L | +3.64% | 25 Sep 2026 |
 | fidelity-american-special-situations | 0P0000WUU7.L | -1.53% | 25 Sep 2026 |
@@ -67,7 +67,7 @@ Window: 27 Aug 2026 to 26 Sep 2026
 | fidelity-special-situations | 0P0000WUU1.L | -0.63% | 25 Sep 2026 |
 | first-sentier-global-listed-infrastructure | 0P00009VDK.L | -3.33% | 25 Sep 2026 |
 | fssa-asia-focus | 0P00015W87.L | +5.04% | 25 Sep 2026 |
-| fssa-greater-china-growth | 0P00000EU6.L | +2.43% | 25 Sep 2026 |
+| fssa-greater-china-growth | 0P00000EU6.L | +2.57% | 24 Sep 2026 |
 | ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | -2.77% | 25 Sep 2026 |
 | ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -3.83% | 25 Sep 2026 |
 | hsbc-american-index | 0P0000WN7H.L | +3.53% | 25 Sep 2026 |
@@ -89,7 +89,7 @@ Window: 27 Aug 2026 to 26 Sep 2026
 | jupiter-european | 0P0000U20D.L | -1.22% | 25 Sep 2026 |
 | jupiter-india-class-x | 0P00018LFD.L | -0.84% | 25 Sep 2026 |
 | jupiter-strategic-bond | 0P0000FY9K.L | -1.57% | 25 Sep 2026 |
-| lazard-global-equity-franchise | 0P0001BM5B.L | -8.00% | 24 Sep 2026 |
+| lazard-global-equity-franchise | 0P0001BM5B.L | -7.11% | 23 Sep 2026 |
 | lg-active-global-high-yield | 0P00001SDH.L | -1.25% | 25 Sep 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | -1.08% | 25 Sep 2026 |
 | lg-european-index | 0P000102LY.L | -2.27% | 25 Sep 2026 |
@@ -112,7 +112,7 @@ Window: 27 Aug 2026 to 26 Sep 2026
 | mg-emerging-market-bond | 0P0000VPQE.L | +0.84% | 25 Sep 2026 |
 | ninety-one-diversified-income-class-i | 0P0000XTGS.L | -0.86% | 25 Sep 2026 |
 | ninety-one-global-gold-class-i | 0P00009NF8.L | -6.93% | 25 Sep 2026 |
-| polar-capital-european-income | 0P00016CNI.L | -2.99% | 24 Sep 2026 |
+| polar-capital-european-income | 0P00016CNI.L | -2.90% | 23 Sep 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | -4.57% | 25 Sep 2026 |
 | pyrford-global-total-return | 0P0000N9AE.L | -0.97% | 25 Sep 2026 |
 | rathbone-global-opportunities | 0P0001FE43.L | +0.39% | 25 Sep 2026 |
@@ -124,16 +124,16 @@ Window: 27 Aug 2026 to 26 Sep 2026
 | schroder-managed-balanced | 0P00000VDP.L | +0.11% | 25 Sep 2026 |
 | schroder-us-smaller-companies | 0P0000VGMI.L | -0.54% | 25 Sep 2026 |
 | schroders-asian-discovery-class-z | 0P0000VGH4.L | +4.11% | 25 Sep 2026 |
-| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +4.99% | 25 Sep 2026 |
+| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +4.68% | 24 Sep 2026 |
 | stewart-investors-indian-subcontinent | 0P0000X4NO.L | -2.00% | 25 Sep 2026 |
 | trojan-ethical | 0P0001J9W9.L | -1.19% | 25 Sep 2026 |
 | trojan-fund | 0P0001CBJA.L | -1.16% | 25 Sep 2026 |
 | trojan-global-income | 0P00018VXM.L | -4.50% | 25 Sep 2026 |
 | trowe-global-value | 0P0001P4VD.L | +1.84% | 25 Sep 2026 |
-| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | -2.20% | 24 Sep 2026 |
-| vanguard-global-bond-index | 0P0000CV2L | -1.85% | 24 Sep 2026 |
-| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -1.89% | 24 Sep 2026 |
-| vanguard-global-small-cap-index | 0P0000N47O.L | -1.02% | 24 Sep 2026 |
+| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | -1.60% | 23 Sep 2026 |
+| vanguard-global-bond-index | 0P0000CV2L | -1.44% | 23 Sep 2026 |
+| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -1.45% | 23 Sep 2026 |
+| vanguard-global-small-cap-index | 0P0000N47O.L | -0.80% | 23 Sep 2026 |
 | ws-amati-uk-listed-smaller-companies | 0P0000GBB2.L | -3.53% | 25 Sep 2026 |
 
 ---
