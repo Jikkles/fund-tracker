@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-09-27
+# Fund tracker - automated run 2026-09-28
 
-Window: 28 Aug 2026 to 27 Sep 2026
+Window: 29 Aug 2026 to 28 Sep 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -9,24 +9,24 @@ Window: 28 Aug 2026 to 27 Sep 2026
 
 ## Maintenance needed
 
-- 23 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (180d), jupiter-asian-income (180d), artemis-us-smaller-companies (166d), and 20 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 23 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (181d), jupiter-asian-income (181d), artemis-us-smaller-companies (167d), and 20 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 - 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -1.19% |
-| FTSE 250 | -2.72% |
-| S&P 500 | +0.41% |
-| Nasdaq 100 | +3.99% |
-| Euro STOXX 50 | -2.82% |
-| Nikkei 225 | -0.06% |
-| Hang Seng | -4.20% |
-| Gold (USD/oz) | -4.61% |
-| Brent crude | +9.10% |
-| US 10yr yield | +9.83% |
-| GBP/USD | -2.53% |
+| FTSE 100 | -0.43% |
+| FTSE 250 | -0.04% |
+| S&P 500 | +0.75% |
+| Nasdaq 100 | +3.91% |
+| Euro STOXX 50 | -1.67% |
+| Nikkei 225 | -0.65% |
+| Hang Seng | -3.55% |
+| Gold (USD/oz) | -6.54% |
+| Brent crude | +9.89% |
+| US 10yr yield | +8.95% |
+| GBP/USD | -2.01% |
 
 ## Fund NAV figures (1 month)
 
