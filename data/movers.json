@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T08:18:09+00:00",
+  "generated": "2026-09-28T14:11:21+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Barratt Redrow Plc",
           "symbol": "BTRW",
-          "pct": 14.4
+          "pct": 12.43
         },
         {
           "name": "Howden Joinery Group Plc",
           "symbol": "HWDN",
-          "pct": 5.73
+          "pct": 4.15
         },
         {
           "name": "Kingfisher",
           "symbol": "KGF",
-          "pct": 4.02
+          "pct": 2.95
         }
       ],
       "bottom": [
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": -4.95
-        },
-        {
           "name": "Endeavour Mining plc",
           "symbol": "EDV",
-          "pct": -4.33
+          "pct": -3.09
         },
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": -2.9
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": -3.01
+        },
+        {
+          "name": "Sage Group plc",
+          "symbol": "SGE",
+          "pct": -2.88
         }
       ],
       "breadth": {
         "up": 76,
-        "down": 20,
-        "flat": 4,
+        "down": 23,
+        "flat": 1,
         "priced": 100,
-        "median": 0.71
+        "median": 0.54
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Persimmon plc",
           "symbol": "PSN",
-          "pct": 15.03
+          "pct": 15.68
         },
         {
-          "name": "Taylor Wimpey plc",
-          "symbol": "TW.",
-          "pct": 14.06
+          "name": "Genuit Group plc",
+          "symbol": "GEN",
+          "pct": 14.0
         },
         {
           "name": "Bellway plc",
           "symbol": "BWY",
-          "pct": 13.83
+          "pct": 12.57
         }
       ],
       "bottom": [
         {
-          "name": "Hochschild Mining Plc",
-          "symbol": "HOC",
-          "pct": -5.78
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": -5.27
         },
         {
-          "name": "Ceres Power Holdings",
-          "symbol": "CWR",
-          "pct": -5.03
+          "name": "Hochschild Mining Plc",
+          "symbol": "HOC",
+          "pct": -5.08
         },
         {
           "name": "Pan African Resources plc",
           "symbol": "PAF",
-          "pct": -5.02
+          "pct": -3.65
         }
       ],
       "breadth": {
-        "up": 169,
-        "down": 63,
-        "flat": 19,
+        "up": 148,
+        "down": 91,
+        "flat": 12,
         "priced": 251,
-        "median": 0.52
+        "median": 0.32
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -104,44 +104,44 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Bloom Energy Corporation",
-          "symbol": "BE",
-          "pct": 8.26927388534157
+          "name": "Paramount Skydance Corporation",
+          "symbol": "PSKY",
+          "pct": 3.6144543704662766
         },
         {
-          "name": "ON Semiconductor Corporation",
-          "symbol": "ON",
-          "pct": 5.536562321096438
+          "name": "Hasbro, Inc.",
+          "symbol": "HAS",
+          "pct": 2.5315057891248776
         },
         {
-          "name": "Microchip Technology Incorporated",
-          "symbol": "MCHP",
-          "pct": 5.355469097939808
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 2.492551281380278
         }
       ],
       "bottom": [
         {
-          "name": "Gen Digital Inc.",
-          "symbol": "GEN",
-          "pct": -6.285214021550807
+          "name": "Bloom Energy Corporation",
+          "symbol": "BE",
+          "pct": -7.118153444532744
         },
         {
-          "name": "Charter Communications, Inc.",
-          "symbol": "CHTR",
-          "pct": -3.947255864898127
+          "name": "QUALCOMM Incorporated",
+          "symbol": "QCOM",
+          "pct": -6.850030514555949
         },
         {
-          "name": "The Mosaic Company",
-          "symbol": "MOS",
-          "pct": -2.8704106789621546
+          "name": "DoorDash, Inc.",
+          "symbol": "DASH",
+          "pct": -5.875052014115169
         }
       ],
       "breadth": {
-        "up": 329,
-        "down": 172,
-        "flat": 2,
+        "up": 236,
+        "down": 267,
+        "flat": 0,
         "priced": 503,
-        "median": 0.38
+        "median": -0.07
       },
       "built": "26 spark batches"
     },
@@ -152,44 +152,44 @@
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Microchip Technology Incorporated",
-          "symbol": "MCHP",
-          "pct": 5.355469097939808
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 2.4881106600132825
         },
         {
-          "name": "PayPal Holdings, Inc.",
-          "symbol": "PYPL",
-          "pct": 4.638788045985814
+          "name": "Old Dominion Freight Line, Inc.",
+          "symbol": "ODFL",
+          "pct": 1.7455244334767437
         },
         {
-          "name": "Datadog, Inc.",
-          "symbol": "DDOG",
-          "pct": 4.3632223529488625
+          "name": "Palo Alto Networks, Inc.",
+          "symbol": "PANW",
+          "pct": 1.5652780085150186
         }
       ],
       "bottom": [
         {
-          "name": "Palo Alto Networks, Inc.",
-          "symbol": "PANW",
-          "pct": -3.8931120923785962
+          "name": "Arm Holdings plc",
+          "symbol": "ARM",
+          "pct": -9.213068981407998
         },
         {
-          "name": "Intel Corporation",
-          "symbol": "INTC",
-          "pct": -3.4461099071212997
+          "name": "QUALCOMM Incorporated",
+          "symbol": "QCOM",
+          "pct": -6.839038021635341
         },
         {
-          "name": "Axon Enterprise, Inc.",
-          "symbol": "AXON",
-          "pct": -3.346070707514045
+          "name": "DoorDash, Inc.",
+          "symbol": "DASH",
+          "pct": -5.717318938598762
         }
       ],
       "breadth": {
-        "up": 66,
-        "down": 35,
+        "up": 39,
+        "down": 62,
         "flat": 0,
         "priced": 101,
-        "median": 0.37
+        "median": -0.64
       },
       "built": "6 spark batches"
     },
@@ -200,44 +200,44 @@
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Microsoft Corporation",
-          "symbol": "MSFT",
-          "pct": 3.6631635978296377
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 2.488686923854801
         },
         {
-          "name": "The Sherwin-Williams Company",
-          "symbol": "SHW",
-          "pct": 2.7153596669050097
+          "name": "Chevron Corporation",
+          "symbol": "CVX",
+          "pct": 1.5284910964274134
         },
         {
-          "name": "Amgen Inc.",
-          "symbol": "AMGN",
-          "pct": 2.110623738126656
+          "name": "The Procter & Gamble Company",
+          "symbol": "PG",
+          "pct": 1.4702928387411096
         }
       ],
       "bottom": [
         {
+          "name": "The Boeing Company",
+          "symbol": "BA",
+          "pct": -4.820265692585832
+        },
+        {
           "name": "Salesforce, Inc.",
           "symbol": "CRM",
-          "pct": -1.7630748579969262
+          "pct": -2.591659828509784
         },
         {
           "name": "International Business Machines Corporation",
           "symbol": "IBM",
-          "pct": -0.6826403014286249
-        },
-        {
-          "name": "NIKE, Inc.",
-          "symbol": "NKE",
-          "pct": -0.6668565359095063
+          "pct": -1.8713144975821474
         }
       ],
       "breadth": {
-        "up": 22,
-        "down": 8,
+        "up": 14,
+        "down": 16,
         "flat": 0,
         "priced": 30,
-        "median": 0.37
+        "median": -0.04
       },
       "built": "2 spark batches"
     },
@@ -250,40 +250,40 @@
         {
           "name": "NetEase, Inc.",
           "symbol": "9999.HK",
-          "pct": 4.532898000938302
+          "pct": 4.864567909711153
         },
         {
           "name": "China Overseas Land & Investment Limited",
           "symbol": "0688.HK",
-          "pct": 3.7037039880939675
+          "pct": 3.784221128354887
         },
         {
           "name": "Geely Automobile Holdings Limited",
           "symbol": "0175.HK",
-          "pct": 3.3974279893379213
+          "pct": 3.6538441082430104
         }
       ],
       "bottom": [
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -4.251878425310209
+          "pct": -4.467168606642809
         },
         {
           "name": "Sunny Optical Technology (Group) Company Limited",
           "symbol": "2382.HK",
-          "pct": -4.160247610876906
+          "pct": -4.006166760691997
         },
         {
           "name": "Semiconductor Manufacturing International Corporation",
           "symbol": "0981.HK",
-          "pct": -3.709547799091241
+          "pct": -3.630622403250905
         }
       ],
       "breadth": {
-        "up": 66,
+        "up": 67,
         "down": 18,
-        "flat": 1,
+        "flat": 0,
         "priced": 85,
         "median": 0.97
       },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": 2.6754734307252006
-        },
-        {
-          "name": "L'Oréal S.A.",
-          "symbol": "OR.PA",
-          "pct": 2.0295927395897575
-        },
-        {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": 1.7810760667903527
+          "pct": 2.7087198515769946
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": 2.3661257418588515
+        },
+        {
+          "name": "Compagnie de Saint-Gobain S.A.",
+          "symbol": "SGO.PA",
+          "pct": 1.94786682368373
         }
       ],
       "bottom": [
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -2.0196386813068288
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": -2.6570581379402096
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -1.2167142265003277
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": -2.446839812947613
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": -0.9851569841400789
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -1.2450056440962307
         }
       ],
       "breadth": {
-        "up": 38,
-        "down": 11,
-        "flat": 1,
+        "up": 41,
+        "down": 9,
+        "flat": 0,
         "priced": 50,
-        "median": 0.49
+        "median": 0.68
       },
       "built": "3 spark batches"
     },
