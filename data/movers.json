@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-29T08:17:23+00:00",
+  "generated": "2026-09-29T13:06:52+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "GSK plc",
-          "symbol": "GSK",
-          "pct": 2.26
+          "name": "Weir plc",
+          "symbol": "WEIR",
+          "pct": 3.49
         },
         {
-          "name": "AstraZeneca plc",
-          "symbol": "AZN",
-          "pct": 2.08
+          "name": "InterContinental Hotels Group plc",
+          "symbol": "IHG",
+          "pct": 2.84
         },
         {
-          "name": "Anglo American Plc",
-          "symbol": "AAL",
-          "pct": 1.82
+          "name": "Metlen Energy & Metals Plc",
+          "symbol": "MTLN",
+          "pct": 2.7
         }
       ],
       "bottom": [
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -2.45
+          "pct": -4.76
         },
         {
-          "name": "SSE plc",
-          "symbol": "SSE",
-          "pct": -1.87
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": -2.87
         },
         {
-          "name": "British American Tobacco plc",
-          "symbol": "BATS",
-          "pct": -1.78
+          "name": "Shell plc",
+          "symbol": "SHEL",
+          "pct": -1.85
         }
       ],
       "breadth": {
-        "up": 71,
-        "down": 25,
-        "flat": 4,
+        "up": 66,
+        "down": 32,
+        "flat": 2,
         "priced": 100,
-        "median": 0.3
+        "median": 0.43
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Vesuvius plc",
           "symbol": "VSVS",
-          "pct": 24.57
+          "pct": 27.08
         },
         {
           "name": "Close Brothers Group plc",
           "symbol": "CBG",
-          "pct": 10.52
+          "pct": 13.11
         },
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": 3.86
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 7.95
         }
       ],
       "bottom": [
         {
           "name": "Vistry Group Plc",
           "symbol": "VTY",
-          "pct": -3.49
-        },
-        {
-          "name": "Applied Nutrition plc",
-          "symbol": "APN",
-          "pct": -3.28
+          "pct": -4.26
         },
         {
           "name": "Genuit Group plc",
           "symbol": "GEN",
-          "pct": -3.13
+          "pct": -3.46
+        },
+        {
+          "name": "Harbour Energy plc",
+          "symbol": "HBR",
+          "pct": -3.39
         }
       ],
       "breadth": {
-        "up": 154,
-        "down": 58,
-        "flat": 39,
+        "up": 169,
+        "down": 55,
+        "flat": 27,
         "priced": 251,
-        "median": 0.24
+        "median": 0.39
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -255,24 +255,24 @@
         {
           "name": "China Overseas Land & Investment Limited",
           "symbol": "0688.HK",
-          "pct": 3.5686580752130137
+          "pct": 3.7238132618435213
         },
         {
           "name": "China Resources Land Limited",
           "symbol": "1109.HK",
-          "pct": 3.530213672258707
+          "pct": 3.3944332351560234
         }
       ],
       "bottom": [
         {
           "name": "Geely Automobile Holdings Limited",
           "symbol": "0175.HK",
-          "pct": -7.111933290688305
+          "pct": -7.359310627352558
         },
         {
           "name": "Zhongsheng Group Holdings Limited",
           "symbol": "0881.HK",
-          "pct": -5.516013329041233
+          "pct": -5.160141775059448
         },
         {
           "name": "Budweiser Brewing Company APAC Limited",
@@ -281,11 +281,11 @@
         }
       ],
       "breadth": {
-        "up": 29,
-        "down": 54,
-        "flat": 2,
+        "up": 33,
+        "down": 49,
+        "flat": 3,
         "priced": 85,
-        "median": -0.3
+        "median": -0.21
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 5.409229962521965
+        },
+        {
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": 4.24474412285361
+        },
+        {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": 4.111386877032317
-        },
-        {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 2.388320346058849
-        },
-        {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": 1.9294990723562153
+          "pct": 3.3311614295299283
         }
       ],
       "bottom": [
         {
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": -2.992126930298797
+        },
+        {
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": -2.8499984741210938
+        },
+        {
           "name": "Vinci SA",
           "symbol": "DG.PA",
-          "pct": -3.3243526290975094
-        },
-        {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": -2.4837157784697252
-        },
-        {
-          "name": "Enel SpA",
-          "symbol": "ENEL.MI",
-          "pct": -1.896103106819012
+          "pct": -2.384166882140717
         }
       ],
       "breadth": {
-        "up": 31,
-        "down": 19,
+        "up": 27,
+        "down": 23,
         "flat": 0,
         "priced": 50,
-        "median": 0.31
+        "median": 0.2
       },
       "built": "3 spark batches"
     },
