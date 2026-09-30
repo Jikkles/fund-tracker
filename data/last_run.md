@@ -16,17 +16,17 @@ Window: 31 Aug 2026 to 30 Sep 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.67% |
-| FTSE 250 | +0.42% |
+| FTSE 100 | -1.24% |
+| FTSE 250 | +0.35% |
 | S&P 500 | -0.20% |
 | Nasdaq 100 | +3.00% |
-| Euro STOXX 50 | -1.02% |
+| Euro STOXX 50 | -1.65% |
 | Nikkei 225 | +0.67% |
 | Hang Seng | -3.73% |
-| Gold (USD/oz) | -5.65% |
-| Brent crude | +6.01% |
-| US 10yr yield | +10.45% |
-| GBP/USD | -2.09% |
+| Gold (USD/oz) | -5.38% |
+| Brent crude | +7.99% |
+| US 10yr yield | +9.39% |
+| GBP/USD | -1.78% |
 
 ## Fund NAV figures (1 month)
 

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30T08:17:16+00:00",
+  "generated": "2026-09-30T12:47:02+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Severn Trent Plc",
-          "symbol": "SVT",
-          "pct": 3.13
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": 4.68
         },
         {
-          "name": "National Grid",
-          "symbol": "NG.",
-          "pct": 3.12
+          "name": "Reckitt Benckiser Group Plc",
+          "symbol": "RKT",
+          "pct": 3.44
         },
         {
-          "name": "United Utilities Group Plc",
-          "symbol": "UU.",
-          "pct": 3.06
+          "name": "Anglo American Plc",
+          "symbol": "AAL",
+          "pct": 2.76
         }
       ],
       "bottom": [
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": -2.18
+          "name": "BT Group plc",
+          "symbol": "BT.A",
+          "pct": -1.94
         },
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": -1.82
+          "name": "London Stock Exchange Group plc",
+          "symbol": "LSEG",
+          "pct": -1.74
         },
         {
-          "name": "Shell plc",
-          "symbol": "SHEL",
-          "pct": -1.04
+          "name": "Sage Group plc",
+          "symbol": "SGE",
+          "pct": -1.69
         }
       ],
       "breadth": {
-        "up": 92,
-        "down": 5,
-        "flat": 3,
+        "up": 69,
+        "down": 27,
+        "flat": 4,
         "priced": 100,
-        "median": 1.03
+        "median": 0.65
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Saga plc",
           "symbol": "SAGA",
-          "pct": 11.08
-        },
-        {
-          "name": "Oxford Nanopore Technologies plc",
-          "symbol": "ONT",
-          "pct": 7.72
+          "pct": 22.46
         },
         {
           "name": "Greggs Plc",
           "symbol": "GRG",
-          "pct": 5.87
+          "pct": 8.37
+        },
+        {
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": 7.98
         }
       ],
       "bottom": [
         {
           "name": "Goodwin plc",
           "symbol": "GDWN",
-          "pct": -4.44
-        },
-        {
-          "name": "Vietnam Enterprise Investments Ltd",
-          "symbol": "VEIL",
-          "pct": -1.64
+          "pct": -5.27
         },
         {
           "name": "WPP plc",
           "symbol": "WPP",
-          "pct": -1.62
+          "pct": -2.66
+        },
+        {
+          "name": "Michael Page Plc",
+          "symbol": "PAGE",
+          "pct": -2.06
         }
       ],
       "breadth": {
-        "up": 203,
-        "down": 26,
-        "flat": 22,
+        "up": 180,
+        "down": 60,
+        "flat": 11,
         "priced": 251,
-        "median": 0.92
+        "median": 0.64
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,42 +250,42 @@
         {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": 6.174142634242614
+          "pct": 6.279675877566541
         },
         {
           "name": "Hansoh Pharmaceutical Group Company Limited",
           "symbol": "3692.HK",
-          "pct": 5.608594995349415
+          "pct": 5.31025881559797
         },
         {
           "name": "WuXi Biologics (Cayman) Inc.",
           "symbol": "2269.HK",
-          "pct": 4.672897196261682
+          "pct": 4.7663537141318635
         }
       ],
       "bottom": [
         {
           "name": "Midea Group Co., Ltd.",
           "symbol": "0300.HK",
-          "pct": -3.4791728787045297
+          "pct": -3.215598810152267
         },
         {
           "name": "Geely Automobile Holdings Limited",
           "symbol": "0175.HK",
-          "pct": -2.7369817085515176
+          "pct": -2.8704897506109757
         },
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -2.5930050192084204
+          "pct": -2.649376095932541
         }
       ],
       "breadth": {
-        "up": 55,
-        "down": 25,
-        "flat": 5,
+        "up": 56,
+        "down": 28,
+        "flat": 1,
         "priced": 85,
-        "median": 0.32
+        "median": 0.46
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 6.328445908374706
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 3.266052806049312
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 5.491218244246096
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": 2.2475794348676614
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 3.8472444499514333
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": 1.964914422286184
         }
       ],
       "bottom": [
         {
           "name": "TotalEnergies SE",
           "symbol": "TTE.PA",
-          "pct": -5.024995803833008
+          "pct": -2.701665366934321
         },
         {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": -2.57873539029122
+          "name": "AXA SA",
+          "symbol": "CS.PA",
+          "pct": -2.6212995179306993
         },
         {
-          "name": "Vinci SA",
-          "symbol": "DG.PA",
-          "pct": -2.339179881626668
+          "name": "BNP Paribas SA",
+          "symbol": "BNP.PA",
+          "pct": -1.6735162805715278
         }
       ],
       "breadth": {
-        "up": 29,
-        "down": 20,
-        "flat": 1,
+        "up": 27,
+        "down": 23,
+        "flat": 0,
         "priced": 50,
-        "median": 0.29
+        "median": 0.09
       },
       "built": "3 spark batches"
     },
