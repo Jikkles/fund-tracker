@@ -1,6 +1,6 @@
 {
   "s-p-500": {
-    "fetched": "2026-09-24",
+    "fetched": "2026-10-01",
     "label": "S&P 500",
     "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
     "nominal": 503,
@@ -2020,7 +2020,7 @@
     ]
   },
   "nasdaq-100": {
-    "fetched": "2026-09-24",
+    "fetched": "2026-10-01",
     "label": "Nasdaq 100",
     "source": "https://en.wikipedia.org/wiki/List_of_NASDAQ-100_companies",
     "nominal": null,
@@ -2432,7 +2432,7 @@
     ]
   },
   "dow-jones": {
-    "fetched": "2026-09-24",
+    "fetched": "2026-10-01",
     "label": "Dow Jones",
     "source": "https://en.wikipedia.org/wiki/List_of_Dow_Jones_Industrial_Average_companies",
     "nominal": 30,
@@ -2560,7 +2560,7 @@
     ]
   },
   "hang-seng": {
-    "fetched": "2026-09-24",
+    "fetched": "2026-10-01",
     "label": "Hang Seng",
     "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
     "nominal": null,
@@ -2908,7 +2908,7 @@
     ]
   },
   "euro-stoxx-50": {
-    "fetched": "2026-09-24",
+    "fetched": "2026-10-01",
     "label": "Euro STOXX 50",
     "source": "https://en.wikipedia.org/wiki/EURO_STOXX_50",
     "nominal": 50,
@@ -3116,7 +3116,7 @@
     ]
   },
   "nikkei-225": {
-    "fetched": "2026-09-24",
+    "fetched": "2026-10-01",
     "label": "Nikkei 225",
     "source": "https://en.wikipedia.org/wiki/Nikkei_225",
     "nominal": 225,
