@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02T08:18:00+00:00",
+  "generated": "2026-10-02T12:50:59+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "BT Group plc",
           "symbol": "BT.A",
-          "pct": 3.8
+          "pct": 3.9
         },
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": 2.95
+          "name": "Halma plc",
+          "symbol": "HLMA",
+          "pct": 3.64
         },
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": 2.49
+          "name": "Compass Group plc",
+          "symbol": "CPG",
+          "pct": 3.19
         }
       ],
       "bottom": [
         {
           "name": "IG Group Holdings Plc",
           "symbol": "IGG",
-          "pct": -21.11
+          "pct": -21.58
         },
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": -1.3
+          "name": "Lion Finance Group Plc",
+          "symbol": "BGEO",
+          "pct": -2.36
         },
         {
-          "name": "ICG Plc",
-          "symbol": "ICG",
-          "pct": -1.0
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": -2.25
         }
       ],
       "breadth": {
-        "up": 81,
-        "down": 18,
-        "flat": 1,
+        "up": 79,
+        "down": 21,
+        "flat": 0,
         "priced": 100,
-        "median": 0.6
+        "median": 0.61
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 8.04
+        },
+        {
           "name": "J D Wetherspoon plc",
           "symbol": "JDW",
-          "pct": 7.2
+          "pct": 7.07
         },
         {
-          "name": "Applied Nutrition plc",
-          "symbol": "APN",
-          "pct": 4.86
-        },
-        {
-          "name": "Seraphim Space Investment Trust plc",
-          "symbol": "SSIT",
-          "pct": 4.4
+          "name": "Oxford Biomedica plc",
+          "symbol": "OXB",
+          "pct": 5.7
         }
       ],
       "bottom": [
         {
-          "name": "Plus500 Ltd",
-          "symbol": "PLUS",
-          "pct": -9.72
-        },
-        {
           "name": "CMC Markets Plc",
           "symbol": "CMCX",
-          "pct": -5.93
+          "pct": -9.57
         },
         {
-          "name": "Harbour Energy plc",
-          "symbol": "HBR",
-          "pct": -3.04
+          "name": "Plus500 Ltd",
+          "symbol": "PLUS",
+          "pct": -4.33
+        },
+        {
+          "name": "RHI Magnesita NV",
+          "symbol": "RHIM",
+          "pct": -3.61
         }
       ],
       "breadth": {
-        "up": 170,
-        "down": 45,
-        "flat": 36,
+        "up": 152,
+        "down": 77,
+        "flat": 22,
         "priced": 251,
-        "median": 0.37
+        "median": 0.31
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -121,7 +121,7 @@
       ],
       "bottom": [
         {
-          "name": "Corteva, Inc.",
+          "name": "Vylor, Inc.",
           "symbol": "CTVA",
           "pct": -83.81197753018081
         },
@@ -255,37 +255,37 @@
         {
           "name": "ANTA Sports Products Limited",
           "symbol": "2020.HK",
-          "pct": 0.20339189949682202
+          "pct": 0.5423749503442796
         },
         {
           "name": "WH Group Limited",
           "symbol": "0288.HK",
-          "pct": 0.0
+          "pct": 0.15106086185364614
         }
       ],
       "bottom": [
         {
           "name": "AIA Group Limited",
           "symbol": "1299.HK",
-          "pct": -5.706517711028176
-        },
-        {
-          "name": "Li Auto Inc.",
-          "symbol": "2015.HK",
-          "pct": -5.683839523210281
+          "pct": -5.978263066711904
         },
         {
           "name": "HSBC Holdings plc",
           "symbol": "0005.HK",
-          "pct": -5.5063271824317646
+          "pct": -5.379746835443038
+        },
+        {
+          "name": "Li Auto Inc.",
+          "symbol": "2015.HK",
+          "pct": -5.373006071161719
         }
       ],
       "breadth": {
-        "up": 2,
-        "down": 82,
-        "flat": 1,
+        "up": 4,
+        "down": 81,
+        "flat": 0,
         "priced": 85,
-        "median": -2.1
+        "median": -2.04
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": 3.613447942653624
+          "pct": 5.25076210489121
+        },
+        {
+          "name": "Airbus SE",
+          "symbol": "AIR.PA",
+          "pct": 3.1788759172743464
         },
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": 2.5684931506849313
-        },
-        {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 2.075730244309681
+          "pct": 2.870811251286385
         }
       ],
       "bottom": [
         {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": -5.401460086294099
+          "name": "Sanofi",
+          "symbol": "SAN.PA",
+          "pct": -3.6935663537640733
         },
         {
           "name": "UniCredit S.p.A.",
           "symbol": "UCG.MI",
-          "pct": -4.752716970911393
+          "pct": -2.225571067815946
         },
         {
           "name": "Banco Bilbao Vizcaya Argentaria, S.A.",
           "symbol": "BBVA.MC",
-          "pct": -4.353083220290315
+          "pct": -2.1419581701853283
         }
       ],
       "breadth": {
-        "up": 12,
-        "down": 38,
+        "up": 36,
+        "down": 14,
         "flat": 0,
         "priced": 50,
-        "median": -1.06
+        "median": 0.84
       },
       "built": "3 spark batches"
     },
