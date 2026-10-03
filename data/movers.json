@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-03T08:17:02+00:00",
+  "generated": "2026-10-03T11:49:30+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 1.358532416363947
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 8.7849232271287
         },
         {
-          "name": "Sanofi",
-          "symbol": "SAN.PA",
-          "pct": 0.6332586568526436
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": 3.554338236344766
         },
         {
-          "name": "Iberdrola, S.A.",
-          "symbol": "IBE.MC",
-          "pct": 0.5822364305243884
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": 3.5065748278021287
         }
       ],
       "bottom": [
         {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": -5.318037948878284
+          "name": "Sanofi",
+          "symbol": "SAN.PA",
+          "pct": -3.1326962562633316
         },
         {
-          "name": "Banco Santander, S.A.",
-          "symbol": "SAN.MC",
-          "pct": -4.185592076024737
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": -3.1131121592100937
         },
         {
-          "name": "UniCredit S.p.A.",
-          "symbol": "UCG.MI",
-          "pct": -4.065141959653664
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": -0.9120758897910155
         }
       ],
       "breadth": {
-        "up": 8,
-        "down": 42,
+        "up": 31,
+        "down": 19,
         "flat": 0,
         "priced": 50,
-        "median": -1.53
+        "median": 0.44
       },
       "built": "3 spark batches"
     },
