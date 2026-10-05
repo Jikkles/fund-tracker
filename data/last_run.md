@@ -16,17 +16,17 @@ Window: 5 Sep 2026 to 5 Oct 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -3.03% |
-| FTSE 250 | -1.57% |
-| S&P 500 | +0.64% |
-| Nasdaq 100 | +4.41% |
-| Euro STOXX 50 | -2.80% |
+| FTSE 100 | -2.96% |
+| FTSE 250 | -1.49% |
+| S&P 500 | +1.08% |
+| Nasdaq 100 | +5.04% |
+| Euro STOXX 50 | -2.48% |
 | Nikkei 225 | +5.34% |
 | Hang Seng | -5.40% |
-| Gold (USD/oz) | -5.65% |
-| Brent crude | +5.03% |
-| US 10yr yield | +9.80% |
-| GBP/USD | -2.18% |
+| Gold (USD/oz) | -6.08% |
+| Brent crude | +4.19% |
+| US 10yr yield | +10.59% |
+| GBP/USD | -2.20% |
 
 ## Fund NAV figures (1 month)
 
@@ -67,7 +67,7 @@ Window: 5 Sep 2026 to 5 Oct 2026
 | fidelity-special-situations | 0P0000WUU1.L | -1.18% | 2 Oct 2026 |
 | first-sentier-global-listed-infrastructure | 0P00009VDK.L | -3.52% | 2 Oct 2026 |
 | fssa-asia-focus | 0P00015W87.L | +0.38% | 2 Oct 2026 |
-| fssa-greater-china-growth | 0P00000EU6.L | -1.01% | 30 Sep 2026 |
+| fssa-greater-china-growth | 0P00000EU6.L | -0.88% | 2 Oct 2026 |
 | ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | -1.38% | 2 Oct 2026 |
 | ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -1.14% | 2 Oct 2026 |
 | hsbc-american-index | 0P0000WN7H.L | +2.33% | 2 Oct 2026 |
@@ -124,7 +124,7 @@ Window: 5 Sep 2026 to 5 Oct 2026
 | schroder-managed-balanced | 0P00000VDP.L | -0.73% | 2 Oct 2026 |
 | schroder-us-smaller-companies | 0P0000VGMI.L | +0.71% | 2 Oct 2026 |
 | schroders-asian-discovery-class-z | 0P0000VGH4.L | +1.99% | 2 Oct 2026 |
-| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +0.40% | 1 Oct 2026 |
+| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | +0.26% | 2 Oct 2026 |
 | stewart-investors-indian-subcontinent | 0P0000X4NO.L | -6.36% | 1 Oct 2026 |
 | trojan-ethical | 0P0001J9W9.L | -1.27% | 2 Oct 2026 |
 | trojan-fund | 0P0001CBJA.L | -1.15% | 2 Oct 2026 |

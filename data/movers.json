@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05T11:02:42+00:00",
+  "generated": "2026-10-05T14:58:22+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": 2.88
+        },
+        {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": 3.49
+          "pct": 2.25
         },
         {
-          "name": "Metlen Energy & Metals Plc",
-          "symbol": "MTLN",
-          "pct": 1.81
-        },
-        {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": 1.68
+          "name": "London Stock Exchange Group plc",
+          "symbol": "LSEG",
+          "pct": 1.95
         }
       ],
       "bottom": [
         {
           "name": "3i Group Plc",
           "symbol": "III",
-          "pct": -4.31
-        },
-        {
-          "name": "Halma plc",
-          "symbol": "HLMA",
-          "pct": -2.11
+          "pct": -5.56
         },
         {
           "name": "Barratt Redrow Plc",
           "symbol": "BTRW",
-          "pct": -2.11
+          "pct": -2.8
+        },
+        {
+          "name": "Balfour Beatty plc",
+          "symbol": "BBY",
+          "pct": -2.24
         }
       ],
       "breadth": {
-        "up": 64,
+        "up": 66,
         "down": 31,
-        "flat": 5,
+        "flat": 3,
         "priced": 100,
-        "median": 0.22
+        "median": 0.32
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": 3.21
+          "name": "CMC Markets Plc",
+          "symbol": "CMCX",
+          "pct": 6.33
         },
         {
-          "name": "Sirius Real Estate Limited",
-          "symbol": "SRE",
-          "pct": 3.11
+          "name": "Trustpilot Group plc",
+          "symbol": "TRST",
+          "pct": 4.08
         },
         {
           "name": "Playtech plc",
           "symbol": "PTEC",
-          "pct": 3.05
+          "pct": 3.69
         }
       ],
       "bottom": [
         {
+          "name": "IP Group Plc",
+          "symbol": "IPO",
+          "pct": -4.19
+        },
+        {
+          "name": "Meridian Mining Plc",
+          "symbol": "MNO",
+          "pct": -3.49
+        },
+        {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -5.91
-        },
-        {
-          "name": "Volex Plc",
-          "symbol": "VLX",
-          "pct": -3.22
-        },
-        {
-          "name": "Oxford Nanopore Technologies plc",
-          "symbol": "ONT",
-          "pct": -2.6
+          "pct": -3.44
         }
       ],
       "breadth": {
-        "up": 81,
-        "down": 150,
-        "flat": 20,
+        "up": 105,
+        "down": 130,
+        "flat": 16,
         "priced": 251,
-        "median": -0.21
+        "median": -0.07
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -104,44 +104,44 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Teradyne, Inc.",
-          "symbol": "TER",
-          "pct": 7.996825156131108
+          "name": "PTC Inc.",
+          "symbol": "PTC",
+          "pct": 34.402557433667226
         },
         {
-          "name": "Hewlett Packard Enterprise Company",
-          "symbol": "HPE",
-          "pct": 7.355218125304945
+          "name": "Western Digital Corporation",
+          "symbol": "WDC",
+          "pct": 7.093835837346287
         },
         {
-          "name": "EchoStar Corporation",
-          "symbol": "ECHO",
-          "pct": 6.79886685552408
+          "name": "AppLovin Corporation",
+          "symbol": "APP",
+          "pct": 6.470438784334978
         }
       ],
       "bottom": [
         {
-          "name": "Western Digital Corporation",
-          "symbol": "WDC",
-          "pct": -10.219212483389045
+          "name": "C.H. Robinson Worldwide, Inc.",
+          "symbol": "CHRW",
+          "pct": -13.929749588297133
         },
         {
-          "name": "Seagate Technology Holdings plc",
-          "symbol": "STX",
-          "pct": -10.213946756110277
+          "name": "Lennar Corporation",
+          "symbol": "LEN",
+          "pct": -4.986838553173851
         },
         {
-          "name": "Accenture plc",
-          "symbol": "ACN",
-          "pct": -6.311827113825605
+          "name": "Chipotle Mexican Grill, Inc.",
+          "symbol": "CMG",
+          "pct": -4.434491181165109
         }
       ],
       "breadth": {
-        "up": 293,
-        "down": 207,
-        "flat": 3,
+        "up": 291,
+        "down": 210,
+        "flat": 2,
         "priced": 503,
-        "median": 0.22
+        "median": 0.17
       },
       "built": "26 spark batches"
     },
@@ -152,44 +152,44 @@
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Teradyne, Inc.",
-          "symbol": "TER",
-          "pct": 7.996825156131108
+          "name": "MercadoLibre, Inc.",
+          "symbol": "MELI",
+          "pct": 7.834672353725873
         },
         {
-          "name": "Space Exploration Technologies Corp.",
-          "symbol": "SPCX",
-          "pct": 7.3546287910983565
+          "name": "Western Digital Corporation",
+          "symbol": "WDC",
+          "pct": 7.093835837346287
         },
         {
-          "name": "Monolithic Power Systems, Inc.",
-          "symbol": "MPWR",
-          "pct": 5.787049785156891
+          "name": "AppLovin Corporation",
+          "symbol": "APP",
+          "pct": 6.4611089752422135
         }
       ],
       "bottom": [
         {
-          "name": "Western Digital Corporation",
-          "symbol": "WDC",
-          "pct": -10.219212483389045
+          "name": "Ferrovial N.V.",
+          "symbol": "FER",
+          "pct": -4.04548507389447
         },
         {
-          "name": "Seagate Technology Holdings plc",
-          "symbol": "STX",
-          "pct": -10.213946756110277
+          "name": "Nebius Group N.V.",
+          "symbol": "NBIS",
+          "pct": -3.165025178479005
         },
         {
-          "name": "Alnylam Pharmaceuticals, Inc.",
-          "symbol": "ALNY",
-          "pct": -4.957172687149535
+          "name": "Thomson Reuters Corporation",
+          "symbol": "TRI",
+          "pct": -1.920712914613854
         }
       ],
       "breadth": {
         "up": 59,
-        "down": 41,
-        "flat": 1,
+        "down": 42,
+        "flat": 0,
         "priced": 101,
-        "median": 0.33
+        "median": 0.12
       },
       "built": "6 spark batches"
     },
@@ -200,44 +200,44 @@
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Cisco Systems, Inc.",
-          "symbol": "CSCO",
-          "pct": 3.1629227146417795
+          "name": "Microsoft Corporation",
+          "symbol": "MSFT",
+          "pct": 1.6984479218116022
         },
         {
-          "name": "Caterpillar Inc.",
-          "symbol": "CAT",
-          "pct": 2.307739806090856
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 1.3699516447370352
         },
         {
-          "name": "UnitedHealth Group Incorporated",
-          "symbol": "UNH",
-          "pct": 1.8346060967968745
+          "name": "Visa Inc.",
+          "symbol": "V",
+          "pct": 1.0758068106846552
         }
       ],
       "bottom": [
         {
+          "name": "Merck & Co., Inc.",
+          "symbol": "MRK",
+          "pct": -3.468471778907236
+        },
+        {
           "name": "NIKE, Inc.",
           "symbol": "NKE",
-          "pct": -3.641543494818198
+          "pct": -2.9123136561999194
         },
         {
-          "name": "International Business Machines Corporation",
-          "symbol": "IBM",
-          "pct": -1.320803028114262
-        },
-        {
-          "name": "Amgen Inc.",
-          "symbol": "AMGN",
-          "pct": -1.0386182588592359
+          "name": "Salesforce, Inc.",
+          "symbol": "CRM",
+          "pct": -2.298778906786998
         }
       ],
       "breadth": {
-        "up": 18,
-        "down": 11,
-        "flat": 1,
+        "up": 14,
+        "down": 16,
+        "flat": 0,
         "priced": 30,
-        "median": 0.18
+        "median": -0.03
       },
       "built": "2 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Banco Santander, S.A.",
           "symbol": "SAN.MC",
-          "pct": 2.4220889328789488
+          "pct": 4.759487577721269
+        },
+        {
+          "name": "Prosus N.V.",
+          "symbol": "PRX.AS",
+          "pct": 2.724633700605752
         },
         {
           "name": "Anheuser-Busch InBev SA/NV",
           "symbol": "ABI.BR",
-          "pct": 2.157832282900031
-        },
-        {
-          "name": "L'Air Liquide S.A.",
-          "symbol": "AI.PA",
-          "pct": 1.6455118661832204
+          "pct": 2.188665009946553
         }
       ],
       "bottom": [
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": -9.900990099009901
+          "pct": -10.049508979218235
         },
         {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -2.2701038861100424
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": -2.64797210296695
         },
         {
           "name": "Danone S.A.",
           "symbol": "BN.PA",
-          "pct": -1.3870089811215713
+          "pct": -1.826789641186807
         }
       ],
       "breadth": {
-        "up": 29,
+        "up": 30,
         "down": 20,
-        "flat": 1,
+        "flat": 0,
         "priced": 50,
-        "median": 0.27
+        "median": 0.28
       },
       "built": "3 spark batches"
     },
