@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-06T08:17:59+00:00",
+  "generated": "2026-10-06T13:26:29+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Informa plc",
           "symbol": "INF",
-          "pct": 3.18
-        },
-        {
-          "name": "RELX plc",
-          "symbol": "REL",
-          "pct": 2.48
+          "pct": 5.83
         },
         {
           "name": "Weir plc",
           "symbol": "WEIR",
-          "pct": 2.48
+          "pct": 3.25
+        },
+        {
+          "name": "AstraZeneca plc",
+          "symbol": "AZN",
+          "pct": 2.6
         }
       ],
       "bottom": [
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": -1.15
+          "name": "BAE Systems plc",
+          "symbol": "BA.",
+          "pct": -3.75
         },
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": -0.92
+          "pct": -3.48
         },
         {
-          "name": "BAE Systems plc",
-          "symbol": "BA.",
-          "pct": -0.85
+          "name": "BT Group plc",
+          "symbol": "BT.A",
+          "pct": -2.31
         }
       ],
       "breadth": {
-        "up": 87,
-        "down": 12,
+        "up": 69,
+        "down": 30,
         "flat": 1,
         "priced": 100,
-        "median": 0.93
+        "median": 0.43
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 7.18
+        },
+        {
           "name": "Clarkson plc",
           "symbol": "CKN",
-          "pct": 6.83
+          "pct": 5.54
         },
         {
-          "name": "Princes Group plc",
-          "symbol": "PRN",
-          "pct": 4.16
-        },
-        {
-          "name": "HG Capital Trust plc",
-          "symbol": "HGT",
-          "pct": 4.02
+          "name": "Domino's Pizza Group plc",
+          "symbol": "DOM",
+          "pct": 4.33
         }
       ],
       "bottom": [
         {
-          "name": "Inchcape plc",
-          "symbol": "INCH",
-          "pct": -3.83
+          "name": "ASOS plc",
+          "symbol": "ASC",
+          "pct": -10.06
         },
         {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": -3.27
+          "name": "Chemring Group plc",
+          "symbol": "CHG",
+          "pct": -5.92
         },
         {
-          "name": "RHI Magnesita NV",
-          "symbol": "RHIM",
-          "pct": -2.43
+          "name": "QinetiQ Group plc",
+          "symbol": "QQ.",
+          "pct": -5.81
         }
       ],
       "breadth": {
-        "up": 189,
-        "down": 29,
-        "flat": 33,
+        "up": 143,
+        "down": 89,
+        "flat": 19,
         "priced": 251,
-        "median": 0.57
+        "median": 0.23
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,7 +250,7 @@
         {
           "name": "BYD Electronic (International) Company Limited",
           "symbol": "0285.HK",
-          "pct": 4.569415631459353
+          "pct": 5.008784614166253
         },
         {
           "name": "WuXi Biologics (Cayman) Inc.",
@@ -260,32 +260,32 @@
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": 4.234227902722474
+          "pct": 4.324320051714921
         }
       ],
       "bottom": [
         {
           "name": "ANTA Sports Products Limited",
           "symbol": "2020.HK",
-          "pct": -2.2525618100735922
+          "pct": -2.5255951865134385
         },
         {
           "name": "Nongfu Spring Co., Ltd.",
           "symbol": "9633.HK",
-          "pct": -1.5007465757652987
+          "pct": -1.5507727338260124
         },
         {
-          "name": "CK Asset Holdings Limited",
-          "symbol": "1113.HK",
-          "pct": -0.3968260642719294
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": -1.4476521981450714
         }
       ],
       "breadth": {
         "up": 60,
-        "down": 23,
-        "flat": 2,
+        "down": 21,
+        "flat": 4,
         "priced": 85,
-        "median": 0.37
+        "median": 0.47
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Banco Santander, S.A.",
-          "symbol": "SAN.MC",
-          "pct": 6.3008168986442366
+          "name": "BNP Paribas SA",
+          "symbol": "BNP.PA",
+          "pct": 2.8137134004357045
         },
         {
-          "name": "UniCredit S.p.A.",
-          "symbol": "UCG.MI",
-          "pct": 3.3481286502686447
+          "name": "Vinci SA",
+          "symbol": "DG.PA",
+          "pct": 2.402256604529208
         },
         {
-          "name": "Intesa Sanpaolo S.p.A.",
-          "symbol": "ISP.MI",
-          "pct": 2.939315238337948
+          "name": "AXA SA",
+          "symbol": "CS.PA",
+          "pct": 2.087775140121111
         }
       ],
       "bottom": [
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": -11.35313329916976
+          "pct": -4.545452511491637
         },
         {
-          "name": "Danone S.A.",
-          "symbol": "BN.PA",
-          "pct": -1.420839255351981
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": -2.836154605872115
         },
         {
-          "name": "DHL AG",
-          "symbol": "DHL.DE",
-          "pct": -1.0225702019960174
+          "name": "L'Air Liquide S.A.",
+          "symbol": "AI.PA",
+          "pct": -1.3469125479953536
         }
       ],
       "breadth": {
-        "up": 41,
-        "down": 9,
+        "up": 34,
+        "down": 16,
         "flat": 0,
         "priced": 50,
-        "median": 1.14
+        "median": 0.6
       },
       "built": "3 spark batches"
     },
