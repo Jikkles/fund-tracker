@@ -1,387 +1,387 @@
 {
-  "generated": "2026-10-06T13:26:29+00:00",
+  "generated": "2026-10-07T08:17:45+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Informa plc",
-          "symbol": "INF",
-          "pct": 5.83
+          "name": "JD Sports Fashion plc",
+          "symbol": "JD.",
+          "pct": 2.02
         },
         {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": 3.25
+          "name": "Haleon plc",
+          "symbol": "HLN",
+          "pct": 1.86
         },
         {
-          "name": "AstraZeneca plc",
-          "symbol": "AZN",
-          "pct": 2.6
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": 1.74
         }
       ],
       "bottom": [
         {
-          "name": "BAE Systems plc",
-          "symbol": "BA.",
-          "pct": -3.75
+          "name": "Severn Trent Plc",
+          "symbol": "SVT",
+          "pct": -3.21
         },
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": -3.48
+          "name": "United Utilities Group Plc",
+          "symbol": "UU.",
+          "pct": -2.75
         },
         {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": -2.31
+          "name": "Investec Plc",
+          "symbol": "INVP",
+          "pct": -2.1
         }
       ],
       "breadth": {
-        "up": 69,
-        "down": 30,
-        "flat": 1,
+        "up": 37,
+        "down": 58,
+        "flat": 5,
         "priced": 100,
-        "median": 0.43
+        "median": -0.23
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Oxford Nanopore Technologies plc",
-          "symbol": "ONT",
-          "pct": 7.18
+          "name": "Avon Technologies Plc",
+          "symbol": "AVON",
+          "pct": 11.37
         },
         {
-          "name": "Clarkson plc",
-          "symbol": "CKN",
-          "pct": 5.54
+          "name": "Bridgepoint Group plc",
+          "symbol": "BPT",
+          "pct": 7.21
         },
         {
-          "name": "Domino's Pizza Group plc",
-          "symbol": "DOM",
-          "pct": 4.33
+          "name": "Hollywood Bowl Group Plc",
+          "symbol": "BOWL",
+          "pct": 6.69
         }
       ],
       "bottom": [
         {
-          "name": "ASOS plc",
-          "symbol": "ASC",
-          "pct": -10.06
+          "name": "Pennon Group",
+          "symbol": "PNN",
+          "pct": -17.21
         },
         {
-          "name": "Chemring Group plc",
-          "symbol": "CHG",
-          "pct": -5.92
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": -4.94
         },
         {
-          "name": "QinetiQ Group plc",
-          "symbol": "QQ.",
-          "pct": -5.81
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": -4.57
         }
       ],
       "breadth": {
-        "up": 143,
-        "down": 89,
-        "flat": 19,
+        "up": 92,
+        "down": 131,
+        "flat": 28,
         "priced": 251,
-        "median": 0.23
+        "median": -0.1
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "PTC Inc.",
-          "symbol": "PTC",
-          "pct": 33.4860766064741
+          "name": "Ciena Corporation",
+          "symbol": "CIEN",
+          "pct": 13.846901669793683
         },
         {
-          "name": "Illumina, Inc.",
-          "symbol": "ILMN",
-          "pct": 7.562991960970049
+          "name": "Corteva, Inc.",
+          "symbol": "CTVA",
+          "pct": 12.267953688221784
         },
         {
-          "name": "Charles River Laboratories International, Inc.",
-          "symbol": "CRL",
-          "pct": 7.0919006165352085
+          "name": "Constellation Energy Corporation",
+          "symbol": "CEG",
+          "pct": 12.248710626028865
         }
       ],
       "bottom": [
         {
-          "name": "C.H. Robinson Worldwide, Inc.",
-          "symbol": "CHRW",
-          "pct": -10.848339131324847
+          "name": "Seagate Technology Holdings plc",
+          "symbol": "STX",
+          "pct": -9.182835958759835
         },
         {
-          "name": "Lennar Corporation",
-          "symbol": "LEN",
-          "pct": -6.728474228112881
+          "name": "Moderna, Inc.",
+          "symbol": "MRNA",
+          "pct": -7.750602568591525
         },
         {
-          "name": "Chipotle Mexican Grill, Inc.",
-          "symbol": "CMG",
-          "pct": -4.666255254639289
+          "name": "Western Digital Corporation",
+          "symbol": "WDC",
+          "pct": -6.928721376815099
         }
       ],
       "breadth": {
-        "up": 317,
-        "down": 183,
-        "flat": 3,
+        "up": 339,
+        "down": 162,
+        "flat": 2,
         "priced": 503,
-        "median": 0.39
+        "median": 0.47
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "MercadoLibre, Inc.",
-          "symbol": "MELI",
-          "pct": 9.669562001464936
+          "name": "Constellation Energy Corporation",
+          "symbol": "CEG",
+          "pct": 12.248710626028865
         },
         {
-          "name": "Space Exploration Technologies Corp.",
-          "symbol": "SPCX",
-          "pct": 7.630843678723406
+          "name": "Astera Labs, Inc.",
+          "symbol": "ALAB",
+          "pct": 7.578515132917049
         },
         {
-          "name": "Western Digital Corporation",
-          "symbol": "WDC",
-          "pct": 6.344965099410849
+          "name": "Nebius Group N.V.",
+          "symbol": "NBIS",
+          "pct": 7.438615147331257
         }
       ],
       "bottom": [
         {
-          "name": "Nebius Group N.V.",
-          "symbol": "NBIS",
-          "pct": -4.217285258982771
+          "name": "Seagate Technology Holdings plc",
+          "symbol": "STX",
+          "pct": -9.182835958759835
         },
         {
-          "name": "Ferrovial N.V.",
-          "symbol": "FER",
-          "pct": -3.35570331383694
+          "name": "Western Digital Corporation",
+          "symbol": "WDC",
+          "pct": -6.928721376815099
         },
         {
-          "name": "Intel Corporation",
-          "symbol": "INTC",
-          "pct": -2.6313578659740515
+          "name": "KLA Corporation",
+          "symbol": "KLAC",
+          "pct": -4.53952096329614
         }
       ],
       "breadth": {
-        "up": 63,
-        "down": 36,
-        "flat": 2,
+        "up": 62,
+        "down": 38,
+        "flat": 1,
         "priced": 101,
-        "median": 0.41
+        "median": 0.35
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Visa Inc.",
-          "symbol": "V",
-          "pct": 2.5092851164742376
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": 4.53820489313201
         },
         {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": 2.11583544039853
+          "name": "Walmart Inc.",
+          "symbol": "WMT",
+          "pct": 2.027217340444033
         },
         {
-          "name": "UnitedHealth Group Incorporated",
-          "symbol": "UNH",
-          "pct": 1.7961798293657885
+          "name": "The Home Depot, Inc.",
+          "symbol": "HD",
+          "pct": 1.9704814743697385
         }
       ],
       "bottom": [
         {
-          "name": "Merck & Co., Inc.",
-          "symbol": "MRK",
-          "pct": -3.2986899965051766
-        },
-        {
           "name": "Salesforce, Inc.",
           "symbol": "CRM",
-          "pct": -2.0878644613320483
+          "pct": -2.0888584939344335
         },
         {
-          "name": "Johnson & Johnson",
-          "symbol": "JNJ",
-          "pct": -1.2107979995687512
+          "name": "The Boeing Company",
+          "symbol": "BA",
+          "pct": -1.5047705884784108
+        },
+        {
+          "name": "UnitedHealth Group Incorporated",
+          "symbol": "UNH",
+          "pct": -0.5969621554771429
         }
       ],
       "breadth": {
-        "up": 17,
-        "down": 12,
-        "flat": 1,
+        "up": 20,
+        "down": 10,
+        "flat": 0,
         "priced": 30,
-        "median": 0.18
+        "median": 0.31
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "BYD Electronic (International) Company Limited",
-          "symbol": "0285.HK",
-          "pct": 5.008784614166253
+          "name": "Li Auto Inc.",
+          "symbol": "2015.HK",
+          "pct": 2.253528013042325
         },
         {
-          "name": "WuXi Biologics (Cayman) Inc.",
-          "symbol": "2269.HK",
-          "pct": 4.512635254770127
+          "name": "China Unicom (Hong Kong) Limited",
+          "symbol": "0762.HK",
+          "pct": 2.1139663586129194
         },
         {
-          "name": "Sino Biopharmaceutical Limited",
-          "symbol": "1177.HK",
-          "pct": 4.324320051714921
+          "name": "Tingyi (Cayman Islands) Holding Corp.",
+          "symbol": "0322.HK",
+          "pct": 1.9982583637070173
         }
       ],
       "bottom": [
         {
-          "name": "ANTA Sports Products Limited",
-          "symbol": "2020.HK",
-          "pct": -2.5255951865134385
+          "name": "Zhongsheng Group Holdings Limited",
+          "symbol": "0881.HK",
+          "pct": -3.3268115822342987
         },
         {
-          "name": "Nongfu Spring Co., Ltd.",
-          "symbol": "9633.HK",
-          "pct": -1.5507727338260124
+          "name": "Alibaba Group Holding Limited",
+          "symbol": "9988.HK",
+          "pct": -2.58779621195615
         },
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": -1.4476521981450714
+          "name": "WuXi Biologics (Cayman) Inc.",
+          "symbol": "2269.HK",
+          "pct": -2.0725401231692584
         }
       ],
       "breadth": {
-        "up": 60,
-        "down": 21,
-        "flat": 4,
+        "up": 41,
+        "down": 43,
+        "flat": 1,
         "priced": 85,
-        "median": 0.47
+        "median": -0.05
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "BNP Paribas SA",
-          "symbol": "BNP.PA",
-          "pct": 2.8137134004357045
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": 2.6001383477809292
         },
         {
-          "name": "Vinci SA",
-          "symbol": "DG.PA",
-          "pct": 2.402256604529208
+          "name": "Industria de Diseño Textil, S.A.",
+          "symbol": "ITX.MC",
+          "pct": 2.528302174694133
         },
         {
-          "name": "AXA SA",
-          "symbol": "CS.PA",
-          "pct": 2.087775140121111
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": 2.3126490604688703
         }
       ],
       "bottom": [
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": -4.545452511491637
+          "pct": -5.260255215563966
         },
         {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -2.836154605872115
+          "pct": -2.601509863541408
         },
         {
-          "name": "L'Air Liquide S.A.",
-          "symbol": "AI.PA",
-          "pct": -1.3469125479953536
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": -2.282328696548171
         }
       ],
       "breadth": {
-        "up": 34,
-        "down": 16,
+        "up": 24,
+        "down": 26,
         "flat": 0,
         "priced": 50,
-        "median": 0.6
+        "median": -0.17
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-10-06",
+      "asAt": "2026-10-07",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
+          "name": "Suzuki Motor Corporation",
+          "symbol": "7269.T",
+          "pct": 2.9270754478930106
+        },
+        {
           "name": "Taiyo Yuden Co., Ltd.",
           "symbol": "6976.T",
-          "pct": 6.148713060057197
+          "pct": 2.918724741805119
         },
         {
-          "name": "TDK Corporation",
-          "symbol": "6762.T",
-          "pct": 5.250942848854076
-        },
-        {
-          "name": "Fujikura Ltd.",
-          "symbol": "5803.T",
-          "pct": 5.192238591448078
+          "name": "J. Front Retailing Co., Ltd.",
+          "symbol": "3086.T",
+          "pct": 2.6142561594884333
         }
       ],
       "bottom": [
         {
-          "name": "SoftBank Group Corp.",
-          "symbol": "9984.T",
-          "pct": -3.109127289518239
+          "name": "Disco Corporation",
+          "symbol": "6146.T",
+          "pct": -6.290076335877863
         },
         {
-          "name": "NEXON Co., Ltd.",
-          "symbol": "3659.T",
-          "pct": -2.667412796120127
+          "name": "Rakuten Group, Inc.",
+          "symbol": "4755.T",
+          "pct": -4.151058401581334
         },
         {
-          "name": "Mitsubishi Heavy Industries, Ltd.",
-          "symbol": "7011.T",
-          "pct": -2.1699819168173597
+          "name": "Resona Holdings, Inc.",
+          "symbol": "8308.T",
+          "pct": -3.7356321839080464
         }
       ],
       "breadth": {
-        "up": 163,
-        "down": 55,
-        "flat": 5,
+        "up": 91,
+        "down": 130,
+        "flat": 2,
         "priced": 223,
-        "median": 0.6
+        "median": -0.24
       },
       "built": "12 spark batches"
     }
