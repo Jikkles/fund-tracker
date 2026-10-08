@@ -209,6 +209,11 @@ def wanted_class(fund: dict) -> str | None:
 # rejected sound candidates at search time and left "no accumulation class
 # found" standing on funds whose own line says the word.
 ACC = r"acc(?:um(?:ulation)?)?"
+# Yahoo also glues the marker straight onto the class letter - "iShares Envir&Lw
+# Carb Tilt REIdx(UK)SAcc" - where a word boundary before "Acc" never occurs.
+# A capital letter immediately before it counts as the boundary; the lookbehind
+# stays case-sensitive so an ordinary word ending in "acc" cannot pass.
+ACC_START = r"(?:\b|(?-i:(?<=[A-Z])))"
 
 
 def class_verdict(label: str, want: str | None) -> tuple[bool, str]:
@@ -216,9 +221,9 @@ def class_verdict(label: str, want: str | None) -> tuple[bool, str]:
     # Income and distributing classes pay dividends away, so their price
     # series understates total return - never silently mix one in.
     if re.search(r"\b(inc|income|dist|distributing)\b", label, re.I) and \
-       not re.search(rf"\b{ACC}\b", label, re.I):
+       not re.search(rf"{ACC_START}{ACC}\b", label, re.I):
         return False, "income/distributing class"
-    if not re.search(rf"\b{ACC}\b", label, re.I):
+    if not re.search(rf"{ACC_START}{ACC}\b", label, re.I):
         return False, "no accumulation class found"
     # The class letter stays case-sensitive: matching case-insensitively would
     # read ordinary capitalised words as class designators.
@@ -1043,6 +1048,12 @@ def _selftest_offline() -> bool:
     # The exact class earns no note, and so no asterisk.
     ok, note = class_verdict("L&G UK Index I Acc", "I")
     assert ok and note == "", (ok, note)
+    # A marker glued to the class letter is still a marker, and still names
+    # the class...
+    ok, note = class_verdict("iShares Envir&Lw Carb Tilt REIdx(UK)SAcc", "D")
+    assert ok and note == "share class S used, desk tracks D", (ok, note)
+    # ...but a lowercase run ending in "acc" is not one.
+    assert class_verdict("Some Fund Tobacc", None)[0] is False
 
     # Two-letter classes. Houses issue "FD" and "ID" lines as well as "C" and
     # "I", and a single-letter pattern read those as no class at all - which

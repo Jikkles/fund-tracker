@@ -3529,7 +3529,7 @@
         "bio": "Leeds-based; quality and valuation twin pillars; 30–50 stocks. Has broadened diversification with less-correlated positions after the recent weak run."
       },
       "process": "Quality + valuation focus; 30–50 FTSE 250 stocks; concentrated.",
-      "whyNow": "<b>Ahead of its category but just behind the FTSE 250 trackers.</b> Over the year to 7 Oct 2026 it returned +11.92%, against a Morningstar category average of +9.03%, the HSBC FTSE 250 Index's +12.61% and L&G UK Mid Cap Index's +12.43%. Richard Bullas (lead since Jul 2020, involved since 2013) runs 30–50 quality/valuation stocks. Style headwinds (large caps beat mid-caps by ~15pp in 2025-26) and stock-specific missteps both weighed on its 2025-26 returns. <b>Catalyst:</b> BoE rate cuts, CPI falling toward 2%, and M&A activity (SEGRO/Prologis bid a signal). Hold only with 3–5yr horizon. At 0.62% OCF vs 0.08% for L&G tracker, the active premium requires sustained outperformance to pay off. HL keeps conviction in Bullas but acknowledges the environment has not suited the style.",
+      "whyNow": "<b>Ahead of its category but just behind the FTSE 250 trackers.</b> Over the year to 7 Oct 2026 it returned +11.92%, against a Morningstar category average of +9.03%, the HSBC FTSE 250 Index's +12.66% and L&G UK Mid Cap Index's +12.43%. Richard Bullas (lead since Jul 2020, involved since 2013) runs 30–50 quality/valuation stocks. Style headwinds (large caps beat mid-caps by ~15pp in 2025-26) and stock-specific missteps both weighed on its 2025-26 returns. <b>Catalyst:</b> BoE rate cuts, CPI falling toward 2%, and M&A activity (SEGRO/Prologis bid a signal). Hold only with 3–5yr horizon. At 0.62% OCF vs 0.08% for L&G tracker, the active premium requires sustained outperformance to pay off. HL keeps conviction in Bullas but acknowledges the environment has not suited the style.",
       "charges": {
         "ocf": "0.82%",
         "hlSaving": "0.20%",
@@ -5467,8 +5467,8 @@
         "basis": "nav:0P0000WN7D.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "navSymbol": "0P0000WN7D.L",
-      "navName": "HSBC FTSE 250 Index C Acc",
+      "navSymbol": "0P000159K7.L",
+      "navName": "HSBC FTSE 250 Index S Acc",
       "navMatch": "stored",
       "navClassNote": "share class C used, desk tracks S",
       "shortlist": true,
@@ -7917,8 +7917,8 @@
           "dateISO": "2026-10-15"
         }
       ],
-      "navSymbol": "0P0000FY9K.L",
-      "navName": "Jupiter Strategic Bond L Acc",
+      "navSymbol": "0P00015MD1.L",
+      "navName": "Jupiter Strategic Bond Z Acc",
       "navMatch": "stored",
       "navClassNote": "share class L used, desk tracks Z",
       "shortlist": true,
@@ -10067,8 +10067,8 @@
         "basis": "nav:0P0001K0NY.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "navSymbol": "0P0001K0NY.L",
-      "navName": "Baillie Gifford Monthly Income Fd H Acc",
+      "navSymbol": "0P0001HCBD.L",
+      "navName": "Baillie Gifford Monthly Income Fd B Acc",
       "navMatch": "stored",
       "navClassNote": "share class H used, desk tracks B",
       "shortlist": true,
@@ -12721,8 +12721,8 @@
         "basis": "nav:0P00017EQ6.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "navSymbol": "0P00017EQ6.L",
-      "navName": "Jupiter Asian Income L Acc",
+      "navSymbol": "0P00017EQ8.L",
+      "navName": "Jupiter Asian Income I GBP Acc",
       "navMatch": "stored",
       "navClassNote": "share class L used, desk tracks I",
       "shortlist": true,
@@ -25786,8 +25786,8 @@
         "perfAsAtSource": "period labels (cumulative table)"
       },
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
-      "navSymbol": "0P0000XTGS.L",
-      "navName": "Ninety One Diversified Income R Acc £",
+      "navSymbol": "0P0000G5MB.L",
+      "navName": "Ninety One Diversified Income I Acc £",
       "navMatch": "stored",
       "navClassNote": "share class R used, desk tracks I",
       "oneMonth": {
