@@ -40,7 +40,7 @@ Two consequences worth planning around:
 - A push that touches `site/**` is a deploy to a live site. Get the change
   right before pushing rather than pushing to see what happens.
 
-## The schedules are best-effort. Two cloud routines back them up.
+## The schedules are best-effort. Three cloud routines back them up.
 
 GitHub's scheduled-workflow scheduler is not dependable for this repo. Measured
 over the six days to 2026-08-31, the daily update started 6-12 hours late every
@@ -48,7 +48,8 @@ day it ran and skipped one day entirely, and the hourly market refresh delivered
 11 runs against roughly 80 requested fires, including a two-day gap. The crons
 here are a hope, not a clock.
 
-Two Claude cloud routines, both created 2026-08-31, top them up:
+Three Claude cloud routines top them up (the first two created 2026-08-31,
+the third 2026-10-08):
 
 - **Fund tracker daily update top-up**, daily 08:00 UTC. Reads the first line of
   `data/last_run.md` on main and dispatches `daily-update.yml` if that date is
@@ -61,6 +62,11 @@ Two Claude cloud routines, both created 2026-08-31, top them up:
   and correct — the run takes about 45 seconds, the repo is public so Actions
   minutes are free, and the `fund-tracker-pages` concurrency group queues rather
   than collides.
+- **Fund tracker weekly factsheets top-up**, Mondays 09:30 UTC. Reads the first
+  line of `data/last_factsheets.md` (written by `weekly-factsheets.yml`) and
+  dispatches that workflow only if the date is neither today nor yesterday.
+  It checks rather than dispatching blind because the run fetches ~400 pages
+  from HL's and Fidelity's own sites.
 
 So when the desk looks stale, work through this before suspecting the code.
 Is the local clone simply behind `origin/main`? It often is, because the bot
