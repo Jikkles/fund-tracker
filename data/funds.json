@@ -2759,28 +2759,22 @@
       "performance": {
         "cumulative": [
           {
-            "period": "1 yr (to ~20 May 2026, FE Analytics)",
-            "fund": "+28.2%",
-            "sector": "—",
-            "benchmark": "≈ index"
+            "period": "1 yr (trailing, to 7 Oct 26)",
+            "fund": "+16.46%",
+            "sector": "+10.47%",
+            "benchmark": "—"
           },
           {
-            "period": "3 yr (to ~20 May 2026, FE Analytics)",
-            "fund": "+47.6%",
-            "sector": "—",
-            "benchmark": "≈ index"
+            "period": "3 yr (annualised, to 7 Oct 26)",
+            "fund": "+15.48%",
+            "sector": "+10.77%",
+            "benchmark": "—"
           },
           {
-            "period": "5 yr (to ~20 May 2026, FE Analytics)",
-            "fund": "+46.7%",
-            "sector": "—",
-            "benchmark": "≈ index"
-          },
-          {
-            "period": "10 yr (to Dec 2025)",
-            "fund": "+166.03%",
-            "sector": "—",
-            "benchmark": "+169.55% (index)"
+            "period": "5 yr (annualised, to 7 Oct 26)",
+            "fund": "+7.30%",
+            "sector": "+3.09%",
+            "benchmark": "—"
           }
         ],
         "discrete": [
@@ -2810,10 +2804,10 @@
             "sector": "−14.68%"
           }
         ],
-        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Vanguard Global Small-Cap Index Fund GBP Acc, IE00B3X1NT05): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (YTD +13.95% vs desk NAV +14.96%). Sector column is the Morningstar Global Small/Mid-Cap Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Earlier note: 10yr lag vs index reflects OCF cost drag — typical for a tracker. Source: FE Analytics via Trustnet factsheet (20 May 2026).",
-        "perfAsAt": "2026-05-20",
+        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Vanguard Global Small-Cap Index Fund GBP Acc, IE00B3X1NT05): trailing figures to 7 Oct 2026 (1/3/5yr; 3 and 5yr annualised); discrete years to 30 Sep 2026. Sector column is the Morningstar Global Small/Mid-Cap Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables.",
+        "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)",
-        "perfBasis": "FE",
+        "perfBasis": "FID",
         "nav1w": "+0.50%",
         "nav1m": "-1.73%",
         "nav1yr": "+16.86%",
@@ -8322,7 +8316,7 @@
             "sector": "−12.40%"
           }
         ],
-        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Strategic Bond Fund B Accumulation, GB0005947857): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (1-day None does not match stamped price change 0.0). Sector column is the Morningstar Global Flexible Bond - GBP Hedged category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Earlier note: HL rolling 12-month periods to 8 May 2026. Large drawdown in 2022–23 rate shock.",
+        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Strategic Bond Fund B Accumulation, GB0005947857): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (1-day None does not match stamped price change -0.23, and the desk's NAV (2026-10-07) does not match it either). Sector column is the Morningstar Global Flexible Bond - GBP Hedged category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Earlier note: HL rolling 12-month periods to 8 May 2026. Large drawdown in 2022–23 rate shock.",
         "perfAsAt": "2026-05-08",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "HL",

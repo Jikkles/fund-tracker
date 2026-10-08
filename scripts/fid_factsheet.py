@@ -34,9 +34,11 @@ exactly as it was:
      whose Fidelity page is a different class at +6% against the desk's +11%.
   3. A REAL DATE. Fidelity's trailing table states no as-at date. It runs to
      the page's price stamp, which is proved per fund rather than assumed:
-     the 1-day return must equal the stamped price change, and the YTD must
-     agree with the desk's own NAV YTD. Fail either and the trailing table is
-     not written - an undated table is exactly what this replaced.
+     the 1-day return must equal the stamped price change, or - where
+     Fidelity has no 1-day figure - the desk's own NAV must be priced to the
+     same day with matching 1-week and YTD returns. Where the two are priced
+     to the same day their YTDs must also agree. Fail and the trailing table
+     is not written - an undated table is exactly what this replaced.
   4. NO ZERO-AS-DATA. Fidelity prints an exact "0" for a transaction cost or
      yield it has not got; real figures carry precision ("0.582", "-0.02").
      A bare zero is treated as absent, never written as 0.00%.
@@ -70,6 +72,8 @@ DASH = "—"
 
 ONE_YEAR_TOLERANCE_PP = 2.0
 YTD_TOLERANCE_PP = 1.0
+# The desk stores NAV returns to 2dp, so "the same figure" allows rounding.
+NAV_MATCH_PP = 0.06
 PRICE_STAMP_MAX_AGE_DAYS = 7
 SRRI_MAX_AGE_DAYS = 400
 # A shorter Fidelity history replaces a longer researched one only when it is
@@ -213,14 +217,29 @@ def apply(fund: dict, rec: dict, today: date) -> tuple[list[str], str | None]:
             asof = None
     d1, chg = tr("D1"), num(pd.get("changePercentage"))
     ytd, navytd = tr("M0"), parse_pct(perf.get("navYtd"))
+    w1, navw1 = tr("W1"), parse_pct(perf.get("nav1w"))
+    # The desk's NAV and Fidelity's page can be priced to different days -
+    # Yahoo runs a day behind on some Vanguard lines - and a YTD compared
+    # across two end dates differs by that day's move, not by any fault.
+    same_day = bool(asof) and perf.get("navAsAt") == asof.isoformat()
+    # Two ways to prove the trailing table's date, either sufficient:
+    #  - its 1-day return is the price change stamped beside it, or
+    #  - the desk's own NAV is priced to the same day and its 1-week and YTD
+    #    agree to within rounding. Fidelity publishes no 1-day figure for
+    #    some funds, and on a weekday its price stamp can move before its
+    #    trailing table does; the NAV route covers both.
+    d1_ok = d1 is not None and chg is not None and abs(d1 - chg) < 0.02
+    nav_ok = (same_day and None not in (w1, navw1, ytd, navytd)
+              and abs(w1 - navw1) <= NAV_MATCH_PP and abs(ytd - navytd) <= NAV_MATCH_PP)
     why_not = None
     if m12 is None:
         why_not = "no 1yr figure"
     elif asof is None or (today - asof).days > PRICE_STAMP_MAX_AGE_DAYS:
         why_not = f"price stamp {asof} too old or missing"
-    elif d1 is None or chg is None or abs(d1 - chg) >= 0.02:
-        why_not = f"1-day {d1} does not match stamped price change {chg}"
-    elif ytd is not None and navytd is not None and abs(ytd - navytd) > YTD_TOLERANCE_PP:
+    elif not (d1_ok or nav_ok):
+        why_not = (f"1-day {d1} does not match stamped price change {chg}, and "
+                   f"the desk's NAV ({perf.get('navAsAt')}) does not match it either")
+    elif same_day and ytd is not None and navytd is not None and abs(ytd - navytd) > YTD_TOLERANCE_PP:
         why_not = f"YTD {ytd:+.2f}% vs desk NAV {navytd:+.2f}%"
     cum_written = False
     if why_not is None:
@@ -376,7 +395,8 @@ def main(argv: list[str]) -> int:
 # ------------------------------------------------------------------ self-test
 
 def _fixture(**over) -> tuple[dict, dict]:
-    fund = {"id": "x", "performance": {"nav1yr": "+29.50%", "navYtd": "+22.70%",
+    fund = {"id": "x", "performance": {"nav1yr": "+29.50%", "navYtd": "+22.78%",
+                                        "nav1w": "-0.05%", "navAsAt": "2026-10-07",
                                         "discrete": [{"year": "02/10/25 to 02/10/26",
                                                       "fund": "+1.00%", "sector": NYV}]},
             "risk": {"srri": "6"}, "charges": {"transaction": NYV},
@@ -394,6 +414,7 @@ def _fixture(**over) -> tuple[dict, dict]:
                            "yearlyData": years,
                            "timeFrameData": [
                                {"timeframe": "D1", "trailingReturnsValue": "-1.089975"},
+                               {"timeframe": "W1", "trailingReturnsValue": "-0.051446"},
                                {"timeframe": "M0", "trailingReturnsValue": "22.78"},
                                {"timeframe": "M12", "trailingReturnsValue": "29.69",
                                 "trailingReturnsBenchmarkValue": "13.62"},
@@ -454,6 +475,7 @@ def _selftest() -> None:
     # and a person's earlier note on the kept table is preserved.
     fund, rec = _fixture(priceDtls={"lastUpdated": "2026-10-07 01:00:00",
                                     "changePercentage": "0.00"})
+    fund["performance"]["navAsAt"] = "2026-10-06"     # so the NAV route cannot vouch either
     fund["performance"]["cumulative"] = [{"period": "1 yr (to 20 May 26)", "fund": "+1%",
                                           "sector": DASH, "benchmark": DASH}]
     fund["performance"]["notes"] = "FE Analytics, 20 May."
@@ -465,7 +487,24 @@ def _selftest() -> None:
     fund, rec = _fixture()
     fund["performance"]["navYtd"] = "+25.00%"
     apply(fund, rec, today)
-    assert "cumulative" not in fund["performance"], "YTD disagreement must refuse the date"
+    assert "cumulative" not in fund["performance"], "same-day YTD disagreement must refuse"
+    # ...but a desk NAV a day behind is a different window, not a disagreement.
+    fund, rec = _fixture()
+    fund["performance"].update(navYtd="+23.80%", navAsAt="2026-10-06")
+    apply(fund, rec, today)
+    assert fund["performance"]["cumulative"][0]["period"].endswith("7 Oct 26)")
+    # No 1-day figure at all: the desk's same-day NAV can still prove the date...
+    no_d1 = [t for t in _fixture()[1]["performance"]["timeFrameData"] if t["timeframe"] != "D1"]
+    fund, rec = _fixture()
+    rec["performance"]["timeFrameData"] = no_d1
+    apply(fund, rec, today)
+    assert "cumulative" in fund["performance"], "NAV route must date a table with no D1"
+    # ...but only if its week matches too.
+    fund, rec = _fixture()
+    rec["performance"]["timeFrameData"] = no_d1
+    fund["performance"]["nav1w"] = "+0.40%"
+    apply(fund, rec, today)
+    assert "cumulative" not in fund["performance"]
     print("  dating gates     OK", file=sys.stderr)
 
     # Gate 4: a bare zero is Fidelity's blank, not a figure.
