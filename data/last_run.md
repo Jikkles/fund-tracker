@@ -9,23 +9,23 @@ Window: 8 Sep 2026 to 8 Oct 2026
 
 ## Maintenance needed
 
-- 2 funds have trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d), vanguard-global-small-cap-index (141d). Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 2 funds have trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d), vanguard-global-small-cap-index (141d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -3.40% |
-| FTSE 250 | -1.80% |
-| S&P 500 | +1.67% |
-| Nasdaq 100 | +5.60% |
-| Euro STOXX 50 | -4.47% |
+| FTSE 100 | -3.13% |
+| FTSE 250 | -1.56% |
+| S&P 500 | +1.33% |
+| Nasdaq 100 | +4.97% |
+| Euro STOXX 50 | -4.05% |
 | Nikkei 225 | +5.78% |
 | Hang Seng | -6.05% |
-| Gold (USD/oz) | -6.51% |
-| Brent crude | +7.47% |
-| US 10yr yield | +9.80% |
-| GBP/USD | -2.48% |
+| Gold (USD/oz) | -6.49% |
+| Brent crude | +6.70% |
+| US 10yr yield | +10.15% |
+| GBP/USD | -2.49% |
 
 ## Fund NAV figures (1 month)
 
@@ -137,7 +137,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 
 | Fund | Proxy | Change |
 |---|---|---|
-| vanguard-global-bond-index | VAGP.L | -2.09% |
+| vanguard-global-bond-index | VAGP.L | -1.79% |
 
 ---
 
