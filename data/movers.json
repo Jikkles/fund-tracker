@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08T15:25:45+00:00",
+  "generated": "2026-10-08T15:43:55+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Tesco plc",
           "symbol": "TSCO",
-          "pct": 6.09
+          "pct": 5.46
         },
         {
           "name": "Imperial Brands Group",
           "symbol": "IMB",
-          "pct": 5.02
+          "pct": 4.74
         },
         {
           "name": "BP Plc",
           "symbol": "BP.",
-          "pct": 3.84
+          "pct": 3.75
         }
       ],
       "bottom": [
         {
           "name": "Standard Life Plc",
           "symbol": "SDLF",
-          "pct": -4.7
+          "pct": -4.25
         },
         {
           "name": "Lion Finance Group Plc",
           "symbol": "BGEO",
-          "pct": -3.2
+          "pct": -3.43
         },
         {
           "name": "Metlen Energy & Metals Plc",
           "symbol": "MTLN",
-          "pct": -3.1
+          "pct": -2.98
         }
       ],
       "breadth": {
-        "up": 39,
-        "down": 59,
-        "flat": 2,
+        "up": 40,
+        "down": 57,
+        "flat": 3,
         "priced": 100,
-        "median": -0.39
+        "median": -0.4
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Rightmove plc",
           "symbol": "RMV",
-          "pct": 11.98
+          "pct": 9.6
         },
         {
           "name": "Mony Group Plc",
           "symbol": "MONY",
-          "pct": 5.06
+          "pct": 4.44
         },
         {
-          "name": "Harbour Energy plc",
-          "symbol": "HBR",
-          "pct": 4.09
+          "name": "Bridgepoint Group plc",
+          "symbol": "BPT",
+          "pct": 4.21
         }
       ],
       "bottom": [
         {
           "name": "Oxford Nanopore Technologies plc",
           "symbol": "ONT",
-          "pct": -9.43
+          "pct": -10.06
         },
         {
           "name": "Unite Group",
           "symbol": "UTG",
-          "pct": -4.7
+          "pct": -5.25
         },
         {
-          "name": "Polar Capital Global Healthcare Trust plc",
-          "symbol": "PCGH",
-          "pct": -4.25
+          "name": "RHI Magnesita NV",
+          "symbol": "RHIM",
+          "pct": -4.58
         }
       ],
       "breadth": {
-        "up": 68,
-        "down": 171,
+        "up": 66,
+        "down": 173,
         "flat": 12,
         "priced": 251,
-        "median": -0.54
+        "median": -0.55
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -106,42 +106,42 @@
         {
           "name": "Chipotle Mexican Grill, Inc.",
           "symbol": "CMG",
-          "pct": 6.564837269133025
+          "pct": 6.77607752178822
         },
         {
           "name": "Skydance Corporation",
           "symbol": "SKYD",
-          "pct": 5.9617515467170055
+          "pct": 5.286831217138331
         },
         {
           "name": "Marathon Petroleum Corporation",
           "symbol": "MPC",
-          "pct": 4.883999255864073
+          "pct": 5.233344300321778
         }
       ],
       "bottom": [
         {
           "name": "Coherent Corp.",
           "symbol": "COHR",
-          "pct": -6.082617841946747
-        },
-        {
-          "name": "Skyworks Solutions, Inc.",
-          "symbol": "SWKS",
-          "pct": -5.357786412983889
+          "pct": -5.957075807394091
         },
         {
           "name": "Bloom Energy Corporation",
           "symbol": "BE",
-          "pct": -4.970994734306192
+          "pct": -5.134064558049348
+        },
+        {
+          "name": "Super Micro Computer, Inc.",
+          "symbol": "SMCI",
+          "pct": -4.728527069284462
         }
       ],
       "breadth": {
-        "up": 177,
-        "down": 324,
-        "flat": 2,
+        "up": 209,
+        "down": 293,
+        "flat": 1,
         "priced": 503,
-        "median": -0.44
+        "median": -0.26
       },
       "built": "26 spark batches"
     },
@@ -152,44 +152,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Take-Two Interactive Software, Inc.",
-          "symbol": "TTWO",
-          "pct": 2.9312343254475937
-        },
-        {
           "name": "Diamondback Energy, Inc.",
           "symbol": "FANG",
-          "pct": 2.920595706816751
+          "pct": 3.1077099337213436
+        },
+        {
+          "name": "Take-Two Interactive Software, Inc.",
+          "symbol": "TTWO",
+          "pct": 2.769476646931686
         },
         {
           "name": "Palantir Technologies Inc.",
           "symbol": "PLTR",
-          "pct": 2.699364117540156
+          "pct": 2.586031526237383
         }
       ],
       "bottom": [
         {
+          "name": "Rocket Lab Corporation",
+          "symbol": "RKLB",
+          "pct": -4.616239960164206
+        },
+        {
           "name": "CoreWeave, Inc.",
           "symbol": "CRWV",
-          "pct": -4.951947319999331
+          "pct": -4.607119376868641
         },
         {
           "name": "Arm Holdings plc",
           "symbol": "ARM",
-          "pct": -4.141047879745169
-        },
-        {
-          "name": "Nebius Group N.V.",
-          "symbol": "NBIS",
-          "pct": -3.9215635809917755
+          "pct": -4.541901463790478
         }
       ],
       "breadth": {
-        "up": 34,
-        "down": 66,
+        "up": 39,
+        "down": 61,
         "flat": 0,
         "priced": 100,
-        "median": -0.49
+        "median": -0.4
       },
       "built": "5 spark batches"
     },
@@ -202,34 +202,34 @@
         {
           "name": "Chevron Corporation",
           "symbol": "CVX",
-          "pct": 2.8028272829982943
+          "pct": 2.949063237511259
         },
         {
           "name": "Walmart Inc.",
           "symbol": "WMT",
-          "pct": 1.8491123634277764
+          "pct": 2.006285221406207
         },
         {
           "name": "McDonald's Corporation",
           "symbol": "MCD",
-          "pct": 1.2171210377245265
+          "pct": 1.6718644008651935
         }
       ],
       "bottom": [
         {
           "name": "Amgen Inc.",
           "symbol": "AMGN",
-          "pct": -2.5406689886563822
+          "pct": -2.78759187207558
         },
         {
           "name": "Merck & Co., Inc.",
           "symbol": "MRK",
-          "pct": -2.269059728774183
+          "pct": -2.3916194738447842
         },
         {
           "name": "Johnson & Johnson",
           "symbol": "JNJ",
-          "pct": -2.1938530315070808
+          "pct": -2.0081321164875208
         }
       ],
       "breadth": {
@@ -237,7 +237,7 @@
         "down": 18,
         "flat": 0,
         "priced": 30,
-        "median": -0.59
+        "median": -0.41
       },
       "built": "2 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Eni S.p.A.",
           "symbol": "ENI.MI",
-          "pct": 3.156589108240753
+          "pct": 2.8677519179733864
         },
         {
           "name": "TotalEnergies SE",
           "symbol": "TTE.PA",
-          "pct": 3.0628550040716407
+          "pct": 2.8507048237561268
         },
         {
           "name": "Schneider Electric S.E.",
           "symbol": "SU.PA",
-          "pct": 2.2196067914108877
+          "pct": 2.3963821534452103
         }
       ],
       "bottom": [
         {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": -15.88361018956708
+          "pct": -15.597423277001363
         },
         {
           "name": "Volkswagen AG",
           "symbol": "VOW.DE",
-          "pct": -4.139902069292107
+          "pct": -4.211284010162069
         },
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": -3.7899940022570235
+          "pct": -3.2813781377605764
         }
       ],
       "breadth": {
-        "up": 17,
-        "down": 33,
+        "up": 16,
+        "down": 34,
         "flat": 0,
         "priced": 50,
-        "median": -0.6
+        "median": -0.76
       },
       "built": "3 spark batches"
     },
