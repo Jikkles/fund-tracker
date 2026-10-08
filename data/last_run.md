@@ -15,17 +15,17 @@ Window: 8 Sep 2026 to 8 Oct 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -3.20% |
-| FTSE 250 | -1.46% |
-| S&P 500 | +1.38% |
-| Nasdaq 100 | +5.10% |
-| Euro STOXX 50 | -4.03% |
+| FTSE 100 | -3.39% |
+| FTSE 250 | -1.67% |
+| S&P 500 | +1.27% |
+| Nasdaq 100 | +4.99% |
+| Euro STOXX 50 | -4.31% |
 | Nikkei 225 | +7.30% |
 | Hang Seng | -6.05% |
-| Gold (USD/oz) | -6.48% |
-| Brent crude | +7.55% |
-| US 10yr yield | +10.22% |
-| GBP/USD | -2.37% |
+| Gold (USD/oz) | -6.75% |
+| Brent crude | +7.75% |
+| US 10yr yield | +10.34% |
+| GBP/USD | -2.46% |
 
 ## Fund NAV figures (1 month)
 
@@ -43,7 +43,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | baillie-gifford-european | 0P00000QWM.L | -2.14% | 7 Oct 2026 |
 | baillie-gifford-japanese | 0P00000QWA.L | +0.15% | 7 Oct 2026 |
 | baillie-gifford-managed | 0P00000QWU.L | -0.34% | 7 Oct 2026 |
-| baillie-gifford-monthly-income | 0P0001K0NY.L | -1.28% | 7 Oct 2026 |
+| baillie-gifford-monthly-income | 0P0001HCBD.L | -1.30% | 7 Oct 2026 |
 | baillie-gifford-strategic-bond | 0P00000QX1.L | -1.02% | 7 Oct 2026 |
 | barings-europe-select-class-i-gbp | 0P0001KJSZ.L | -3.51% | 7 Oct 2026 |
 | blackrock-continental-european-income | 0P0000T2WM.L | -5.23% | 7 Oct 2026 |
@@ -69,7 +69,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | -1.95% | 7 Oct 2026 |
 | ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -1.64% | 7 Oct 2026 |
 | hsbc-american-index | 0P0000WN7H.L | +3.85% | 7 Oct 2026 |
-| hsbc-ftse-250-index | 0P0000WN7D.L | -1.65% | 7 Oct 2026 |
+| hsbc-ftse-250-index | 0P000159K7.L | -1.64% | 7 Oct 2026 |
 | invesco-global-emerging-markets | 0P0000XBR9.L | +0.56% | 7 Oct 2026 |
 | invesco-tactical-bond-class-z | 0P0000XBQP.L | -1.47% | 7 Oct 2026 |
 | ishares-corporate-bond-index | 0P0001O7DN.L | -1.12% | 7 Oct 2026 |
@@ -83,10 +83,10 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | jpm-emerging-markets | 0P000013TQ.L | -0.05% | 7 Oct 2026 |
 | jpm-global-bond-opportunities | 0P00015BKO.L | -1.93% | 7 Oct 2026 |
 | jpmorgan-natural-resources | 0P00009VVV.L | -1.45% | 7 Oct 2026 |
-| jupiter-asian-income | 0P00017EQ6.L | -0.22% | 7 Oct 2026 |
+| jupiter-asian-income | 0P00017EQ8.L | -0.16% | 7 Oct 2026 |
 | jupiter-european | 0P0000U20D.L | -3.71% | 7 Oct 2026 |
 | jupiter-india-class-x | 0P00018LFD.L | -3.33% | 7 Oct 2026 |
-| jupiter-strategic-bond | 0P0000FY9K.L | -1.82% | 7 Oct 2026 |
+| jupiter-strategic-bond | 0P00015MD1.L | -1.75% | 7 Oct 2026 |
 | lazard-global-equity-franchise | 0P0001BM5B.L | -7.07% | 6 Oct 2026 |
 | lg-active-global-high-yield | 0P00001SDH.L | -1.76% | 7 Oct 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | -1.44% | 7 Oct 2026 |
@@ -108,7 +108,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | man-glg-continental-european-growth | 0P000029BY.L | -0.62% | 7 Oct 2026 |
 | man-japan-corealpha | 0P0000810W.L | -1.13% | 7 Oct 2026 |
 | mg-emerging-market-bond | 0P0000VPQE.L | -0.40% | 7 Oct 2026 |
-| ninety-one-diversified-income-class-i | 0P0000XTGS.L | -0.62% | 7 Oct 2026 |
+| ninety-one-diversified-income-class-i | 0P0000G5MB.L | -0.61% | 7 Oct 2026 |
 | ninety-one-global-gold-class-i | 0P00009NF8.L | -8.26% | 7 Oct 2026 |
 | polar-capital-european-income | 0P00016CNI.L | -1.69% | 6 Oct 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | -2.90% | 7 Oct 2026 |
