@@ -24719,10 +24719,9 @@
       "isin": "GB00B1FXTG93",
       "isinSource": "derived from HL SEDOL B1FXTG9 (GB00+SEDOL+check digit). Yahoo returns \"Stewart Inv Indian Sbctnt AllCap B G\" for this ISIN - the same fund and share class in Yahoo's abbreviated form, confirmed by hand. The SEDOL is share-class specific, so the ISIN identifies the class the desk prices.",
       "navSymbol": "0P0000X4NO.L",
-      "navName": "Stewart Inv Indian Sbctnt AllCap B GBP",
+      "navName": "Stewart Investors Indian Subcontinent All Cap Fund Class B (Accumulation) GBP",
       "navMatch": "stored",
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00B1FXTG93, itself derived from HL SEDOL B1FXTG9. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
-      "navClassNote": "no accumulation class found",
       "oneMonth": {
         "value": "-4.86%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. no accumulation class found Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.46%.",
@@ -24750,7 +24749,8 @@
         "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "MSCI India NR LCL",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "navNameSource": "Fidelity's name for ISIN GB00B1FXTG93 (8 Oct 2026). Yahoo truncates this line to 'Stewart Inv Indian Sbctnt AllCap B GBP'; its search for the same ISIN returns this symbol."
     },
     {
       "id": "trojan-global-income",
