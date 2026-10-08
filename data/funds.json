@@ -1247,10 +1247,10 @@
         "basis": "nav:0P0001P4VD.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "GB00BLFG9N53",
-      "isinSource": "FT security search: T. Rowe Price Funds OEIC - Global Value Equity Fund C Acc, confirmed 26 Aug 2026",
-      "navSymbol": "0P0001P4VD.L",
-      "navName": "T. Rowe Price Global Value Eq C Acc",
+      "isin": "GB00BLFG9Q84",
+      "isinSource": "HL's listed class (SEDOL BLFG9Q8), confirmed on Fidelity's factsheet 8 Oct 2026",
+      "navSymbol": "0P0001P4VC.L",
+      "navName": "T. Rowe Price Global Value Eq C Acc 9",
       "navMatch": "stored",
       "shortlist": true,
       "shortlistStatus": "on",
@@ -4358,7 +4358,7 @@
         "basis": "nav:0P000024AF.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "GB0034219658",
+      "isin": "GB00BLH39230",
       "navSymbol": "0P000024AF.L",
       "navName": "Janus Henderson UK Responsible Inc Z Acc",
       "navMatch": "stored",
@@ -4370,7 +4370,8 @@
         "blocked": [],
         "checked": "2026-10-08"
       },
-      "sedol": "BLH3923"
+      "sedol": "BLH3923",
+      "isinSource": "HL's listed class (SEDOL BLH3923), confirmed on Fidelity's factsheet 8 Oct 2026"
     },
     {
       "id": "janus-henderson-uk-equity-income-growth",
@@ -5184,9 +5185,9 @@
         "basis": "nav:0P000023C8.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "GB00B0CNGN12",
-      "navSymbol": "0P000023C8.L",
-      "navName": "L&G UK Index I Acc",
+      "isin": "GB00BG0QPJ30",
+      "navSymbol": "0P000102ME.L",
+      "navName": "L&G UK Index C Acc",
       "navMatch": "stored",
       "navClassNote": "share class I used, desk tracks C",
       "shortlist": true,
@@ -5196,7 +5197,8 @@
         "blocked": [],
         "checked": "2026-10-08"
       },
-      "sedol": "BG0QPJ3"
+      "sedol": "BG0QPJ3",
+      "isinSource": "HL's listed class (SEDOL BG0QPJ3), confirmed on Fidelity's factsheet 8 Oct 2026"
     },
     {
       "id": "hsbc-ftse-250-index",
@@ -9494,7 +9496,7 @@
         "basis": "nav:0P0000X2GH.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "GB00B86LX253",
+      "isin": "GB00BNBQX427",
       "navSymbol": "0P0000X2GH.L",
       "navName": "BNY Mellon Mlt-Asst Balanced Inst W Acc",
       "navMatch": "stored",
@@ -9507,7 +9509,8 @@
         "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
-      "sedol": "BNBQX42"
+      "sedol": "BNBQX42",
+      "isinSource": "HL's listed class (SEDOL BNBQX42), confirmed on Fidelity's factsheet 8 Oct 2026"
     },
     {
       "id": "bny-mellon-multi-asset-global-balanced",
@@ -10090,7 +10093,7 @@
     {
       "id": "pyrford-global-total-return",
       "name": "Pyrford Global Total Return",
-      "shareClass": "Accumulation",
+      "shareClass": "Class C Accumulation",
       "category": "Flexible Investment",
       "group": "total-return",
       "badge": {
@@ -10362,9 +10365,9 @@
         "basis": "nav:0P0000N9AE.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "IE00B1XBN520",
-      "navSymbol": "0P0000N9AE.L",
-      "navName": "Pyrford Glbl Tot Ret(Sterling)A GBP Acc",
+      "isin": "IE00BZ0CQJ19",
+      "navSymbol": "0P000170AF.L",
+      "navName": "Pyrford Glbl Tot Ret(Sterling)C GBP Acc",
       "navMatch": "stored",
       "shortlist": true,
       "shortlistStatus": "on",
@@ -10374,7 +10377,8 @@
         "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
-      "sedol": "BZ0CQJ1"
+      "sedol": "BZ0CQJ1",
+      "isinSource": "HL's listed class (SEDOL BZ0CQJ1), confirmed on Fidelity's factsheet 8 Oct 2026"
     },
     {
       "id": "lg-european-index",
@@ -14485,11 +14489,11 @@
         "basis": "nav:0P0000WGT4.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "GB00B849FB47",
+      "isin": "GB00BN08ZQ59",
       "isinNote": "D Acc — desk entry is Class S; same fund, different class",
-      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026",
-      "navSymbol": "0P0000WGT4.L",
-      "navName": "iShares Pacific ex Jpn Eq Idx (UK) D Acc",
+      "isinSource": "HL's listed class (SEDOL BN08ZQ5), confirmed on Fidelity's factsheet 8 Oct 2026",
+      "navSymbol": "0P0001O7DL.L",
+      "navName": "iShares Pacific ex Jpn Eq Idx (UK) S Acc",
       "navMatch": "stored",
       "navClassNote": "share class D used, desk tracks S",
       "shortlist": true,
@@ -14748,11 +14752,11 @@
         "basis": "nav:0P0000WGSX.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "isin": "GB00B6QQ9X96",
+      "isin": "GB00BN08ZG51",
       "isinNote": "D Acc — desk entry is Class S; same fund, different class",
-      "isinSource": "Fidelity UK factsheet, fetched 2 Jul 2026",
-      "navSymbol": "0P0000WGSX.L",
-      "navName": "iShares Japan Equity Index (UK) D Acc",
+      "isinSource": "HL's listed class (SEDOL BN08ZG5), confirmed on Fidelity's factsheet 8 Oct 2026",
+      "navSymbol": "0P0001O28V.L",
+      "navName": "iShares Japan Equity Index (UK) S Acc",
       "navMatch": "stored",
       "navClassNote": "share class D used, desk tracks S",
       "shortlist": true,
@@ -25047,7 +25051,7 @@
     {
       "id": "vanguard-global-bond-index",
       "name": "Vanguard Global Bond Index",
-      "shareClass": "Accumulation",
+      "shareClass": "GBP Hedged Accumulation",
       "category": "Global Bonds",
       "group": "bonds-strategic",
       "iaSector": "IA Global Bonds",
@@ -25267,9 +25271,9 @@
         "perfAsAtSource": "period labels (cumulative table)"
       },
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
-      "isin": "IE00B18GCB14",
-      "navSymbol": "0P0000CV2L",
-      "navName": "Vanguard Glb Bd Idx $ H Acc",
+      "isin": "IE00B50W2R13",
+      "navSymbol": "0P0000KM24.L",
+      "navName": "Vanguard Glb Bd Idx £ H Acc",
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.79%",
@@ -25299,7 +25303,8 @@
       },
       "benchmark": "Bloomberg Gbl Agg Flt-Adj and Sc TR USD",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
-      "yield": "3.45% (distribution, Fidelity 8 Oct 2026)"
+      "yield": "3.45% (distribution, Fidelity 8 Oct 2026)",
+      "isinSource": "HL's listed class (SEDOL B50W2R1), confirmed on Fidelity's factsheet 8 Oct 2026"
     },
     {
       "id": "schroder-income",
