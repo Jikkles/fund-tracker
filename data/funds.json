@@ -102,7 +102,7 @@
       "benchmark": "MSCI ACWI",
       "fundSize": "£6,351 million",
       "launched": "19 July 2010",
-      "yield": "2.32% (historic)",
+      "yield": "2.34% (historic)",
       "overview": "A high-conviction global equity income fund with a distinctly contrarian, macro-aware tilt. Manager Jacob de Tusch-Lec runs ~99 holdings and leans hard into out-of-favour areas — banks, defence, energy, materials, gold — when he believes the macro backdrop favours them. The single best-performing Global fund on the Wealth Shortlist over the past year.",
       "performance": {
         "cumulative": [
@@ -191,7 +191,7 @@
             "fund": "+26.48%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -235,7 +235,7 @@
           "weight": "2.08%"
         }
       ],
-      "holdingsNote": "Top ten of 91 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 91 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -366,7 +366,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B5ZX1M70-artemis-global-income-fund-class-i-acc/performance"
       },
       "sources": "HL factsheet & notifications; Fidelity (ISIN GB00B5ZX1M70); Artemis",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.98%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -385,7 +385,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B5ZX1M7"
     },
@@ -489,7 +489,7 @@
             "fund": "+12.84%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -536,7 +536,7 @@
           "weight": "2.65%"
         }
       ],
-      "holdingsNote": "Top ten of 53 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 53 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Personal Care, Drug & Grocery Stores",
@@ -668,7 +668,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B7GJPN73/performance"
       },
       "sources": "HL fund update (May 2026); HL factsheet (ISIN GB00B7GJPN73)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.85%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -687,7 +687,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B7GJPN7"
     },
@@ -791,7 +791,7 @@
             "fund": "+22.63%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -838,7 +838,7 @@
           "weight": "3.57%"
         }
       ],
-      "holdingsNote": "Top ten of 35 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 35 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Industrial Support Services",
@@ -956,7 +956,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/IE00BF2N1T73/performance"
       },
       "sources": "HL factsheet; Fidelity (ISIN IE00BF2N1T73)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-7.07%",
         "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -975,7 +975,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BF2N1T7"
     },
@@ -1059,7 +1059,7 @@
             "fund": "+6.91%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -1106,7 +1106,7 @@
           "weight": "1.57%"
         }
       ],
-      "holdingsNote": "Top ten of 100 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 100 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -1238,7 +1238,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BLFG9Q84/performance"
       },
       "sources": "HL factsheet & July 2025 research note",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.00%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -1257,7 +1257,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BLFG9Q8"
     },
@@ -1361,7 +1361,7 @@
             "fund": "+16.64%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -1408,7 +1408,7 @@
           "weight": "2.03%"
         }
       ],
-      "holdingsNote": "Top ten of 92 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 92 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Software & Computer Services",
@@ -1539,7 +1539,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B8HT7153-fidelity-global-special-situations-w-acc/performance"
       },
       "sources": "HL factsheet (ISIN GB00B8HT7153); FundCalibre",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.73%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -1558,7 +1558,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B8HT715"
     },
@@ -1665,7 +1665,7 @@
             "fund": "+19.67%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -1709,7 +1709,7 @@
           "weight": "3.82%"
         }
       ],
-      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -1839,7 +1839,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B8K6W529/performance"
       },
       "sources": "HL factsheet (ISIN GB00B8K6W529); Fidelity/Morningstar holdings; BNY SEC filings",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.55%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -1858,7 +1858,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B8K6W52"
     },
@@ -1965,7 +1965,7 @@
             "fund": "+23.84%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -2009,7 +2009,7 @@
           "weight": "1.28%"
         }
       ],
-      "holdingsNote": "Top ten of 1289 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 1289 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -2140,7 +2140,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BJS8SJ34-fidelity-index-world-fund-p-acc/performance"
       },
       "sources": "HL factsheet & May 2026 update (ISIN GB00BJS8SJ34)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.08%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -2159,7 +2159,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BJS8SJ3"
     },
@@ -2266,7 +2266,7 @@
             "fund": "+22.67%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -2310,7 +2310,7 @@
           "weight": "1.01%"
         }
       ],
-      "holdingsNote": "Top ten of 2202 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 2202 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -2427,7 +2427,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BG0QP604-lg-international-index-trust-c-acc/performance"
       },
       "sources": "HL factsheet (ISIN GB00B2Q6HW61)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.84%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -2446,7 +2446,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BG0QP60"
     },
@@ -2553,7 +2553,7 @@
             "fund": "+24.59%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -2597,7 +2597,7 @@
           "weight": "1.25%"
         }
       ],
-      "holdingsNote": "Top ten of 1241 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 1241 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -2714,7 +2714,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-future-wrld-esg-tilted-and-opt-dev-i-accumulation"
       },
       "sources": "HL factsheet & March 2026 update",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.77%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -2737,7 +2737,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       }
     },
     {
@@ -2849,7 +2849,7 @@
             "fund": "+16.67%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -2893,7 +2893,7 @@
           "weight": "0.22%"
         }
       ],
-      "holdingsNote": "Top ten of 3851 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 3851 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -3010,7 +3010,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/IE00B3X1NT05/performance"
       },
       "sources": "HL February 2026 fund update; FE Trustnet factsheet (20 May 2026); BofA via InvestmentNews; Columbia Threadneedle; AJ Bell",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.73%",
         "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, FTSE 100 -3.40%, Euro STOXX 50 -4.47%, GBP/USD -2.48%.",
@@ -3029,7 +3029,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       }
     },
     {
@@ -3135,7 +3135,7 @@
             "fund": "+23.70%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -3179,7 +3179,7 @@
           "weight": "2.60%"
         }
       ],
-      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -3298,7 +3298,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B88V3X40-fidelity-special-situations-w-acc/performance"
       },
       "sources": "Trustnet factsheet (to 24 Feb 2026); HL research note; Fidelity (ISIN GB00B88V3X40)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.75%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, FTSE 250 -1.80%, GBP/USD -2.48%.",
@@ -3317,7 +3317,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B88V3X4"
     },
@@ -3424,7 +3424,7 @@
             "fund": "+19.30%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -3468,7 +3468,7 @@
           "weight": "2.93%"
         }
       ],
-      "holdingsNote": "Top ten of 39 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 39 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Investment Banking & Brokerage Services",
@@ -3562,7 +3562,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BZ8FPJ50/performance"
       },
       "sources": "HL fund page (ISIN GB00BZ8FPJ50); FTF ClearBridge factsheet via FundsLibrary; Trustnet; 25 Jun 2026",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.95%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.80%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -3581,7 +3581,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BZ8FPJ5"
     },
@@ -3656,7 +3656,7 @@
             "fund": "+1.88%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
@@ -3702,7 +3702,7 @@
           "weight": "2.58%"
         }
       ],
-      "holdingsNote": "Top ten of 43 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 43 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Pharmaceuticals & Biotechnology",
@@ -3791,7 +3791,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BNGB8J22/performance"
       },
       "sources": "HL factsheet (ISIN GB00BNGB8J22)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.50%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, FTSE 250 -1.80%, GBP/USD -2.48%.",
@@ -3810,7 +3810,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BNGB8J2"
     },
@@ -3828,7 +3828,7 @@
       "benchmark": "FTSE All-Share",
       "fundSize": "£5,202 million",
       "launched": "6 June 2000",
-      "yield": "3.34% (historic)",
+      "yield": "3.40% (historic)",
       "overview": "One of the largest and most established UK equity income funds. A three-manager team targets companies with durable free cash flows, running 45–55 holdings with a bias toward large-cap financials, consumer and healthcare. Income is reinvested in accumulation units — the price rises rather than cash being paid out.",
       "performance": {
         "cumulative": [
@@ -3917,7 +3917,7 @@
             "fund": "+16.17%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -3961,7 +3961,7 @@
           "weight": "3.35%"
         }
       ],
-      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -4068,7 +4068,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B2PLJH12-artemis-income-fund-class-i-acc/performance"
       },
       "sources": "Artemis fund page; HL factsheet (ISIN GB00B2PLJH12)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-4.15%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -4087,7 +4087,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B2PLJH1"
     },
@@ -4192,7 +4192,7 @@
             "fund": "+14.93%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
@@ -4238,7 +4238,7 @@
           "weight": "2.39%"
         }
       ],
-      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -4349,7 +4349,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BLH39230/performance"
       },
       "sources": "HL factsheet; HL fund updates (May 2026, May 2025)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.85%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -4368,7 +4368,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BLH3923"
     },
@@ -4473,7 +4473,7 @@
             "fund": "+18.04%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
@@ -4519,7 +4519,7 @@
           "weight": "2.13%"
         }
       ],
-      "holdingsNote": "Top ten of 82 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 82 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -4626,7 +4626,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0007494221/performance"
       },
       "sources": "Fidelity factsheet (ISIN GB0007494221); Janus Henderson; Fundslibrary factsheet (31 Jan 2026)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.96%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -4645,7 +4645,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "0749422"
     },
@@ -4663,7 +4663,7 @@
       "benchmark": "Deutsche Numis SC Ex Invt Com TR GBP",
       "fundSize": "£528 million",
       "launched": "3 April 1998",
-      "yield": "2.01% (historic)",
+      "yield": "2.02% (historic)",
       "overview": "A value-focused UK smaller-companies fund with a lower-volatility discipline for the asset class. HL added it to the Shortlist in December 2024 based on conviction in Mark Niznik's track record since 2011. It expects to fall less than peers in down markets but lag growth-led peers in strongly rising markets — which is exactly what has happened.",
       "performance": {
         "cumulative": [
@@ -4749,7 +4749,7 @@
             "fund": "+29.95%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -4796,7 +4796,7 @@
           "weight": "2.12%"
         }
       ],
-      "holdingsNote": "Top ten of 72 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 72 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Software & Computer Services",
@@ -4886,7 +4886,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B2PLJL57/performance"
       },
       "sources": "Trustnet factsheet (to 29 May 2026); HL research note",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.34%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.80%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -4903,7 +4903,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B2PLJL57",
       "isinSource": "derived from HL SEDOL B2PLJL5, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -5013,7 +5013,7 @@
             "fund": "+17.55%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -5057,7 +5057,7 @@
           "weight": "2.35%"
         }
       ],
-      "holdingsNote": "Top ten of 540 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 540 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -5175,7 +5175,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0CNGN12-legal--general-uk-index-trust-i-acc/performance"
       },
       "sources": "HL factsheet",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.25%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class I used, desk tracks C Market context: FTSE 100 -3.40%, FTSE 250 -1.80%, GBP/USD -2.48%.",
@@ -5194,7 +5194,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BG0QPJ3"
     },
@@ -5301,7 +5301,7 @@
             "fund": "+16.55%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -5345,7 +5345,7 @@
           "weight": "0.98%"
         }
       ],
-      "holdingsNote": "Top ten of 271 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 271 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Equity Investment Instruments",
@@ -5463,7 +5463,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B80QG052-hsbc-ftse-250-index-acc-c/performance"
       },
       "sources": "HL fund page; FE Trustnet; HL Shortlist tracker page; 25 Jun 2026",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.65%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class C used, desk tracks S Market context: FTSE 250 -1.80%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -5481,7 +5481,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BV8VN686",
       "isinSource": "derived from HL SEDOL BV8VN68, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -5588,7 +5588,7 @@
             "fund": "+15.99%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
@@ -5634,7 +5634,7 @@
           "weight": "2.28%"
         }
       ],
-      "holdingsNote": "Top ten of 304 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 304 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -5752,7 +5752,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BMFXWV25/performance"
       },
       "sources": "HL tracker Shortlist page",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.51%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, FTSE 250 -1.80%, GBP/USD -2.48%.",
@@ -5777,7 +5777,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       }
     },
     {
@@ -5881,7 +5881,7 @@
             "fund": "+29.17%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
@@ -5927,7 +5927,7 @@
           "weight": "1.45%"
         }
       ],
-      "holdingsNote": "Top ten of 501 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 501 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -6113,7 +6113,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BG0QPL51/performance"
       },
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.35%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, Nasdaq 100 +5.60%, US 10yr yield +9.80%, GBP/USD -2.48%.",
@@ -6132,7 +6132,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BG0QPL5"
     },
@@ -6224,7 +6224,7 @@
             "fund": "+31.25%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -6271,7 +6271,7 @@
           "weight": "3.95%"
         }
       ],
-      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -6373,7 +6373,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BPVBZ344/performance"
       },
       "sources": "HL factsheet (ISIN GB00BPVBZ344); Fidelity/Morningstar (Inst W proxy GB00BGV53H32); HL fund note Sep 2025",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "not yet verified",
         "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 8 Sep 2026 to 8 Oct 2026: S&P 500 +1.67%, Nasdaq 100 +5.60%, US 10yr yield +9.80%, GBP/USD -2.48%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
@@ -6390,7 +6390,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BPVBZ344",
       "isinSource": "derived from HL SEDOL BPVBZ34, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -6436,28 +6436,28 @@
         ],
         "discrete": [
           {
-            "year": "02/10/25 to 02/10/26",
-            "fund": "+21.00%",
+            "year": "07/10/25 to 07/10/26",
+            "fund": "+20.44%",
             "sector": "not yet verified"
           },
           {
-            "year": "02/10/24 to 02/10/25",
-            "fund": "+15.45%",
+            "year": "07/10/24 to 07/10/25",
+            "fund": "+14.29%",
             "sector": "not yet verified"
           },
           {
-            "year": "02/10/23 to 02/10/24",
-            "fund": "+32.68%",
+            "year": "07/10/23 to 07/10/24",
+            "fund": "+39.60%",
             "sector": "not yet verified"
           },
           {
-            "year": "02/10/22 to 02/10/23",
-            "fund": "+4.36%",
+            "year": "07/10/22 to 07/10/23",
+            "fund": "-3.91%",
             "sector": "not yet verified"
           },
           {
-            "year": "02/10/21 to 02/10/22",
-            "fund": "-30.63%",
+            "year": "07/10/21 to 07/10/22",
+            "fund": "-28.44%",
             "sector": "not yet verified"
           }
         ],
@@ -6473,9 +6473,9 @@
         "nav1w": "+0.30%",
         "nav1m": "-1.01%",
         "navYtd": "+17.34%",
-        "discreteAsAt": "2026-10-02",
+        "discreteAsAt": "2026-10-07",
         "discreteMissingYears": 0,
-        "discreteBasis": "02 Oct",
+        "discreteBasis": "07 Oct",
         "navVol": "23.5%",
         "navVolYears": 5,
         "navYears": [
@@ -6500,7 +6500,7 @@
             "fund": "+15.27%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -6544,7 +6544,7 @@
           "weight": "3.24%"
         }
       ],
-      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 47 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Medical Equipment & Services",
@@ -6643,7 +6643,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BK6RLD43/performance"
       },
       "sources": "HL factsheet (ISIN GB00BK6RLD43 to confirm); HL fund update May 2026; Artemis fund page; FundCalibre; Citywire",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.01%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, Nasdaq 100 +5.60%, US 10yr yield +9.80%, GBP/USD -2.48%.",
@@ -6662,7 +6662,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BK6RLD4"
     },
@@ -6769,7 +6769,7 @@
             "fund": "+22.73%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -6813,7 +6813,7 @@
           "weight": "3.06%"
         }
       ],
-      "holdingsNote": "Top ten of 49 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 49 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -6919,7 +6919,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BMMV5105/performance"
       },
       "sources": "HL factsheet (ISIN GB00BMMV5105); Artemis fund page; Citywire",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.43%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.67%, Nasdaq 100 +5.60%, US 10yr yield +9.80%, GBP/USD -2.48%.",
@@ -6938,7 +6938,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BMMV510"
     },
@@ -7045,7 +7045,7 @@
             "fund": "+5.92%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -7089,7 +7089,7 @@
           "weight": "0.92%"
         }
       ],
-      "holdingsNote": "Top ten of 179 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 179 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -7208,7 +7208,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BJMD6R83/performance"
       },
       "sources": "HL factsheet (SEDOL BJMD6R8); Fidelity (ISIN GB00BJMD6R83); HL fund update Apr 2026",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.46%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +9.80%, Brent crude +7.47%, GBP/USD -2.48%.",
@@ -7284,7 +7284,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BJMD6R8"
     },
@@ -7391,7 +7391,7 @@
             "fund": "-0.67%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -7435,7 +7435,7 @@
           "weight": "1.71%"
         }
       ],
-      "holdingsNote": "Top ten of 103 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 103 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -7522,7 +7522,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BFZ91W59/performance"
       },
       "sources": "HL factsheet (SEDOL BFZ91W5); HL research note Jun 2026",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.45%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +9.80%, GBP/USD -2.48%.",
@@ -7596,7 +7596,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BFZ91W59",
       "isinSource": "derived from HL SEDOL BFZ91W5, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -7705,7 +7705,7 @@
             "fund": "+0.62%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -7749,7 +7749,7 @@
           "weight": "1.23%"
         }
       ],
-      "holdingsNote": "Top ten of 282 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 282 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -7856,7 +7856,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BN8T5596-jupiter-strategic-bond-z-gbp-inc/performance"
       },
       "sources": "HL factsheet; HL fund update Jul 2025",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.82%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks Z Market context: US 10yr yield +9.80%, Brent crude +7.47%, GBP/USD -2.48%.",
@@ -7931,7 +7931,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BN8T5935",
       "isinSource": "derived from HL SEDOL BN8T593, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -8040,7 +8040,7 @@
             "fund": "+2.52%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -8080,7 +8080,7 @@
           "weight": "0.78%"
         }
       ],
-      "holdingsNote": "Top ten of 1549 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 1549 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -8187,7 +8187,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B1TWMW95/performance"
       },
       "sources": "HL factsheet (SEDOL B1TWMW9)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.64%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +9.80%, Brent crude +7.47%, GBP/USD -2.48%.",
@@ -8261,7 +8261,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B1TWMW95",
       "isinSource": "derived from HL SEDOL B1TWMW9, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -8359,7 +8359,7 @@
             "fund": "-0.56%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -8403,7 +8403,7 @@
           "weight": "1.86%"
         }
       ],
-      "holdingsNote": "Top ten of 110 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 110 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -8493,7 +8493,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0005947857/performance"
       },
       "sources": "HL factsheet (SEDOL 0594785); Baillie Gifford fund page",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.02%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +9.80%, Brent crude +7.47%, GBP/USD -2.48%.",
@@ -8567,7 +8567,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB0005947857",
       "isinSource": "derived from HL SEDOL 0594785, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -8676,7 +8676,7 @@
             "fund": "+1.17%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -8708,7 +8708,7 @@
           "weight": "0.51%"
         }
       ],
-      "holdingsNote": "Top ten of 920 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 920 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -8810,7 +8810,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0CNHJ41/performance"
       },
       "sources": "HL factsheet (SEDOL B0CNHJ4); Citywire",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.76%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +9.80%, Brent crude +7.47%, GBP/USD -2.48%.",
@@ -8884,7 +8884,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B0CNHJ41",
       "isinSource": "derived from HL SEDOL B0CNHJ4, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -8994,7 +8994,7 @@
             "fund": "-1.22%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -9038,7 +9038,7 @@
           "weight": "0.07%"
         }
       ],
-      "holdingsNote": "Top ten of 11072 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 11072 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -9128,7 +9128,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/IE00BDFB5M56/performance"
       },
       "sources": "HL factsheet (SEDOL BDFB5M5); HL fund update Nov 2025",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.77%",
         "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +9.80%, Brent crude +7.47%, GBP/USD -2.48%.",
@@ -9204,7 +9204,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BDFB5M5"
     },
@@ -9297,7 +9297,7 @@
             "fund": "+17.37%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -9344,7 +9344,7 @@
           "weight": "2.02%"
         }
       ],
-      "holdingsNote": "Top ten of 78 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 78 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -9485,7 +9485,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B86LX253-bny-mellon-multi-asset-blncd-inst-w-acc/performance"
       },
       "sources": "HL factsheet (SEDOL BNBQX42); Trustnet (Dec 2025 factsheet)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.39%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -3.40%, S&P 500 +1.67%, US 10yr yield +9.80%, Gold (USD/oz) -6.51%.",
@@ -9504,7 +9504,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BNBQX42"
@@ -9612,7 +9612,7 @@
             "fund": "+17.20%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -9656,7 +9656,7 @@
           "weight": "2.03%"
         }
       ],
-      "holdingsNote": "Top ten of 74 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 74 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -9773,7 +9773,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BD8YW204/performance"
       },
       "sources": "HL factsheet (SEDOL BD8YW20); Fidelity (ISIN GB00BD8YW204)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.36%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, S&P 500 +1.67%, US 10yr yield +9.80%, Gold (USD/oz) -6.51%.",
@@ -9792,7 +9792,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BD8YW20"
@@ -9861,7 +9861,7 @@
             "sector": "−11.44%"
           }
         ],
-        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Investment Funds II ICVC-Baillie Gifford Monthly Income Fund Fund B Accumulation, GB00BFXY2964): trailing figures to 7 Oct 2026 (1/3/5yr; 3 and 5yr annualised); discrete years to 30 Sep 2026. Sector column is the Morningstar GBP Flexible Allocation category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Renamed from BG Sustainable Income 31 Jan 2025.",
+        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Investment Funds II ICVC-Baillie Gifford Monthly Income Fund Fund B Accumulation, GB00BFXY2964): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (1-day 0.066138 does not match stamped price change -0.13). Sector column is the Morningstar GBP Flexible Allocation category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Renamed from BG Sustainable Income 31 Jan 2025.",
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
@@ -9900,7 +9900,7 @@
             "fund": "+9.98%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -9944,7 +9944,7 @@
           "weight": "0.95%"
         }
       ],
-      "holdingsNote": "Top ten of 320 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 320 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -10062,7 +10062,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BFXY2964/performance"
       },
       "sources": "HL factsheet (SEDOL BFXY296); HL fund update Jun 2026",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.28%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -3.40%, S&P 500 +1.67%, US 10yr yield +9.80%, Gold (USD/oz) -6.51%.",
@@ -10080,7 +10080,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BFXY2964",
       "isinSource": "derived from HL SEDOL BFXY296, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -10190,7 +10190,7 @@
             "fund": "+3.03%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -10234,7 +10234,7 @@
           "weight": "3.98%"
         }
       ],
-      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Bonds",
@@ -10353,7 +10353,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/IE00BZ0CQJ19/performance"
       },
       "sources": "HL factsheet (SEDOL BZ0CQJ1); HL research notes Dec 2025",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.54%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.40%, S&P 500 +1.67%, Gold (USD/oz) -6.51%, US 10yr yield +9.80%.",
@@ -10371,7 +10371,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BZ0CQJ1"
@@ -10479,7 +10479,7 @@
             "fund": "+15.83%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -10523,7 +10523,7 @@
           "weight": "1.40%"
         }
       ],
-      "holdingsNote": "Top ten of 551 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 551 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -10655,7 +10655,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BG0QP042/performance"
       },
       "sources": "HL factsheet, HL tracker Wealth Shortlist, Broadridge",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-4.51%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.47%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -10672,7 +10672,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BG0QP042",
       "isinSource": "derived from HL SEDOL BG0QP04, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -10781,7 +10781,7 @@
             "fund": "+18.41%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -10825,7 +10825,7 @@
           "weight": "2.82%"
         }
       ],
-      "holdingsNote": "Top ten of 46 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 46 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -10957,7 +10957,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BFRT3504-fidelity-european-w-acc-uk/performance"
       },
       "sources": "HL factsheet, HL research page, Broadridge",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.73%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.47%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -10976,7 +10976,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BFRT350"
     },
@@ -11083,7 +11083,7 @@
             "fund": "+11.11%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -11127,7 +11127,7 @@
           "weight": "4.57%"
         }
       ],
-      "holdingsNote": "Top ten of 25 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 25 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -11259,7 +11259,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0119487/performance"
       },
       "sources": "HL factsheet, Man Group website, The Adviser Centre, Broadridge",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.62%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.47%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -11278,7 +11278,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B011948"
     },
@@ -11382,7 +11382,7 @@
             "fund": "+19.53%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -11426,7 +11426,7 @@
           "weight": "3.04%"
         }
       ],
-      "holdingsNote": "Top ten of 40 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 40 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Industrial Transportation",
@@ -11557,7 +11557,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/polar-capital-european-ex-uk-income-i-gbp-accumulation"
       },
       "sources": "HL factsheet, Broadridge, Portfolio Adviser (Shortlist addition notice)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.69%",
         "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.47%, FTSE 100 -3.40%, GBP/USD -2.48%.",
@@ -11576,7 +11576,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BWX5D39"
     },
@@ -11655,7 +11655,7 @@
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -11699,7 +11699,7 @@
           "weight": "2.78%"
         }
       ],
-      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -11812,7 +11812,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B3S9LG25-blackrock-continental-european-inc-d-acc/performance"
       },
       "sources": "HL factsheet page, Morningstar",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "sectorsNote": "Top sectors as at 31 Mar 2026 (Citywire / Morningstar).",
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
@@ -11834,7 +11834,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "B3S9LG2"
@@ -11924,7 +11924,7 @@
             "fund": "+31.13%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -11968,7 +11968,7 @@
           "weight": "1.61%"
         }
       ],
-      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 77 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -12121,7 +12121,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0030881774/performance"
       },
       "sources": "HL factsheet, HL Broadridge holdings data",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.05%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Hang Seng -6.05%, S&P 500 +1.67%, GBP/USD -2.48%.",
@@ -12139,7 +12139,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB0030881774",
       "isinSource": "derived from HL SEDOL 3088177, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -12245,7 +12245,7 @@
             "fund": "+3.31%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -12292,7 +12292,7 @@
           "weight": "3.00%"
         }
       ],
-      "holdingsNote": "Top ten of 62 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 62 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -12425,7 +12425,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/GUXP/invesco-global-emerging-markets-uk-z-acc"
       },
       "sources": "HL factsheet, Invesco factsheet PDF (31 Mar 2026)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.56%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.67%, GBP/USD -2.48%.",
@@ -12444,7 +12444,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "B8N4673"
@@ -12552,7 +12552,7 @@
             "fund": "+10.84%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -12596,7 +12596,7 @@
           "weight": "4.03%"
         }
       ],
-      "holdingsNote": "Top ten of 26 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 26 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -12715,7 +12715,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BZ2YND85/performance"
       },
       "sources": "HL research page, HL factsheet",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.22%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks I Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -12733,7 +12733,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BZ2YND85",
       "isinSource": "derived from HL SEDOL BZ2YND8, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -12751,7 +12751,7 @@
       },
       "iaSector": "IA Asia Pacific Ex Japan",
       "benchmark": "MSCI AC Asia Ex Japan NR GBP",
-      "fundSize": "£1,731 million",
+      "fundSize": "£1,666 million",
       "launched": "30 November 2007",
       "yield": "0.94% (historic)",
       "overview": "A quality-growth Asia Pacific ex Japan fund from Schroders, concentrated in ~50–60 high-conviction names across North Asia's leading technology and financial franchises. TSMC (9.77%), Tencent (6.66%) and Samsung (5.86%) are the top three holdings. Managed by Richard Sennitt, one of Schroders' most experienced Asian equity managers.",
@@ -12842,7 +12842,7 @@
             "fund": "+0.46%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -12886,7 +12886,7 @@
           "weight": "2.64%"
         }
       ],
-      "holdingsNote": "Top ten of 52 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 52 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -13030,7 +13030,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BDD27J12/performance"
       },
       "sources": "HL factsheet, HL Broadridge holdings, HL research page (Sep 2025 update)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.32%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -13050,7 +13050,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BDD27J1"
@@ -13155,7 +13155,7 @@
             "fund": "+12.90%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -13202,7 +13202,7 @@
           "weight": "3.00%"
         }
       ],
-      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -13346,7 +13346,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/qi53/stewart-investors-asia-pacific-leaders-sustainability/"
       },
       "sources": "HL factsheet, Stewart Investors fund page, Chelsea Financial Services",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.48%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -13365,7 +13365,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "3387476"
@@ -13473,7 +13473,7 @@
             "fund": "+4.72%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -13517,7 +13517,7 @@
           "weight": "3.09%"
         }
       ],
-      "holdingsNote": "Top ten of 48 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 48 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -13644,7 +13644,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0033874321-fssa-greater-china-growth-b-acc/performance"
       },
       "sources": "HL factsheet, HL Broadridge holdings data",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.07%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -13663,7 +13663,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "3387432"
     },
@@ -13770,7 +13770,7 @@
             "fund": "+1.13%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -13814,7 +13814,7 @@
           "weight": "2.63%"
         }
       ],
-      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 63 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Industrial Engineering",
@@ -13910,7 +13910,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0006011133-baillie-gifford-japanese-b-acc/performance"
       },
       "sources": "HL factsheet, HL research page, Fidelity factsheet data (GB0006011133)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.15%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -13929,7 +13929,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "0601113"
     },
@@ -14036,7 +14036,7 @@
             "fund": "+16.90%"
           }
         ],
-        "perfConfirmed": "2026-10-04"
+        "perfConfirmed": "2026-10-08"
       },
       "holdings": [
         {
@@ -14080,7 +14080,7 @@
           "weight": "2.94%"
         }
       ],
-      "holdingsNote": "Top ten of 59 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 59 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Banks",
@@ -14183,7 +14183,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B0119B50-man-japan-corealpha-fund-prof-acc-c/performance"
       },
       "sources": "HL factsheet, HL Broadridge holdings, Fidelity factsheet (GB00B0119B50)",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.13%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -14202,7 +14202,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "B0119B5"
     },
@@ -14286,7 +14286,7 @@
             "fund": "+7.86%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
@@ -14333,7 +14333,7 @@
           "weight": "1.08%"
         }
       ],
-      "holdingsNote": "Top ten of 611 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 611 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -14476,7 +14476,7 @@
         "trustnet": "https://www.trustnet.com/factsheets/O/G6IF/ishares-pacific-ex-japan-equity-index-uk-d-acc"
       },
       "sources": "HL factsheet, BlackRock holdings data",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.43%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -14497,7 +14497,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BN08ZQ5"
     },
@@ -14580,7 +14580,7 @@
             "fund": "+13.85%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "nav1w": "+1.05%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
@@ -14628,7 +14628,7 @@
           "weight": "1.69%"
         }
       ],
-      "holdingsNote": "Top ten of 480 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 480 holdings, from the HL factsheet on 08 Oct 2026.",
       "sectors": [
         {
           "name": "Technology Hardware & Equipment",
@@ -14739,7 +14739,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B6QQ9X96-ishares-japan-equity-index-d-acc/performance"
       },
       "sources": "HL factsheet, BlackRock holdings data",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.59%",
         "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +5.78%, GBP/USD -2.48%.",
@@ -14760,7 +14760,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "sedol": "BN08ZG5"
     },
@@ -14845,7 +14845,7 @@
             "fund": "+26.04%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -14902,7 +14902,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BP9LKJ73/performance"
       },
       "sources": "HL factsheet (Wealth Shortlist confirmed, fund size, launch, yield, net ongoing charge); Yahoo Finance NAV series; ISIN via FT security search.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001PP1Y.L",
       "navMatch": "stored",
       "isin": "GB00BP9LKJ73",
@@ -15018,13 +15018,13 @@
           "weight": "0.00%"
         }
       ],
-      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BP9LKJ7"
@@ -15041,7 +15041,7 @@
       },
       "iaSector": "IA North American Smaller Cos",
       "benchmark": "Russell 2000 NR GBP",
-      "fundSize": "£999 million",
+      "fundSize": "£439 million",
       "launched": "20 February 1990",
       "yield": "0.02% (historic)",
       "overview": "A US small-cap fund selected by HL's analysts for the Wealth Shortlist. The Class L accumulation line is recent, so its NAV history does not yet span a full year - the 1yr figure will appear once the series is long enough rather than being back-filled from another share class.",
@@ -15110,7 +15110,7 @@
             "fund": "+24.17%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -15167,7 +15167,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B7LDL923/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00B7LDL923, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000VGMI.L",
       "navMatch": "stored",
       "navName": "Schroder US Smaller Comp Z Acc",
@@ -15289,7 +15289,7 @@
           "weight": "0.93%"
         }
       ],
-      "holdingsNote": "Top ten of 79 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 79 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "sedol": "B7LDL92",
@@ -15299,7 +15299,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
     },
@@ -15384,7 +15384,7 @@
             "fund": "+31.17%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -15440,7 +15440,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BJS8SH10/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00BJS8SH10, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000125KU.L",
       "navMatch": "stored",
       "navName": "Fidelity Index US P Acc",
@@ -15578,13 +15578,13 @@
           "weight": "0.05%"
         }
       ],
-      "holdingsNote": "Top ten of 505 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 505 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BJS8SH10",
       "isinSource": "derived from HL SEDOL BJS8SH1, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -15672,7 +15672,7 @@
             "fund": "+28.59%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -15729,7 +15729,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B89ST706/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00B89ST706, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000WUU7.L",
       "navMatch": "stored",
       "navName": "Fidelity American Special Sits W Acc",
@@ -15867,13 +15867,13 @@
           "weight": "0.02%"
         }
       ],
-      "holdingsNote": "Top ten of 60 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 60 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B89ST706",
       "isinSource": "derived from HL SEDOL B89ST70, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -15961,7 +15961,7 @@
             "fund": "+22.62%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -16018,7 +16018,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B8278F56/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00B8278F56, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000XOCD.L",
       "navMatch": "stored",
       "navName": "Premier Miton US Opportunities B Acc",
@@ -16132,13 +16132,13 @@
           "weight": "2.41%"
         }
       ],
-      "holdingsNote": "Top ten of 41 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 41 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B8278F56",
       "isinSource": "derived from HL SEDOL B8278F5, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -16226,7 +16226,7 @@
             "fund": "+31.07%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -16282,7 +16282,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B80QG615/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00B80QG615, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000WN7H.L",
       "navMatch": "stored",
       "navName": "HSBC American Index C Acc",
@@ -16416,13 +16416,13 @@
           "weight": "0.00%"
         }
       ],
-      "holdingsNote": "Top ten of 535 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 535 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B80QG615",
       "isinSource": "derived from HL SEDOL B80QG61, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -16510,7 +16510,7 @@
             "fund": "+17.38%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -16567,7 +16567,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B8BC5H23/performance"
       },
       "sources": "HL Europe sector page (Wealth Shortlist membership); Yahoo Finance NAV series.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000X3IE.L",
       "navMatch": "stored",
       "navName": "CT European Select Z Acc GBP",
@@ -16705,13 +16705,13 @@
           "weight": "1.63%"
         }
       ],
-      "holdingsNote": "Top ten of 37 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 37 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B8BC5H23",
       "isinSource": "derived from HL SEDOL B8BC5H2, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -16799,7 +16799,7 @@
             "fund": "+19.34%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -16856,7 +16856,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B5STJW84/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00B5STJW84, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000U20D.L",
       "navMatch": "stored",
       "navName": "Jupiter European I Acc",
@@ -16994,13 +16994,13 @@
           "weight": "3.96%"
         }
       ],
-      "holdingsNote": "Top ten of 42 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 42 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B5STJW84",
       "isinSource": "derived from HL SEDOL B5STJW8, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -17060,7 +17060,7 @@
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -17111,7 +17111,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BCZRNN30/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00BCZRNN30, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000ZZBQ.L",
       "navMatch": "stored",
       "navName": "BlackRock European Dynamic FD Acc",
@@ -17249,7 +17249,7 @@
           "weight": "2.97%"
         }
       ],
-      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "navNote": "series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change",
@@ -17260,7 +17260,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
     },
@@ -17345,7 +17345,7 @@
             "fund": "+16.29%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -17402,7 +17402,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BHZK8B07/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00BHZK8B07, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00011RBW.L",
       "navMatch": "stored",
       "navName": "Fidelity Index Europe ex UK P Acc",
@@ -17540,13 +17540,13 @@
           "weight": "1.68%"
         }
       ],
-      "holdingsNote": "Top ten of 333 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 333 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BHZK8B07",
       "isinSource": "derived from HL SEDOL BHZK8B0, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -17634,7 +17634,7 @@
             "fund": "+8.81%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -17691,7 +17691,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0006058258/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB0006058258, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000QWM.L",
       "navMatch": "stored",
       "navName": "Baillie Gifford European B Acc",
@@ -17829,13 +17829,13 @@
           "weight": "3.80%"
         }
       ],
-      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 44 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB0006058258",
       "isinSource": "derived from HL SEDOL 0605825, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -17884,7 +17884,7 @@
             "fund": "+8.70%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -17960,7 +17960,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BN08ZN29/performance"
       },
       "sources": "HL Wealth Shortlist tracker page (membership, sector); Yahoo Finance NAV series.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001O7DN.L",
       "navMatch": "stored",
       "navName": "iShares Corporate Bond Index (UK) S Acc",
@@ -18070,13 +18070,13 @@
           "weight": "1.18%"
         }
       ],
-      "holdingsNote": "Top ten of 1251 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 1251 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BN08ZN29",
       "isinSource": "derived from HL SEDOL BN08ZN2, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -18146,7 +18146,7 @@
             "fund": "+4.97%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -18202,7 +18202,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BG0QNW27/performance"
       },
       "sources": "HL Wealth Shortlist tracker page (membership, sector); Yahoo Finance NAV series; ISIN via FT security search, corroborated by the NAV line name.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000102LM.L",
       "navMatch": "stored",
       "isin": "GB00BG0QNW27",
@@ -18279,13 +18279,13 @@
           "weight": "0.70%"
         }
       ],
-      "holdingsNote": "Top ten of 69 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 69 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BG0QNW2"
@@ -18317,7 +18317,7 @@
         "navYtd": "-1.10%",
         "navVol": "5.1%",
         "navVolYears": 1,
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -18376,7 +18376,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BN13X436/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00BN13X436, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001THP6.L",
       "navMatch": "stored",
       "navName": "Royal London Corporate Bond Z Acc",
@@ -18490,7 +18490,7 @@
           "weight": "0.99%"
         }
       ],
-      "holdingsNote": "Top ten of 348 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 348 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "sedol": "BN13X43",
@@ -18500,7 +18500,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
     },
@@ -18521,7 +18521,7 @@
       "yield": "1.66% (historic)",
       "overview": "A growth-tilted multi-asset fund spanning UK, North American, European, Asian and emerging market equities plus bonds. Named on HL's mixed-investment sector page as a Wealth Shortlist fund.",
       "performance": {
-        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Managed Fund B Acc, GB0006010168): trailing figures to 7 Oct 2026 (1/3/5yr; 3 and 5yr annualised); discrete years to 30 Sep 2026. Sector column is the Morningstar GBP Allocation 60-80% Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables.",
+        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Managed Fund B Acc, GB0006010168): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (1-day -0.512821 does not match stamped price change -0.69). Sector column is the Morningstar GBP Allocation 60-80% Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables.",
         "perfBasis": "FID",
         "nav1w": "+0.17%",
         "nav1m": "-0.34%",
@@ -18585,7 +18585,7 @@
             "fund": "+4.34%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -18642,7 +18642,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0006010168/performance"
       },
       "sources": "HL mixed investment / total return sector page (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000QWU.L",
       "navMatch": "stored",
       "navName": "Baillie Gifford Managed B Acc",
@@ -18780,13 +18780,13 @@
           "weight": "1.78%"
         }
       ],
-      "holdingsNote": "Top ten of 402 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 402 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB0006010168",
       "isinSource": "derived from HL SEDOL 0601016, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -18874,7 +18874,7 @@
             "fund": "+7.20%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -18931,7 +18931,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BSPPWT88/performance"
       },
       "sources": "HL mixed investment / total return sector page (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000156WB.L",
       "navMatch": "stored",
       "navName": "BNY Mellon Real Return U Acc",
@@ -19069,7 +19069,7 @@
           "weight": "3.61%"
         }
       ],
-      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 150 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "sedol": "BSPPWT8",
@@ -19079,7 +19079,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
     },
@@ -19164,7 +19164,7 @@
             "fund": "+12.03%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -19221,7 +19221,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB0002899846/performance"
       },
       "sources": "HL mixed investment / total return sector page and sector review (Wealth Shortlist membership, IA sector); Yahoo Finance NAV series.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000VDP.L",
       "navMatch": "stored",
       "navName": "Schroder Managed Balanced Instl Acc",
@@ -19359,7 +19359,7 @@
           "weight": "2.85%"
         }
       ],
-      "holdingsNote": "Top ten of 457 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 457 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "sedol": "0289984",
@@ -19369,7 +19369,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
     },
@@ -19454,7 +19454,7 @@
             "fund": "+12.31%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -19511,7 +19511,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BZ6CNS31/performance"
       },
       "sources": "HL mixed and total return sector review (Wealth Shortlist membership); Yahoo Finance NAV series.",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001CBJA.L",
       "navMatch": "stored",
       "navName": "Trojan Fund X Accumulation",
@@ -19649,13 +19649,13 @@
           "weight": "-0.37%"
         }
       ],
-      "holdingsNote": "Top ten of 36 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 36 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BZ6CNS31",
       "isinSource": "derived from HL SEDOL BZ6CNS3, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -19725,7 +19725,7 @@
             "fund": "+10.21%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -19782,7 +19782,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BKTW4R13/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00BKTW4R13, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001J9W9.L",
       "navMatch": "stored",
       "navName": "Trojan Ethical X Acc",
@@ -19917,13 +19917,13 @@
           "weight": "0.80%"
         }
       ],
-      "holdingsNote": "Top ten of 33 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 33 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00BKTW4R13",
       "isinSource": "derived from HL SEDOL BKTW4R1, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -20011,7 +20011,7 @@
             "fund": "+17.66%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -20068,7 +20068,7 @@
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B882H241/performance"
       },
       "sources": "Yahoo Finance (fund NAV series); share class confirmed from the NAV line's own published name. Performance comparators, SRRI and transaction cost from Fidelity's factsheet (GB00B882H241, read 8 Oct 2026).",
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000XYWQ.L",
       "navMatch": "stored",
       "navName": "Royal London Sustainable World C Acc",
@@ -20206,13 +20206,13 @@
           "weight": "1.76%"
         }
       ],
-      "holdingsNote": "Top ten of 251 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 251 holdings, from the HL factsheet on 08 Oct 2026.",
       "shortlist": false,
       "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "isin": "GB00B882H241",
       "isinSource": "derived from HL SEDOL B882H24, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -20375,12 +20375,12 @@
           "weight": "1.47%"
         }
       ],
-      "holdingsNote": "Top ten of 2006 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 2006 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "LGIM Index Fund Management Team",
         "tenure": "LGIM Index Fund Management Team since 20/04/2022"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "performance": {
         "nav1w": "+1.63%",
         "nav1m": "+0.23%",
@@ -20405,7 +20405,7 @@
             "fund": "+1.55%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -20469,7 +20469,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−14.9%",
@@ -20610,7 +20610,7 @@
           "weight": "1.42%"
         }
       ],
-      "holdingsNote": "Top ten of 73 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 73 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Kenny Watson & Aitken Ross & Jack Willis",
         "tenure": "Kenny Watson since 01/10/2013; Aitken Ross since 01/03/2014; Jack Willis since 01/04/2021"
@@ -20678,7 +20678,7 @@
             "fund": "-1.96%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -20704,7 +20704,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00B8BPH312",
       "isinSource": "derived from HL SEDOL B8BPH31 (GB00+SEDOL+check digit). Yahoo returns \"Liontrust Sust Fut Corp Bd 6 Grs Acc\" for this ISIN - the same fund and share class in Yahoo's abbreviated form, confirmed by hand. The SEDOL is share-class specific, so the ISIN identifies the class the desk prices.",
       "navSymbol": "0P0000Y3XU.L",
@@ -20723,7 +20723,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−29.6%",
@@ -20878,7 +20878,7 @@
           "weight": "0.00%"
         }
       ],
-      "holdingsNote": "Top ten of 58 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 58 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Dr Paul Jourdan & Gregor Paterson",
         "tenure": "Dr Paul Jourdan since 01/09/2000; Gregor Paterson since 29/07/2024"
@@ -20946,7 +20946,7 @@
             "fund": "+13.13%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -20972,7 +20972,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00B2NG4R39",
       "navSymbol": "0P0000GBB2.L",
       "navName": "WS Amati UK Listed Smaller Coms B Acc",
@@ -20990,7 +20990,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−43.0%",
@@ -21131,7 +21131,7 @@
           "weight": "0.28%"
         }
       ],
-      "holdingsNote": "Top ten of 48 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 48 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Gary Robinson & Dave Bujnowski & the maintainer Slater & Kirsty Gibson & Lillian Li",
         "tenure": "Gary Robinson since 01/05/2014; Dave Bujnowski since 01/06/2020; the maintainer Slater since 04/01/2016; Kirsty Gibson since 01/01/2018; Lillian Li since 31/01/2026"
@@ -21199,7 +21199,7 @@
             "fund": "-2.76%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -21225,7 +21225,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000VC9.L",
       "navName": "Baillie Gifford American B Acc",
       "navMatch": "stored",
@@ -21242,7 +21242,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−60.5%",
@@ -21414,7 +21414,7 @@
           "weight": "4.10%"
         }
       ],
-      "holdingsNote": "Top ten of 95 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 95 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Nicholas Williams & Rosie Simmonds & William Cuss",
         "tenure": "Nicholas Williams since 13/01/2005; Rosie Simmonds since 30/09/2016; William Cuss since 07/02/2020"
@@ -21482,7 +21482,7 @@
             "fund": "+14.22%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -21508,7 +21508,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001KJSZ.L",
       "navName": "Barings Europe Select I GBP Acc",
       "navMatch": "stored",
@@ -21525,7 +21525,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−31.2%",
@@ -21672,7 +21672,7 @@
           "weight": "1.84%"
         }
       ],
-      "holdingsNote": "Top ten of 204 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 204 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Kris Atkinson & Shamil Gohil",
         "tenure": "Kris Atkinson since 01/01/2019; Shamil Gohil since 01/03/2023"
@@ -21740,7 +21740,7 @@
             "fund": "-1.40%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -21766,7 +21766,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00BBGBFM09",
       "isinSource": "derived from HL SEDOL BBGBFM0 (GB00+SEDOL+check digit); corroborated by Yahoo name match",
       "navSymbol": "0P0000YYBR.L",
@@ -21785,7 +21785,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−27.4%",
@@ -21956,7 +21956,7 @@
           "weight": "1.10%"
         }
       ],
-      "holdingsNote": "Top ten of 55 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 55 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Martin Lau",
         "tenure": "Martin Lau since 24/08/2015"
@@ -22024,7 +22024,7 @@
             "fund": "+4.20%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -22050,7 +22050,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00015W87.L",
       "navName": "FSSA Asia Focus B GBP Acc",
       "navMatch": "stored",
@@ -22067,7 +22067,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−20.0%",
@@ -22218,7 +22218,7 @@
           "weight": "3.64%"
         }
       ],
-      "holdingsNote": "Top ten of 263 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 263 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Stuart Edwards & Julien Eberhardt",
         "tenure": "Stuart Edwards since 31/08/2020; Julien Eberhardt since 31/08/2021"
@@ -22286,7 +22286,7 @@
             "fund": "+1.59%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -22312,7 +22312,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000XBQP.L",
       "navName": "Invesco Tactical Bond UK Z Acc",
       "navMatch": "stored",
@@ -22329,7 +22329,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−10.1%",
@@ -22502,12 +22502,12 @@
           "weight": "1.63%"
         }
       ],
-      "holdingsNote": "Top ten of 2129 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 2129 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Kieran Doyle",
         "tenure": "Kieran Doyle since 14/03/2016"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "performance": {
         "nav1w": "+1.97%",
         "nav1m": "+0.74%",
@@ -22532,7 +22532,7 @@
             "fund": "+1.91%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -22595,7 +22595,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−13.2%",
@@ -22740,12 +22740,12 @@
           "weight": "2.42%"
         }
       ],
-      "holdingsNote": "Top ten of 1393 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 1393 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Bob Michele & Iain Stealey",
         "tenure": "Bob Michele since 30/01/2015; Iain Stealey since 30/01/2015"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "performance": {
         "nav1w": "+0.15%",
         "nav1m": "-1.93%",
@@ -22779,7 +22779,7 @@
             "fund": "+0.65%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -22819,7 +22819,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−11.3%",
@@ -22991,7 +22991,7 @@
           "weight": "0.04%"
         }
       ],
-      "holdingsNote": "Top ten of 87 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 87 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Avinash Vazirani & Colin Croft",
         "tenure": "Avinash Vazirani since 29/02/2008; Colin Croft since 29/02/2008"
@@ -23059,7 +23059,7 @@
             "fund": "+35.85%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -23085,7 +23085,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00018LFD.L",
       "navName": "Jupiter India X GBP Acc",
       "navMatch": "stored",
@@ -23102,7 +23102,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−22.0%",
@@ -23254,7 +23254,7 @@
           "weight": "0.22%"
         }
       ],
-      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Audrey Ryan",
         "tenure": "Audrey Ryan since 01/01/1999"
@@ -23322,7 +23322,7 @@
             "fund": "+16.27%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -23348,7 +23348,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000RK9.L",
       "navName": "CG Aegon Ethical Equity GBP B Acc",
       "navMatch": "stored",
@@ -23365,7 +23365,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−31.0%",
@@ -23537,7 +23537,7 @@
           "weight": "0.01%"
         }
       ],
-      "holdingsNote": "Top ten of 165 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 165 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "LGIM Index Fund Management Team",
         "tenure": "LGIM Index Fund Management Team since 30/09/2013"
@@ -23605,7 +23605,7 @@
             "fund": "+17.85%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -23631,7 +23631,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00013WXJ.L",
       "navName": "L&G UK Mid Cap Index C Acc",
       "navMatch": "stored",
@@ -23648,7 +23648,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−30.5%",
@@ -23810,7 +23810,7 @@
           "weight": "0.01%"
         }
       ],
-      "holdingsNote": "Top ten of 103 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 103 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "LGIM Index Fund Management Team",
         "tenure": "LGIM Index Fund Management Team since 30/09/2013"
@@ -23878,7 +23878,7 @@
             "fund": "+17.36%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -23904,7 +23904,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000102MC.L",
       "navName": "L&G UK 100 Index C Acc",
       "navMatch": "stored",
@@ -23921,7 +23921,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−12.8%",
@@ -24093,7 +24093,7 @@
           "weight": "0.00%"
         }
       ],
-      "holdingsNote": "Top ten of 54 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 54 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "James Thomson & Sammy Dow",
         "tenure": "James Thomson since 01/11/2003; Sammy Dow since 01/07/2014"
@@ -24161,7 +24161,7 @@
             "fund": "+20.46%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -24187,7 +24187,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001FE43.L",
       "navName": "Rathbone Global Opportunities Fund S Acc",
       "navMatch": "stored",
@@ -24204,7 +24204,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−29.7%",
@@ -24240,7 +24240,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/s/schroder-asian-discovery-class-z-accumulation",
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00B5ZS9V71/performance"
       },
-      "fundSize": "£164 million",
+      "fundSize": "£154 million",
       "launched": "15 March 2012",
       "yield": "1.15% (historic)",
       "charges": {
@@ -24376,7 +24376,7 @@
           "weight": "3.41%"
         }
       ],
-      "holdingsNote": "Top ten of 53 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 53 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Robin Parbrook & Alex Deane",
         "tenure": "Robin Parbrook since 31/12/2020; Alex Deane since 31/12/2020"
@@ -24444,7 +24444,7 @@
             "fund": "+18.84%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -24470,7 +24470,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00B5ZS9V71",
       "isinSource": "derived from HL SEDOL B5ZS9V7 (GB00+SEDOL+check digit); corroborated by Yahoo name match",
       "navSymbol": "0P0000VGH4.L",
@@ -24489,7 +24489,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−23.1%",
@@ -24630,7 +24630,7 @@
           "weight": "1.30%"
         }
       ],
-      "holdingsNote": "Top ten of 34 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 34 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Sreevardhan Agarwal & Rizi Mohanty & Angus Sandison",
         "tenure": "Sreevardhan Agarwal since 14/11/2026; Rizi Mohanty since 14/11/2026; Angus Sandison since 14/11/2026"
@@ -24698,7 +24698,7 @@
             "fund": "+35.70%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -24724,7 +24724,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00B1FXTG93",
       "isinSource": "derived from HL SEDOL B1FXTG9 (GB00+SEDOL+check digit). Yahoo returns \"Stewart Inv Indian Sbctnt AllCap B G\" for this ISIN - the same fund and share class in Yahoo's abbreviated form, confirmed by hand. The SEDOL is share-class specific, so the ISIN identifies the class the desk prices.",
       "navSymbol": "0P0000X4NO.L",
@@ -24745,7 +24745,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−36.8%",
@@ -24915,7 +24915,7 @@
           "weight": "1.68%"
         }
       ],
-      "holdingsNote": "Top ten of 33 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 33 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "James Harries & Tomasz Boniek",
         "tenure": "James Harries since 01/11/2016; Tomasz Boniek since 15/11/2017"
@@ -24983,7 +24983,7 @@
             "fund": "+16.74%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -25009,7 +25009,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00018VXM.L",
       "navName": "Trojan Global Income O Acc",
       "navMatch": "stored",
@@ -25026,7 +25026,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−10.8%",
@@ -25173,7 +25173,7 @@
           "weight": "2.37%"
         }
       ],
-      "holdingsNote": "Top ten of 16658 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 16658 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Vanguard Fixed Income Group",
         "tenure": "Vanguard Fixed Income Group since 31/03/2008"
@@ -25240,7 +25240,7 @@
             "fund": "-2.01%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -25266,7 +25266,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "IE00B18GCB14",
       "navSymbol": "0P0000CV2L",
       "navName": "Vanguard Glb Bd Idx $ H Acc",
@@ -25284,7 +25284,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−16.2%",
@@ -25319,7 +25319,7 @@
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/s/schroder-income-class-q-accumulation",
         "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/GB00BS0LFP83/performance"
       },
-      "fundSize": "£1,143 million",
+      "fundSize": "£1,203 million",
       "launched": "31 May 1987",
       "yield": "3.69% (historic)",
       "charges": {
@@ -25443,12 +25443,12 @@
           "weight": "1.35%"
         }
       ],
-      "holdingsNote": "Top ten of 49 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 49 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Andrew Evans & Nick Kirrage",
         "tenure": "Andrew Evans since 19/11/2022; Nick Kirrage since 17/06/2024"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "performance": {
         "nav1w": "-2.32%",
         "nav1m": "-4.01%",
@@ -25482,7 +25482,7 @@
             "fund": "+29.46%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -25523,7 +25523,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−16.8%",
@@ -25694,7 +25694,7 @@
           "weight": "2.05%"
         }
       ],
-      "holdingsNote": "Top ten of 415 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 415 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "John Stopford & Jason Borbora-Sheen",
         "tenure": "John Stopford since 31/07/2012; Jason Borbora-Sheen since 28/02/2019"
@@ -25762,7 +25762,7 @@
             "fund": "+1.25%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -25788,7 +25788,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000XTGS.L",
       "navName": "Ninety One Diversified Income R Acc £",
       "navMatch": "stored",
@@ -25806,7 +25806,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−9.9%",
@@ -25963,7 +25963,7 @@
           "weight": "0.90%"
         }
       ],
-      "holdingsNote": "Top ten of 316 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 316 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "LGIM Index Fund Management Team",
         "tenure": "LGIM Index Fund Management Team since 30/09/2013"
@@ -26031,7 +26031,7 @@
             "fund": "+27.00%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -26057,7 +26057,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00BYW7CL14",
       "isinSource": "derived from HL SEDOL BYW7CL1 (GB00+SEDOL+check digit); corroborated by Yahoo name match",
       "navSymbol": "0P00016MMV.L",
@@ -26077,7 +26077,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−25.7%",
@@ -26239,12 +26239,12 @@
           "weight": "0.69%"
         }
       ],
-      "holdingsNote": "Top ten of 361 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 361 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Kieran Doyle",
         "tenure": "Kieran Doyle since 14/03/2016"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "performance": {
         "nav1w": "-1.00%",
         "nav1m": "-3.85%",
@@ -26265,7 +26265,7 @@
             "fund": "+0.43%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -26326,7 +26326,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−16.4%",
@@ -26492,7 +26492,7 @@
           "weight": "1.81%"
         }
       ],
-      "holdingsNote": "Top ten of 43 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 43 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Peter Meany & Andrew Greenup & Edmund Leung",
         "tenure": "Peter Meany since 17/09/2007; Andrew Greenup since 17/09/2007; Edmund Leung since 01/05/2021"
@@ -26560,7 +26560,7 @@
             "fund": "+14.30%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -26586,7 +26586,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00B24HJL45",
       "isinSource": "derived from HL SEDOL B24HJL4 (GB00+SEDOL+check digit). Yahoo returns \"First Sentier Glb Lstd Infra B GBP A\" for this ISIN - the same fund and share class in Yahoo's abbreviated form, confirmed by hand. The SEDOL is share-class specific, so the ISIN identifies the class the desk prices.",
       "navSymbol": "0P00009VDK.L",
@@ -26607,7 +26607,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−20.0%",
@@ -26751,7 +26751,7 @@
           "weight": "0.22%"
         }
       ],
-      "holdingsNote": "Top ten of 265 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 265 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "LGIM Index Fund Management Team",
         "tenure": "LGIM Index Fund Management Team since 30/09/2013"
@@ -26819,7 +26819,7 @@
             "fund": "+35.12%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -26845,7 +26845,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0001FVLM.L",
       "navName": "L&G Global Technology Index C Acc",
       "navMatch": "stored",
@@ -26863,7 +26863,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−30.0%",
@@ -27007,7 +27007,7 @@
           "weight": "-0.40%"
         }
       ],
-      "holdingsNote": "Top ten of 41 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 41 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "George Cheveley",
         "tenure": "George Cheveley since 01/04/2015"
@@ -27075,7 +27075,7 @@
             "fund": "-11.67%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -27101,7 +27101,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00009NF8.L",
       "navName": "Ninety One Global Gold I Acc £",
       "navMatch": "stored",
@@ -27119,7 +27119,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−38.9%",
@@ -27279,7 +27279,7 @@
           "weight": "1.47%"
         }
       ],
-      "holdingsNote": "Top ten of 80 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 80 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Neil Gregson & Christopher Korpan",
         "tenure": "Neil Gregson since 31/01/2012; Christopher Korpan since 01/02/2017"
@@ -27347,7 +27347,7 @@
             "fund": "+22.51%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -27373,7 +27373,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00009VVV.L",
       "navName": "JPM Natural Resources B Net Acc",
       "navMatch": "stored",
@@ -27391,7 +27391,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−22.7%",
@@ -27559,7 +27559,7 @@
           "weight": "0.05%"
         }
       ],
-      "holdingsNote": "Top ten of 46 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 46 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Perry Vickery",
         "tenure": "Perry Vickery since 28/02/2022"
@@ -27627,7 +27627,7 @@
             "fund": "-18.85%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -27653,7 +27653,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P00000R15.L",
       "navName": "CT Latin America Ins Acc GBP",
       "navMatch": "stored",
@@ -27671,7 +27671,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−25.2%",
@@ -27810,7 +27810,7 @@
           "weight": "0.00%"
         }
       ],
-      "holdingsNote": "Top ten of 32 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 32 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "David Curtin",
         "tenure": "David Curtin since 28/11/2018"
@@ -27869,7 +27869,7 @@
             "fund": "+0.04%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -27895,7 +27895,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P000148T8.L",
       "navName": "iShares Index Linked Gilt Idx (UK) H Acc",
       "navMatch": "stored",
@@ -27913,7 +27913,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−18.3%",
@@ -28051,7 +28051,7 @@
           "weight": "1.13%"
         }
       ],
-      "holdingsNote": "Top ten of 213 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 213 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Tony Cole & Craig Inches",
         "tenure": "Tony Cole since 22/05/2015; Craig Inches since 31/12/2015"
@@ -28119,7 +28119,7 @@
             "fund": "-0.02%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -28145,7 +28145,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00B8XYYQ86",
       "navSymbol": "0P0000Z8P7.L",
       "navName": "Royal London Short Term Money Mkt Y Acc",
@@ -28164,7 +28164,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−0.02%",
@@ -28303,7 +28303,7 @@
           "weight": "0.63%"
         }
       ],
-      "holdingsNote": "Top ten of 125 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 125 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "LGIM Index Fund Management Team",
         "tenure": "LGIM Index Fund Management Team since 30/09/2013"
@@ -28371,7 +28371,7 @@
             "fund": "+5.86%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -28397,7 +28397,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "GB00BG0QPQ07",
       "isinSource": "derived from HL SEDOL BG0QPQ0 (GB00+SEDOL+check digit); corroborated by Yahoo name match",
       "navSymbol": "0P000102MS.L",
@@ -28417,7 +28417,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−14.9%",
@@ -28563,7 +28563,7 @@
           "weight": "3.01%"
         }
       ],
-      "holdingsNote": "Top ten of 344 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 344 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Charles De Quinsonas & Nick Smallwood & Carlos Carranza",
         "tenure": "Charles De Quinsonas since 01/09/2025; Nick Smallwood since 01/09/2025; Carlos Carranza since 01/01/2026"
@@ -28631,7 +28631,7 @@
             "fund": "-1.34%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -28657,7 +28657,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "navSymbol": "0P0000VPQE.L",
       "navName": "M&G Emerging Markets Bond GBP I Acc",
       "navMatch": "stored",
@@ -28675,7 +28675,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−12.6%",
@@ -28811,7 +28811,7 @@
           "weight": "2.96%"
         }
       ],
-      "holdingsNote": "Top ten of 244 holdings, from the HL factsheet on 04 Oct 2026.",
+      "holdingsNote": "Top ten of 244 holdings, from the HL factsheet on 08 Oct 2026.",
       "manager": {
         "names": "Vanguard Fixed Income Group",
         "tenure": "Vanguard Fixed Income Group since 03/12/2019"
@@ -28879,7 +28879,7 @@
             "fund": "-1.70%"
           }
         ],
-        "perfConfirmed": "2026-10-04",
+        "perfConfirmed": "2026-10-08",
         "cumulative": [
           {
             "period": "1 yr (trailing, to 7 Oct 26)",
@@ -28905,7 +28905,7 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)"
       },
-      "asAt": "04 Oct 2026 (factsheet refreshed from HL)",
+      "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "IE00BKLWXP06",
       "navSymbol": "0P0001IU24.L",
       "navName": "Vanguard Emerging Mkts Bd Inv GBP H Acc",
@@ -28924,7 +28924,7 @@
       "dealing": {
         "tradeable": true,
         "blocked": [],
-        "checked": "2026-10-04"
+        "checked": "2026-10-08"
       },
       "risk": {
         "maxDrawdown": "−24.4%",
