@@ -11,7 +11,7 @@
       "Where a field shows 'not yet verified' it was not confirmed within the research run — not invented or omitted by choice.",
       "Portfolio breakdowns (holdings, sectors, countries) are point-in-time from each fund's last published factsheet and are older than its price data. Every fund's holdings note carries its own as-at date.",
       "Wealth Shortlist status is read from HL's own Wealth Shortlist data, not inferred from factsheet prose. A fund marked Ex-Shortlist was dropped by HL and is still tracked here; funds with neither badge cover asset classes the Shortlist does not include. Membership is HL's view, not a rating by this desk.",
-      "101 of 103 funds carry a 1-month figure computed from the fund's own published NAV series (priced 6 Oct 2026 to 7 Oct 2026), refreshed every run. 1 uses a same-index GBP ETF proxy and 1 carries no fund-level figure at all - each figure is labelled with the basis it used.",
+      "102 of 103 funds carry a 1-month figure computed from the fund's own published NAV series (priced 6 Oct 2026 to 7 Oct 2026), refreshed every run. 0 use a same-index GBP ETF proxy and 1 carries no fund-level figure at all - each figure is labelled with the basis it used.",
       "103 of 103 funds carry a cumulative table of trailing 1/3/5yr figures with a sector comparator, which the daily run does NOT refresh - the weekly factsheet run re-reads them from Fidelity, where the share class and date can be proved. Read from their own period labels, the 103 that state a date run 8 May 2026 to 7 Oct 2026, up to 153 days old. The fund's own totals over those windows are computed from its NAV series every run and carry the NAV chip; it is the comparators beside them that age between weekly reads, and on any fund the weekly read refuses. Fidelity's comparator is the Morningstar category average, not the IA sector; older tables use other bases (Trustnet/FE, HL rolling 12-month) — do not compare across funds without adjusting.",
       "103 funds carry discrete annual returns, kept to a fixed year-end (07 Oct, 30 Jun, 30 Sep) rather than to the run date: every one carries the most recent year that has closed on its own basis. A completed year is history and does not go out of date on the calendar, so these are not aged in days.",
       "1 fund's cumulative 3/5yr figures are derived by compounding discrete annual returns and are approximate — verify against Trustnet or Morningstar for published totals."
@@ -369,7 +369,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.98%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000W36K.L",
@@ -671,7 +671,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.85%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000WUT3.L",
@@ -959,7 +959,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-7.07%",
-        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "6 Oct 2026",
         "basis": "nav:0P0001BM5B.L",
@@ -1036,27 +1036,27 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
-        "nav1w": "+0.95%",
-        "nav1m": "-0.00%",
-        "nav1yr": "+27.47%",
-        "nav3yr": "+80.82%",
+        "nav1w": "+0.96%",
+        "nav1m": "+0.01%",
+        "nav1yr": "+27.62%",
+        "nav3yr": "+81.53%",
         "navAsAt": "2026-10-07",
         "navPoints": 1093,
-        "navYtd": "+21.01%",
+        "navYtd": "+21.12%",
         "navVol": "13.0%",
         "navVolYears": 3,
         "navYears": [
           {
             "year": "2025",
-            "fund": "+22.32%"
+            "fund": "+22.47%"
           },
           {
             "year": "2024",
-            "fund": "+15.03%"
+            "fund": "+15.20%"
           },
           {
             "year": "2023",
-            "fund": "+6.91%"
+            "fund": "+7.14%"
           }
         ],
         "perfConfirmed": "2026-10-08",
@@ -1240,11 +1240,11 @@
       "sources": "HL factsheet & July 2025 research note",
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "-0.00%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "value": "+0.01%",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
-        "basis": "nav:0P0001P4VD.L",
+        "basis": "nav:0P0001P4VC.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "GB00BLFG9Q84",
@@ -1542,7 +1542,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.73%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000WUT6.L",
@@ -1842,7 +1842,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.55%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000X2GC.L",
@@ -2143,7 +2143,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.08%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000125KV.L",
@@ -2430,7 +2430,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.84%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000102M4.L",
@@ -2717,7 +2717,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.77%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001JZH4.L",
@@ -2814,7 +2814,7 @@
         "nav3yr": "+55.18%",
         "nav5yr": "+43.52%",
         "navAsAt": "2026-10-06",
-        "navPoints": 2523,
+        "navPoints": 2522,
         "navYtd": "+14.96%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
@@ -3007,7 +3007,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.73%",
-        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "6 Oct 2026",
         "basis": "nav:0P0000N47O.L",
@@ -3295,7 +3295,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.75%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, FTSE 250 -1.56%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, FTSE 250 -1.46%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000WUU1.L",
@@ -3559,7 +3559,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.95%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.56%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.46%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00017MZL.L",
@@ -3788,7 +3788,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.50%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, FTSE 250 -1.56%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, FTSE 250 -1.46%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001S8W9.L",
@@ -4065,7 +4065,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-4.15%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000KKC3.L",
@@ -4346,7 +4346,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.85%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000024AF.L",
@@ -4624,7 +4624,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.96%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000RI1.L",
@@ -4884,7 +4884,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.34%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.56%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.46%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000W36H.L",
@@ -4974,13 +4974,13 @@
           }
         ],
         "nav1w": "-1.67%",
-        "nav1m": "-3.25%",
-        "nav1yr": "+13.63%",
-        "nav3yr": "+53.82%",
-        "nav5yr": "+65.12%",
+        "nav1m": "-3.24%",
+        "nav1yr": "+13.67%",
+        "nav3yr": "+54.03%",
+        "nav5yr": "+65.53%",
         "navAsAt": "2026-10-07",
         "navPoints": 1475,
-        "navYtd": "+8.41%",
+        "navYtd": "+8.43%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -4989,23 +4989,23 @@
         "navYears": [
           {
             "year": "2025",
-            "fund": "+23.74%"
+            "fund": "+23.80%"
           },
           {
             "year": "2024",
-            "fund": "+9.27%"
+            "fund": "+9.33%"
           },
           {
             "year": "2023",
-            "fund": "+7.66%"
+            "fund": "+7.69%"
           },
           {
             "year": "2022",
-            "fund": "+0.70%"
+            "fund": "+0.78%"
           },
           {
             "year": "2021",
-            "fund": "+17.55%"
+            "fund": "+17.59%"
           }
         ],
         "perfConfirmed": "2026-10-08"
@@ -5172,18 +5172,17 @@
       "sources": "HL factsheet",
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "-3.25%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class I used, desk tracks C Market context: FTSE 100 -3.13%, FTSE 250 -1.56%, GBP/USD -2.49%.",
+        "value": "-3.24%",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, FTSE 250 -1.46%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
-        "basis": "nav:0P000023C8.L",
+        "basis": "nav:0P000102ME.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "GB00BG0QPJ30",
       "navSymbol": "0P000102ME.L",
       "navName": "L&G UK Index C Acc",
       "navMatch": "stored",
-      "navClassNote": "share class I used, desk tracks C",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
@@ -5462,7 +5461,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.65%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class C used, desk tracks S Market context: FTSE 250 -1.56%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class C used, desk tracks S Market context: FTSE 250 -1.46%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000WN7D.L",
@@ -5751,7 +5750,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.51%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, FTSE 250 -1.56%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, FTSE 250 -1.46%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001JZH6.L",
@@ -6112,7 +6111,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.35%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000102MM.L",
@@ -6193,7 +6192,7 @@
         "nav3yr": "+51.49%",
         "nav5yr": "+92.24%",
         "navAsAt": "2026-10-06",
-        "navPoints": 2340,
+        "navPoints": 2338,
         "nav1w": "+0.78%",
         "navYtd": "+16.88%",
         "navVol": "13.9%",
@@ -6372,7 +6371,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 8 Sep 2026 to 8 Oct 2026: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 8 Sep 2026 to 8 Oct 2026: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "8 Oct 2026"
       },
@@ -6642,7 +6641,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.01%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001HDDZ.L",
@@ -6918,7 +6917,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.43%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00013YAO.L",
@@ -7207,7 +7206,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.46%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001GZXO.L",
@@ -7521,7 +7520,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.45%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001IAS1.L",
@@ -7855,7 +7854,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.82%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks Z Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks Z Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000FY9K.L",
@@ -8186,7 +8185,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.64%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00008Y97.L",
@@ -8324,7 +8323,7 @@
         "nav3yr": "+23.00%",
         "nav5yr": "+5.02%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2524,
+        "navPoints": 2523,
         "nav1w": "+0.08%",
         "nav1m": "-1.02%",
         "navYtd": "-0.19%",
@@ -8492,7 +8491,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.02%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000QX1.L",
@@ -8809,7 +8808,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.76%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00001SDH.L",
@@ -8961,7 +8960,7 @@
         "nav3yr": "+17.26%",
         "nav5yr": "-0.99%",
         "navAsAt": "2026-10-06",
-        "navPoints": 2253,
+        "navPoints": 2252,
         "navYtd": "-1.75%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
@@ -9127,7 +9126,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.77%",
-        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "6 Oct 2026",
         "basis": "nav:0P0001C5T6.L",
@@ -9484,7 +9483,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.39%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -3.13%, S&P 500 +1.33%, US 10yr yield +10.15%, Gold (USD/oz) -6.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -3.20%, S&P 500 +1.38%, US 10yr yield +10.22%, Gold (USD/oz) -6.48%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000X2GH.L",
@@ -9773,7 +9772,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.36%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, US 10yr yield +10.15%, Gold (USD/oz) -6.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, US 10yr yield +10.22%, Gold (USD/oz) -6.48%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001AN93.L",
@@ -10062,7 +10061,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.28%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -3.13%, S&P 500 +1.33%, US 10yr yield +10.15%, Gold (USD/oz) -6.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class H used, desk tracks B Market context: FTSE 100 -3.20%, S&P 500 +1.38%, US 10yr yield +10.22%, Gold (USD/oz) -6.48%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001K0NY.L",
@@ -10152,14 +10151,14 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
-        "nav1w": "-0.15%",
-        "nav1m": "-1.54%",
-        "nav1yr": "+4.99%",
-        "nav3yr": "+20.98%",
-        "nav5yr": "+24.38%",
+        "nav1w": "-0.06%",
+        "nav1m": "-1.47%",
+        "nav1yr": "+5.53%",
+        "nav3yr": "+22.62%",
+        "nav5yr": "+27.27%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2462,
-        "navYtd": "+2.98%",
+        "navPoints": 2463,
+        "navYtd": "+3.34%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -10168,23 +10167,23 @@
         "navYears": [
           {
             "year": "2025",
-            "fund": "+8.78%"
+            "fund": "+9.28%"
           },
           {
             "year": "2024",
-            "fund": "+2.88%"
+            "fund": "+3.40%"
           },
           {
             "year": "2023",
-            "fund": "+5.10%"
+            "fund": "+5.50%"
           },
           {
             "year": "2022",
-            "fund": "+1.08%"
+            "fund": "+1.54%"
           },
           {
             "year": "2021",
-            "fund": "+3.03%"
+            "fund": "+3.52%"
           }
         ],
         "perfConfirmed": "2026-10-08"
@@ -10352,11 +10351,11 @@
       "sources": "HL factsheet (SEDOL BZ0CQJ1); HL research notes Dec 2025",
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "-1.54%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, Gold (USD/oz) -6.49%, US 10yr yield +10.15%.",
+        "value": "-1.47%",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, Gold (USD/oz) -6.48%, US 10yr yield +10.22%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
-        "basis": "nav:0P0000N9AE.L",
+        "basis": "nav:0P000170AF.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "IE00BZ0CQJ19",
@@ -10656,7 +10655,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-4.51%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000102LY.L",
@@ -10958,7 +10957,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.73%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000100U2.L",
@@ -11260,7 +11259,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.62%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000029BY.L",
@@ -11354,7 +11353,7 @@
         "nav3yr": "+34.23%",
         "nav5yr": "+60.49%",
         "navAsAt": "2026-10-06",
-        "navPoints": 2460,
+        "navPoints": 2458,
         "navYtd": "+7.31%",
         "navVol": "11.5%",
         "navVolYears": 5,
@@ -11558,7 +11557,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.69%",
-        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "6 Oct 2026",
         "basis": "nav:0P00016CNI.L",
@@ -11815,7 +11814,7 @@
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
         "value": "-5.23%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000T2WM.L",
@@ -12122,7 +12121,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.05%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Hang Seng -6.05%, S&P 500 +1.33%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Hang Seng -6.05%, S&P 500 +1.38%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000013TQ.L",
@@ -12426,7 +12425,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.56%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.33%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.38%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000XBR9.L",
@@ -12716,7 +12715,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.22%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks I Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class L used, desk tracks I Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00017EQ6.L",
@@ -13031,7 +13030,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.32%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000ZSZK.L",
@@ -13125,7 +13124,7 @@
         "nav3yr": "+41.43%",
         "nav5yr": "+29.89%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2506,
+        "navPoints": 2503,
         "nav1w": "+1.06%",
         "nav1m": "-0.48%",
         "navYtd": "+23.10%",
@@ -13347,7 +13346,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.48%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000H6Q.L",
@@ -13440,7 +13439,7 @@
         "nav3yr": "+38.66%",
         "nav5yr": "+14.16%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2461,
+        "navPoints": 2458,
         "nav1w": "+1.77%",
         "nav1m": "+0.07%",
         "navYtd": "+19.34%",
@@ -13645,7 +13644,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.07%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000EU6.L",
@@ -13737,7 +13736,7 @@
         "nav3yr": "+54.97%",
         "nav5yr": "+28.53%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2524,
+        "navPoints": 2523,
         "nav1w": "-0.56%",
         "nav1m": "+0.15%",
         "navYtd": "+22.12%",
@@ -13911,7 +13910,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.15%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000QWA.L",
@@ -14184,7 +14183,7 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.13%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000810W.L",
@@ -14261,27 +14260,27 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
-        "nav1yr": "+63.22%",
-        "nav3yr": "+136.31%",
+        "nav1yr": "+63.25%",
+        "nav3yr": "+136.43%",
         "navAsAt": "2026-10-07",
         "navPoints": 1016,
         "nav1w": "+1.59%",
         "nav1m": "+1.43%",
-        "navYtd": "+55.73%",
+        "navYtd": "+55.75%",
         "navVol": "20.8%",
         "navVolYears": 3,
         "navYears": [
           {
             "year": "2025",
-            "fund": "+29.03%"
+            "fund": "+29.05%"
           },
           {
             "year": "2024",
-            "fund": "+7.63%"
+            "fund": "+7.65%"
           },
           {
             "year": "2023",
-            "fund": "+7.86%"
+            "fund": "+7.88%"
           }
         ],
         "perfConfirmed": "2026-10-08",
@@ -14477,10 +14476,10 @@
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.43%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
-        "basis": "nav:0P0000WGT4.L",
+        "basis": "nav:0P0001O7DL.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "GB00BN08ZQ59",
@@ -14489,7 +14488,6 @@
       "navSymbol": "0P0001O7DL.L",
       "navName": "iShares Pacific ex Jpn Eq Idx (UK) S Acc",
       "navMatch": "stored",
-      "navClassNote": "share class D used, desk tracks S",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
@@ -14556,26 +14554,26 @@
         "perfAsAt": "2026-10-07",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
-        "nav1yr": "+26.51%",
-        "nav3yr": "+68.20%",
+        "nav1yr": "+26.54%",
+        "nav3yr": "+68.30%",
         "navAsAt": "2026-10-07",
         "navPoints": 997,
-        "nav1m": "+1.59%",
-        "navYtd": "+24.13%",
+        "nav1m": "+1.60%",
+        "navYtd": "+24.15%",
         "navVol": "17.7%",
         "navVolYears": 3,
         "navYears": [
           {
             "year": "2025",
-            "fund": "+18.01%"
+            "fund": "+18.03%"
           },
           {
             "year": "2024",
-            "fund": "+9.13%"
+            "fund": "+9.15%"
           },
           {
             "year": "2023",
-            "fund": "+13.85%"
+            "fund": "+13.87%"
           }
         ],
         "perfConfirmed": "2026-10-08",
@@ -14739,11 +14737,11 @@
       "sources": "HL factsheet, BlackRock holdings data",
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "+1.59%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class D used, desk tracks S Market context: Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "value": "+1.60%",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
-        "basis": "nav:0P0000WGSX.L",
+        "basis": "nav:0P0001O28V.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "GB00BN08ZG51",
@@ -14752,7 +14750,6 @@
       "navSymbol": "0P0001O28V.L",
       "navName": "iShares Japan Equity Index (UK) S Acc",
       "navMatch": "stored",
-      "navClassNote": "share class D used, desk tracks S",
       "shortlist": true,
       "shortlistStatus": "on",
       "dealing": {
@@ -14908,7 +14905,7 @@
       "navName": "FTF Royce US Smaller Companies W Acc",
       "oneMonth": {
         "value": "-1.64%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001PP1Y.L",
@@ -15171,7 +15168,7 @@
       "navName": "Schroder US Smaller Comp Z Acc",
       "oneMonth": {
         "value": "+1.36%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000VGMI.L",
@@ -15444,7 +15441,7 @@
       "navName": "Fidelity Index US P Acc",
       "oneMonth": {
         "value": "+3.87%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000125KU.L",
@@ -15733,7 +15730,7 @@
       "navName": "Fidelity American Special Sits W Acc",
       "oneMonth": {
         "value": "-0.82%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000WUU7.L",
@@ -16022,7 +16019,7 @@
       "navName": "Premier Miton US Opportunities B Acc",
       "oneMonth": {
         "value": "-2.90%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000XOCD.L",
@@ -16286,7 +16283,7 @@
       "navName": "HSBC American Index C Acc",
       "oneMonth": {
         "value": "+3.85%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000WN7H.L",
@@ -16571,7 +16568,7 @@
       "navName": "CT European Select Z Acc GBP",
       "oneMonth": {
         "value": "-3.68%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000X3IE.L",
@@ -16860,7 +16857,7 @@
       "navName": "Jupiter European I Acc",
       "oneMonth": {
         "value": "-3.71%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000U20D.L",
@@ -17115,7 +17112,7 @@
       "navName": "BlackRock European Dynamic FD Acc",
       "oneMonth": {
         "value": "-4.35%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000ZZBQ.L",
@@ -17406,7 +17403,7 @@
       "navName": "Fidelity Index Europe ex UK P Acc",
       "oneMonth": {
         "value": "-4.28%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00011RBW.L",
@@ -17576,7 +17573,7 @@
         "nav3yr": "+20.34%",
         "nav5yr": "-24.75%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2524,
+        "navPoints": 2523,
         "discrete": [
           {
             "year": "30/09/25 to 30/09/26",
@@ -17695,7 +17692,7 @@
       "navName": "Baillie Gifford European B Acc",
       "oneMonth": {
         "value": "-2.14%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000QWM.L",
@@ -17964,7 +17961,7 @@
       "navName": "iShares Corporate Bond Index (UK) S Acc",
       "oneMonth": {
         "value": "-1.12%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001O7DN.L",
@@ -18209,7 +18206,7 @@
       "navNote": "series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change",
       "oneMonth": {
         "value": "-1.44%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000102LM.L",
@@ -18380,7 +18377,7 @@
       "navName": "Royal London Corporate Bond Z Acc",
       "oneMonth": {
         "value": "-1.81%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001THP6.L",
@@ -18527,7 +18524,7 @@
         "nav3yr": "+36.83%",
         "nav5yr": "+5.12%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2524,
+        "navPoints": 2523,
         "discrete": [
           {
             "year": "30/09/25 to 30/09/26",
@@ -18646,7 +18643,7 @@
       "navName": "Baillie Gifford Managed B Acc",
       "oneMonth": {
         "value": "-0.34%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, US 10yr yield +10.15%, Gold (USD/oz) -6.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, US 10yr yield +10.22%, Gold (USD/oz) -6.48%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000QWU.L",
@@ -18935,7 +18932,7 @@
       "navName": "BNY Mellon Real Return U Acc",
       "oneMonth": {
         "value": "-0.77%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, Gold (USD/oz) -6.49%, US 10yr yield +10.15%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, Gold (USD/oz) -6.48%, US 10yr yield +10.22%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000156WB.L",
@@ -19225,7 +19222,7 @@
       "navName": "Schroder Managed Balanced Instl Acc",
       "oneMonth": {
         "value": "-0.45%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, US 10yr yield +10.15%, Gold (USD/oz) -6.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, US 10yr yield +10.22%, Gold (USD/oz) -6.48%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000VDP.L",
@@ -19515,7 +19512,7 @@
       "navName": "Trojan Fund X Accumulation",
       "oneMonth": {
         "value": "-0.69%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, Gold (USD/oz) -6.49%, US 10yr yield +10.15%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, Gold (USD/oz) -6.48%, US 10yr yield +10.22%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001CBJA.L",
@@ -19787,7 +19784,7 @@
       "navNote": "series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change",
       "oneMonth": {
         "value": "-0.75%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change Market context: FTSE 100 -3.13%, S&P 500 +1.33%, Gold (USD/oz) -6.49%, US 10yr yield +10.15%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change Market context: FTSE 100 -3.20%, S&P 500 +1.38%, Gold (USD/oz) -6.48%, US 10yr yield +10.22%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001J9W9.L",
@@ -20072,7 +20069,7 @@
       "navName": "Royal London Sustainable World C Acc",
       "oneMonth": {
         "value": "+4.00%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, S&P 500 +1.33%, US 10yr yield +10.15%, Gold (USD/oz) -6.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, S&P 500 +1.38%, US 10yr yield +10.22%, Gold (USD/oz) -6.48%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000XYWQ.L",
@@ -20456,7 +20453,7 @@
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00BL6C2119, itself derived from HL SEDOL BL6C211. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
       "oneMonth": {
         "value": "+0.23%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.33%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.38%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001NMWZ.L",
@@ -20710,7 +20707,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.88%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000Y3XU.L",
@@ -20977,7 +20974,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-2.96%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.56%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.46%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000GBB2.L",
@@ -21229,7 +21226,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+5.41%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, Nasdaq 100 +4.97%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, Nasdaq 100 +5.10%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000VC9.L",
@@ -21512,7 +21509,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.51%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.05%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -4.03%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001KJSZ.L",
@@ -21772,7 +21769,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.96%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000YYBR.L",
@@ -22054,7 +22051,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.44%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00015W87.L",
@@ -22316,7 +22313,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.47%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000XBQP.L",
@@ -22582,7 +22579,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+0.74%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.33%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, S&P 500 +1.38%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001O7DM.L",
@@ -22806,7 +22803,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.93%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00015BKO.L",
@@ -23089,7 +23086,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.33%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00018LFD.L",
@@ -23352,7 +23349,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.42%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, FTSE 250 -1.56%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, FTSE 250 -1.46%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000RK9.L",
@@ -23635,7 +23632,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.99%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.56%, FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.46%, FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00013WXJ.L",
@@ -23908,7 +23905,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.46%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, FTSE 250 -1.56%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, FTSE 250 -1.46%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000102MC.L",
@@ -24191,7 +24188,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+2.72%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001FE43.L",
@@ -24476,7 +24473,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+1.16%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000VGH4.L",
@@ -24732,7 +24729,7 @@
       "navClassNote": "no accumulation class found",
       "oneMonth": {
         "value": "-4.86%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. no accumulation class found Market context: Hang Seng -6.05%, Nikkei 225 +5.78%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. no accumulation class found Market context: Hang Seng -6.05%, Nikkei 225 +7.30%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000X4NO.L",
@@ -25013,7 +25010,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.86%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.33%, FTSE 100 -3.13%, Euro STOXX 50 -4.05%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 +1.38%, FTSE 100 -3.20%, Euro STOXX 50 -4.03%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00018VXM.L",
@@ -25204,13 +25201,13 @@
             "sector": "−12.25%"
           }
         ],
-        "nav1w": "+0.23%",
-        "nav1yr": "-1.21%",
-        "nav3yr": "+13.26%",
-        "nav5yr": "-1.43%",
-        "navYtd": "-1.90%",
+        "nav1w": "+0.24%",
+        "nav1yr": "-1.25%",
+        "nav3yr": "+12.45%",
+        "nav5yr": "-4.02%",
+        "navYtd": "-1.94%",
         "navAsAt": "2026-10-06",
-        "navPoints": 1946,
+        "navPoints": 2522,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -25219,23 +25216,23 @@
         "navYears": [
           {
             "year": "2025",
-            "fund": "+5.04%"
+            "fund": "+4.94%"
           },
           {
             "year": "2024",
-            "fund": "+2.55%"
+            "fund": "+2.19%"
           },
           {
             "year": "2023",
-            "fund": "+7.12%"
+            "fund": "+6.16%"
           },
           {
             "year": "2022",
-            "fund": "-13.00%"
+            "fund": "-14.06%"
           },
           {
             "year": "2021",
-            "fund": "-2.01%"
+            "fund": "-2.15%"
           }
         ],
         "perfConfirmed": "2026-10-08",
@@ -25262,7 +25259,8 @@
         "perfBasis": "FID",
         "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Vanguard Global Bond Index Fund GBP Hedged Acc, IE00B50W2R13): trailing figures to 7 Oct 2026 (1/3/5yr; 3 and 5yr annualised); discrete years to 30 Sep 2026. Sector column is the Morningstar Global Diversified Bond - GBP Hedged category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables.",
         "perfAsAt": "2026-10-07",
-        "perfAsAtSource": "period labels (cumulative table)"
+        "perfAsAtSource": "period labels (cumulative table)",
+        "nav1m": "-1.63%"
       },
       "asAt": "08 Oct 2026 (factsheet refreshed from HL)",
       "isin": "IE00B50W2R13",
@@ -25270,12 +25268,12 @@
       "navName": "Vanguard Glb Bd Idx £ H Acc",
       "navMatch": "stored",
       "oneMonth": {
-        "value": "-1.79%",
-        "note": "Computed over 8 Sep 2026 to 8 Oct 2026 from Vanguard Global Aggregate Bond UCITS ETF GBP-hedged (VAGP.L), which tracks the same index this fund follows. Priced in GBP, so the figure already includes any currency effect a UK holder experiences. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
-        "confidence": "computed from a same-index GBP ETF proxy - verify vs HL factsheet",
-        "asAt": "8 Oct 2026",
-        "basis": "proxy:VAGP.L",
-        "source": "yahoo"
+        "value": "-1.63%",
+        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
+        "confidence": "computed from the fund's own published NAV",
+        "asAt": "6 Oct 2026",
+        "basis": "nav:0P0000KM24.L",
+        "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B50W2R1",
       "shortlistStatus": "on",
@@ -25285,8 +25283,8 @@
         "checked": "2026-10-08"
       },
       "risk": {
-        "maxDrawdown": "−16.2%",
-        "maxDrawdownPeriod": "Dec 2021–Oct 2022",
+        "maxDrawdown": "−17.1%",
+        "maxDrawdownPeriod": "Nov 2021–Oct 2022",
         "maxDrawdownWindow": "worst fall in the last 5 years",
         "maxDrawdownSource": "computed from the fund's own NAV series",
         "maxDrawdownConfidence": "computed",
@@ -25511,7 +25509,7 @@
       "navClassNote": "share class Z used, desk tracks Q",
       "oneMonth": {
         "value": "-4.01%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks Q Market context: FTSE 100 -3.13%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks Q Market context: FTSE 100 -3.20%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000T364.L",
@@ -25794,7 +25792,7 @@
       "navClassNote": "share class R used, desk tracks I",
       "oneMonth": {
         "value": "-0.62%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class R used, desk tracks I Market context: FTSE 100 -3.13%, S&P 500 +1.33%, Gold (USD/oz) -6.49%, US 10yr yield +10.15%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class R used, desk tracks I Market context: FTSE 100 -3.20%, S&P 500 +1.38%, Gold (USD/oz) -6.48%, US 10yr yield +10.22%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000XTGS.L",
@@ -26064,7 +26062,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-4.13%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00016MMV.L",
@@ -26313,7 +26311,7 @@
       "navClassNote": "no accumulation class found",
       "oneMonth": {
         "value": "-3.85%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. no accumulation class found Market context: FTSE 100 -3.13%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. no accumulation class found Market context: FTSE 100 -3.20%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001QN8J.L",
@@ -26594,7 +26592,7 @@
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00B24HJL45, itself derived from HL SEDOL B24HJL4. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
       "oneMonth": {
         "value": "-1.62%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.13%, US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -3.20%, US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00009VDK.L",
@@ -26850,7 +26848,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+8.18%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +4.97%, Gold (USD/oz) -6.49%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +5.10%, Gold (USD/oz) -6.48%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0001FVLM.L",
@@ -27106,7 +27104,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-8.26%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +4.97%, Gold (USD/oz) -6.49%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +5.10%, Gold (USD/oz) -6.48%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00009NF8.L",
@@ -27378,7 +27376,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.45%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +4.97%, Gold (USD/oz) -6.49%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +5.10%, Gold (USD/oz) -6.48%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00009VVV.L",
@@ -27598,7 +27596,7 @@
         "nav5yr": "+60.19%",
         "navYtd": "+26.60%",
         "navAsAt": "2026-10-07",
-        "navPoints": 2524,
+        "navPoints": 2523,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -27658,7 +27656,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+9.37%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +4.97%, Gold (USD/oz) -6.49%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 +5.10%, Gold (USD/oz) -6.48%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P00000R15.L",
@@ -27900,7 +27898,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.79%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000148T8.L",
@@ -28151,7 +28149,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+0.31%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000Z8P7.L",
@@ -28404,7 +28402,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-2.66%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P000102MS.L",
@@ -28662,7 +28660,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.40%",
-        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, Brent crude +6.70%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 7 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, Brent crude +7.55%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "7 Oct 2026",
         "basis": "nav:0P0000VPQE.L",
@@ -28850,7 +28848,7 @@
         "nav5yr": "+15.54%",
         "navYtd": "-0.37%",
         "navAsAt": "2026-10-06",
-        "navPoints": 1726,
+        "navPoints": 1725,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -28911,7 +28909,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.40%",
-        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.15%, GBP/USD -2.49%.",
+        "note": "Total return over the 31 days to 6 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +10.22%, GBP/USD -2.37%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "6 Oct 2026",
         "basis": "nav:0P0001IU24.L",
@@ -28943,26 +28941,8 @@
   ],
   "auditLog": {
     "runDate": "8 Oct 2026",
-    "summary": "8 Oct 2026 automated run (deterministic, no LLM). Priced 101 funds from their own published NAV series and 1 tracker funds from GBP ETF proxies; 1 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 69 catalyst entries (5 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age. RESEARCH STALE: 2 funds have trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d), vanguard-global-small-cap-index (141d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
+    "summary": "8 Oct 2026 automated run (deterministic, no LLM). Priced 102 funds from their own published NAV series and 0 tracker funds from GBP ETF proxies; 1 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 69 catalyst entries (5 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age. RESEARCH STALE: 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
     "findings": [
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Research maintenance",
-        "check": "RESEARCH-STALE",
-        "severity": "MEDIUM",
-        "description": "23 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (185d), jupiter-asian-income (185d), artemis-us-smaller-companies (171d), and 20 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows. 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.",
-        "status": "flagged",
-        "source": null
-      },
       {
         "fundId": "ALL",
         "fundName": "Automated daily run",
@@ -29212,6 +29192,24 @@
         "check": "RESEARCH-STALE",
         "severity": "MEDIUM",
         "description": "2 funds have trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d), vanguard-global-small-cap-index (141d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 102 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 1 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Research maintenance",
+        "check": "RESEARCH-STALE",
+        "severity": "MEDIUM",
+        "description": "1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
         "status": "flagged",
         "source": null
       }

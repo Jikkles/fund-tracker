@@ -2,30 +2,30 @@
 
 Window: 8 Sep 2026 to 8 Oct 2026
 
-- **101** funds priced from their own published NAV
-- **1** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
+- **102** funds priced from their own published NAV
+- **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
 - **1** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
 ## Maintenance needed
 
-- 2 funds have trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d), vanguard-global-small-cap-index (141d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -3.13% |
-| FTSE 250 | -1.56% |
-| S&P 500 | +1.33% |
-| Nasdaq 100 | +4.97% |
-| Euro STOXX 50 | -4.05% |
-| Nikkei 225 | +5.78% |
+| FTSE 100 | -3.20% |
+| FTSE 250 | -1.46% |
+| S&P 500 | +1.38% |
+| Nasdaq 100 | +5.10% |
+| Euro STOXX 50 | -4.03% |
+| Nikkei 225 | +7.30% |
 | Hang Seng | -6.05% |
-| Gold (USD/oz) | -6.49% |
-| Brent crude | +6.70% |
-| US 10yr yield | +10.15% |
-| GBP/USD | -2.49% |
+| Gold (USD/oz) | -6.48% |
+| Brent crude | +7.55% |
+| US 10yr yield | +10.22% |
+| GBP/USD | -2.37% |
 
 ## Fund NAV figures (1 month)
 
@@ -75,8 +75,8 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | ishares-corporate-bond-index | 0P0001O7DN.L | -1.12% | 7 Oct 2026 |
 | ishares-emerging-markets-equity-index | 0P0001O7DM.L | +0.74% | 7 Oct 2026 |
 | ishares-index-linked-gilt-index | 0P000148T8.L | -1.79% | 7 Oct 2026 |
-| ishares-japan-equity-index | 0P0000WGSX.L | +1.59% | 7 Oct 2026 |
-| ishares-pacific-ex-japan-index | 0P0000WGT4.L | +1.43% | 7 Oct 2026 |
+| ishares-japan-equity-index | 0P0001O28V.L | +1.60% | 7 Oct 2026 |
+| ishares-pacific-ex-japan-index | 0P0001O7DL.L | +1.43% | 7 Oct 2026 |
 | ishares-real-estate-index | 0P0001QN8J.L | -3.85% | 7 Oct 2026 |
 | janus-henderson-uk-equity-income-growth | 0P00000RI1.L | -2.96% | 7 Oct 2026 |
 | janus-henderson-uk-responsible-income | 0P000024AF.L | -2.85% | 7 Oct 2026 |
@@ -100,7 +100,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | lg-international-index | 0P000102M4.L | +1.84% | 7 Oct 2026 |
 | lg-strategic-bond | 0P00008Y97.L | -1.64% | 7 Oct 2026 |
 | lg-uk-100-index | 0P000102MC.L | -3.46% | 7 Oct 2026 |
-| lg-uk-index | 0P000023C8.L | -3.25% | 7 Oct 2026 |
+| lg-uk-index | 0P000102ME.L | -3.24% | 7 Oct 2026 |
 | lg-uk-mid-cap-index | 0P00013WXJ.L | -1.99% | 7 Oct 2026 |
 | lg-us-index | 0P000102MM.L | +3.35% | 7 Oct 2026 |
 | liontrust-sf-corporate-bond | 0P0000Y3XU.L | -1.88% | 7 Oct 2026 |
@@ -112,7 +112,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | ninety-one-global-gold-class-i | 0P00009NF8.L | -8.26% | 7 Oct 2026 |
 | polar-capital-european-income | 0P00016CNI.L | -1.69% | 6 Oct 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | -2.90% | 7 Oct 2026 |
-| pyrford-global-total-return | 0P0000N9AE.L | -1.54% | 7 Oct 2026 |
+| pyrford-global-total-return | 0P000170AF.L | -1.47% | 7 Oct 2026 |
 | rathbone-global-opportunities | 0P0001FE43.L | +2.72% | 7 Oct 2026 |
 | royal-london-corporate-bond | 0P0001THP6.L | -1.81% | 7 Oct 2026 |
 | royal-london-short-term-money-market-class-y | 0P0000Z8P7.L | +0.31% | 7 Oct 2026 |
@@ -127,17 +127,12 @@ Window: 8 Sep 2026 to 8 Oct 2026
 | trojan-ethical | 0P0001J9W9.L | -0.75% | 7 Oct 2026 |
 | trojan-fund | 0P0001CBJA.L | -0.69% | 7 Oct 2026 |
 | trojan-global-income | 0P00018VXM.L | -3.86% | 7 Oct 2026 |
-| trowe-global-value | 0P0001P4VD.L | -0.00% | 7 Oct 2026 |
+| trowe-global-value | 0P0001P4VC.L | +0.01% | 7 Oct 2026 |
 | vanguard-emerging-markets-bond-investor | 0P0001IU24.L | -3.40% | 6 Oct 2026 |
+| vanguard-global-bond-index | 0P0000KM24.L | -1.63% | 6 Oct 2026 |
 | vanguard-global-corporate-bond-index | 0P0001C5T6.L | -1.77% | 6 Oct 2026 |
 | vanguard-global-small-cap-index | 0P0000N47O.L | -1.73% | 6 Oct 2026 |
 | ws-amati-uk-listed-smaller-companies | 0P0000GBB2.L | -2.96% | 7 Oct 2026 |
-
-## Computed tracker figures (ETF proxy)
-
-| Fund | Proxy | Change |
-|---|---|---|
-| vanguard-global-bond-index | VAGP.L | -1.79% |
 
 ---
 
