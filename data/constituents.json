@@ -1,6 +1,6 @@
 {
   "s-p-500": {
-    "fetched": "2026-10-01",
+    "fetched": "2026-10-08",
     "label": "S&P 500",
     "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
     "nominal": 503,
@@ -516,10 +516,6 @@
       {
         "symbol": "CPAY",
         "name": "Corpay"
-      },
-      {
-        "symbol": "CTVA",
-        "name": "Corteva"
       },
       {
         "symbol": "CSGP",
@@ -1438,7 +1434,7 @@
         "name": "Palo Alto Networks"
       },
       {
-        "symbol": "PSKY",
+        "symbol": "SKYD",
         "name": "Paramount Skydance Corporation"
       },
       {
@@ -1810,6 +1806,10 @@
         "name": "Truist Financial"
       },
       {
+        "symbol": "TWLO",
+        "name": "Twilio"
+      },
+      {
         "symbol": "TYL",
         "name": "Tyler Technologies"
       },
@@ -1918,6 +1918,10 @@
         "name": "Vulcan Materials Company"
       },
       {
+        "symbol": "VYLR",
+        "name": "Vylor"
+      },
+      {
         "symbol": "WRB",
         "name": "W. R. Berkley Corporation"
       },
@@ -1936,10 +1940,6 @@
       {
         "symbol": "DIS",
         "name": "Walt Disney Company (The)"
-      },
-      {
-        "symbol": "WBD",
-        "name": "Warner Bros. Discovery"
       },
       {
         "symbol": "WM",
@@ -2020,7 +2020,7 @@
     ]
   },
   "nasdaq-100": {
-    "fetched": "2026-10-01",
+    "fetched": "2026-10-08",
     "label": "Nasdaq 100",
     "source": "https://en.wikipedia.org/wiki/List_of_NASDAQ-100_companies",
     "nominal": null,
@@ -2414,10 +2414,6 @@
         "name": "Walmart"
       },
       {
-        "symbol": "WBD",
-        "name": "Warner Bros. Discovery"
-      },
-      {
         "symbol": "WDC",
         "name": "Western Digital"
       },
@@ -2432,7 +2428,7 @@
     ]
   },
   "dow-jones": {
-    "fetched": "2026-10-01",
+    "fetched": "2026-10-08",
     "label": "Dow Jones",
     "source": "https://en.wikipedia.org/wiki/List_of_Dow_Jones_Industrial_Average_companies",
     "nominal": 30,
@@ -2560,7 +2556,7 @@
     ]
   },
   "hang-seng": {
-    "fetched": "2026-10-01",
+    "fetched": "2026-10-08",
     "label": "Hang Seng",
     "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
     "nominal": null,
@@ -2908,7 +2904,7 @@
     ]
   },
   "euro-stoxx-50": {
-    "fetched": "2026-10-01",
+    "fetched": "2026-10-08",
     "label": "Euro STOXX 50",
     "source": "https://en.wikipedia.org/wiki/EURO_STOXX_50",
     "nominal": 50,
@@ -3116,7 +3112,7 @@
     ]
   },
   "nikkei-225": {
-    "fetched": "2026-10-01",
+    "fetched": "2026-10-08",
     "label": "Nikkei 225",
     "source": "https://en.wikipedia.org/wiki/Nikkei_225",
     "nominal": 225,
