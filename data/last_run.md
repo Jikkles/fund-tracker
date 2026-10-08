@@ -9,22 +9,21 @@ Window: 8 Sep 2026 to 8 Oct 2026
 
 ## Maintenance needed
 
-- 23 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (191d), jupiter-asian-income (191d), artemis-us-smaller-companies (177d), and 20 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
-- 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.
+- 2 funds have trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d), vanguard-global-small-cap-index (141d). Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -3.82% |
-| FTSE 250 | -2.05% |
+| FTSE 100 | -3.40% |
+| FTSE 250 | -1.80% |
 | S&P 500 | +1.67% |
 | Nasdaq 100 | +5.60% |
-| Euro STOXX 50 | -4.88% |
+| Euro STOXX 50 | -4.47% |
 | Nikkei 225 | +5.78% |
-| Hang Seng | -6.22% |
-| Gold (USD/oz) | -6.48% |
-| Brent crude | +6.10% |
+| Hang Seng | -6.05% |
+| Gold (USD/oz) | -6.51% |
+| Brent crude | +7.47% |
 | US 10yr yield | +9.80% |
 | GBP/USD | -2.48% |
 
@@ -138,7 +137,7 @@ Window: 8 Sep 2026 to 8 Oct 2026
 
 | Fund | Proxy | Change |
 |---|---|---|
-| vanguard-global-bond-index | VAGP.L | -2.08% |
+| vanguard-global-bond-index | VAGP.L | -2.09% |
 
 ---
 
