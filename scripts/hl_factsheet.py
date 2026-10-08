@@ -356,6 +356,11 @@ def parse(html: str) -> dict:
         out["discrete"] = v
     if (v := managers(html)):
         out["manager"] = v
+    # HL's page meta names the SEDOL of the class it describes. Kept so
+    # fid_factsheet.py can prove a Fidelity page is the same class without
+    # fetching this page a second time.
+    if (m := re.search(r'content="([0-9A-Z]{7})" name="Fund_Sedol"', html)):
+        out["sedol"] = m.group(1)
 
     flat = " ".join(text_of(html).split())
     blocked = [n for n, pat in DEAL_BLOCKS if pat.search(flat)]
@@ -389,7 +394,7 @@ def words(s: str) -> set[str]:
 # classes, versus the ones that are not. Charges, yield and the discrete
 # return history all differ class by class, so they may only be taken from a
 # page describing the very class this desk prices.
-CLASS_SPECIFIC = {"charges", "fundYield", "discrete"}
+CLASS_SPECIFIC = {"charges", "fundYield", "discrete", "sedol"}
 
 
 def class_letter(s: str) -> str | None:
@@ -475,6 +480,7 @@ def apply(fund: dict, got: dict, class_ok: bool = True) -> list[str]:
     put("fundSize", got.get("fundSize"))
     put("launched", got.get("launched"))
     put("iaSector", got.get("iaSector"))
+    put("sedol", got.get("sedol"))
     if got.get("fundYield"):
         put("yield", got["fundYield"], "yield")
 
@@ -839,6 +845,7 @@ def _selftest_offline() -> bool:
                            "<td>12.30%</td><td>7.70%</td>")
     assert discrete_returns(rows(skewed)) is None, "length mismatch must refuse"
     assert parse("") == {} or "discrete" not in parse("")
+    assert parse('<meta content="B2PLJL5" name="Fund_Sedol"/>').get("sedol") == "B2PLJL5"
     print("  parse guards     OK  (misaligned table refused)", file=_sys.stderr)
 
     # --- class comparison ------------------------------------------------

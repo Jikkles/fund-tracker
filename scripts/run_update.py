@@ -248,17 +248,20 @@ def build_caveats(doc: dict, entries: dict, stats: dict,
         rest = (f" A further {undated} state no date and their age is unknown."
                 if undated else "")
         lines.append(
-            f"{len(cum_funds)} of {total} funds carry a hand-entered "
-            f"cumulative table of trailing 1/3/5yr figures, which the daily "
-            f"run does NOT refresh. Read from their own period labels, the "
+            f"{len(cum_funds)} of {total} funds carry a cumulative table of "
+            f"trailing 1/3/5yr figures with a sector comparator, which the "
+            f"daily run does NOT refresh - the weekly factsheet run re-reads "
+            f"them from Fidelity, where the share class and date can be "
+            f"proved. Read from their own period labels, the "
             f"{len(cum_dates)} that state a date {run}, up to "
             f"{(today - oldest).days} days old.{rest} The fund's own totals "
             f"over those windows are computed from its NAV series every run "
-            f"and carry the NAV chip; it is the sector and benchmark "
-            f"comparators beside them that age, because nothing free "
-            f"publishes those. Bases differ (Trustnet/FE, HL rolling "
-            f"12-month, Fidelity annualised) — do not compare across funds "
-            f"without adjusting.")
+            f"and carry the NAV chip; it is the comparators beside them that "
+            f"age between weekly reads, and on any fund the weekly read "
+            f"refuses. Fidelity's comparator is the Morningstar category "
+            f"average, not the IA sector; older tables use other bases "
+            f"(Trustnet/FE, HL rolling 12-month) — do not compare across "
+            f"funds without adjusting.")
 
     if dis_funds:
         behind = sum(1 for f in dis_funds
@@ -348,8 +351,9 @@ def research_health(doc: dict, today: date) -> list[str]:
         out.append(
             f"{len(aged)} {plural(len(aged), 'fund has', 'funds have')} "
             f"trailing cumulative figures older than {RESEARCH_STALE_DAYS} "
-            f"days: {worst}{more}. Only the sector and benchmark comparators "
-            f"need a person - the fund's own 1/3/5yr totals are computed from "
+            f"days: {worst}{more}. These are funds the weekly Fidelity read "
+            f"refused (its log names the gate) - only the sector and benchmark "
+            f"comparators need a person; the fund's own 1/3/5yr totals are computed from "
             f"its NAV series every run, and where the desk tracks four or more "
             f"funds in the same IA sector the card also carries a peer "
             f"comparison computed over the same windows.")

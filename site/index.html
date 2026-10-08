@@ -2959,7 +2959,7 @@ function renderHealth(){
 
   const staleRows = stale.slice(0, 15).map(({f,s}) =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">1yr figure as at ${esc(s.label)}${f.performance.perfBasis?` (${BASIS_LABEL[f.performance.perfBasis]||f.performance.perfBasis})`:''}</span><span class="hs" style="color:var(--amber)">${s.days}d old</span></div>`).join('') +
-    (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more, stalest first. The daily run does not refresh 1yr figures — it recomputes the rolling 1-month figure for tracker funds and rolls the catalyst calendar forward. These keep ageing until they are re-researched by hand.</span></div>` : '');
+    (stale.length > 15 ? `<div class="hrow"><span class="hd" style="font-style:italic">…and ${stale.length-15} more, stalest first. These funds have no 1yr figure from their own NAV. The weekly run re-reads the researched one from Fidelity wherever it can prove the share class and date; anything it refuses keeps ageing until it is re-researched by hand.</span></div>` : '');
 
   const resRows = resStale.slice(0, 15).map(({f,r}) =>
     `<div class="hrow"><span class="hf">${esc(f.name)}</span><span class="hd">Trailing 1/3/5yr table measured to ${esc(r.label)}. The fund's own totals are computed from its NAV every run, and where the desk tracks enough funds in the same IA sector the card carries a computed peer comparison too — it is the researched sector and benchmark comparators that need re-reading.</span><span class="hs" style="color:var(--amber)">${r.days}d old</span></div>`).join('') +
@@ -3713,11 +3713,12 @@ function volPeer(f){
    WHAT THIS IS, AND WHAT IT IS EMPHATICALLY NOT
 
    The cumulative table's "Sector" column is a real IA or Morningstar category
-   average, researched by hand from Trustnet or Fidelity, measured over the
-   window its row states. It cannot be refreshed: nothing free publishes an IA
-   sector average, HL's factsheet carries only the fund's own annual return
-   row, and the desk checked. So on 10 funds that column is months old and
-   will stay months old.
+   average, measured over the window its row states. Since Oct 2026 it is
+   re-read weekly from Fidelity (scripts/fid_factsheet.py), which publishes
+   the Morningstar category average - nothing free publishes the IA sector
+   average itself, and HL's factsheet carries only the fund's own row. A fund
+   whose Fidelity page cannot be proved to be the right class keeps an older,
+   researched-by-hand column.
 
    What CAN be computed, every run, is how a fund did against the other funds
    THIS DESK TRACKS in the same IA sector - because every one of them is

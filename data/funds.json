@@ -346,7 +346,7 @@
         "maxDrawdownWindow": "worst fall in the last 5 years",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [
         {
@@ -386,7 +386,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B5ZX1M7"
     },
     {
       "id": "fidelity-global-dividend",
@@ -639,7 +640,7 @@
         "srri": "4",
         "feScore": "73 (FE, prior reading)",
         "notes": "Lower-volatility, defensive global income.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−10.1%",
         "maxDrawdownPeriod": "Jan–Mar 2022",
@@ -687,7 +688,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B7GJPN7"
     },
     {
       "id": "lazard-global-equity-franchise",
@@ -940,7 +942,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Concentrated value; can hold smaller/EM names.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.9%",
         "maxDrawdownPeriod": "Jul 2025–Mar 2026",
@@ -974,7 +976,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BF2N1T7"
     },
     {
       "id": "trowe-global-value",
@@ -1207,7 +1210,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Value style; up to ~10% EM.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−16.6%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -1255,7 +1258,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BLFG9Q8"
     },
     {
       "id": "fidelity-global-special-situations",
@@ -1508,7 +1512,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Diversified global blend — broadly market-like risk.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.8%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -1555,7 +1559,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B8HT715"
     },
     {
       "id": "bny-mellon-long-term-global-equity",
@@ -1807,7 +1812,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Concentrated quality-growth; lower turnover; historically less volatile than aggressive growth peers.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.8%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -1854,7 +1859,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B8K6W52"
     },
     {
       "id": "fidelity-index-world",
@@ -2107,7 +2113,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Market risk of global developed equities; mega-cap tech concentration at the top.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−19.0%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -2154,7 +2160,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BJS8SJ3"
     },
     {
       "id": "lg-international-index",
@@ -2406,7 +2413,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Global developed ex-UK market risk; mega-cap-tech concentration.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.7%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -2440,7 +2447,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BG0QP60"
     },
     {
       "id": "lg-future-world-esg-developed",
@@ -2692,7 +2700,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Global developed market risk with ESG tilt.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−19.2%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -2802,7 +2810,7 @@
             "sector": "−14.68%"
           }
         ],
-        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Vanguard Global Small-Cap Index Fund GBP Acc, IE00B3X1NT05): discrete years to 30 Sep 2026. Sector column is the Morningstar Global Small/Mid-Cap Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Cumulative table not refreshed (Fidelity's trailing figures could not be dated to the desk's NAV); its earlier note: 10yr lag vs index reflects OCF cost drag — typical for a tracker. Source: FE Analytics via Trustnet factsheet (20 May 2026).",
+        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Vanguard Global Small-Cap Index Fund GBP Acc, IE00B3X1NT05): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (YTD +13.95% vs desk NAV +14.96%). Sector column is the Morningstar Global Small/Mid-Cap Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Earlier note: 10yr lag vs index reflects OCF cost drag — typical for a tracker. Source: FE Analytics via Trustnet factsheet (20 May 2026).",
         "perfAsAt": "2026-05-20",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FE",
@@ -2988,7 +2996,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Smaller companies are more volatile; uses stock lending.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−20.3%",
         "maxDrawdownPeriod": "Nov 2024–Apr 2025",
@@ -3275,7 +3283,7 @@
         "srri": "5",
         "feScore": "103 (FE)",
         "notes": "High-conviction value — can be volatile vs the broader market; style-dependent performance.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−16.3%",
         "maxDrawdownPeriod": "Jan–Mar 2022",
@@ -3310,7 +3318,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B88V3X4"
     },
     {
       "id": "ftf-clearbridge-uk-mid-cap",
@@ -3538,7 +3547,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "Mid-cap focus — more volatile than a large-cap UK fund.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−31.7%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -3573,7 +3582,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BZ8FPJ5"
     },
     {
       "id": "liontrust-uk-growth",
@@ -3767,7 +3777,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Large-cap quality focus — broadly market-like risk with a quality tilt.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−7.3%",
         "maxDrawdownPeriod": "Mar 2026",
@@ -3801,7 +3811,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BNGB8J2"
     },
     {
       "id": "artemis-income",
@@ -4042,7 +4053,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Diversified large-cap income — lower idiosyncratic risk than smaller-companies funds.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−13.1%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -4077,7 +4088,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B2PLJH1"
     },
     {
       "id": "janus-henderson-uk-responsible-income",
@@ -4322,7 +4334,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Ethical exclusions change sector exposure vs standard UK income funds — no tobacco, oil & gas, gambling exposure.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−17.3%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -4357,7 +4369,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BLH3923"
     },
     {
       "id": "janus-henderson-uk-equity-income-growth",
@@ -4598,7 +4611,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Multi-cap with small/mid bias — higher volatility than a large-cap-only income fund.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−14.1%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -4633,7 +4646,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "0749422"
     },
     {
       "id": "artemis-uk-smaller-companies",
@@ -4857,7 +4871,7 @@
         "srri": "5",
         "feScore": "106 (FE)",
         "notes": "UK smaller companies — higher volatility; long-term patient holding required.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−19.0%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -4893,7 +4907,8 @@
       },
       "isin": "GB00B2PLJL57",
       "isinSource": "derived from HL SEDOL B2PLJL5, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B2PLJL5"
     },
     {
       "id": "lg-uk-index",
@@ -5146,7 +5161,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Broad UK market risk — diversified across 539 holdings.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−12.6%",
         "maxDrawdownPeriod": "Mar–Apr 2025",
@@ -5180,7 +5195,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BG0QPJ3"
     },
     {
       "id": "hsbc-ftse-250-index",
@@ -5432,7 +5448,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Mid-cap UK — more volatile than large-cap tracker.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−28.5%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -5468,7 +5484,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB00BV8VN686",
-      "isinSource": "derived from HL SEDOL BV8VN68, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL BV8VN68, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "BV8VN68"
     },
     {
       "id": "lg-future-world-esg-uk",
@@ -5720,7 +5737,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "UK market risk with ESG tilt — sector profile differs from plain UK tracker.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−13.6%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -6021,7 +6038,7 @@
         "maxDrawdownWindow": "worst fall in the last 5 years",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [
         {
@@ -6116,7 +6133,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BG0QPL5"
     },
     {
       "id": "bny-mellon-us-equity-income",
@@ -6348,7 +6366,7 @@
         "maxDrawdownWindow": "worst fall in the last 5 years",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "links": {
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/b/bny-mellon-us-equity-income-class-u-accumulation",
@@ -6376,7 +6394,8 @@
       },
       "isin": "GB00BPVBZ344",
       "isinSource": "derived from HL SEDOL BPVBZ34, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BPVBZ34"
     },
     {
       "id": "artemis-us-smaller-companies",
@@ -6617,7 +6636,7 @@
         "maxDrawdownWindow": "worst fall in the last 5 years",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "links": {
         "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/a/artemis-us-smaller-companies-class-i-hedged-accumulation",
@@ -6644,7 +6663,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BK6RLD4"
     },
     {
       "id": "artemis-us-select",
@@ -6879,7 +6899,7 @@
         "maxDrawdownWindow": "worst fall in the last 5 years",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [
         {
@@ -6919,7 +6939,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BMMV510"
     },
     {
       "id": "artemis-high-income",
@@ -7172,7 +7193,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "High-yield and equity sleeve make this the highest-risk bond fund on the Shortlist. Behaves more like a balanced fund than a pure bond fund in stress.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−17.0%",
         "maxDrawdownPeriod": "Jan–Oct 2022",
@@ -7264,7 +7285,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BJMD6R8"
     },
     {
       "id": "artemis-corporate-bond",
@@ -7485,7 +7507,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "Investment-grade corporate credit — interest-rate risk (duration) plus credit/spread risk. Lower risk than Artemis High Income; higher than gilt tracker.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−24.5%",
         "maxDrawdownPeriod": "Dec 2021–Oct 2022",
@@ -7577,7 +7599,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB00BFZ91W59",
-      "isinSource": "derived from HL SEDOL BFZ91W5, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL BFZ91W5, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "BFZ91W5"
     },
     {
       "id": "jupiter-strategic-bond",
@@ -7818,7 +7841,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "Flexible strategic bond — duration and credit risk vary widely depending on manager positioning.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−20.6%",
         "maxDrawdownPeriod": "Dec 2021–Oct 2022",
@@ -7911,7 +7934,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB00BN8T5935",
-      "isinSource": "derived from HL SEDOL BN8T593, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL BN8T593, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "BN8T593"
     },
     {
       "id": "lg-strategic-bond",
@@ -8148,7 +8172,7 @@
         "srri": "3",
         "feScore": "not yet verified",
         "notes": "Flexible strategic bond — includes sub-investment-grade exposure; interest-rate and credit risk.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−11.5%",
         "maxDrawdownPeriod": "Nov 2021–Jul 2022",
@@ -8241,7 +8265,8 @@
       },
       "isin": "GB00B1TWMW95",
       "isinSource": "derived from HL SEDOL B1TWMW9, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B1TWMW9"
     },
     {
       "id": "baillie-gifford-strategic-bond",
@@ -8295,7 +8320,7 @@
             "sector": "−12.40%"
           }
         ],
-        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Strategic Bond Fund B Accumulation, GB0005947857): discrete years to 30 Sep 2026. Sector column is the Morningstar Global Flexible Bond - GBP Hedged category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Cumulative table not refreshed (Fidelity's trailing figures could not be dated to the desk's NAV); its earlier note: HL rolling 12-month periods to 8 May 2026. Large drawdown in 2022–23 rate shock.",
+        "notes": "Refreshed 8 Oct 2026 from Fidelity's factsheet (Baillie Gifford Strategic Bond Fund B Accumulation, GB0005947857): discrete years to 30 Sep 2026. The cumulative table above is NOT from this refresh: Fidelity's trailing figures could not be dated (1-day None does not match stamped price change 0.0). Sector column is the Morningstar Global Flexible Bond - GBP Hedged category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. Earlier note: HL rolling 12-month periods to 8 May 2026. Large drawdown in 2022–23 rate shock.",
         "perfAsAt": "2026-05-08",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "HL",
@@ -8453,7 +8478,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "Credit-focused — significant high-yield exposure alongside IG; credit spread risk is the main driver.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−23.2%",
         "maxDrawdownPeriod": "Dec 2021–Oct 2022",
@@ -8545,7 +8570,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB0005947857",
-      "isinSource": "derived from HL SEDOL 0594785, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL 0594785, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "0594785"
     },
     {
       "id": "lg-active-global-high-yield",
@@ -8769,7 +8795,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "Highest-risk bond fund here — almost entirely sub-investment-grade. Credit spread risk dominates; can fall sharply in credit stress.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.6%",
         "maxDrawdownPeriod": "Oct 2021–Oct 2022",
@@ -8862,7 +8888,8 @@
       },
       "isin": "GB00B0CNHJ41",
       "isinSource": "derived from HL SEDOL B0CNHJ4, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B0CNHJ4"
     },
     {
       "id": "vanguard-global-corporate-bond-index",
@@ -9086,7 +9113,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "GBP-hedged global IG credit — credit spread risk plus interest-rate risk; lower than high yield but more credit-sensitive than a gilt fund.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−20.3%",
         "maxDrawdownPeriod": "Nov 2021–Oct 2022",
@@ -9178,7 +9205,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BDFB5M5"
     },
     {
       "id": "bny-mellon-multi-asset-balanced",
@@ -9419,7 +9447,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "~73% equities — behaves more like an equity fund than a cautious balanced fund. Not suitable for low risk tolerance.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−11.2%",
         "maxDrawdownPeriod": "Feb–Apr 2025",
@@ -9478,7 +9506,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BNBQX42"
     },
     {
       "id": "bny-mellon-multi-asset-global-balanced",
@@ -9730,7 +9759,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "Global balanced — risk broadly similar to Multi-Asset Balanced but with wider asset-class diversification.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−11.2%",
         "maxDrawdownPeriod": "Feb–Apr 2025",
@@ -9765,7 +9794,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BD8YW20"
     },
     {
       "id": "baillie-gifford-monthly-income",
@@ -10017,7 +10047,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "40–85% equities band — moderate risk; real assets add alternative exposure. Ethical exclusions change the portfolio profile.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−15.9%",
         "maxDrawdownPeriod": "Dec 2021–Oct 2022",
@@ -10054,7 +10084,8 @@
       },
       "isin": "GB00BFXY2964",
       "isinSource": "derived from HL SEDOL BFXY296, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BFXY296"
     },
     {
       "id": "pyrford-global-total-return",
@@ -10307,7 +10338,7 @@
         "srri": "4",
         "feScore": "not yet verified",
         "notes": "Capital-preservation focus — lowest equity risk in the multi-asset tranche; explicit 'no loss over any 12-month period' aim.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−5.1%",
         "maxDrawdownPeriod": "Aug–Oct 2022",
@@ -10342,7 +10373,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BZ0CQJ1"
     },
     {
       "id": "lg-european-index",
@@ -10595,7 +10627,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Broad, diversified, single-region tracker. Lower risk than concentrated active peers but fully exposed to European equity market risk. Currency risk: unhedged, GBP investor exposed to EUR/GBP movements.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−20.2%",
         "maxDrawdownPeriod": "Nov 2021–Mar 2022",
@@ -10643,7 +10675,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB00BG0QP042",
-      "isinSource": "derived from HL SEDOL BG0QP04, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL BG0QP04, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "BG0QP04"
     },
     {
       "id": "fidelity-european",
@@ -10896,7 +10929,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Benchmark-aware, ~45 holdings - more diversified than BlackRock/Man GLG peers. Historically lower volatility than the index. Unhedged - GBP investor exposed to EUR/GBP.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.0%",
         "maxDrawdownPeriod": "Nov 2021–Mar 2022",
@@ -10944,7 +10977,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BFRT350"
     },
     {
       "id": "man-glg-continental-european-growth",
@@ -11197,7 +11231,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "Very concentrated (~28 holdings), pure-growth, index-agnostic - highest volatility of the Europe Shortlist active funds. Notable drawdown history: -20.37% in 2021-22, -8.79% in 2024-25. Unhedged share class.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−32.2%",
         "maxDrawdownPeriod": "Nov 2021–Jun 2022",
@@ -11245,7 +11279,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B011948"
     },
     {
       "id": "polar-capital-european-income",
@@ -11542,7 +11577,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BWX5D39"
     },
     {
       "id": "blackrock-continental-european-income",
@@ -11767,7 +11803,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Income-focused, single-region Europe. Unhedged.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed"
       },
       "catalysts": [],
@@ -11800,7 +11836,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B3S9LG2"
     },
     {
       "id": "jpm-emerging-markets",
@@ -12035,7 +12072,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "High geographic concentration in Korea (21%) and Taiwan (20%). Significant single-stock concentration — top 3 holdings over 27%. Currency risk (KRW, TWD, CNY). Emerging market political/regulatory risk.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−14.3%",
         "maxDrawdownPeriod": "Jun–Jul 2026",
@@ -12105,7 +12142,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB0030881774",
-      "isinSource": "derived from HL SEDOL 3088177, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL 3088177, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "3088177"
     },
     {
       "id": "invesco-global-emerging-markets",
@@ -12358,7 +12396,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Contrarian style can result in extended periods of underperformance vs momentum-led benchmarks. Concentration in out-of-favour markets (Thailand, Brazil) adds idiosyncratic risk.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−20.9%",
         "maxDrawdownPeriod": "Nov 2021–Oct 2022",
@@ -12408,7 +12446,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B8N4673"
     },
     {
       "id": "jupiter-asian-income",
@@ -12661,7 +12700,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Concentrated portfolio increases single-stock risk. Income mandate may constrain participation in high-growth, low-yield North Asian tech. Currency risk across AUD, SGD, HKD.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−18.8%",
         "maxDrawdownPeriod": "Oct 2024–Apr 2025",
@@ -12697,7 +12736,8 @@
         "checked": "2026-10-04"
       },
       "isin": "GB00BZ2YND85",
-      "isinSource": "derived from HL SEDOL BZ2YND8, confirmed on Fidelity factsheet 8 Oct 2026"
+      "isinSource": "derived from HL SEDOL BZ2YND8, confirmed on Fidelity factsheet 8 Oct 2026",
+      "sedol": "BZ2YND8"
     },
     {
       "id": "schroder-asian-alpha-plus",
@@ -12950,7 +12990,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "High concentration in top 3 holdings (~22%). North Asian tech dominance means returns are highly correlated to semiconductor cycle. Schroders/Nuveen corporate transaction is an additional operational risk.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−22.8%",
         "maxDrawdownPeriod": "Nov 2021–Oct 2022",
@@ -13012,7 +13052,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BDD27J1"
     },
     {
       "id": "stewart-investors-apac-leaders-sustainability",
@@ -13265,7 +13306,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Manager transition risk (Gait to Ledingham; Stewart Investors to FSSA branding). Concentrated portfolio (45 stocks). Sustainability exclusions may limit participation in some sectors.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−17.6%",
         "maxDrawdownPeriod": "Nov 2021–Jun 2022",
@@ -13326,7 +13367,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "3387476"
     },
     {
       "id": "fssa-greater-china-growth",
@@ -13563,7 +13605,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "Highest-cost active fund in the Asia/EM/Japan category at 1.04% net. Concentrated exposure to Greater China geopolitical risk (Taiwan Strait, China regulatory environment). Technology at ~33% creates sector concentration.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−33.7%",
         "maxDrawdownPeriod": "Dec 2021–Jan 2024",
@@ -13622,7 +13664,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "3387432"
     },
     {
       "id": "baillie-gifford-japanese",
@@ -13839,7 +13882,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "Growth style has high sensitivity to rate expectations — rising Japanese rates (BoJ normalisation) could pressure growth valuations. Yen weakness helps exporters but is a headwind for GBP-based returns if yen strengthens.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−25.0%",
         "maxDrawdownPeriod": "Nov 2021–Jun 2022",
@@ -13887,7 +13930,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "0601113"
     },
     {
       "id": "man-japan-corealpha",
@@ -14112,7 +14156,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "Deep-value style can lag significantly in growth/momentum-led markets. High sector concentration in financials and autos. 7.01% yield shown on HL is unusually high — verify against manager factsheet as it may reflect a large trailing distribution rather than a sustainable income run rate.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−16.6%",
         "maxDrawdownPeriod": "Mar–Apr 2025",
@@ -14159,7 +14203,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "B0119B5"
     },
     {
       "id": "ishares-pacific-ex-japan-index",
@@ -14392,7 +14437,7 @@
         "srri": "6",
         "feScore": "not yet verified",
         "notes": "Despite ~633 holdings, the 19.68% TSMC weight creates significant single-stock concentration risk. Top 3 holdings (TSMC, Samsung, SK Hynix) are all semiconductors, totalling ~34% — effectively a leveraged AI chip bet inside a 'diversified' index tracker.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−20.2%",
         "maxDrawdownPeriod": "Jan–Apr 2025",
@@ -14453,7 +14498,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BN08ZQ5"
     },
     {
       "id": "ishares-japan-equity-index",
@@ -14666,7 +14712,7 @@
         "srri": "5",
         "feScore": "not yet verified",
         "notes": "Yen currency risk is the primary FX exposure for GBP investors. Broad market exposure means it will track Japan market rallies and falls closely with no active downside protection. Advantest (2.20%) gives indirect AI/semiconductor exposure.",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)",
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026",
         "srriConfidence": "confirmed",
         "maxDrawdown": "−14.7%",
         "maxDrawdownPeriod": "Feb–Apr 2025",
@@ -14715,7 +14761,8 @@
         "tradeable": true,
         "blocked": [],
         "checked": "2026-10-04"
-      }
+      },
+      "sedol": "BN08ZG5"
     },
     {
       "id": "ftf-royce-us-smaller-companies",
@@ -14847,7 +14894,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -14979,7 +15026,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BP9LKJ7"
     },
     {
       "id": "schroder-us-smaller-companies",
@@ -15111,7 +15159,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -15384,7 +15432,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -15540,7 +15588,8 @@
       },
       "isin": "GB00BJS8SH10",
       "isinSource": "derived from HL SEDOL BJS8SH1, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BJS8SH1"
     },
     {
       "id": "fidelity-american-special-situations",
@@ -15672,7 +15721,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -15828,7 +15877,8 @@
       },
       "isin": "GB00B89ST706",
       "isinSource": "derived from HL SEDOL B89ST70, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B89ST70"
     },
     {
       "id": "premier-miton-us-opportunities",
@@ -15960,7 +16010,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -16092,7 +16142,8 @@
       },
       "isin": "GB00B8278F56",
       "isinSource": "derived from HL SEDOL B8278F5, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B8278F5"
     },
     {
       "id": "hsbc-american-index",
@@ -16223,7 +16274,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -16375,7 +16426,8 @@
       },
       "isin": "GB00B80QG615",
       "isinSource": "derived from HL SEDOL B80QG61, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B80QG61"
     },
     {
       "id": "ct-european-select",
@@ -16507,7 +16559,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -16663,7 +16715,8 @@
       },
       "isin": "GB00B8BC5H23",
       "isinSource": "derived from HL SEDOL B8BC5H2, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B8BC5H2"
     },
     {
       "id": "jupiter-european",
@@ -16795,7 +16848,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -16951,7 +17004,8 @@
       },
       "isin": "GB00B5STJW84",
       "isinSource": "derived from HL SEDOL B5STJW8, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B5STJW8"
     },
     {
       "id": "blackrock-european-dynamic",
@@ -17049,7 +17103,7 @@
         "feScore": "not yet verified",
         "notes": "The Class D NAV series did not yield a 1yr figure when this fund was added, so it may sit outside the 1yr ranking until the series fills out.",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -17340,7 +17394,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -17496,7 +17550,8 @@
       },
       "isin": "GB00BHZK8B07",
       "isinSource": "derived from HL SEDOL BHZK8B0, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BHZK8B0"
     },
     {
       "id": "baillie-gifford-european",
@@ -17628,7 +17683,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -17784,7 +17839,8 @@
       },
       "isin": "GB0006058258",
       "isinSource": "derived from HL SEDOL 0605825, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "0605825"
     },
     {
       "id": "ishares-corporate-bond-index",
@@ -17896,7 +17952,7 @@
         "maxDrawdownSource": "computed from the fund's own NAV series",
         "maxDrawdownConfidence": "computed",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -18024,7 +18080,8 @@
       },
       "isin": "GB00BN08ZN29",
       "isinSource": "derived from HL SEDOL BN08ZN2, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BN08ZN2"
     },
     {
       "id": "lg-all-stocks-gilt-index",
@@ -18137,7 +18194,7 @@
         "maxDrawdownSource": "computed from the fund's own NAV series",
         "maxDrawdownConfidence": "computed",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -18230,7 +18287,8 @@
         "blocked": [],
         "checked": "2026-10-04"
       },
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BG0QNW2"
     },
     {
       "id": "royal-london-corporate-bond",
@@ -18310,7 +18368,7 @@
         "maxDrawdownSource": "computed from the fund's own NAV series",
         "maxDrawdownConfidence": "computed",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -18576,7 +18634,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -18732,7 +18790,8 @@
       },
       "isin": "GB0006010168",
       "isinSource": "derived from HL SEDOL 0601016, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "0601016"
     },
     {
       "id": "bny-mellon-real-return",
@@ -18864,7 +18923,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -19154,7 +19213,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -19444,7 +19503,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -19600,7 +19659,8 @@
       },
       "isin": "GB00BZ6CNS31",
       "isinSource": "derived from HL SEDOL BZ6CNS3, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BZ6CNS3"
     },
     {
       "id": "trojan-ethical",
@@ -19714,7 +19774,7 @@
         "maxDrawdownSource": "computed from the fund's own NAV series",
         "maxDrawdownConfidence": "computed",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -19867,7 +19927,8 @@
       },
       "isin": "GB00BKTW4R13",
       "isinSource": "derived from HL SEDOL BKTW4R1, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "BKTW4R1"
     },
     {
       "id": "royal-london-sustainable-world",
@@ -19999,7 +20060,7 @@
         "maxDrawdownConfidence": "computed",
         "maxDrawdownYears": 5,
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "catalysts": [],
       "links": {
@@ -20155,7 +20216,8 @@
       },
       "isin": "GB00B882H241",
       "isinSource": "derived from HL SEDOL B882H24, confirmed on Fidelity factsheet 8 Oct 2026",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "sedol": "B882H24"
     },
     {
       "id": "lg-future-world-esg-emerging-markets",
@@ -20418,7 +20480,7 @@
         "maxDrawdownConfidence": "computed",
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "Solactive L&G Enh ESG Emg Mrkts NR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -20672,7 +20734,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "IBOXX Corp All Mat TR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
@@ -20939,7 +21001,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "Deutsche Numis SC Pl AIM ExIvt Cm TR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -21191,7 +21253,7 @@
         "maxDrawdownYears": 5,
         "srri": "7",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB0006061963",
       "isinSource": "derived from HL SEDOL 0606196, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -21474,7 +21536,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BKXBBL77",
       "isinSource": "derived from HL SEDOL BKXBBL7, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -21734,7 +21796,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "ICE BofA Euro-Sterling TR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
@@ -22016,7 +22078,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BWNGXJ86",
       "isinSource": "derived from HL SEDOL BWNGXJ8, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -22278,7 +22340,7 @@
         "maxDrawdownYears": 5,
         "srri": "3",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00B8N45T82",
       "isinSource": "derived from HL SEDOL B8N45T8, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -22544,7 +22606,7 @@
         "maxDrawdownConfidence": "computed",
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "FTSE Emerging TR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -22768,7 +22830,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BJLV6X97",
       "isinSource": "derived from HL SEDOL BJLV6X9, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -23051,7 +23113,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BD08NQ14",
       "isinSource": "derived from HL SEDOL BD08NQ1, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -23314,7 +23376,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB0007450884",
       "isinSource": "derived from HL SEDOL 0745088, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -23597,7 +23659,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BQ1JYV63",
       "isinSource": "derived from HL SEDOL BQ1JYV6, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -23870,7 +23932,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BG0QPG09",
       "isinSource": "derived from HL SEDOL BG0QPG0, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -24153,7 +24215,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BH0P2M97",
       "isinSource": "derived from HL SEDOL BH0P2M9, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -24438,7 +24500,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "MSCI AC Asia Ex Japan SMID NR USD",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -24694,7 +24756,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "MSCI India NR LCL",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -24975,7 +25037,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BD82KP33",
       "isinSource": "derived from HL SEDOL BD82KP3, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -25233,7 +25295,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "Bloomberg Gbl Agg Flt-Adj and Sc TR USD",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
@@ -25472,7 +25534,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BS0LFP83",
       "isinSource": "derived from HL SEDOL BS0LFP8, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -25755,7 +25817,7 @@
         "maxDrawdownYears": 5,
         "srri": "3",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00B2Q1J923",
       "isinSource": "derived from HL SEDOL B2Q1J92, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -26026,7 +26088,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "FTSE EPRA Nareit Dev Dividend+ TR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -26275,7 +26337,7 @@
         "maxDrawdownConfidence": "computed",
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "FTSE EPRA NAREIT Dev Grn L Cr Tgt TR GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -26556,7 +26618,7 @@
         "maxDrawdownYears": 5,
         "srri": "5",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "FTSE Global Core Infra 50/50 NtTx NR USD",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -26812,7 +26874,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BJLP1W53",
       "isinSource": "derived from HL SEDOL BJLP1W5, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -27068,7 +27130,7 @@
         "maxDrawdownYears": 5,
         "srri": "7",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00B1XFGM25",
       "isinSource": "derived from HL SEDOL B1XFGM2, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -27340,7 +27402,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00B88MP089",
       "isinSource": "derived from HL SEDOL B88MP08, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -27620,7 +27682,7 @@
         "maxDrawdownYears": 5,
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00B8BQ6V57",
       "isinSource": "derived from HL SEDOL B8BQ6V5, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -27862,7 +27924,7 @@
         "maxDrawdownConfidence": "computed",
         "srri": "6",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00BPFJDG30",
       "isinSource": "derived from HL SEDOL BPFJDG3, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -28113,7 +28175,7 @@
         "maxDrawdownYears": 5,
         "srri": "1",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "SONIA",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
@@ -28366,7 +28428,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "Bloomberg Wld Ex UK Infl Lkd TR Hdg GBP",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
@@ -28624,7 +28686,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "isin": "GB00B7GNKY53",
       "isinSource": "derived from HL SEDOL B7GNKY5, confirmed on Fidelity factsheet 8 Oct 2026",
@@ -28873,7 +28935,7 @@
         "maxDrawdownYears": 5,
         "srri": "4",
         "srriConfidence": "confirmed",
-        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026 (read 8 Oct 2026)"
+        "srriNote": "Fidelity factsheet, collected SRRI dated 30 Sep 2026"
       },
       "benchmark": "JPM EMBI Global Diversified TR USD",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",

@@ -72,6 +72,18 @@ August, and the Christmas/New Year pair. To tell those apart in seconds, fetch
 the published `market.json` and read the newest bar per index; if only one is
 old the exchange was shut, if all are old the refresh did not run.
 
+## The weekly run refreshes the research
+
+`weekly-factsheets.yml` (Sunday 05:41 UTC, also deploys) runs
+`hl_factsheet.py` for holdings, charges and fund size, then
+`fid_factsheet.py` for what HL does not publish: the sector/category
+comparators beside the 1/3/5yr and discrete figures, the KIID SRRI and
+transaction costs, from Fidelity's factsheet. Fidelity's comparator is the
+Morningstar category average, not the IA sector. Every fund it refuses
+(wrong share class, 1yr off the desk's NAV, undatable table) is printed as
+`SKIP` with the reason and left untouched - so a fund still flagged stale in
+`last_run.md` is one to look up in that log, not a broken scraper.
+
 ## Verifying a change to the page
 
 `site/index.html` is one self-contained file with no build step and no tests,

@@ -3,7 +3,8 @@ name: Weekly factsheet refresh
 # Re-scrapes each fund's HL factsheet for the depth a NAV series cannot
 # supply: top ten holdings, sector and country splits, fund size, launch
 # date, historic yield, the net ongoing charge, manager tenure and the
-# discrete annual periods.
+# discrete annual periods. Then reads Fidelity's factsheet for the sector
+# comparators, SRRI and transaction costs HL does not carry.
 #
 # WEEKLY, NOT DAILY, for two reasons. None of this data moves daily - a
 # holdings table is republished monthly at best - so a daily scrape would
@@ -56,6 +57,15 @@ jobs:
       # same as every fund refreshing; read the log for the per-fund lines.
       - name: Refresh factsheet depth
         run: python scripts/hl_factsheet.py
+
+      # The comparators HL does not publish - sector/category averages beside
+      # the 1/3/5yr and discrete figures, the KIID SRRI, transaction costs -
+      # read from Fidelity's factsheet. Runs AFTER the HL step because it
+      # proves each Fidelity page is the right share class against the SEDOL
+      # the HL step has just confirmed. Same contract as above: a fund that
+      # fails any gate is reported as SKIP and left exactly as it was.
+      - name: Refresh comparators from Fidelity
+        run: python scripts/fid_factsheet.py
 
       # The publish gate, same as the daily run: this fails the build rather
       # than shipping a personal reference or internal-process vocabulary.

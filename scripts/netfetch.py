@@ -82,6 +82,7 @@ RATE: dict[str, float] = {
     "markets.ft.com": 2.0,
     "en.wikipedia.org": 2.0,
     "www.hl.co.uk": 1.0,
+    "www.fidelity.co.uk": 2.0,
 }
 DEFAULT_RATE = 4.0
 
