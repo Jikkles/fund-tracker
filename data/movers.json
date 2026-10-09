@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09T08:18:14+00:00",
+  "generated": "2026-10-09T13:28:19+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Sage Group plc",
-          "symbol": "SGE",
-          "pct": 4.23
-        },
-        {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": 3.47
+          "pct": 4.19
         },
         {
           "name": "RELX plc",
           "symbol": "REL",
-          "pct": 3.31
+          "pct": 3.93
+        },
+        {
+          "name": "Weir plc",
+          "symbol": "WEIR",
+          "pct": 3.86
         }
       ],
       "bottom": [
         {
-          "name": "Vodafone Group plc",
-          "symbol": "VOD",
-          "pct": -3.9
-        },
-        {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": -3.68
+          "pct": -5.3
+        },
+        {
+          "name": "Vodafone Group plc",
+          "symbol": "VOD",
+          "pct": -3.98
         },
         {
           "name": "BT Group plc",
           "symbol": "BT.A",
-          "pct": -2.38
+          "pct": -2.13
         }
       ],
       "breadth": {
-        "up": 90,
-        "down": 9,
+        "up": 92,
+        "down": 7,
         "flat": 1,
         "priced": 100,
-        "median": 1.12
+        "median": 1.06
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Morgan Advanced Materials plc",
           "symbol": "MGAM",
-          "pct": 8.49
+          "pct": 10.38
         },
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": 6.33
+          "name": "Ocado Group plc",
+          "symbol": "OCDO",
+          "pct": 7.4
         },
         {
-          "name": "Genus plc",
-          "symbol": "GNS",
-          "pct": 5.04
+          "name": "RS Group plc",
+          "symbol": "RS1",
+          "pct": 6.0
         }
       ],
       "bottom": [
         {
-          "name": "SSP Group plc",
-          "symbol": "SSPG",
-          "pct": -3.67
-        },
-        {
           "name": "Rightmove plc",
           "symbol": "RMV",
-          "pct": -2.85
+          "pct": -3.8
         },
         {
-          "name": "Metro Bank Holdings plc",
-          "symbol": "MTRO",
-          "pct": -1.4
+          "name": "SSP Group plc",
+          "symbol": "SSPG",
+          "pct": -3.24
+        },
+        {
+          "name": "Pennon Group",
+          "symbol": "PNN",
+          "pct": -2.43
         }
       ],
       "breadth": {
-        "up": 198,
-        "down": 21,
-        "flat": 32,
+        "up": 221,
+        "down": 20,
+        "flat": 10,
         "priced": 251,
-        "median": 1.06
+        "median": 1.27
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,17 +250,17 @@
         {
           "name": "Xiaomi Corporation",
           "symbol": "1810.HK",
-          "pct": 9.551987504044853
-        },
-        {
-          "name": "Zijin Mining Group Company Limited",
-          "symbol": "2899.HK",
-          "pct": 5.498718911757628
+          "pct": 9.721045020683366
         },
         {
           "name": "Kuaishou Technology",
           "symbol": "1024.HK",
-          "pct": 5.255781190896588
+          "pct": 5.466010567272464
+        },
+        {
+          "name": "Zijin Mining Group Company Limited",
+          "symbol": "2899.HK",
+          "pct": 5.306898668874346
         }
       ],
       "bottom": [
@@ -270,22 +270,22 @@
           "pct": -2.24215387271242
         },
         {
-          "name": "China Overseas Land & Investment Limited",
-          "symbol": "0688.HK",
-          "pct": -2.1402210905599968
-        },
-        {
           "name": "CSPC Pharmaceutical Group Limited",
           "symbol": "1093.HK",
-          "pct": -2.100158298640883
+          "pct": -2.154009828237963
+        },
+        {
+          "name": "China Overseas Land & Investment Limited",
+          "symbol": "0688.HK",
+          "pct": -2.0664186644266462
         }
       ],
       "breadth": {
         "up": 71,
-        "down": 14,
-        "flat": 0,
+        "down": 12,
+        "flat": 2,
         "priced": 85,
-        "median": 1.23
+        "median": 1.58
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 4.485190742929763
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": 3.9682541055572615
         },
         {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 4.203495116857866
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 3.3276723831857473
         },
         {
-          "name": "Anheuser-Busch InBev SA/NV",
-          "symbol": "ABI.BR",
-          "pct": 2.554204505852224
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 3.2282563489854255
         }
       ],
       "bottom": [
         {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": -11.686143912838359
-        },
-        {
           "name": "Deutsche Telekom AG",
           "symbol": "DTE.DE",
-          "pct": -7.8177125907554155
+          "pct": -6.634367095442148
         },
         {
-          "name": "Volkswagen AG",
-          "symbol": "VOW.DE",
-          "pct": -3.4975081668825694
+          "name": "Danone S.A.",
+          "symbol": "BN.PA",
+          "pct": -0.7084989500573234
+        },
+        {
+          "name": "BASF SE",
+          "symbol": "BAS.DE",
+          "pct": -0.2317924103220092
         }
       ],
       "breadth": {
-        "up": 29,
-        "down": 20,
-        "flat": 1,
+        "up": 44,
+        "down": 6,
+        "flat": 0,
         "priced": 50,
-        "median": 0.3
+        "median": 1.44
       },
       "built": "3 spark batches"
     },
