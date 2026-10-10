@@ -1,249 +1,249 @@
 {
-  "generated": "2026-10-09T13:28:19+00:00",
+  "generated": "2026-10-10T08:17:09+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": 4.19
-        },
-        {
           "name": "RELX plc",
           "symbol": "REL",
-          "pct": 3.93
+          "pct": 4.82
         },
         {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": 3.86
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": 4.58
+        },
+        {
+          "name": "Sage Group plc",
+          "symbol": "SGE",
+          "pct": 4.28
         }
       ],
       "bottom": [
         {
           "name": "Airtel Africa plc",
           "symbol": "AAF",
-          "pct": -5.3
+          "pct": -6.27
         },
         {
           "name": "Vodafone Group plc",
           "symbol": "VOD",
-          "pct": -3.98
+          "pct": -4.86
         },
         {
           "name": "BT Group plc",
           "symbol": "BT.A",
-          "pct": -2.13
+          "pct": -2.38
         }
       ],
       "breadth": {
-        "up": 92,
-        "down": 7,
-        "flat": 1,
+        "up": 86,
+        "down": 12,
+        "flat": 2,
         "priced": 100,
-        "median": 1.06
+        "median": 0.98
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
           "name": "Morgan Advanced Materials plc",
           "symbol": "MGAM",
-          "pct": 10.38
+          "pct": 9.43
         },
         {
-          "name": "Ocado Group plc",
-          "symbol": "OCDO",
-          "pct": 7.4
+          "name": "Seraphim Space Investment Trust plc",
+          "symbol": "SSIT",
+          "pct": 6.73
         },
         {
-          "name": "RS Group plc",
-          "symbol": "RS1",
-          "pct": 6.0
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 6.27
         }
       ],
       "bottom": [
         {
-          "name": "Rightmove plc",
-          "symbol": "RMV",
-          "pct": -3.8
-        },
-        {
           "name": "SSP Group plc",
           "symbol": "SSPG",
-          "pct": -3.24
+          "pct": -4.1
         },
         {
           "name": "Pennon Group",
           "symbol": "PNN",
-          "pct": -2.43
+          "pct": -3.77
+        },
+        {
+          "name": "Rightmove plc",
+          "symbol": "RMV",
+          "pct": -2.41
         }
       ],
       "breadth": {
-        "up": 221,
-        "down": 20,
+        "up": 202,
+        "down": 39,
         "flat": 10,
         "priced": 251,
-        "median": 1.27
+        "median": 0.9
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "CoStar Group, Inc.",
-          "symbol": "CSGP",
-          "pct": 8.007242949012493
+          "name": "Crown Castle Inc.",
+          "symbol": "CCI",
+          "pct": 15.604587161043462
         },
         {
-          "name": "Chipotle Mexican Grill, Inc.",
-          "symbol": "CMG",
-          "pct": 6.2073442281350095
+          "name": "Moderna, Inc.",
+          "symbol": "MRNA",
+          "pct": 14.213197969543149
         },
         {
-          "name": "GoDaddy Inc.",
-          "symbol": "GDDY",
-          "pct": 6.1516340019066815
+          "name": "Humana Inc.",
+          "symbol": "HUM",
+          "pct": 11.559723229086488
         }
       ],
       "bottom": [
         {
-          "name": "Coherent Corp.",
-          "symbol": "COHR",
-          "pct": -9.627568056589602
+          "name": "T-Mobile US, Inc.",
+          "symbol": "TMUS",
+          "pct": -13.268341632988841
         },
         {
-          "name": "Corning Incorporated",
-          "symbol": "GLW",
-          "pct": -6.382847270410605
+          "name": "AT&T Inc.",
+          "symbol": "T",
+          "pct": -10.816246253655272
         },
         {
-          "name": "Vistra Corp.",
-          "symbol": "VST",
-          "pct": -6.345970341644211
+          "name": "Verizon Communications Inc.",
+          "symbol": "VZ",
+          "pct": -10.140231074368575
         }
       ],
       "breadth": {
-        "up": 339,
-        "down": 163,
-        "flat": 1,
+        "up": 319,
+        "down": 184,
+        "flat": 0,
         "priced": 503,
-        "median": 0.84
+        "median": 0.36
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "Yahoo Finance daily closes",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Diamondback Energy, Inc.",
-          "symbol": "FANG",
-          "pct": 3.959207939932775
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": 7.10738598986745
         },
         {
-          "name": "PepsiCo, Inc.",
-          "symbol": "PEP",
-          "pct": 3.7258489096280267
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 5.221724790925773
         },
         {
-          "name": "Adobe Inc.",
-          "symbol": "ADBE",
-          "pct": 3.557158838045561
+          "name": "Palantir Technologies Inc.",
+          "symbol": "PLTR",
+          "pct": 5.1665179271198225
         }
       ],
       "bottom": [
         {
-          "name": "Astera Labs, Inc.",
-          "symbol": "ALAB",
-          "pct": -9.208636286993134
+          "name": "T-Mobile US, Inc.",
+          "symbol": "TMUS",
+          "pct": -13.268341632988841
         },
         {
-          "name": "CoreWeave, Inc.",
-          "symbol": "CRWV",
-          "pct": -7.767094804093186
+          "name": "Arm Holdings plc",
+          "symbol": "ARM",
+          "pct": -3.2729156474833503
         },
         {
-          "name": "Nebius Group N.V.",
-          "symbol": "NBIS",
-          "pct": -7.353990146097038
+          "name": "Starbucks Corporation",
+          "symbol": "SBUX",
+          "pct": -2.639200846084392
         }
       ],
       "breadth": {
-        "up": 45,
-        "down": 55,
+        "up": 65,
+        "down": 35,
         "flat": 0,
         "priced": 100,
-        "median": -0.29
+        "median": 0.56
       },
       "built": "5 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "The Home Depot, Inc.",
-          "symbol": "HD",
-          "pct": 3.394342506191992
+          "name": "Amazon.com, Inc.",
+          "symbol": "AMZN",
+          "pct": 3.2944954725732183
         },
         {
-          "name": "Chevron Corporation",
-          "symbol": "CVX",
-          "pct": 3.1196730907546537
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": 3.046392217419882
         },
         {
-          "name": "International Business Machines Corporation",
-          "symbol": "IBM",
-          "pct": 2.766317289680274
+          "name": "Visa Inc.",
+          "symbol": "V",
+          "pct": 2.7592657784866454
         }
       ],
       "bottom": [
         {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": -2.943532007088169
+          "name": "3M Company",
+          "symbol": "MMM",
+          "pct": -2.212981462688959
         },
         {
-          "name": "Amazon.com, Inc.",
-          "symbol": "AMZN",
-          "pct": -2.254545847340027
+          "name": "The Home Depot, Inc.",
+          "symbol": "HD",
+          "pct": -1.6008430523527208
         },
         {
-          "name": "Caterpillar Inc.",
-          "symbol": "CAT",
-          "pct": -2.168760557293871
+          "name": "Apple Inc.",
+          "symbol": "AAPL",
+          "pct": -1.1103926415005878
         }
       ],
       "breadth": {
-        "up": 17,
-        "down": 13,
+        "up": 22,
+        "down": 8,
         "flat": 0,
         "priced": 30,
-        "median": 0.85
+        "median": 0.54
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
@@ -291,55 +291,55 @@
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": 3.9682541055572615
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": 2.86396673899519
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 3.3276723831857473
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": 2.661434017623004
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 3.2282563489854255
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": 2.5731695043138525
         }
       ],
       "bottom": [
         {
-          "name": "Deutsche Telekom AG",
-          "symbol": "DTE.DE",
-          "pct": -6.634367095442148
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": -15.859766738852057
         },
         {
-          "name": "Danone S.A.",
-          "symbol": "BN.PA",
-          "pct": -0.7084989500573234
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": -4.496789990931858
         },
         {
-          "name": "BASF SE",
-          "symbol": "BAS.DE",
-          "pct": -0.2317924103220092
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": -3.36341133945817
         }
       ],
       "breadth": {
-        "up": 44,
-        "down": 6,
-        "flat": 0,
+        "up": 15,
+        "down": 34,
+        "flat": 1,
         "priced": 50,
-        "median": 1.44
+        "median": -0.78
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-10-09",
+      "asAt": "2026-10-10",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [

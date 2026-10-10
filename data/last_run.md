@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-10-09
+# Fund tracker - automated run 2026-10-10
 
-Window: 9 Sep 2026 to 9 Oct 2026
+Window: 10 Sep 2026 to 10 Oct 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -9,131 +9,131 @@ Window: 9 Sep 2026 to 9 Oct 2026
 
 ## Maintenance needed
 
-- 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (154d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (155d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -1.15% |
-| FTSE 250 | +0.69% |
-| S&P 500 | +1.69% |
-| Nasdaq 100 | +4.43% |
-| Euro STOXX 50 | -1.83% |
-| Nikkei 225 | +5.97% |
-| Hang Seng | -4.21% |
-| Gold (USD/oz) | -5.60% |
-| Brent crude | +1.88% |
-| US 10yr yield | +8.68% |
-| GBP/USD | -2.41% |
+| FTSE 100 | -0.54% |
+| FTSE 250 | +1.37% |
+| S&P 500 | +2.90% |
+| Nasdaq 100 | +6.11% |
+| Euro STOXX 50 | -1.52% |
+| Nikkei 225 | +5.76% |
+| Hang Seng | -2.98% |
+| Gold (USD/oz) | -4.33% |
+| Brent crude | -2.70% |
+| US 10yr yield | +6.07% |
+| GBP/USD | -2.35% |
 
 ## Fund NAV figures (1 month)
 
 | Fund | Symbol | Change | Priced |
 |---|---|---|---|
-| aegon-ethical-equity | 0P00000RK9.L | -4.16% | 8 Oct 2026 |
-| artemis-corporate-bond | 0P0001IAS1.L | -1.73% | 8 Oct 2026 |
-| artemis-global-income | 0P0000W36K.L | -4.54% | 8 Oct 2026 |
-| artemis-high-income | 0P0001GZXO.L | -2.71% | 8 Oct 2026 |
-| artemis-income | 0P0000KKC3.L | -4.28% | 8 Oct 2026 |
-| artemis-uk-smaller-companies | 0P0000W36H.L | -0.25% | 8 Oct 2026 |
-| artemis-us-select | 0P00013YAO.L | +2.42% | 8 Oct 2026 |
-| artemis-us-smaller-companies | 0P0001HDDZ.L | -2.81% | 8 Oct 2026 |
-| baillie-gifford-american-class-b | 0P00000VC9.L | +5.06% | 8 Oct 2026 |
-| baillie-gifford-european | 0P00000QWM.L | -2.89% | 8 Oct 2026 |
-| baillie-gifford-japanese | 0P00000QWA.L | -0.90% | 8 Oct 2026 |
-| baillie-gifford-managed | 0P00000QWU.L | -1.03% | 8 Oct 2026 |
-| baillie-gifford-monthly-income | 0P0001HCBD.L | -1.44% | 8 Oct 2026 |
-| baillie-gifford-strategic-bond | 0P00000QX1.L | -1.25% | 8 Oct 2026 |
-| barings-europe-select-class-i-gbp | 0P0001KJSZ.L | -4.96% | 8 Oct 2026 |
-| blackrock-continental-european-income | 0P0000T2WM.L | -6.69% | 8 Oct 2026 |
-| blackrock-european-dynamic | 0P0000ZZBQ.L | -6.05% | 8 Oct 2026 |
-| bny-mellon-long-term-global-equity | 0P0000X2GC.L | +2.12% | 8 Oct 2026 |
-| bny-mellon-multi-asset-balanced | 0P0000X2GH.L | -0.03% | 8 Oct 2026 |
-| bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | -0.07% | 8 Oct 2026 |
-| bny-mellon-real-return | 0P000156WB.L | -1.17% | 8 Oct 2026 |
-| bny-mellon-us-equity-income | 0P00019MND.L | +0.45% | 7 Oct 2026 |
-| ct-european-select | 0P0000X3IE.L | -4.99% | 8 Oct 2026 |
-| ct-latin-america | 0P00000R15.L | +7.95% | 8 Oct 2026 |
-| fidelity-american-special-situations | 0P0000WUU7.L | -1.80% | 8 Oct 2026 |
-| fidelity-european | 0P000100U2.L | -4.04% | 8 Oct 2026 |
-| fidelity-global-dividend | 0P0000WUT3.L | -1.28% | 8 Oct 2026 |
-| fidelity-global-special-situations | 0P0000WUT6.L | +0.50% | 8 Oct 2026 |
-| fidelity-index-europe-ex-uk | 0P00011RBW.L | -5.18% | 8 Oct 2026 |
-| fidelity-index-us | 0P000125KU.L | +3.17% | 8 Oct 2026 |
-| fidelity-index-world | 0P000125KV.L | +1.29% | 8 Oct 2026 |
-| fidelity-moneybuilder-corporate-bond-class-w | 0P0000YYBR.L | -1.16% | 8 Oct 2026 |
-| fidelity-special-situations | 0P0000WUU1.L | -2.43% | 8 Oct 2026 |
-| first-sentier-global-listed-infrastructure | 0P00009VDK.L | -2.21% | 8 Oct 2026 |
-| fssa-asia-focus | 0P00015W87.L | -1.91% | 8 Oct 2026 |
-| fssa-greater-china-growth | 0P00000EU6.L | -0.83% | 8 Oct 2026 |
-| ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | -2.98% | 8 Oct 2026 |
-| ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -3.85% | 8 Oct 2026 |
-| hsbc-american-index | 0P0000WN7H.L | +3.63% | 8 Oct 2026 |
-| hsbc-ftse-250-index | 0P000159K7.L | -2.59% | 8 Oct 2026 |
-| invesco-global-emerging-markets | 0P0000XBR9.L | -0.70% | 8 Oct 2026 |
-| invesco-tactical-bond-class-z | 0P0000XBQP.L | -1.56% | 8 Oct 2026 |
-| ishares-corporate-bond-index | 0P0001O7DN.L | -1.36% | 8 Oct 2026 |
-| ishares-emerging-markets-equity-index | 0P0001O7DM.L | +0.74% | 7 Oct 2026 |
-| ishares-index-linked-gilt-index | 0P000148T8.L | -1.87% | 8 Oct 2026 |
-| ishares-japan-equity-index | 0P0001O28V.L | +0.28% | 8 Oct 2026 |
-| ishares-pacific-ex-japan-index | 0P0001O7DL.L | -0.86% | 8 Oct 2026 |
-| ishares-real-estate-index | 0P0001QN8J.L | -5.19% | 8 Oct 2026 |
-| janus-henderson-uk-equity-income-growth | 0P00000RI1.L | -3.85% | 8 Oct 2026 |
-| janus-henderson-uk-responsible-income | 0P000024AF.L | -3.54% | 8 Oct 2026 |
+| aegon-ethical-equity | 0P00000RK9.L | -0.63% | 9 Oct 2026 |
+| artemis-corporate-bond | 0P0001IAS1.L | -1.17% | 9 Oct 2026 |
+| artemis-global-income | 0P0000W36K.L | -3.80% | 9 Oct 2026 |
+| artemis-high-income | 0P0001GZXO.L | -2.45% | 9 Oct 2026 |
+| artemis-income | 0P0000KKC3.L | -2.79% | 9 Oct 2026 |
+| artemis-uk-smaller-companies | 0P0000W36H.L | +1.86% | 9 Oct 2026 |
+| artemis-us-select | 0P00013YAO.L | +2.67% | 9 Oct 2026 |
+| artemis-us-smaller-companies | 0P0001HDDZ.L | -1.54% | 9 Oct 2026 |
+| baillie-gifford-american-class-b | 0P00000VC9.L | +4.40% | 9 Oct 2026 |
+| baillie-gifford-european | 0P00000QWM.L | -1.72% | 9 Oct 2026 |
+| baillie-gifford-japanese | 0P00000QWA.L | +0.91% | 9 Oct 2026 |
+| baillie-gifford-managed | 0P00000QWU.L | -0.23% | 9 Oct 2026 |
+| baillie-gifford-monthly-income | 0P0001HCBD.L | -1.24% | 9 Oct 2026 |
+| baillie-gifford-strategic-bond | 0P00000QX1.L | -0.99% | 9 Oct 2026 |
+| barings-europe-select-class-i-gbp | 0P0001KJSZ.L | -3.91% | 9 Oct 2026 |
+| blackrock-continental-european-income | 0P0000T2WM.L | -5.27% | 9 Oct 2026 |
+| blackrock-european-dynamic | 0P0000ZZBQ.L | -4.86% | 9 Oct 2026 |
+| bny-mellon-long-term-global-equity | 0P0000X2GC.L | +2.14% | 9 Oct 2026 |
+| bny-mellon-multi-asset-balanced | 0P0000X2GH.L | +0.32% | 9 Oct 2026 |
+| bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | +0.32% | 9 Oct 2026 |
+| bny-mellon-real-return | 0P000156WB.L | -0.83% | 9 Oct 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | +0.92% | 8 Oct 2026 |
+| ct-european-select | 0P0000X3IE.L | -3.39% | 9 Oct 2026 |
+| ct-latin-america | 0P00000R15.L | +8.65% | 9 Oct 2026 |
+| fidelity-american-special-situations | 0P0000WUU7.L | -1.02% | 9 Oct 2026 |
+| fidelity-european | 0P000100U2.L | -3.28% | 9 Oct 2026 |
+| fidelity-global-dividend | 0P0000WUT3.L | +0.09% | 9 Oct 2026 |
+| fidelity-global-special-situations | 0P0000WUT6.L | +0.83% | 9 Oct 2026 |
+| fidelity-index-europe-ex-uk | 0P00011RBW.L | -4.12% | 9 Oct 2026 |
+| fidelity-index-us | 0P000125KU.L | +3.04% | 9 Oct 2026 |
+| fidelity-index-world | 0P000125KV.L | +1.43% | 9 Oct 2026 |
+| fidelity-moneybuilder-corporate-bond-class-w | 0P0000YYBR.L | -0.68% | 9 Oct 2026 |
+| fidelity-special-situations | 0P0000WUU1.L | -0.93% | 9 Oct 2026 |
+| first-sentier-global-listed-infrastructure | 0P00009VDK.L | -1.83% | 9 Oct 2026 |
+| fssa-asia-focus | 0P00015W87.L | -0.52% | 9 Oct 2026 |
+| fssa-greater-china-growth | 0P00000EU6.L | +1.05% | 9 Oct 2026 |
+| ftf-clearbridge-uk-mid-cap | 0P00017MZL.L | -0.06% | 9 Oct 2026 |
+| ftf-royce-us-smaller-companies | 0P0001PP1Y.L | -2.97% | 9 Oct 2026 |
+| hsbc-american-index | 0P0000WN7H.L | +3.03% | 9 Oct 2026 |
+| hsbc-ftse-250-index | 0P000159K7.L | -0.65% | 9 Oct 2026 |
+| invesco-global-emerging-markets | 0P0000XBR9.L | +0.22% | 9 Oct 2026 |
+| invesco-tactical-bond-class-z | 0P0000XBQP.L | -0.97% | 9 Oct 2026 |
+| ishares-corporate-bond-index | 0P0001O7DN.L | -1.04% | 9 Oct 2026 |
+| ishares-emerging-markets-equity-index | 0P0001O7DM.L | +0.38% | 9 Oct 2026 |
+| ishares-index-linked-gilt-index | 0P000148T8.L | -0.67% | 9 Oct 2026 |
+| ishares-japan-equity-index | 0P0001O28V.L | +1.74% | 9 Oct 2026 |
+| ishares-pacific-ex-japan-index | 0P0001O7DL.L | +0.14% | 9 Oct 2026 |
+| ishares-real-estate-index | 0P0001QN8J.L | -4.60% | 9 Oct 2026 |
+| janus-henderson-uk-equity-income-growth | 0P00000RI1.L | -1.91% | 9 Oct 2026 |
+| janus-henderson-uk-responsible-income | 0P000024AF.L | -1.86% | 9 Oct 2026 |
 | jpm-emerging-markets | 0P000013TQ.L | -2.05% | 8 Oct 2026 |
-| jpm-global-bond-opportunities | 0P00015BKO.L | -2.08% | 8 Oct 2026 |
-| jpmorgan-natural-resources | 0P00009VVV.L | -2.40% | 8 Oct 2026 |
-| jupiter-asian-income | 0P00017EQ8.L | -2.16% | 8 Oct 2026 |
-| jupiter-european | 0P0000U20D.L | -4.97% | 8 Oct 2026 |
-| jupiter-india-class-x | 0P00018LFD.L | -5.35% | 8 Oct 2026 |
-| jupiter-strategic-bond | 0P00015MD1.L | -1.95% | 8 Oct 2026 |
-| lazard-global-equity-franchise | 0P0001BM5B.L | -6.78% | 7 Oct 2026 |
-| lg-active-global-high-yield | 0P00001SDH.L | -1.87% | 8 Oct 2026 |
-| lg-all-stocks-gilt-index | 0P000102LM.L | -1.65% | 8 Oct 2026 |
-| lg-european-index | 0P000102LY.L | -5.46% | 8 Oct 2026 |
-| lg-future-world-esg-developed | 0P0001JZH4.L | +1.51% | 8 Oct 2026 |
-| lg-future-world-esg-emerging-markets | 0P0001NMWZ.L | -1.51% | 8 Oct 2026 |
-| lg-future-world-esg-uk | 0P0001JZH6.L | -4.52% | 8 Oct 2026 |
-| lg-global-inflation-linked-bond-index | 0P000102MS.L | -2.39% | 8 Oct 2026 |
-| lg-global-real-estate-dividend-index | 0P00016MMV.L | -4.93% | 8 Oct 2026 |
-| lg-global-technology-index | 0P0001FVLM.L | +7.81% | 8 Oct 2026 |
-| lg-international-index | 0P000102M4.L | +1.58% | 8 Oct 2026 |
-| lg-strategic-bond | 0P00008Y97.L | -1.71% | 8 Oct 2026 |
-| lg-uk-100-index | 0P000102MC.L | -3.90% | 8 Oct 2026 |
-| lg-uk-index | 0P000102ME.L | -3.74% | 8 Oct 2026 |
-| lg-uk-mid-cap-index | 0P00013WXJ.L | -2.95% | 8 Oct 2026 |
-| lg-us-index | 0P000102MM.L | +3.41% | 8 Oct 2026 |
-| liontrust-sf-corporate-bond | 0P0000Y3XU.L | -2.19% | 8 Oct 2026 |
-| liontrust-uk-growth | 0P0001S8W9.L | -0.28% | 8 Oct 2026 |
-| man-glg-continental-european-growth | 0P000029BY.L | -2.55% | 8 Oct 2026 |
-| man-japan-corealpha | 0P0000810W.L | -2.42% | 8 Oct 2026 |
-| mg-emerging-market-bond | 0P0000VPQE.L | -0.47% | 8 Oct 2026 |
-| ninety-one-diversified-income-class-i | 0P0000G5MB.L | -0.78% | 8 Oct 2026 |
-| ninety-one-global-gold-class-i | 0P00009NF8.L | -10.83% | 8 Oct 2026 |
-| polar-capital-european-income | 0P00016CNI.L | -1.69% | 7 Oct 2026 |
-| premier-miton-us-opportunities | 0P0000XOCD.L | -3.45% | 8 Oct 2026 |
-| pyrford-global-total-return | 0P000170AF.L | -1.79% | 8 Oct 2026 |
-| rathbone-global-opportunities | 0P0001FE43.L | +1.86% | 8 Oct 2026 |
-| royal-london-corporate-bond | 0P0001THP6.L | -2.18% | 8 Oct 2026 |
-| royal-london-short-term-money-market-class-y | 0P0000Z8P7.L | +0.32% | 8 Oct 2026 |
-| royal-london-sustainable-world | 0P0000XYWQ.L | +3.45% | 8 Oct 2026 |
-| schroder-asian-alpha-plus | 0P0000ZSZK.L | -3.30% | 8 Oct 2026 |
-| schroder-income | 0P0000T364.L | -4.36% | 8 Oct 2026 |
-| schroder-managed-balanced | 0P00000VDP.L | -1.06% | 8 Oct 2026 |
-| schroder-us-smaller-companies | 0P0000VGMI.L | -0.74% | 8 Oct 2026 |
-| schroders-asian-discovery-class-z | 0P0000VGH4.L | -0.41% | 8 Oct 2026 |
-| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | -1.99% | 8 Oct 2026 |
-| stewart-investors-indian-subcontinent | 0P0000X4NO.L | -6.67% | 8 Oct 2026 |
-| trojan-ethical | 0P0001J9W9.L | -0.77% | 8 Oct 2026 |
-| trojan-fund | 0P0001CBJA.L | -0.68% | 8 Oct 2026 |
-| trojan-global-income | 0P00018VXM.L | -3.89% | 8 Oct 2026 |
-| trowe-global-value | 0P0001P4VC.L | -0.63% | 8 Oct 2026 |
-| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | -3.62% | 7 Oct 2026 |
-| vanguard-global-bond-index | 0P0000KM24.L | -1.71% | 7 Oct 2026 |
-| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -1.77% | 7 Oct 2026 |
-| vanguard-global-small-cap-index | 0P0000N47O.L | -2.59% | 7 Oct 2026 |
-| ws-amati-uk-listed-smaller-companies | 0P0000GBB2.L | -3.38% | 8 Oct 2026 |
+| jpm-global-bond-opportunities | 0P00015BKO.L | -1.79% | 9 Oct 2026 |
+| jpmorgan-natural-resources | 0P00009VVV.L | -0.95% | 9 Oct 2026 |
+| jupiter-asian-income | 0P00017EQ8.L | -1.05% | 9 Oct 2026 |
+| jupiter-european | 0P0000U20D.L | -3.92% | 9 Oct 2026 |
+| jupiter-india-class-x | 0P00018LFD.L | -3.65% | 9 Oct 2026 |
+| jupiter-strategic-bond | 0P00015MD1.L | -1.77% | 9 Oct 2026 |
+| lazard-global-equity-franchise | 0P0001BM5B.L | -5.62% | 8 Oct 2026 |
+| lg-active-global-high-yield | 0P00001SDH.L | -1.98% | 9 Oct 2026 |
+| lg-all-stocks-gilt-index | 0P000102LM.L | -0.98% | 9 Oct 2026 |
+| lg-european-index | 0P000102LY.L | -4.35% | 9 Oct 2026 |
+| lg-future-world-esg-developed | 0P0001JZH4.L | +2.20% | 9 Oct 2026 |
+| lg-future-world-esg-emerging-markets | 0P0001NMWZ.L | -0.77% | 9 Oct 2026 |
+| lg-future-world-esg-uk | 0P0001JZH6.L | -2.93% | 9 Oct 2026 |
+| lg-global-inflation-linked-bond-index | 0P000102MS.L | -2.41% | 9 Oct 2026 |
+| lg-global-real-estate-dividend-index | 0P00016MMV.L | -4.42% | 9 Oct 2026 |
+| lg-global-technology-index | 0P0001FVLM.L | +7.48% | 9 Oct 2026 |
+| lg-international-index | 0P000102M4.L | +2.22% | 9 Oct 2026 |
+| lg-strategic-bond | 0P00008Y97.L | -1.57% | 9 Oct 2026 |
+| lg-uk-100-index | 0P000102MC.L | -2.56% | 9 Oct 2026 |
+| lg-uk-index | 0P000102ME.L | -2.33% | 9 Oct 2026 |
+| lg-uk-mid-cap-index | 0P00013WXJ.L | -0.67% | 9 Oct 2026 |
+| lg-us-index | 0P000102MM.L | +3.94% | 9 Oct 2026 |
+| liontrust-sf-corporate-bond | 0P0000Y3XU.L | -1.63% | 9 Oct 2026 |
+| liontrust-uk-growth | 0P0001S8W9.L | +1.45% | 9 Oct 2026 |
+| man-glg-continental-european-growth | 0P000029BY.L | -1.64% | 9 Oct 2026 |
+| man-japan-corealpha | 0P0000810W.L | -1.30% | 9 Oct 2026 |
+| mg-emerging-market-bond | 0P0000VPQE.L | -0.06% | 9 Oct 2026 |
+| ninety-one-diversified-income-class-i | 0P0000G5MB.L | -0.38% | 9 Oct 2026 |
+| ninety-one-global-gold-class-i | 0P00009NF8.L | -8.91% | 9 Oct 2026 |
+| polar-capital-european-income | 0P00016CNI.L | -1.78% | 8 Oct 2026 |
+| premier-miton-us-opportunities | 0P0000XOCD.L | -2.90% | 9 Oct 2026 |
+| pyrford-global-total-return | 0P000170AF.L | -1.15% | 9 Oct 2026 |
+| rathbone-global-opportunities | 0P0001FE43.L | +1.81% | 9 Oct 2026 |
+| royal-london-corporate-bond | 0P0001THP6.L | -1.72% | 9 Oct 2026 |
+| royal-london-short-term-money-market-class-y | 0P0000Z8P7.L | +0.32% | 9 Oct 2026 |
+| royal-london-sustainable-world | 0P0000XYWQ.L | +3.12% | 9 Oct 2026 |
+| schroder-asian-alpha-plus | 0P0000ZSZK.L | -2.13% | 9 Oct 2026 |
+| schroder-income | 0P0000T364.L | -3.22% | 9 Oct 2026 |
+| schroder-managed-balanced | 0P00000VDP.L | -1.00% | 9 Oct 2026 |
+| schroder-us-smaller-companies | 0P0000VGMI.L | -0.21% | 9 Oct 2026 |
+| schroders-asian-discovery-class-z | 0P0000VGH4.L | +1.02% | 9 Oct 2026 |
+| stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | -0.65% | 9 Oct 2026 |
+| stewart-investors-indian-subcontinent | 0P0000X4NO.L | -4.99% | 9 Oct 2026 |
+| trojan-ethical | 0P0001J9W9.L | -0.28% | 9 Oct 2026 |
+| trojan-fund | 0P0001CBJA.L | -0.21% | 9 Oct 2026 |
+| trojan-global-income | 0P00018VXM.L | -2.33% | 9 Oct 2026 |
+| trowe-global-value | 0P0001P4VC.L | -0.06% | 9 Oct 2026 |
+| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | -3.43% | 8 Oct 2026 |
+| vanguard-global-bond-index | 0P0000KM24.L | -1.57% | 8 Oct 2026 |
+| vanguard-global-corporate-bond-index | 0P0001C5T6.L | -1.62% | 8 Oct 2026 |
+| vanguard-global-small-cap-index | 0P0000N47O.L | -2.83% | 8 Oct 2026 |
+| ws-amati-uk-listed-smaller-companies | 0P0000GBB2.L | -1.18% | 9 Oct 2026 |
 
 ---
 
