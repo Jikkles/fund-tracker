@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10T08:17:09+00:00",
+  "generated": "2026-10-10T12:43:54+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 2.86396673899519
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": 4.485931005103128
         },
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 2.661434017623004
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 3.704913756680576
         },
         {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": 2.5731695043138525
+          "name": "Prosus N.V.",
+          "symbol": "PRX.AS",
+          "pct": 3.2850393711128643
         }
       ],
       "bottom": [
         {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": -15.859766738852057
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": -7.938871288943271
         },
         {
-          "name": "Volkswagen AG",
-          "symbol": "VOW.DE",
-          "pct": -4.496789990931858
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": -1.7784864733350176
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -3.36341133945817
+          "name": "Danone S.A.",
+          "symbol": "BN.PA",
+          "pct": -0.9784042312767086
         }
       ],
       "breadth": {
-        "up": 15,
-        "down": 34,
-        "flat": 1,
+        "up": 44,
+        "down": 6,
+        "flat": 0,
         "priced": 50,
-        "median": -0.78
+        "median": 1.05
       },
       "built": "3 spark batches"
     },

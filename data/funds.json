@@ -2814,7 +2814,7 @@
         "nav3yr": "+53.44%",
         "nav5yr": "+42.87%",
         "navAsAt": "2026-10-08",
-        "navPoints": 2525,
+        "navPoints": 2524,
         "navYtd": "+13.67%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
@@ -6191,7 +6191,7 @@
         "nav3yr": "+51.88%",
         "nav5yr": "+93.16%",
         "navAsAt": "2026-10-08",
-        "navPoints": 2342,
+        "navPoints": 2340,
         "nav1w": "+1.49%",
         "navYtd": "+17.18%",
         "navVol": "14.0%",
@@ -8324,7 +8324,7 @@
         "nav3yr": "+22.47%",
         "nav5yr": "+5.24%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2526,
+        "navPoints": 2525,
         "nav1w": "-0.19%",
         "nav1m": "-0.99%",
         "navYtd": "-0.34%",
@@ -8961,7 +8961,7 @@
         "nav3yr": "+17.44%",
         "nav5yr": "-0.51%",
         "navAsAt": "2026-10-08",
-        "navPoints": 2255,
+        "navPoints": 2254,
         "navYtd": "-1.60%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
@@ -11353,7 +11353,7 @@
         "nav3yr": "+34.10%",
         "nav5yr": "+60.46%",
         "navAsAt": "2026-10-08",
-        "navPoints": 2462,
+        "navPoints": 2460,
         "navYtd": "+7.21%",
         "navVol": "11.5%",
         "navVolYears": 5,
@@ -13123,7 +13123,7 @@
         "nav3yr": "+39.82%",
         "nav5yr": "+29.36%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2508,
+        "navPoints": 2505,
         "nav1w": "-0.62%",
         "nav1m": "-0.65%",
         "navYtd": "+21.73%",
@@ -13438,13 +13438,13 @@
         "nav3yr": "+38.88%",
         "nav5yr": "+13.83%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2461,
+        "navPoints": 2460,
         "nav1m": "+1.05%",
         "navYtd": "+19.42%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
-        "navVol": "19.4%",
+        "navVol": "19.5%",
         "navVolYears": 5,
         "navYears": [
           {
@@ -13469,7 +13469,7 @@
           }
         ],
         "perfConfirmed": "2026-10-08",
-        "nav1w": "+0.09%"
+        "nav1w": "+1.71%"
       },
       "holdings": [
         {
@@ -13735,7 +13735,7 @@
         "nav3yr": "+52.73%",
         "nav5yr": "+27.02%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2526,
+        "navPoints": 2525,
         "nav1w": "-1.37%",
         "nav1m": "+0.91%",
         "navYtd": "+21.61%",
@@ -17572,7 +17572,7 @@
         "nav3yr": "+19.55%",
         "nav5yr": "-23.45%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2526,
+        "navPoints": 2525,
         "discrete": [
           {
             "year": "30/09/25 to 30/09/26",
@@ -18523,7 +18523,7 @@
         "nav3yr": "+35.88%",
         "nav5yr": "+5.32%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2526,
+        "navPoints": 2525,
         "discrete": [
           {
             "year": "30/09/25 to 30/09/26",
@@ -25206,7 +25206,7 @@
         "nav5yr": "-3.66%",
         "navYtd": "-1.88%",
         "navAsAt": "2026-10-08",
-        "navPoints": 2525,
+        "navPoints": 2524,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -27593,7 +27593,7 @@
         "nav5yr": "+57.93%",
         "navYtd": "+25.79%",
         "navAsAt": "2026-10-09",
-        "navPoints": 2526,
+        "navPoints": 2525,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -28845,7 +28845,7 @@
         "nav5yr": "+15.67%",
         "navYtd": "-0.41%",
         "navAsAt": "2026-10-08",
-        "navPoints": 1728,
+        "navPoints": 1727,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -28940,24 +28940,6 @@
     "runDate": "10 Oct 2026",
     "summary": "10 Oct 2026 automated run (deterministic, no LLM). Priced 103 funds from their own published NAV series and 0 tracker funds from GBP ETF proxies; 0 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 69 catalyst entries (5 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age. RESEARCH STALE: 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (155d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
     "findings": [
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Research maintenance",
-        "check": "RESEARCH-STALE",
-        "severity": "MEDIUM",
-        "description": "23 funds have trailing cumulative figures older than 120 days: lazard-global-equity-franchise (188d), jupiter-asian-income (188d), artemis-us-smaller-companies (174d), and 20 more. Only the sector and benchmark comparators need a person - the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows. 5 funds have a cumulative table stating no measurement date, so their age is unknown: liontrust-uk-growth, janus-henderson-uk-responsible-income, janus-henderson-uk-equity-income-growth, and 2 more. Date the periods when re-researching.",
-        "status": "flagged",
-        "source": null
-      },
       {
         "fundId": "ALL",
         "fundName": "Automated daily run",
@@ -29189,6 +29171,24 @@
         "check": "RESEARCH-STALE",
         "severity": "MEDIUM",
         "description": "1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (154d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Research maintenance",
+        "check": "RESEARCH-STALE",
+        "severity": "MEDIUM",
+        "description": "1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (155d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
         "status": "flagged",
         "source": null
       },
