@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-10-10
+# Fund tracker - automated run 2026-10-11
 
-Window: 10 Sep 2026 to 10 Oct 2026
+Window: 11 Sep 2026 to 11 Oct 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -9,23 +9,23 @@ Window: 10 Sep 2026 to 10 Oct 2026
 
 ## Maintenance needed
 
-- 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (155d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (156d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.54% |
-| FTSE 250 | +1.37% |
-| S&P 500 | +2.90% |
-| Nasdaq 100 | +6.11% |
-| Euro STOXX 50 | -1.52% |
-| Nikkei 225 | +5.76% |
-| Hang Seng | -2.98% |
-| Gold (USD/oz) | -4.33% |
-| Brent crude | -2.70% |
-| US 10yr yield | +6.07% |
-| GBP/USD | -2.35% |
+| FTSE 100 | -0.92% |
+| FTSE 250 | +0.99% |
+| S&P 500 | +2.02% |
+| Nasdaq 100 | +5.16% |
+| Euro STOXX 50 | -2.40% |
+| Nikkei 225 | +7.84% |
+| Hang Seng | -2.40% |
+| Gold (USD/oz) | -4.37% |
+| Brent crude | +0.11% |
+| US 10yr yield | +5.41% |
+| GBP/USD | -2.04% |
 
 ## Fund NAV figures (1 month)
 
