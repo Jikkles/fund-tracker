@@ -7,10 +7,6 @@ Window: 11 Sep 2026 to 11 Oct 2026
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
-## Maintenance needed
-
-- 1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (156d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
-
 ## Market context
 
 | Index | Change |
