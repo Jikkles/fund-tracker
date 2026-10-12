@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-10-11
+# Fund tracker - automated run 2026-10-12
 
-Window: 11 Sep 2026 to 11 Oct 2026
+Window: 12 Sep 2026 to 12 Oct 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -11,17 +11,17 @@ Window: 11 Sep 2026 to 11 Oct 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.92% |
-| FTSE 250 | +0.99% |
-| S&P 500 | +2.02% |
-| Nasdaq 100 | +5.16% |
-| Euro STOXX 50 | -2.40% |
-| Nikkei 225 | +7.84% |
-| Hang Seng | -2.40% |
-| Gold (USD/oz) | -4.37% |
-| Brent crude | +0.11% |
-| US 10yr yield | +5.41% |
-| GBP/USD | -2.04% |
+| FTSE 100 | -0.78% |
+| FTSE 250 | +1.74% |
+| S&P 500 | +2.51% |
+| Nasdaq 100 | +6.03% |
+| Euro STOXX 50 | -0.75% |
+| Nikkei 225 | +8.72% |
+| Hang Seng | -2.68% |
+| Gold (USD/oz) | -3.41% |
+| Brent crude | -1.17% |
+| US 10yr yield | +5.70% |
+| GBP/USD | -2.12% |
 
 ## Fund NAV figures (1 month)
 
