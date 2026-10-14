@@ -1435,6 +1435,155 @@
   .twin-n { font-size: 14px; font-weight: 500; }
   .twin-c { font-size: 11.5px; color: var(--ink-soft); display: block; margin-top: 1px; }
   .twin-v { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 15px; font-weight: 600; color: var(--amber); }
+
+  /* ---- view tabs: the desk and its two calculators ----
+     The calculators are separate pages in all but URL. Each is a hash
+     (#premium-bonds, #compound-interest) so a tab can be bookmarked and the
+     back button walks between them; anything else, including every section
+     link in the nav bar, means the desk. */
+  .mast { display: flex; align-items: center; flex-wrap: wrap; gap: 18px 36px; }
+  .viewtabs { flex: 1 1 560px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .vtab { display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+          background: var(--paper-2); border: 1px solid var(--rule); border-radius: 12px;
+          color: var(--ink-soft); text-decoration: none; min-width: 0;
+          transition: border-color .15s, transform .15s, background .15s, box-shadow .15s; }
+  .vtab:hover { border-color: var(--hover-border); transform: translateY(-2px); }
+  .vtab.on { border-color: var(--blue); background: rgba(56,189,248,.08);
+             box-shadow: 0 0 0 3px rgba(56,189,248,.10); }
+  .vtab:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(56,189,248,.35); }
+  .vtab-ico { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 10px;
+              display: grid; place-items: center; background: var(--chip); }
+  .vtab-txt { min-width: 0; }
+  .vtab b { display: block; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.25;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .vtab small { display: block; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10px;
+                letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft);
+                white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .vtab.on small { color: var(--blue); }
+  .view { display: none; }
+  .view.on { display: block; }
+
+  /* ---- calculators ---- */
+  .view > h2:first-child { margin-top: 8px; }
+  .calc-lede { font-size: 15px; color: var(--ink-soft); margin: 0 0 18px; max-width: 980px; }
+  .calc-lede b { color: var(--ink); font-weight: 600; }
+  .calc-stale { display: none; margin: 0 0 18px; padding: 12px 16px; border-radius: 8px;
+                background: rgba(245,158,11,.08); border: 1px solid rgba(245,158,11,.3);
+                border-left: 3px solid var(--amber); color: var(--amber); font-size: 14px; }
+  .calc-stale.show { display: block; }
+  .calc-inputs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 6px; }
+  .calc-inputs.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .calc-card { display: flex; flex-direction: column; min-width: 0;
+               background: var(--paper-2); border: 1px solid var(--rule); border-radius: 14px;
+               padding: 18px 20px; box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+  .calc-lab { display: block; font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 10.5px;
+              letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 10px; }
+  .calc-field { display: flex; align-items: center; background: var(--paper);
+                border: 1px solid var(--rule); border-radius: 10px;
+                transition: border-color .2s, box-shadow .2s; }
+  .calc-field:hover { border-color: var(--hover-border); }
+  .calc-field:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(56,189,248,.2); }
+  .calc-field > span { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 17px;
+                       color: var(--ink-soft); padding: 0 0 0 14px; }
+  .calc-field > span.suf { padding: 0 14px 0 0; }
+  .calc-field input { flex: 1; min-width: 0; width: 100%; background: transparent; border: 0; outline: none;
+                      color: var(--ink); font-family: "JetBrains Mono", ui-monospace, monospace;
+                      font-size: 24px; font-weight: 600; padding: 9px 12px;
+                      -moz-appearance: textfield; appearance: textfield; }
+  .calc-field input::-webkit-outer-spin-button,
+  .calc-field input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .calc-range { width: 100%; margin: 14px 0 4px; accent-color: var(--blue); cursor: pointer; }
+  .calc-hint { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+               color: var(--ink-soft); min-height: 18px; }
+  .calc-quick { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 12px; }
+  .calc-quick button { font-family: "Inter", sans-serif; font-size: 12px; font-weight: 500;
+                       background: transparent; border: 1px solid var(--rule); color: var(--ink-soft);
+                       padding: 6px 12px; border-radius: 20px; cursor: pointer;
+                       transition: color .15s, border-color .15s, background .15s; }
+  .calc-quick button:hover { color: var(--ink); border-color: var(--ink-soft); background: var(--hover-bg); }
+  .calc-quick button.on { background: var(--ink); color: var(--paper); border-color: var(--ink); font-weight: 600; }
+  .calc-quick button:focus-visible, .calc-bar .seg button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  /* Secondary settings: one row, smaller fields - they tune the answer
+     rather than define it, so they should not compete with the four above. */
+  .calc-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px;
+              margin: 16px 0 6px; padding: 14px 20px; background: var(--paper-2);
+              border: 1px solid var(--rule); border-radius: 14px; }
+  .calc-mini { display: flex; align-items: center; gap: 10px; }
+  .calc-mini .calc-lab { margin: 0; }
+  .calc-mini .calc-field input { font-size: 15px; padding: 7px 4px 7px 10px; width: 72px; flex: 0 0 auto; }
+  .calc-mini .calc-field > span.suf { font-size: 14px; padding-right: 10px; }
+
+  table.calc-table { border: 0; border-radius: 0; margin: 0; background: transparent; font-size: 14px; }
+  table.calc-table td, table.calc-table th { padding: 11px 16px; }
+  table.calc-table td.num, table.calc-table th.num { text-align: right; }
+  .calc-scroll { overflow-x: auto; color-scheme: dark; scrollbar-color: var(--hover-border) transparent; }
+  .calc-scroll.tall { max-height: 460px; overflow-y: auto; }
+  .calc-scroll.tall thead th { position: sticky; top: 0; background: var(--thead-solid); z-index: 1; }
+  table.calc-table tfoot td { border-top: 2px solid var(--rule); font-weight: 600; padding-top: 14px; padding-bottom: 14px; }
+  .pb-prize { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .pb-prize.jackpot { color: var(--amber); }
+  .pb-count { display: block; font-family: "JetBrains Mono", ui-monospace, monospace;
+              font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
+  table.calc-table td.pb-pct { color: var(--forest); font-weight: 600; }
+  table.calc-table td.pb-pct.zero { color: var(--ink-soft); font-weight: 400; opacity: .7; }
+  table.calc-table td.ink { color: var(--ink); }
+
+  .calc-note { margin: 18px 0 0; padding: 14px 18px; border-radius: 8px;
+               background: rgba(255,255,255,.03); border-left: 3px solid var(--blue);
+               font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; }
+  .calc-note b { color: var(--ink); font-weight: 600; }
+  .calc-note p { margin: 0; font-size: inherit; }
+  .calc-note p + p { margin-top: 8px; }
+  .calc-foot { margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 18px;
+               font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px;
+               color: var(--ink-soft); line-height: 1.75; }
+  .calc-foot b { color: var(--ink); font-weight: 600; }
+
+  /* Compound chart. Paid-in and growth are #3b82f6 / #059669 rather than the
+     page's own --blue / --forest: those two are too light to sit side by
+     side as a categorical pair on --paper-2, and these pass lightness, CVD
+     and contrast against it. */
+  .ci-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-soft); }
+  .ci-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ci-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+  .ci-legend i.line { height: 0; border-radius: 0; border-top: 2px dashed var(--ink-soft); }
+  .ci-legend i.short { background: transparent; border: 1.5px dashed var(--oxblood); }
+  .ci-plot { position: relative; padding: 14px 16px 8px; }
+  .ci-plot svg { display: block; overflow: visible; }
+  .ci-plot text { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px; fill: var(--ink-soft); }
+  .ci-tip { position: absolute; pointer-events: none; display: none; z-index: 5; min-width: 190px;
+            background: var(--paper); border: 1px solid var(--hover-border); border-radius: 10px;
+            padding: 10px 12px; box-shadow: 0 10px 24px rgba(0,0,0,.4); font-size: 13px; }
+  .ci-tip.on { display: block; }
+  .ci-tip .tt-h { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 11px;
+                  letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+  .ci-tip .tt-r { display: flex; justify-content: space-between; gap: 16px; color: var(--ink-soft); }
+  .ci-tip .tt-r b { font-family: "JetBrains Mono", ui-monospace, monospace; color: var(--ink); font-weight: 600; }
+  .ci-tip .tt-r i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+
+  @media (max-width: 1080px) { .calc-inputs.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) {
+    .mast { gap: 14px; }
+    .viewtabs { flex-basis: 100%; gap: 8px; }
+    .vtab { justify-content: center; text-align: center; padding: 11px 8px; }
+    .vtab-ico, .vtab small { display: none; }
+    .vtab b { font-size: 13px; white-space: normal; }
+    .calc-inputs, .calc-inputs.four { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+    .calc-card { padding: 16px; }
+    .calc-quick button { padding: 9px 13px; }
+    .calc-bar { padding: 14px 16px; gap: 12px 20px; }
+    .calc-bar .seg button { padding: 11px 14px; }
+    table.calc-table { font-size: 12.5px; }
+    table.calc-table td, table.calc-table th { padding: 10px 6px; }
+    table.calc-table td:first-child, table.calc-table th:first-child { padding-left: 12px; }
+    table.calc-table td:last-child, table.calc-table th:last-child { padding-right: 12px; }
+    .pb-prize { font-size: 14px; }
+    /* Four columns fit a phone and five do not; the count of wins is the one
+       the money column already implies, so it is the one that goes. */
+    .pb-wins { display: none; }
+    .ci-plot { padding: 12px 8px 6px; }
+  }
 </style>
 </head>
 <body>
@@ -1472,8 +1621,25 @@
 <div class="wrap">
   <header class="mast sec-anchor" id="top">
     <h1 id="title">Fund Tracker</h1>
+    <nav class="viewtabs" aria-label="Desk and calculators">
+      <a class="vtab on" href="#top" data-view="desk" aria-current="page">
+        <span class="vtab-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17.5 9 11.5 13 15.5 21 6.5"/><polyline points="15.5 6.5 21 6.5 21 12"/></svg></span>
+        <span class="vtab-txt"><b>Fund desk</b><small>Shortlist research</small></span>
+      </a>
+      <a class="vtab" href="#premium-bonds" data-view="bonds">
+        <span class="vtab-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 9.5v5M17.5 9.5v5"/></svg></span>
+        <span class="vtab-txt"><b>Premium Bonds</b><small>NS&amp;I prize odds</small></span>
+      </a>
+      <a class="vtab" href="#compound-interest" data-view="compound">
+        <span class="vtab-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20v-3M10 20v-5M14 20v-8M18 20v-12"/></svg></span>
+        <span class="vtab-txt"><b>Compound interest</b><small>Growth calculator</small></span>
+      </a>
+    </nav>
   </header>
 
+  <!-- THE DESK — everything that reads funds.json. Shown unless the URL names
+       one of the calculators below. -->
+  <div class="view on" id="view-desk">
   <div class="notadvice">
     <strong>Personal project. Not advice.</strong> This is a personal research project, built and maintained for my own use — not a commercial or regulated service. Factual research and catalyst-based ideas to investigate, not personal financial advice or a recommendation to buy or sell. Past performance isn't a guide to future returns; investments and any income can fall as well as rise and you could get back less than you invest. Re-check the live HL factsheet before acting.
   </div>
@@ -1566,7 +1732,686 @@
   </div>
 
   <footer id="footer" class="sec-anchor"></footer>
+  </div>
+
+  <!-- PREMIUM BONDS — NS&I prize odds for a holding over a period. Reads no
+       desk data; its one input is the DRAW block in the script below. -->
+  <div class="view" id="view-bonds">
+    <h2>Premium Bonds &#8212; what your holding can expect to win</h2>
+    <div class="h2-rule"></div>
+    <p class="calc-lede" id="pbLede"></p>
+    <div class="calc-stale" id="pbStale"></div>
+
+    <div class="calc-inputs">
+      <div class="calc-card">
+        <label class="calc-lab" for="pbBonds">£1 Bonds you hold</label>
+        <div class="calc-field"><span>£</span><input type="number" id="pbBonds" inputmode="numeric" min="1" max="50000" step="1"></div>
+        <input type="range" class="calc-range" id="pbBondsSlider" min="0" max="1000" step="1" aria-label="Bonds held (logarithmic slider)">
+        <div class="calc-hint" id="pbBondsHint"></div>
+        <div class="calc-quick" id="pbBondsQuick">
+          <button data-v="25">25 (min)</button><button data-v="100">100</button><button data-v="1000">1,000</button>
+          <button data-v="10000">10,000</button><button data-v="50000">50,000 (max)</button>
+        </div>
+      </div>
+      <div class="calc-card">
+        <label class="calc-lab" for="pbMonths">Time held</label>
+        <div class="calc-field"><input type="number" id="pbMonths" inputmode="numeric" min="1" max="600" step="1"><span class="suf">months</span></div>
+        <input type="range" class="calc-range" id="pbMonthsSlider" min="1" max="600" step="1" aria-label="Months held">
+        <div class="calc-hint" id="pbMonthsHint"></div>
+        <div class="calc-quick" id="pbMonthsQuick">
+          <button data-v="1">1 mo</button><button data-v="12">1 yr</button><button data-v="60">5 yrs</button>
+          <button data-v="120">10 yrs</button><button data-v="240">20 yrs</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpis" id="pbKpis" aria-live="polite">
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.9"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.1" fill="var(--forest)"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Chance of any prize</div><div class="kpi-val" id="pbAny" style="color:var(--forest)">&#8212;</div><div class="kpi-sub" id="pbAnySub">&#8212;</div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.9" stroke-linecap="round"><path d="M4 12h16M4 7h16M4 17h10"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Expected winnings (mean)</div><div class="kpi-val" id="pbMean">&#8212;</div><div class="kpi-sub" id="pbMeanSub">&#8212;</div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="rgba(245,158,11,.22)" stroke="var(--amber)" stroke-width="1.7" stroke-linejoin="round"><polygon points="12 3.2 14.7 8.8 20.8 9.7 16.4 14 17.5 20.1 12 17.2 6.5 20.1 7.6 14 3.2 9.7 9.3 8.8 12 3.2"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Median outcome</div><div class="kpi-val" id="pbMedian" style="color:var(--amber)">&#8212;</div><div class="kpi-sub" id="pbMedianSub">&#8212;</div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--ink-soft)" stroke-width="1.9" stroke-linecap="round"><path d="M5 19V9M12 19V5M19 19v-7"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Middle 50% of holders</div><div class="kpi-val" id="pbIqr">&#8212;</div><div class="kpi-sub">25th to 75th percentile</div></div>
+      </div>
+    </div>
+
+    <div class="grp-box">
+      <div class="grp-head">
+        <div class="grp-title">Prize by prize<span class="grp-sub" id="pbTableSub"></span></div>
+      </div>
+      <div class="calc-scroll">
+        <table class="data calc-table">
+          <thead><tr>
+            <th>Prize</th><th class="num">Odds per draw</th><th class="num">Chance &#8805;1 over period</th>
+            <th class="num pb-wins">Expected wins</th><th class="num">Expected winnings</th>
+          </tr></thead>
+          <tbody id="pbBody"></tbody>
+          <tfoot><tr>
+            <td colspan="2">Any prize, over the period</td>
+            <td class="num pb-pct" id="pbFootPct">&#8212;</td>
+            <td class="num pb-wins" id="pbFootWins">&#8212;</td>
+            <td class="num ink" id="pbFootMoney">&#8212;</td>
+          </tr></tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div class="calc-note" id="pbNote" aria-live="polite"></div>
+    <div class="calc-foot" id="pbFoot"></div>
+  </div>
+
+  <!-- COMPOUND INTEREST — a steady-rate projection of a lump sum plus a
+       monthly saving. Everything on it comes from the inputs. -->
+  <div class="view" id="view-compound">
+    <h2>Compound interest &#8212; what steady saving grows into</h2>
+    <div class="h2-rule"></div>
+    <p class="calc-lede">A lump sum, a monthly saving and a steady rate, compounded. <b>A projection, not a forecast:</b> real returns arrive unevenly, cash rates move, and a fund's past growth is no promise of its future &#8212; so try a few rates rather than trusting one.</p>
+
+    <div class="calc-inputs four">
+      <div class="calc-card">
+        <label class="calc-lab" for="ciStart">Starting amount</label>
+        <div class="calc-field"><span>£</span><input type="number" id="ciStart" inputmode="decimal" min="0" max="10000000" step="1"></div>
+        <input type="range" class="calc-range" id="ciStartSlider" min="0" max="1000" step="1" aria-label="Starting amount (logarithmic slider)">
+        <div class="calc-quick" id="ciStartQuick">
+          <button data-v="0">£0</button><button data-v="1000">£1k</button><button data-v="10000">£10k</button><button data-v="20000">£20k</button><button data-v="100000">£100k</button>
+        </div>
+      </div>
+      <div class="calc-card">
+        <label class="calc-lab" for="ciMonthly">Added each month</label>
+        <div class="calc-field"><span>£</span><input type="number" id="ciMonthly" inputmode="decimal" min="0" max="100000" step="1"></div>
+        <input type="range" class="calc-range" id="ciMonthlySlider" min="0" max="1000" step="1" aria-label="Monthly saving (logarithmic slider)">
+        <div class="calc-quick" id="ciMonthlyQuick">
+          <button data-v="0">£0</button><button data-v="100">£100</button><button data-v="250">£250</button><button data-v="500">£500</button><button data-v="1000">£1k</button>
+        </div>
+      </div>
+      <div class="calc-card">
+        <label class="calc-lab" for="ciRate">Growth rate, a year</label>
+        <div class="calc-field"><input type="number" id="ciRate" inputmode="decimal" min="0" max="30" step="0.1"><span class="suf">%</span></div>
+        <input type="range" class="calc-range" id="ciRateSlider" min="0" max="15" step="0.1" aria-label="Annual growth rate">
+        <div class="calc-quick" id="ciRateQuick">
+          <button data-v="2">2%</button><button data-v="4">4%</button><button data-v="6">6%</button><button data-v="8">8%</button><button data-v="10">10%</button>
+        </div>
+      </div>
+      <div class="calc-card">
+        <label class="calc-lab" for="ciYears">Years</label>
+        <div class="calc-field"><input type="number" id="ciYears" inputmode="numeric" min="1" max="60" step="1"><span class="suf">years</span></div>
+        <input type="range" class="calc-range" id="ciYearsSlider" min="1" max="50" step="1" aria-label="Years">
+        <div class="calc-quick" id="ciYearsQuick">
+          <button data-v="5">5</button><button data-v="10">10</button><button data-v="20">20</button><button data-v="30">30</button><button data-v="40">40</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-bar">
+      <div class="calc-mini">
+        <span class="calc-lab">Compounding</span>
+        <div class="seg" id="ciComp">
+          <button data-c="1">Yearly</button><button data-c="12" class="on">Monthly</button><button data-c="365">Daily</button>
+        </div>
+      </div>
+      <div class="calc-mini">
+        <label class="calc-lab" for="ciCharge">Charges, a year</label>
+        <div class="calc-field"><input type="number" id="ciCharge" inputmode="decimal" min="0" max="5" step="0.05"><span class="suf">%</span></div>
+      </div>
+      <div class="calc-mini">
+        <label class="calc-lab" for="ciInfl">Inflation, a year</label>
+        <div class="calc-field"><input type="number" id="ciInfl" inputmode="decimal" min="0" max="15" step="0.1"><span class="suf">%</span></div>
+      </div>
+    </div>
+
+    <div class="kpis" aria-live="polite">
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17.5 9 11.5 13 15.5 21 6.5"/><polyline points="15.5 6.5 21 6.5 21 12"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Final balance</div><div class="kpi-val" id="ciFinal">&#8212;</div><div class="kpi-sub" id="ciFinalSub">&#8212;</div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.9" stroke-linecap="round"><path d="M12 4v16M5 11l7-7 7 7"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Total paid in</div><div class="kpi-val" id="ciPaid">&#8212;</div><div class="kpi-sub" id="ciPaidSub">&#8212;</div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.9" stroke-linecap="round"><path d="M4 20h16"/><path d="M6 20v-3M10 20v-5M14 20v-8M18 20v-12"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab">Growth earned</div><div class="kpi-val" id="ciGrowth">&#8212;</div><div class="kpi-sub" id="ciGrowthSub">&#8212;</div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.5V12l3 2"/></svg></div>
+        <div class="kpi-body"><div class="kpi-lab" id="ciFourthLab">&#8212;</div><div class="kpi-val" id="ciFourth" style="color:var(--amber)">&#8212;</div><div class="kpi-sub" id="ciFourthSub">&#8212;</div></div>
+      </div>
+    </div>
+
+    <div class="grp-box">
+      <div class="grp-head">
+        <div class="grp-title">Balance year by year<span class="grp-sub" id="ciChartSub"></span></div>
+        <div class="ci-legend" id="ciLegend"></div>
+      </div>
+      <div class="ci-plot" id="ciPlot"><div class="ci-tip" id="ciTip"></div></div>
+    </div>
+
+    <div class="calc-note" id="ciNote"></div>
+
+    <div class="grp-box">
+      <div class="grp-head"><div class="grp-title">The table behind the chart</div></div>
+      <div class="calc-scroll tall">
+        <table class="data calc-table">
+          <thead id="ciHead"></thead>
+          <tbody id="ciBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="calc-foot">
+      Contributions are added at the end of each month. The annual rate is turned into its exact monthly equivalent for the compounding you pick &#8212; nominal rate &#247; periods, compounded &#8212; so yearly, monthly and daily all agree for a lump sum at each year end and differ only by the extra interest on interest.
+      Charges come off the pot at the same steady pace, as a fund's ongoing charge does; &#8220;cost of charges&#8221; is the gap to the same saving with no charge.
+      Inflation only re-prices the result into today's money; it does not change the balance. No tax, no fees beyond the charge you enter, and a rate that never moves &#8212; none of which real life offers. Not financial advice.
+    </div>
+  </div>
 </div>
+
+<script>
+/* ============================================================
+   THE CALCULATORS. Neither reads funds.json or any desk global,
+   so a failed data load leaves both working. Each lives in its own
+   closure; the desk's view switcher announces which view is showing
+   through a "viewchange" event, and they draw on first sight because
+   the chart measures its width and a hidden one has none.
+   ============================================================ */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const fmtInt = v => v.toLocaleString('en-GB');
+const fmtGBP = v => (v < 0 ? '−£' : '£') + Math.round(Math.abs(v)).toLocaleString('en-GB');
+const fmtGBPc = v => '£' + v.toLocaleString('en-GB', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+/* One number field: typed box, optional slider, optional quick pills.
+   Typing never fights the keyboard - an empty or out-of-range box is left
+   as typed and only clamped and rewritten on blur. */
+function field(o){
+  const f = {value: o.value};
+  const clamp = v => Math.min(o.max, Math.max(o.min, o.int ? Math.round(v) : v));
+  const parse = () => { const v = parseFloat(o.input.value); return isFinite(v) ? clamp(v) : null; };
+  function sync(fromSlider){
+    if(o.slider && !fromSlider) o.slider.value = o.toSlider ? o.toSlider(f.value) : f.value;
+    if(o.pills) o.pills.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.v === f.value));
+    if(o.hint) o.hint(f.value);
+  }
+  function set(v, write, fromSlider){
+    f.value = v;
+    if(write) o.input.value = v;
+    sync(fromSlider);
+    o.onChange();
+  }
+  o.input.addEventListener('input', () => { const v = parse(); if(o.input.value !== '' && v !== null) set(v, false, false); });
+  o.input.addEventListener('blur', () => set(parse() ?? f.value, true, false));
+  if(o.slider) o.slider.addEventListener('input', () => {
+    const t = +o.slider.value;
+    set(o.fromSlider ? o.fromSlider(t) : t, true, true);
+  });
+  if(o.pills) o.pills.querySelectorAll('button').forEach(b => b.addEventListener('click', () => set(+b.dataset.v, true, false)));
+  o.input.value = f.value;
+  sync(false);
+  return f;
+}
+
+/* A log-scale slider for money. A linear 0-1m track puts everything an
+   ordinary saver types into its first pixel; on a log track every decade
+   gets the same room. Values are rounded to a step that suits their size. */
+function logScale(max){
+  const L = Math.log(max);
+  const nice = v => { const s = v < 100 ? 1 : v < 1000 ? 10 : v < 10000 ? 50 : v < 100000 ? 500 : 5000; return Math.round(v / s) * s; };
+  return {
+    from: t => t <= 0 ? 0 : Math.min(max, nice(Math.exp(t / 1000 * L))),
+    to:   v => v <= 0 ? 0 : Math.round(Math.max(1, Math.log(Math.max(1, v)) / L * 1000))
+  };
+}
+
+/* ============================================================
+   PREMIUM BONDS
+   ============================================================ */
+/* DRAW DATA - the only block that needs updating each month.
+   Update `label`, `asOf` (YYYY-MM of the draw), `prizeFundRate`,
+   `oddsPerBond` and the prize table from:
+   nsandi.com/get-to-know-us/monthly-prize-allocation */
+const DRAW = {
+  label: 'October 2026',
+  asOf: '2026-10',           // year-month of the draw this data describes
+  prizeFundRate: 4.35,       // % - as published
+  oddsPerBond: 21000,        // "1 in X" - as published
+  prizes: [
+    { value: 1000000, count: 2 },
+    { value: 100000,  count: 96 },
+    { value: 50000,   count: 191 },
+    { value: 25000,   count: 382 },
+    { value: 10000,   count: 957 },
+    { value: 5000,    count: 1914 },
+    { value: 1000,    count: 19934 },
+    { value: 500,     count: 59802 },
+    { value: 100,     count: 2371145 },
+    { value: 50,      count: 2371145 },
+    { value: 25,      count: 1721281 }
+  ]
+};
+
+(function bonds(){
+  const MAX_BONDS = 50000, MAX_MONTHS = 600;
+  const SIM_RUNS = 30000; // Monte Carlo runs for the median and quartiles
+  const totalPrizes = DRAW.prizes.reduce((s, p) => s + p.count, 0);
+  const totalEligible = totalPrizes * DRAW.oddsPerBond;
+  const pAny = 1 / DRAW.oddsPerBond;
+
+  // Chance of >=1 success in k independent trials of probability p. log1p and
+  // expm1 keep it accurate when p is ~1e-11 (the jackpot) and k runs to tens
+  // of millions, where 1 - (1-p)^k loses every significant figure.
+  function atLeastOne(p, k){
+    if(p <= 0 || k <= 0) return 0;
+    if(p >= 1) return 1;
+    return -Math.expm1(k * Math.log1p(-p));
+  }
+  // One threshold, shared by text and styling: below 0.0005% a figure rounds to
+  // 0.000% at three places, so it is shown as <0.001% rather than as a zero.
+  const TINY = 0.000005;
+  function fmtPct(p){
+    if(p <= 0) return '0%';
+    if(p < TINY) return '<0.001%';
+    if(p > 0.9999) return '>99.99%';
+    return (p * 100).toFixed(3) + '%';
+  }
+  function fmtOdds(c){
+    if(c <= 0) return '—';
+    if(c >= 0.999999) return 'Odds-on';
+    return '1 in ' + fmtInt(Math.round(1 / c));
+  }
+  const fmtWins = v => v === 0 ? '0' : v < 0.0005 ? '<0.001' : v.toFixed(3);
+  const fmtExpMoney = v => v === 0 ? '£0' : v < 100 ? fmtGBPc(v) : fmtGBP(v);
+  function periodText(m){
+    if(m < 12) return m + (m === 1 ? ' month' : ' months');
+    const y = m / 12;
+    return Number.isInteger(y) ? y + (y === 1 ? ' year' : ' years') : y.toFixed(1) + ' years';
+  }
+
+  $('pbLede').innerHTML = "Based on NS&amp;I's estimated prize breakdown for the <b>" + DRAW.label +
+    "</b> draw &#8212; prize fund rate <b>" + DRAW.prizeFundRate.toFixed(2) +
+    "%</b>, odds of any £1 Bond winning <b>1 in " + fmtInt(DRAW.oddsPerBond) + "</b> each month.";
+
+  // Stale-data check: the allocation is republished monthly, so a block more
+  // than a month old says so rather than passing itself off as current.
+  (function(){
+    const [y, m] = DRAW.asOf.split('-').map(Number);
+    const now = new Date();
+    const old = (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m);
+    if(old > 1){
+      const el = $('pbStale');
+      el.textContent = '⚠ This prize data is for the ' + DRAW.label + ' draw (' + old +
+        ' months ago). Rates and prize counts change — check nsandi.com for the latest allocation.';
+      el.classList.add('show');
+    }
+  })();
+
+  const rows = DRAW.prizes.map(p => {
+    const tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td><span class="pb-prize' + (p.value === 1000000 ? ' jackpot' : '') + '">' + fmtGBP(p.value) + '</span>' +
+      '<span class="pb-count">' + fmtInt(p.count) + ' in the draw</span></td>' +
+      '<td class="num"></td><td class="num pb-pct"></td><td class="num pb-wins"></td><td class="num ink"></td>';
+    $('pbBody').appendChild(tr);
+    const td = tr.querySelectorAll('td');
+    return {value: p.value, p: p.count / totalEligible, odds: td[1], pct: td[2], wins: td[3], money: td[4]};
+  });
+
+  // ---- Monte Carlo for the median and quartiles ----
+  function gaussian(){
+    let u = 0, v = 0;
+    while(u === 0) u = Math.random();
+    while(v === 0) v = Math.random();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+  function poisson(lambda){
+    if(lambda <= 0) return 0;
+    if(lambda > 30) return Math.max(0, Math.round(lambda + Math.sqrt(lambda) * gaussian()));
+    const L = Math.exp(-lambda);
+    let k = 0, prod = 1;
+    do { k++; prod *= Math.random(); } while(prod > L);
+    return k - 1;
+  }
+  function simulate(n, m){
+    const lambdas = rows.map(r => n * m * r.p);
+    const totals = new Float64Array(SIM_RUNS);
+    for(let s = 0; s < SIM_RUNS; s++){
+      let t = 0;
+      for(let i = 0; i < lambdas.length; i++){
+        const w = poisson(lambdas[i]);
+        if(w) t += w * rows[i].value;
+      }
+      totals[s] = t;
+    }
+    totals.sort();
+    const q = f => totals[Math.min(SIM_RUNS - 1, Math.floor(f * SIM_RUNS))];
+    return {p25: q(.25), median: q(.5), p75: q(.75)};
+  }
+
+  let simTimer = null;
+  function scheduleSim(n, m, mean){
+    clearTimeout(simTimer);
+    $('pbMedian').textContent = '…';
+    $('pbIqr').textContent = '…';
+    simTimer = setTimeout(() => {
+      const sim = simulate(n, m);
+      const yrs = m / 12;
+      const annMedian = sim.median / n / yrs * 100;
+      const annMean = mean / n / yrs * 100;
+      $('pbMedian').textContent = fmtGBP(sim.median);
+      $('pbMedianSub').textContent = '≈ ' + annMedian.toFixed(2) + '% a year · typical luck';
+      $('pbIqr').textContent = fmtGBP(sim.p25) + ' – ' + fmtGBP(sim.p75);
+      $('pbNote').innerHTML =
+        '<p>The mean (<b>~' + annMean.toFixed(2) + '% a year</b>) is dragged upward by the rare £1m and £100k wins. ' +
+        'The median &#8212; what the middle holder actually gets &#8212; works out nearer <b>' + annMedian.toFixed(2) +
+        '% a year</b> for this holding and period.</p>' +
+        '<p>The bigger the holding and the longer it is held, the closer the two get; small holdings over short periods most often win nothing at all.</p>';
+    }, 120);
+  }
+
+  let bondsF, monthsF, ready = false;
+  function update(){
+    if(!ready) return;
+    const n = bondsF.value, m = monthsF.value;
+    let mean = 0, wins = 0;
+    rows.forEach(r => {
+      r.odds.textContent = fmtOdds(atLeastOne(r.p, n));
+      const c = atLeastOne(r.p, n * m);
+      r.pct.textContent = fmtPct(c);
+      r.pct.classList.toggle('zero', c < TINY);
+      const w = n * m * r.p;
+      wins += w;
+      mean += w * r.value;
+      r.wins.textContent = fmtWins(w);
+      r.money.textContent = fmtExpMoney(w * r.value);
+    });
+    const any = atLeastOne(pAny, n * m);
+    $('pbFootPct').textContent = fmtPct(any);
+    $('pbFootWins').textContent = fmtWins(wins);
+    $('pbFootMoney').textContent = fmtExpMoney(mean);
+    $('pbTableSub').textContent = fmtInt(n) + ' Bonds over ' + periodText(m);
+    $('pbAny').textContent = fmtPct(any);
+    $('pbAnySub').textContent = fmtPct(1 - any) + ' chance of winning nothing';
+    $('pbMean').textContent = fmtExpMoney(mean);
+    $('pbMeanSub').textContent = '≈ ' + (mean / n / (m / 12) * 100).toFixed(2) + '% a year · over ' + periodText(m);
+    scheduleSim(n, m, mean);
+  }
+
+  const bondScale = (function(){
+    const L = Math.log(MAX_BONDS);
+    return {from: t => Math.max(1, Math.round(Math.exp(t / 1000 * L))),
+            to: v => Math.round(Math.log(Math.max(1, v)) / L * 1000)};
+  })();
+  bondsF = field({input: $('pbBonds'), slider: $('pbBondsSlider'), pills: $('pbBondsQuick'),
+    min: 1, max: MAX_BONDS, value: 1000, int: true, toSlider: bondScale.to, fromSlider: bondScale.from,
+    hint: v => { $('pbBondsHint').textContent = '= ' + fmtGBP(v) + ' invested'; }, onChange: update});
+  monthsF = field({input: $('pbMonths'), slider: $('pbMonthsSlider'), pills: $('pbMonthsQuick'),
+    min: 1, max: MAX_MONTHS, value: 120, int: true,
+    hint: v => { $('pbMonthsHint').textContent = '= ' + (v / 12).toFixed(1) + ' years · ' + fmtInt(v) + ' draws'; }, onChange: update});
+
+  $('pbFoot').innerHTML =
+    'Figures are NS&amp;I\'s <b>estimated</b> ' + DRAW.label + ' prize allocation &#8212; they move slightly every month, so treat this as indicative rather than exact. ' +
+    '&#8220;Odds per draw&#8221; and &#8220;Chance &#8805;1&#8221; use 1 &#8722; (1 &#8722; p)<sup>n</sup>, computed with log1p/expm1 for accuracy at extreme odds. ' +
+    '&#8220;Expected wins&#8221; and &#8220;Expected winnings&#8221; are plain averages (Bonds &#215; months &#215; p). ' +
+    'The median and middle-50% figures come from a ' + fmtInt(SIM_RUNS) + '-run Monte Carlo simulation, so they wobble by a pound or two between recalculations. ' +
+    'The model treats each £1 Bond and each monthly draw as independent (the tiny without-replacement effect is negligible at these scales) and ignores the rule that new Bonds must be held a full calendar month before their first draw. ' +
+    'Source: nsandi.com/get-to-know-us/monthly-prize-allocation. Not financial advice.';
+
+  document.addEventListener('viewchange', e => {
+    if(e.detail !== 'bonds' || ready) return;
+    ready = true;
+    update();
+  });
+})();
+
+/* ============================================================
+   COMPOUND INTEREST
+   ============================================================ */
+(function compound(){
+  const PAID = '#3b82f6', GROW = '#059669';
+  let shown = false;
+  const compact = v => v >= 1e6 ? '£' + (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'm'
+                     : v >= 1e3 ? '£' + (v / 1e3).toFixed(v >= 1e4 ? 0 : 1).replace(/\.0$/, '') + 'k'
+                     : '£' + Math.round(v);
+  const pct = v => (+v.toFixed(2)).toString() + '%';
+
+  /* Month by month. The annual rate becomes the monthly factor that matches
+     the chosen compounding - (1 + r/n)^(n/12) - and the charge comes off as
+     its own monthly factor, (1 - c)^(1/12). A shadow pot with no charge runs
+     alongside so the charge's cost is a measured gap, not an estimate. */
+  function project(s){
+    const g = Math.pow(1 + s.rate / 100 / s.comp, s.comp / 12);
+    const k = Math.pow(1 - s.charge / 100, 1 / 12);
+    const infl = s.infl / 100;
+    let bal = s.start, gross = s.start, paid = s.start;
+    const rows = [];
+    for(let y = 1; y <= s.years; y++){
+      const open = bal;
+      for(let mth = 0; mth < 12; mth++){
+        bal = bal * g * k + s.monthly;
+        gross = gross * g + s.monthly;
+        paid += s.monthly;
+      }
+      rows.push({year: y, bal, paid, growthY: bal - open - s.monthly * 12,
+                 real: bal / Math.pow(1 + infl, y)});
+    }
+    return {rows, final: bal, paid, gross, eff: Math.pow(g * k, 12) - 1};
+  }
+
+  const S = {comp: 12};
+  let F = {};
+  function read(){
+    S.start = F.start.value; S.monthly = F.monthly.value; S.rate = F.rate.value;
+    S.years = F.years.value; S.charge = F.charge.value; S.infl = F.infl.value;
+  }
+
+  function niceStep(x){
+    const p = Math.pow(10, Math.floor(Math.log10(x))), f = x / p;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
+  }
+  // A bar whose data end (the top) is rounded and whose baseline end is square.
+  function topBar(x, y, w, h, r){
+    if(h <= 0) return '';
+    r = Math.min(r, w / 2, h);
+    return 'M' + x + ',' + (y + h) + 'V' + (y + r) + 'Q' + x + ',' + y + ' ' + (x + r) + ',' + y +
+           'H' + (x + w - r) + 'Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) + 'V' + (y + h) + 'Z';
+  }
+
+  let P = null; // last projection, for the tooltip
+  function drawChart(){
+    const plot = $('ciPlot'), tip = $('ciTip');
+    const W = plot.clientWidth - (window.innerWidth <= 760 ? 16 : 32);
+    if(!P || W <= 0) return;
+    const narrow = W < 560;
+    const H = narrow ? 240 : 320;
+    const m = {t: 10, r: 6, b: 26, l: narrow ? 44 : 56};
+    const pw = W - m.l - m.r, ph = H - m.t - m.b;
+    const rows = P.rows, N = rows.length;
+    const hi = Math.max(1, ...rows.map(r => Math.max(r.bal, r.paid)));
+    const step = niceStep(hi / (narrow ? 3 : 4));
+    const top = Math.ceil(hi / step) * step;
+    const y = v => m.t + ph - v / top * ph;
+    const slot = pw / N, bw = Math.max(2, Math.min(30, slot * (N > 30 ? 0.8 : 0.68)));
+    const bx = i => m.l + slot * i + (slot - bw) / 2;
+
+    let svg = '<svg width="' + W + '" height="' + H + '" role="img" aria-label="Balance each year, split into money paid in and growth">';
+    for(let v = 0; v <= top + step / 2; v += step){
+      svg += '<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="var(--rule)" stroke-width="1"' +
+             (v ? ' stroke-dasharray="2 4"' : '') + '/>' +
+             '<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + compact(v) + '</text>';
+    }
+    svg += '<rect id="ciHover" x="0" y="' + m.t + '" width="' + slot + '" height="' + ph + '" fill="rgba(255,255,255,.05)" rx="4" visibility="hidden"/>';
+    const every = [1, 2, 5, 10, 20].find(e => N / e <= (narrow ? 6 : 12)) || 20;
+    rows.forEach((r, i) => {
+      const x = bx(i);
+      const base = Math.min(r.paid, r.bal);
+      const growth = r.bal - r.paid;
+      const gTop = y(r.bal), pTop = y(base);
+      // Two pixels of surface between the segments, taken from the growth one.
+      const gap = growth > 0 && (pTop - gTop) > 3 ? 2 : 0;
+      if(growth > 0 && pTop - gTop >= 1){
+        svg += '<rect x="' + x + '" y="' + pTop + '" width="' + bw + '" height="' + (y(0) - pTop) + '" fill="' + PAID + '"/>';
+        svg += '<path d="' + topBar(x, gTop, bw, pTop - gTop - gap, 4) + '" fill="' + GROW + '"/>';
+      } else {
+        svg += '<path d="' + topBar(x, pTop, bw, y(0) - pTop, 4) + '" fill="' + PAID + '"/>';
+      }
+      if(growth < 0 && y(base) - y(r.paid) >= 1){
+        svg += '<rect x="' + (x + .75) + '" y="' + y(r.paid) + '" width="' + (bw - 1.5) + '" height="' + (y(base) - y(r.paid) - 1) +
+               '" fill="none" stroke="var(--oxblood)" stroke-width="1.5" stroke-dasharray="3 2" rx="2"/>';
+      }
+      if(r.year % every === 0 || (N <= 12 && every === 1))
+        svg += '<text x="' + (x + bw / 2) + '" y="' + (H - 8) + '" text-anchor="middle">' + r.year + '</text>';
+    });
+    if(S.infl > 0){
+      const pts = rows.map((r, i) => (bx(i) + bw / 2).toFixed(1) + ',' + y(r.real).toFixed(1)).join(' ');
+      svg += '<polyline points="' + pts + '" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round" opacity=".75"/>';
+    }
+    svg += '<rect id="ciHit" x="' + m.l + '" y="0" width="' + pw + '" height="' + H + '" fill="transparent"/></svg>';
+
+    plot.querySelectorAll('svg').forEach(s => s.remove());
+    plot.insertAdjacentHTML('afterbegin', svg);
+
+    const hover = $('ciHover'), hit = $('ciHit');
+    function show(ev){
+      const box = hit.getBoundingClientRect();
+      const i = Math.max(0, Math.min(N - 1, Math.floor((ev.clientX - box.left) / slot)));
+      const r = rows[i];
+      hover.setAttribute('x', m.l + slot * i);
+      hover.setAttribute('visibility', 'visible');
+      const g = r.bal - r.paid;
+      tip.innerHTML = '<div class="tt-h">Year ' + r.year + '</div>' +
+        '<div class="tt-r"><span>Balance</span><b>' + fmtGBP(r.bal) + '</b></div>' +
+        '<div class="tt-r"><span><i style="background:' + PAID + '"></i>Paid in</span><b>' + fmtGBP(r.paid) + '</b></div>' +
+        '<div class="tt-r"><span><i style="' + (g < 0 ? 'border:1.5px dashed var(--oxblood)' : 'background:' + GROW) + '"></i>' +
+        (g < 0 ? 'Shortfall' : 'Growth') + '</span><b>' + fmtGBP(g) + '</b></div>' +
+        (S.infl > 0 ? '<div class="tt-r"><span>In today\'s money</span><b>' + fmtGBP(r.real) + '</b></div>' : '');
+      tip.classList.add('on');
+      const pb = plot.getBoundingClientRect();
+      const cx = bx(i) + bw / 2 + (window.innerWidth <= 760 ? 8 : 16);
+      let left = cx + 14;
+      if(left + tip.offsetWidth > pb.width - 4) left = cx - 14 - tip.offsetWidth;
+      tip.style.left = Math.max(4, left) + 'px';
+      tip.style.top = Math.max(4, Math.min(y(r.bal), H - tip.offsetHeight)) + 'px';
+    }
+    function hide(){ tip.classList.remove('on'); hover.setAttribute('visibility', 'hidden'); }
+    hit.addEventListener('pointermove', show);
+    hit.addEventListener('pointerdown', show);
+    hit.addEventListener('pointerleave', hide);
+  }
+
+  function update(){
+    read();
+    P = project(S);
+    const last = P.rows[P.rows.length - 1];
+    const growth = P.final - P.paid;
+    const yrs = S.years + (S.years === 1 ? ' year' : ' years');
+
+    $('ciFinal').textContent = fmtGBP(P.final);
+    $('ciFinalSub').textContent = 'after ' + yrs;
+    $('ciPaid').textContent = fmtGBP(P.paid);
+    $('ciPaidSub').textContent = S.monthly ? fmtGBP(S.start) + ' + ' + fmtGBP(S.monthly) + ' × ' + fmtInt(S.years * 12) + ' months'
+                                           : 'the starting amount alone';
+    const g = $('ciGrowth');
+    g.textContent = (growth > 0 ? '+' : '') + fmtGBP(growth);
+    g.style.color = growth > 0.5 ? 'var(--forest)' : growth < -0.5 ? 'var(--oxblood)' : '';
+    $('ciGrowthSub').textContent = P.final > 0 ? (growth / P.final * 100).toFixed(1) + '% of the final pot' : 'nothing paid in';
+
+    if(S.infl > 0){
+      $('ciFourthLab').textContent = "In today's money";
+      $('ciFourth').textContent = fmtGBP(last.real);
+      $('ciFourthSub').textContent = 'at ' + pct(S.infl) + ' inflation a year';
+    } else {
+      $('ciFourthLab').textContent = 'Doubles every';
+      if(P.eff > 0){
+        const d = Math.log(2) / Math.log(1 + P.eff);
+        $('ciFourth').textContent = (d >= 100 ? Math.round(d) : d.toFixed(1)) + ' yrs';
+        $('ciFourthSub').textContent = 'at a net ' + (P.eff * 100).toFixed(2) + '% a year';
+      } else {
+        $('ciFourth').textContent = 'Never';
+        $('ciFourthSub').textContent = 'no net growth at these settings';
+      }
+    }
+
+    const notes = [];
+    if(S.charge > 0){
+      notes.push('Charges of <b>' + pct(S.charge) + ' a year</b> cost <b>' + fmtGBP(P.gross - P.final) + '</b> over ' + yrs +
+                 ' &#8212; the same saving grows to ' + fmtGBP(P.gross) + ' with no charge. That is ' +
+                 (P.gross - P.final >= P.gross - P.paid ? 'more than all the growth it would otherwise have made.'
+                  : ((P.gross - P.final) / (P.gross - P.paid) * 100).toFixed(0) + '% of the growth it would otherwise have made.'));
+    }
+    if(S.infl > 0){
+      notes.push('At ' + pct(S.infl) + ' inflation, ' + fmtGBP(P.final) + ' in ' + yrs + ' buys what <b>' + fmtGBP(last.real) +
+                 '</b> buys today' + (last.real < P.paid ? ' &#8212; <b>less than the ' + fmtGBP(P.paid) + ' paid in</b>, so the pot loses ground in real terms.' : '.'));
+    } else if(P.eff > 0){
+      notes.push('Prices rise too. Set an inflation rate above to see the result in today\'s money.');
+    }
+    if(S.rate > 0 && S.comp !== 1){
+      const yearly = project(Object.assign({}, S, {comp: 1}));
+      const diff = P.final - yearly.final;
+      if(Math.abs(diff) >= 1) notes.push((S.comp === 12 ? 'Monthly' : 'Daily') + ' compounding adds ' + fmtGBP(diff) + ' over yearly at the same headline rate.');
+    }
+    const note = $('ciNote');
+    note.innerHTML = notes.map(n => '<p>' + n + '</p>').join('');
+    note.style.display = notes.length ? '' : 'none';
+
+    $('ciChartSub').textContent = fmtGBP(S.start) + ' + ' + fmtGBP(S.monthly) + '/month at ' + pct(S.rate);
+    const short = P.rows.some(r => r.bal < r.paid - 0.5);
+    $('ciLegend').innerHTML =
+      '<span><i style="background:' + PAID + '"></i>Paid in</span>' +
+      '<span><i style="background:' + GROW + '"></i>Growth</span>' +
+      (short ? '<span><i class="short"></i>Shortfall</span>' : '') +
+      (S.infl > 0 ? '<span><i class="line" style="border-top-color:var(--ink)"></i>Today\'s money</span>' : '');
+
+    $('ciHead').innerHTML = '<tr><th>Year</th><th class="num">Added</th><th class="num">Growth that year</th>' +
+      '<th class="num">Total paid in</th><th class="num">Balance</th>' + (S.infl > 0 ? '<th class="num">Today\'s money</th>' : '') + '</tr>';
+    $('ciBody').innerHTML = P.rows.map(r => {
+      const added = r.year === 1 ? S.start + S.monthly * 12 : S.monthly * 12;
+      const cls = r.growthY > 0.5 ? 'perf-pos' : r.growthY < -0.5 ? 'perf-neg' : 'perf-neu';
+      return '<tr><td>' + r.year + '</td><td class="num">' + fmtGBP(added) + '</td>' +
+             '<td class="' + cls + '">' + (r.growthY > 0.5 ? '+' : '') + fmtGBP(r.growthY) + '</td>' +
+             '<td class="num">' + fmtGBP(r.paid) + '</td><td class="num ink" style="font-weight:600">' + fmtGBP(r.bal) + '</td>' +
+             (S.infl > 0 ? '<td class="num">' + fmtGBP(r.real) + '</td>' : '') + '</tr>';
+    }).join('');
+
+    if(shown) drawChart();
+  }
+
+  const money = logScale(1000000), monthlyScale = logScale(10000);
+  F.start = field({input: $('ciStart'), slider: $('ciStartSlider'), pills: $('ciStartQuick'), min: 0, max: 10000000,
+                   value: 10000, toSlider: money.to, fromSlider: money.from, onChange: update});
+  F.monthly = field({input: $('ciMonthly'), slider: $('ciMonthlySlider'), pills: $('ciMonthlyQuick'), min: 0, max: 100000,
+                     value: 200, toSlider: monthlyScale.to, fromSlider: monthlyScale.from, onChange: update});
+  F.rate = field({input: $('ciRate'), slider: $('ciRateSlider'), pills: $('ciRateQuick'), min: 0, max: 30, value: 5, onChange: update});
+  F.years = field({input: $('ciYears'), slider: $('ciYearsSlider'), pills: $('ciYearsQuick'), min: 1, max: 60, value: 20, int: true, onChange: update});
+  F.charge = field({input: $('ciCharge'), min: 0, max: 5, value: 0, onChange: update});
+  F.infl = field({input: $('ciInfl'), min: 0, max: 15, value: 0, onChange: update});
+  document.querySelectorAll('#ciComp button').forEach(b => b.addEventListener('click', () => {
+    S.comp = +b.dataset.c;
+    document.querySelectorAll('#ciComp button').forEach(x => x.classList.toggle('on', x === b));
+    update();
+  }));
+
+  let rz = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(rz);
+    rz = setTimeout(() => { if(shown) drawChart(); }, 150);
+  });
+  document.addEventListener('viewchange', e => {
+    shown = e.detail === 'compound';
+    if(shown) drawChart();
+  });
+  update();
+})();
+})();
+</script>
 <script>
 "use strict";
 const LS_KEY = "wsl_funds_data_v1";
@@ -1655,9 +2500,11 @@ function newBuildAvailable(){
    which is what left a phone on an old layout an hour after a deploy. A URL
    the cache has never seen cannot be. The previous marker is stripped so it
    does not accumulate, and replace() keeps repeated refreshes out of the back
-   button's history. */
+   button's history. A calculator's hash survives, so a refresh from one comes
+   back to it; a desk section's does not, so the desk reopens at its top. */
 function reloadFresh(){
-  location.replace(location.href.split('?')[0].split('#')[0] + '?v=' + Date.now());
+  const keep = VIEW_HASH[location.hash] ? location.hash : '';
+  location.replace(location.href.split('?')[0].split('#')[0] + '?v=' + Date.now() + keep);
 }
 
 /* Manual refresh from the data bar. Still re-fetches the data without a full
@@ -5047,6 +5894,8 @@ let spyTick = 0;
 function scrollSpy(){
   const links = document.querySelectorAll('#navlinks a');
   if(!links.length) return;
+  // On a calculator every desk section is hidden, so none of them is current.
+  if(VIEW !== 'desk'){ links.forEach(a => a.classList.remove('on')); return; }
   let current = NAV_SECTIONS[0];
   const line = 120;
   NAV_SECTIONS.forEach(id => {
@@ -5063,6 +5912,46 @@ window.addEventListener('scroll', () => {
   if(spyTick) return;
   spyTick = requestAnimationFrame(() => { spyTick = 0; scrollSpy(); });
 }, {passive:true});
+
+/* ---------- views: the desk and the two calculators ----------
+   The URL hash picks the view. Only the two calculator hashes mean a
+   calculator; every other hash is a desk section, so the nav links keep
+   working from anywhere. A link click switches back to the desk before the
+   browser follows it - a section inside a hidden view has nowhere to scroll
+   to - and the back button, which skips the click, re-scrolls once the desk
+   is showing. The calculators listen for "viewchange" and draw on first sight. */
+const VIEW_HASH = {'#premium-bonds': 'bonds', '#compound-interest': 'compound'};
+const VIEW_TITLE = {desk: 'Fund Tracker', bonds: 'Premium Bonds · Fund Tracker', compound: 'Compound Interest · Fund Tracker'};
+let VIEW = 'desk';
+function showView(v){
+  if(v === VIEW) return false;
+  VIEW = v;
+  document.querySelectorAll('.view').forEach(el => el.classList.toggle('on', el.id === 'view-' + v));
+  document.querySelectorAll('.vtab').forEach(a => {
+    const on = a.dataset.view === v;
+    a.classList.toggle('on', on);
+    if(on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+  document.title = VIEW_TITLE[v];
+  // The index chart sizes itself from its container, which was 0px wide
+  // while the desk was hidden.
+  if(v === 'desk' && MKT) renderChart();
+  if(v !== 'desk') window.scrollTo(0, 0);
+  scrollSpy();
+  document.dispatchEvent(new CustomEvent('viewchange', {detail: v}));
+  return true;
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest && e.target.closest('a[href^="#"]');
+  if(a && !VIEW_HASH[a.getAttribute('href')]) showView('desk');
+});
+window.addEventListener('hashchange', () => {
+  if(showView(VIEW_HASH[location.hash] || 'desk') && VIEW === 'desk'){
+    const t = location.hash && document.getElementById(location.hash.slice(1));
+    if(t) t.scrollIntoView();
+  }
+});
+showView(VIEW_HASH[location.hash] || 'desk');
 
 /* ---------- render: everything ---------- */
 function renderAll(){
