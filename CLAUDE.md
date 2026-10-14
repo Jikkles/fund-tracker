@@ -90,6 +90,16 @@ Morningstar category average, not the IA sector. Every fund it refuses
 `SKIP` with the reason and left untouched - so a fund still flagged stale in
 `last_run.md` is one to look up in that log, not a broken scraper.
 
+The same run also refreshes the Premium Bonds tab: `premium_bonds.py` reads
+NS&I's monthly prize allocation table and its Premium Bonds page (rate and
+odds) into `data/premium_bonds.json`. It writes nothing unless the table adds
+up to NS&I's own totals and 12 x total value / (prizes x odds) reproduces the
+published rate - the product page also carries old "until June" figures, and
+this is what keeps them out. A refusal is a `SKIP` line; the tab shows the
+last good check date and warns once it is over 10 days old. The copy of the
+draw inside `index.html` is only a fallback for when the file cannot load,
+and is deliberately not maintained.
+
 ## Verifying a change to the page
 
 `site/index.html` is one self-contained file with no build step and no tests,

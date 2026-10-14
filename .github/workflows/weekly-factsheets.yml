@@ -5,6 +5,8 @@ name: Weekly factsheet refresh
 # date, historic yield, the net ongoing charge, manager tenure and the
 # discrete annual periods. Then reads Fidelity's factsheet for the sector
 # comparators, SRRI and transaction costs HL does not carry.
+# Also re-reads NS&I's Premium Bonds prize allocation, rate and odds for the
+# calculator tab.
 #
 # WEEKLY, NOT DAILY, for two reasons. None of this data moves daily - a
 # holdings table is republished monthly at best - so a daily scrape would
@@ -67,6 +69,16 @@ jobs:
       - name: Refresh comparators from Fidelity
         run: python scripts/fid_factsheet.py
 
+      # The Premium Bonds tab's figures - prize fund rate, odds and the count
+      # of every prize - from NS&I's own pages. Independent of the funds and
+      # two requests, so it rides along here rather than having a schedule of
+      # its own. Same contract as the steps above: a page that fails any gate
+      # (totals that do not add up, the two pages disagreeing on the rate) is
+      # reported as SKIP and data/premium_bonds.json is left as it was; the tab
+      # shows the date of the last good check, so a run of refusals is visible.
+      - name: Refresh Premium Bonds prize data
+        run: python scripts/premium_bonds.py
+
       # The publish gate, same as the daily run: this fails the build rather
       # than shipping a personal reference or internal-process vocabulary.
       - name: Anonymisation check
@@ -81,7 +93,7 @@ jobs:
           # funds.json is too large for it to fetch. Same role as the first
           # line of last_run.md for the daily top-up.
           echo "# Weekly factsheet refresh $(date -u +%F)" > data/last_factsheets.md
-          git add data/funds.json data/last_factsheets.md
+          git add data/funds.json data/premium_bonds.json data/last_factsheets.md
           if git diff --staged --quiet; then
             echo "No factsheet changes to commit."
           else
@@ -122,13 +134,13 @@ jobs:
           #
           # constituents.json is deliberately not here: index_movers.py reads
           # it to build movers.json, and the page never fetches it.
-          for f in funds.json market.json movers.json last_run.md; do
+          for f in funds.json market.json movers.json premium_bonds.json last_run.md; do
             test -f "data/$f" || { echo "::error::data/$f missing - refusing to deploy a site without it"; exit 1; }
             cp "data/$f" "_site/$f"
           done
 
       # v4 of this action stopped including dotfiles in the artifact, and does
-      # so silently. Nothing here is hidden - the four files above are copied
+      # so silently. Nothing here is hidden - the five files above are copied
       # in by name - but a future `.nojekyll` or similar dropped into _site
       # would vanish from the deploy without a word. `include-hidden-files:
       # true` is the escape hatch if that ever changes.

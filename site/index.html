@@ -1527,6 +1527,7 @@
               font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
   table.calc-table td.pb-pct { color: var(--forest); font-weight: 600; }
   table.calc-table td.pb-pct.zero { color: var(--ink-soft); font-weight: 400; opacity: .7; }
+  .kpi-val.pending { opacity: .45; transition: opacity .15s; }
   table.calc-table td.ink { color: var(--ink); }
 
   .calc-note { margin: 18px 0 0; padding: 14px 18px; border-radius: 8px;
@@ -1930,12 +1931,25 @@ const fmtInt = v => v.toLocaleString('en-GB');
 const fmtGBP = v => (v < 0 ? '−£' : '£') + Math.round(Math.abs(v)).toLocaleString('en-GB');
 const fmtGBPc = v => '£' + v.toLocaleString('en-GB', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
+/* Inputs survive a reload - a holding typed once should not need typing
+   again. Browser storage only, per viewer, and every access is guarded: a
+   private window or blocked storage just means the defaults. */
+const STORE_KEY = 'ft_calc_v1';
+let STORED = {};
+try { STORED = JSON.parse(localStorage.getItem(STORE_KEY) || '{}') || {}; } catch(e){}
+function remember(key, v){
+  STORED[key] = v;
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(STORED)); } catch(e){}
+}
+
 /* One number field: typed box, optional slider, optional quick pills.
    Typing never fights the keyboard - an empty or out-of-range box is left
-   as typed and only clamped and rewritten on blur. */
+   as typed and only clamped and rewritten on blur. `key` names it in
+   storage; a stored value outside today's range is ignored, not clamped. */
 function field(o){
-  const f = {value: o.value};
   const clamp = v => Math.min(o.max, Math.max(o.min, o.int ? Math.round(v) : v));
+  const saved = o.key ? STORED[o.key] : undefined;
+  const f = {value: typeof saved === 'number' && saved === clamp(saved) ? saved : o.value};
   const parse = () => { const v = parseFloat(o.input.value); return isFinite(v) ? clamp(v) : null; };
   function sync(fromSlider){
     if(o.slider && !fromSlider) o.slider.value = o.toSlider ? o.toSlider(f.value) : f.value;
@@ -1943,8 +1957,12 @@ function field(o){
     if(o.hint) o.hint(f.value);
   }
   function set(v, write, fromSlider){
-    f.value = v;
     if(write) o.input.value = v;
+    // A blur, or a pill for the value already showing, changes nothing - so
+    // it recalculates nothing.
+    if(v === f.value) return;
+    f.value = v;
+    if(o.key) remember(o.key, v);
     sync(fromSlider);
     o.onChange();
   }
@@ -1975,11 +1993,15 @@ function logScale(max){
 /* ============================================================
    PREMIUM BONDS
    ============================================================ */
-/* DRAW DATA - the only block that needs updating each month.
-   Update `label`, `asOf` (YYYY-MM of the draw), `prizeFundRate`,
-   `oddsPerBond` and the prize table from:
-   nsandi.com/get-to-know-us/monthly-prize-allocation */
-const DRAW = {
+/* The prize data comes from premium_bonds.json, which
+   scripts/premium_bonds.py rebuilds weekly from NS&I's own pages, and refuses
+   to write unless the prize table adds up to NS&I's totals and agrees with
+   the published rate and odds.
+
+   FALLBACK_DRAW is only for when that file cannot be loaded - the page
+   opened from disk, or a network failure. It is not maintained: the tab says
+   when it is in use, and flags it once it is more than a month old. */
+const FALLBACK_DRAW = {
   label: 'October 2026',
   asOf: '2026-10',           // year-month of the draw this data describes
   prizeFundRate: 4.35,       // % - as published
@@ -1998,13 +2020,27 @@ const DRAW = {
     { value: 25,      count: 1721281 }
   ]
 };
+// A weekly check older than this has missed at least one run.
+const CHECK_STALE_DAYS = 10;
 
 (function bonds(){
   const MAX_BONDS = 50000, MAX_MONTHS = 600;
   const SIM_RUNS = 30000; // Monte Carlo runs for the median and quartiles
-  const totalPrizes = DRAW.prizes.reduce((s, p) => s + p.count, 0);
-  const totalEligible = totalPrizes * DRAW.oddsPerBond;
-  const pAny = 1 / DRAW.oddsPerBond;
+
+  // Fetched straight away and awaited when the tab is first opened, so
+  // landing on #premium-bonds never draws the fallback and then redraws.
+  function validDraw(d){
+    const pos = v => typeof v === 'number' && isFinite(v) && v > 0;
+    if(!d || typeof d.label !== 'string' || !/^\d{4}-\d{2}$/.test(d.asOf || '')) return null;
+    if(!pos(d.oddsPerBond) || !pos(d.prizeFundRate)) return null;
+    if(!Array.isArray(d.prizes) || d.prizes.length < 5) return null;
+    if(!d.prizes.every(p => p && pos(p.value) && pos(p.count))) return null;
+    return d;
+  }
+  const drawLoad = fetch('premium_bonds.json?t=' + Date.now(), {cache: 'no-store'})
+    .then(r => r.ok ? r.json() : null)
+    .then(validDraw)
+    .catch(() => null);
 
   // Chance of >=1 success in k independent trials of probability p. log1p and
   // expm1 keep it accurate when p is ~1e-11 (the jackpot) and k runs to tens
@@ -2030,94 +2066,152 @@ const DRAW = {
   }
   const fmtWins = v => v === 0 ? '0' : v < 0.0005 ? '<0.001' : v.toFixed(3);
   const fmtExpMoney = v => v === 0 ? '£0' : v < 100 ? fmtGBPc(v) : fmtGBP(v);
+  const fmtDay = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', {day: 'numeric', month: 'short', year: 'numeric'});
+  const fmtPrize = v => v >= 1e6 && v % 1e6 === 0 ? '£' + v / 1e6 + 'm' : v >= 1e3 && v % 1e3 === 0 ? '£' + v / 1e3 + 'k' : fmtGBP(v);
+  const escText = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   function periodText(m){
     if(m < 12) return m + (m === 1 ? ' month' : ' months');
     const y = m / 12;
     return Number.isInteger(y) ? y + (y === 1 ? ' year' : ' years') : y.toFixed(1) + ' years';
   }
 
-  $('pbLede').innerHTML = "Based on NS&amp;I's estimated prize breakdown for the <b>" + DRAW.label +
-    "</b> draw &#8212; prize fund rate <b>" + DRAW.prizeFundRate.toFixed(2) +
-    "%</b>, odds of any £1 Bond winning <b>1 in " + fmtInt(DRAW.oddsPerBond) + "</b> each month.";
+  let DRAW = null, rows = [], pAny = 0;
 
-  // Stale-data check: the allocation is republished monthly, so a block more
-  // than a month old says so rather than passing itself off as current.
-  (function(){
-    const [y, m] = DRAW.asOf.split('-').map(Number);
+  /* Everything that depends on which draw is loaded. Run once, when the tab
+     is first opened and the fetch has settled. */
+  function useDraw(d, fromFile){
+    DRAW = d;
+    const totalEligible = d.prizes.reduce((s, p) => s + p.count, 0) * d.oddsPerBond;
+    pAny = 1 / d.oddsPerBond;
+    const top = Math.max(...d.prizes.map(p => p.value));
+
+    $('pbLede').innerHTML = "NS&amp;I's prize allocation for the <b>" + escText(d.label) +
+      "</b> draw &#8212; prize fund rate <b>" + d.prizeFundRate.toFixed(2) +
+      "%</b>, odds of any £1 Bond winning <b>1 in " + fmtInt(d.oddsPerBond) + "</b> each month." +
+      (fromFile && d.checked ? ' Checked against nsandi.com every week, last on <b>' + fmtDay(d.checked) + '</b>.' : '');
+
+    /* Three ways the figures can be behind, each said plainly: the page's own
+       copy is in use, the weekly check has stopped succeeding, or the draw
+       itself is more than a month old. */
+    const warn = [];
+    if(!fromFile)
+      warn.push("Couldn't load this week's check of NS&I's figures, so this is the copy built into the page.");
+    if(fromFile && d.checked){
+      const days = Math.floor((Date.now() - Date.parse(d.checked + 'T00:00:00Z')) / 864e5);
+      if(days > CHECK_STALE_DAYS)
+        warn.push("NS&I's figures were last confirmed on " + fmtDay(d.checked) + ' (' + days +
+                  ' days ago) — the weekly check has not succeeded since, so a change after that would not show here.');
+    }
+    const [y, m] = d.asOf.split('-').map(Number);
     const now = new Date();
     const old = (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m);
-    if(old > 1){
-      const el = $('pbStale');
-      el.textContent = '⚠ This prize data is for the ' + DRAW.label + ' draw (' + old +
-        ' months ago). Rates and prize counts change — check nsandi.com for the latest allocation.';
-      el.classList.add('show');
-    }
-  })();
+    if(old > 1)
+      warn.push('This prize data is for the ' + d.label + ' draw (' + old +
+                ' months ago). Rates and prize counts change — check nsandi.com for the latest allocation.');
+    const chip = $('pbStale');
+    chip.innerHTML = warn.map(w => '⚠ ' + escText(w)).join('<br>');
+    chip.classList.toggle('show', warn.length > 0);
 
-  const rows = DRAW.prizes.map(p => {
-    const tr = document.createElement('tr');
-    tr.innerHTML =
-      '<td><span class="pb-prize' + (p.value === 1000000 ? ' jackpot' : '') + '">' + fmtGBP(p.value) + '</span>' +
-      '<span class="pb-count">' + fmtInt(p.count) + ' in the draw</span></td>' +
-      '<td class="num"></td><td class="num pb-pct"></td><td class="num pb-wins"></td><td class="num ink"></td>';
-    $('pbBody').appendChild(tr);
-    const td = tr.querySelectorAll('td');
-    return {value: p.value, p: p.count / totalEligible, odds: td[1], pct: td[2], wins: td[3], money: td[4]};
-  });
+    $('pbBody').innerHTML = '';
+    rows = d.prizes.map(p => {
+      const tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td><span class="pb-prize' + (p.value === top ? ' jackpot' : '') + '">' + fmtGBP(p.value) + '</span>' +
+        '<span class="pb-count">' + fmtInt(p.count) + ' in the draw</span></td>' +
+        '<td class="num"></td><td class="num pb-pct"></td><td class="num pb-wins"></td><td class="num ink"></td>';
+      $('pbBody').appendChild(tr);
+      const td = tr.querySelectorAll('td');
+      return {value: p.value, p: p.count / totalEligible, odds: td[1], pct: td[2], wins: td[3], money: td[4]};
+    });
+
+    $('pbFoot').innerHTML =
+      'Figures are NS&amp;I\'s prize allocation for the ' + escText(d.label) + ' draw, read weekly from its monthly prize allocation page and its Premium Bonds page, and only accepted when the prize table adds up to NS&amp;I\'s own totals and reproduces the published rate from the published odds. The counts move slightly every month as the number of eligible Bonds changes. ' +
+      '&#8220;Odds per draw&#8221; and &#8220;Chance &#8805;1&#8221; use 1 &#8722; (1 &#8722; p)<sup>n</sup>, computed with log1p/expm1 for accuracy at extreme odds. ' +
+      '&#8220;Expected wins&#8221; and &#8220;Expected winnings&#8221; are plain averages (Bonds &#215; months &#215; p). ' +
+      'The median and middle-50% figures come from a ' + fmtInt(SIM_RUNS) + '-run Monte Carlo simulation, seeded from your inputs so the same holding always gets the same answer; a different seed would move them by a pound or two. ' +
+      'The model treats each £1 Bond and each monthly draw as independent (the tiny without-replacement effect is negligible at these scales) and ignores the rule that new Bonds must be held a full calendar month before their first draw. ' +
+      'Sources: nsandi.com/get-to-know-us/monthly-prize-allocation and nsandi.com/products/premium-bonds. Not financial advice.';
+  }
 
   // ---- Monte Carlo for the median and quartiles ----
-  function gaussian(){
-    let u = 0, v = 0;
-    while(u === 0) u = Math.random();
-    while(v === 0) v = Math.random();
-    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
-  }
-  function poisson(lambda){
-    if(lambda <= 0) return 0;
-    if(lambda > 30) return Math.max(0, Math.round(lambda + Math.sqrt(lambda) * gaussian()));
-    const L = Math.exp(-lambda);
-    let k = 0, prod = 1;
-    do { k++; prod *= Math.random(); } while(prod > L);
-    return k - 1;
+  /* Seeded rather than Math.random. Unseeded, the median changed every time
+     an input was touched, so moving a slider away and back changed the
+     answer. mulberry32 is small, fast and plenty for this. */
+  function rng(seed){
+    let a = seed >>> 0;
+    return function(){
+      a = (a + 0x6D2B79F5) >>> 0;
+      let t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
   }
   function simulate(n, m){
-    const lambdas = rows.map(r => n * m * r.p);
+    const rand = rng(n * 1000 + m);
+    const gaussian = () => {
+      let u = 0, v = 0;
+      while(u === 0) u = rand();
+      while(v === 0) v = rand();
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+    };
+    // Per-prize constants, hoisted out of the 30,000-run loop.
+    const P = rows.map(r => {
+      const lambda = n * m * r.p;
+      return {value: r.value, lambda, big: lambda > 30, L: Math.exp(-lambda), sd: Math.sqrt(lambda)};
+    });
     const totals = new Float64Array(SIM_RUNS);
     for(let s = 0; s < SIM_RUNS; s++){
       let t = 0;
-      for(let i = 0; i < lambdas.length; i++){
-        const w = poisson(lambdas[i]);
-        if(w) t += w * rows[i].value;
+      for(let i = 0; i < P.length; i++){
+        const q = P[i];
+        let w;
+        if(q.big) w = Math.max(0, Math.round(q.lambda + q.sd * gaussian()));
+        else { w = -1; let prod = 1; do { w++; prod *= rand(); } while(prod > q.L); }
+        if(w) t += w * q.value;
       }
       totals[s] = t;
     }
     totals.sort();
-    const q = f => totals[Math.min(SIM_RUNS - 1, Math.floor(f * SIM_RUNS))];
-    return {p25: q(.25), median: q(.5), p75: q(.75)};
+    const at = f => totals[Math.min(SIM_RUNS - 1, Math.floor(f * SIM_RUNS))];
+    return {p25: at(.25), median: at(.5), p75: at(.75)};
   }
 
+  // Seeded, so a result can be kept: dragging back over a value is instant.
+  const simCache = new Map();
   let simTimer = null;
+  function showSim(n, m, mean, sim){
+    const yrs = m / 12;
+    const annMedian = sim.median / n / yrs * 100;
+    const annMean = mean / n / yrs * 100;
+    const big = DRAW.prizes.map(p => p.value).sort((a, b) => b - a).slice(0, 2).map(fmtPrize);
+    $('pbMedian').textContent = fmtGBP(sim.median);
+    $('pbMedianSub').textContent = '≈ ' + annMedian.toFixed(2) + '% a year · typical luck';
+    $('pbIqr').textContent = fmtGBP(sim.p25) + ' – ' + fmtGBP(sim.p75);
+    $('pbMedian').classList.remove('pending');
+    $('pbIqr').classList.remove('pending');
+    $('pbNote').innerHTML =
+      '<p>The mean (<b>~' + annMean.toFixed(2) + '% a year</b>) is dragged upward by the rare ' + big.join(' and ') + ' wins. ' +
+      'The median &#8212; what the middle holder actually gets &#8212; works out nearer <b>' + annMedian.toFixed(2) +
+      '% a year</b> for this holding and period.</p>' +
+      '<p>The bigger the holding and the longer it is held, the closer the two get; small holdings over short periods most often win nothing at all.</p>';
+  }
   function scheduleSim(n, m, mean){
     clearTimeout(simTimer);
-    $('pbMedian').textContent = '…';
-    $('pbIqr').textContent = '…';
+    const key = n + ':' + m;
+    if(simCache.has(key)) return showSim(n, m, mean, simCache.get(key));
+    // The last answer stays up, dimmed, until the new one lands - no "…" flash.
+    $('pbMedian').classList.add('pending');
+    $('pbIqr').classList.add('pending');
     simTimer = setTimeout(() => {
       const sim = simulate(n, m);
-      const yrs = m / 12;
-      const annMedian = sim.median / n / yrs * 100;
-      const annMean = mean / n / yrs * 100;
-      $('pbMedian').textContent = fmtGBP(sim.median);
-      $('pbMedianSub').textContent = '≈ ' + annMedian.toFixed(2) + '% a year · typical luck';
-      $('pbIqr').textContent = fmtGBP(sim.p25) + ' – ' + fmtGBP(sim.p75);
-      $('pbNote').innerHTML =
-        '<p>The mean (<b>~' + annMean.toFixed(2) + '% a year</b>) is dragged upward by the rare £1m and £100k wins. ' +
-        'The median &#8212; what the middle holder actually gets &#8212; works out nearer <b>' + annMedian.toFixed(2) +
-        '% a year</b> for this holding and period.</p>' +
-        '<p>The bigger the holding and the longer it is held, the closer the two get; small holdings over short periods most often win nothing at all.</p>';
+      if(simCache.size > 500) simCache.clear();
+      simCache.set(key, sim);
+      showSim(n, m, mean, sim);
     }, 120);
   }
 
-  let bondsF, monthsF, ready = false;
+  let bondsF, monthsF, ready = false, opening = false;
   function update(){
     if(!ready) return;
     const n = bondsF.value, m = monthsF.value;
@@ -2150,25 +2244,21 @@ const DRAW = {
     return {from: t => Math.max(1, Math.round(Math.exp(t / 1000 * L))),
             to: v => Math.round(Math.log(Math.max(1, v)) / L * 1000)};
   })();
-  bondsF = field({input: $('pbBonds'), slider: $('pbBondsSlider'), pills: $('pbBondsQuick'),
+  bondsF = field({input: $('pbBonds'), slider: $('pbBondsSlider'), pills: $('pbBondsQuick'), key: 'pbBonds',
     min: 1, max: MAX_BONDS, value: 1000, int: true, toSlider: bondScale.to, fromSlider: bondScale.from,
     hint: v => { $('pbBondsHint').textContent = '= ' + fmtGBP(v) + ' invested'; }, onChange: update});
-  monthsF = field({input: $('pbMonths'), slider: $('pbMonthsSlider'), pills: $('pbMonthsQuick'),
+  monthsF = field({input: $('pbMonths'), slider: $('pbMonthsSlider'), pills: $('pbMonthsQuick'), key: 'pbMonths',
     min: 1, max: MAX_MONTHS, value: 120, int: true,
     hint: v => { $('pbMonthsHint').textContent = '= ' + (v / 12).toFixed(1) + ' years · ' + fmtInt(v) + ' draws'; }, onChange: update});
 
-  $('pbFoot').innerHTML =
-    'Figures are NS&amp;I\'s <b>estimated</b> ' + DRAW.label + ' prize allocation &#8212; they move slightly every month, so treat this as indicative rather than exact. ' +
-    '&#8220;Odds per draw&#8221; and &#8220;Chance &#8805;1&#8221; use 1 &#8722; (1 &#8722; p)<sup>n</sup>, computed with log1p/expm1 for accuracy at extreme odds. ' +
-    '&#8220;Expected wins&#8221; and &#8220;Expected winnings&#8221; are plain averages (Bonds &#215; months &#215; p). ' +
-    'The median and middle-50% figures come from a ' + fmtInt(SIM_RUNS) + '-run Monte Carlo simulation, so they wobble by a pound or two between recalculations. ' +
-    'The model treats each £1 Bond and each monthly draw as independent (the tiny without-replacement effect is negligible at these scales) and ignores the rule that new Bonds must be held a full calendar month before their first draw. ' +
-    'Source: nsandi.com/get-to-know-us/monthly-prize-allocation. Not financial advice.';
-
   document.addEventListener('viewchange', e => {
-    if(e.detail !== 'bonds' || ready) return;
-    ready = true;
-    update();
+    if(e.detail !== 'bonds' || ready || opening) return;
+    opening = true;
+    drawLoad.then(d => {
+      useDraw(d || FALLBACK_DRAW, !!d);
+      ready = true;
+      update();
+    });
   });
 })();
 
@@ -2206,7 +2296,8 @@ const DRAW = {
     return {rows, final: bal, paid, gross, eff: Math.pow(g * k, 12) - 1};
   }
 
-  const S = {comp: 12};
+  const COMPS = [1, 12, 365];
+  const S = {comp: COMPS.includes(STORED.ciComp) ? STORED.ciComp : 12};
   let F = {};
   function read(){
     S.start = F.start.value; S.monthly = F.monthly.value; S.rate = F.rate.value;
@@ -2277,6 +2368,7 @@ const DRAW = {
     svg += '<rect id="ciHit" x="' + m.l + '" y="0" width="' + pw + '" height="' + H + '" fill="transparent"/></svg>';
 
     plot.querySelectorAll('svg').forEach(s => s.remove());
+    tip.classList.remove('on');
     plot.insertAdjacentHTML('afterbegin', svg);
 
     const hover = $('ciHover'), hit = $('ciHit');
@@ -2384,20 +2476,32 @@ const DRAW = {
     if(shown) drawChart();
   }
 
+  // A slider fires many input events a frame; the table and chart are
+  // rebuilt once per frame, from whatever the inputs say by then.
+  let frame = 0;
+  const schedule = () => { if(!frame) frame = requestAnimationFrame(() => { frame = 0; update(); }); };
+
   const money = logScale(1000000), monthlyScale = logScale(10000);
-  F.start = field({input: $('ciStart'), slider: $('ciStartSlider'), pills: $('ciStartQuick'), min: 0, max: 10000000,
-                   value: 10000, toSlider: money.to, fromSlider: money.from, onChange: update});
-  F.monthly = field({input: $('ciMonthly'), slider: $('ciMonthlySlider'), pills: $('ciMonthlyQuick'), min: 0, max: 100000,
-                     value: 200, toSlider: monthlyScale.to, fromSlider: monthlyScale.from, onChange: update});
-  F.rate = field({input: $('ciRate'), slider: $('ciRateSlider'), pills: $('ciRateQuick'), min: 0, max: 30, value: 5, onChange: update});
-  F.years = field({input: $('ciYears'), slider: $('ciYearsSlider'), pills: $('ciYearsQuick'), min: 1, max: 60, value: 20, int: true, onChange: update});
-  F.charge = field({input: $('ciCharge'), min: 0, max: 5, value: 0, onChange: update});
-  F.infl = field({input: $('ciInfl'), min: 0, max: 15, value: 0, onChange: update});
-  document.querySelectorAll('#ciComp button').forEach(b => b.addEventListener('click', () => {
-    S.comp = +b.dataset.c;
-    document.querySelectorAll('#ciComp button').forEach(x => x.classList.toggle('on', x === b));
-    update();
-  }));
+  F.start = field({input: $('ciStart'), slider: $('ciStartSlider'), pills: $('ciStartQuick'), key: 'ciStart',
+                   min: 0, max: 10000000, value: 10000, toSlider: money.to, fromSlider: money.from, onChange: schedule});
+  F.monthly = field({input: $('ciMonthly'), slider: $('ciMonthlySlider'), pills: $('ciMonthlyQuick'), key: 'ciMonthly',
+                     min: 0, max: 100000, value: 200, toSlider: monthlyScale.to, fromSlider: monthlyScale.from, onChange: schedule});
+  F.rate = field({input: $('ciRate'), slider: $('ciRateSlider'), pills: $('ciRateQuick'), key: 'ciRate',
+                  min: 0, max: 30, value: 5, onChange: schedule});
+  F.years = field({input: $('ciYears'), slider: $('ciYearsSlider'), pills: $('ciYearsQuick'), key: 'ciYears',
+                   min: 1, max: 60, value: 20, int: true, onChange: schedule});
+  F.charge = field({input: $('ciCharge'), key: 'ciCharge', min: 0, max: 5, value: 0, onChange: schedule});
+  F.infl = field({input: $('ciInfl'), key: 'ciInfl', min: 0, max: 15, value: 0, onChange: schedule});
+  const compBtns = document.querySelectorAll('#ciComp button');
+  compBtns.forEach(b => {
+    b.classList.toggle('on', +b.dataset.c === S.comp);
+    b.addEventListener('click', () => {
+      S.comp = +b.dataset.c;
+      remember('ciComp', S.comp);
+      compBtns.forEach(x => x.classList.toggle('on', x === b));
+      schedule();
+    });
+  });
 
   let rz = null;
   window.addEventListener('resize', () => {
