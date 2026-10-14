@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14T08:17:20+00:00",
+  "generated": "2026-10-14T12:06:49+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Burberry Group plc",
           "symbol": "BRBY",
-          "pct": 2.36
+          "pct": 3.28
         },
         {
-          "name": "British Land Co plc",
-          "symbol": "BLND",
-          "pct": 1.9
+          "name": "Barratt Redrow Plc",
+          "symbol": "BTRW",
+          "pct": 2.87
         },
         {
           "name": "Babcock International Group",
           "symbol": "BAB",
-          "pct": 1.78
+          "pct": 2.41
         }
       ],
       "bottom": [
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": -2.45
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": -2.68
+        },
+        {
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": -2.23
         },
         {
           "name": "Computacenter plc",
           "symbol": "CCC",
           "pct": -2.19
-        },
-        {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": -2.16
         }
       ],
       "breadth": {
-        "up": 58,
-        "down": 39,
+        "up": 69,
+        "down": 28,
         "flat": 3,
         "priced": 100,
-        "median": 0.15
+        "median": 0.35
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Big Yellow Group",
           "symbol": "BYG",
-          "pct": 5.69
+          "pct": 6.76
         },
         {
-          "name": "Greencore Group plc",
-          "symbol": "GNC",
-          "pct": 3.95
+          "name": "Vistry Group Plc",
+          "symbol": "VTY",
+          "pct": 5.06
         },
         {
-          "name": "Chemring Group plc",
-          "symbol": "CHG",
-          "pct": 3.44
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": 4.58
         }
       ],
       "bottom": [
         {
           "name": "Softcat plc",
           "symbol": "SCT",
-          "pct": -7.54
+          "pct": -6.91
         },
         {
           "name": "Keller Group",
           "symbol": "KLR",
-          "pct": -3.62
+          "pct": -4.47
         },
         {
-          "name": "Integrafin Holdings Plc",
-          "symbol": "IHP",
-          "pct": -2.31
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": -3.22
         }
       ],
       "breadth": {
-        "up": 159,
-        "down": 63,
-        "flat": 29,
+        "up": 176,
+        "down": 67,
+        "flat": 8,
         "priced": 251,
-        "median": 0.27
+        "median": 0.53
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,17 +250,17 @@
         {
           "name": "Meituan",
           "symbol": "3690.HK",
-          "pct": 6.293216086181975
+          "pct": 6.638997537700077
         },
         {
           "name": "Xiaomi Corporation",
           "symbol": "1810.HK",
-          "pct": 4.8722015525086055
+          "pct": 5.351430496187893
         },
         {
-          "name": "China Mengniu Dairy Company Limited",
-          "symbol": "2319.HK",
-          "pct": 3.6323601796413785
+          "name": "Techtronic Industries Company Limited",
+          "symbol": "0669.HK",
+          "pct": 3.748009984407197
         }
       ],
       "bottom": [
@@ -272,20 +272,20 @@
         {
           "name": "Sino Biopharmaceutical Limited",
           "symbol": "1177.HK",
-          "pct": -3.8317743431835414
+          "pct": -3.4579429173325673
         },
         {
           "name": "Hansoh Pharmaceutical Group Company Limited",
           "symbol": "3692.HK",
-          "pct": -3.2339899434229857
+          "pct": -3.043757019514462
         }
       ],
       "breadth": {
-        "up": 36,
-        "down": 45,
+        "up": 35,
+        "down": 46,
         "flat": 4,
         "priced": 85,
-        "median": -0.22
+        "median": -0.33
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "adidas AG",
-          "symbol": "ADS.DE",
-          "pct": 3.709884736988874
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": 3.05223147060665
         },
         {
-          "name": "L'Oréal S.A.",
-          "symbol": "OR.PA",
-          "pct": 2.271247222107586
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": 2.56322619396893
         },
         {
-          "name": "BASF SE",
-          "symbol": "BAS.DE",
-          "pct": 2.184511257821078
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": 2.063059556247567
         }
       ],
       "bottom": [
         {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": -2.3458826951266527
+          "name": "Wolters Kluwer N.V.",
+          "symbol": "WKL.AS",
+          "pct": -0.9386071767406807
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -2.33001648548024
+          "name": "Intesa Sanpaolo S.p.A.",
+          "symbol": "ISP.MI",
+          "pct": -0.8716767741516859
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": -1.548421351567292
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": -0.7235890174256038
         }
       ],
       "breadth": {
-        "up": 34,
-        "down": 16,
+        "up": 38,
+        "down": 12,
         "flat": 0,
         "priced": 50,
-        "median": 0.31
+        "median": 0.44
       },
       "built": "3 spark batches"
     },
