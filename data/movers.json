@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-15T08:17:07+00:00",
+  "generated": "2026-10-15T11:43:41+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Autotrader Group Plc",
-          "symbol": "AUTO",
-          "pct": 3.94
-        },
-        {
           "name": "Experian Plc",
           "symbol": "EXPN",
-          "pct": 3.41
+          "pct": 3.64
         },
         {
-          "name": "RELX plc",
-          "symbol": "REL",
-          "pct": 3.39
+          "name": "Compass Group plc",
+          "symbol": "CPG",
+          "pct": 3.51
+        },
+        {
+          "name": "BT Group plc",
+          "symbol": "BT.A",
+          "pct": 3.45
         }
       ],
       "bottom": [
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": -6.24
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": -6.86
         },
         {
-          "name": "Halma plc",
-          "symbol": "HLMA",
-          "pct": -5.86
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": -6.3
         },
         {
           "name": "Polar Capital Technology Trust plc",
           "symbol": "PCT",
-          "pct": -5.01
+          "pct": -5.31
         }
       ],
       "breadth": {
-        "up": 70,
-        "down": 28,
-        "flat": 2,
+        "up": 75,
+        "down": 25,
+        "flat": 0,
         "priced": 100,
-        "median": 0.95
+        "median": 1.02
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,40 +58,40 @@
         {
           "name": "THG plc",
           "symbol": "THG",
-          "pct": 14.46
-        },
-        {
-          "name": "XPS Pensions Group Plc",
-          "symbol": "XPS",
-          "pct": 7.26
+          "pct": 16.28
         },
         {
           "name": "Dunelm Group Plc",
           "symbol": "DNLM",
-          "pct": 6.99
+          "pct": 7.87
+        },
+        {
+          "name": "XPS Pensions Group Plc",
+          "symbol": "XPS",
+          "pct": 6.77
         }
       ],
       "bottom": [
         {
-          "name": "Mondi plc",
-          "symbol": "MNDI",
-          "pct": -10.08
-        },
-        {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -10.04
+          "pct": -11.77
+        },
+        {
+          "name": "Mondi plc",
+          "symbol": "MNDI",
+          "pct": -9.84
         },
         {
           "name": "Renishaw plc",
           "symbol": "RSW",
-          "pct": -7.69
+          "pct": -8.22
         }
       ],
       "breadth": {
         "up": 134,
-        "down": 105,
-        "flat": 12,
+        "down": 107,
+        "flat": 10,
         "priced": 251,
         "median": 0.15
       },
@@ -248,36 +248,36 @@
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Xiaomi Corporation",
-          "symbol": "1810.HK",
-          "pct": 2.8809713914325625
-        },
-        {
           "name": "Alibaba Health Information Technology Limited",
           "symbol": "0241.HK",
-          "pct": 2.7826060419497285
+          "pct": 2.9565230659816577
         },
         {
-          "name": "Hansoh Pharmaceutical Group Company Limited",
-          "symbol": "3692.HK",
-          "pct": 2.7468939002079935
+          "name": "Shenzhou International Group Holdings Limited",
+          "symbol": "2313.HK",
+          "pct": 2.802188462385724
+        },
+        {
+          "name": "Budweiser Brewing Company APAC Limited",
+          "symbol": "1876.HK",
+          "pct": 1.4358114366813424
         }
       ],
       "bottom": [
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -15.197365098217478
+          "pct": -14.539474117623808
         },
         {
           "name": "China Hongqiao Group Limited",
           "symbol": "1378.HK",
-          "pct": -6.555018932488892
+          "pct": -6.650714904396658
         },
         {
           "name": "Baidu, Inc.",
           "symbol": "9888.HK",
-          "pct": -4.326633662059027
+          "pct": -4.509450871443265
         }
       ],
       "breadth": {
@@ -285,7 +285,7 @@
         "down": 54,
         "flat": 1,
         "priced": 85,
-        "median": -0.64
+        "median": -0.69
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": 2.8876563386406864
+        },
+        {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": 6.230329542461685
+          "pct": 2.349235930831457
         },
         {
-          "name": "Danone S.A.",
-          "symbol": "BN.PA",
-          "pct": 4.392233474013009
-        },
-        {
-          "name": "argenx SE",
-          "symbol": "ARGX.BR",
-          "pct": 4.286118824734307
+          "name": "Anheuser-Busch InBev SA/NV",
+          "symbol": "ABI.BR",
+          "pct": 2.055768491802268
         }
       ],
       "bottom": [
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -12.24660767653841
-        },
-        {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": -8.982140677315849
+          "pct": -8.202343678388274
         },
         {
           "name": "Nordea Bank Abp",
           "symbol": "NDA-FI.HE",
-          "pct": -5.719335882762831
+          "pct": -6.5959947924213775
+        },
+        {
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": -5.943229589057165
         }
       ],
       "breadth": {
-        "up": 33,
-        "down": 17,
+        "up": 34,
+        "down": 16,
         "flat": 0,
         "priced": 50,
-        "median": 1.29
+        "median": 0.58
       },
       "built": "3 spark batches"
     },
