@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-16T08:17:19+00:00",
+  "generated": "2026-10-16T11:37:10+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "WPP plc",
           "symbol": "WPP",
-          "pct": 3.55
+          "pct": 4.4
         },
         {
           "name": "Babcock International Group",
           "symbol": "BAB",
-          "pct": 2.67
+          "pct": 3.53
         },
         {
-          "name": "Melrose Industries plc",
-          "symbol": "MRO",
-          "pct": 1.86
+          "name": "Autotrader Group Plc",
+          "symbol": "AUTO",
+          "pct": 2.17
         }
       ],
       "bottom": [
         {
-          "name": "Lloyds Banking Group plc",
-          "symbol": "LLOY",
-          "pct": -2.31
-        },
-        {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": -2.04
+          "pct": -2.13
         },
         {
-          "name": "NatWest Group plc",
-          "symbol": "NWG",
-          "pct": -2.02
+          "name": "Lloyds Banking Group plc",
+          "symbol": "LLOY",
+          "pct": -1.98
+        },
+        {
+          "name": "Severn Trent Plc",
+          "symbol": "SVT",
+          "pct": -1.87
         }
       ],
       "breadth": {
         "up": 65,
-        "down": 32,
-        "flat": 3,
+        "down": 33,
+        "flat": 2,
         "priced": 100,
-        "median": 0.21
+        "median": 0.33
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "THG plc",
           "symbol": "THG",
-          "pct": 6.38
-        },
-        {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": 3.94
+          "pct": 7.81
         },
         {
           "name": "Hays plc",
           "symbol": "HAS",
-          "pct": 3.73
+          "pct": 4.85
+        },
+        {
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": 4.43
         }
       ],
       "bottom": [
         {
-          "name": "Princes Group plc",
-          "symbol": "PRN",
-          "pct": -5.58
+          "name": "IP Group Plc",
+          "symbol": "IPO",
+          "pct": -2.53
         },
         {
-          "name": "JPMorgan Emerging Markets Dividend Income Plc",
-          "symbol": "JEMI",
-          "pct": -2.94
+          "name": "Vistry Group Plc",
+          "symbol": "VTY",
+          "pct": -2.33
         },
         {
           "name": "Ocado Group plc",
           "symbol": "OCDO",
-          "pct": -2.53
+          "pct": -1.8
         }
       ],
       "breadth": {
-        "up": 130,
-        "down": 97,
-        "flat": 24,
+        "up": 157,
+        "down": 74,
+        "flat": 20,
         "priced": 251,
-        "median": 0.09
+        "median": 0.36
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,17 +250,17 @@
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 7.621245485464286
+          "pct": 8.006158430928943
         },
         {
           "name": "Longfor Group Holdings Limited",
           "symbol": "0960.HK",
-          "pct": 6.315793489155016
+          "pct": 6.210527921977796
         },
         {
           "name": "Zhongsheng Group Holdings Limited",
           "symbol": "0881.HK",
-          "pct": 4.956897105423663
+          "pct": 4.741385201707776
         }
       ],
       "bottom": [
@@ -272,20 +272,20 @@
         {
           "name": "WH Group Limited",
           "symbol": "0288.HK",
-          "pct": -2.6415123129790685
+          "pct": -2.5660388874557785
         },
         {
-          "name": "WuXi AppTec Co., Ltd.",
-          "symbol": "2359.HK",
-          "pct": -2.2931236109444004
+          "name": "Pop Mart International Group Limited",
+          "symbol": "9992.HK",
+          "pct": -2.268043334541452
         }
       ],
       "breadth": {
-        "up": 50,
-        "down": 35,
-        "flat": 0,
+        "up": 53,
+        "down": 30,
+        "flat": 2,
         "priced": 85,
-        "median": 0.58
+        "median": 0.67
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": 8.776567564764273
+          "pct": 5.146203589485868
         },
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 4.483730603979092
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": 3.955226158028218
         },
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": 3.8224134047610994
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 3.592161793549992
         }
       ],
       "bottom": [
         {
-          "name": "Nordea Bank Abp",
-          "symbol": "NDA-FI.HE",
-          "pct": -7.037689794111931
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": -0.9227524683998635
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -6.070455082713804
+          "name": "Sanofi",
+          "symbol": "SAN.PA",
+          "pct": -0.7621993124241131
         },
         {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": -3.3850216168107075
+          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
+          "symbol": "MUV2.DE",
+          "pct": -0.5873737662871051
         }
       ],
       "breadth": {
         "up": 37,
-        "down": 13,
-        "flat": 0,
+        "down": 11,
+        "flat": 2,
         "priced": 50,
-        "median": 1.38
+        "median": 0.63
       },
       "built": "3 spark batches"
     },

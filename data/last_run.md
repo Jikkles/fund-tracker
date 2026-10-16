@@ -5,27 +5,23 @@ Window: 16 Sep 2026 to 16 Oct 2026
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
-- **62** catalyst dates refreshed (4 confirmed, 0 provisional, 19 estimated)
-
-## Maintenance needed
-
-- UK monthly GDP: no upcoming release resolved from the ONS release calendar. The catalyst will show no date until it does.
+- **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +1.38% |
-| FTSE 250 | +1.68% |
+| FTSE 100 | +1.39% |
+| FTSE 250 | +1.99% |
 | S&P 500 | +2.55% |
 | Nasdaq 100 | +3.42% |
-| Euro STOXX 50 | -1.03% |
+| Euro STOXX 50 | -0.93% |
 | Nikkei 225 | +2.19% |
-| Hang Seng | -2.16% |
-| Gold (USD/oz) | -4.19% |
-| Brent crude | -2.97% |
+| Hang Seng | -2.13% |
+| Gold (USD/oz) | -4.21% |
+| Brent crude | +0.45% |
 | US 10yr yield | +1.66% |
-| GBP/USD | -1.17% |
+| GBP/USD | -1.00% |
 
 ## Fund NAV figures (1 month)
 
