@@ -6191,7 +6191,7 @@
         "nav3yr": "+50.84%",
         "nav5yr": "+92.77%",
         "navAsAt": "2026-10-15",
-        "navPoints": 2346,
+        "navPoints": 2345,
         "nav1w": "+0.53%",
         "navYtd": "+17.80%",
         "navVol": "13.9%",
@@ -11365,9 +11365,9 @@
         "nav3yr": "+39.46%",
         "nav5yr": "+66.94%",
         "navAsAt": "2026-10-15",
-        "navPoints": 2461,
+        "navPoints": 2460,
         "navYtd": "+12.54%",
-        "navVol": "11.5%",
+        "navVol": "11.6%",
         "navVolYears": 5,
         "navYears": [
           {
@@ -28861,7 +28861,7 @@
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
-        "navVol": "7.9%",
+        "navVol": "8.0%",
         "navVolYears": 5,
         "navYears": [
           {
@@ -28952,15 +28952,6 @@
     "runDate": "17 Oct 2026",
     "summary": "17 Oct 2026 automated run (deterministic, no LLM). Priced 103 funds from their own published NAV series and 0 tracker funds from GBP ETF proxies; 0 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 69 catalyst entries (5 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age.",
     "findings": [
-      {
-        "fundId": "ALL",
-        "fundName": "Research maintenance",
-        "check": "RESEARCH-STALE",
-        "severity": "MEDIUM",
-        "description": "1 fund has trailing cumulative figures older than 120 days: baillie-gifford-strategic-bond (153d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
-        "status": "flagged",
-        "source": null
-      },
       {
         "fundId": "ALL",
         "fundName": "Automated daily run",
@@ -29203,6 +29194,15 @@
         "description": "UK monthly GDP: no upcoming release resolved from the ONS release calendar. The catalyst will show no date until it does.",
         "status": "flagged",
         "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
       },
       {
         "fundId": "ALL",

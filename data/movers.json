@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-17T08:16:39+00:00",
+  "generated": "2026-10-17T10:57:20+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -298,42 +298,42 @@
         {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": 4.3425213807712995
+          "pct": 6.257305182443957
         },
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 4.304382161720494
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": 3.8332192772177245
         },
         {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": 3.31918178309533
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 3.5195981113926225
         }
       ],
       "bottom": [
         {
-          "name": "Nordea Bank Abp",
-          "symbol": "NDA-FI.HE",
-          "pct": -7.832744167028928
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": -4.086475217199395
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -5.20324721375469
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": -1.8217042435047237
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": -4.187933650365756
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": -1.0086950456133539
         }
       ],
       "breadth": {
-        "up": 34,
-        "down": 16,
-        "flat": 0,
+        "up": 40,
+        "down": 7,
+        "flat": 3,
         "priced": 50,
-        "median": 0.78
+        "median": 0.65
       },
       "built": "3 spark batches"
     },
