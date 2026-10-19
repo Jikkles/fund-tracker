@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19T08:05:08+00:00",
+  "generated": "2026-10-19T13:40:14+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "RELX plc",
-          "symbol": "REL",
-          "pct": 0.89
+          "name": "Marks & Spencer Group plc",
+          "symbol": "MKS",
+          "pct": 0.58
         },
         {
-          "name": "London Stock Exchange Group plc",
-          "symbol": "LSEG",
-          "pct": 0.8
+          "name": "Land Securities Group plc",
+          "symbol": "LAND",
+          "pct": 0.54
         },
         {
-          "name": "Sage Group plc",
-          "symbol": "SGE",
-          "pct": 0.76
+          "name": "Sainsbury (J) plc",
+          "symbol": "SBRY",
+          "pct": 0.31
         }
       ],
       "bottom": [
         {
-          "name": "3i Group Plc",
-          "symbol": "III",
-          "pct": -4.29
-        },
-        {
-          "name": "BAE Systems plc",
-          "symbol": "BA.",
-          "pct": -2.7
+          "name": "Barclays plc",
+          "symbol": "BARC",
+          "pct": -3.85
         },
         {
           "name": "Anglo American Plc",
           "symbol": "AAL",
-          "pct": -2.67
+          "pct": -3.76
+        },
+        {
+          "name": "WPP plc",
+          "symbol": "WPP",
+          "pct": -3.2
         }
       ],
       "breadth": {
-        "up": 16,
-        "down": 82,
+        "up": 9,
+        "down": 89,
         "flat": 2,
         "priced": 100,
-        "median": -0.73
+        "median": -1.06
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Pets At Home Group PLC",
-          "symbol": "PETS",
-          "pct": 4.06
-        },
-        {
           "name": "Ocado Group plc",
           "symbol": "OCDO",
-          "pct": 3.09
+          "pct": 5.43
         },
         {
-          "name": "Meridian Mining Plc",
-          "symbol": "MNO",
-          "pct": 2.78
+          "name": "Pets At Home Group PLC",
+          "symbol": "PETS",
+          "pct": 4.42
+        },
+        {
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 3.5
         }
       ],
       "bottom": [
         {
           "name": "Volex Plc",
           "symbol": "VLX",
-          "pct": -4.55
+          "pct": -8.48
         },
         {
           "name": "Baltic Classifieds Group plc",
           "symbol": "BCG",
-          "pct": -3.34
+          "pct": -5.17
         },
         {
-          "name": "Entain plc",
-          "symbol": "ENT",
-          "pct": -3.31
+          "name": "Morgan Advanced Materials plc",
+          "symbol": "MGAM",
+          "pct": -4.04
         }
       ],
       "breadth": {
-        "up": 58,
-        "down": 153,
-        "flat": 40,
+        "up": 49,
+        "down": 185,
+        "flat": 17,
         "priced": 251,
-        "median": -0.26
+        "median": -0.65
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -104,44 +104,44 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Targa Resources Corp.",
-          "symbol": "TRGP",
-          "pct": 4.370910152919481
+          "name": "Moderna, Inc.",
+          "symbol": "MRNA",
+          "pct": 6.935466610225734
         },
         {
-          "name": "Diamondback Energy, Inc.",
-          "symbol": "FANG",
-          "pct": 4.268911341601682
+          "name": "Sandisk Corporation",
+          "symbol": "SNDK",
+          "pct": 5.511484267088669
         },
         {
-          "name": "Kinder Morgan, Inc.",
-          "symbol": "KMI",
-          "pct": 4.204756492830996
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": 5.325558808148469
         }
       ],
       "bottom": [
         {
-          "name": "Twilio Inc.",
-          "symbol": "TWLO",
-          "pct": -10.618141707160502
+          "name": "Skydance Corporation",
+          "symbol": "SKYD",
+          "pct": -3.1837886403723057
         },
         {
-          "name": "Super Micro Computer, Inc.",
-          "symbol": "SMCI",
-          "pct": -9.860361860289458
+          "name": "Domino's Pizza, Inc.",
+          "symbol": "DPZ",
+          "pct": -2.6130773906918225
         },
         {
-          "name": "Flex Ltd.",
-          "symbol": "FLEX",
-          "pct": -8.162437477692734
+          "name": "Ameriprise Financial, Inc.",
+          "symbol": "AMP",
+          "pct": -2.5982415585805283
         }
       ],
       "breadth": {
-        "up": 249,
-        "down": 254,
+        "up": 213,
+        "down": 290,
         "flat": 0,
         "priced": 503,
-        "median": -0.02
+        "median": -0.13
       },
       "built": "26 spark batches"
     },
@@ -152,44 +152,44 @@
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Diamondback Energy, Inc.",
-          "symbol": "FANG",
-          "pct": 4.268911341601682
+          "name": "Moderna, Inc.",
+          "symbol": "MRNA",
+          "pct": 7.018028272679978
         },
         {
-          "name": "Honeywell Aerospace Inc.",
-          "symbol": "HONA",
-          "pct": 3.053151682241496
+          "name": "Sandisk Corporation",
+          "symbol": "SNDK",
+          "pct": 5.475632631977892
         },
         {
-          "name": "PepsiCo, Inc.",
-          "symbol": "PEP",
-          "pct": 2.4224960991319677
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": 5.325558808148469
         }
       ],
       "bottom": [
         {
-          "name": "Nebius Group N.V.",
-          "symbol": "NBIS",
-          "pct": -12.175575604014305
+          "name": "Copart, Inc.",
+          "symbol": "CPRT",
+          "pct": -1.4890595731275869
         },
         {
-          "name": "CoreWeave, Inc.",
-          "symbol": "CRWV",
-          "pct": -11.909890602653176
+          "name": "Booking Holdings Inc.",
+          "symbol": "BKNG",
+          "pct": -1.1196095841067364
         },
         {
-          "name": "Strategy Inc",
-          "symbol": "MSTR",
-          "pct": -9.557797671211558
+          "name": "Honeywell Aerospace Inc.",
+          "symbol": "HONA",
+          "pct": -0.797189819194829
         }
       ],
       "breadth": {
-        "up": 32,
-        "down": 69,
+        "up": 65,
+        "down": 36,
         "flat": 0,
         "priced": 101,
-        "median": -1.5
+        "median": 0.39
       },
       "built": "6 spark batches"
     },
@@ -200,44 +200,44 @@
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Chevron Corporation",
-          "symbol": "CVX",
-          "pct": 2.5852626206433627
+          "name": "Amazon.com, Inc.",
+          "symbol": "AMZN",
+          "pct": 2.44000244140625
         },
         {
-          "name": "The Coca-Cola Company",
-          "symbol": "KO",
-          "pct": 2.0652190498683765
+          "name": "Alphabet Inc.",
+          "symbol": "GOOGL",
+          "pct": 0.7560445799108693
         },
         {
-          "name": "The Travelers Companies, Inc.",
-          "symbol": "TRV",
-          "pct": 1.4717741230280712
+          "name": "Merck & Co., Inc.",
+          "symbol": "MRK",
+          "pct": 0.5858141455407273
         }
       ],
       "bottom": [
         {
-          "name": "Alphabet Inc.",
-          "symbol": "GOOGL",
-          "pct": -2.471222969087167
+          "name": "The Sherwin-Williams Company",
+          "symbol": "SHW",
+          "pct": -0.8815683121212501
         },
         {
-          "name": "Salesforce, Inc.",
-          "symbol": "CRM",
-          "pct": -2.447924297014419
+          "name": "The Walt Disney Company",
+          "symbol": "DIS",
+          "pct": -0.8454630523153375
         },
         {
-          "name": "Cisco Systems, Inc.",
-          "symbol": "CSCO",
-          "pct": -2.2394165850190637
+          "name": "The Procter & Gamble Company",
+          "symbol": "PG",
+          "pct": -0.7530669350911151
         }
       ],
       "breadth": {
-        "up": 14,
-        "down": 16,
-        "flat": 0,
+        "up": 11,
+        "down": 18,
+        "flat": 1,
         "priced": 30,
-        "median": -0.05
+        "median": -0.25
       },
       "built": "2 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Wolters Kluwer N.V.",
           "symbol": "WKL.AS",
-          "pct": 2.870466221350345
+          "pct": 2.1344523611582567
         },
         {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": 0.9883629934233088
+          "pct": 1.543463957606926
         },
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 0.5201318793244657
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": 1.0879933221317104
         }
       ],
       "bottom": [
         {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -3.751596420435167
+          "pct": -3.247101809690784
         },
         {
-          "name": "Airbus SE",
-          "symbol": "AIR.PA",
-          "pct": -2.6254909105756097
+          "name": "BNP Paribas SA",
+          "symbol": "BNP.PA",
+          "pct": -3.216085745019935
         },
         {
-          "name": "UniCredit S.p.A.",
-          "symbol": "UCG.MI",
-          "pct": -2.4281481089836796
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -3.0440395945826553
         }
       ],
       "breadth": {
-        "up": 8,
-        "down": 42,
+        "up": 6,
+        "down": 44,
         "flat": 0,
         "priced": 50,
-        "median": -1.02
+        "median": -1.7
       },
       "built": "3 spark batches"
     },
