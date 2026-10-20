@@ -1,387 +1,387 @@
 {
-  "generated": "2026-10-19T13:40:14+00:00",
+  "generated": "2026-10-20T08:04:23+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Marks & Spencer Group plc",
-          "symbol": "MKS",
-          "pct": 0.58
+          "name": "Tesco plc",
+          "symbol": "TSCO",
+          "pct": 1.19
         },
         {
-          "name": "Land Securities Group plc",
-          "symbol": "LAND",
-          "pct": 0.54
-        },
-        {
-          "name": "Sainsbury (J) plc",
-          "symbol": "SBRY",
-          "pct": 0.31
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Barclays plc",
-          "symbol": "BARC",
-          "pct": -3.85
+          "name": "Coca-Cola HBC AG",
+          "symbol": "CCH",
+          "pct": 1.07
         },
         {
           "name": "Anglo American Plc",
           "symbol": "AAL",
-          "pct": -3.76
+          "pct": 1.0
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Diploma plc",
+          "symbol": "DPLM",
+          "pct": -3.53
         },
         {
-          "name": "WPP plc",
-          "symbol": "WPP",
-          "pct": -3.2
+          "name": "Halma plc",
+          "symbol": "HLMA",
+          "pct": -2.99
+        },
+        {
+          "name": "Weir plc",
+          "symbol": "WEIR",
+          "pct": -2.89
         }
       ],
       "breadth": {
-        "up": 9,
-        "down": 89,
-        "flat": 2,
+        "up": 38,
+        "down": 61,
+        "flat": 1,
         "priced": 100,
-        "median": -1.06
+        "median": -0.29
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
           "name": "Ocado Group plc",
           "symbol": "OCDO",
-          "pct": 5.43
+          "pct": 5.61
         },
         {
-          "name": "Pets At Home Group PLC",
-          "symbol": "PETS",
-          "pct": 4.42
+          "name": "Wickes Group Plc",
+          "symbol": "WIX",
+          "pct": 3.94
         },
         {
-          "name": "Oxford Nanopore Technologies plc",
-          "symbol": "ONT",
-          "pct": 3.5
+          "name": "Cordiant Digital Infrastructure Limited",
+          "symbol": "CORD",
+          "pct": 1.71
         }
       ],
       "bottom": [
         {
-          "name": "Volex Plc",
-          "symbol": "VLX",
-          "pct": -8.48
+          "name": "Genuit Group plc",
+          "symbol": "GEN",
+          "pct": -15.4
         },
         {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": -5.17
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": -4.81
         },
         {
-          "name": "Morgan Advanced Materials plc",
-          "symbol": "MGAM",
-          "pct": -4.04
+          "name": "Seraphim Space Investment Trust plc",
+          "symbol": "SSIT",
+          "pct": -4.6
         }
       ],
       "breadth": {
-        "up": 49,
-        "down": 185,
-        "flat": 17,
+        "up": 61,
+        "down": 168,
+        "flat": 22,
         "priced": 251,
-        "median": -0.65
+        "median": -0.51
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Moderna, Inc.",
-          "symbol": "MRNA",
-          "pct": 6.935466610225734
+          "name": "Western Digital Corporation",
+          "symbol": "WDC",
+          "pct": 6.087346823818712
         },
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": 5.511484267088669
+          "pct": 5.527587438624274
         },
         {
           "name": "Datadog, Inc.",
           "symbol": "DDOG",
-          "pct": 5.325558808148469
+          "pct": 5.361978353156092
         }
       ],
       "bottom": [
         {
-          "name": "Skydance Corporation",
-          "symbol": "SKYD",
-          "pct": -3.1837886403723057
+          "name": "The Mosaic Company",
+          "symbol": "MOS",
+          "pct": -4.782144703104255
         },
         {
-          "name": "Domino's Pizza, Inc.",
-          "symbol": "DPZ",
-          "pct": -2.6130773906918225
+          "name": "NRG Energy, Inc.",
+          "symbol": "NRG",
+          "pct": -4.212050840079066
         },
         {
           "name": "Ameriprise Financial, Inc.",
           "symbol": "AMP",
-          "pct": -2.5982415585805283
+          "pct": -4.071482553487725
         }
       ],
       "breadth": {
-        "up": 213,
-        "down": 290,
-        "flat": 0,
+        "up": 176,
+        "down": 324,
+        "flat": 3,
         "priced": 503,
-        "median": -0.13
+        "median": -0.5
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Moderna, Inc.",
-          "symbol": "MRNA",
-          "pct": 7.018028272679978
+          "name": "Western Digital Corporation",
+          "symbol": "WDC",
+          "pct": 6.087346823818712
         },
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": 5.475632631977892
+          "pct": 5.527587438624274
         },
         {
           "name": "Datadog, Inc.",
           "symbol": "DDOG",
-          "pct": 5.325558808148469
+          "pct": 5.361978353156092
         }
       ],
       "bottom": [
         {
-          "name": "Copart, Inc.",
-          "symbol": "CPRT",
-          "pct": -1.4890595731275869
-        },
-        {
-          "name": "Booking Holdings Inc.",
-          "symbol": "BKNG",
-          "pct": -1.1196095841067364
-        },
-        {
           "name": "Honeywell Aerospace Inc.",
           "symbol": "HONA",
-          "pct": -0.797189819194829
+          "pct": -3.3315432011013857
+        },
+        {
+          "name": "Constellation Energy Corporation",
+          "symbol": "CEG",
+          "pct": -3.014332027477404
+        },
+        {
+          "name": "Exelon Corporation",
+          "symbol": "EXC",
+          "pct": -2.505747477213542
         }
       ],
       "breadth": {
-        "up": 65,
-        "down": 36,
-        "flat": 0,
+        "up": 59,
+        "down": 40,
+        "flat": 2,
         "priced": 101,
-        "median": 0.39
+        "median": 0.33
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
           "name": "Amazon.com, Inc.",
           "symbol": "AMZN",
-          "pct": 2.44000244140625
+          "pct": 4.9800048828125
         },
         {
-          "name": "Alphabet Inc.",
-          "symbol": "GOOGL",
-          "pct": 0.7560445799108693
+          "name": "International Business Machines Corporation",
+          "symbol": "IBM",
+          "pct": 1.8307917684045258
         },
         {
-          "name": "Merck & Co., Inc.",
-          "symbol": "MRK",
-          "pct": 0.5858141455407273
+          "name": "NVIDIA Corporation",
+          "symbol": "NVDA",
+          "pct": 1.382333810106644
         }
       ],
       "bottom": [
         {
-          "name": "The Sherwin-Williams Company",
-          "symbol": "SHW",
-          "pct": -0.8815683121212501
+          "name": "JPMorgan Chase & Co.",
+          "symbol": "JPM",
+          "pct": -1.8220894910997134
         },
         {
-          "name": "The Walt Disney Company",
-          "symbol": "DIS",
-          "pct": -0.8454630523153375
+          "name": "Amgen Inc.",
+          "symbol": "AMGN",
+          "pct": -1.7457023199258923
         },
         {
-          "name": "The Procter & Gamble Company",
-          "symbol": "PG",
-          "pct": -0.7530669350911151
+          "name": "3M Company",
+          "symbol": "MMM",
+          "pct": -1.6631292826488997
         }
       ],
       "breadth": {
-        "up": 11,
+        "up": 12,
         "down": 18,
-        "flat": 1,
+        "flat": 0,
         "priced": 30,
-        "median": -0.25
+        "median": -0.21
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": 8.006158430928943
+          "name": "Hansoh Pharmaceutical Group Company Limited",
+          "symbol": "3692.HK",
+          "pct": 8.317584486561154
         },
         {
-          "name": "Longfor Group Holdings Limited",
-          "symbol": "0960.HK",
-          "pct": 6.210527921977796
+          "name": "Sunny Optical Technology (Group) Company Limited",
+          "symbol": "2382.HK",
+          "pct": 4.766031132821609
         },
         {
-          "name": "Zhongsheng Group Holdings Limited",
-          "symbol": "0881.HK",
-          "pct": 4.741385201707776
+          "name": "WuXi Biologics (Cayman) Inc.",
+          "symbol": "2269.HK",
+          "pct": 3.4024883064097753
         }
       ],
       "bottom": [
         {
-          "name": "China Life Insurance Company Limited",
-          "symbol": "2628.HK",
-          "pct": -2.878284804172074
-        },
-        {
-          "name": "WH Group Limited",
-          "symbol": "0288.HK",
-          "pct": -2.5660388874557785
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": -10.121169660159545
         },
         {
           "name": "Pop Mart International Group Limited",
           "symbol": "9992.HK",
-          "pct": -2.268043334541452
+          "pct": -4.078764540247418
+        },
+        {
+          "name": "Orient Overseas (International) Limited",
+          "symbol": "0316.HK",
+          "pct": -3.922791290367144
         }
       ],
       "breadth": {
-        "up": 53,
-        "down": 30,
-        "flat": 2,
+        "up": 28,
+        "down": 54,
+        "flat": 3,
         "priced": 85,
-        "median": 0.67
+        "median": -0.59
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
           "name": "Wolters Kluwer N.V.",
           "symbol": "WKL.AS",
-          "pct": 2.1344523611582567
+          "pct": 3.7291474984204473
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 1.543463957606926
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": 2.253989137486643
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 1.0879933221317104
+          "name": "Koninklijke Ahold Delhaize N.V.",
+          "symbol": "AD.AS",
+          "pct": 1.9777483855909126
         }
       ],
       "bottom": [
         {
+          "name": "Siemens Aktiengesellschaft",
+          "symbol": "SIE.DE",
+          "pct": -5.486787799598564
+        },
+        {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -3.247101809690784
+          "pct": -4.586314643130751
         },
         {
-          "name": "BNP Paribas SA",
-          "symbol": "BNP.PA",
-          "pct": -3.216085745019935
-        },
-        {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": -3.0440395945826553
+          "name": "Deutsche Bank Aktiengesellschaft",
+          "symbol": "DBK.DE",
+          "pct": -4.312988042751402
         }
       ],
       "breadth": {
-        "up": 6,
-        "down": 44,
-        "flat": 0,
+        "up": 11,
+        "down": 38,
+        "flat": 1,
         "priced": 50,
-        "median": -1.7
+        "median": -1.31
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-10-19",
+      "asAt": "2026-10-20",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
           "name": "Toho Co., Ltd.",
           "symbol": "9602.T",
-          "pct": 7.044560943643513
+          "pct": 4.928068564432201
         },
         {
-          "name": "SHIFT Inc.",
-          "symbol": "3697.T",
-          "pct": 5.482041587901701
+          "name": "Terumo Corporation",
+          "symbol": "4543.T",
+          "pct": 2.841880341880342
         },
         {
-          "name": "Baycurrent, Inc.",
-          "symbol": "6532.T",
-          "pct": 5.345757724374693
+          "name": "Olympus Corporation",
+          "symbol": "7733.T",
+          "pct": 2.6706231454005933
         }
       ],
       "bottom": [
         {
-          "name": "Taiyo Yuden Co., Ltd.",
-          "symbol": "6976.T",
-          "pct": -4.846077457795432
+          "name": "Resonac Holdings Corporation",
+          "symbol": "4004.T",
+          "pct": -10.800385728061716
         },
         {
-          "name": "Trend Micro Incorporated",
-          "symbol": "4704.T",
-          "pct": -4.206370814048461
+          "name": "Fujikura Ltd.",
+          "symbol": "5803.T",
+          "pct": -6.470325747434182
         },
         {
-          "name": "Mercari, Inc.",
-          "symbol": "4385.T",
-          "pct": -3.9518450667364564
+          "name": "Sumco Corporation",
+          "symbol": "3436.T",
+          "pct": -6.29817634893777
         }
       ],
       "breadth": {
-        "up": 110,
-        "down": 107,
-        "flat": 6,
+        "up": 76,
+        "down": 143,
+        "flat": 4,
         "priced": 223,
-        "median": 0.0
+        "median": -0.95
       },
       "built": "12 spark batches"
     }
