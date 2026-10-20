@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-20T08:04:23+00:00",
+  "generated": "2026-10-20T11:51:21+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": 1.83
+        },
+        {
           "name": "Tesco plc",
           "symbol": "TSCO",
           "pct": 1.19
         },
         {
-          "name": "Coca-Cola HBC AG",
-          "symbol": "CCH",
-          "pct": 1.07
-        },
-        {
-          "name": "Anglo American Plc",
-          "symbol": "AAL",
-          "pct": 1.0
+          "name": "National Grid",
+          "symbol": "NG.",
+          "pct": 1.05
         }
       ],
       "bottom": [
         {
-          "name": "Diploma plc",
-          "symbol": "DPLM",
-          "pct": -3.53
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": -4.2
         },
         {
           "name": "Halma plc",
           "symbol": "HLMA",
-          "pct": -2.99
+          "pct": -3.69
         },
         {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": -2.89
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": -3.08
         }
       ],
       "breadth": {
-        "up": 38,
-        "down": 61,
+        "up": 28,
+        "down": 71,
         "flat": 1,
         "priced": 100,
-        "median": -0.29
+        "median": -0.67
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Ocado Group plc",
           "symbol": "OCDO",
-          "pct": 5.61
+          "pct": 6.43
         },
         {
           "name": "Wickes Group Plc",
           "symbol": "WIX",
-          "pct": 3.94
+          "pct": 4.18
         },
         {
-          "name": "Cordiant Digital Infrastructure Limited",
-          "symbol": "CORD",
-          "pct": 1.71
+          "name": "Trainline plc",
+          "symbol": "TRN",
+          "pct": 2.21
         }
       ],
       "bottom": [
         {
           "name": "Genuit Group plc",
           "symbol": "GEN",
-          "pct": -15.4
+          "pct": -14.92
+        },
+        {
+          "name": "THG plc",
+          "symbol": "THG",
+          "pct": -7.08
         },
         {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -4.81
-        },
-        {
-          "name": "Seraphim Space Investment Trust plc",
-          "symbol": "SSIT",
-          "pct": -4.6
+          "pct": -6.1
         }
       ],
       "breadth": {
-        "up": 61,
-        "down": 168,
-        "flat": 22,
+        "up": 43,
+        "down": 199,
+        "flat": 9,
         "priced": 251,
-        "median": -0.51
+        "median": -0.91
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -255,19 +255,19 @@
         {
           "name": "Sunny Optical Technology (Group) Company Limited",
           "symbol": "2382.HK",
-          "pct": 4.766031132821609
+          "pct": 4.506063153799931
         },
         {
           "name": "WuXi Biologics (Cayman) Inc.",
           "symbol": "2269.HK",
-          "pct": 3.4024883064097753
+          "pct": 3.838171047382101
         }
       ],
       "bottom": [
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -10.121169660159545
+          "pct": -9.97861471971525
         },
         {
           "name": "Pop Mart International Group Limited",
@@ -275,17 +275,17 @@
           "pct": -4.078764540247418
         },
         {
-          "name": "Orient Overseas (International) Limited",
-          "symbol": "0316.HK",
-          "pct": -3.922791290367144
+          "name": "CITIC Limited",
+          "symbol": "0267.HK",
+          "pct": -3.7296002059403017
         }
       ],
       "breadth": {
-        "up": 28,
-        "down": 54,
-        "flat": 3,
+        "up": 29,
+        "down": 55,
+        "flat": 1,
         "priced": 85,
-        "median": -0.59
+        "median": -0.56
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 3.7291474984204473
-        },
-        {
           "name": "argenx SE",
           "symbol": "ARGX.BR",
-          "pct": 2.253989137486643
+          "pct": 2.9871181361478754
         },
         {
-          "name": "Koninklijke Ahold Delhaize N.V.",
-          "symbol": "AD.AS",
-          "pct": 1.9777483855909126
+          "name": "Sanofi",
+          "symbol": "SAN.PA",
+          "pct": 2.027876029702314
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": 1.6261688668013843
         }
       ],
       "bottom": [
         {
           "name": "Siemens Aktiengesellschaft",
           "symbol": "SIE.DE",
-          "pct": -5.486787799598564
+          "pct": -3.4936205424791598
         },
         {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": -4.586314643130751
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": -3.325419221023736
         },
         {
-          "name": "Deutsche Bank Aktiengesellschaft",
-          "symbol": "DBK.DE",
-          "pct": -4.312988042751402
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": -3.2178191393354485
         }
       ],
       "breadth": {
-        "up": 11,
-        "down": 38,
+        "up": 23,
+        "down": 26,
         "flat": 1,
         "priced": 50,
-        "median": -1.31
+        "median": -0.19
       },
       "built": "3 spark batches"
     },

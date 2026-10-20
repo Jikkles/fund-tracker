@@ -11,17 +11,17 @@ Window: 20 Sep 2026 to 20 Oct 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.15% |
-| FTSE 250 | -1.09% |
+| FTSE 100 | -0.31% |
+| FTSE 250 | -1.39% |
 | S&P 500 | -0.95% |
 | Nasdaq 100 | -3.13% |
-| Euro STOXX 50 | -3.70% |
+| Euro STOXX 50 | -3.65% |
 | Nikkei 225 | -2.20% |
-| Hang Seng | -4.67% |
-| Gold (USD/oz) | -5.59% |
-| Brent crude | +10.28% |
+| Hang Seng | -4.69% |
+| Gold (USD/oz) | -5.54% |
+| Brent crude | +11.15% |
 | US 10yr yield | +3.49% |
-| GBP/USD | -0.30% |
+| GBP/USD | -0.34% |
 
 ## Fund NAV figures (1 month)
 
@@ -48,7 +48,7 @@ Window: 20 Sep 2026 to 20 Oct 2026
 | bny-mellon-multi-asset-balanced | 0P0000X2GH.L | +0.34% | 19 Oct 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | +0.31% | 19 Oct 2026 |
 | bny-mellon-real-return | 0P000156WB.L | -0.97% | 19 Oct 2026 |
-| bny-mellon-us-equity-income | 0P00019MND.L | +0.36% | 16 Oct 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | +1.10% | 16 Oct 2026 |
 | ct-european-select | 0P0000X3IE.L | -2.69% | 19 Oct 2026 |
 | ct-latin-america | 0P00000R15.L | +7.54% | 19 Oct 2026 |
 | fidelity-american-special-situations | 0P0000WUU7.L | +1.92% | 19 Oct 2026 |
@@ -106,7 +106,7 @@ Window: 20 Sep 2026 to 20 Oct 2026
 | mg-emerging-market-bond | 0P0000VPQE.L | -0.99% | 19 Oct 2026 |
 | ninety-one-diversified-income-class-i | 0P0000G5MB.L | +0.28% | 19 Oct 2026 |
 | ninety-one-global-gold-class-i | 0P00009NF8.L | -6.54% | 19 Oct 2026 |
-| polar-capital-european-income | 0P00016CNI.L | +4.21% | 16 Oct 2026 |
+| polar-capital-european-income | 0P00016CNI.L | +3.93% | 16 Oct 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | +2.84% | 19 Oct 2026 |
 | pyrford-global-total-return | 0P000170AF.L | +0.39% | 19 Oct 2026 |
 | rathbone-global-opportunities | 0P0001FE43.L | +2.59% | 19 Oct 2026 |
@@ -134,7 +134,7 @@ Window: 20 Sep 2026 to 20 Oct 2026
 
 | Fund | Proxy | Change |
 |---|---|---|
-| ishares-japan-equity-index | IJPA.L | -2.63% |
+| ishares-japan-equity-index | IJPA.L | -2.86% |
 
 ---
 
