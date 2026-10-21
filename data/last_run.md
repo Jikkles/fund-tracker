@@ -11,17 +11,17 @@ Window: 21 Sep 2026 to 21 Oct 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.24% |
-| FTSE 250 | -0.54% |
+| FTSE 100 | -0.05% |
+| FTSE 250 | -0.45% |
 | S&P 500 | -0.67% |
 | Nasdaq 100 | -3.25% |
-| Euro STOXX 50 | -2.81% |
+| Euro STOXX 50 | -2.22% |
 | Nikkei 225 | -1.36% |
-| Hang Seng | -5.59% |
-| Gold (USD/oz) | -5.53% |
-| Brent crude | +9.32% |
+| Hang Seng | -5.55% |
+| Gold (USD/oz) | -5.16% |
+| Brent crude | +8.98% |
 | US 10yr yield | +3.10% |
-| GBP/USD | +0.03% |
+| GBP/USD | +0.08% |
 
 ## Fund NAV figures (1 month)
 
@@ -133,7 +133,7 @@ Window: 21 Sep 2026 to 21 Oct 2026
 
 | Fund | Proxy | Change |
 |---|---|---|
-| ishares-japan-equity-index | IJPA.L | -1.58% |
+| ishares-japan-equity-index | IJPA.L | -1.45% |
 
 ---
 
