@@ -11,17 +11,17 @@ Window: 22 Sep 2026 to 22 Oct 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.31% |
-| FTSE 250 | -1.18% |
+| FTSE 100 | +0.12% |
+| FTSE 250 | -1.15% |
 | S&P 500 | -0.10% |
 | Nasdaq 100 | -2.96% |
-| Euro STOXX 50 | -3.41% |
+| Euro STOXX 50 | -3.26% |
 | Nikkei 225 | -3.98% |
-| Hang Seng | -8.77% |
-| Gold (USD/oz) | -6.28% |
-| Brent crude | +13.26% |
+| Hang Seng | -8.58% |
+| Gold (USD/oz) | -6.88% |
+| Brent crude | +12.73% |
 | US 10yr yield | +3.58% |
-| GBP/USD | +0.26% |
+| GBP/USD | +0.03% |
 
 ## Fund NAV figures (1 month)
 
@@ -91,15 +91,15 @@ Window: 22 Sep 2026 to 22 Oct 2026
 | lg-future-world-esg-developed | 0P0001JZH4.L | -0.34% | 21 Oct 2026 |
 | lg-future-world-esg-emerging-markets | 0P0001NMWZ.L | -7.25% | 21 Oct 2026 |
 | lg-future-world-esg-uk | 0P0001JZH6.L | +0.21% | 21 Oct 2026 |
-| lg-global-inflation-linked-bond-index | 0P000102MS.L | -0.26% | 21 Oct 2026 |
+| lg-global-inflation-linked-bond-index | 0P000102MS.L | -0.34% | 20 Oct 2026 |
 | lg-global-real-estate-dividend-index | 0P00016MMV.L | -1.93% | 21 Oct 2026 |
 | lg-global-technology-index | 0P0001FVLM.L | -3.07% | 21 Oct 2026 |
-| lg-international-index | 0P000102M4.L | -0.73% | 21 Oct 2026 |
+| lg-international-index | 0P000102M4.L | -1.42% | 20 Oct 2026 |
 | lg-strategic-bond | 0P00008Y97.L | -2.08% | 20 Oct 2026 |
 | lg-uk-100-index | 0P000102MC.L | -0.04% | 21 Oct 2026 |
 | lg-uk-index | 0P000102ME.L | -0.02% | 21 Oct 2026 |
 | lg-uk-mid-cap-index | 0P00013WXJ.L | +0.76% | 21 Oct 2026 |
-| lg-us-index | 0P000102MM.L | +0.19% | 21 Oct 2026 |
+| lg-us-index | 0P000102MM.L | -0.19% | 20 Oct 2026 |
 | liontrust-sf-corporate-bond | 0P0000Y3XU.L | -1.23% | 21 Oct 2026 |
 | liontrust-uk-growth | 0P0001S8W9.L | +4.83% | 21 Oct 2026 |
 | man-glg-continental-european-growth | 0P000029BY.L | -2.28% | 21 Oct 2026 |

@@ -95,8 +95,8 @@
       "category": "Global Equity Income",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global Equity Income",
       "benchmark": "MSCI ACWI",
@@ -369,7 +369,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-5.19%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000W36K.L",
@@ -380,8 +380,8 @@
       "navSymbol": "0P0000W36K.L",
       "navName": "Artemis Global Income I Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -396,8 +396,8 @@
       "category": "Global Equity Income",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global Equity Income",
       "benchmark": "MSCI ACWI",
@@ -671,7 +671,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+2.59%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000WUT3.L",
@@ -682,8 +682,8 @@
       "navSymbol": "0P0000WUT3.L",
       "navName": "Fidelity Global Dividend W Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -698,8 +698,8 @@
       "category": "Global",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global",
       "benchmark": "MSCI World",
@@ -959,7 +959,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.57%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P0001BM5B.L",
@@ -970,8 +970,8 @@
       "navSymbol": "0P0001BM5B.L",
       "navName": "Lazard Global Eq Franchise C Acc GBP",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -986,8 +986,8 @@
       "category": "Global",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global",
       "benchmark": "MSCI World",
@@ -1241,7 +1241,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.35%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001P4VC.L",
@@ -1252,8 +1252,8 @@
       "navSymbol": "0P0001P4VC.L",
       "navName": "T. Rowe Price Global Value Eq C Acc 9",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -1542,7 +1542,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.50%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000WUT6.L",
@@ -1842,7 +1842,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.02%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000X2GC.L",
@@ -1869,8 +1869,8 @@
       "category": "Global Tracker",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global",
       "benchmark": "MSCI World",
@@ -2143,7 +2143,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.40%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000125KV.L",
@@ -2154,8 +2154,8 @@
       "navSymbol": "0P000125KV.L",
       "navName": "Fidelity Index World P Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -2170,8 +2170,8 @@
       "category": "Global Tracker",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global",
       "benchmark": "FTSE World ex-UK",
@@ -2231,14 +2231,14 @@
         "perfAsAt": "2026-10-16",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
-        "nav1yr": "+17.93%",
-        "nav3yr": "+73.09%",
-        "nav5yr": "+78.82%",
-        "navAsAt": "2026-10-21",
-        "navPoints": 1485,
-        "nav1w": "-1.84%",
-        "nav1m": "-0.73%",
-        "navYtd": "+14.95%",
+        "nav1yr": "+17.45%",
+        "nav3yr": "+71.90%",
+        "nav5yr": "+78.60%",
+        "navAsAt": "2026-10-20",
+        "navPoints": 1484,
+        "nav1w": "-2.52%",
+        "nav1m": "-1.42%",
+        "navYtd": "+14.16%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -2429,10 +2429,10 @@
       "sources": "HL factsheet (ISIN GB00B2Q6HW61)",
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "-0.73%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "value": "-1.42%",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "21 Oct 2026",
+        "asAt": "20 Oct 2026",
         "basis": "nav:0P000102M4.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -2441,8 +2441,8 @@
       "navSymbol": "0P000102M4.L",
       "navName": "L&G International Index C Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -2457,8 +2457,8 @@
       "category": "Global Tracker (ESG)",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global",
       "benchmark": "Solactive L&G Enhanced ESG Developed Markets Index",
@@ -2717,7 +2717,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.34%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001JZH4.L",
@@ -2727,9 +2727,9 @@
       "navSymbol": "0P0001JZH4.L",
       "navName": "L&G Fut Wld ESG Tilted & OptdDevIdxC Acc",
       "navMatch": "stored",
-      "shortlist": true,
+      "shortlist": false,
       "sedol": "BMFXWS9",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "hlSource": "manual",
       "hlSourceNote": "Link pinned from HL SEDOL redirect BMFXWS9. HL abbreviates the name to \"Future Wrld ESG Tilted & Opt Dev I\", which cannot clear the name-overlap floor - the same case as lg-future-world-esg-uk and the EM sibling. The previous link pointed at a monthly fund-update article, not the factsheet.",
       "isinSource": "SEDOL BMFXWS9 read from the fund's HL factsheet - the class HL deals. ISIN derived as GB00+SEDOL+check digit.",
@@ -2747,8 +2747,8 @@
       "category": "Global Small-Cap Tracker",
       "group": "global",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global",
       "benchmark": "MSCI World Small Cap",
@@ -3007,7 +3007,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.01%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P0000N47O.L",
@@ -3017,8 +3017,8 @@
       "navSymbol": "0P0000N47O.L",
       "navName": "Vanguard Glb Small-Cp Idx £ Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "sedol": "B3X1NT0",
       "dealing": {
         "tradeable": true,
@@ -3033,8 +3033,8 @@
       "category": "UK All Companies",
       "group": "uk-growth",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK All Companies",
       "benchmark": "FTSE All-Share (Gross TR)",
@@ -3295,7 +3295,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.38%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 -1.18%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, FTSE 250 -1.15%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000WUU1.L",
@@ -3306,8 +3306,8 @@
       "navSymbol": "0P0000WUU1.L",
       "navName": "Fidelity Special Situations W Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -3322,8 +3322,8 @@
       "category": "UK All Companies",
       "group": "uk-smaller",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK All Companies",
       "benchmark": "FTSE 250 ex-investment trusts",
@@ -3559,7 +3559,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.34%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.18%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.15%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00017MZL.L",
@@ -3570,8 +3570,8 @@
       "navSymbol": "0P00017MZL.L",
       "navName": "FTF ClearBridge UK Mid Cap S Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -3586,8 +3586,8 @@
       "category": "UK All Companies",
       "group": "uk-growth",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK All Companies",
       "benchmark": "FTSE All-Share",
@@ -3788,7 +3788,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.83%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 -1.18%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, FTSE 250 -1.15%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001S8W9.L",
@@ -3799,8 +3799,8 @@
       "navSymbol": "0P0001S8W9.L",
       "navName": "Liontrust UK Growth I Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -3815,8 +3815,8 @@
       "category": "UK Equity Income",
       "group": "uk-income",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK Equity Income",
       "benchmark": "FTSE All-Share",
@@ -4065,7 +4065,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.74%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000KKC3.L",
@@ -4076,8 +4076,8 @@
       "navSymbol": "0P0000KKC3.L",
       "navName": "Artemis Income I Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -4092,8 +4092,8 @@
       "category": "UK Equity Income",
       "group": "uk-income",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK Equity Income",
       "benchmark": "FTSE All-Share",
@@ -4346,7 +4346,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.41%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks I Market context: FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000024AF.L",
@@ -4357,8 +4357,8 @@
       "navName": "Janus Henderson UK Responsible Inc Z Acc",
       "navMatch": "stored",
       "navClassNote": "share class Z used, desk tracks I",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -4624,7 +4624,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+1.28%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000RI1.L",
@@ -4651,8 +4651,8 @@
       "category": "UK Smaller Companies",
       "group": "uk-smaller",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK Smaller Companies",
       "benchmark": "Deutsche Numis SC Ex Invt Com TR GBP",
@@ -4884,7 +4884,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+3.24%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.18%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.15%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000W36H.L",
@@ -4893,8 +4893,8 @@
       "navSymbol": "0P0000W36H.L",
       "navName": "Artemis UK Smaller Companies I Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -4912,8 +4912,8 @@
       "category": "UK Tracker",
       "group": "uk-growth",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK All Companies",
       "benchmark": "FTSE All-Share",
@@ -5173,7 +5173,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.02%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 -1.18%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, FTSE 250 -1.15%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000102ME.L",
@@ -5183,8 +5183,8 @@
       "navSymbol": "0P000102ME.L",
       "navName": "L&G UK Index C Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -5200,8 +5200,8 @@
       "category": "UK Tracker",
       "group": "uk-smaller",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK All Companies",
       "benchmark": "FTSE 250 (including Investment Trusts)",
@@ -5461,7 +5461,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.15%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.18%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.15%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000159K7.L",
@@ -5470,8 +5470,8 @@
       "navSymbol": "0P000159K7.L",
       "navName": "HSBC FTSE 250 Index S Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -5488,8 +5488,8 @@
       "category": "UK Tracker (ESG)",
       "group": "uk-growth",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK All Companies",
       "benchmark": "Solactive L&G Enhanced ESG UK Index",
@@ -5749,7 +5749,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.21%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 -1.18%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, FTSE 250 -1.15%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001JZH6.L",
@@ -5763,8 +5763,8 @@
       "navMatch": "stored",
       "hlSource": "manual",
       "hlClassConfirmed": true,
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "sedol": "BMFXWV2",
       "navSource": "Pinned by hand to the class HL actually deals. The desk was pricing \"L&G Fut Wld ESG Tilted & Optd UKIdxI£Acc\", a class not available through HL, so its charges and therefore its net returns were not the ones this account would earn. 1450 points back to Dec 2020.",
       "hlClassNote": "Resolved. HL's page contradicted itself, titled \"UK Id Accumulation\" over a \"Class C\" heading, while the desk priced Class I - so the class could not be confirmed either way and class-specific fields were skipped. The desk now prices Class C, the class HL deals, so page and desk agree.",
@@ -5781,8 +5781,8 @@
       "category": "US Tracker",
       "group": "us",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA North America",
       "benchmark": "FTSE USA Index (net total return)",
@@ -5840,14 +5840,14 @@
         ],
         "notes": "Refreshed 19 Oct 2026 from Fidelity's factsheet (Legal & General US Index Trust C Class Accumulation, GB00BG0QPL51): trailing figures to 16 Oct 2026 (1/3/5yr; 3 and 5yr annualised); discrete years to 30 Sep 2026. Sector column is the Morningstar US Large-Cap Blend Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables.",
         "perfBasis": "FID",
-        "nav1yr": "+15.49%",
-        "nav3yr": "+72.68%",
-        "nav5yr": "+82.35%",
-        "navAsAt": "2026-10-21",
-        "navPoints": 1485,
-        "nav1w": "-2.08%",
-        "nav1m": "+0.19%",
-        "navYtd": "+13.37%",
+        "nav1yr": "+15.64%",
+        "nav3yr": "+72.03%",
+        "nav5yr": "+82.74%",
+        "navAsAt": "2026-10-20",
+        "navPoints": 1484,
+        "nav1w": "-2.50%",
+        "nav1m": "-0.19%",
+        "navYtd": "+12.94%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -6109,10 +6109,10 @@
       "sources": "HL factsheet (ISIN GB00BG0QPL51); HL research page; Charles Stanley Direct; SEC (NVIDIA 8-K 20 May 2026)",
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
-        "value": "+0.19%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "value": "-0.19%",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "21 Oct 2026",
+        "asAt": "20 Oct 2026",
         "basis": "nav:0P000102MM.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -6121,8 +6121,8 @@
       "navSymbol": "0P000102MM.L",
       "navName": "L&G US Index C Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -6137,8 +6137,8 @@
       "category": "US Equity Income",
       "group": "us",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA North America",
       "benchmark": "S&P 500 NR GBP",
@@ -6191,7 +6191,7 @@
         "nav3yr": "+55.65%",
         "nav5yr": "+90.66%",
         "navAsAt": "2026-10-20",
-        "navPoints": 2348,
+        "navPoints": 2349,
         "nav1w": "+0.15%",
         "navYtd": "+17.63%",
         "navVol": "13.9%",
@@ -6371,7 +6371,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.88%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class E used, desk tracks U Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class E used, desk tracks U Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P00019MND.L",
@@ -6382,8 +6382,8 @@
       "navName": "BNY Mellon US Equity Income GBP E Acc",
       "navMatch": "stored",
       "navClassNote": "share class E used, desk tracks U",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -6401,8 +6401,8 @@
       "category": "US Smaller Companies",
       "group": "us",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA North American Smaller Cos",
       "benchmark": "Russell 2000 (comparator)",
@@ -6643,7 +6643,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.94%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001HDDZ.L",
@@ -6654,8 +6654,8 @@
       "navSymbol": "0P0001HDDZ.L",
       "navName": "Artemis US Smaller Companies I Acc GBP H",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -6919,7 +6919,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.79%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00013YAO.L",
@@ -6946,8 +6946,8 @@
       "category": "£ Strategic Bond",
       "group": "bonds-strategic",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA GBP Strategic Bond",
       "benchmark": "IA £ Strategic Bond sector average",
@@ -7208,7 +7208,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.36%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001GZXO.L",
@@ -7276,8 +7276,8 @@
       "navSymbol": "0P0001GZXO.L",
       "navName": "Artemis High Income I Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -7292,8 +7292,8 @@
       "category": "£ Corporate Bond",
       "group": "bonds-gov",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA GBP Corporate Bond",
       "benchmark": "iBoxx £ Collateralized & Corporates (rolling 3yr)",
@@ -7522,7 +7522,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.84%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001IAS1.L",
@@ -7588,8 +7588,8 @@
       "navSymbol": "0P0001IAS1.L",
       "navName": "Artemis Corporate Bond I Acc GBP",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -7606,8 +7606,8 @@
       "category": "£ Strategic Bond",
       "group": "bonds-strategic",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA GBP Strategic Bond",
       "benchmark": "IA £ Strategic Bond (comparator)",
@@ -7856,7 +7856,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.73%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00015MD1.L",
@@ -7922,8 +7922,8 @@
       "navSymbol": "0P00015MD1.L",
       "navName": "Jupiter Strategic Bond Z Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -8186,7 +8186,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.08%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P00008Y97.L",
@@ -8504,7 +8504,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.87%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000QX1.L",
@@ -8821,7 +8821,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-1.71%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00001SDH.L",
@@ -8906,8 +8906,8 @@
       "category": "Global Corporate Bond Tracker",
       "group": "bonds-strategic",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global Bonds",
       "benchmark": "Bloomberg Global Aggregate Float Adjusted Corporate (GBP hedged)",
@@ -9139,7 +9139,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-0.62%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P0001C5T6.L",
@@ -9207,8 +9207,8 @@
       "navSymbol": "0P0001C5T6.L",
       "navName": "Vanguard Glb Corp Bd Idx £ H Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -9223,8 +9223,8 @@
       "category": "Mixed Investment 40–85% Shares",
       "group": "mixed",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Mixed Investment 40-85% Shares",
       "benchmark": "IA Mixed Invest 40 - 85% Shares",
@@ -9496,7 +9496,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.11%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 -0.31%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.28%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class W used, desk tracks T Market context: FTSE 100 +0.12%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.88%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000X2GH.L",
@@ -9507,8 +9507,8 @@
       "navName": "BNY Mellon Mlt-Asst Balanced Inst W Acc",
       "navMatch": "stored",
       "navClassNote": "share class W used, desk tracks T",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -9785,7 +9785,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.09%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.28%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.88%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001AN93.L",
@@ -9813,8 +9813,8 @@
       "category": "Mixed Investment 40–85% Shares",
       "group": "mixed",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Mixed Investment 40-85% Shares",
       "benchmark": "UK CPI",
@@ -10074,7 +10074,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.00%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.28%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.88%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001HCBD.L",
@@ -10083,8 +10083,8 @@
       "navSymbol": "0P0001HCBD.L",
       "navName": "Baillie Gifford Monthly Income Fd B Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -10102,8 +10102,8 @@
       "category": "Flexible Investment",
       "group": "total-return",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Flexible Investment",
       "benchmark": "UK Retail Price",
@@ -10364,7 +10364,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+0.32%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, Gold (USD/oz) -6.28%, US 10yr yield +3.58%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, Gold (USD/oz) -6.88%, US 10yr yield +3.58%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000170AF.L",
@@ -10374,8 +10374,8 @@
       "navSymbol": "0P000170AF.L",
       "navName": "Pyrford Glbl Tot Ret(Sterling)C GBP Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -10392,8 +10392,8 @@
       "category": "Europe",
       "group": "europe",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Europe Excluding UK",
       "benchmark": "FTSE World Europe ex UK",
@@ -10667,7 +10667,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.88%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000102LY.L",
@@ -10676,8 +10676,8 @@
       "navSymbol": "0P000102LY.L",
       "navName": "L&G European Index C Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -10969,7 +10969,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.36%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000100U2.L",
@@ -11271,7 +11271,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-2.28%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000029BY.L",
@@ -11298,8 +11298,8 @@
       "category": "Europe",
       "group": "europe",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Europe Excluding UK",
       "benchmark": "MSCI Europe ex UK",
@@ -11365,9 +11365,9 @@
         "nav3yr": "+44.10%",
         "nav5yr": "+67.11%",
         "navAsAt": "2026-10-20",
-        "navPoints": 2458,
+        "navPoints": 2459,
         "navYtd": "+12.99%",
-        "navVol": "11.6%",
+        "navVol": "11.5%",
         "navVolYears": 5,
         "navYears": [
           {
@@ -11569,7 +11569,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "+4.13%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P00016CNI.L",
@@ -11578,8 +11578,8 @@
       "navSymbol": "0P00016CNI.L",
       "navName": "Polar Cptl Eurp Ex UK Inc S GBP Hdg Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "navSource": "HL deals the unhedged Class I accumulation line (SEDOL BWX5D39). Yahoo carries no series for it, by ISIN or by name, so the desk prices the GBP-hedged Class S line instead - the only one that exists. This is a currency-hedged share class: its returns exclude the euro/sterling move an unhedged holding would feel, so they are NOT what a Class I holding would have returned. Treat the figures as indicative of the manager, not of the class dealt here.",
       "classCaveat": "Priced on the GBP-hedged Class S; HL deals unhedged Class I.",
       "dealing": {
@@ -11596,8 +11596,8 @@
       "category": "Europe",
       "group": "europe",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Europe Excluding UK",
       "benchmark": "FTSE AW Dv Europe Ex UK TR GBP",
@@ -11826,7 +11826,7 @@
       "countriesNote": "Country breakdown not yet verified — confirm via HL or BlackRock factsheet.",
       "oneMonth": {
         "value": "-5.51%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000T2WM.L",
@@ -11837,8 +11837,8 @@
       "navSymbol": "0P0000T2WM.L",
       "navName": "BlackRock Continental Eurp Inc D Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "navNote": "series restarts 2026-06-15 after a 224.9 -> 4.13909 share-class change",
       "dealing": {
         "tradeable": true,
@@ -11855,8 +11855,8 @@
       "category": "Asia / EM / Japan",
       "group": "em",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global Emerging Markets",
       "benchmark": "MSCI Emerging Markets",
@@ -12133,7 +12133,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-7.45%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Hang Seng -8.77%, S&P 500 -0.10%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 1102 -> 10.86 share-class change Market context: Hang Seng -8.58%, S&P 500 -0.10%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000013TQ.L",
@@ -12143,8 +12143,8 @@
       "navName": "JPM Emerging Markets C Net Acc",
       "navNote": "series restarts 2024-12-17 after a 1102 -> 10.86 share-class change",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -12161,8 +12161,8 @@
       "category": "Asia / EM / Japan",
       "group": "em",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Global Emerging Markets",
       "benchmark": "IA Global Emerging Markets Sector",
@@ -12437,7 +12437,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.66%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, S&P 500 -0.10%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, S&P 500 -0.10%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000XBR9.L",
@@ -12448,8 +12448,8 @@
       "navSymbol": "0P0000XBR9.L",
       "navName": "Invesco Global Emerg Mkts UK Z Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -12465,8 +12465,8 @@
       "category": "Asia / EM / Japan",
       "group": "asia",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Asia Pacific Ex Japan",
       "benchmark": "FTSE All-World Asia Pacific ex Japan (income target: 20% above index)",
@@ -12727,7 +12727,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-5.75%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00017EQ8.L",
@@ -12736,8 +12736,8 @@
       "navSymbol": "0P00017EQ8.L",
       "navName": "Jupiter Asian Income I GBP Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -12754,8 +12754,8 @@
       "category": "Asia / EM / Japan",
       "group": "asia",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Asia Pacific Ex Japan",
       "benchmark": "MSCI AC Asia Ex Japan NR GBP",
@@ -13041,7 +13041,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-9.39%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000ZSZK.L",
@@ -13053,8 +13053,8 @@
       "navSymbol": "0P0000ZSZK.L",
       "navName": "Schroder Asian Alpha Plus L GBP Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -13357,7 +13357,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-6.14%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000H6Q.L",
@@ -13385,8 +13385,8 @@
       "category": "Asia / EM / Japan",
       "group": "asia",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA China/ Greater China",
       "benchmark": "MSCI Golden Dragon",
@@ -13655,7 +13655,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.62%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000EU6.L",
@@ -13666,8 +13666,8 @@
       "navSymbol": "0P00000EU6.L",
       "navName": "FSSA Greater China Growth B GBP Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -13682,8 +13682,8 @@
       "category": "Asia / EM / Japan",
       "group": "japan",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Japan",
       "benchmark": "TOPIX (rolling 5-year)",
@@ -13921,7 +13921,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.00%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000QWA.L",
@@ -13932,8 +13932,8 @@
       "navSymbol": "0P00000QWA.L",
       "navName": "Baillie Gifford Japanese B Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -13948,8 +13948,8 @@
       "category": "Asia / EM / Japan",
       "group": "japan",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Japan",
       "benchmark": "TOPIX; Russell/Nomura Large Cap Value",
@@ -14193,7 +14193,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "not yet verified",
-        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 22 Sep 2026 to 22 Oct 2026: Nikkei 225 -3.98%, GBP/USD +0.26%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
+        "note": "No fund-level figure available (actively managed - no free source publishes fund-level returns). For context, over 22 Sep 2026 to 22 Oct 2026: Nikkei 225 -3.98%, GBP/USD +0.03%. This is market context for the fund's universe, NOT this fund's return - an active manager can diverge sharply from its index in either direction.",
         "confidence": "not verified - market context only",
         "asAt": "22 Oct 2026"
       },
@@ -14202,8 +14202,8 @@
       "navSymbol": "0P0000810W.L",
       "navName": "Man Japan CoreAlpha Profl Acc C",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -14218,8 +14218,8 @@
       "category": "Asia / EM / Japan",
       "group": "asia",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Asia Pacific Ex Japan",
       "benchmark": "FTSE World Asia-Pacific ex-Japan Index",
@@ -14484,7 +14484,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-7.55%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001O7DL.L",
@@ -14496,8 +14496,8 @@
       "navSymbol": "0P0001O7DL.L",
       "navName": "iShares Pacific ex Jpn Eq Idx (UK) S Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -14512,8 +14512,8 @@
       "category": "Asia / EM / Japan",
       "group": "japan",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Japan",
       "benchmark": "FTSE Japan Index",
@@ -14746,7 +14746,7 @@
       "asAt": "19 Oct 2026 (factsheet refreshed from HL)",
       "oneMonth": {
         "value": "-3.67%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001O28V.L",
@@ -14758,8 +14758,8 @@
       "navSymbol": "0P0001O28V.L",
       "navName": "iShares Japan Equity Index (UK) S Acc",
       "navMatch": "stored",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -14774,8 +14774,8 @@
       "category": "US Smaller Companies",
       "group": "us",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA North American Smaller Cos",
       "benchmark": "Russell 2000 TR GBP",
@@ -14913,7 +14913,7 @@
       "navName": "FTF Royce US Smaller Companies W Acc",
       "oneMonth": {
         "value": "-1.25%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001PP1Y.L",
@@ -15022,8 +15022,8 @@
         }
       ],
       "holdingsNote": "Top ten of 61 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -15176,7 +15176,7 @@
       "navName": "Schroder US Smaller Comp Z Acc",
       "oneMonth": {
         "value": "-0.50%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000VGMI.L",
@@ -15449,7 +15449,7 @@
       "navName": "Fidelity Index US P Acc",
       "oneMonth": {
         "value": "+0.18%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000125KU.L",
@@ -15738,7 +15738,7 @@
       "navName": "Fidelity American Special Sits W Acc",
       "oneMonth": {
         "value": "+1.65%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000WUU7.L",
@@ -16027,7 +16027,7 @@
       "navName": "Premier Miton US Opportunities B Acc",
       "oneMonth": {
         "value": "+3.81%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000XOCD.L",
@@ -16291,7 +16291,7 @@
       "navName": "HSBC American Index C Acc",
       "oneMonth": {
         "value": "+0.84%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000WN7H.L",
@@ -16439,8 +16439,8 @@
       "category": "Europe ex-UK Quality Growth",
       "group": "europe",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Europe Excluding UK",
       "benchmark": "FTSE World Eur Ex UK TR GBP",
@@ -16576,7 +16576,7 @@
       "navName": "CT European Select Z Acc GBP",
       "oneMonth": {
         "value": "-3.84%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000X3IE.L",
@@ -16709,8 +16709,8 @@
         }
       ],
       "holdingsNote": "Top ten of 37 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -16865,7 +16865,7 @@
       "navName": "Jupiter European I Acc",
       "oneMonth": {
         "value": "-3.58%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000U20D.L",
@@ -17017,8 +17017,8 @@
       "category": "Europe ex-UK Flexible",
       "group": "europe",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Europe Excluding UK",
       "benchmark": "FTSE World Eur Ex UK TR GBP",
@@ -17120,7 +17120,7 @@
       "navName": "BlackRock European Dynamic FD Acc",
       "oneMonth": {
         "value": "-6.14%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000ZZBQ.L",
@@ -17253,8 +17253,8 @@
         }
       ],
       "holdingsNote": "Top ten of 51 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "navNote": "series restarts 2026-06-15 after a 188.3 -> 3.84702 share-class change",
       "sedol": "BCZRNN3",
       "isin": "GB00BCZRNN30",
@@ -17411,7 +17411,7 @@
       "navName": "Fidelity Index Europe ex UK P Acc",
       "oneMonth": {
         "value": "-2.74%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00011RBW.L",
@@ -17700,7 +17700,7 @@
       "navName": "Baillie Gifford European B Acc",
       "oneMonth": {
         "value": "-0.35%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000QWM.L",
@@ -17852,8 +17852,8 @@
       "category": "Sterling Corporate Bond Tracker",
       "group": "bonds-gov",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA GBP Corporate Bond",
       "benchmark": "Markit iBoxx GBP NonGilts TR",
@@ -17969,7 +17969,7 @@
       "navName": "iShares Corporate Bond Index (UK) S Acc",
       "oneMonth": {
         "value": "-0.75%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001O7DN.L",
@@ -18074,8 +18074,8 @@
         }
       ],
       "holdingsNote": "Top ten of 1251 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -18093,8 +18093,8 @@
       "category": "UK Gilt Tracker",
       "group": "bonds-gov",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA UK Gilt",
       "benchmark": "FTSE Act UK Cnvt Gilts All Stocks TR GBP",
@@ -18214,7 +18214,7 @@
       "navNote": "series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change",
       "oneMonth": {
         "value": "-0.72%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 189.4 -> 1.877 share-class change Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000102LM.L",
@@ -18283,8 +18283,8 @@
         }
       ],
       "holdingsNote": "Top ten of 69 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -18300,8 +18300,8 @@
       "category": "Sterling Corporate Bond",
       "group": "bonds-gov",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA GBP Corporate Bond",
       "benchmark": "Markit iBoxx GBP NonGilts TR",
@@ -18385,7 +18385,7 @@
       "navName": "Royal London Corporate Bond Z Acc",
       "oneMonth": {
         "value": "-0.73%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001THP6.L",
@@ -18494,8 +18494,8 @@
         }
       ],
       "holdingsNote": "Top ten of 348 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "sedol": "BN13X43",
       "isin": "GB00BN13X436",
       "isinSource": "SEDOL BN13X43 read from the fund's HL factsheet - the class HL deals. ISIN derived as GB00+SEDOL+check digit.",
@@ -18514,8 +18514,8 @@
       "category": "Mixed 40-85% Shares",
       "group": "mixed",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Mixed Investment 40-85% Shares",
       "benchmark": "IA Mixed Invest 40 - 85% Shares",
@@ -18651,7 +18651,7 @@
       "navName": "Baillie Gifford Managed B Acc",
       "oneMonth": {
         "value": "-0.69%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.28%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.88%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000QWU.L",
@@ -18784,8 +18784,8 @@
         }
       ],
       "holdingsNote": "Top ten of 402 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -18940,7 +18940,7 @@
       "navName": "BNY Mellon Real Return U Acc",
       "oneMonth": {
         "value": "-0.85%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, Gold (USD/oz) -6.28%, US 10yr yield +3.58%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, Gold (USD/oz) -6.88%, US 10yr yield +3.58%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000156WB.L",
@@ -19093,8 +19093,8 @@
       "category": "Mixed 40-85% Shares",
       "group": "mixed",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Mixed Investment 40-85% Shares",
       "benchmark": "IA Mixed Invest 40 - 85% Shares",
@@ -19230,7 +19230,7 @@
       "navName": "Schroder Managed Balanced Instl Acc",
       "oneMonth": {
         "value": "-1.40%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.28%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.88%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000VDP.L",
@@ -19363,8 +19363,8 @@
         }
       ],
       "holdingsNote": "Top ten of 457 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "sedol": "0289984",
       "isin": "GB0002899846",
       "isinSource": "SEDOL 0289984 read from the fund's HL factsheet - the class HL deals. ISIN derived as GB00+SEDOL+check digit.",
@@ -19383,8 +19383,8 @@
       "category": "Flexible / Capital Preservation",
       "group": "total-return",
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "iaSector": "IA Flexible Investment",
       "benchmark": "UK CPI",
@@ -19520,7 +19520,7 @@
       "navName": "Trojan Fund X Accumulation",
       "oneMonth": {
         "value": "+2.17%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, Gold (USD/oz) -6.28%, US 10yr yield +3.58%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, Gold (USD/oz) -6.88%, US 10yr yield +3.58%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001CBJA.L",
@@ -19653,8 +19653,8 @@
         }
       ],
       "holdingsNote": "Top ten of 36 holdings, from the HL factsheet on 19 Oct 2026.",
-      "shortlist": true,
-      "shortlistStatus": "on",
+      "shortlist": false,
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -19792,7 +19792,7 @@
       "navNote": "series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change",
       "oneMonth": {
         "value": "+1.86%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change Market context: FTSE 100 -0.31%, S&P 500 -0.10%, Gold (USD/oz) -6.28%, US 10yr yield +3.58%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. series restarts 2024-12-17 after a 132.94 -> 1.3274 share-class change Market context: FTSE 100 +0.12%, S&P 500 -0.10%, Gold (USD/oz) -6.88%, US 10yr yield +3.58%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001J9W9.L",
@@ -20077,7 +20077,7 @@
       "navName": "Royal London Sustainable World C Acc",
       "oneMonth": {
         "value": "+0.39%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.28%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, US 10yr yield +3.58%, Gold (USD/oz) -6.88%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000XYWQ.L",
@@ -20229,10 +20229,10 @@
       "category": "Global Emerging Markets",
       "group": "em",
       "iaSector": "IA Global Emerging Markets",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -20461,14 +20461,14 @@
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00BL6C2119, itself derived from HL SEDOL BL6C211. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
       "oneMonth": {
         "value": "-7.25%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, S&P 500 -0.10%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, S&P 500 -0.10%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001NMWZ.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BL6C211",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -20495,10 +20495,10 @@
       "category": "GBP Corporate Bond",
       "group": "bonds-gov",
       "iaSector": "IA GBP Corporate Bond",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -20715,14 +20715,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.23%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000Y3XU.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B8BPH31",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -20750,10 +20750,10 @@
       "category": "UK Smaller Companies",
       "group": "uk-smaller",
       "iaSector": "IA UK Smaller Companies",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -20982,14 +20982,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+1.17%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.18%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.15%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000GBB2.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B2NG4R3",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -21016,10 +21016,10 @@
       "category": "North America",
       "group": "us",
       "iaSector": "IA North America",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -21234,14 +21234,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+1.76%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, Nasdaq 100 -2.96%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000VC9.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "0606196",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -21270,10 +21270,10 @@
       "category": "European Smaller Companies",
       "group": "europe",
       "iaSector": "IA European Smaller Companies",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -21517,14 +21517,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.95%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.41%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Euro STOXX 50 -3.26%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001KJSZ.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BKXBBL7",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -21553,10 +21553,10 @@
       "category": "GBP Corporate Bond",
       "group": "bonds-gov",
       "iaSector": "IA GBP Corporate Bond",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -21777,14 +21777,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.59%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000YYBR.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BBGBFM0",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -21812,10 +21812,10 @@
       "category": "Asia Pacific Ex Japan",
       "group": "asia",
       "iaSector": "IA Asia Pacific Ex Japan",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -22059,14 +22059,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-5.84%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00015W87.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BWNGXJ8",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -22095,10 +22095,10 @@
       "category": "GBP Strategic Bond",
       "group": "bonds-strategic",
       "iaSector": "IA GBP Strategic Bond",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -22321,14 +22321,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.07%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000XBQP.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B8N45T8",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -22358,10 +22358,10 @@
       "category": "Global Emerging Markets",
       "group": "em",
       "iaSector": "IA Global Emerging Markets",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -22587,14 +22587,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-4.26%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, S&P 500 -0.10%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, S&P 500 -0.10%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001O7DM.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BN08ZP4",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -22621,10 +22621,10 @@
       "category": "GBP Strategic Bond",
       "group": "bonds-strategic",
       "iaSector": "IA GBP Strategic Bond",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -22811,14 +22811,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.80%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00015BKO.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BJLV6X9",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -22847,10 +22847,10 @@
       "category": "Specialist",
       "group": "asia",
       "iaSector": "IA Specialist",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -23094,14 +23094,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.80%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00018LFD.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BD08NQ1",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -23130,10 +23130,10 @@
       "category": "UK All Companies",
       "group": "uk-growth",
       "iaSector": "IA UK All Companies",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -23357,14 +23357,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.53%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 -1.18%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, FTSE 250 -1.15%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000RK9.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "0745088",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -23393,10 +23393,10 @@
       "category": "UK All Companies",
       "group": "uk-smaller",
       "iaSector": "IA UK All Companies",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -23640,14 +23640,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+0.76%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.18%, FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 250 -1.15%, FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00013WXJ.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BQ1JYV6",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -23676,10 +23676,10 @@
       "category": "UK All Companies",
       "group": "uk-growth",
       "iaSector": "IA UK All Companies",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -23913,14 +23913,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.04%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, FTSE 250 -1.18%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, FTSE 250 -1.15%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000102MC.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BG0QPG0",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -23949,10 +23949,10 @@
       "category": "Global",
       "group": "global",
       "iaSector": "IA Global",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -24196,14 +24196,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+2.57%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001FE43.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BH0P2M9",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -24232,10 +24232,10 @@
       "category": "Asia Pacific Ex Japan",
       "group": "asia",
       "iaSector": "IA Asia Pacific Ex Japan",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -24481,14 +24481,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-6.89%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000VGH4.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B5ZS9V7",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -24515,10 +24515,10 @@
       "category": "Specialist",
       "group": "asia",
       "iaSector": "IA Specialist",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -24736,14 +24736,14 @@
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00B1FXTG93, itself derived from HL SEDOL B1FXTG9. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
       "oneMonth": {
         "value": "-3.56%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.77%, Nikkei 225 -3.98%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Hang Seng -8.58%, Nikkei 225 -3.98%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000X4NO.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B1FXTG9",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -24771,10 +24771,10 @@
       "category": "Global Equity Income",
       "group": "global",
       "iaSector": "IA Global Equity Income",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -25018,14 +25018,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+2.86%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 -0.31%, Euro STOXX 50 -3.41%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: S&P 500 -0.10%, FTSE 100 +0.12%, Euro STOXX 50 -3.26%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00018VXM.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BD82KP3",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -25054,10 +25054,10 @@
       "category": "Global Bonds",
       "group": "bonds-strategic",
       "iaSector": "IA Global Bonds",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -25277,14 +25277,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.32%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P0000KM24.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B50W2R1",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -25313,10 +25313,10 @@
       "category": "UK Equity Income",
       "group": "uk-income",
       "iaSector": "IA UK Equity Income",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -25517,14 +25517,14 @@
       "navClassNote": "share class Z used, desk tracks Q",
       "oneMonth": {
         "value": "+1.31%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks Q Market context: FTSE 100 -0.31%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks Q Market context: FTSE 100 +0.12%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000T364.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "BS0LFP8",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -25553,10 +25553,10 @@
       "category": "Mixed Investment 0-35% Shares",
       "group": "total-return",
       "iaSector": "IA Mixed Investment 0-35% Shares",
-      "shortlist": true,
+      "shortlist": false,
       "badge": {
-        "type": "",
-        "label": "Wealth Shortlist"
+        "type": "off",
+        "label": "Ex-Shortlist"
       },
       "overview": "not yet verified",
       "whyNow": "",
@@ -25799,14 +25799,14 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+0.23%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, S&P 500 -0.10%, Gold (USD/oz) -6.28%, US 10yr yield +3.58%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, S&P 500 -0.10%, Gold (USD/oz) -6.88%, US 10yr yield +3.58%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000G5MB.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
       "sedol": "B2Q1J92",
-      "shortlistStatus": "on",
+      "shortlistStatus": "dropped",
       "dealing": {
         "tradeable": true,
         "blocked": [],
@@ -26069,7 +26069,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.93%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00016MMV.L",
@@ -26317,7 +26317,7 @@
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00BN091933, itself derived from HL SEDOL BN09193. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
       "oneMonth": {
         "value": "-1.30%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001QN8J.L",
@@ -26598,7 +26598,7 @@
       "navSource": "Pinned by hand. Yahoo returns this line for ISIN GB00B24HJL45, itself derived from HL SEDOL B24HJL4. Checked GBP, accumulation, ~250 daily points over 1 year and no redenomination jump. The automatic resolver refused it only because Yahoo abbreviates the name below the match floor.",
       "oneMonth": {
         "value": "+2.75%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 -0.31%, US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: FTSE 100 +0.12%, US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00009VDK.L",
@@ -26854,7 +26854,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-3.07%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.28%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.88%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0001FVLM.L",
@@ -27110,7 +27110,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-8.91%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.28%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.88%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00009NF8.L",
@@ -27382,7 +27382,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-0.55%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.28%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.88%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00009VVV.L",
@@ -27662,7 +27662,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+9.13%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.28%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: Nasdaq 100 -2.96%, Gold (USD/oz) -6.88%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P00000R15.L",
@@ -27904,7 +27904,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.79%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P000148T8.L",
@@ -28155,7 +28155,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "+0.33%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000Z8P7.L",
@@ -28339,14 +28339,14 @@
             "sector": "−11.32%"
           }
         ],
-        "nav1w": "+0.88%",
-        "nav1m": "-0.26%",
-        "nav1yr": "-1.01%",
-        "nav3yr": "+13.09%",
-        "nav5yr": "-0.80%",
-        "navYtd": "-0.05%",
-        "navAsAt": "2026-10-21",
-        "navPoints": 1485,
+        "nav1w": "+0.67%",
+        "nav1m": "-0.34%",
+        "nav1yr": "-0.80%",
+        "nav3yr": "+13.01%",
+        "nav5yr": "-0.40%",
+        "navYtd": "-0.12%",
+        "navAsAt": "2026-10-20",
+        "navPoints": 1484,
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -28407,10 +28407,10 @@
       "navName": "L&G Global Inflation Linked Bd Idx C Acc",
       "navMatch": "stored",
       "oneMonth": {
-        "value": "-0.26%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "value": "-0.34%",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
-        "asAt": "21 Oct 2026",
+        "asAt": "20 Oct 2026",
         "basis": "nav:0P000102MS.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
@@ -28666,7 +28666,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-1.42%",
-        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +13.26%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 21 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, Brent crude +12.73%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "21 Oct 2026",
         "basis": "nav:0P0000VPQE.L",
@@ -28915,7 +28915,7 @@
       "navMatch": "stored",
       "oneMonth": {
         "value": "-2.08%",
-        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.26%.",
+        "note": "Total return over the 31 days to 20 Oct 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. Market context: US 10yr yield +3.58%, GBP/USD +0.03%.",
         "confidence": "computed from the fund's own published NAV",
         "asAt": "20 Oct 2026",
         "basis": "nav:0P0001IU24.L",
@@ -28949,15 +28949,6 @@
     "runDate": "22 Oct 2026",
     "summary": "22 Oct 2026 automated run (deterministic, no LLM). Priced 102 funds from their own published NAV series and 0 tracker funds from GBP ETF proxies; 1 funds marked 'not yet verified' with market context attached - no fund-level figure was estimated for them. Refreshed 69 catalyst entries (5 confirmed dates, 0 provisional, 19 pattern estimates). 1yr/3yr/5yr figures are computed from each fund's own published NAV series where one could be resolved; discrete arrays and ISINs are untouched and continue to age.",
     "findings": [
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
       {
         "fundId": "ALL",
         "fundName": "Research maintenance",
@@ -29207,6 +29198,15 @@
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": "Priced 101 funds from their own NAV series and 1 tracker figures from GBP ETF proxies over a 30-day window; 1 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 102 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 1 funds left unverified by design. 69 catalyst dates refreshed.",
         "status": "corrected",
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
       },

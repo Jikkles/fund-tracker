@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-22T08:04:22+00:00",
+  "generated": "2026-10-22T12:06:11+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Rentokil Initial Plc",
-          "symbol": "RTO",
-          "pct": 8.87
-        },
-        {
           "name": "London Stock Exchange Group plc",
           "symbol": "LSEG",
-          "pct": 3.64
+          "pct": 6.48
+        },
+        {
+          "name": "Rentokil Initial Plc",
+          "symbol": "RTO",
+          "pct": 6.1
         },
         {
           "name": "Ithaca Energy plc",
           "symbol": "ITH",
-          "pct": 1.78
+          "pct": 2.12
         }
       ],
       "bottom": [
         {
-          "name": "Sainsbury (J) plc",
-          "symbol": "SBRY",
-          "pct": -4.42
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": -5.21
         },
         {
           "name": "Anglo American Plc",
           "symbol": "AAL",
-          "pct": -3.96
+          "pct": -4.43
         },
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": -3.53
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": -4.34
         }
       ],
       "breadth": {
-        "up": 27,
-        "down": 70,
+        "up": 36,
+        "down": 61,
         "flat": 3,
         "priced": 100,
-        "median": -0.52
+        "median": -0.35
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -202,34 +202,34 @@
         {
           "name": "Midea Group Co., Ltd.",
           "symbol": "0300.HK",
-          "pct": 0.3222374400373422
-        },
-        {
-          "name": "China Mobile Limited",
-          "symbol": "0941.HK",
-          "pct": -0.12895693047088563
+          "pct": 0.5370569368365613
         },
         {
           "name": "Hengan International Group Company Limited",
           "symbol": "1044.HK",
           "pct": -0.2047129664950899
+        },
+        {
+          "name": "Tingyi (Cayman Islands) Holding Corp.",
+          "symbol": "0322.HK",
+          "pct": -0.24509586219094212
         }
       ],
       "bottom": [
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -11.76922871516301
+          "pct": -10.923077509953426
         },
         {
           "name": "WuXi Biologics (Cayman) Inc.",
           "symbol": "2269.HK",
-          "pct": -8.82591189408671
+          "pct": -8.38057302928807
         },
         {
-          "name": "Sino Biopharmaceutical Limited",
-          "symbol": "1177.HK",
-          "pct": -7.476637429863714
+          "name": "Hansoh Pharmaceutical Group Company Limited",
+          "symbol": "3692.HK",
+          "pct": -7.329844035696601
         }
       ],
       "breadth": {
@@ -237,7 +237,7 @@
         "down": 84,
         "flat": 0,
         "priced": 85,
-        "median": -2.57
+        "median": -2.36
       },
       "built": "5 spark batches"
     },
@@ -248,44 +248,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": 15.182728307983803
+          "name": "Danone S.A.",
+          "symbol": "BN.PA",
+          "pct": 1.6113113238304178
         },
         {
-          "name": "Wolters Kluwer N.V.",
-          "symbol": "WKL.AS",
-          "pct": 2.6278032921219667
+          "name": "Deutsche Börse AG",
+          "symbol": "DB1.DE",
+          "pct": 1.4285694469105115
         },
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 2.555194154555216
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": 1.098041908413756
         }
       ],
       "bottom": [
         {
-          "name": "Prosus N.V.",
-          "symbol": "PRX.AS",
-          "pct": -5.396690036100064
-        },
-        {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -3.6594473487677375
+          "pct": -7.003317360855142
         },
         {
           "name": "BNP Paribas SA",
           "symbol": "BNP.PA",
-          "pct": -3.34674656106894
+          "pct": -3.7207646796199105
+        },
+        {
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": -3.337329193532347
         }
       ],
       "breadth": {
-        "up": 18,
-        "down": 32,
+        "up": 14,
+        "down": 36,
         "flat": 0,
         "priced": 50,
-        "median": -0.59
+        "median": -1.06
       },
       "built": "3 spark batches"
     },
