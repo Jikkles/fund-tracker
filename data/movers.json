@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-24T08:04:11+00:00",
+  "generated": "2026-10-24T11:16:36+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "SAP SE",
-          "symbol": "SAP.DE",
-          "pct": 3.211125043384984
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": 5.817070442336279
         },
         {
-          "name": "Deutsche Börse AG",
-          "symbol": "DB1.DE",
-          "pct": 2.9870169503348216
+          "name": "L'Oréal S.A.",
+          "symbol": "OR.PA",
+          "pct": 5.641643533406477
         },
         {
-          "name": "Deutsche Telekom AG",
-          "symbol": "DTE.DE",
-          "pct": 2.6666678634344363
+          "name": "TotalEnergies SE",
+          "symbol": "TTE.PA",
+          "pct": 4.338576451194628
         }
       ],
       "bottom": [
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -8.5603131499957
+          "name": "Safran SA",
+          "symbol": "SAF.PA",
+          "pct": -10.000004042063328
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -6.036921871996753
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": -3.9550213260953857
         },
         {
-          "name": "Schneider Electric S.E.",
-          "symbol": "SU.PA",
-          "pct": -5.359295775355347
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": -3.1703587243349416
         }
       ],
       "breadth": {
-        "up": 18,
-        "down": 32,
-        "flat": 0,
+        "up": 22,
+        "down": 27,
+        "flat": 1,
         "priced": 50,
-        "median": -0.95
+        "median": -0.13
       },
       "built": "3 spark batches"
     },
