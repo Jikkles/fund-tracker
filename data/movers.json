@@ -1,153 +1,249 @@
 {
-  "generated": "2026-10-23T11:50:20+00:00",
+  "generated": "2026-10-24T08:04:11+00:00",
   "indices": {
-    "s-p-500": {
-      "label": "S&P 500",
-      "asAt": "2026-10-23",
-      "source": "Yahoo Finance daily closes",
-      "universe": "all 503 constituents",
+    "ftse-100": {
+      "label": "FTSE 100",
+      "asAt": "2026-10-24",
+      "source": "HL market summary (delayed)",
+      "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Allegion plc",
-          "symbol": "ALLE",
-          "pct": 11.018870611610652
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": 4.35
         },
         {
-          "name": "Roper Technologies, Inc.",
-          "symbol": "ROP",
-          "pct": 9.726837122750274
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": 3.87
         },
         {
-          "name": "Lennar Corporation",
-          "symbol": "LEN",
-          "pct": 8.687259028460884
+          "name": "Shell plc",
+          "symbol": "SHEL",
+          "pct": 3.72
         }
       ],
       "bottom": [
         {
-          "name": "Moderna, Inc.",
-          "symbol": "MRNA",
-          "pct": -17.56641027812078
+          "name": "Rolls Royce Holdings Plc",
+          "symbol": "RR.",
+          "pct": -7.57
         },
         {
-          "name": "Coherent Corp.",
-          "symbol": "COHR",
-          "pct": -12.507890206610671
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": -6.21
         },
         {
-          "name": "Lam Research Corporation",
-          "symbol": "LRCX",
-          "pct": -11.755685728734873
+          "name": "Diploma plc",
+          "symbol": "DPLM",
+          "pct": -5.1
         }
       ],
       "breadth": {
-        "up": 336,
-        "down": 166,
+        "up": 38,
+        "down": 60,
+        "flat": 2,
+        "priced": 100,
+        "median": -0.39
+      },
+      "built": "100 rows from HL's own summary pages"
+    },
+    "ftse-250": {
+      "label": "FTSE 250",
+      "asAt": "2026-10-24",
+      "source": "HL market summary (delayed)",
+      "universe": "all 251 constituents",
+      "top": [
+        {
+          "name": "NCC Group plc",
+          "symbol": "NCC",
+          "pct": 5.1
+        },
+        {
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": 3.96
+        },
+        {
+          "name": "HG Capital Trust plc",
+          "symbol": "HGT",
+          "pct": 3.78
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Trainline plc",
+          "symbol": "TRN",
+          "pct": -6.56
+        },
+        {
+          "name": "Bloomsbury Publishing plc",
+          "symbol": "BMY",
+          "pct": -4.58
+        },
+        {
+          "name": "WAG Payment Solutions plc",
+          "symbol": "EWG",
+          "pct": -4.2
+        }
+      ],
+      "breadth": {
+        "up": 134,
+        "down": 105,
+        "flat": 12,
+        "priced": 251,
+        "median": 0.18
+      },
+      "built": "251 rows from HL's own summary pages"
+    },
+    "s-p-500": {
+      "label": "S&P 500",
+      "asAt": "2026-10-24",
+      "source": "Yahoo Finance daily closes",
+      "universe": "all 503 constituents",
+      "top": [
+        {
+          "name": "Crown Castle Inc.",
+          "symbol": "CCI",
+          "pct": 9.057464447293302
+        },
+        {
+          "name": "CrowdStrike Holdings, Inc.",
+          "symbol": "CRWD",
+          "pct": 8.249980953768576
+        },
+        {
+          "name": "Palo Alto Networks, Inc.",
+          "symbol": "PANW",
+          "pct": 7.221338159464744
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Bloom Energy Corporation",
+          "symbol": "BE",
+          "pct": -11.236626137954108
+        },
+        {
+          "name": "Comfort Systems USA, Inc.",
+          "symbol": "FIX",
+          "pct": -9.263153756765238
+        },
+        {
+          "name": "Globe Life Inc.",
+          "symbol": "GL",
+          "pct": -8.087411721279437
+        }
+      ],
+      "breadth": {
+        "up": 135,
+        "down": 367,
         "flat": 1,
         "priced": 503,
-        "median": 1.64
+        "median": -0.85
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-10-23",
+      "asAt": "2026-10-24",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Roper Technologies, Inc.",
-          "symbol": "ROP",
-          "pct": 9.726837122750274
+          "name": "CrowdStrike Holdings, Inc.",
+          "symbol": "CRWD",
+          "pct": 8.249980953768576
         },
         {
-          "name": "Thomson Reuters Corporation",
-          "symbol": "TRI",
-          "pct": 6.940829300475351
+          "name": "Palo Alto Networks, Inc.",
+          "symbol": "PANW",
+          "pct": 7.221338159464744
         },
         {
-          "name": "CSX Corporation",
-          "symbol": "CSX",
-          "pct": 6.7561911982956815
+          "name": "Datadog, Inc.",
+          "symbol": "DDOG",
+          "pct": 4.616874450624394
         }
       ],
       "bottom": [
         {
-          "name": "Moderna, Inc.",
-          "symbol": "MRNA",
-          "pct": -17.56641027812078
+          "name": "T-Mobile US, Inc.",
+          "symbol": "TMUS",
+          "pct": -7.714591925151115
         },
         {
-          "name": "Lam Research Corporation",
-          "symbol": "LRCX",
-          "pct": -11.755685728734873
+          "name": "Old Dominion Freight Line, Inc.",
+          "symbol": "ODFL",
+          "pct": -3.7864039520336115
         },
         {
-          "name": "Lumentum Holdings Inc.",
-          "symbol": "LITE",
-          "pct": -11.538736660532539
+          "name": "DoorDash, Inc.",
+          "symbol": "DASH",
+          "pct": -3.528018431999832
         }
       ],
       "breadth": {
-        "up": 49,
-        "down": 52,
-        "flat": 0,
+        "up": 33,
+        "down": 67,
+        "flat": 1,
         "priced": 101,
-        "median": -0.58
+        "median": -0.66
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-10-23",
+      "asAt": "2026-10-24",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "The Procter & Gamble Company",
-          "symbol": "PG",
-          "pct": 5.578934075686475
+          "name": "Chevron Corporation",
+          "symbol": "CVX",
+          "pct": 2.8807191852285654
         },
         {
-          "name": "The Home Depot, Inc.",
-          "symbol": "HD",
-          "pct": 4.326095277323888
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": 1.5349419579751213
         },
         {
-          "name": "Johnson & Johnson",
-          "symbol": "JNJ",
-          "pct": 3.8133240045057764
+          "name": "Honeywell International Inc.",
+          "symbol": "HON",
+          "pct": 1.3009007235815568
         }
       ],
       "bottom": [
         {
-          "name": "Caterpillar Inc.",
-          "symbol": "CAT",
-          "pct": -4.885104646829987
+          "name": "American Express Company",
+          "symbol": "AXP",
+          "pct": -3.6750043711170846
         },
         {
-          "name": "Amazon.com, Inc.",
-          "symbol": "AMZN",
-          "pct": -4.569878590354691
+          "name": "The Procter & Gamble Company",
+          "symbol": "PG",
+          "pct": -2.7598237613970964
         },
         {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": -4.396988085399724
+          "name": "The Coca-Cola Company",
+          "symbol": "KO",
+          "pct": -2.758545578391992
         }
       ],
       "breadth": {
-        "up": 20,
-        "down": 10,
+        "up": 6,
+        "down": 24,
         "flat": 0,
         "priced": 30,
-        "median": 1.2
+        "median": -1.38
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-10-23",
+      "asAt": "2026-10-24",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
@@ -195,55 +291,55 @@
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-10-23",
+      "asAt": "2026-10-24",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "L'Oréal S.A.",
-          "symbol": "OR.PA",
-          "pct": 5.0242130750605325
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 3.211125043384984
         },
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 4.592425570151636
-        },
-        {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 2.3005704684446138
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Safran SA",
-          "symbol": "SAF.PA",
-          "pct": -8.509937816897766
-        },
-        {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": -2.9468786351298952
+          "name": "Deutsche Börse AG",
+          "symbol": "DB1.DE",
+          "pct": 2.9870169503348216
         },
         {
           "name": "Deutsche Telekom AG",
           "symbol": "DTE.DE",
-          "pct": -2.7119976453205843
+          "pct": 2.6666678634344363
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": -8.5603131499957
+        },
+        {
+          "name": "Infineon Technologies AG",
+          "symbol": "IFX.DE",
+          "pct": -6.036921871996753
+        },
+        {
+          "name": "Schneider Electric S.E.",
+          "symbol": "SU.PA",
+          "pct": -5.359295775355347
         }
       ],
       "breadth": {
-        "up": 17,
-        "down": 33,
+        "up": 18,
+        "down": 32,
         "flat": 0,
         "priced": 50,
-        "median": -0.45
+        "median": -0.95
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-10-23",
+      "asAt": "2026-10-24",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
@@ -294,8 +390,6 @@
     "gold-usd-oz": "Not an index - a single commodity price, so it has no constituents to rank.",
     "brent-crude": "Not an index - a single commodity price.",
     "us-10yr-yield": "Not an index - a single government bond yield.",
-    "gbp-usd": "Not an index - a single exchange rate.",
-    "ftse-100": "FTSE 100 could not be ranked on this run - HL's market summary did not return the full constituent list, and a partial index is not a ranking.",
-    "ftse-250": "FTSE 250 could not be ranked on this run - HL's market summary did not return the full constituent list, and a partial index is not a ranking."
+    "gbp-usd": "Not an index - a single exchange rate."
   }
 }
