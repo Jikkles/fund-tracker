@@ -12,8 +12,8 @@
       "Portfolio breakdowns (holdings, sectors, countries) are point-in-time from each fund's last published factsheet and are older than its price data. Every fund's holdings note carries its own as-at date.",
       "Wealth Shortlist status is read from HL's own Wealth Shortlist data, not inferred from factsheet prose. A fund marked Ex-Shortlist was dropped by HL and is still tracked here; funds with neither badge cover asset classes the Shortlist does not include. Membership is HL's view, not a rating by this desk.",
       "103 of 103 funds carry a 1-month figure computed from the fund's own published NAV series (priced 22 Oct 2026 to 23 Oct 2026), refreshed every run. 0 use a same-index GBP ETF proxy and 0 carry no fund-level figure at all - each figure is labelled with the basis it used.",
-      "103 of 103 funds carry a cumulative table of trailing 1/3/5yr figures with a sector comparator, which the daily run does NOT refresh - the weekly factsheet run re-reads them from Fidelity, where the share class and date can be proved. Read from their own period labels, the 103 that state a date run 24 Jun 2026 to 16 Oct 2026, up to 123 days old. The fund's own totals over those windows are computed from its NAV series every run and carry the NAV chip; it is the comparators beside them that age between weekly reads, and on any fund the weekly read refuses. Fidelity's comparator is the Morningstar category average, not the IA sector; older tables use other bases (Trustnet/FE, HL rolling 12-month) — do not compare across funds without adjusting.",
-      "103 funds carry discrete annual returns, kept to a fixed year-end (16 Oct, 30 Jun, 30 Sep) rather than to the run date: every one carries the most recent year that has closed on its own basis. A completed year is history and does not go out of date on the calendar, so these are not aged in days.",
+      "103 of 103 funds carry a cumulative table of trailing 1/3/5yr figures with a sector comparator, which the daily run does NOT refresh - the weekly factsheet run re-reads them from Fidelity, where the share class and date can be proved. Read from their own period labels, the 103 that state a date run 24 Jun 2026 to 23 Oct 2026, up to 123 days old. The fund's own totals over those windows are computed from its NAV series every run and carry the NAV chip; it is the comparators beside them that age between weekly reads, and on any fund the weekly read refuses. Fidelity's comparator is the Morningstar category average, not the IA sector; older tables use other bases (Trustnet/FE, HL rolling 12-month) — do not compare across funds without adjusting.",
+      "103 funds carry discrete annual returns, kept to a fixed year-end (23 Oct, 30 Jun, 30 Sep) rather than to the run date: every one carries the most recent year that has closed on its own basis. A completed year is history and does not go out of date on the calendar, so these are not aged in days.",
       "1 fund's cumulative 3/5yr figures are derived by compounding discrete annual returns and are approximate — verify against Trustnet or Morningstar for published totals."
     ],
     "schemaVersion": "1.3",
@@ -28976,24 +28976,6 @@
         "fundName": "Automated daily run",
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
         "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 62 catalyst dates refreshed.",
         "status": "corrected",
         "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
@@ -29202,6 +29184,24 @@
         "check": "RESEARCH-STALE",
         "severity": "MEDIUM",
         "description": "1 fund has trailing cumulative figures older than 120 days: polar-capital-european-income (122d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
+        "status": "flagged",
+        "source": null
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Research maintenance",
+        "check": "RESEARCH-STALE",
+        "severity": "MEDIUM",
+        "description": "1 fund has trailing cumulative figures older than 120 days: polar-capital-european-income (123d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.",
         "status": "flagged",
         "source": null
       },
