@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-26T08:05:18+00:00",
+  "generated": "2026-10-26T13:19:01+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "3i Group Plc",
-          "symbol": "III",
-          "pct": 0.0
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": 10.24
         },
         {
-          "name": "Aberdeen Group Plc",
-          "symbol": "ABDN",
-          "pct": 0.0
+          "name": "Babcock International Group",
+          "symbol": "BAB",
+          "pct": 4.92
         },
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": 0.0
+          "name": "Rolls Royce Holdings Plc",
+          "symbol": "RR.",
+          "pct": 4.02
         }
       ],
       "bottom": [
         {
-          "name": "WPP plc",
-          "symbol": "WPP",
-          "pct": 0.0
+          "name": "Experian Plc",
+          "symbol": "EXPN",
+          "pct": -3.64
         },
         {
-          "name": "Whitbread plc",
-          "symbol": "WTB",
-          "pct": 0.0
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": -2.29
         },
         {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": 0.0
+          "name": "Shell plc",
+          "symbol": "SHEL",
+          "pct": -1.82
         }
       ],
       "breadth": {
-        "up": 0,
-        "down": 0,
-        "flat": 100,
+        "up": 77,
+        "down": 21,
+        "flat": 2,
         "priced": 100,
-        "median": 0.0
+        "median": 0.83
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "3i Infrastructure plc",
-          "symbol": "3IN",
-          "pct": 0.0
+          "name": "Molten Ventures plc",
+          "symbol": "GROW",
+          "pct": 5.39
         },
         {
-          "name": "4imprint Group plc",
-          "symbol": "FOUR",
-          "pct": 0.0
+          "name": "Man Group plc",
+          "symbol": "EMG",
+          "pct": 5.23
         },
         {
-          "name": "Aberdeen Asia Focus Plc",
-          "symbol": "AAS",
-          "pct": 0.0
+          "name": "Domino's Pizza Group plc",
+          "symbol": "DOM",
+          "pct": 4.79
         }
       ],
       "bottom": [
         {
-          "name": "Zigup Plc",
-          "symbol": "ZIG",
-          "pct": 0.0
+          "name": "Utilico Emerging Markets Trust plc",
+          "symbol": "UEM",
+          "pct": -3.14
         },
         {
-          "name": "Young & Co's Brewery Plc",
-          "symbol": "YNGA",
-          "pct": 0.0
+          "name": "EnQuest plc",
+          "symbol": "ENQ",
+          "pct": -1.57
         },
         {
-          "name": "XPS Pensions Group Plc",
-          "symbol": "XPS",
-          "pct": 0.0
+          "name": "Trustpilot Group plc",
+          "symbol": "TRST",
+          "pct": -1.49
         }
       ],
       "breadth": {
-        "up": 0,
-        "down": 0,
-        "flat": 251,
+        "up": 211,
+        "down": 32,
+        "flat": 8,
         "priced": 251,
-        "median": 0.0
+        "median": 1.03
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,42 +250,42 @@
         {
           "name": "PetroChina Company Limited",
           "symbol": "0857.HK",
-          "pct": 5.570024222633766
-        },
-        {
-          "name": "China Petroleum & Chemical Corporation",
-          "symbol": "0386.HK",
-          "pct": 4.147980744332106
+          "pct": 5.778243952383997
         },
         {
           "name": "Link Real Estate Investment Trust",
           "symbol": "0823.HK",
-          "pct": 3.734871519853834
+          "pct": 4.103107192289536
+        },
+        {
+          "name": "China Petroleum & Chemical Corporation",
+          "symbol": "0386.HK",
+          "pct": 4.035870556032749
         }
       ],
       "bottom": [
         {
           "name": "Zijin Mining Group Company Limited",
           "symbol": "2899.HK",
-          "pct": -5.770532615144686
+          "pct": -5.838422833696027
         },
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -4.2402787559773145
+          "pct": -3.975263439899982
         },
         {
-          "name": "Semiconductor Manufacturing International Corporation",
-          "symbol": "0981.HK",
-          "pct": -2.6774375254174667
+          "name": "ANTA Sports Products Limited",
+          "symbol": "2020.HK",
+          "pct": -2.722447501560834
         }
       ],
       "breadth": {
-        "up": 58,
-        "down": 26,
-        "flat": 1,
+        "up": 57,
+        "down": 24,
+        "flat": 4,
         "priced": 85,
-        "median": 0.42
+        "median": 0.49
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 5.817070442336279
-        },
-        {
-          "name": "L'Oréal S.A.",
-          "symbol": "OR.PA",
-          "pct": 5.641643533406477
-        },
-        {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 4.338576451194628
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Safran SA",
-          "symbol": "SAF.PA",
-          "pct": -10.000004042063328
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": 4.01078709470047
         },
         {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -3.9550213260953857
+          "pct": 3.673798950343157
         },
         {
-          "name": "Deutsche Telekom AG",
-          "symbol": "DTE.DE",
-          "pct": -3.1703587243349416
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": 3.6607563144819806
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Banco Santander, S.A.",
+          "symbol": "SAN.MC",
+          "pct": -3.4926187597925615
+        },
+        {
+          "name": "Anheuser-Busch InBev SA/NV",
+          "symbol": "ABI.BR",
+          "pct": -3.4748046333696556
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -3.146469959810474
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 26,
-        "flat": 1,
+        "up": 35,
+        "down": 13,
+        "flat": 2,
         "priced": 50,
-        "median": -0.13
+        "median": 1.0
       },
       "built": "3 spark batches"
     },
