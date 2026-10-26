@@ -1,105 +1,105 @@
 {
-  "generated": "2026-10-25T11:46:37+00:00",
+  "generated": "2026-10-26T08:05:18+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "BP Plc",
-          "symbol": "BP.",
-          "pct": 4.35
+          "name": "3i Group Plc",
+          "symbol": "III",
+          "pct": 0.0
         },
         {
-          "name": "Ithaca Energy plc",
-          "symbol": "ITH",
-          "pct": 3.87
+          "name": "Aberdeen Group Plc",
+          "symbol": "ABDN",
+          "pct": 0.0
         },
         {
-          "name": "Shell plc",
-          "symbol": "SHEL",
-          "pct": 3.72
+          "name": "Admiral Group",
+          "symbol": "ADM",
+          "pct": 0.0
         }
       ],
       "bottom": [
         {
-          "name": "Rolls Royce Holdings Plc",
-          "symbol": "RR.",
-          "pct": -7.57
+          "name": "WPP plc",
+          "symbol": "WPP",
+          "pct": 0.0
         },
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": -6.21
+          "name": "Whitbread plc",
+          "symbol": "WTB",
+          "pct": 0.0
         },
         {
-          "name": "Diploma plc",
-          "symbol": "DPLM",
-          "pct": -5.1
+          "name": "Weir plc",
+          "symbol": "WEIR",
+          "pct": 0.0
         }
       ],
       "breadth": {
-        "up": 38,
-        "down": 60,
-        "flat": 2,
+        "up": 0,
+        "down": 0,
+        "flat": 100,
         "priced": 100,
-        "median": -0.39
+        "median": 0.0
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "NCC Group plc",
-          "symbol": "NCC",
-          "pct": 5.1
+          "name": "3i Infrastructure plc",
+          "symbol": "3IN",
+          "pct": 0.0
         },
         {
-          "name": "Funding Circle PLC",
-          "symbol": "FCH",
-          "pct": 3.96
+          "name": "4imprint Group plc",
+          "symbol": "FOUR",
+          "pct": 0.0
         },
         {
-          "name": "HG Capital Trust plc",
-          "symbol": "HGT",
-          "pct": 3.78
+          "name": "Aberdeen Asia Focus Plc",
+          "symbol": "AAS",
+          "pct": 0.0
         }
       ],
       "bottom": [
         {
-          "name": "Trainline plc",
-          "symbol": "TRN",
-          "pct": -6.56
+          "name": "Zigup Plc",
+          "symbol": "ZIG",
+          "pct": 0.0
         },
         {
-          "name": "Bloomsbury Publishing plc",
-          "symbol": "BMY",
-          "pct": -4.58
+          "name": "Young & Co's Brewery Plc",
+          "symbol": "YNGA",
+          "pct": 0.0
         },
         {
-          "name": "WAG Payment Solutions plc",
-          "symbol": "EWG",
-          "pct": -4.2
+          "name": "XPS Pensions Group Plc",
+          "symbol": "XPS",
+          "pct": 0.0
         }
       ],
       "breadth": {
-        "up": 134,
-        "down": 105,
-        "flat": 12,
+        "up": 0,
+        "down": 0,
+        "flat": 251,
         "priced": 251,
-        "median": 0.18
+        "median": 0.0
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
@@ -147,7 +147,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
@@ -195,7 +195,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -243,55 +243,55 @@
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "BYD Company Limited",
-          "symbol": "1211.HK",
-          "pct": 6.231449337029401
+          "name": "PetroChina Company Limited",
+          "symbol": "0857.HK",
+          "pct": 5.570024222633766
         },
         {
-          "name": "China Hongqiao Group Limited",
-          "symbol": "1378.HK",
-          "pct": 5.549389426175978
+          "name": "China Petroleum & Chemical Corporation",
+          "symbol": "0386.HK",
+          "pct": 4.147980744332106
         },
         {
-          "name": "Sunny Optical Technology (Group) Company Limited",
-          "symbol": "2382.HK",
-          "pct": 4.9875310455466595
+          "name": "Link Real Estate Investment Trust",
+          "symbol": "0823.HK",
+          "pct": 3.734871519853834
         }
       ],
       "bottom": [
         {
+          "name": "Zijin Mining Group Company Limited",
+          "symbol": "2899.HK",
+          "pct": -5.770532615144686
+        },
+        {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -2.245252423098684
+          "pct": -4.2402787559773145
         },
         {
-          "name": "BOC Hong Kong (Holdings) Limited",
-          "symbol": "2388.HK",
-          "pct": -1.5706781749769225
-        },
-        {
-          "name": "Industrial and Commercial Bank of China Limited",
-          "symbol": "1398.HK",
-          "pct": -1.4966004753969215
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": -2.6774375254174667
         }
       ],
       "breadth": {
-        "up": 64,
-        "down": 18,
-        "flat": 3,
+        "up": 58,
+        "down": 26,
+        "flat": 1,
         "priced": 85,
-        "median": 0.88
+        "median": 0.42
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
@@ -329,8 +329,8 @@
         }
       ],
       "breadth": {
-        "up": 22,
-        "down": 27,
+        "up": 23,
+        "down": 26,
         "flat": 1,
         "priced": 50,
         "median": -0.13
@@ -339,49 +339,49 @@
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-10-25",
+      "asAt": "2026-10-26",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Mercari, Inc.",
-          "symbol": "4385.T",
-          "pct": 7.331208345407128
+          "name": "Inpex Corporation",
+          "symbol": "1605.T",
+          "pct": 4.896373056994819
         },
         {
-          "name": "Aeon Co., Ltd.",
-          "symbol": "8267.T",
-          "pct": 4.513274336283186
+          "name": "Trend Micro Incorporated",
+          "symbol": "4704.T",
+          "pct": 4.201101928374656
         },
         {
-          "name": "Shiseido Company, Limited",
-          "symbol": "4911.T",
-          "pct": 3.9226674138414124
+          "name": "Mitsubishi Corporation",
+          "symbol": "8058.T",
+          "pct": 4.135737009544008
         }
       ],
       "bottom": [
         {
-          "name": "TDK Corporation",
-          "symbol": "6762.T",
-          "pct": -5.610501708325841
+          "name": "Mercari, Inc.",
+          "symbol": "4385.T",
+          "pct": -6.209503239740821
         },
         {
-          "name": "Hitachi, Ltd.",
-          "symbol": "6501.T",
-          "pct": -4.36726272352132
+          "name": "SCREEN Holdings Co., Ltd.",
+          "symbol": "7735.T",
+          "pct": -4.342218400687877
         },
         {
-          "name": "The Chiba Bank, Ltd.",
-          "symbol": "8331.T",
-          "pct": -3.871098500202675
+          "name": "Advantest Corporation",
+          "symbol": "6857.T",
+          "pct": -3.927025355596784
         }
       ],
       "breadth": {
-        "up": 79,
-        "down": 144,
-        "flat": 0,
+        "up": 151,
+        "down": 69,
+        "flat": 3,
         "priced": 223,
-        "median": -0.5
+        "median": 0.58
       },
       "built": "12 spark batches"
     }
