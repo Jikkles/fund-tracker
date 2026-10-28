@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28T08:05:34+00:00",
+  "generated": "2026-10-28T13:13:02+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "3i Group Plc",
-          "symbol": "III",
-          "pct": 0.0
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": 3.81
         },
         {
-          "name": "Aberdeen Group Plc",
-          "symbol": "ABDN",
-          "pct": 0.0
+          "name": "SSE plc",
+          "symbol": "SSE",
+          "pct": 2.65
         },
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": 0.0
+          "name": "Barclays plc",
+          "symbol": "BARC",
+          "pct": 2.46
         }
       ],
       "bottom": [
         {
-          "name": "WPP plc",
-          "symbol": "WPP",
-          "pct": 0.0
+          "name": "GSK plc",
+          "symbol": "GSK",
+          "pct": -5.61
         },
         {
-          "name": "Whitbread plc",
-          "symbol": "WTB",
-          "pct": 0.0
+          "name": "Unilever plc",
+          "symbol": "ULVR",
+          "pct": -3.64
         },
         {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": 0.0
+          "name": "Informa plc",
+          "symbol": "INF",
+          "pct": -1.59
         }
       ],
       "breadth": {
-        "up": 0,
-        "down": 0,
-        "flat": 100,
+        "up": 61,
+        "down": 34,
+        "flat": 5,
         "priced": 100,
-        "median": 0.0
+        "median": 0.33
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "3i Infrastructure plc",
-          "symbol": "3IN",
-          "pct": 0.0
+          "name": "Oxford Nanopore Technologies plc",
+          "symbol": "ONT",
+          "pct": 5.76
         },
         {
-          "name": "4imprint Group plc",
-          "symbol": "FOUR",
-          "pct": 0.0
+          "name": "Entain plc",
+          "symbol": "ENT",
+          "pct": 5.43
         },
         {
-          "name": "Aberdeen Asia Focus Plc",
-          "symbol": "AAS",
-          "pct": 0.0
+          "name": "Raspberry Pi Holdings plc",
+          "symbol": "RPI",
+          "pct": 4.85
         }
       ],
       "bottom": [
         {
-          "name": "Zigup Plc",
-          "symbol": "ZIG",
-          "pct": 0.0
+          "name": "Hunting plc",
+          "symbol": "HTG",
+          "pct": -10.11
         },
         {
-          "name": "Young & Co's Brewery Plc",
-          "symbol": "YNGA",
-          "pct": 0.0
+          "name": "Rightmove plc",
+          "symbol": "RMV",
+          "pct": -2.02
         },
         {
-          "name": "XPS Pensions Group Plc",
-          "symbol": "XPS",
-          "pct": 0.0
+          "name": "Trainline plc",
+          "symbol": "TRN",
+          "pct": -2.01
         }
       ],
       "breadth": {
-        "up": 0,
-        "down": 0,
-        "flat": 251,
+        "up": 140,
+        "down": 94,
+        "flat": 17,
         "priced": 251,
-        "median": 0.0
+        "median": 0.14
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -250,7 +250,7 @@
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 6.16622484300381
+          "pct": 6.2555923966842135
         },
         {
           "name": "Semiconductor Manufacturing International Corporation",
@@ -260,32 +260,32 @@
         {
           "name": "Sunny Optical Technology (Group) Company Limited",
           "symbol": "2382.HK",
-          "pct": 4.104180799914638
+          "pct": 3.867410634015346
         }
       ],
       "bottom": [
         {
-          "name": "Sands China Ltd.",
-          "symbol": "1928.HK",
-          "pct": -2.571172431754709
-        },
-        {
-          "name": "Sinopharm Group Co. Ltd.",
-          "symbol": "1099.HK",
-          "pct": -2.453985504617773
-        },
-        {
           "name": "CLP Holdings Limited",
           "symbol": "0002.HK",
           "pct": -2.3195817754604255
+        },
+        {
+          "name": "AIA Group Limited",
+          "symbol": "1299.HK",
+          "pct": -2.206894447063578
+        },
+        {
+          "name": "Sands China Ltd.",
+          "symbol": "1928.HK",
+          "pct": -2.1120338719885368
         }
       ],
       "breadth": {
-        "up": 32,
-        "down": 52,
-        "flat": 1,
+        "up": 29,
+        "down": 54,
+        "flat": 2,
         "priced": 85,
-        "median": -0.27
+        "median": -0.44
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 3.7748595765197477
+          "pct": 4.184169237982636
         },
         {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": 3.59254626534802
+          "name": "Deutsche Bank Aktiengesellschaft",
+          "symbol": "DBK.DE",
+          "pct": 3.948049834280303
         },
         {
-          "name": "Hermès International Société en commandite par actions",
-          "symbol": "RMS.PA",
-          "pct": 3.229713362939039
+          "name": "Volkswagen AG",
+          "symbol": "VOW.DE",
+          "pct": 2.414047641132919
         }
       ],
       "bottom": [
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": -3.4216319275177187
-        },
-        {
-          "name": "Anheuser-Busch InBev SA/NV",
-          "symbol": "ABI.BR",
-          "pct": -2.3872719036219285
-        },
-        {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": -2.052043993344108
+          "pct": -13.527543665999072
+        },
+        {
+          "name": "Banco Santander, S.A.",
+          "symbol": "SAN.MC",
+          "pct": -3.940355913161806
+        },
+        {
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -2.2277244135165337
         }
       ],
       "breadth": {
-        "up": 37,
-        "down": 13,
+        "up": 25,
+        "down": 25,
         "flat": 0,
         "priced": 50,
-        "median": 0.83
+        "median": 0.04
       },
       "built": "3 spark batches"
     },
