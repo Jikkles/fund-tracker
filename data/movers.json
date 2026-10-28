@@ -1,9 +1,9 @@
 {
-  "generated": "2026-10-27T08:04:43+00:00",
+  "generated": "2026-10-28T08:05:34+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
@@ -51,7 +51,7 @@
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
@@ -99,289 +99,289 @@
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Lumentum Holdings Inc.",
-          "symbol": "LITE",
-          "pct": 8.18995650124073
+          "name": "Pentair plc",
+          "symbol": "PNR",
+          "pct": 12.803331290354137
         },
         {
-          "name": "Comfort Systems USA, Inc.",
-          "symbol": "FIX",
-          "pct": 7.178295152403871
+          "name": "Flex Ltd.",
+          "symbol": "FLEX",
+          "pct": 8.260814114588376
         },
         {
-          "name": "Everpure, Inc.",
-          "symbol": "P",
-          "pct": 6.486661705364208
+          "name": "Dell Technologies Inc.",
+          "symbol": "DELL",
+          "pct": 7.465369712598751
         }
       ],
       "bottom": [
         {
-          "name": "Fair Isaac Corporation",
-          "symbol": "FICO",
-          "pct": -13.153277962431462
+          "name": "Xylem Inc.",
+          "symbol": "XYL",
+          "pct": -14.209162561861078
         },
         {
-          "name": "DoorDash, Inc.",
-          "symbol": "DASH",
-          "pct": -6.098785897878231
+          "name": "The Boeing Company",
+          "symbol": "BA",
+          "pct": -10.689822709253093
         },
         {
-          "name": "Charter Communications, Inc.",
-          "symbol": "CHTR",
-          "pct": -5.920265416666374
+          "name": "Valero Energy Corporation",
+          "symbol": "VLO",
+          "pct": -9.237044832149035
         }
       ],
       "breadth": {
-        "up": 289,
-        "down": 211,
-        "flat": 3,
+        "up": 245,
+        "down": 257,
+        "flat": 1,
         "priced": 503,
-        "median": 0.21
+        "median": -0.06
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Lumentum Holdings Inc.",
-          "symbol": "LITE",
-          "pct": 8.18995650124073
+          "name": "Nebius Group N.V.",
+          "symbol": "NBIS",
+          "pct": 11.222024185284523
         },
         {
-          "name": "Arm Holdings plc",
-          "symbol": "ARM",
-          "pct": 6.190274406463
+          "name": "Astera Labs, Inc.",
+          "symbol": "ALAB",
+          "pct": 10.473581616496684
         },
         {
-          "name": "Synopsys, Inc.",
-          "symbol": "SNPS",
-          "pct": 5.6237436881102765
+          "name": "Rocket Lab Corporation",
+          "symbol": "RKLB",
+          "pct": 8.3426267259875
         }
       ],
       "bottom": [
         {
-          "name": "MercadoLibre, Inc.",
-          "symbol": "MELI",
-          "pct": -7.813167516693417
+          "name": "Paychex, Inc.",
+          "symbol": "PAYX",
+          "pct": -5.566114936798675
         },
         {
-          "name": "DoorDash, Inc.",
-          "symbol": "DASH",
-          "pct": -6.098785897878231
+          "name": "Cintas Corporation",
+          "symbol": "CTAS",
+          "pct": -4.926300174760518
         },
         {
-          "name": "Strategy Inc",
-          "symbol": "MSTR",
-          "pct": -4.2394270361590785
+          "name": "Thomson Reuters Corporation",
+          "symbol": "TRI",
+          "pct": -4.644493843301188
         }
       ],
       "breadth": {
-        "up": 65,
-        "down": 36,
+        "up": 61,
+        "down": 40,
         "flat": 0,
         "priced": 101,
-        "median": 0.81
+        "median": 0.75
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Cisco Systems, Inc.",
-          "symbol": "CSCO",
-          "pct": 3.5117350833516725
-        },
-        {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": 2.389075239729557
+          "name": "Caterpillar Inc.",
+          "symbol": "CAT",
+          "pct": 3.0601176840133273
         },
         {
           "name": "The Goldman Sachs Group, Inc.",
           "symbol": "GS",
-          "pct": 2.0098708167710906
+          "pct": 2.0698985343855694
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "symbol": "AMZN",
+          "pct": 1.6098638341884357
         }
       ],
       "bottom": [
         {
-          "name": "Merck & Co., Inc.",
-          "symbol": "MRK",
-          "pct": -3.2078223480804144
+          "name": "The Boeing Company",
+          "symbol": "BA",
+          "pct": -10.689822709253093
         },
         {
-          "name": "The Walt Disney Company",
-          "symbol": "DIS",
-          "pct": -1.884105208350214
+          "name": "The Sherwin-Williams Company",
+          "symbol": "SHW",
+          "pct": -2.7300375332699054
         },
         {
-          "name": "UnitedHealth Group Incorporated",
-          "symbol": "UNH",
-          "pct": -1.767558228034464
+          "name": "Salesforce, Inc.",
+          "symbol": "CRM",
+          "pct": -2.713945803537222
         }
       ],
       "breadth": {
-        "up": 14,
-        "down": 16,
+        "up": 11,
+        "down": 19,
         "flat": 0,
         "priced": 30,
-        "median": -0.02
+        "median": -0.26
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Li Ning Company Limited",
-          "symbol": "2331.HK",
-          "pct": 5.529595246958566
-        },
-        {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": 2.75989138816291
+          "pct": 6.16622484300381
         },
         {
-          "name": "Industrial and Commercial Bank of China Limited",
-          "symbol": "1398.HK",
-          "pct": 2.2177414056992677
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": 5.42567065768359
+        },
+        {
+          "name": "Sunny Optical Technology (Group) Company Limited",
+          "symbol": "2382.HK",
+          "pct": 4.104180799914638
         }
       ],
       "bottom": [
         {
-          "name": "Longfor Group Holdings Limited",
-          "symbol": "0960.HK",
-          "pct": -7.358875910244635
+          "name": "Sands China Ltd.",
+          "symbol": "1928.HK",
+          "pct": -2.571172431754709
         },
         {
-          "name": "HSBC Holdings plc",
-          "symbol": "0005.HK",
-          "pct": -5.274261716566593
+          "name": "Sinopharm Group Co. Ltd.",
+          "symbol": "1099.HK",
+          "pct": -2.453985504617773
         },
         {
-          "name": "Xiaomi Corporation",
-          "symbol": "1810.HK",
-          "pct": -5.055757331929789
+          "name": "CLP Holdings Limited",
+          "symbol": "0002.HK",
+          "pct": -2.3195817754604255
         }
       ],
       "breadth": {
-        "up": 27,
-        "down": 56,
-        "flat": 2,
+        "up": 32,
+        "down": 52,
+        "flat": 1,
         "priced": 85,
-        "median": -0.89
+        "median": -0.27
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 5.817070442336279
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": 3.7748595765197477
         },
         {
-          "name": "L'Oréal S.A.",
-          "symbol": "OR.PA",
-          "pct": 5.641643533406477
-        },
-        {
-          "name": "TotalEnergies SE",
-          "symbol": "TTE.PA",
-          "pct": 4.338576451194628
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Safran SA",
-          "symbol": "SAF.PA",
-          "pct": -10.000004042063328
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": 3.59254626534802
         },
         {
           "name": "Hermès International Société en commandite par actions",
           "symbol": "RMS.PA",
-          "pct": -3.9550213260953857
+          "pct": 3.229713362939039
+        }
+      ],
+      "bottom": [
+        {
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -3.4216319275177187
         },
         {
-          "name": "Deutsche Telekom AG",
-          "symbol": "DTE.DE",
-          "pct": -3.1703587243349416
+          "name": "Anheuser-Busch InBev SA/NV",
+          "symbol": "ABI.BR",
+          "pct": -2.3872719036219285
+        },
+        {
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": -2.052043993344108
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 26,
-        "flat": 1,
+        "up": 37,
+        "down": 13,
+        "flat": 0,
         "priced": 50,
-        "median": -0.13
+        "median": 0.83
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-10-27",
+      "asAt": "2026-10-28",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Advantest Corporation",
-          "symbol": "6857.T",
-          "pct": 8.979723205664628
+          "name": "Renesas Electronics Corporation",
+          "symbol": "6723.T",
+          "pct": 7.470965505286878
+        },
+        {
+          "name": "Taiyo Yuden Co., Ltd.",
+          "symbol": "6976.T",
+          "pct": 7.1386980319086994
         },
         {
           "name": "Sumco Corporation",
           "symbol": "3436.T",
-          "pct": 5.496688741721854
-        },
-        {
-          "name": "SoftBank Group Corp.",
-          "symbol": "9984.T",
-          "pct": 4.949566033309876
+          "pct": 6.06821510776313
         }
       ],
       "bottom": [
         {
-          "name": "Daiichi Sankyo Company, Limited",
-          "symbol": "4568.T",
-          "pct": -8.15929203539823
+          "name": "Konami Group Corporation",
+          "symbol": "9766.T",
+          "pct": -6.36734693877551
         },
         {
-          "name": "Japan Exchange Group, Inc.",
-          "symbol": "8697.T",
-          "pct": -4.831358249772106
+          "name": "Canon Inc.",
+          "symbol": "7751.T",
+          "pct": -5.99510603588907
         },
         {
-          "name": "Mitsubishi Estate Co., Ltd.",
-          "symbol": "8802.T",
-          "pct": -4.036557501904037
+          "name": "Nitto Denko Corporation",
+          "symbol": "6988.T",
+          "pct": -5.888888888888888
         }
       ],
       "breadth": {
-        "up": 122,
-        "down": 100,
+        "up": 83,
+        "down": 139,
         "flat": 1,
         "priced": 223,
-        "median": 0.35
+        "median": -0.76
       },
       "built": "12 spark batches"
     }
