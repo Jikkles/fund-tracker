@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-29T08:07:10+00:00",
+  "generated": "2026-10-29T13:20:12+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "3i Group Plc",
-          "symbol": "III",
-          "pct": 0.0
+          "name": "Shell plc",
+          "symbol": "SHEL",
+          "pct": 3.32
         },
         {
-          "name": "Aberdeen Group Plc",
-          "symbol": "ABDN",
-          "pct": 0.0
+          "name": "BAE Systems plc",
+          "symbol": "BA.",
+          "pct": 2.86
         },
         {
-          "name": "Admiral Group",
-          "symbol": "ADM",
-          "pct": 0.0
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": 2.42
         }
       ],
       "bottom": [
         {
-          "name": "WPP plc",
-          "symbol": "WPP",
-          "pct": 0.0
+          "name": "Haleon plc",
+          "symbol": "HLN",
+          "pct": -14.87
         },
         {
-          "name": "Whitbread plc",
-          "symbol": "WTB",
-          "pct": 0.0
+          "name": "St James's Place Plc",
+          "symbol": "STJ",
+          "pct": -4.58
         },
         {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": 0.0
+          "name": "Lloyds Banking Group plc",
+          "symbol": "LLOY",
+          "pct": -4.58
         }
       ],
       "breadth": {
-        "up": 0,
-        "down": 0,
-        "flat": 100,
+        "up": 80,
+        "down": 18,
+        "flat": 2,
         "priced": 100,
-        "median": 0.0
+        "median": 0.58
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "3i Infrastructure plc",
-          "symbol": "3IN",
-          "pct": 0.0
+          "name": "Saga plc",
+          "symbol": "SAGA",
+          "pct": 4.96
         },
         {
-          "name": "4imprint Group plc",
-          "symbol": "FOUR",
-          "pct": 0.0
+          "name": "Bridgepoint Group plc",
+          "symbol": "BPT",
+          "pct": 3.78
         },
         {
-          "name": "Aberdeen Asia Focus Plc",
-          "symbol": "AAS",
-          "pct": 0.0
+          "name": "Morgan Advanced Materials plc",
+          "symbol": "MGAM",
+          "pct": 2.9
         }
       ],
       "bottom": [
         {
-          "name": "Zigup Plc",
-          "symbol": "ZIG",
-          "pct": 0.0
+          "name": "Henderson Far East Income Ltd",
+          "symbol": "HFEL",
+          "pct": -4.17
         },
         {
-          "name": "Young & Co's Brewery Plc",
-          "symbol": "YNGA",
-          "pct": 0.0
+          "name": "Rank Group",
+          "symbol": "RNK",
+          "pct": -2.61
         },
         {
-          "name": "XPS Pensions Group Plc",
-          "symbol": "XPS",
-          "pct": 0.0
+          "name": "Kier Group plc",
+          "symbol": "KIE",
+          "pct": -2.33
         }
       ],
       "breadth": {
-        "up": 0,
-        "down": 0,
-        "flat": 251,
+        "up": 133,
+        "down": 91,
+        "flat": 27,
         "priced": 251,
-        "median": 0.0
+        "median": 0.14
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -137,8 +137,8 @@
         }
       ],
       "breadth": {
-        "up": 246,
-        "down": 257,
+        "up": 247,
+        "down": 256,
         "flat": 0,
         "priced": 503,
         "median": -0.06
@@ -248,44 +248,44 @@
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "China Life Insurance Company Limited",
-          "symbol": "2628.HK",
-          "pct": 2.87648190665158
+          "name": "Hansoh Pharmaceutical Group Company Limited",
+          "symbol": "3692.HK",
+          "pct": 2.924712069873291
         },
         {
           "name": "PetroChina Company Limited",
           "symbol": "0857.HK",
-          "pct": 2.713572491853273
+          "pct": 2.9145725368053594
         },
         {
-          "name": "Hansoh Pharmaceutical Group Company Limited",
-          "symbol": "3692.HK",
-          "pct": 2.4891078165925804
+          "name": "Ping An Insurance (Group) Company of China, Ltd.",
+          "symbol": "2318.HK",
+          "pct": 2.5630381074686457
         }
       ],
       "bottom": [
         {
           "name": "Lenovo Group Limited",
           "symbol": "0992.HK",
-          "pct": -7.0647613821106585
+          "pct": -6.896556979151268
         },
         {
           "name": "Semiconductor Manufacturing International Corporation",
           "symbol": "0981.HK",
-          "pct": -6.192466802756127
+          "pct": -5.941423008195295
         },
         {
           "name": "Geely Automobile Holdings Limited",
           "symbol": "0175.HK",
-          "pct": -4.016911287384421
+          "pct": -4.369273459431171
         }
       ],
       "breadth": {
-        "up": 25,
-        "down": 58,
-        "flat": 2,
+        "up": 24,
+        "down": 61,
+        "flat": 0,
         "priced": 85,
-        "median": -0.51
+        "median": -0.45
       },
       "built": "5 spark batches"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 4.76095488710206
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": 4.049347531102876
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 4.400777856271528
+          "name": "Deutsche Bank Aktiengesellschaft",
+          "symbol": "DBK.DE",
+          "pct": 3.7974662633744725
         },
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": 3.885716029575893
+          "name": "L'Air Liquide S.A.",
+          "symbol": "AI.PA",
+          "pct": 3.1795185442359055
         }
       ],
       "bottom": [
         {
-          "name": "Mercedes-Benz Group AG",
-          "symbol": "MBG.DE",
-          "pct": -3.8554446390777155
+          "name": "Banco Bilbao Vizcaya Argentaria, S.A.",
+          "symbol": "BBVA.MC",
+          "pct": -3.4298460204722643
         },
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": -2.57779688911481
+          "name": "Anheuser-Busch InBev SA/NV",
+          "symbol": "ABI.BR",
+          "pct": -2.1084349619715845
         },
         {
-          "name": "Bayerische Motoren Werke Aktiengesellschaft",
-          "symbol": "BMW.DE",
-          "pct": -1.7665404019966708
+          "name": "Industria de Diseño Textil, S.A.",
+          "symbol": "ITX.MC",
+          "pct": -1.997202466320662
         }
       ],
       "breadth": {
-        "up": 30,
-        "down": 19,
-        "flat": 1,
+        "up": 39,
+        "down": 11,
+        "flat": 0,
         "priced": 50,
-        "median": 0.37
+        "median": 0.93
       },
       "built": "3 spark batches"
     },
