@@ -1,6 +1,6 @@
 {
   "s-p-500": {
-    "fetched": "2026-10-22",
+    "fetched": "2026-10-29",
     "label": "S&P 500",
     "source": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
     "nominal": 503,
@@ -1506,12 +1506,12 @@
         "name": "Prudential Financial"
       },
       {
-        "symbol": "PEG",
-        "name": "Public Service Enterprise Group"
-      },
-      {
         "symbol": "PTC",
         "name": "PTC Inc."
+      },
+      {
+        "symbol": "PEG",
+        "name": "Public Service Enterprise Group"
       },
       {
         "symbol": "PSA",
@@ -1522,20 +1522,20 @@
         "name": "PulteGroup"
       },
       {
-        "symbol": "PWR",
-        "name": "Quanta Services"
+        "symbol": "Q",
+        "name": "Qnity Electronics"
       },
       {
         "symbol": "QCOM",
         "name": "Qualcomm"
       },
       {
-        "symbol": "DGX",
-        "name": "Quest Diagnostics"
+        "symbol": "PWR",
+        "name": "Quanta Services"
       },
       {
-        "symbol": "Q",
-        "name": "Qnity Electronics"
+        "symbol": "DGX",
+        "name": "Quest Diagnostics"
       },
       {
         "symbol": "RL",
@@ -1548,10 +1548,6 @@
       {
         "symbol": "RDDT",
         "name": "Reddit"
-      },
-      {
-        "symbol": "RTX",
-        "name": "RTX Corporation"
       },
       {
         "symbol": "O",
@@ -1606,6 +1602,10 @@
         "name": "Royal Caribbean Group"
       },
       {
+        "symbol": "RTX",
+        "name": "RTX Corporation"
+      },
+      {
         "symbol": "SPGI",
         "name": "S&P Global"
       },
@@ -1647,7 +1647,7 @@
       },
       {
         "symbol": "SKYD",
-        "name": "Skydance Corporation"
+        "name": "Skydance"
       },
       {
         "symbol": "SWKS",
@@ -2020,7 +2020,7 @@
     ]
   },
   "nasdaq-100": {
-    "fetched": "2026-10-22",
+    "fetched": "2026-10-29",
     "label": "Nasdaq 100",
     "source": "https://en.wikipedia.org/wiki/List_of_NASDAQ-100_companies",
     "nominal": null,
@@ -2432,7 +2432,7 @@
     ]
   },
   "dow-jones": {
-    "fetched": "2026-10-22",
+    "fetched": "2026-10-29",
     "label": "Dow Jones",
     "source": "https://en.wikipedia.org/wiki/List_of_Dow_Jones_Industrial_Average_companies",
     "nominal": 30,
@@ -2560,7 +2560,7 @@
     ]
   },
   "hang-seng": {
-    "fetched": "2026-10-22",
+    "fetched": "2026-10-29",
     "label": "Hang Seng",
     "source": "https://en.wikipedia.org/wiki/Hang_Seng_Index",
     "nominal": null,
@@ -2908,7 +2908,7 @@
     ]
   },
   "euro-stoxx-50": {
-    "fetched": "2026-10-22",
+    "fetched": "2026-10-29",
     "label": "Euro STOXX 50",
     "source": "https://en.wikipedia.org/wiki/EURO_STOXX_50",
     "nominal": 50,
@@ -3002,6 +3002,10 @@
         "name": "Enel"
       },
       {
+        "symbol": "ENGI.PA",
+        "name": "Engie"
+      },
+      {
         "symbol": "ENI.MI",
         "name": "Eni"
       },
@@ -3054,6 +3058,10 @@
         "name": "Munich Re"
       },
       {
+        "symbol": "NOKIA.HE",
+        "name": "Nokia"
+      },
+      {
         "symbol": "NDA-FI.HE",
         "name": "Nordea"
       },
@@ -3104,19 +3112,11 @@
       {
         "symbol": "UCG.MI",
         "name": "UniCredit"
-      },
-      {
-        "symbol": "VOW.DE",
-        "name": "Volkswagen Group"
-      },
-      {
-        "symbol": "WKL.AS",
-        "name": "Wolters Kluwer"
       }
     ]
   },
   "nikkei-225": {
-    "fetched": "2026-10-22",
+    "fetched": "2026-10-29",
     "label": "Nikkei 225",
     "source": "https://en.wikipedia.org/wiki/Nikkei_225",
     "nominal": 225,
