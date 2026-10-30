@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-30T09:10:48+00:00",
+  "generated": "2026-10-30T13:11:49+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "BT Group plc",
           "symbol": "BT.A",
-          "pct": 4.88
+          "pct": 7.0
         },
         {
-          "name": "Prudential plc",
-          "symbol": "PRU",
-          "pct": 3.47
+          "name": "AstraZeneca plc",
+          "symbol": "AZN",
+          "pct": 5.46
         },
         {
-          "name": "Experian Plc",
-          "symbol": "EXPN",
-          "pct": 3.07
+          "name": "RELX plc",
+          "symbol": "REL",
+          "pct": 3.95
         }
       ],
       "bottom": [
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": -4.81
-        },
-        {
-          "name": "Polar Capital Technology Trust plc",
-          "symbol": "PCT",
-          "pct": -3.57
+          "name": "NatWest Group plc",
+          "symbol": "NWG",
+          "pct": -8.25
         },
         {
           "name": "Fresnillo",
           "symbol": "FRES",
-          "pct": -3.52
+          "pct": -5.13
+        },
+        {
+          "name": "Polar Capital Technology Trust plc",
+          "symbol": "PCT",
+          "pct": -5.0
         }
       ],
       "breadth": {
-        "up": 53,
-        "down": 46,
-        "flat": 1,
+        "up": 50,
+        "down": 50,
+        "flat": 0,
         "priced": 100,
-        "median": 0.19
+        "median": 0.01
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Trustpilot Group plc",
-          "symbol": "TRST",
-          "pct": 2.66
-        },
-        {
-          "name": "SDCL Efficiency Income Trust Plc",
-          "symbol": "SEIT",
-          "pct": 2.65
-        },
-        {
           "name": "Rightmove plc",
           "symbol": "RMV",
-          "pct": 2.62
+          "pct": 2.34
+        },
+        {
+          "name": "Vistry Group Plc",
+          "symbol": "VTY",
+          "pct": 2.34
+        },
+        {
+          "name": "J D Wetherspoon plc",
+          "symbol": "JDW",
+          "pct": 1.9
         }
       ],
       "bottom": [
         {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": -7.34
+          "pct": -7.48
         },
         {
-          "name": "XP Power Limited",
-          "symbol": "XPP",
-          "pct": -4.19
+          "name": "Shawbrook Group Plc",
+          "symbol": "SHAW",
+          "pct": -6.83
         },
         {
-          "name": "Seraphim Space Investment Trust plc",
-          "symbol": "SSIT",
-          "pct": -4.06
+          "name": "Pan African Resources plc",
+          "symbol": "PAF",
+          "pct": -6.28
         }
       ],
       "breadth": {
-        "up": 89,
-        "down": 126,
-        "flat": 36,
+        "up": 68,
+        "down": 171,
+        "flat": 12,
         "priced": 251,
-        "median": -0.06
+        "median": -0.61
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Sanofi",
           "symbol": "SAN.PA",
-          "pct": 4.858827149182362
+          "pct": 5.502291172755639
+        },
+        {
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": 4.0684624714700455
         },
         {
           "name": "Bayer Aktiengesellschaft",
           "symbol": "BAYN.DE",
-          "pct": 3.315263100375377
-        },
-        {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": 2.267434666800721
+          "pct": 3.982485162370413
         }
       ],
       "bottom": [
         {
-          "name": "Nokia Oyj",
-          "symbol": "NOKIA.HE",
-          "pct": -5.142313815400732
-        },
-        {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": -5.0484333316986225
+          "pct": -7.631348414319794
+        },
+        {
+          "name": "Nokia Oyj",
+          "symbol": "NOKIA.HE",
+          "pct": -7.1035674055076115
         },
         {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": -4.505585235787627
+          "pct": -5.768211457443879
         }
       ],
       "breadth": {
-        "up": 29,
-        "down": 21,
+        "up": 24,
+        "down": 26,
         "flat": 0,
         "priced": 50,
-        "median": 0.21
+        "median": -0.07
       },
       "built": "3 spark batches"
     },
