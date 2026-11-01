@@ -2,9 +2,7 @@
 Price-history series for the index chart at the top of the page.
 
 Yahoo's chart endpoint is the only free source here that publishes intraday
-bars, and the 1D/5D ranges are the whole point of the panel, so this module
-uses Yahoo alone rather than the Stooq-first ladder in market_data.py. Stooq
-is daily-only and cannot serve those two ranges.
+bars, and the 1D/5D ranges are the whole point of the panel.
 
 Four series are fetched per index and the rest are derived in the browser:
 

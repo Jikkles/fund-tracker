@@ -1,31 +1,29 @@
 """
 Free market data. No API key, no signup, no account.
 
-Two independent sources, tried in order:
+One source: Yahoo's chart JSON endpoint, no key.
 
-  1. Stooq  - plain CSV over HTTPS, no key, no rate limit worth worrying
-              about, and stable for years. Primary.
-  2. Yahoo  - the chart JSON endpoint, no key. Used when Stooq has no
-              coverage for a symbol (it is patchy on some LSE ETFs and
-              futures). Secondary.
+There used to be a second, and it was tried first. Stooq began answering with
+a JavaScript bot-check page instead of CSV, so it stopped supplying prices -
+all 255 quotes in the ten daily runs to 2026-11-01 came from Yahoo - while
+still being asked for every ticker. Usually that wasted one request. When
+stooq.com was also slow to answer it cost about 153s a ticker before Yahoo was
+even tried, which ran "Run the update" into its ten-minute limit on 2026-10-18,
+10-23 and 10-27 and threw away those runs' NAV refresh. A fallback that cannot
+return data only adds a way to fail.
 
-Both are unofficial in the sense that neither publishes an SLA for this use.
-That is the trade-off for £0 and zero credentials. The design assumption is
-that a symbol WILL sometimes fail, so failure is handled per-symbol: a fund
-whose proxy could not be priced is reported as unverified rather than
-guessed, and the run still succeeds.
+Yahoo is unofficial in the sense that it publishes no SLA for this use. That
+is the trade-off for £0 and zero credentials. The design assumption is that a
+symbol WILL sometimes fail, so failure is handled per-symbol: a fund whose
+proxy could not be priced is reported as unverified rather than guessed, and
+the run still succeeds.
 
-NOTE ON TESTING: the sandbox this was written in cannot reach either host,
-so the live fetch paths could not be exercised here. The parsing logic is
-unit-tested against captured payloads (see tests at the bottom). Run
-`python scripts/market_data.py --selftest` on a machine with network access
-before trusting a first live run.
+`python scripts/market_data.py --selftest` checks the parsing offline and then
+makes one live fetch.
 """
 
 from __future__ import annotations
 
-import csv
-import io
 import json
 from dataclasses import dataclass
 from datetime import date, datetime, time as dtime, timedelta, timezone
@@ -63,56 +61,10 @@ def _get(url: str) -> bytes | None:
 
 
 # ---------------------------------------------------------------------------
-# Stooq
+# Public entry point
 # ---------------------------------------------------------------------------
-def _stooq_symbol(ticker: str) -> str:
-    """Translate a Yahoo-style symbol into Stooq's convention."""
-    t = ticker.upper()
-    if t.endswith(".L"):
-        return t[:-2].lower() + ".uk"
-    return {
-        "^FTSE": "^ukx", "^FTMC": "^mcx", "^GSPC": "^spx", "^NDX": "^ndx",
-        "^STOXX50E": "^stx50", "^N225": "^nkx", "^HSI": "^hsi",
-        "GC=F": "gc.f", "BZ=F": "cb.f", "^TNX": "10usy.b",
-        "GBPUSD=X": "gbpusd",
-    }.get(t, t.lower())
-
-
-def fetch_stooq(ticker: str, start: date, end: date) -> Quote | None:
-    sym = _stooq_symbol(ticker)
-    url = (f"https://stooq.com/q/d/l/?s={sym}"
-           f"&d1={start:%Y%m%d}&d2={end:%Y%m%d}&i=d")
-    raw = _get(url)
-    if raw is None:
-        return None
-    return _parse_stooq(raw.decode("utf-8", errors="replace"), ticker)
-
-
-def _parse_stooq(raw: str, ticker: str) -> Quote | None:
-    if not raw or raw.lstrip().lower().startswith("no data"):
-        return None
-    rows = list(csv.DictReader(io.StringIO(raw)))
-    rows = [r for r in rows if r.get("Close") not in (None, "", "-")]
-    if len(rows) < 2:
-        return None
-    first, last = rows[0], rows[-1]
-    try:
-        return Quote(
-            symbol=ticker,
-            start_date=date.fromisoformat(first["Date"]),
-            end_date=date.fromisoformat(last["Date"]),
-            start_price=float(first["Close"]),
-            end_price=float(last["Close"]),
-            source="stooq",
-        )
-    except (KeyError, ValueError):
-        return None
-
-
-# ---------------------------------------------------------------------------
-# Yahoo fallback
-# ---------------------------------------------------------------------------
-def fetch_yahoo(ticker: str, start: date, end: date) -> Quote | None:
+def fetch(ticker: str, start: date, end: date) -> Quote | None:
+    """Price a window. None if it could not be priced."""
     # A calendar date, not time.mktime on a date tuple: mktime reads the
     # struct in LOCAL time, and a runner in a different zone than the author
     # shifts the window by an hour either way. UTC midnight is the same
@@ -150,18 +102,6 @@ def _parse_yahoo(raw: bytes, ticker: str) -> Quote | None:
     )
 
 
-# ---------------------------------------------------------------------------
-# Public entry point
-# ---------------------------------------------------------------------------
-def fetch(ticker: str, start: date, end: date) -> Quote | None:
-    """Price a window, trying each source. None if all fail."""
-    for fetcher in (fetch_stooq, fetch_yahoo):
-        quote = fetcher(ticker, start, end)
-        if quote is not None:
-            return quote
-    return None
-
-
 def fetch_many(tickers: dict[str, str], start: date,
                end: date) -> dict[str, Quote]:
     """Price several labelled tickers. Missing entries simply absent."""
@@ -174,7 +114,7 @@ def fetch_many(tickers: dict[str, str], start: date,
                   f"{quote.format_pct():>8}  ({quote.source})")
         else:
             print(f"  [data] {label:20} {ticker:12} "
-                  f"{'FAILED':>8}  (all sources)")
+                  f"{'FAILED':>8}  (yahoo)")
     return out
 
 
@@ -184,18 +124,6 @@ def fetch_many(tickers: dict[str, str], start: date,
 def _selftest_offline() -> bool:
     ok = True
 
-    stooq_csv = (
-        "Date,Open,High,Low,Close,Volume\n"
-        "2026-07-28,10800.0,10880.0,10790.0,10846.00,0\n"
-        "2026-08-10,10700.0,10760.0,10690.0,10720.00,0\n"
-        "2026-08-25,10850.0,10890.0,10840.0,10868.00,0\n"
-    )
-    q = _parse_stooq(stooq_csv, "^FTSE")
-    assert q and q.source == "stooq", "stooq parse failed"
-    assert abs(q.pct_change - 0.2029) < 0.01, f"stooq pct wrong: {q.pct_change}"
-    print(f"  stooq parse      OK  {q.format_pct()} "
-          f"({q.start_date} -> {q.end_date})")
-
     yahoo_json = json.dumps({"chart": {"result": [{
         "timestamp": [1754006400, 1755216000, 1756080000],
         "indicators": {"quote": [{"close": [100.0, None, 104.5]}]},
@@ -204,18 +132,16 @@ def _selftest_offline() -> bool:
     assert q2 and abs(q2.pct_change - 4.5) < 0.001, "yahoo pct wrong"
     print(f"  yahoo parse      OK  {q2.format_pct()} (None values skipped)")
 
-    assert _parse_stooq("No data\n", "X") is None
-    assert _parse_stooq("Date,Close\n2026-01-01,5\n", "X") is None, \
-        "single row should be rejected"
+    one_row = json.dumps({"chart": {"result": [{
+        "timestamp": [1754006400],
+        "indicators": {"quote": [{"close": [100.0]}]},
+    }]}}).encode()
+    assert _parse_yahoo(one_row, "X") is None, "single row should be rejected"
     assert _parse_yahoo(b"not json", "X") is None
     assert _parse_yahoo(json.dumps({"chart": {"result": []}}).encode(),
                         "X") is None
     print("  failure handling OK  (empty, single-row, malformed all -> None)")
 
-    assert _stooq_symbol("ISF.L") == "isf.uk"
-    assert _stooq_symbol("^FTSE") == "^ukx"
-    assert _stooq_symbol("GC=F") == "gc.f"
-    print("  symbol mapping   OK")
     return ok
 
 
@@ -232,7 +158,7 @@ if __name__ == "__main__":
             print(f"  LIVE OK: FTSE 100 {q.format_pct()} via {q.source} "
                   f"({q.start_date} -> {q.end_date})")
         else:
-            print("  LIVE FAILED: neither source reachable. "
+            print("  LIVE FAILED: Yahoo not reachable. "
                   "Check network/DNS before relying on a scheduled run.")
     else:
         today = date.today()

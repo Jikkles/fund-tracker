@@ -350,7 +350,7 @@ cache-busting query, so neither the browser nor GitHub's CDN can serve yesterday
 | `scripts/fund_nav.py` | Resolves each fund to a Yahoo NAV symbol and prices it — `--resolve-only` to check matches |
 | `scripts/hl_factsheet.py` | Refreshes depth from HL factsheets — `--dry-run`, `--only <id>`, `--new`, `--repair-text` |
 | `scripts/market_series.py` | Index chart series + per-index headlines — **edit `INDICES`** to change the tabs |
-| `scripts/market_data.py` | Stooq primary, Yahoo fallback, per-symbol failure |
+| `scripts/market_data.py` | Yahoo prices for market context and tracker proxies, per-symbol failure |
 | `scripts/cb_calendar.py` | Reads the published Fed/BoE calendars |
 | `scripts/stat_calendar.py` | Reads the ONS release calendar for UK CPI / labour market / GDP |
 | `scripts/calendar_data.py` | Central bank dates + ONS releases + earnings lookup |
@@ -383,14 +383,11 @@ python scripts/market_series.py  --dry-run    # chart fetch, writes nothing
 
 #### Data sources
 
-- **Both sources are unofficial.** Neither publishes an SLA for this use — that's the
+- **Yahoo is the only price source, and it is unofficial.** It publishes no SLA for this use — that's the
   trade-off for zero cost and zero credentials. Failure is per-symbol: an unpriceable fund is
   reported as unverified rather than guessed, and if *nothing* prices, the run aborts rather
   than overwriting good data with blanks.
-- **The live fetch paths were never exercised during development** — the sandbox couldn't
-  reach Stooq or Yahoo. Parsing is unit-tested against captured payloads. **Run `--selftest` first.**
-- **The chart is Yahoo-only.** Unlike the fund figures it has no Stooq fallback; Yahoo is the
-  only free source here publishing intraday bars. An index that won't fetch is dropped from
+- **The chart depends on Yahoo too**, the only free source here publishing intraday bars. An index that won't fetch is dropped from
   the tabs; if nothing fetches, the run fails and the previous deploy stays live.
 - **The central bank calendar is scraped, so it can break.** It degrades to the hardcoded
   table rather than to nothing, and the run warns when the merged calendar is within 75 days

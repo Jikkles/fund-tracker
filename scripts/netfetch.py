@@ -42,6 +42,7 @@ Standard library only, like everything else here.
 
 from __future__ import annotations
 
+import http.client
 import json
 import random
 import threading
@@ -78,7 +79,6 @@ RATE: dict[str, float] = {
     "query1.finance.yahoo.com": 8.0,
     "query2.finance.yahoo.com": 8.0,
     "feeds.finance.yahoo.com": 4.0,
-    "stooq.com": 4.0,
     "markets.ft.com": 2.0,
     "en.wikipedia.org": 2.0,
     "www.hl.co.uk": 1.0,
@@ -226,7 +226,14 @@ def fetch(url: str, *, headers: dict | None = None, ua: str = UA_DESK,
                 # The host named a number. Hold every thread off it, not just
                 # this one - a 429 is about the process, not the request.
                 _penalise(host, pause)
-        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+        except (urllib.error.URLError, TimeoutError, OSError,
+                http.client.HTTPException) as exc:
+            # HTTPException because a body cut off mid-transfer raises
+            # IncompleteRead, which is not an OSError. It escaped from here
+            # and took down fid_factsheet.py on 2026-10-18 and 2026-11-01,
+            # discarding that run's whole refresh over one truncated page.
+            # The partial bytes are never used: a page that stops halfway is
+            # asked for again, or reported as a failure.
             last = describe(exc)
         if attempt < tries - 1:
             time.sleep(_backoff(attempt))
@@ -315,8 +322,22 @@ def _selftest() -> bool:
     r = fetch("https://example.test/d", tries=2, _opener=op)
     assert not r and r.error == "timed out", r.error
     assert len(op.calls) == 2, op.calls
-    print("  retry policy     OK  (404/403 once, 429 and timeout retried)",
-          file=_sys.stderr)
+
+    # A body cut off mid-transfer is retried too, and the good copy returned.
+    cut = http.client.IncompleteRead(b"partial")
+    op = opener_for([cut, b"whole page"])
+    r = fetch("https://example.test/f", tries=3, _opener=op)
+    assert r and r.body == b"whole page", (r.body, r.error)
+    assert len(op.calls) == 2, op.calls
+
+    # If it never arrives whole, that is a failure with a reason - not a raise,
+    # and not the partial bytes passed off as the page.
+    op = opener_for([cut])
+    r = fetch("https://example.test/g", tries=2, _opener=op)
+    assert not r and r.body is None and "IncompleteRead" in r.error, r.error
+    assert len(op.calls) == 2, op.calls
+    print("  retry policy     OK  (404/403 once; 429, timeout, truncated body "
+          "retried)", file=_sys.stderr)
 
     # Retry-After is read, clamped, and applied to the HOST rather than to
     # this one request - a throttle is about the process, not the call.

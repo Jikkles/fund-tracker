@@ -632,7 +632,7 @@ def main() -> int:
             f"unverified by design. "
             f"{cat_stats['refreshed']} catalyst dates refreshed."),
         "status": "corrected",
-        "source": "Stooq / Yahoo Finance public endpoints; BoE and Fed "
+        "source": "Yahoo Finance public endpoints; BoE and Fed "
                   "published calendars",
     })
     if cal_warnings:
