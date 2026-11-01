@@ -75,7 +75,15 @@ jobs:
       # gate, a fresh chart, and the deploy.
       REFRESH_DATA: ${{ github.event_name != 'push' }}
     steps:
+      # ref: main, because the default is the commit this run was CREATED on,
+      # and a run queued behind another on the fund-tracker-pages group can
+      # start long after main has moved. On 2026-11-01 a daily run created 33s
+      # before the weekly run committed checked out the older funds.json, then
+      # moved onto main in the commit step below and committed that file on
+      # top - wiping the whole factsheet refresh with every job green.
       - uses: actions/checkout@v7
+        with:
+          ref: main
 
       - uses: actions/setup-python@v7
         with:
@@ -182,7 +190,10 @@ jobs:
           # browser is holding has been superseded - see newBuildAvailable().
           # Only _site is stamped; the repo keeps its placeholder, which is how
           # the page knows it is being opened locally rather than served.
-          sed -i "s/__BUILD__/$GITHUB_SHA/" _site/index.html
+          # HEAD rather than $GITHUB_SHA, which is only the commit the run was
+          # created on: a queued run building a newer index.html under that old
+          # stamp would tell a browser holding the old page nothing had changed.
+          sed -i "s/__BUILD__/$(git rev-parse HEAD)/" _site/index.html
           # Every file index.html fetches, copied by one list in every
           # workflow that deploys, and MISSING ONE IS A HARD FAILURE.
           #
