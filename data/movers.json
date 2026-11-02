@@ -1,105 +1,105 @@
 {
-  "generated": "2026-11-01T13:50:37+00:00",
+  "generated": "2026-11-02T09:04:29+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "AstraZeneca plc",
-          "symbol": "AZN",
-          "pct": 6.96
+          "name": "St James's Place Plc",
+          "symbol": "STJ",
+          "pct": 3.03
         },
         {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": 6.71
+          "name": "JD Sports Fashion plc",
+          "symbol": "JD.",
+          "pct": 2.85
         },
         {
-          "name": "Coca-Cola Europacific Partners Plc",
-          "symbol": "CCEP",
-          "pct": 3.28
+          "name": "International Consolidated Airlines Group SA",
+          "symbol": "IAG",
+          "pct": 2.73
         }
       ],
       "bottom": [
         {
-          "name": "NatWest Group plc",
-          "symbol": "NWG",
-          "pct": -8.75
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": -2.25
         },
         {
-          "name": "Computacenter plc",
-          "symbol": "CCC",
-          "pct": -6.03
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": -1.93
         },
         {
-          "name": "Polar Capital Technology Trust plc",
-          "symbol": "PCT",
-          "pct": -5.95
+          "name": "BP Plc",
+          "symbol": "BP.",
+          "pct": -1.91
         }
       ],
       "breadth": {
-        "up": 44,
-        "down": 52,
-        "flat": 4,
+        "up": 64,
+        "down": 36,
+        "flat": 0,
         "priced": 100,
-        "median": -0.15
+        "median": 0.27
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": 2.76
+          "name": "THG plc",
+          "symbol": "THG",
+          "pct": 5.51
         },
         {
-          "name": "Avon Technologies Plc",
-          "symbol": "AVON",
-          "pct": 2.4
+          "name": "FirstGroup plc",
+          "symbol": "FGP",
+          "pct": 3.78
         },
         {
-          "name": "Travis Perkins plc",
-          "symbol": "TPK",
-          "pct": 2.06
+          "name": "Ocado Group plc",
+          "symbol": "OCDO",
+          "pct": 3.41
         }
       ],
       "bottom": [
         {
-          "name": "TBC Bank Group Plc",
-          "symbol": "TBCG",
-          "pct": -8.93
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": -3.14
         },
         {
-          "name": "Raspberry Pi Holdings plc",
-          "symbol": "RPI",
-          "pct": -8.85
+          "name": "Foresight Environmental Infrastructure Ltd",
+          "symbol": "FGEN",
+          "pct": -3.0
         },
         {
-          "name": "Shawbrook Group Plc",
-          "symbol": "SHAW",
-          "pct": -8.5
+          "name": "Energean",
+          "symbol": "ENOG",
+          "pct": -2.62
         }
       ],
       "breadth": {
-        "up": 61,
-        "down": 180,
-        "flat": 10,
+        "up": 156,
+        "down": 67,
+        "flat": 28,
         "priced": 251,
-        "median": -0.74
+        "median": 0.34
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
@@ -147,7 +147,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
@@ -195,7 +195,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -243,145 +243,145 @@
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "China Mengniu Dairy Company Limited",
-          "symbol": "2319.HK",
-          "pct": 9.421493265903216
+          "name": "Xiaomi Corporation",
+          "symbol": "1810.HK",
+          "pct": 6.117828048484111
         },
         {
-          "name": "China Petroleum & Chemical Corporation",
-          "symbol": "0386.HK",
-          "pct": 6.222704195625675
+          "name": "China Life Insurance Company Limited",
+          "symbol": "2628.HK",
+          "pct": 3.852596769791558
         },
         {
-          "name": "Nongfu Spring Co., Ltd.",
-          "symbol": "9633.HK",
-          "pct": 5.902953069967827
+          "name": "Galaxy Entertainment Group Limited",
+          "symbol": "0027.HK",
+          "pct": 3.7429722296952157
         }
       ],
       "bottom": [
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": -7.407404854831295
+          "name": "BOC Hong Kong (Holdings) Limited",
+          "symbol": "2388.HK",
+          "pct": -5.702972412109375
         },
         {
-          "name": "Semiconductor Manufacturing International Corporation",
-          "symbol": "0981.HK",
-          "pct": -4.403913662267264
+          "name": "Bank of China Limited",
+          "symbol": "3988.HK",
+          "pct": -4.637914536968615
         },
         {
-          "name": "WuXi AppTec Co., Ltd.",
-          "symbol": "2359.HK",
-          "pct": -2.9827378466663417
+          "name": "BYD Electronic (International) Company Limited",
+          "symbol": "0285.HK",
+          "pct": -3.669721399349996
         }
       ],
       "breadth": {
-        "up": 71,
-        "down": 14,
-        "flat": 0,
+        "up": 51,
+        "down": 33,
+        "flat": 1,
         "priced": 85,
-        "median": 1.88
+        "median": 0.38
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": 5.462891569216633
+          "name": "Banco Santander, S.A.",
+          "symbol": "SAN.MC",
+          "pct": 1.7197053355617782
         },
         {
-          "name": "Sanofi",
-          "symbol": "SAN.PA",
-          "pct": 4.714374610577777
+          "name": "UniCredit S.p.A.",
+          "symbol": "UCG.MI",
+          "pct": 1.5058157812008803
         },
         {
-          "name": "EssilorLuxottica Société anonyme",
-          "symbol": "EL.PA",
-          "pct": 3.423123573502282
+          "name": "Anheuser-Busch InBev SA/NV",
+          "symbol": "ABI.BR",
+          "pct": 1.3062846767171252
         }
       ],
       "bottom": [
         {
-          "name": "Nokia Oyj",
-          "symbol": "NOKIA.HE",
-          "pct": -7.366666085018886
+          "name": "Koninklijke Ahold Delhaize N.V.",
+          "symbol": "AD.AS",
+          "pct": -1.2824371570849238
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": -6.868213013055513
+          "name": "Deutsche Telekom AG",
+          "symbol": "DTE.DE",
+          "pct": -1.1115404899626968
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -6.387700528527347
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": -1.1071596540496578
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 27,
+        "up": 31,
+        "down": 19,
         "flat": 0,
         "priced": 50,
-        "median": -0.2
+        "median": 0.22
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-11-01",
+      "asAt": "2026-11-02",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Konami Group Corporation",
-          "symbol": "9766.T",
-          "pct": 15.01743679163034
-        },
-        {
-          "name": "Oriental Land Co., Ltd.",
-          "symbol": "4661.T",
-          "pct": 8.454258675078865
-        },
-        {
-          "name": "ANA Holdings Inc.",
-          "symbol": "9202.T",
-          "pct": 6.3056768558951966
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Fujitsu Limited",
-          "symbol": "6702.T",
-          "pct": -16.196205460434985
+          "name": "NGK Corporation",
+          "symbol": "5333.T",
+          "pct": 10.94732278343811
         },
         {
           "name": "Lasertec Corporation",
           "symbol": "6920.T",
-          "pct": -8.80503144654088
+          "pct": 8.010610079575597
         },
         {
-          "name": "Furukawa Electric Co., Ltd.",
-          "symbol": "5801.T",
-          "pct": -8.450244698205546
+          "name": "Sapporo Breweries Limited",
+          "symbol": "2501.T",
+          "pct": 7.7216154432308866
+        }
+      ],
+      "bottom": [
+        {
+          "name": "SCREEN Holdings Co., Ltd.",
+          "symbol": "7735.T",
+          "pct": -18.962637362637363
+        },
+        {
+          "name": "Alps Alpine Co., Ltd.",
+          "symbol": "6770.T",
+          "pct": -10.959232613908872
+        },
+        {
+          "name": "Sumitomo Chemical Company, Limited",
+          "symbol": "4005.T",
+          "pct": -9.469026548672566
         }
       ],
       "breadth": {
-        "up": 104,
-        "down": 119,
-        "flat": 0,
+        "up": 90,
+        "down": 132,
+        "flat": 1,
         "priced": 223,
-        "median": -0.3
+        "median": -0.28
       },
       "built": "12 spark batches"
     }
