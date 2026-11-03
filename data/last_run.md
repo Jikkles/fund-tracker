@@ -15,17 +15,17 @@ Window: 4 Oct 2026 to 3 Nov 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +1.81% |
-| FTSE 250 | +2.06% |
+| FTSE 100 | +1.90% |
+| FTSE 250 | +2.64% |
 | S&P 500 | -2.99% |
 | Nasdaq 100 | -9.93% |
-| Euro STOXX 50 | -2.23% |
+| Euro STOXX 50 | -1.14% |
 | Nikkei 225 | -9.81% |
 | Hang Seng | -2.14% |
-| Gold (USD/oz) | -5.99% |
-| Brent crude | +6.54% |
-| US 10yr yield | -7.85% |
-| GBP/USD | +1.32% |
+| Gold (USD/oz) | -4.82% |
+| Brent crude | +2.78% |
+| US 10yr yield | -7.34% |
+| GBP/USD | +1.35% |
 
 ## Fund NAV figures (1 month)
 

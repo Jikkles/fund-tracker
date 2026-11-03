@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-03T09:03:57+00:00",
+  "generated": "2026-11-03T14:28:15+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Centrica plc",
-          "symbol": "CNA",
-          "pct": 3.0
-        },
-        {
           "name": "Hiscox Ltd",
           "symbol": "HSX",
-          "pct": 2.55
+          "pct": 2.44
         },
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": 0.97
+          "name": "3i Group Plc",
+          "symbol": "III",
+          "pct": 1.74
+        },
+        {
+          "name": "Balfour Beatty plc",
+          "symbol": "BBY",
+          "pct": 1.66
         }
       ],
       "bottom": [
         {
-          "name": "Anglo American Plc",
-          "symbol": "AAL",
-          "pct": -3.9
+          "name": "Associated British Foods plc",
+          "symbol": "ABF",
+          "pct": -2.8
         },
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": -3.41
+          "name": "Sage Group plc",
+          "symbol": "SGE",
+          "pct": -2.67
         },
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": -3.21
+          "name": "Ithaca Energy plc",
+          "symbol": "ITH",
+          "pct": -2.46
         }
       ],
       "breadth": {
-        "up": 19,
-        "down": 79,
+        "up": 28,
+        "down": 70,
         "flat": 2,
         "priced": 100,
-        "median": -0.83
+        "median": -0.52
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -56,44 +56,44 @@
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Drax Group plc",
-          "symbol": "DRX",
-          "pct": 8.53
-        },
-        {
           "name": "International Workplace Group Plc",
           "symbol": "IWG",
-          "pct": 7.25
+          "pct": 7.15
         },
         {
-          "name": "Rank Group",
-          "symbol": "RNK",
-          "pct": 3.21
+          "name": "Drax Group plc",
+          "symbol": "DRX",
+          "pct": 6.8
+        },
+        {
+          "name": "Ceres Power Holdings",
+          "symbol": "CWR",
+          "pct": 6.11
         }
       ],
       "bottom": [
         {
+          "name": "J D Wetherspoon plc",
+          "symbol": "JDW",
+          "pct": -4.92
+        },
+        {
           "name": "Bridgepoint Group plc",
           "symbol": "BPT",
-          "pct": -4.96
+          "pct": -4.4
         },
         {
           "name": "THG plc",
           "symbol": "THG",
-          "pct": -3.91
-        },
-        {
-          "name": "Atalaya Mining Copper SA",
-          "symbol": "ATYM",
-          "pct": -3.3
+          "pct": -4.34
         }
       ],
       "breadth": {
-        "up": 41,
-        "down": 187,
-        "flat": 23,
+        "up": 93,
+        "down": 143,
+        "flat": 15,
         "priced": 251,
-        "median": -0.72
+        "median": -0.24
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Bayer Aktiengesellschaft",
           "symbol": "BAYN.DE",
-          "pct": 4.518189325970759
+          "pct": 6.837261370745329
         },
         {
-          "name": "Sanofi",
-          "symbol": "SAN.PA",
-          "pct": 0.8805644408509004
+          "name": "Ferrari N.V.",
+          "symbol": "RACE.MI",
+          "pct": 3.3291492639818454
         },
         {
-          "name": "Danone S.A.",
-          "symbol": "BN.PA",
-          "pct": 0.7568877058412107
+          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+          "symbol": "MC.PA",
+          "pct": 2.4006128168558436
         }
       ],
       "bottom": [
         {
           "name": "SAP SE",
           "symbol": "SAP.DE",
-          "pct": -3.1591419935792757
-        },
-        {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": -3.057692601130559
+          "pct": -2.945366721255196
         },
         {
           "name": "Adyen N.V.",
           "symbol": "ADYEN.AS",
-          "pct": -3.031013560029603
+          "pct": -2.0911639494478047
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": -1.9234404700040917
         }
       ],
       "breadth": {
-        "up": 8,
-        "down": 42,
-        "flat": 0,
+        "up": 28,
+        "down": 21,
+        "flat": 1,
         "priced": 50,
-        "median": -0.8
+        "median": 0.07
       },
       "built": "3 spark batches"
     },
