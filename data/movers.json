@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06T09:04:09+00:00",
+  "generated": "2026-11-06T14:25:41+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Metlen Energy & Metals Plc",
           "symbol": "MTLN",
-          "pct": 3.05
+          "pct": 1.35
+        },
+        {
+          "name": "Computacenter plc",
+          "symbol": "CCC",
+          "pct": 1.13
         },
         {
           "name": "Coca-Cola HBC AG",
           "symbol": "CCH",
-          "pct": 2.22
-        },
-        {
-          "name": "Croda International plc",
-          "symbol": "CRDA",
-          "pct": 0.96
+          "pct": 1.04
         }
       ],
       "bottom": [
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": -3.46
-        },
-        {
-          "name": "AstraZeneca plc",
-          "symbol": "AZN",
-          "pct": -2.88
-        },
-        {
           "name": "BT Group plc",
           "symbol": "BT.A",
-          "pct": -2.76
+          "pct": -6.34
+        },
+        {
+          "name": "Airtel Africa plc",
+          "symbol": "AAF",
+          "pct": -4.36
+        },
+        {
+          "name": "Next plc",
+          "symbol": "NXT",
+          "pct": -4.35
         }
       ],
       "breadth": {
-        "up": 12,
-        "down": 88,
+        "up": 9,
+        "down": 91,
         "flat": 0,
         "priced": 100,
-        "median": -1.07
+        "median": -1.88
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "TBC Bank Group Plc",
           "symbol": "TBCG",
-          "pct": 8.97
+          "pct": 4.15
         },
         {
-          "name": "Utilico Emerging Markets Trust plc",
-          "symbol": "UEM",
-          "pct": 3.32
+          "name": "Fidelity Emerging Markets Limited",
+          "symbol": "FEML",
+          "pct": 3.95
         },
         {
-          "name": "Schroder Oriental Income Fund",
-          "symbol": "SOI",
-          "pct": 2.94
+          "name": "Ashoka India Equity Inv Trust Plc",
+          "symbol": "AIE",
+          "pct": 2.98
         }
       ],
       "bottom": [
         {
           "name": "Man Group plc",
           "symbol": "EMG",
-          "pct": -5.1
+          "pct": -7.4
         },
         {
-          "name": "Trainline plc",
-          "symbol": "TRN",
-          "pct": -3.65
+          "name": "Hays plc",
+          "symbol": "HAS",
+          "pct": -4.65
         },
         {
-          "name": "Oxford Biomedica plc",
-          "symbol": "OXB",
-          "pct": -3.64
+          "name": "Hunting plc",
+          "symbol": "HTG",
+          "pct": -4.61
         }
       ],
       "breadth": {
-        "up": 43,
-        "down": 178,
-        "flat": 30,
+        "up": 36,
+        "down": 202,
+        "flat": 13,
         "priced": 251,
-        "median": -0.62
+        "median": -1.29
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Nokia Oyj",
-          "symbol": "NOKIA.HE",
-          "pct": 1.8112706999455255
-        },
-        {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": 1.3920019531249999
+          "pct": 4.0479980468750005
         },
         {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 0.8487472974385408
+          "name": "Nokia Oyj",
+          "symbol": "NOKIA.HE",
+          "pct": 2.9506231166552195
+        },
+        {
+          "name": "Siemens Energy AG",
+          "symbol": "ENR.DE",
+          "pct": 2.617712098381126
         }
       ],
       "bottom": [
         {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": -3.838382387756239
-        },
-        {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": -3.4863088876066173
-        },
-        {
           "name": "DHL AG",
           "symbol": "DHL.DE",
-          "pct": -3.3123550258698766
+          "pct": -5.26664499655837
+        },
+        {
+          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
+          "symbol": "MUV2.DE",
+          "pct": -4.204507404388003
+        },
+        {
+          "name": "Allianz SE",
+          "symbol": "ALV.DE",
+          "pct": -4.06364086184894
         }
       ],
       "breadth": {
-        "up": 7,
-        "down": 43,
+        "up": 4,
+        "down": 46,
         "flat": 0,
         "priced": 50,
-        "median": -1.29
+        "median": -2.32
       },
       "built": "3 spark batches"
     },
