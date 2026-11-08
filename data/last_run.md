@@ -1,6 +1,6 @@
-# Fund tracker - automated run 2026-11-07
+# Fund tracker - automated run 2026-11-08
 
-Window: 8 Oct 2026 to 7 Nov 2026
+Window: 9 Oct 2026 to 8 Nov 2026
 
 - **103** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
@@ -9,23 +9,23 @@ Window: 8 Oct 2026 to 7 Nov 2026
 
 ## Maintenance needed
 
-- 1 fund has trailing cumulative figures older than 120 days: polar-capital-european-income (136d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
+- 1 fund has trailing cumulative figures older than 120 days: polar-capital-european-income (137d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
 
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | +2.22% |
-| FTSE 250 | +2.34% |
-| S&P 500 | -5.00% |
-| Nasdaq 100 | -12.16% |
-| Euro STOXX 50 | +0.71% |
-| Nikkei 225 | -16.81% |
-| Hang Seng | +2.93% |
-| Gold (USD/oz) | -1.97% |
-| Brent crude | -5.72% |
-| US 10yr yield | -7.11% |
-| GBP/USD | +1.82% |
+| FTSE 100 | +1.15% |
+| FTSE 250 | +1.20% |
+| S&P 500 | -5.56% |
+| Nasdaq 100 | -12.61% |
+| Euro STOXX 50 | -0.05% |
+| Nikkei 225 | -16.80% |
+| Hang Seng | +1.12% |
+| Gold (USD/oz) | -3.35% |
+| Brent crude | -6.11% |
+| US 10yr yield | -7.34% |
+| GBP/USD | +1.72% |
 
 ## Fund NAV figures (1 month)
 
