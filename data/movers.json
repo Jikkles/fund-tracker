@@ -1,105 +1,105 @@
 {
-  "generated": "2026-11-08T13:39:00+00:00",
+  "generated": "2026-11-09T09:04:30+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
-          "name": "Coca-Cola HBC AG",
-          "symbol": "CCH",
-          "pct": 3.36
-        },
-        {
-          "name": "Scottish Mortgage Investment Trust plc",
-          "symbol": "SMT",
-          "pct": 2.51
-        },
-        {
           "name": "Endeavour Mining plc",
           "symbol": "EDV",
-          "pct": 2.02
+          "pct": 3.54
+        },
+        {
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": 3.53
+        },
+        {
+          "name": "Anglo American Plc",
+          "symbol": "AAL",
+          "pct": 2.92
         }
       ],
       "bottom": [
         {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": -6.38
+          "name": "Coca-Cola HBC AG",
+          "symbol": "CCH",
+          "pct": -1.43
         },
         {
-          "name": "Airtel Africa plc",
-          "symbol": "AAF",
-          "pct": -4.01
+          "name": "Barratt Redrow Plc",
+          "symbol": "BTRW",
+          "pct": -0.84
         },
         {
-          "name": "Hiscox Ltd",
-          "symbol": "HSX",
-          "pct": -3.38
+          "name": "Unilever plc",
+          "symbol": "ULVR",
+          "pct": -0.7
         }
       ],
       "breadth": {
-        "up": 18,
-        "down": 78,
-        "flat": 4,
+        "up": 57,
+        "down": 40,
+        "flat": 3,
         "priced": 100,
-        "median": -1.0
+        "median": 0.17
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "Fidelity Emerging Markets Limited",
-          "symbol": "FEML",
-          "pct": 4.64
+          "name": "Applied Nutrition plc",
+          "symbol": "APN",
+          "pct": 4.31
         },
         {
-          "name": "Princes Group plc",
-          "symbol": "PRN",
-          "pct": 4.27
+          "name": "TBC Bank Group Plc",
+          "symbol": "TBCG",
+          "pct": 4.0
         },
         {
-          "name": "Syncona Limited",
-          "symbol": "SYNC",
-          "pct": 3.83
+          "name": "Atalaya Mining Copper SA",
+          "symbol": "ATYM",
+          "pct": 3.75
         }
       ],
       "bottom": [
         {
-          "name": "Man Group plc",
-          "symbol": "EMG",
-          "pct": -7.65
+          "name": "Kainos Group plc",
+          "symbol": "KNOS",
+          "pct": -8.62
         },
         {
-          "name": "Telecom Plus plc",
-          "symbol": "TEP",
-          "pct": -4.76
+          "name": "Invesco Asia Dragon Trust Plc",
+          "symbol": "IAD",
+          "pct": -2.94
         },
         {
-          "name": "Hays plc",
-          "symbol": "HAS",
-          "pct": -4.49
+          "name": "ME Group International plc",
+          "symbol": "MEGP",
+          "pct": -2.66
         }
       ],
       "breadth": {
-        "up": 54,
-        "down": 190,
-        "flat": 7,
+        "up": 123,
+        "down": 81,
+        "flat": 47,
         "priced": 251,
-        "median": -0.79
+        "median": 0.0
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
@@ -147,7 +147,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
@@ -195,7 +195,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -243,145 +243,145 @@
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Li Ning Company Limited",
-          "symbol": "2331.HK",
-          "pct": 5.163038460738583
-        },
-        {
           "name": "Budweiser Brewing Company APAC Limited",
           "symbol": "1876.HK",
-          "pct": 2.574414215347788
+          "pct": 3.13725191004136
         },
         {
-          "name": "Hengan International Group Company Limited",
-          "symbol": "1044.HK",
-          "pct": 2.023921521113183
+          "name": "WuXi Biologics (Cayman) Inc.",
+          "symbol": "2269.HK",
+          "pct": 2.729943860183732
+        },
+        {
+          "name": "China Shenhua Energy Company Limited",
+          "symbol": "1088.HK",
+          "pct": 2.390999675133727
         }
       ],
       "bottom": [
         {
-          "name": "WuXi AppTec Co., Ltd.",
-          "symbol": "2359.HK",
-          "pct": -5.283751524199291
-        },
-        {
-          "name": "Longfor Group Holdings Limited",
-          "symbol": "0960.HK",
-          "pct": -4.776739695539231
+          "name": "Meituan",
+          "symbol": "3690.HK",
+          "pct": -6.529850622341277
         },
         {
           "name": "Zhongsheng Group Holdings Limited",
           "symbol": "0881.HK",
-          "pct": -4.646018562679875
+          "pct": -4.176330179311794
+        },
+        {
+          "name": "Longfor Group Holdings Limited",
+          "symbol": "0960.HK",
+          "pct": -3.816798021349409
         }
       ],
       "breadth": {
-        "up": 30,
-        "down": 54,
+        "up": 36,
+        "down": 48,
         "flat": 1,
         "priced": 85,
-        "median": -0.44
+        "median": -0.19
       },
       "built": "5 spark batches"
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 3.742096164151549
+          "name": "UniCredit S.p.A.",
+          "symbol": "UCG.MI",
+          "pct": 5.5729148557617325
         },
         {
-          "name": "ASML Holding N.V.",
-          "symbol": "ASML.AS",
-          "pct": 2.6879980468749998
+          "name": "argenx SE",
+          "symbol": "ARGX.BR",
+          "pct": 3.7754337158417655
         },
         {
-          "name": "Nokia Oyj",
-          "symbol": "NOKIA.HE",
-          "pct": 1.9865567586998576
+          "name": "SAP SE",
+          "symbol": "SAP.DE",
+          "pct": 2.0403335951401242
         }
       ],
       "bottom": [
         {
-          "name": "Münchener Rückversicherungs-Gesellschaft Aktiengesellschaft in München",
-          "symbol": "MUV2.DE",
-          "pct": -4.271773363911818
+          "name": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+          "symbol": "MC.PA",
+          "pct": -2.0550443783448014
         },
         {
-          "name": "DHL AG",
-          "symbol": "DHL.DE",
-          "pct": -3.908579941376987
+          "name": "Hermès International Société en commandite par actions",
+          "symbol": "RMS.PA",
+          "pct": -1.2844036697247707
         },
         {
-          "name": "Siemens Aktiengesellschaft",
-          "symbol": "SIE.DE",
-          "pct": -3.5132684733817476
+          "name": "Prosus N.V.",
+          "symbol": "PRX.AS",
+          "pct": -1.158304805634802
         }
       ],
       "breadth": {
-        "up": 9,
-        "down": 41,
+        "up": 28,
+        "down": 22,
         "flat": 0,
         "priced": 50,
-        "median": -1.2
+        "median": 0.3
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-11-08",
+      "asAt": "2026-11-09",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "Daikin Industries,Ltd.",
-          "symbol": "6367.T",
-          "pct": 1.5140927090612626
+          "name": "Baycurrent, Inc.",
+          "symbol": "6532.T",
+          "pct": 8.777162334895612
         },
         {
-          "name": "Taiyo Yuden Co., Ltd.",
-          "symbol": "6976.T",
-          "pct": 1.4285714285714286
+          "name": "Shimizu Corporation",
+          "symbol": "1803.T",
+          "pct": 7.67661310890079
         },
         {
-          "name": "SCREEN Holdings Co., Ltd.",
-          "symbol": "7735.T",
-          "pct": 0.1932242689681824
+          "name": "Mitsubishi Electric Corporation",
+          "symbol": "6503.T",
+          "pct": 7.271514342895263
         }
       ],
       "bottom": [
         {
           "name": "Japan Tobacco Inc.",
           "symbol": "2914.T",
-          "pct": -19.307504183292572
+          "pct": -15.95150741745095
         },
         {
-          "name": "ROHM Co., Ltd.",
-          "symbol": "6963.T",
-          "pct": -15.003080714725817
+          "name": "Mitsui Chemicals, Inc.",
+          "symbol": "4183.T",
+          "pct": -8.482400461627236
         },
         {
-          "name": "Ajinomoto Co., Inc.",
-          "symbol": "2802.T",
-          "pct": -12.397372742200329
+          "name": "Tokyu Fudosan Holdings Corporation",
+          "symbol": "3289.T",
+          "pct": -4.450681635926223
         }
       ],
       "breadth": {
-        "up": 3,
-        "down": 220,
+        "up": 207,
+        "down": 16,
         "flat": 0,
         "priced": 223,
-        "median": -6.18
+        "median": 3.12
       },
       "built": "12 spark batches"
     }
