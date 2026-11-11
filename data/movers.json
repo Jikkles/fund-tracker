@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11T09:04:03+00:00",
+  "generated": "2026-11-11T14:33:48+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Spirax Group plc",
           "symbol": "SPX",
-          "pct": 3.94
+          "pct": 3.33
         },
         {
-          "name": "Antofagasta plc",
-          "symbol": "ANTO",
-          "pct": 3.37
+          "name": "Croda International plc",
+          "symbol": "CRDA",
+          "pct": 2.88
         },
         {
-          "name": "ICG Plc",
-          "symbol": "ICG",
-          "pct": 3.23
+          "name": "Polar Capital Technology Trust plc",
+          "symbol": "PCT",
+          "pct": 2.82
         }
       ],
       "bottom": [
         {
+          "name": "Babcock International Group",
+          "symbol": "BAB",
+          "pct": -1.79
+        },
+        {
           "name": "JD Sports Fashion plc",
           "symbol": "JD.",
-          "pct": -1.39
+          "pct": -1.54
         },
         {
           "name": "Diageo plc",
           "symbol": "DGE",
-          "pct": -0.92
-        },
-        {
-          "name": "Coca-Cola HBC AG",
-          "symbol": "CCH",
-          "pct": -0.75
+          "pct": -1.5
         }
       ],
       "breadth": {
-        "up": 79,
-        "down": 17,
+        "up": 73,
+        "down": 23,
         "flat": 4,
         "priced": 100,
-        "median": 0.44
+        "median": 0.58
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "ASOS plc",
           "symbol": "ASC",
-          "pct": 5.85
+          "pct": 5.28
         },
         {
-          "name": "Meridian Mining Plc",
-          "symbol": "MNO",
-          "pct": 5.61
+          "name": "Funding Circle PLC",
+          "symbol": "FCH",
+          "pct": 5.13
         },
         {
-          "name": "Raspberry Pi Holdings plc",
-          "symbol": "RPI",
-          "pct": 4.56
+          "name": "Watches Of Switzerland Group plc",
+          "symbol": "WOSG",
+          "pct": 4.93
         }
       ],
       "bottom": [
         {
+          "name": "Taylor Wimpey plc",
+          "symbol": "TW.",
+          "pct": -3.96
+        },
+        {
           "name": "ITV plc",
           "symbol": "ITV",
-          "pct": -3.52
+          "pct": -3.74
         },
         {
-          "name": "SDCL Efficiency Income Trust Plc",
-          "symbol": "SEIT",
-          "pct": -2.52
-        },
-        {
-          "name": "RTW Biotech Opportunities Ltd",
-          "symbol": "RTW",
-          "pct": -2.44
+          "name": "THG plc",
+          "symbol": "THG",
+          "pct": -3.6
         }
       ],
       "breadth": {
-        "up": 160,
-        "down": 51,
-        "flat": 40,
+        "up": 176,
+        "down": 58,
+        "flat": 17,
         "priced": 251,
-        "median": 0.39
+        "median": 0.7
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -104,44 +104,44 @@
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Charter Communications, Inc.",
-          "symbol": "CHTR",
-          "pct": 10.610561826864862
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 10.972214969409459
         },
         {
-          "name": "Take-Two Interactive Software, Inc.",
-          "symbol": "TTWO",
-          "pct": 8.312442623199274
+          "name": "Bloom Energy Corporation",
+          "symbol": "BE",
+          "pct": 10.575990078742166
         },
         {
-          "name": "CVS Health Corporation",
-          "symbol": "CVS",
-          "pct": 4.410559690592925
+          "name": "Coherent Corp.",
+          "symbol": "COHR",
+          "pct": 9.822505867589312
         }
       ],
       "bottom": [
         {
-          "name": "Skydance Corporation",
-          "symbol": "SKYD",
-          "pct": -7.586205308984456
+          "name": "Airbnb, Inc.",
+          "symbol": "ABNB",
+          "pct": -3.397534003261413
         },
         {
-          "name": "Moderna, Inc.",
-          "symbol": "MRNA",
-          "pct": -6.754646159459224
+          "name": "Invesco Ltd.",
+          "symbol": "IVZ",
+          "pct": -3.013511652036724
         },
         {
-          "name": "First Solar, Inc.",
-          "symbol": "FSLR",
-          "pct": -5.5477296847512365
+          "name": "Charter Communications, Inc.",
+          "symbol": "CHTR",
+          "pct": -2.4317429257083853
         }
       ],
       "breadth": {
-        "up": 247,
-        "down": 250,
-        "flat": 6,
+        "up": 200,
+        "down": 302,
+        "flat": 1,
         "priced": 503,
-        "median": 0.0
+        "median": -0.22
       },
       "built": "26 spark batches"
     },
@@ -152,44 +152,44 @@
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Take-Two Interactive Software, Inc.",
-          "symbol": "TTWO",
-          "pct": 8.312442623199274
-        },
-        {
-          "name": "Rocket Lab Corporation",
-          "symbol": "RKLB",
-          "pct": 6.540941954125641
-        },
-        {
-          "name": "Broadcom Inc.",
-          "symbol": "AVGO",
-          "pct": 3.9126078534330984
-        }
-      ],
-      "bottom": [
-        {
-          "name": "Moderna, Inc.",
-          "symbol": "MRNA",
-          "pct": -6.754646159459224
-        },
-        {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": -5.473777847162221
+          "name": "CoreWeave, Inc.",
+          "symbol": "CRWV",
+          "pct": 13.86209959279887
         },
         {
           "name": "Nebius Group N.V.",
           "symbol": "NBIS",
-          "pct": -5.266876711894315
+          "pct": 12.059704225454757
+        },
+        {
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 10.856090053980731
+        }
+      ],
+      "bottom": [
+        {
+          "name": "Airbnb, Inc.",
+          "symbol": "ABNB",
+          "pct": -3.3413565121068576
+        },
+        {
+          "name": "IDEXX Laboratories, Inc.",
+          "symbol": "IDXX",
+          "pct": -1.932134486912715
+        },
+        {
+          "name": "PepsiCo, Inc.",
+          "symbol": "PEP",
+          "pct": -1.9153971816769155
         }
       ],
       "breadth": {
-        "up": 35,
-        "down": 65,
-        "flat": 1,
+        "up": 59,
+        "down": 42,
+        "flat": 0,
         "priced": 101,
-        "median": -0.34
+        "median": 0.59
       },
       "built": "6 spark batches"
     },
@@ -200,44 +200,44 @@
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "UnitedHealth Group Incorporated",
-          "symbol": "UNH",
-          "pct": 1.8862230501737174
-        },
-        {
-          "name": "Amazon.com, Inc.",
-          "symbol": "AMZN",
-          "pct": 1.4760433632468792
-        },
-        {
-          "name": "The Travelers Companies, Inc.",
-          "symbol": "TRV",
-          "pct": 1.4119398785196566
-        }
-      ],
-      "bottom": [
-        {
           "name": "NVIDIA Corporation",
           "symbol": "NVDA",
-          "pct": -5.473777847162221
+          "pct": 3.2891278078308694
         },
         {
-          "name": "NIKE, Inc.",
-          "symbol": "NKE",
-          "pct": -3.034109495391515
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": 2.57768592966328
         },
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": -2.3894598987979068
+          "pct": 1.649934038764429
+        }
+      ],
+      "bottom": [
+        {
+          "name": "The Home Depot, Inc.",
+          "symbol": "HD",
+          "pct": -1.477207281650641
+        },
+        {
+          "name": "The Procter & Gamble Company",
+          "symbol": "PG",
+          "pct": -1.4052000026779328
+        },
+        {
+          "name": "McDonald's Corporation",
+          "symbol": "MCD",
+          "pct": -1.258113244360056
         }
       ],
       "breadth": {
-        "up": 12,
-        "down": 17,
-        "flat": 1,
+        "up": 11,
+        "down": 19,
+        "flat": 0,
         "priced": 30,
-        "median": -0.17
+        "median": -0.37
       },
       "built": "2 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 7.359819420680397
+          "pct": 8.644860586561927
         },
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": 6.870538194297272
+          "pct": 6.1365997615678065
         },
         {
           "name": "Nokia Oyj",
           "symbol": "NOKIA.HE",
-          "pct": 4.060225339207957
+          "pct": 3.334225079056688
         }
       ],
       "bottom": [
         {
           "name": "Rheinmetall AG",
           "symbol": "RHM.DE",
-          "pct": -1.5703695734913574
+          "pct": -4.7814354127083165
         },
         {
           "name": "EssilorLuxottica Société anonyme",
           "symbol": "EL.PA",
-          "pct": -1.1460602800231712
+          "pct": -3.171648194802349
         },
         {
-          "name": "Prosus N.V.",
-          "symbol": "PRX.AS",
-          "pct": -1.000266693013752
+          "name": "Intesa Sanpaolo S.p.A.",
+          "symbol": "ISP.MI",
+          "pct": -1.9086391372291345
         }
       ],
       "breadth": {
-        "up": 34,
-        "down": 15,
+        "up": 26,
+        "down": 23,
         "flat": 1,
         "priced": 50,
-        "median": 0.27
+        "median": 0.08
       },
       "built": "3 spark batches"
     },
