@@ -1,249 +1,249 @@
 {
-  "generated": "2026-11-13T14:43:31+00:00",
+  "generated": "2026-11-14T09:03:38+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "HL market summary (delayed)",
       "universe": "all 100 constituents",
       "top": [
         {
           "name": "Centrica plc",
           "symbol": "CNA",
-          "pct": 3.26
+          "pct": 3.81
         },
         {
           "name": "Aviva Plc",
           "symbol": "AV.",
-          "pct": 2.43
+          "pct": 3.41
         },
         {
-          "name": "Shell plc",
-          "symbol": "SHEL",
-          "pct": 1.75
+          "name": "Associated British Foods plc",
+          "symbol": "ABF",
+          "pct": 2.34
         }
       ],
       "bottom": [
         {
+          "name": "Polar Capital Technology Trust plc",
+          "symbol": "PCT",
+          "pct": -3.38
+        },
+        {
           "name": "3i Group Plc",
           "symbol": "III",
-          "pct": -2.77
+          "pct": -2.4
         },
         {
-          "name": "Vodafone Group plc",
-          "symbol": "VOD",
-          "pct": -1.91
-        },
-        {
-          "name": "Weir plc",
-          "symbol": "WEIR",
-          "pct": -1.59
+          "name": "Antofagasta plc",
+          "symbol": "ANTO",
+          "pct": -2.24
         }
       ],
       "breadth": {
-        "up": 45,
-        "down": 52,
+        "up": 61,
+        "down": 36,
         "flat": 3,
         "priced": 100,
-        "median": -0.04
+        "median": 0.28
       },
       "built": "100 rows from HL's own summary pages"
     },
     "ftse-250": {
       "label": "FTSE 250",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "HL market summary (delayed)",
       "universe": "all 251 constituents",
       "top": [
         {
-          "name": "ASOS plc",
-          "symbol": "ASC",
-          "pct": 3.24
-        },
-        {
           "name": "B&M European Value Retail",
           "symbol": "BME",
-          "pct": 2.61
+          "pct": 4.03
         },
         {
-          "name": "GlobalData plc",
-          "symbol": "DATA",
-          "pct": 2.29
+          "name": "Applied Nutrition plc",
+          "symbol": "APN",
+          "pct": 3.78
+        },
+        {
+          "name": "Rightmove plc",
+          "symbol": "RMV",
+          "pct": 3.41
         }
       ],
       "bottom": [
         {
           "name": "WH Smith Plc",
           "symbol": "SMWH",
-          "pct": -7.58
-        },
-        {
-          "name": "Dr Martens plc",
-          "symbol": "DOCS",
-          "pct": -5.55
+          "pct": -6.17
         },
         {
           "name": "Vistry Group Plc",
           "symbol": "VTY",
-          "pct": -4.56
+          "pct": -4.8
+        },
+        {
+          "name": "Oxford Instruments plc",
+          "symbol": "OXIG",
+          "pct": -3.55
         }
       ],
       "breadth": {
-        "up": 58,
-        "down": 170,
-        "flat": 23,
+        "up": 61,
+        "down": 175,
+        "flat": 15,
         "priced": 251,
-        "median": -0.4
+        "median": -0.48
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "Yahoo Finance daily closes",
       "universe": "all 503 constituents",
       "top": [
         {
-          "name": "Keurig Dr Pepper Inc.",
-          "symbol": "KDP",
-          "pct": 3.5714378027687252
-        },
-        {
-          "name": "AppLovin Corporation",
-          "symbol": "APP",
-          "pct": 3.2970969385832953
+          "name": "Charter Communications, Inc.",
+          "symbol": "CHTR",
+          "pct": 4.31930918842246
         },
         {
           "name": "STERIS plc",
           "symbol": "STE",
-          "pct": 2.868524677888074
+          "pct": 4.29293117818995
+        },
+        {
+          "name": "Global Payments Inc.",
+          "symbol": "GPN",
+          "pct": 4.206825016177534
         }
       ],
       "bottom": [
         {
           "name": "Advanced Micro Devices, Inc.",
           "symbol": "AMD",
-          "pct": -5.10507526157366
+          "pct": -8.754483393650696
         },
         {
-          "name": "Lumentum Holdings Inc.",
-          "symbol": "LITE",
-          "pct": -3.9702309867654404
+          "name": "Dell Technologies Inc.",
+          "symbol": "DELL",
+          "pct": -7.1773078871373395
         },
         {
-          "name": "Sandisk Corporation",
-          "symbol": "SNDK",
-          "pct": -3.908434897451682
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": -6.2444883964173785
         }
       ],
       "breadth": {
-        "up": 352,
-        "down": 150,
-        "flat": 1,
+        "up": 315,
+        "down": 185,
+        "flat": 3,
         "priced": 503,
-        "median": 0.42
+        "median": 0.34
       },
       "built": "26 spark batches"
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "Yahoo Finance daily closes",
       "universe": "all 101 constituents",
       "top": [
         {
           "name": "Alnylam Pharmaceuticals, Inc.",
           "symbol": "ALNY",
-          "pct": 4.557931482823172
-        },
-        {
-          "name": "Keurig Dr Pepper Inc.",
-          "symbol": "KDP",
-          "pct": 3.500851898840513
+          "pct": 5.355888743406284
         },
         {
           "name": "AppLovin Corporation",
           "symbol": "APP",
-          "pct": 3.2996395533494067
+          "pct": 3.9168902953200537
+        },
+        {
+          "name": "Airbnb, Inc.",
+          "symbol": "ABNB",
+          "pct": 3.119303121611358
         }
       ],
       "bottom": [
         {
           "name": "Nebius Group N.V.",
           "symbol": "NBIS",
-          "pct": -10.55659351328282
-        },
-        {
-          "name": "CoreWeave, Inc.",
-          "symbol": "CRWV",
-          "pct": -5.93639025836824
+          "pct": -9.919155936545547
         },
         {
           "name": "Advanced Micro Devices, Inc.",
           "symbol": "AMD",
-          "pct": -5.10507526157366
+          "pct": -8.754483393650696
+        },
+        {
+          "name": "Cisco Systems, Inc.",
+          "symbol": "CSCO",
+          "pct": -6.2444883964173785
         }
       ],
       "breadth": {
-        "up": 53,
-        "down": 48,
+        "up": 44,
+        "down": 57,
         "flat": 0,
         "priced": 101,
-        "median": 0.19
+        "median": -0.44
       },
       "built": "6 spark batches"
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
         {
-          "name": "Apple Inc.",
-          "symbol": "AAPL",
-          "pct": 1.3765243739889248
-        },
-        {
-          "name": "Alphabet Inc.",
-          "symbol": "GOOGL",
-          "pct": 1.2956126411220823
-        },
-        {
           "name": "The Coca-Cola Company",
           "symbol": "KO",
-          "pct": 1.2879692343733655
+          "pct": 1.8575508140839372
+        },
+        {
+          "name": "Chevron Corporation",
+          "symbol": "CVX",
+          "pct": 1.636234428594864
+        },
+        {
+          "name": "Walmart Inc.",
+          "symbol": "WMT",
+          "pct": 1.5056611932205948
         }
       ],
       "bottom": [
         {
           "name": "Cisco Systems, Inc.",
           "symbol": "CSCO",
-          "pct": -3.5584793714294474
+          "pct": -6.2444883964173785
         },
         {
           "name": "NVIDIA Corporation",
           "symbol": "NVDA",
-          "pct": -2.196286841358176
+          "pct": -2.009745645841849
         },
         {
-          "name": "Merck & Co., Inc.",
-          "symbol": "MRK",
-          "pct": -0.8370165043094787
+          "name": "3M Company",
+          "symbol": "MMM",
+          "pct": -1.3853102206600754
         }
       ],
       "breadth": {
-        "up": 21,
-        "down": 9,
+        "up": 19,
+        "down": 11,
         "flat": 0,
         "priced": 30,
-        "median": 0.49
+        "median": 0.25
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
@@ -291,55 +291,55 @@
     },
     "euro-stoxx-50": {
       "label": "Euro STOXX 50",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "Yahoo Finance daily closes",
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Eni S.p.A.",
-          "symbol": "ENI.MI",
-          "pct": 1.864940692089745
-        },
-        {
           "name": "Koninklijke Ahold Delhaize N.V.",
           "symbol": "AD.AS",
-          "pct": 1.7847056139701347
+          "pct": 2.124645938271281
+        },
+        {
+          "name": "Eni S.p.A.",
+          "symbol": "ENI.MI",
+          "pct": 1.9827290213174487
         },
         {
           "name": "TotalEnergies SE",
           "symbol": "TTE.PA",
-          "pct": 1.525491006861535
+          "pct": 1.909960272833895
         }
       ],
       "bottom": [
         {
           "name": "Nokia Oyj",
           "symbol": "NOKIA.HE",
-          "pct": -3.0112597372201493
+          "pct": -4.5037950007263685
         },
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": -2.6290518438654895
+          "pct": -4.289005150975921
         },
         {
           "name": "ASML Holding N.V.",
           "symbol": "ASML.AS",
-          "pct": -1.9610690762962477
+          "pct": -2.7600231444169414
         }
       ],
       "breadth": {
-        "up": 22,
-        "down": 27,
-        "flat": 1,
+        "up": 28,
+        "down": 22,
+        "flat": 0,
         "priced": 50,
-        "median": -0.03
+        "median": 0.21
       },
       "built": "3 spark batches"
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-11-13",
+      "asAt": "2026-11-14",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
