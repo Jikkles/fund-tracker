@@ -25,7 +25,7 @@ Window: 22 Oct 2026 to 21 Nov 2026
 | Gold (USD/oz) | -13.42% |
 | Brent crude | -18.20% |
 | US 10yr yield | -0.83% |
-| GBP/USD | -2.31% |
+| GBP/USD | -2.34% |
 
 ## Fund NAV figures (1 month)
 
