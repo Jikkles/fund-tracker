@@ -2,9 +2,9 @@
 
 Window: 26 Oct 2026 to 25 Nov 2026
 
-- **97** funds priced from their own published NAV
-- **3** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
-- **3** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
+- **103** funds priced from their own published NAV
+- **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
+- **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
 ## Maintenance needed
@@ -15,17 +15,17 @@ Window: 26 Oct 2026 to 25 Nov 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -2.22% |
-| FTSE 250 | -2.32% |
-| S&P 500 | -6.20% |
-| Nasdaq 100 | -10.45% |
-| Euro STOXX 50 | -1.42% |
-| Nikkei 225 | -8.33% |
+| FTSE 100 | -2.79% |
+| FTSE 250 | -3.32% |
+| S&P 500 | -8.72% |
+| Nasdaq 100 | -14.24% |
+| Euro STOXX 50 | -2.94% |
+| Nikkei 225 | -5.70% |
 | Hang Seng | -5.37% |
-| Gold (USD/oz) | -11.85% |
-| Brent crude | -23.88% |
-| US 10yr yield | -1.64% |
-| GBP/USD | -2.22% |
+| Gold (USD/oz) | -13.91% |
+| Brent crude | -22.47% |
+| US 10yr yield | -3.25% |
+| GBP/USD | -2.38% |
 
 ## Fund NAV figures (1 month)
 
@@ -52,6 +52,7 @@ Window: 26 Oct 2026 to 25 Nov 2026
 | bny-mellon-multi-asset-balanced | 0P0000X2GH.L | -0.50% | 24 Nov 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | -0.48% | 24 Nov 2026 |
 | bny-mellon-real-return | 0P000156WB.L | -2.68% | 24 Nov 2026 |
+| bny-mellon-us-equity-income | 0P00019MND.L | +0.22% | 23 Nov 2026 |
 | ct-european-select | 0P0000X3IE.L | +0.55% | 24 Nov 2026 |
 | ct-latin-america | 0P00000R15.L | -21.12% | 24 Nov 2026 |
 | fidelity-american-special-situations | 0P0000WUU7.L | -1.70% | 24 Nov 2026 |
@@ -85,9 +86,9 @@ Window: 26 Oct 2026 to 25 Nov 2026
 | jpmorgan-natural-resources | 0P00009VVV.L | -12.09% | 24 Nov 2026 |
 | jupiter-asian-income | 0P00017EQ8.L | -4.22% | 24 Nov 2026 |
 | jupiter-european | 0P0000U20D.L | +0.59% | 24 Nov 2026 |
-| jupiter-india-class-x | 0P00018LFD.L | +12.53% | 23 Nov 2026 |
+| jupiter-india-class-x | 0P00018LFD.L | +14.08% | 23 Nov 2026 |
 | jupiter-strategic-bond | 0P00015MD1.L | -1.11% | 24 Nov 2026 |
-| lazard-global-equity-franchise | 0P0001BM5B.L | +1.48% | 23 Nov 2026 |
+| lazard-global-equity-franchise | 0P0001BM5B.L | +0.62% | 23 Nov 2026 |
 | lg-active-global-high-yield | 0P00001SDH.L | +0.06% | 24 Nov 2026 |
 | lg-all-stocks-gilt-index | 0P000102LM.L | +1.29% | 24 Nov 2026 |
 | lg-european-index | 0P000102LY.L | -0.14% | 24 Nov 2026 |
@@ -110,6 +111,7 @@ Window: 26 Oct 2026 to 25 Nov 2026
 | mg-emerging-market-bond | 0P0000VPQE.L | +0.19% | 24 Nov 2026 |
 | ninety-one-diversified-income-class-i | 0P0000G5MB.L | +0.46% | 24 Nov 2026 |
 | ninety-one-global-gold-class-i | 0P00009NF8.L | -10.49% | 24 Nov 2026 |
+| polar-capital-european-income | 0P00016CNI.L | +1.31% | 23 Nov 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | +2.61% | 24 Nov 2026 |
 | pyrford-global-total-return | 0P000170AF.L | -0.25% | 24 Nov 2026 |
 | rathbone-global-opportunities | 0P0001FE43.L | -0.58% | 24 Nov 2026 |
@@ -122,20 +124,16 @@ Window: 26 Oct 2026 to 25 Nov 2026
 | schroder-us-smaller-companies | 0P0000VGMI.L | -0.78% | 24 Nov 2026 |
 | schroders-asian-discovery-class-z | 0P0000VGH4.L | -6.59% | 24 Nov 2026 |
 | stewart-investors-apac-leaders-sustainability | 0P00000H6Q.L | -0.77% | 24 Nov 2026 |
-| stewart-investors-indian-subcontinent | 0P0000X4NO.L | +13.70% | 23 Nov 2026 |
+| stewart-investors-indian-subcontinent | 0P0000X4NO.L | +14.64% | 23 Nov 2026 |
 | trojan-ethical | 0P0001J9W9.L | -1.04% | 24 Nov 2026 |
 | trojan-fund | 0P0001CBJA.L | -0.52% | 24 Nov 2026 |
 | trojan-global-income | 0P00018VXM.L | +0.27% | 24 Nov 2026 |
 | trowe-global-value | 0P0001P4VC.L | -4.40% | 24 Nov 2026 |
+| vanguard-emerging-markets-bond-investor | 0P0001IU24.L | -1.17% | 23 Nov 2026 |
+| vanguard-global-bond-index | 0P0000KM24.L | +0.81% | 23 Nov 2026 |
+| vanguard-global-corporate-bond-index | 0P0001C5T6.L | +0.62% | 23 Nov 2026 |
+| vanguard-global-small-cap-index | 0P0000N47O.L | -1.05% | 23 Nov 2026 |
 | ws-amati-uk-listed-smaller-companies | 0P0000GBB2.L | -5.72% | 24 Nov 2026 |
-
-## Computed tracker figures (ETF proxy)
-
-| Fund | Proxy | Change |
-|---|---|---|
-| vanguard-global-bond-index | VAGP.L | +0.63% |
-| vanguard-global-corporate-bond-index | VCPA.L | +2.70% |
-| vanguard-global-small-cap-index | WLDS.L | -2.46% |
 
 ---
 
