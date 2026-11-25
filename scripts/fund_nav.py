@@ -390,6 +390,24 @@ def _slack(days: int) -> int:
     return min(7, max(3, int(days * 0.05))) * 86400
 
 
+# Closes are stamped at a fixed London time, so in UTC every stamp moves by an
+# hour when the clocks change. Measured to the second, a window that ends in
+# GMT and starts in BST misses its own first day by that hour. On 25 Nov 2026
+# six funds whose latest NAV was 23 Nov passed over their 23 Oct close (07:00
+# UTC, still BST) for a cutoff of 08:00 UTC, fell through a missing 26 Oct to
+# 27 Oct, beyond the slack, and were refused a month they were priced through.
+# Half a day either side compares calendar days instead: with every stamp at
+# the same time of day it changes nothing, and it cannot admit a neighbouring
+# day's close.
+DAY_EDGE = 12 * 3600
+
+
+def _window_bounds(end: int, days: int) -> tuple[int, int]:
+    """(earliest stamp inside the window, latest acceptable first stamp)."""
+    cutoff = end - days * 86400
+    return cutoff - DAY_EDGE, cutoff + _slack(days) + DAY_EDGE
+
+
 def split_at_discontinuity(series: dict) -> tuple[dict, str]:
     """Drop everything up to the last redenomination.
 
@@ -418,8 +436,7 @@ def pct_over(series: dict, days: int) -> float | None:
     """Total return over a trailing window, or None if not truly covered."""
     if not series or len(series["t"]) < 2:
         return None
-    end = series["t"][-1]
-    cutoff = end - days * 86400
+    cutoff, latest = _window_bounds(series["t"][-1], days)
     start = None
     for stamp, close in zip(series["t"], series["c"]):
         if stamp >= cutoff:
@@ -435,7 +452,7 @@ def pct_over(series: dict, days: int) -> float | None:
     # `start` came off 15 Jun 2026 whichever window was asked for. 1yr, 3yr and
     # 5yr all reported the same ten-week return, -0.12%, against a real year of
     # about +13%.
-    if start_t > cutoff + _slack(days):
+    if start_t > latest:
         return None
     return (series["c"][-1] - start) / start * 100.0
 
@@ -473,14 +490,13 @@ def max_drawdown(series: dict, days: int) -> tuple[float, date, date] | None:
     """
     if not series or len(series["t"]) < 2:
         return None
-    end = series["t"][-1]
-    cutoff = end - days * 86400
+    cutoff, latest = _window_bounds(series["t"][-1], days)
     window = [(t, c) for t, c in zip(series["t"], series["c"]) if t >= cutoff]
     if len(window) < 2:
         return None
     # The window must genuinely reach back, measured on the first point
     # actually inside it - see pct_over's note on the six-year hole.
-    if window[0][0] > cutoff + _slack(days):
+    if window[0][0] > latest:
         return None
     gap = MAX_SERIES_GAP_DAYS * 86400
     if any(b[0] - a[0] > gap for a, b in zip(window, window[1:])):
@@ -529,13 +545,12 @@ def annual_vol(series: dict, days: int) -> float | None:
     """
     if not series or len(series["t"]) < 2:
         return None
-    end = series["t"][-1]
-    cutoff = end - days * 86400
+    cutoff, latest = _window_bounds(series["t"][-1], days)
     window = [(t, c) for t, c in zip(series["t"], series["c"])
               if t >= cutoff and c]
     if len(window) < MIN_VOL_POINTS:
         return None
-    if window[0][0] > cutoff + _slack(days):
+    if window[0][0] > latest:
         return None
     gap = MAX_SERIES_GAP_DAYS * 86400
     if any(b[0] - a[0] > gap for a, b in zip(window, window[1:])):
@@ -1144,8 +1159,24 @@ def _selftest_offline() -> bool:
     assert pct_over(holed, 30) is not None, "the recent stub still prices a month"
     for _w in (365, 365 * 3, 365 * 5):
         assert pct_over(holed, _w) is None, f"{_w}d anchors in the hole, must refuse"
+    # A clock change must not cost a window its first day. Stamps before the
+    # change sit an hour earlier in UTC; with the next trading day missing,
+    # a to-the-second cutoff skipped the real anchor and refused the month.
+    _end = 1_795_420_800  # 2026-11-23 08:00 UTC (GMT)
+    dst = {"t": [_end - 33 * _day - 3600, _end - 32 * _day - 3600,
+                 _end - 31 * _day - 3600,            # 23 Oct 07:00 UTC, BST
+                 _end - 27 * _day]                    # 27 Oct; 26 Oct missing
+                + [_end - i * _day for i in range(26, -1, -1)],
+           "c": [100.0, 100.0, 100.0, 105.0] + [105.0] * 26 + [110.0],
+           "currency": "GBP"}
+    got = pct_over(dst, 31)
+    assert got is not None and abs(got - 10.0) < 1e-9, \
+        f"BST-stamped anchor must count, got {got}"
+    # ...and the tolerance must not let a series that truly starts late pass.
+    late = {"t": dst["t"][3:], "c": dst["c"][3:], "currency": "GBP"}
+    assert pct_over(late, 31) is None, "a 4-day-late first point is still late"
     print("  window coverage  OK  (short history refused a long label, "
-          "mid-series hole refused)", file=_sys.stderr)
+          "mid-series hole refused, clock change tolerated)", file=_sys.stderr)
 
     # --- worst fall ------------------------------------------------------
     _5y = 365 * 5
