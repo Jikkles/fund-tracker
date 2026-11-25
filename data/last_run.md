@@ -7,25 +7,21 @@ Window: 26 Oct 2026 to 25 Nov 2026
 - **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
-## Maintenance needed
-
-- 1 fund has trailing cumulative figures older than 120 days: polar-capital-european-income (154d). These are funds the weekly Fidelity read refused (its log names the gate) - only the sector and benchmark comparators need a person; the fund's own 1/3/5yr totals are computed from its NAV series every run, and where the desk tracks four or more funds in the same IA sector the card also carries a peer comparison computed over the same windows.
-
 ## Market context
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -2.79% |
-| FTSE 250 | -3.32% |
-| S&P 500 | -8.72% |
-| Nasdaq 100 | -14.24% |
-| Euro STOXX 50 | -2.94% |
+| FTSE 100 | -3.16% |
+| FTSE 250 | -3.53% |
+| S&P 500 | -7.65% |
+| Nasdaq 100 | -12.97% |
+| Euro STOXX 50 | -3.63% |
 | Nikkei 225 | -5.70% |
-| Hang Seng | -5.37% |
-| Gold (USD/oz) | -13.91% |
-| Brent crude | -22.47% |
-| US 10yr yield | -3.25% |
-| GBP/USD | -2.38% |
+| Hang Seng | -4.27% |
+| Gold (USD/oz) | -12.69% |
+| Brent crude | -22.27% |
+| US 10yr yield | -3.09% |
+| GBP/USD | -1.95% |
 
 ## Fund NAV figures (1 month)
 

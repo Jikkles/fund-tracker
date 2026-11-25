@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T15:50:19+00:00",
+  "generated": "2026-11-25T17:25:54+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Imperial Brands Group",
           "symbol": "IMB",
-          "pct": 4.97
-        },
-        {
-          "name": "Kingfisher",
-          "symbol": "KGF",
-          "pct": 2.72
+          "pct": 6.09
         },
         {
           "name": "3i Group Plc",
           "symbol": "III",
-          "pct": 2.49
+          "pct": 2.57
+        },
+        {
+          "name": "British American Tobacco plc",
+          "symbol": "BATS",
+          "pct": 2.31
         }
       ],
       "bottom": [
         {
           "name": "Computacenter plc",
           "symbol": "CCC",
-          "pct": -7.01
-        },
-        {
-          "name": "Lion Finance Group Plc",
-          "symbol": "BGEO",
-          "pct": -4.4
+          "pct": -8.19
         },
         {
           "name": "Polar Capital Technology Trust plc",
           "symbol": "PCT",
-          "pct": -4.07
+          "pct": -4.92
+        },
+        {
+          "name": "Standard Chartered plc",
+          "symbol": "STAN",
+          "pct": -4.74
         }
       ],
       "breadth": {
-        "up": 41,
-        "down": 59,
-        "flat": 0,
+        "up": 33,
+        "down": 66,
+        "flat": 1,
         "priced": 100,
-        "median": -0.28
+        "median": -0.76
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,12 +58,12 @@
         {
           "name": "Pets At Home Group PLC",
           "symbol": "PETS",
-          "pct": 9.65
+          "pct": 9.57
         },
         {
-          "name": "EnQuest plc",
-          "symbol": "ENQ",
-          "pct": 2.37
+          "name": "Energean",
+          "symbol": "ENOG",
+          "pct": 2.66
         },
         {
           "name": "Derwent London plc",
@@ -75,25 +75,25 @@
         {
           "name": "Funding Circle PLC",
           "symbol": "FCH",
-          "pct": -9.13
+          "pct": -10.12
         },
         {
           "name": "Ocado Group plc",
           "symbol": "OCDO",
-          "pct": -8.86
+          "pct": -9.96
         },
         {
           "name": "Seraphim Space Investment Trust",
           "symbol": "SSIC",
-          "pct": -7.5
+          "pct": -9.34
         }
       ],
       "breadth": {
-        "up": 63,
+        "up": 69,
         "down": 168,
-        "flat": 20,
+        "flat": 14,
         "priced": 251,
-        "median": -0.59
+        "median": -0.63
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -106,42 +106,42 @@
         {
           "name": "HP Inc.",
           "symbol": "HPQ",
-          "pct": 10.272007433880914
+          "pct": 11.14888944730376
+        },
+        {
+          "name": "Charter Communications, Inc.",
+          "symbol": "CHTR",
+          "pct": 6.885266300524597
         },
         {
           "name": "Bunge Global SA",
           "symbol": "BG",
-          "pct": 5.448491510914227
-        },
-        {
-          "name": "Expand Energy Corporation",
-          "symbol": "EXE",
-          "pct": 3.893966576465313
+          "pct": 5.36521801953038
         }
       ],
       "bottom": [
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": -27.978173602334394
+          "pct": -26.627464802905077
         },
         {
           "name": "Lam Research Corporation",
           "symbol": "LRCX",
-          "pct": -11.500814201377118
+          "pct": -10.277326307984525
         },
         {
-          "name": "Bloom Energy Corporation",
-          "symbol": "BE",
-          "pct": -11.389937999037315
+          "name": "Micron Technology, Inc.",
+          "symbol": "MU",
+          "pct": -10.007298556308541
         }
       ],
       "breadth": {
-        "up": 206,
-        "down": 296,
-        "flat": 1,
+        "up": 304,
+        "down": 196,
+        "flat": 3,
         "priced": 503,
-        "median": -0.41
+        "median": 0.43
       },
       "built": "26 spark batches"
     },
@@ -152,44 +152,44 @@
       "universe": "all 101 constituents",
       "top": [
         {
-          "name": "Workday, Inc.",
-          "symbol": "WDAY",
-          "pct": 2.90409080797346
+          "name": "Axon Enterprise, Inc.",
+          "symbol": "AXON",
+          "pct": 5.001252929475266
+        },
+        {
+          "name": "DoorDash, Inc.",
+          "symbol": "DASH",
+          "pct": 4.691498606860118
         },
         {
           "name": "Paychex, Inc.",
           "symbol": "PAYX",
-          "pct": 1.9551615955856119
-        },
-        {
-          "name": "Diamondback Energy, Inc.",
-          "symbol": "FANG",
-          "pct": 1.839858104530933
+          "pct": 3.2064605086024276
         }
       ],
       "bottom": [
         {
           "name": "Sandisk Corporation",
           "symbol": "SNDK",
-          "pct": -27.909311434086177
-        },
-        {
-          "name": "Nebius Group N.V.",
-          "symbol": "NBIS",
-          "pct": -11.659604386478172
+          "pct": -26.689974193659978
         },
         {
           "name": "Lam Research Corporation",
           "symbol": "LRCX",
-          "pct": -11.419254046231579
+          "pct": -10.241637419876968
+        },
+        {
+          "name": "Micron Technology, Inc.",
+          "symbol": "MU",
+          "pct": -10.034298659715255
         }
       ],
       "breadth": {
-        "up": 23,
-        "down": 77,
-        "flat": 1,
+        "up": 39,
+        "down": 62,
+        "flat": 0,
         "priced": 101,
-        "median": -2.14
+        "median": -0.62
       },
       "built": "6 spark batches"
     },
@@ -202,42 +202,42 @@
         {
           "name": "International Business Machines Corporation",
           "symbol": "IBM",
-          "pct": 1.943808643564731
+          "pct": 2.7501957052096704
         },
         {
-          "name": "The Travelers Companies, Inc.",
-          "symbol": "TRV",
-          "pct": 1.288449773700816
+          "name": "The Sherwin-Williams Company",
+          "symbol": "SHW",
+          "pct": 2.381151881043075
         },
         {
           "name": "McDonald's Corporation",
           "symbol": "MCD",
-          "pct": 0.9476213141627431
+          "pct": 1.987882554187453
         }
       ],
       "bottom": [
         {
           "name": "NVIDIA Corporation",
           "symbol": "NVDA",
-          "pct": -8.282925712148815
+          "pct": -7.48487869567506
         },
         {
           "name": "Amazon.com, Inc.",
           "symbol": "AMZN",
-          "pct": -6.294339865479034
+          "pct": -3.6901969187635935
         },
         {
           "name": "Alphabet Inc.",
           "symbol": "GOOGL",
-          "pct": -4.948430157339693
+          "pct": -3.4653556301407167
         }
       ],
       "breadth": {
-        "up": 9,
-        "down": 21,
+        "up": 16,
+        "down": 14,
         "flat": 0,
         "priced": 30,
-        "median": -0.71
+        "median": 0.03
       },
       "built": "2 spark batches"
     },
@@ -248,44 +248,44 @@
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "JD.com, Inc.",
-          "symbol": "9618.HK",
-          "pct": 3.3487891785709065
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": 3.6952792091627336
         },
         {
-          "name": "China Resources Beer (Holdings) Company Limited",
-          "symbol": "0291.HK",
-          "pct": 3.2448369835834856
+          "name": "Budweiser Brewing Company APAC Limited",
+          "symbol": "1876.HK",
+          "pct": 1.6326515042051977
         },
         {
-          "name": "Li Auto Inc.",
-          "symbol": "2015.HK",
-          "pct": 2.4649599599687266
+          "name": "Sunny Optical Technology (Group) Company Limited",
+          "symbol": "2382.HK",
+          "pct": 1.4411492396902232
         }
       ],
       "bottom": [
         {
-          "name": "Lenovo Group Limited",
-          "symbol": "0992.HK",
-          "pct": -11.07456405214549
+          "name": "China Hongqiao Group Limited",
+          "symbol": "1378.HK",
+          "pct": -4.875218658763033
         },
         {
-          "name": "Semiconductor Manufacturing International Corporation",
-          "symbol": "0981.HK",
-          "pct": -7.5510219651825565
+          "name": "Xinyi Solar Holdings Limited",
+          "symbol": "0968.HK",
+          "pct": -4.310347544405118
         },
         {
-          "name": "Zhongsheng Group Holdings Limited",
-          "symbol": "0881.HK",
-          "pct": -5.722886223563814
+          "name": "China Shenhua Energy Company Limited",
+          "symbol": "1088.HK",
+          "pct": -3.9103467891008075
         }
       ],
       "breadth": {
-        "up": 28,
-        "down": 55,
+        "up": 17,
+        "down": 66,
         "flat": 2,
         "priced": 85,
-        "median": -0.39
+        "median": -0.81
       },
       "built": "5 spark batches"
     },
@@ -298,42 +298,42 @@
         {
           "name": "Sanofi",
           "symbol": "SAN.PA",
-          "pct": 5.236163101092003
+          "pct": 4.8942100250470455
         },
         {
           "name": "Bayerische Motoren Werke Aktiengesellschaft",
           "symbol": "BMW.DE",
-          "pct": 4.9568217941124875
+          "pct": 3.717618136185843
         },
         {
-          "name": "Ferrari N.V.",
-          "symbol": "RACE.MI",
-          "pct": 2.117938437969814
+          "name": "adidas AG",
+          "symbol": "ADS.DE",
+          "pct": 1.3678282100763728
         }
       ],
       "bottom": [
         {
           "name": "Infineon Technologies AG",
           "symbol": "IFX.DE",
-          "pct": -5.418998282404996
+          "pct": -6.493655225685982
+        },
+        {
+          "name": "ASML Holding N.V.",
+          "symbol": "ASML.AS",
+          "pct": -5.794203997264292
         },
         {
           "name": "Nokia Oyj",
           "symbol": "NOKIA.HE",
-          "pct": -5.223657163397317
-        },
-        {
-          "name": "Intesa Sanpaolo S.p.A.",
-          "symbol": "ISP.MI",
-          "pct": -2.673231689695906
+          "pct": -5.133593491824304
         }
       ],
       "breadth": {
-        "up": 24,
-        "down": 26,
-        "flat": 0,
+        "up": 14,
+        "down": 35,
+        "flat": 1,
         "priced": 50,
-        "median": -0.09
+        "median": -0.74
       },
       "built": "3 spark batches"
     },
