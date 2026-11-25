@@ -28,7 +28,10 @@ exactly as it was:
   1. IDENTITY. The Fidelity page's own SEDOL must equal the SEDOL HL's page
      names for the class this desk tracks (stored by hl_factsheet.py). The
      ISIN is derived from that SEDOL - GB/IE + "00" + SEDOL + check digit -
-     and is a candidate only; the SEDOL match is the proof.
+     and is a candidate only; the SEDOL match is the proof. Where the desk
+     prices a different line because nothing free prices HL's (`navIsin`),
+     that line is read instead, its SEDOL is the proof, and only the
+     performance tables are written - see resolve().
   2. SAME FUND, SAME NUMBERS. Fidelity's 1yr return must be within 2pp of the
      desk's own NAV-computed 1yr. This caught Polar Capital European Income,
      whose Fidelity page is a different class at +6% against the desk's +11%.
@@ -152,19 +155,31 @@ def page_state(isin: str, tab: str) -> dict | None:
 
 def resolve(fund: dict) -> dict:
     """Fetch everything apply() needs. Never raises; says why on failure."""
-    sedol = fund.get("sedol")
-    if not sedol:
-        return {"error": "no SEDOL on file (hl_factsheet.py records it)"}
-    cands = [isin_from_sedol(p, sedol) for p in ("GB", "IE")]
-    if fund.get("isin") and fund["isin"] not in cands:
-        cands.append(fund["isin"])
+    # Where no free source prices the class HL deals, the desk prices another
+    # line of the same fund and names it in `navIsin` (with a classCaveat on
+    # the card). The trailing and discrete tables sit beside that line's NAV
+    # figures, so they must be read for that line too - HL's class has no
+    # series to check them against, and the 1yr gate would compare two
+    # classes. The SEDOL inside the ISIN is then the identity the page must
+    # carry. Polar Capital European Income: HL deals unhedged Class I, Yahoo
+    # and Fidelity carry only the hedged Class S.
+    priced = fund.get("navIsin")
+    if priced:
+        cands, sedol = [priced], priced[4:11]
+    else:
+        sedol = fund.get("sedol")
+        if not sedol:
+            return {"error": "no SEDOL on file (hl_factsheet.py records it)"}
+        cands = [isin_from_sedol(p, sedol) for p in ("GB", "IE")]
+        if fund.get("isin") and fund["isin"] not in cands:
+            cands.append(fund["isin"])
     for isin in cands:
         ks = page_state(isin, "key-statistics")
         if not ks:
             continue
         pf = page_state(isin, "performance") or {}
         rr = page_state(isin, "risk-and-rating") or {}
-        return {"isin": isin, "sedol": sedol,
+        return {"isin": isin, "sedol": sedol, "pricedClass": bool(priced),
                 "keyStats": ks.get("keyStats") or {},
                 "fundData": ks.get("fundData") or {},
                 "performance": pf.get("performance") or {},
@@ -180,9 +195,12 @@ def apply(fund: dict, rec: dict, today: date) -> tuple[list[str], str | None]:
     if rec.get("error"):
         return [], rec["error"]
     fd = rec["fundData"]
+    substitute = bool(rec.get("pricedClass"))
     if fd.get("sedol") != rec["sedol"]:
         return [], (f"class mismatch: Fidelity page is {fd.get('name')!r} "
-                    f"(SEDOL {fd.get('sedol')}), HL lists SEDOL {rec['sedol']}")
+                    f"(SEDOL {fd.get('sedol')}), "
+                    + (f"desk prices SEDOL {rec['sedol']}" if substitute
+                       else f"HL lists SEDOL {rec['sedol']}"))
 
     perf = fund.setdefault("performance", {})
     trail = {t.get("timeframe"): t for t in rec["performance"].get("timeFrameData") or []}
@@ -198,7 +216,8 @@ def apply(fund: dict, rec: dict, today: date) -> tuple[list[str], str | None]:
     read = stamp(today)
     changes: list[str] = []
     notes: list[str] = []
-    if not fund.get("isin"):
+    # `isin` is HL's class; a substitute line's ISIN must not take its place.
+    if not fund.get("isin") and not substitute:
         fund["isin"] = rec["isin"]
         fund["isinSource"] = (f"derived from HL SEDOL {rec['sedol']}, confirmed "
                               f"on Fidelity factsheet {read}")
@@ -295,6 +314,9 @@ def apply(fund: dict, rec: dict, today: date) -> tuple[list[str], str | None]:
     if notes:
         note = (f"Refreshed {read} from Fidelity's factsheet ({fd.get('name')}, "
                 f"{rec['isin']}): " + "; ".join(notes) + ".")
+        if substitute:
+            note += (" This is the share class the desk prices, not the one HL "
+                     "deals - see the class note on this card.")
         if not cum_written and perf.get("cumulative"):
             note += (" The cumulative table above is NOT from this refresh: "
                      f"Fidelity's trailing figures could not be dated ({why_not}).")
@@ -320,6 +342,12 @@ def apply(fund: dict, rec: dict, today: date) -> tuple[list[str], str | None]:
                 "Factsheet depth not yet verified.",
                 f"Performance comparators, SRRI and transaction cost from "
                 f"Fidelity's factsheet ({rec['isin']}).")
+
+    # Everything below is a property of one share class - a hedged line can
+    # carry a different SRRI, cost and yield from the class HL sells - so a
+    # substitute line's figures would describe something the reader cannot buy.
+    if substitute:
+        return changes, None
 
     # ---- SRRI, as collected from the KIID
     srri = rec["riskAndRating"].get("collectedSRRI") or {}
@@ -470,6 +498,20 @@ def _selftest() -> None:
     changes, why = apply(fund, rec, today)
     assert why and "1yr check" in why and json.dumps(fund, sort_keys=True) == before
     print("  identity gates   OK", file=sys.stderr)
+
+    # A substitute priced line: tables written, identity checked against its
+    # own SEDOL, and nothing class-specific copied onto HL's class.
+    fund, rec = _fixture(pricedClass=True)
+    changes, why = apply(fund, rec, today)
+    assert why is None, why
+    assert fund["performance"]["cumulative"][0]["fund"] == "+29.69%"
+    assert "share class the desk prices" in fund["performance"]["notes"]
+    assert fund["risk"]["srri"] == "6" and fund["charges"]["transaction"] == NYV
+    assert fund["yield"] == NYV and fund["benchmark"] == NYV and "isin" not in fund
+    fund, rec = _fixture(pricedClass=True, fundData={"sedol": "B1XBN52", "name": "Other"})
+    changes, why = apply(fund, rec, today)
+    assert why and "desk prices SEDOL" in why
+    print("  substitute class OK", file=sys.stderr)
 
     # Gate 3: an undatable trailing table is not written, the rest still is,
     # and a person's earlier note on the kept table is preserved.

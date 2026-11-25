@@ -34,6 +34,7 @@ import io
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 import netfetch
@@ -143,6 +144,15 @@ def main(argv: list[str]) -> int:
             changes.append(f"  {f['name'][:46]:46} status {was} -> {now} ({how})")
 
     print(f"{on} on the Shortlist, {off} not")
+    # Regenerated every run. Written once by hand, it said "as at 2 Sep 2026"
+    # for three months of daily re-reads.
+    today = date.today()
+    doc.setdefault("meta", {})["shortlistNote"] = (
+        f"{on} of {on + off} funds are on HL's Wealth Shortlist as at "
+        f"{today.day} {today:%b %Y}, read from HL's own Wealth Shortlist data. "
+        "The rest are carried deliberately: funds HL has dropped but the desk "
+        "still tracks, and funds covering asset classes the Shortlist does not "
+        "include at all.")
     if changes:
         print("\nchanged:")
         print("\n".join(changes))
