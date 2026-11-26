@@ -2,9 +2,9 @@
 
 Window: 27 Oct 2026 to 26 Nov 2026
 
-- **103** funds priced from their own published NAV
+- **102** funds priced from their own published NAV
 - **0** tracker funds priced from GBP ETF proxies (no NAV series resolved for them)
-- **0** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
+- **1** funds marked not-yet-verified (by design - nothing free publishes a figure for them)
 - **69** catalyst dates refreshed (5 confirmed, 0 provisional, 19 estimated)
 
 ## Market context
@@ -18,10 +18,10 @@ Window: 27 Oct 2026 to 26 Nov 2026
 | Euro STOXX 50 | -2.43% |
 | Nikkei 225 | -9.89% |
 | Hang Seng | -4.67% |
-| Gold (USD/oz) | -11.68% |
-| Brent crude | -19.90% |
+| Gold (USD/oz) | -11.80% |
+| Brent crude | -19.66% |
 | US 10yr yield | -2.90% |
-| GBP/USD | -1.80% |
+| GBP/USD | -1.79% |
 
 ## Fund NAV figures (1 month)
 
@@ -107,7 +107,6 @@ Window: 27 Oct 2026 to 26 Nov 2026
 | mg-emerging-market-bond | 0P0000VPQE.L | +0.01% | 25 Nov 2026 |
 | ninety-one-diversified-income-class-i | 0P0000G5MB.L | +0.61% | 25 Nov 2026 |
 | ninety-one-global-gold-class-i | 0P00009NF8.L | -13.73% | 25 Nov 2026 |
-| polar-capital-european-income | 0P00016CNI.L | +1.70% | 24 Nov 2026 |
 | premier-miton-us-opportunities | 0P0000XOCD.L | +3.10% | 25 Nov 2026 |
 | pyrford-global-total-return | 0P000170AF.L | -0.13% | 25 Nov 2026 |
 | rathbone-global-opportunities | 0P0001FE43.L | -0.63% | 25 Nov 2026 |
@@ -115,7 +114,7 @@ Window: 27 Oct 2026 to 26 Nov 2026
 | royal-london-short-term-money-market-class-y | 0P0000Z8P7.L | +0.33% | 25 Nov 2026 |
 | royal-london-sustainable-world | 0P0000XYWQ.L | -4.68% | 25 Nov 2026 |
 | schroder-asian-alpha-plus | 0P0000ZSZK.L | -10.15% | 25 Nov 2026 |
-| schroder-income | 0P0000T364.L | +0.84% | 25 Nov 2026 |
+| schroder-income | 0P0001UNFS.L | +0.88% | 25 Nov 2026 |
 | schroder-managed-balanced | 0P00000VDP.L | -3.95% | 25 Nov 2026 |
 | schroder-us-smaller-companies | 0P0000VGMI.L | -2.07% | 25 Nov 2026 |
 | schroders-asian-discovery-class-z | 0P0000VGH4.L | -7.63% | 25 Nov 2026 |
