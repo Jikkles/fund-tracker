@@ -105,9 +105,17 @@ jobs:
 
       # Prices each fund from its own published NAV where a symbol resolves.
       # Runs before run_update.py so the audit summary counts the fresh ones.
+      #
+      # continue-on-error because it now fails on purpose when NOT ONE fund
+      # prices - Yahoo refusing the runner - and writes nothing, rather than
+      # stamping a refresh that did not happen. Failing the job there would
+      # also throw away the Shortlist read and the movers above. Instead the
+      # run carries on: run_update.py's NAV age gate decides what the stored
+      # figures may still claim. Read the step annotation, not the job colour.
       - name: Refresh fund NAVs
         if: env.REFRESH_DATA == 'true'
         run: python scripts/fund_nav.py
+        continue-on-error: true
 
       # Ranks the constituents of each index the chart carries. Only indices
       # whose whole constituent list can be priced are ranked; the rest are

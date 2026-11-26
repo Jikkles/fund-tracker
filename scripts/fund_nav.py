@@ -983,6 +983,19 @@ def main(argv: list[str]) -> int:
         for name, reason in refusals:
             print(f"  - {name}: {reason}")
 
+    if not only_resolve and picks and not (priced or partial):
+        # Every resolved fund failed to price: one upstream cause (Yahoo
+        # refusing the runner, an endpoint moved), not 100 facts about 100
+        # funds. This used to write anyway and exit 0, stamping navRefreshed
+        # with today's date over a refresh that refreshed nothing. Leave the
+        # file alone and fail the step. The workflow tolerates it: run_update
+        # still runs, and its NAV_MAX_AGE_DAYS gate stops the stored figures
+        # passing as today's once they age, so the fallback stays honest.
+        print(f"\n[abort] none of {len(picks)} resolved funds priced - "
+              f"leaving funds.json untouched rather than recording a refresh "
+              f"that did not happen.", file=sys.stderr)
+        return 1
+
     if dry:
         print("\n[dry-run] nothing written")
         return 0

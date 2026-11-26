@@ -58,6 +58,34 @@ DROP = {"class", "accumulation", "income", "acc", "inc", "hedged", "gbp",
 MONTHS = ("january|february|march|april|may|june|july|august|september"
           "|october|november|december")
 
+# A read this small is a failed read, not a Shortlist. HL's list has run at
+# 70-odd entries; a feed that changed shape, or a page of nothing, comes back
+# far below that, and scoring every fund against it would mark the whole desk
+# Ex-Shortlist and publish it.
+MIN_ENTRIES = 30
+# HL reviews the list and drops funds a few at a time. A run that would drop
+# more than this share of the funds currently on it is far likelier to be a
+# matching failure - a slug scheme change, a SEDOL field renamed - than a
+# decision HL made, so it is refused rather than written.
+MAX_DROP_SHARE = 0.5
+
+
+def refusal(entries: int, was_on: int, dropping: int) -> str | None:
+    """Why this read must not be written, or None if it can be.
+
+    The module docstring always said `main` refuses an empty read. It never
+    did: an empty feed scored every fund against nothing, every Shortlist
+    badge flipped to Ex-Shortlist, the script exited 0, and the daily run
+    would have committed and published it.
+    """
+    if entries < MIN_ENTRIES:
+        return (f"HL's feed returned {entries} entries, under the {MIN_ENTRIES} "
+                f"a real Shortlist has - a failed read, not a list")
+    if was_on and dropping > was_on * MAX_DROP_SHARE:
+        return (f"this read would drop {dropping} of the {was_on} funds on the "
+                f"Shortlist at once - a matching failure, not an HL decision")
+    return None
+
 
 def fetch() -> list[dict]:
     """HL's own Shortlist feed. Empty on failure - never a partial list.
@@ -112,9 +140,15 @@ def main(argv: list[str]) -> int:
             by_key.setdefault(k, r)
     print(f"HL Wealth Shortlist: {len(rows)} entries, "
           f"{len(by_key)} distinct funds")
+    why = refusal(len(rows), 0, 0)
+    if why:
+        print(f"[refused] {why}. funds.json left exactly as it was.",
+              file=sys.stderr)
+        return 1
 
     doc = json.load(io.open(FUNDS, encoding="utf-8"))
     changes, on, off = [], 0, 0
+    was_on = dropping = 0
     for f in doc["funds"]:
         sed = sedol_of(f)
         hit = by_sedol.get(sed) if sed else None
@@ -127,6 +161,8 @@ def main(argv: list[str]) -> int:
         # fund is not "dropped" from a list it was never on, and saying so
         # would read as a downgrade HL never made.
         now = "on" if hit is not None else ("never" if was == "never" else "dropped")
+        was_on += was == "on"
+        dropping += was == "on" and now == "dropped"
         f["shortlistStatus"] = now
         f["shortlist"] = now == "on"
         on, off = on + (now == "on"), off + (now != "on")
@@ -159,6 +195,11 @@ def main(argv: list[str]) -> int:
         print("\n".join(changes))
     else:
         print("\nno status changed")
+    why = refusal(len(rows), was_on, dropping)
+    if why:
+        print(f"\n[refused] {why}. funds.json left exactly as it was.",
+              file=sys.stderr)
+        return 1
     if dry:
         print("\n--dry-run: nothing written")
         return 0
@@ -167,5 +208,30 @@ def main(argv: list[str]) -> int:
     return 0
 
 
+def _selftest() -> bool:
+    # A real day: 72 entries, a couple of funds dropped. Written.
+    assert refusal(72, 69, 2) is None
+    # The failures this exists for: nothing back, or a fraction of a list.
+    assert "failed read" in refusal(0, 0, 0)
+    assert "failed read" in refusal(MIN_ENTRIES - 1, 69, 0)
+    # A full-size feed that matches nothing - renamed fields, new slugs.
+    assert "matching failure" in refusal(72, 69, 69)
+    assert "matching failure" in refusal(72, 69, 35)
+    assert refusal(72, 69, 34) is None, "half the list is still a review"
+    # A desk with nothing on the list yet cannot divide by it.
+    assert refusal(72, 0, 0) is None
+    print("  refusal          OK  (empty/short feed and mass drop refused)")
+
+    assert slug_key(slug("https://www.hl.co.uk/funds/fund-discounts,-prices"
+                         "--and--factsheets/search-results/a/"
+                         "artemis-income-class-i-accumulation")) == \
+        slug_key("artemis-income-i-acc")
+    print("  shortlist self-test: OK")
+    return True
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        _selftest()
+        raise SystemExit(0)
     raise SystemExit(main(sys.argv[1:]))

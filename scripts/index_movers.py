@@ -398,7 +398,7 @@ def wiki_tickers(cfg: dict) -> list[tuple[str, str]] | None:
     return wiki_list(h, *cfg["list"], cfg["map"], cfg["floor"])
 
 
-def load_constituents(today: date) -> dict:
+def load_constituents(today: date, write: bool = True) -> dict:
     try:
         cache = json.loads(CACHE.read_text(encoding="utf-8"))
     except Exception:
@@ -426,7 +426,10 @@ def load_constituents(today: date) -> dict:
                   f"{len(entry['tickers'])} cached from {fetched}")
         else:
             print(f"  [list] {label:12} unavailable and nothing cached")
-    datafile.write_json(CACHE, cache)
+    # Not on a --dry-run, which promises nothing written and used to write
+    # this file regardless.
+    if write:
+        datafile.write_json(CACHE, cache)
     return cache
 
 
@@ -535,7 +538,7 @@ def sweep(symbols: list[str], label: str) -> tuple[dict[str, float], str]:
         missed += [s for s in batch if s not in out]
 
     if missed:
-        for sym, v, _name in _confirm(missed):
+        for sym, v, _name, _day in _confirm(missed):
             out[sym] = v
 
     if not spark_ok:
@@ -547,13 +550,40 @@ def sweep(symbols: list[str], label: str) -> tuple[dict[str, float], str]:
     return out, how
 
 
-def read_move(doc) -> tuple[float, str] | None:
-    """(day move, Yahoo's own name) from one chart response, or None.
+def bar_day(result: dict) -> date | None:
+    """The trading day of the last priced bar in a chart result, or None.
+
+    This is the date a day move belongs to, and it is NOT the run date. The
+    panel used to be stamped with date.today(), so a 09:03 run published the
+    S&P 500's previous session as "as at" this morning, and on 26 Nov 2026 -
+    Thanksgiving, NYSE shut - Wednesday's closes went out dated Thursday. A
+    confident wrong date is the thing this desk does not publish.
+
+    Daily bars are stamped at the session open in UTC, so the exchange's own
+    offset (meta.gmtoffset) is applied before taking the date - Tokyo's open
+    is the previous evening in UTC.
+    """
+    try:
+        stamps = result["timestamp"]
+        closes = result["indicators"]["quote"][0]["close"]
+    except (KeyError, IndexError, TypeError):
+        return None
+    offset = (result.get("meta") or {}).get("gmtoffset")
+    offset = offset if isinstance(offset, int) else 0
+    for t, c in zip(reversed(stamps or []), reversed(closes or [])):
+        if isinstance(t, int) and isinstance(c, (int, float)):
+            return datetime.fromtimestamp(t + offset, timezone.utc).date()
+    return None
+
+
+def read_move(doc) -> tuple[float, str, date | None] | None:
+    """(day move, Yahoo's own name, day of the last close), or None.
 
     The name is the reason this path still exists at all now the sweep is
     batched: spark returns closes and nothing else, and a figure whose label
     came from somewhere other than the response that produced it is exactly
-    the mislabelling the module docstring undertakes to prevent.
+    the mislabelling the module docstring undertakes to prevent. The date
+    comes from the same response for the same reason.
     """
     if not doc:
         return None
@@ -565,22 +595,42 @@ def read_move(doc) -> tuple[float, str] | None:
     if v is None:
         return None
     meta = r.get("meta") or {}
-    return v, (meta.get("longName") or meta.get("shortName") or "").strip()
+    return (v, (meta.get("longName") or meta.get("shortName") or "").strip(),
+            bar_day(r))
 
 
-def _confirm(symbols: list[str]) -> list[tuple[str, float, str]]:
+def chart_url(symbol: str) -> str:
+    return (f"https://query1.finance.yahoo.com/v8/finance/chart/"
+            f"{urllib.parse.quote(symbol)}?interval=1d&range=5d")
+
+
+def _confirm(symbols: list[str]) -> list[tuple[str, float, str, date | None]]:
     """Per-symbol chart reads, in input order, concurrent and rate-limited."""
     if not symbols:
         return []
-    urls = [f"https://query1.finance.yahoo.com/v8/finance/chart/"
-            f"{urllib.parse.quote(s)}?interval=1d&range=5d" for s in symbols]
-    out: list[tuple[str, float, str]] = []
+    urls = [chart_url(s) for s in symbols]
+    out: list[tuple[str, float, str, date | None]] = []
     for sym, res in zip(symbols, netfetch.fetch_all(
             urls, workers=WORKERS, ua=USER_AGENT, tries=2)):
         hit = read_move(res.json())
         if hit:
-            out.append((sym, hit[0], hit[1]))
+            out.append((sym, hit[0], hit[1], hit[2]))
     return out
+
+
+def session_day(symbol: str) -> date | None:
+    """The last session an exchange traded, read off its index's daily bars.
+
+    HL's summary pages carry no date for their prices - the only date on the
+    page is when HL rendered it - so the FTSE panels are dated by the London
+    exchange's own last session, from the same endpoint the rest of the
+    panels use. One request, shared by both FTSE indices.
+    """
+    doc = netfetch.fetch_json(chart_url(symbol), ua=USER_AGENT, tries=2)
+    try:
+        return bar_day(doc["chart"]["result"][0])
+    except (KeyError, IndexError, TypeError):
+        return None
 
 
 def breadth_of(moves: dict[str, float]) -> dict:
@@ -635,7 +685,8 @@ def priced_index(key: str, cache: dict) -> dict | None:
     pool = SHOWN * 3
     ends = [s for s, _ in ranked[:pool]] + [s for s, _ in ranked[-pool:]]
     ends = list(dict.fromkeys(ends))
-    confirmed = {s: (v, nm) for s, v, nm in _confirm(ends)}
+    confirmed = {s: (v, nm, day) for s, v, nm, day in _confirm(ends)}
+    days: list[date] = []       # the trading day of every published row
 
     def survivors(seq: list[tuple[str, float]]) -> tuple[list[dict], list[str]]:
         """Walk one end of the ranking, keeping rows both reads agree on."""
@@ -647,13 +698,15 @@ def priced_index(key: str, cache: dict) -> dict | None:
             hit = confirmed.get(sym)
             if hit is None:
                 continue
-            v, nm = hit
+            v, nm, day = hit
             if abs(v - swept) > CONFIRM_TOLERANCE:
                 # The two reads describe different things. Which one is right
                 # is not knowable from here, so neither is printed.
                 refused.append(f"{sym} ({swept:+.2f}% sweep vs {v:+.2f}% read)")
                 continue
             kept.append({"name": nm or names[sym], "symbol": sym, "pct": v})
+            if day:
+                days.append(day)
         return kept, refused
 
     top, refused_top = survivors(ranked[:pool])
@@ -679,8 +732,12 @@ def priced_index(key: str, cache: dict) -> dict | None:
                 else f"{len(moves)} of {total} constituents")
     # Both ends, in one list: rank() sorts and slices it, and the middle of
     # the index was never going to be shown.
+    # The latest session any published row traded. Rows are one exchange, so
+    # they agree; max() rather than a vote so one halted name cannot drag the
+    # whole panel's date back a day.
     return {"movers": top + bottom, "source": "Yahoo Finance daily closes",
-            "universe": universe, "breadth": breadth, "how": how}
+            "universe": universe, "breadth": breadth, "how": how,
+            "asAt": max(days) if days else None}
 
 
 def breadth_line(got: dict) -> str:
@@ -693,8 +750,15 @@ def breadth_line(got: dict) -> str:
 
 def rank(out: dict, key: str, label: str, got: dict, today: date) -> None:
     got["movers"].sort(key=lambda m: -m["pct"])
+    as_at = got.get("asAt")
+    if as_at is None:
+        # Only when no response carried a usable bar date. Said in the log,
+        # because the run date is the old, sometimes-wrong answer.
+        print(f"  [warn] {label:12} no session date in the data - "
+              f"dated by the run date instead")
+        as_at = today
     entry = {
-        "label": label, "asAt": today.isoformat(),
+        "label": label, "asAt": as_at.isoformat(),
         "source": got["source"], "universe": got["universe"],
         "top": got["movers"][:SHOWN], "bottom": got["movers"][-SHOWN:][::-1]}
     # Breadth describes the whole index rather than its ends, and every price
@@ -770,6 +834,26 @@ def _selftest() -> bool:
     assert got and got[1] == "", got
     print("  per-symbol read  OK  (figure and label from one response)")
 
+    # The date a move belongs to is the last PRICED bar's trading day in the
+    # exchange's own time - not the run date, and not a trailing null bar.
+    # S&P daily bars open 14:30 UTC (gmtoffset -18000): Wed 25 Nov 2026.
+    wed = 1795617000                           # 2026-11-25 14:30 UTC
+    us = {"meta": {"gmtoffset": -18000},
+          "timestamp": [wed - 86400, wed, wed + 86400],
+          "indicators": {"quote": [{"close": [100.0, 101.0, None]}]}}
+    assert bar_day(us) == date(2026, 11, 25), bar_day(us)
+    # Tokyo opens 00:00 UTC (09:00 JST, gmtoffset +32400). The UTC date and
+    # the exchange's date are the same here; at 23:30 UTC they are not.
+    jp = {"meta": {"gmtoffset": 32400}, "timestamp": [1795735800],
+          "indicators": {"quote": [{"close": [5.0]}]}}   # 2026-11-26 23:30 UTC
+    assert bar_day(jp) == date(2026, 11, 27), bar_day(jp)
+    assert bar_day({}) is None
+    assert bar_day({"timestamp": [1], "indicators": {"quote": [
+        {"close": [None]}]}}) is None, "no priced bar, no date"
+    got = read_move({"chart": {"result": [us]}})
+    assert got and got[2] == date(2026, 11, 25), got
+    print("  session date     OK  (last priced bar, exchange time, not run date)")
+
     # Breadth is arithmetic on prices already fetched, over exactly the
     # constituents that priced.
     b = breadth_of({"a": 1.0, "b": 2.0, "c": -1.0, "d": 0.0})
@@ -813,9 +897,13 @@ def main(argv: list[str]) -> int:
 
     print("Index constituent movers")
     built = 0
+    london = None
 
     for key, (slug, label, expect) in HL_PAGES.items():
         got = hl_index(slug, label, expect)
+        if got:
+            london = london or session_day("^FTSE")
+            got["asAt"] = london
         if not got:
             # Say why rather than leaving the panel blank. A silent gap looks
             # like a bug; a stated reason is a fact about the data.
@@ -828,7 +916,7 @@ def main(argv: list[str]) -> int:
         built += 1
         print(f"  [ok]   {label:12} {got['universe']}  {breadth_line(got)}")
 
-    cache = load_constituents(today)
+    cache = load_constituents(today, write="--dry-run" not in argv)
     for key, cfg in WIKI.items():
         label = cfg["label"]
         got = priced_index(key, cache)
@@ -845,9 +933,20 @@ def main(argv: list[str]) -> int:
 
     if "--dry-run" in argv:
         print(f"\n[dry-run] {built} index/indices built, nothing written")
-        print(json.dumps({k: v["universe"] for k, v in out["indices"].items()},
-                         indent=2))
+        print(json.dumps({k: [v["universe"], v["asAt"]]
+                          for k, v in out["indices"].items()}, indent=2))
         return 0
+    if not built:
+        # Every index failing at once is one upstream cause, not eight facts
+        # about eight indices. Writing the file anyway replaced yesterday's
+        # good rankings with eight "could not be ranked" notes - the same
+        # good-data-for-blanks trade market_series.py and run_update.py
+        # already refuse. Keep the previous file and fail the step; the
+        # workflow tolerates it, and the annotation says why.
+        print("\n[abort] no index could be ranked - leaving the previous "
+              f"{OUT.name} in place rather than publishing an empty panel.",
+              file=sys.stderr)
+        return 1
     datafile.write_json(OUT, out)
     print(f"\nwrote {OUT} ({built} indices ranked, "
           f"{len(out['unsupported'])} explained as unsupported)")

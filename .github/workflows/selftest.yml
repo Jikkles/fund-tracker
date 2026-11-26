@@ -43,7 +43,7 @@ jobs:
         run: |
           failed=""
           for s in datafile netfetch market_data market_series fund_nav \
-                   hl_factsheet fid_factsheet index_movers premium_bonds \
+                   hl_factsheet fid_factsheet index_movers premium_bonds shortlist \
                    calendar_data cb_calendar stat_calendar; do
             echo "::group::$s"
             python "$s.py" --selftest || failed="$failed $s"
