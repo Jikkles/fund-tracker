@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T16:22:59+00:00",
+  "generated": "2026-11-26T17:05:40+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Imperial Brands Group",
           "symbol": "IMB",
-          "pct": 13.43
+          "pct": 13.27
         },
         {
           "name": "Babcock International Group",
           "symbol": "BAB",
-          "pct": 6.45
+          "pct": 6.55
         },
         {
-          "name": "Fresnillo",
-          "symbol": "FRES",
-          "pct": 6.36
+          "name": "Endeavour Mining plc",
+          "symbol": "EDV",
+          "pct": 5.87
         }
       ],
       "bottom": [
         {
           "name": "Land Securities Group plc",
           "symbol": "LAND",
-          "pct": -1.29
+          "pct": -1.51
         },
         {
           "name": "Severn Trent Plc",
           "symbol": "SVT",
-          "pct": -1.09
+          "pct": -1.21
         },
         {
-          "name": "BT Group plc",
-          "symbol": "BT.A",
-          "pct": -0.2
+          "name": "British American Tobacco plc",
+          "symbol": "BATS",
+          "pct": -0.55
         }
       ],
       "breadth": {
-        "up": 93,
-        "down": 6,
-        "flat": 1,
+        "up": 92,
+        "down": 8,
+        "flat": 0,
         "priced": 100,
-        "median": 2.0
+        "median": 1.66
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Halfords",
           "symbol": "HFD",
-          "pct": 15.78
+          "pct": 15.57
+        },
+        {
+          "name": "RTW Biotech Opportunities Ltd",
+          "symbol": "RTW",
+          "pct": 8.94
         },
         {
           "name": "Hochschild Mining Plc",
           "symbol": "HOC",
-          "pct": 9.71
-        },
-        {
-          "name": "Meridian Mining Plc",
-          "symbol": "MNO",
-          "pct": 8.75
+          "pct": 8.57
         }
       ],
       "bottom": [
         {
           "name": "CMC Markets Plc",
           "symbol": "CMCX",
-          "pct": -9.23
+          "pct": -10.77
         },
         {
           "name": "Caledonia Investments plc",
           "symbol": "CLDN",
-          "pct": -4.88
+          "pct": -4.63
         },
         {
-          "name": "Vietnam Enterprise Investments Ltd",
-          "symbol": "VEIL",
-          "pct": -2.27
+          "name": "Domino's Pizza Group plc",
+          "symbol": "DOM",
+          "pct": -2.73
         }
       ],
       "breadth": {
-        "up": 229,
-        "down": 17,
-        "flat": 5,
+        "up": 230,
+        "down": 19,
+        "flat": 2,
         "priced": 251,
-        "median": 2.01
+        "median": 1.9
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -296,44 +296,44 @@
       "universe": "all 50 constituents",
       "top": [
         {
-          "name": "Adyen N.V.",
-          "symbol": "ADYEN.AS",
-          "pct": 5.3011148325183335
-        },
-        {
           "name": "Nokia Oyj",
           "symbol": "NOKIA.HE",
-          "pct": 4.8417681574039415
+          "pct": 5.063286172982784
         },
         {
-          "name": "Siemens Energy AG",
-          "symbol": "ENR.DE",
-          "pct": 4.837277686015338
+          "name": "Bayerische Motoren Werke Aktiengesellschaft",
+          "symbol": "BMW.DE",
+          "pct": 4.48949939696157
+        },
+        {
+          "name": "Adyen N.V.",
+          "symbol": "ADYEN.AS",
+          "pct": 4.387546451354931
         }
       ],
       "bottom": [
         {
           "name": "Anheuser-Busch InBev SA/NV",
           "symbol": "ABI.BR",
-          "pct": -1.4313251625525059
+          "pct": -1.6515338799280785
         },
         {
           "name": "EssilorLuxottica Société anonyme",
           "symbol": "EL.PA",
-          "pct": -0.02890349812590318
+          "pct": -0.20231566677203758
         },
         {
           "name": "Danone S.A.",
           "symbol": "BN.PA",
-          "pct": 0.0
+          "pct": 0.11570990998108872
         }
       ],
       "breadth": {
-        "up": 47,
-        "down": 3,
+        "up": 48,
+        "down": 2,
         "flat": 0,
         "priced": 50,
-        "median": 2.19
+        "median": 1.98
       },
       "built": "3 spark batches"
     },
