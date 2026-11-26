@@ -11,15 +11,15 @@ Window: 27 Oct 2026 to 26 Nov 2026
 
 | Index | Change |
 |---|---|
-| FTSE 100 | -0.73% |
-| FTSE 250 | -2.80% |
+| FTSE 100 | -0.47% |
+| FTSE 250 | -2.37% |
 | S&P 500 | -6.99% |
 | Nasdaq 100 | -12.16% |
-| Euro STOXX 50 | -2.42% |
-| Nikkei 225 | -9.12% |
-| Hang Seng | -3.53% |
-| Gold (USD/oz) | -11.56% |
-| Brent crude | -19.78% |
+| Euro STOXX 50 | -2.09% |
+| Nikkei 225 | -9.89% |
+| Hang Seng | -4.67% |
+| Gold (USD/oz) | -11.57% |
+| Brent crude | -19.77% |
 | US 10yr yield | -2.90% |
 | GBP/USD | -1.75% |
 
@@ -45,10 +45,10 @@ Window: 27 Oct 2026 to 26 Nov 2026
 | blackrock-continental-european-income | 0P0000T2WM.L | -0.07% | 25 Nov 2026 |
 | blackrock-european-dynamic | 0P0000ZZBQ.L | -1.70% | 25 Nov 2026 |
 | bny-mellon-long-term-global-equity | 0P0000X2GC.L | -0.44% | 25 Nov 2026 |
-| bny-mellon-multi-asset-balanced | 0P0000X2GH.L | -0.81% | 25 Nov 2026 |
+| bny-mellon-multi-asset-balanced | 0P0001NR1N.L | -0.80% | 25 Nov 2026 |
 | bny-mellon-multi-asset-global-balanced | 0P0001AN93.L | -0.76% | 25 Nov 2026 |
 | bny-mellon-real-return | 0P000156WB.L | -3.13% | 25 Nov 2026 |
-| bny-mellon-us-equity-income | 0P00019MND.L | -0.69% | 24 Nov 2026 |
+| bny-mellon-us-equity-income | 0P0001OI9W.L | +0.41% | 25 Nov 2026 |
 | ct-european-select | 0P0000X3IE.L | -1.11% | 25 Nov 2026 |
 | ct-latin-america | 0P00000R15.L | -22.65% | 25 Nov 2026 |
 | fidelity-american-special-situations | 0P0000WUU7.L | -2.31% | 25 Nov 2026 |
@@ -76,7 +76,7 @@ Window: 27 Oct 2026 to 26 Nov 2026
 | ishares-pacific-ex-japan-index | 0P0001O7DL.L | -12.98% | 25 Nov 2026 |
 | ishares-real-estate-index | 0P0001QN8J.L | +3.39% | 25 Nov 2026 |
 | janus-henderson-uk-equity-income-growth | 0P00000RI1.L | -1.81% | 25 Nov 2026 |
-| janus-henderson-uk-responsible-income | 0P000024AF.L | +0.72% | 25 Nov 2026 |
+| janus-henderson-uk-responsible-income | 0P0001M1PK.L | +0.65% | 25 Nov 2026 |
 | jpm-emerging-markets | 0P000013TQ.L | -9.47% | 25 Nov 2026 |
 | jpm-global-bond-opportunities | 0P00015BKO.L | +0.00% | 25 Nov 2026 |
 | jpmorgan-natural-resources | 0P00009VVV.L | -13.43% | 25 Nov 2026 |
