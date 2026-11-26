@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T14:37:33+00:00",
+  "generated": "2026-11-26T14:58:35+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -10,42 +10,42 @@
         {
           "name": "Imperial Brands Group",
           "symbol": "IMB",
-          "pct": 14.69
+          "pct": 14.36
         },
         {
           "name": "Babcock International Group",
           "symbol": "BAB",
-          "pct": 5.96
+          "pct": 6.06
         },
         {
           "name": "Fresnillo",
           "symbol": "FRES",
-          "pct": 5.2
+          "pct": 5.54
         }
       ],
       "bottom": [
         {
           "name": "Land Securities Group plc",
           "symbol": "LAND",
-          "pct": -1.58
+          "pct": -1.29
         },
         {
           "name": "Severn Trent Plc",
           "symbol": "SVT",
-          "pct": -1.39
+          "pct": -1.21
         },
         {
           "name": "British American Tobacco plc",
           "symbol": "BATS",
-          "pct": -1.12
+          "pct": -0.75
         }
       ],
       "breadth": {
-        "up": 89,
-        "down": 8,
-        "flat": 3,
+        "up": 90,
+        "down": 9,
+        "flat": 1,
         "priced": 100,
-        "median": 1.52
+        "median": 1.7
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,48 +58,48 @@
         {
           "name": "Halfords",
           "symbol": "HFD",
-          "pct": 14.75
+          "pct": 14.34
         },
         {
-          "name": "RTW Biotech Opportunities Ltd",
-          "symbol": "RTW",
-          "pct": 7.72
+          "name": "Meridian Mining Plc",
+          "symbol": "MNO",
+          "pct": 9.04
         },
         {
           "name": "Hochschild Mining Plc",
           "symbol": "HOC",
-          "pct": 7.65
+          "pct": 7.98
         }
       ],
       "bottom": [
         {
           "name": "CMC Markets Plc",
           "symbol": "CMCX",
-          "pct": -9.08
+          "pct": -8.92
         },
         {
           "name": "Caledonia Investments plc",
           "symbol": "CLDN",
-          "pct": -4.88
+          "pct": -5.14
         },
         {
-          "name": "Domino's Pizza Group plc",
-          "symbol": "DOM",
-          "pct": -2.55
+          "name": "Vietnam Enterprise Investments Ltd",
+          "symbol": "VEIL",
+          "pct": -2.41
         }
       ],
       "breadth": {
-        "up": 217,
-        "down": 25,
-        "flat": 9,
+        "up": 223,
+        "down": 23,
+        "flat": 5,
         "priced": 251,
-        "median": 1.45
+        "median": 1.55
       },
       "built": "251 rows from HL's own summary pages"
     },
     "s-p-500": {
       "label": "S&P 500",
-      "asAt": "2026-11-26",
+      "asAt": "2026-11-25",
       "source": "Yahoo Finance daily closes",
       "universe": "502 of 503 constituents",
       "top": [
@@ -147,7 +147,7 @@
     },
     "nasdaq-100": {
       "label": "Nasdaq 100",
-      "asAt": "2026-11-26",
+      "asAt": "2026-11-25",
       "source": "Yahoo Finance daily closes",
       "universe": "100 of 101 constituents",
       "top": [
@@ -195,7 +195,7 @@
     },
     "dow-jones": {
       "label": "Dow Jones",
-      "asAt": "2026-11-26",
+      "asAt": "2026-11-25",
       "source": "Yahoo Finance daily closes",
       "universe": "all 30 constituents",
       "top": [
@@ -298,42 +298,42 @@
         {
           "name": "Nokia Oyj",
           "symbol": "NOKIA.HE",
-          "pct": 4.8417681574039415
+          "pct": 5.158223543215366
         },
         {
-          "name": "Bayer Aktiengesellschaft",
-          "symbol": "BAYN.DE",
-          "pct": 4.459349463149859
+          "name": "Rheinmetall AG",
+          "symbol": "RHM.DE",
+          "pct": 5.01495311582487
         },
         {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 4.268186991671912
+          "pct": 4.819489785762991
         }
       ],
       "bottom": [
         {
           "name": "Anheuser-Busch InBev SA/NV",
           "symbol": "ABI.BR",
-          "pct": -1.9543156162547044
+          "pct": -2.0093677955985974
         },
         {
           "name": "EssilorLuxottica Société anonyme",
           "symbol": "EL.PA",
-          "pct": -0.2890173410404624
+          "pct": -0.20231566677203758
         },
         {
           "name": "Danone S.A.",
           "symbol": "BN.PA",
-          "pct": 0.028932994847455144
+          "pct": -0.05785495499054436
         }
       ],
       "breadth": {
-        "up": 48,
-        "down": 2,
+        "up": 47,
+        "down": 3,
         "flat": 0,
         "priced": 50,
-        "median": 1.91
+        "median": 1.99
       },
       "built": "3 spark batches"
     },
