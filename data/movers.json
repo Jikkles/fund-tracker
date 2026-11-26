@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-26T09:03:50+00:00",
+  "generated": "2026-11-26T14:37:33+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
+          "name": "Imperial Brands Group",
+          "symbol": "IMB",
+          "pct": 14.69
+        },
+        {
           "name": "Babcock International Group",
           "symbol": "BAB",
-          "pct": 5.33
+          "pct": 5.96
         },
         {
-          "name": "Polar Capital Technology Trust plc",
-          "symbol": "PCT",
-          "pct": 5.08
-        },
-        {
-          "name": "Endeavour Mining plc",
-          "symbol": "EDV",
-          "pct": 4.43
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": 5.2
         }
       ],
       "bottom": [
         {
-          "name": "Imperial Brands Group",
-          "symbol": "IMB",
-          "pct": -2.84
+          "name": "Land Securities Group plc",
+          "symbol": "LAND",
+          "pct": -1.58
         },
         {
           "name": "Severn Trent Plc",
           "symbol": "SVT",
-          "pct": -1.21
+          "pct": -1.39
         },
         {
-          "name": "Land Securities Group plc",
-          "symbol": "LAND",
-          "pct": -1.15
+          "name": "British American Tobacco plc",
+          "symbol": "BATS",
+          "pct": -1.12
         }
       ],
       "breadth": {
-        "up": 96,
-        "down": 4,
-        "flat": 0,
+        "up": 89,
+        "down": 8,
+        "flat": 3,
         "priced": 100,
-        "median": 1.35
+        "median": 1.52
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,42 +58,42 @@
         {
           "name": "Halfords",
           "symbol": "HFD",
-          "pct": 10.86
+          "pct": 14.75
         },
         {
           "name": "RTW Biotech Opportunities Ltd",
           "symbol": "RTW",
-          "pct": 8.54
+          "pct": 7.72
         },
         {
-          "name": "Meridian Mining Plc",
-          "symbol": "MNO",
-          "pct": 7.29
+          "name": "Hochschild Mining Plc",
+          "symbol": "HOC",
+          "pct": 7.65
         }
       ],
       "bottom": [
         {
+          "name": "CMC Markets Plc",
+          "symbol": "CMCX",
+          "pct": -9.08
+        },
+        {
           "name": "Caledonia Investments plc",
           "symbol": "CLDN",
-          "pct": -5.27
+          "pct": -4.88
         },
         {
           "name": "Domino's Pizza Group plc",
           "symbol": "DOM",
-          "pct": -3.52
-        },
-        {
-          "name": "Baltic Classifieds Group plc",
-          "symbol": "BCG",
-          "pct": -3.1
+          "pct": -2.55
         }
       ],
       "breadth": {
-        "up": 199,
-        "down": 16,
-        "flat": 36,
+        "up": 217,
+        "down": 25,
+        "flat": 9,
         "priced": 251,
-        "median": 1.14
+        "median": 1.45
       },
       "built": "251 rows from HL's own summary pages"
     },
@@ -296,36 +296,36 @@
       "universe": "all 50 constituents",
       "top": [
         {
+          "name": "Nokia Oyj",
+          "symbol": "NOKIA.HE",
+          "pct": 4.8417681574039415
+        },
+        {
+          "name": "Bayer Aktiengesellschaft",
+          "symbol": "BAYN.DE",
+          "pct": 4.459349463149859
+        },
+        {
           "name": "Siemens Energy AG",
           "symbol": "ENR.DE",
-          "pct": 5.353018247794134
-        },
-        {
-          "name": "Infineon Technologies AG",
-          "symbol": "IFX.DE",
-          "pct": 5.171776109781193
-        },
-        {
-          "name": "Rheinmetall AG",
-          "symbol": "RHM.DE",
-          "pct": 5.0013574889217205
+          "pct": 4.268186991671912
         }
       ],
       "bottom": [
         {
-          "name": "Danone S.A.",
-          "symbol": "BN.PA",
-          "pct": -0.2314087852578115
-        },
-        {
           "name": "Anheuser-Busch InBev SA/NV",
           "symbol": "ABI.BR",
-          "pct": -0.13763569842451856
+          "pct": -1.9543156162547044
         },
         {
-          "name": "Koninklijke Ahold Delhaize N.V.",
-          "symbol": "AD.AS",
-          "pct": 0.4757962099652962
+          "name": "EssilorLuxottica Société anonyme",
+          "symbol": "EL.PA",
+          "pct": -0.2890173410404624
+        },
+        {
+          "name": "Danone S.A.",
+          "symbol": "BN.PA",
+          "pct": 0.028932994847455144
         }
       ],
       "breadth": {
@@ -333,7 +333,7 @@
         "down": 2,
         "flat": 0,
         "priced": 50,
-        "median": 1.73
+        "median": 1.91
       },
       "built": "3 spark batches"
     },
