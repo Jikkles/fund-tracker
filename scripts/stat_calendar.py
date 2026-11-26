@@ -48,12 +48,11 @@ import html
 import json
 import re
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 from dataclasses import dataclass
 from datetime import date
 
+import netfetch
 from market_data import USER_AGENT, TIMEOUT
 
 BASE = "https://www.ons.gov.uk"
@@ -125,23 +124,23 @@ EXCLUDE_TERMS = ("time series",)
 # Fetching
 # ---------------------------------------------------------------------------
 def _fetch(url: str) -> str | None:
-    """GET a page, retrying once on a rate-limit refusal."""
-    for attempt in (0, 1):
-        try:
-            req = urllib.request.Request(
-                url, headers={"User-Agent": USER_AGENT})
-            with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-                return resp.read().decode("utf-8", "replace")
-        except urllib.error.HTTPError as e:
-            # 429 is ONS asking us to slow down, which is worth honouring
-            # once. Any other status is an answer, not a delay.
-            if e.code == 429 and attempt == 0:
-                time.sleep(RETRY_PAUSE_SECONDS)
-                continue
-            return None
-        except (urllib.error.URLError, TimeoutError, OSError, ValueError):
-            return None
-    return None
+    """GET a page through netfetch, keeping ONS's own long pause on a 429.
+
+    netfetch retries a timeout or a 5xx with backoff, which this did not do
+    at all. Its backoff is sub-second to a few seconds, though, and ONS has
+    answered a quick second ask with another 429 - so a refusal that
+    survives netfetch still gets the one long wait this module always gave
+    it. Any other status is an answer, not a delay, and is logged with its
+    reason rather than returned as a bare None.
+    """
+    r = netfetch.fetch(url, ua=USER_AGENT, timeout=TIMEOUT, tries=2)
+    if not r and r.status == 429:
+        time.sleep(RETRY_PAUSE_SECONDS)
+        r = netfetch.fetch(url, ua=USER_AGENT, timeout=TIMEOUT, tries=1)
+    if not r:
+        print(f"  [ons] {url} not read: {r.error}")
+        return None
+    return r.text
 
 
 # ---------------------------------------------------------------------------

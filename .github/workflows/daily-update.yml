@@ -165,29 +165,14 @@ jobs:
       # run that has nothing to add is motion for its own sake.
       - name: Commit updated data
         if: env.REFRESH_DATA == 'true'
-        run: |
-          git config user.name  "fund-tracker-bot"
-          git config user.email "actions@users.noreply.github.com"
-          # main can have moved since checkout - a hand-pushed change, or a run
-          # that overlapped this one. Rebasing onto it is the wrong tool here:
-          # an overlapping run has regenerated the same JSON, so every hunk
-          # conflicts and there is no merge to make. The newer run's output is
-          # simply the answer. So move onto whatever main is now, keeping this
-          # run's files in the working tree, and commit them on top.
-          #
-          # --mixed, not --soft: --soft would leave the index holding the tree
-          # from before the fetch, quietly reverting anything the incoming
-          # commits changed. This way the commit contains these three files and
-          # nothing else.
-          git fetch origin main
-          git reset --mixed FETCH_HEAD
-          git add data/funds.json data/last_run.md data/market.json data/movers.json data/constituents.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "Daily update: $(date -u +%Y-%m-%d)"
-            git push origin HEAD:main
-          fi
+        # main can have moved since checkout. If one of these files moved -
+        # a hand fix pushed mid-run - this refuses rather than reverting it,
+        # and the next run regenerates the data on top. Shared with the weekly
+        # run; the reasoning lives in the script.
+        run: >-
+          bash scripts/commit_data.sh "Daily update: $(date -u +%Y-%m-%d)"
+          data/funds.json data/last_run.md data/market.json data/movers.json
+          data/constituents.json
 
       # Stamp, copy every file the page fetches, and run the anonymisation
       # gate - one script shared by all three deploying workflows, so they

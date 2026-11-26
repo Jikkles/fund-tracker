@@ -72,7 +72,19 @@ jobs:
       # research exactly as it was instead of overwriting it with a
       # confident wrong figure. That means this step succeeding is not the
       # same as every fund refreshing; read the log for the per-fund lines.
+      #
+      # The four refresh steps below are independent and each one TOLERATES
+      # FAILURE. They used to be a chain: a crash in one (fid_factsheet.py
+      # died on a truncated page on 2026-10-18 and 2026-11-01) skipped every
+      # step after it - the other scrapers, the commit and the deploy - and
+      # threw away whatever had already been refreshed. Each script writes its
+      # file atomically and only at the end, so a step that dies leaves its
+      # file exactly as it was; the anonymisation check then re-proves
+      # funds.json parses before anything is committed. The last step of the
+      # job turns any tolerated failure into a visible warning.
       - name: Refresh factsheet depth
+        id: hl
+        continue-on-error: true
         run: python scripts/hl_factsheet.py
 
       # The comparators HL does not publish - sector/category averages beside
@@ -82,6 +94,8 @@ jobs:
       # the HL step has just confirmed. Same contract as above: a fund that
       # fails any gate is reported as SKIP and left exactly as it was.
       - name: Refresh comparators from Fidelity
+        id: fid
+        continue-on-error: true
         run: python scripts/fid_factsheet.py
 
       # The Premium Bonds tab's figures - prize fund rate, odds and the count
@@ -92,6 +106,8 @@ jobs:
       # reported as SKIP and data/premium_bonds.json is left as it was; the tab
       # shows the date of the last good check, so a run of refusals is visible.
       - name: Refresh Premium Bonds prize data
+        id: bonds
+        continue-on-error: true
         run: python scripts/premium_bonds.py
 
       # The publish gate, same as the daily run: this fails the build rather
@@ -101,30 +117,37 @@ jobs:
 
       - name: Commit refreshed research
         run: |
-          git config user.name  "fund-tracker-bot"
-          git config user.email "actions@users.noreply.github.com"
           # A one-line marker the "Fund tracker weekly factsheets top-up"
           # cloud routine reads to tell whether this week's run landed -
           # funds.json is too large for it to fetch. Same role as the first
           # line of last_run.md for the daily top-up.
-          echo "# Weekly factsheet refresh $(date -u +%F)" > data/last_factsheets.md
-          git add data/funds.json data/premium_bonds.json data/last_factsheets.md
-          if git diff --staged --quiet; then
-            echo "No factsheet changes to commit."
+          #
+          # Written only when BOTH fund scrapers succeeded. With the steps now
+          # tolerating failure, an unconditional marker would tell Monday's
+          # routine the week was done when HL or Fidelity had failed outright -
+          # and the one automatic second chance would be skipped.
+          files="data/funds.json data/premium_bonds.json"
+          if [ "${{ steps.hl.outcome }}" = success ] && [ "${{ steps.fid.outcome }}" = success ]; then
+            echo "# Weekly factsheet refresh $(date -u +%F)" > data/last_factsheets.md
+            files="$files data/last_factsheets.md"
           else
-            git commit -m "Weekly factsheet refresh: $(date -u +%Y-%m-%d)"
-            # The daily run commits to the same branch. The concurrency group
-            # keeps the two from overlapping, but a manual dispatch can still
-            # land mid-flight, so rebase rather than fail the whole refresh
-            # on a push that raced us.
-            git pull --rebase origin main
-            git push
+            echo "::warning::A factsheet scraper failed - last_factsheets.md left as it was so the Monday top-up routine re-runs this workflow."
           fi
+          # Same commit logic as the daily run - see scripts/commit_data.sh.
+          bash scripts/commit_data.sh "Weekly factsheet refresh: $(date -u +%Y-%m-%d)" $files
 
       # funds.json has just changed, so the page is rebuilt and redeployed
       # rather than left waiting for the next daily run - a data-only commit
       # does not match the daily workflow's site/** push trigger.
+      #
+      # continue-on-error for the same reason as in the daily run: the chart
+      # is the cheap dataset, and a Yahoo throttle must not cost the deploy of
+      # a research refresh that has already been committed. On failure
+      # market.json keeps its committed contents and the deploy carries a
+      # slightly older chart.
       - name: Fetch index series
+        id: chart
+        continue-on-error: true
         run: python scripts/market_series.py
 
       # Stamp, copy every file the page fetches, and run the anonymisation
@@ -141,6 +164,22 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+
+      # A tolerated failure turns the step amber in the log but leaves the
+      # job green, which is easy to miss. Name each one as a warning on the
+      # run's summary page instead.
+      - name: Report tolerated failures
+        if: always()
+        run: |
+          for pair in "Refresh factsheet depth=${{ steps.hl.outcome }}" \
+                      "Refresh comparators from Fidelity=${{ steps.fid.outcome }}" \
+                      "Refresh Premium Bonds prize data=${{ steps.bonds.outcome }}" \
+                      "Fetch index series=${{ steps.chart.outcome }}"; do
+            name="${pair%%=*}"; outcome="${pair##*=}"
+            if [ "$outcome" = failure ]; then
+              echo "::warning::'$name' failed and was tolerated - its data was left as it was. Read that step's log."
+            fi
+          done
 
   deploy:
     needs: factsheets

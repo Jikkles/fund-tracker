@@ -61,6 +61,7 @@ import io
 import json
 import re
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from pathlib import Path
@@ -138,24 +139,47 @@ def short(d: date) -> str:
 
 # ------------------------------------------------------------------ fetching
 
-def page_state(isin: str, tab: str) -> dict | None:
-    """The fund state Fidelity embeds in one tab, or None."""
+# How long to wait before the second, one-at-a-time pass over the funds the
+# first pass could not reach. On 22 Nov 2026 the run refused 15 funds as
+# having "no Fidelity page" that had all been read the week before and all
+# loaded normally four days later: Fidelity had a slow spell, and a timeout
+# was being reported as a missing page.
+RETRY_PAUSE = 30
+MISSING = "no page"
+
+
+def page_state(isin: str, tab: str) -> tuple[dict | None, str | None]:
+    """(the fund state Fidelity embeds in one tab, why not).
+
+    The reason is the point. A 404 - Fidelity's answer for an ISIN it does
+    not carry - is a fact about the fund and starts with MISSING. Anything
+    else (a timeout, a 5xx, a page whose embedded state cannot be read) is a
+    fact about this run, and is worth asking again.
+    """
     r = netfetch.fetch(PAGE.format(isin=isin, tab=tab), ua=netfetch.UA_BROWSER,
                        timeout=40)
     if not r:
-        return None
+        if r.status == 404:
+            return None, f"{MISSING} for {isin}"
+        return None, f"{tab} for {isin}: {r.error}"
     m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', r.text, re.S)
     if not m:
-        return None
+        return None, f"{tab} for {isin}: no embedded fund data in the page"
     try:
         st = json.loads(m.group(1))["props"]["pageProps"]["initialState"]["fund"]
     except (KeyError, TypeError, json.JSONDecodeError):
-        return None
-    return None if st.get("isError") else st
+        return None, f"{tab} for {isin}: embedded fund data unreadable"
+    if st.get("isError"):
+        return None, f"{MISSING} for {isin} (Fidelity flags it as an error)"
+    return st, None
 
 
 def resolve(fund: dict) -> dict:
-    """Fetch everything apply() needs. Never raises; says why on failure."""
+    """Fetch everything apply() needs. Never raises; says why on failure.
+
+    A failure that could clear on another attempt carries "retry": True, and
+    main() asks once more, slowly, before reporting it.
+    """
     # Where no free source prices the class HL deals, the desk prices another
     # line of the same fund and names it in `navIsin` (with a classCaveat on
     # the card). The trailing and discrete tables sit beside that line's NAV
@@ -174,18 +198,32 @@ def resolve(fund: dict) -> dict:
         cands = [isin_from_sedol(p, sedol) for p in ("GB", "IE")]
         if fund.get("isin") and fund["isin"] not in cands:
             cands.append(fund["isin"])
+    misses: list[str] = []
     for isin in cands:
-        ks = page_state(isin, "key-statistics")
+        ks, why = page_state(isin, "key-statistics")
         if not ks:
+            misses.append(why)
             continue
-        pf = page_state(isin, "performance") or {}
-        rr = page_state(isin, "risk-and-rating") or {}
+        pf, why_pf = page_state(isin, "performance")
+        rr, why_rr = page_state(isin, "risk-and-rating")
+        # A tab that exists but would not load is not the same as a tab with
+        # nothing in it. Read as empty, the gates refused the trailing table
+        # for "no 1yr figure" and the fund reported "ok" - a wrong reason for
+        # a partial refresh. Ask again instead.
+        for tab_why in (why_pf, why_rr):
+            if tab_why and not tab_why.startswith(MISSING):
+                return {"error": f"Fidelity page for SEDOL {sedol} only partly "
+                                 f"loaded ({tab_why})", "retry": True}
         return {"isin": isin, "sedol": sedol, "pricedClass": bool(priced),
                 "keyStats": ks.get("keyStats") or {},
                 "fundData": ks.get("fundData") or {},
-                "performance": pf.get("performance") or {},
-                "priceDtls": pf.get("priceDtls") or {},
-                "riskAndRating": rr.get("riskAndRating") or {}}
+                "performance": (pf or {}).get("performance") or {},
+                "priceDtls": (pf or {}).get("priceDtls") or {},
+                "riskAndRating": (rr or {}).get("riskAndRating") or {}}
+    flaky = [w for w in misses if not w.startswith(MISSING)]
+    if flaky:
+        return {"error": f"Fidelity could not be read for SEDOL {sedol} "
+                         f"({flaky[0]})", "retry": True}
     return {"error": f"no Fidelity page for SEDOL {sedol}"}
 
 
@@ -402,6 +440,19 @@ def main(argv: list[str]) -> int:
     with ThreadPoolExecutor(6) as pool:
         recs = list(pool.map(resolve, funds))
 
+    # One slower pass over whatever could not be reached, one fund at a time,
+    # after a pause. Only failures that could clear are retried; a fund
+    # Fidelity does not carry is not asked about twice.
+    again = [i for i, rec in enumerate(recs) if rec.get("retry")]
+    if again:
+        print(f"  {len(again)} fund(s) could not be reached - retrying one at "
+              f"a time in {RETRY_PAUSE}s")
+        time.sleep(RETRY_PAUSE)
+        for i in again:
+            recs[i] = resolve(funds[i])
+        cleared = sum(1 for i in again if not recs[i].get("retry"))
+        print(f"  retry pass: {cleared} of {len(again)} recovered")
+
     refused = 0
     for fund, rec in zip(funds, recs):
         changes, why = apply(fund, rec, today)
@@ -565,6 +616,47 @@ def _selftest() -> None:
     apply(fund, rec, today)
     assert fund["performance"]["discrete"][0]["year"] == "y0"
     print("  discrete keep    OK", file=sys.stderr)
+
+    # A missing page and an unreachable one are different facts. Only the
+    # second is retried, and neither is reported as the other - the 22 Nov
+    # 2026 run called 15 timeouts "no Fidelity page".
+    global page_state
+    real = page_state
+    ok_state = {"keyStats": {}, "fundData": {"sedol": "B7GJPN7"}}
+    try:
+        def stub(table):
+            def _ps(isin, tab):
+                return table.get((isin[:2], tab), (None, f"{MISSING} for {isin}"))
+            return _ps
+        fund = {"sedol": "B7GJPN7"}
+
+        page_state = stub({})                                   # 404 everywhere
+        rec = resolve(fund)
+        assert rec["error"] == "no Fidelity page for SEDOL B7GJPN7", rec
+        assert not rec.get("retry")
+
+        page_state = stub({("GB", "key-statistics"): (None, "key-statistics "
+                                                      "for GB..: timed out")})
+        rec = resolve(fund)
+        assert rec.get("retry") and "timed out" in rec["error"], rec
+        assert "no Fidelity page" not in rec["error"]
+
+        page_state = stub({("GB", "key-statistics"): (ok_state, None),
+                           ("GB", "performance"): (None, "performance for "
+                                                   "GB..: HTTP 503 Busy"),
+                           ("GB", "risk-and-rating"): ({}, None)})
+        rec = resolve(fund)
+        assert rec.get("retry") and "partly loaded" in rec["error"], rec
+
+        page_state = stub({("GB", "key-statistics"): (ok_state, None),
+                           ("GB", "performance"): ({"performance": {"x": 1}}, None)})
+        rec = resolve(fund)                     # risk tab genuinely absent
+        assert "error" not in rec and rec["performance"] == {"x": 1}, rec
+        assert rec["riskAndRating"] == {}
+    finally:
+        page_state = real
+    print("  failure reasons  OK  (404 is missing; timeout/5xx retried)",
+          file=sys.stderr)
     print("  fid_factsheet self-test: OK", file=sys.stderr)
 
 

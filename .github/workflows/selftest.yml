@@ -59,6 +59,13 @@ jobs:
           fi
           echo "all self-tests passed"
 
+      # The two shell scripts every deploying run depends on. A syntax slip in
+      # either would fail the next scheduled run; this fails the push instead.
+      - name: Check shell scripts parse
+        run: |
+          bash -n scripts/assemble_site.sh
+          bash -n scripts/commit_data.sh
+
       # The deploy step itself, run against the data on main without
       # deploying: proves the assemble script runs and that every published
       # file passes the anonymisation gate, before a scheduled run finds out.

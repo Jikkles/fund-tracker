@@ -35,11 +35,10 @@ the confirmed/estimated split exists to prevent.
 from __future__ import annotations
 
 import re
-import urllib.error
-import urllib.request
 from dataclasses import dataclass
 from datetime import date
 
+import netfetch
 from market_data import USER_AGENT, TIMEOUT
 
 FOMC_URL = "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
@@ -78,12 +77,18 @@ def _plausible(d: date, today: date) -> bool:
 
 
 def _fetch(url: str) -> str | None:
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-            return resp.read().decode("utf-8", "replace")
-    except (urllib.error.URLError, TimeoutError, OSError, ValueError):
+    """A page, or None - with the reason in the run log.
+
+    Through netfetch, like every other fetch on the desk: a timeout or a 5xx
+    is retried with backoff rather than dropping straight to the fallback
+    table, and a failure says what it was instead of returning a bare None
+    that looked the same whether the Fed was down or its markup had moved.
+    """
+    r = netfetch.fetch(url, ua=USER_AGENT, timeout=TIMEOUT)
+    if not r:
+        print(f"  [calendar] {url} not read: {r.error}")
         return None
+    return r.text
 
 
 # ---------------------------------------------------------------------------
