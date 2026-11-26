@@ -863,7 +863,8 @@ def apply_drawdown(fund: dict, series: dict) -> int | None:
     risk["maxDrawdown"] = f"−{abs(pct):.{digits}f}%"
     risk["maxDrawdownPeriod"] = drawdown_period(peak, trough)
     risk["maxDrawdownYears"] = years
-    risk["maxDrawdownWindow"] = f"worst fall in the last {years} years"
+    span = "year" if years == 1 else f"{years} years"
+    risk["maxDrawdownWindow"] = f"worst fall in the last {span}"
     risk["maxDrawdownSource"] = "computed from the fund's own NAV series"
     risk["maxDrawdownConfidence"] = "computed"
     return years

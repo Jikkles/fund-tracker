@@ -173,3 +173,22 @@ The desk's core rule, and it applies to code as much as to data. A value of
 Never lift a number out of a qualifier — `"not yet verified (strategy
 typically rated 6 of 7)"` is not a 6 — and never fill a gap with a plausible
 estimate. A visible gap is correct; a confident wrong number is not.
+
+## HL is the reference
+
+Tom trades on HL, so every figure should describe what an HL holding did:
+the share class HL deals, and HL's own numbers where they exist. When
+sources disagree, HL's class wins over a longer or tidier history from
+another class. Where HL shows `n/a` for a young class, the desk shows a
+gap too (decided 2026-11-26).
+
+- Never price a fund on a substitute class to fill a gap. Schroder Income
+  sits on Class Q with no 3 or 5yr figure because HL has none either.
+- Where no free source prices HL's class at all, the fund carries no NAV
+  figures, and its 1/3/5yr row (`perfBasis: "DRV"`) is chained from HL's
+  own discrete years by `hl_factsheet.py`. Polar Capital European Income
+  is the case today.
+- To check the whole desk, recompute each fund's return over the discrete
+  years on file (Fidelity's, read by HL's SEDOL) from the Yahoo line it
+  is priced on. On 26 Nov 2026 every priced line matched to 0.01pp; a fund
+  that doesn't is on the wrong class.

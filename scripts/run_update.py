@@ -284,9 +284,11 @@ def build_caveats(doc: dict, entries: dict, stats: dict,
     if derived:
         whose = "fund's" if derived == 1 else "funds'"
         lines.append(
-            f"{derived} {whose} cumulative 3/5yr figures are derived by "
-            f"compounding discrete annual returns and are approximate — "
-            f"verify against Trustnet or Morningstar for published totals.")
+            f"{derived} {whose} 1/3/5yr figures are chained from HL's own "
+            f"discrete annual returns for the class HL deals, because no "
+            f"free source publishes a trailing table or a price series for "
+            f"that class. The arithmetic is exact to HL's rounding; there is "
+            f"no sector comparator beside them.")
 
     return DURABLE_CAVEATS + lines
 

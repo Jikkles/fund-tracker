@@ -284,16 +284,72 @@ def discrete_returns(rs: list[list[str]]) -> list[dict] | None:
             periods = ranges
             continue
         if periods and cells and cells[0].lower().startswith("annual return"):
-            vals = [c for c in cells[1:] if PCT.match(c)]
+            # HL prints "n/a" for a year before the class existed. It still
+            # holds its column, so it counts towards the alignment check and
+            # is then left out: a young class gets the years HL does print.
+            vals = [c for c in cells[1:] if PCT.match(c) or c.lower() == "n/a"]
             if len(vals) != len(periods):
                 return None
             out = [{"year": p, "fund": ("+" + v if not v.startswith("-") else v),
                     "sector": "not yet verified"}
-                   for p, v in zip(periods, vals)]
+                   for p, v in zip(periods, vals) if v.lower() != "n/a"]
+            if not out:
+                return None
             # HL lists oldest first; this desk reads discrete[0] as the most
             # recent year, so reverse rather than silently relabel history.
             return list(reversed(out))
     return None
+
+
+def _hl_period(label: str) -> tuple[date, date] | None:
+    m = re.match(r"^(\d{2})/(\d{2})/(\d{2}) to (\d{2})/(\d{2})/(\d{2})$", label or "")
+    if not m:
+        return None
+    d = [int(x) for x in m.groups()]
+    try:
+        return (date(2000 + d[2], d[1], d[0]), date(2000 + d[5], d[4], d[3]))
+    except ValueError:
+        return None
+
+
+def compounded(discrete: list[dict] | None) -> list[dict] | None:
+    """1/3/5yr trailing rows built from HL's own discrete years, or None.
+
+    For a fund whose dealt class no other source publishes a trailing table
+    for. HL prints five consecutive anniversary years ending on the page's
+    own date, so the 1yr row is HL's figure as printed and the 3 and 5yr rows
+    are those same years chained - arithmetic on HL's numbers for HL's class,
+    not an estimate. Each window is written only if every year in it is
+    present and the years meet end to end; a gap or an overlap would chain
+    returns over a span HL never measured.
+    """
+    if not discrete:
+        return None
+    years = []
+    for row in discrete:                       # newest first
+        span = _hl_period(row.get("year", ""))
+        v = str(row.get("fund", ""))
+        if not span or not re.match(r"^[+-]?\d+(?:\.\d+)?%$", v):
+            break
+        if years and years[-1][0][0] != span[1]:
+            break                              # not contiguous: stop here
+        years.append((span, float(v.rstrip("%"))))
+    if not years:
+        return None
+    end = years[0][0][1]
+    rows = []
+    for n in (1, 3, 5):
+        if len(years) < n:
+            break
+        growth = 1.0
+        for _, v in years[:n]:
+            growth *= 1 + v / 100
+        r = (growth ** (1 / n) - 1) * 100
+        label = (f"1 yr (to {end:%d %b %y})" if n == 1 else
+                 f"{n} yr (annualised, to {end:%d %b %y})")
+        rows.append({"period": label, "fund": f"{r:+.2f}%",
+                     "sector": "—", "benchmark": "—"})
+    return rows
 
 
 def managers(html: str) -> dict | None:
@@ -527,12 +583,41 @@ def apply(fund: dict, got: dict, class_ok: bool = True) -> list[str]:
         # misattributed one on the new basis.
         has_sector = any(r.get("sector") not in (None, NYV, "—")
                          for r in existing)
-        if has_sector:
+        # ...unless the researched table is another class's. Liontrust UK
+        # Growth carried five years from the R Inc class, marked "(R Inc
+        # proxy)", over HL's own figures for the I Acc it deals. An income
+        # class's price return understates the accumulation class's total
+        # return; a comparator does not rescue a fund figure for the wrong
+        # line. HL's own years for HL's class win.
+        other_class = any("proxy" in str(r.get("fund", "")).lower()
+                          for r in existing)
+        if has_sector and not other_class:
             changed.append(f"discrete: kept {len(existing)} researched periods "
                            f"(they carry sector comparators HL does not publish)")
         elif existing != got["discrete"]:
             perf["discrete"] = got["discrete"]
             changed.append(f"discrete: {len(got['discrete'])} periods")
+
+    # A fund with no same-class trailing table from Fidelity (perfBasis unset,
+    # or DRV from an earlier week) gets one chained from HL's own years. A
+    # Fidelity table (FID) is never touched: it is read for the same class and
+    # carries a comparator.
+    perf = fund.get("performance") or {}
+    if got.get("discrete") and perf.get("perfBasis") in (None, "DRV"):
+        rows = compounded(got["discrete"])
+        if rows:
+            if perf.get("cumulative") != rows:
+                changed.append(f"cumulative: {len(rows)} rows chained from "
+                               f"HL's discrete years")
+            perf["cumulative"] = rows
+            perf["perfBasis"] = "DRV"
+            perf["notes"] = (
+                f"Trailing figures chained from HL's own discrete annual "
+                f"returns for the class HL deals, to "
+                f"{_hl_period(got['discrete'][0]['year'])[1]:%d %b %Y} (3 and "
+                f"5yr annualised). No other free source publishes a trailing "
+                f"table for this class. HL prints no sector comparator, so "
+                f"none is shown.")
 
     if "dealing" in got:
         before = (fund.get("dealing") or {}).get("tradeable")
@@ -843,9 +928,51 @@ def _selftest_offline() -> bool:
     skewed = _PAGE.replace("<td>-4.10%</td><td>12.30%</td><td>7.70%</td>",
                            "<td>12.30%</td><td>7.70%</td>")
     assert discrete_returns(rows(skewed)) is None, "length mismatch must refuse"
+    young = _PAGE.replace("<td>-4.10%</td><td>12.30%</td>", "<td>n/a</td><td>n/a</td>")
+    yd = discrete_returns(rows(young))
+    assert [r["fund"] for r in yd] == ["+7.70%"], yd
+    assert yd[0]["year"] == "01/08/23 to 01/08/24", "n/a keeps its column"
+    none = young.replace("<td>7.70%</td>", "<td>n/a</td>")
+    assert discrete_returns(rows(none)) is None, "all n/a is nothing"
     assert parse("") == {} or "discrete" not in parse("")
     assert parse('<meta content="B2PLJL5" name="Fund_Sedol"/>').get("sedol") == "B2PLJL5"
     print("  parse guards     OK  (misaligned table refused)", file=_sys.stderr)
+
+    # Chained trailing rows: 1yr as printed, 3/5yr chained and annualised,
+    # and nothing over a gap.
+    rows5 = compounded([{"year": "25/11/25 to 25/11/26", "fund": "+12.38%"},
+                        {"year": "25/11/24 to 25/11/25", "fund": "+12.55%"},
+                        {"year": "25/11/23 to 25/11/24", "fund": "+3.24%"},
+                        {"year": "25/11/22 to 25/11/23", "fund": "+9.84%"},
+                        {"year": "25/11/21 to 25/11/22", "fund": "+7.28%"}])
+    assert [r["fund"] for r in rows5] == ["+12.38%", "+9.30%", "+9.00%"], rows5
+    assert rows5[0]["period"] == "1 yr (to 25 Nov 26)"
+    assert rows5[1]["period"] == "3 yr (annualised, to 25 Nov 26)"
+    gap = compounded([{"year": "25/11/25 to 25/11/26", "fund": "+12.38%"},
+                      {"year": "20/11/24 to 20/11/25", "fund": "+12.55%"}])
+    assert len(gap) == 1, "non-contiguous years must not chain"
+    assert len(compounded([{"year": "25/11/25 to 25/11/26", "fund": "+1.00%"},
+                           {"year": "25/11/24 to 25/11/25", "fund": "n/a"},
+                           {"year": "25/11/23 to 25/11/24", "fund": "+2.00%"}])) == 1
+    assert compounded([]) is None
+    # Polar's own case: a researched table from another class does not
+    # outrank HL's years for HL's class, and the trailing rows follow.
+    fund = {"name": "Example Global Equity", "shareClass": "Class I Accumulation",
+            "performance": {"discrete": [{"year": "x", "fund": "+1.00% (R Inc proxy)",
+                                          "sector": "+2.00%"}]}}
+    apply(fund, got)
+    assert fund["performance"]["discrete"] == got["discrete"], "proxy must yield"
+    assert fund["performance"]["perfBasis"] == "DRV"
+    assert fund["performance"]["cumulative"][0]["fund"] == "+7.70%"
+    fid_row = {"period": "1 yr (trailing, to 24 Nov 26)", "fund": "+5.00%"}
+    fund = {"name": "Example Global Equity", "shareClass": "Class I Accumulation",
+            "performance": {"perfBasis": "FID", "cumulative": [fid_row],
+                            "discrete": [{"year": "x", "fund": "+1.00%",
+                                          "sector": "+2.00%"}]}}
+    apply(fund, got)
+    assert fund["performance"]["cumulative"] == [fid_row], "FID table untouched"
+    assert fund["performance"]["discrete"][0]["fund"] == "+1.00%"
+    print("  chained trailing OK  (contiguous only; FID untouched)", file=_sys.stderr)
 
     # --- class comparison ------------------------------------------------
     assert class_letter("Class I - Accumulation") == "I"

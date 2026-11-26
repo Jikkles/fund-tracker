@@ -3607,29 +3607,14 @@
         "perfBasis": "FID",
         "discrete": [
           {
-            "year": "30 Jun 25 – 30 Jun 26",
-            "fund": "+3.57% (R Inc proxy)",
-            "sector": "+10.75%"
+            "year": "25/11/25 to 25/11/26",
+            "fund": "+14.61%",
+            "sector": "not yet verified"
           },
           {
-            "year": "30 Jun 24 – 30 Jun 25",
-            "fund": "−0.95% (R Inc proxy)",
-            "sector": "+8.85%"
-          },
-          {
-            "year": "30 Jun 23 – 30 Jun 24",
-            "fund": "+10.93% (R Inc proxy)",
-            "sector": "+12.34%"
-          },
-          {
-            "year": "30 Jun 22 – 30 Jun 23",
-            "fund": "+4.62% (R Inc proxy)",
-            "sector": "+6.47%"
-          },
-          {
-            "year": "30 Jun 21 – 30 Jun 22",
-            "fund": "+0.93% (R Inc proxy)",
-            "sector": "−9.95%"
+            "year": "25/11/24 to 25/11/25",
+            "fund": "+0.39%",
+            "sector": "not yet verified"
           }
         ],
         "nav1yr": "+14.61%",
@@ -3638,9 +3623,9 @@
         "nav1w": "-0.45%",
         "nav1m": "-1.55%",
         "navYtd": "+14.60%",
-        "discreteAsAt": "2026-06-30",
+        "discreteAsAt": "2026-11-25",
         "discreteMissingYears": 0,
-        "discreteBasis": "30 Jun",
+        "discreteBasis": "25 Nov",
         "navVol": "11.6%",
         "navVolYears": 1,
         "navYears": [
@@ -11298,7 +11283,7 @@
     {
       "id": "polar-capital-european-income",
       "name": "Polar Capital European ex-UK Income",
-      "shareClass": "Class S GBP Hedged Accumulation",
+      "shareClass": "Class I GBP Accumulation",
       "category": "Europe",
       "group": "europe",
       "badge": {
@@ -11309,93 +11294,64 @@
       "benchmark": "MSCI Europe ex UK",
       "fundSize": "€144 million",
       "launched": "30 June 2015",
-      "yield": "3.83% (31 May 2026)",
-      "overview": "Contrarian value/income fund targeting undervalued larger European companies with bounce-back potential. Deliberately conservative: avoids economically sensitive banks and mining names that led the 2025-26 rally. <b>Yields 3.83%</b> - the highest income in the Europe Shortlist. Added to the Shortlist on 16 February 2023. Irish-domiciled OEIC; fund size quoted in EUR.",
+      "yield": "3.52% (historic)",
+      "overview": "Contrarian value/income fund targeting undervalued larger European companies with bounce-back potential. Deliberately conservative: avoids economically sensitive banks and mining names that led the 2025-26 rally. <b>Yields 3.52%</b> (HL, Class I, historic) - still the highest income in the Europe Shortlist. Added to the Shortlist on 16 February 2023. Irish-domiciled OEIC; fund size quoted in EUR.",
       "performance": {
+        "discrete": [
+          {
+            "year": "25/11/25 to 25/11/26",
+            "fund": "+12.38%",
+            "sector": "not yet verified"
+          },
+          {
+            "year": "25/11/24 to 25/11/25",
+            "fund": "+12.55%",
+            "sector": "not yet verified"
+          },
+          {
+            "year": "25/11/23 to 25/11/24",
+            "fund": "+3.24%",
+            "sector": "not yet verified"
+          },
+          {
+            "year": "25/11/22 to 25/11/23",
+            "fund": "+9.84%",
+            "sector": "not yet verified"
+          },
+          {
+            "year": "25/11/21 to 25/11/22",
+            "fund": "+7.28%",
+            "sector": "not yet verified"
+          }
+        ],
+        "perfConfirmed": "2026-11-26",
         "cumulative": [
           {
-            "period": "1 yr (trailing, to 25 Nov 26)",
-            "fund": "+19.83%",
+            "period": "1 yr (to 25 Nov 26)",
+            "fund": "+12.38%",
             "sector": "—",
             "benchmark": "—"
           },
           {
             "period": "3 yr (annualised, to 25 Nov 26)",
-            "fund": "+12.40%",
+            "fund": "+9.30%",
             "sector": "—",
             "benchmark": "—"
           },
           {
             "period": "5 yr (annualised, to 25 Nov 26)",
-            "fund": "+10.82%",
+            "fund": "+9.00%",
             "sector": "—",
             "benchmark": "—"
           }
         ],
-        "discrete": [
-          {
-            "year": "2025-26",
-            "fund": "+7.40%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2024-25",
-            "fund": "+11.75%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2023-24",
-            "fund": "+7.22%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2022-23",
-            "fund": "+15.77%",
-            "sector": "not yet verified"
-          },
-          {
-            "year": "2021-22",
-            "fund": "+0.04%",
-            "sector": "not yet verified"
-          }
-        ],
-        "notes": "Refreshed 26 Nov 2026 from Fidelity's factsheet (Polar Capital Funds PLC - Polar Capital European Ex UK Income Fund Class S GBP Hedged Acc, IE00BWX5D956): trailing figures to 25 Nov 2026 (1/3/5yr; 3 and 5yr annualised). This is the share class the desk prices, not the one HL deals - see the class note on this card. Sector column is the Morningstar Other Equity category average as Fidelity publishes it, not the IA sector average - not like-for-like with HL or FE tables. The discrete years are not from this refresh: they are HL's factsheet figures for Class I (unhedged) to 24 Jun 2026, kept because Fidelity's Class S page publishes no category figure beside its discrete years.",
+        "perfBasis": "DRV",
+        "notes": "Trailing figures chained from HL's own discrete annual returns for the class HL deals, to 25 Nov 2026 (3 and 5yr annualised). No other free source publishes a trailing table for this class. HL prints no sector comparator, so none is shown.",
         "perfAsAt": "2026-11-25",
         "perfAsAtSource": "period labels (cumulative table)",
-        "perfBasis": "FID",
-        "nav1yr": "+20.86%",
-        "nav3yr": "+42.29%",
-        "nav5yr": "+67.26%",
-        "navAsAt": "2026-11-24",
-        "navPoints": 2461,
-        "navYtd": "+16.17%",
-        "navVol": "11.7%",
-        "navVolYears": 5,
-        "navYears": [
-          {
-            "year": "2025",
-            "fund": "+14.01%"
-          },
-          {
-            "year": "2024",
-            "fund": "+5.19%"
-          },
-          {
-            "year": "2023",
-            "fund": "+14.87%"
-          },
-          {
-            "year": "2022",
-            "fund": "+3.18%"
-          },
-          {
-            "year": "2021",
-            "fund": "+19.53%"
-          }
-        ],
-        "perfConfirmed": "2026-11-26",
-        "nav1w": "-1.85%",
-        "nav1m": "+1.70%"
+        "discreteAsAt": "2026-11-25",
+        "discreteMissingYears": 0,
+        "discreteBasis": "25 Nov"
       },
       "holdings": [
         {
@@ -11530,11 +11486,11 @@
         "bio": "Nick Davis spent 18 years at Threadneedle before joining Polar Capital and takes a contrarian/value approach - seeking companies that are undervalued and have bounce-back potential. Dan Tse provides quantitative analysis support. The fund was designed as a low-volatility income diversifier within a European equity allocation."
       },
       "process": "Contrarian value/income. Targets undervalued larger European companies with potential for share-price recovery. Avoids economically sensitive areas (banks, mining). Aims to deliver above-index income with lower volatility; lags rising markets, cushions falling ones. Approx 17.8% in oil/gas/coal-related names (end-2025). Charges can be taken from capital.",
-      "whyNow": "Defensive positioning meant the fund lagged the 2025-26 value rally (+6-7% vs index +20%). <b>But it outperformed during the March 2026 sell-off</b> triggered by the US/Iran conflict, demonstrating its designed behaviour. The case for holding is income (3.83%) plus downside cushion in a market where the ECB hiked on 11 Jun 2026, to 2.25%, and geopolitical risk remains elevated.",
+      "whyNow": "Defensive positioning meant the fund lagged the 2025-26 value rally (+6-7% vs index +20%). <b>But it outperformed during the March 2026 sell-off</b> triggered by the US/Iran conflict, demonstrating its designed behaviour. The case for holding is income (3.52% historic yield on HL) plus downside cushion in a market where the ECB hiked on 11 Jun 2026, to 2.25%, and geopolitical risk remains elevated.",
       "charges": {
         "ocf": "0.71%",
-        "hlSaving": "not yet verified",
-        "netOngoing": "not yet verified",
+        "hlSaving": "0.00%",
+        "netOngoing": "0.72%",
         "transaction": "0.19%",
         "notes": "OCF of 0.71% is the lowest-cost active Europe fund on the Shortlist. Charges can be taken from capital - this boosts the distributed yield but reduces the capital value of the fund.",
         "transactionSource": "inferred-kiid"
@@ -11544,14 +11500,7 @@
         "feScore": "not yet verified",
         "notes": "Conservative, lower-volatility, income-focused - a diversifier to the growth-oriented Europe funds. Avoids banks and mining, so will lag in value-led markets. Currency risk: unhedged (I GBP class). A GBP-hedged class also exists.",
         "srriNote": "European equity income — inferred",
-        "srriConfidence": "inferred",
-        "maxDrawdown": "−12.0%",
-        "maxDrawdownPeriod": "Jan–Mar 2022",
-        "maxDrawdownNote": "Defensive quality-income focus; financials/utilities weighting cushioned 2022 drawdown",
-        "maxDrawdownSource": "computed from the fund's own NAV series",
-        "maxDrawdownConfidence": "computed",
-        "maxDrawdownWindow": "worst fall in the last 5 years",
-        "maxDrawdownYears": 5
+        "srriConfidence": "inferred"
       },
       "catalysts": [
         {
@@ -11567,8 +11516,7 @@
         }
       ],
       "links": {
-        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/polar-capital-european-ex-uk-income-i-gbp-accumulation",
-        "fidelity": "https://www.fidelity.co.uk/factsheet-data/factsheet/IE00BWX5D956/performance"
+        "hl": "https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/p/polar-capital-european-ex-uk-income-i-gbp-accumulation"
       },
       "sources": "HL factsheet, Broadridge, Portfolio Adviser (Shortlist addition notice)",
       "asAt": "26 Nov 2026 (factsheet refreshed from HL)",
@@ -11580,20 +11528,21 @@
         "basis": "nav:0P00016CNI.L",
         "source": "Yahoo Finance (fund NAV series)"
       },
-      "navSymbol": "0P00016CNI.L",
-      "navName": "Polar Cptl Eurp Ex UK Inc S GBP Hdg Acc",
-      "navIsin": "IE00BWX5D956",
+      "navSymbol": "0P0006DX15.L",
+      "navName": "Polar Cptl Eurp Ex UK Inc I GBP Acc",
       "navMatch": "stored",
       "shortlist": true,
       "shortlistStatus": "on",
-      "navSource": "HL deals the unhedged Class I accumulation line (SEDOL BWX5D39). Yahoo carries no series for it, by ISIN or by name, so the desk prices the GBP-hedged Class S line instead - the only one that exists. This is a currency-hedged share class: its returns exclude the euro/sterling move an unhedged holding would feel, so they are NOT what a Class I holding would have returned. Treat the figures as indicative of the manager, not of the class dealt here.",
-      "classCaveat": "Priced on the GBP-hedged Class S; HL deals unhedged Class I.",
+      "navSource": "HL deals the unhedged Class I accumulation line (SEDOL BWX5D39). No free source publishes a daily price series for it yet - Yahoo lists it without history, and Fidelity has no page for it - so the desk carries no NAV-based figures for this fund rather than another class's. The 1/3/5yr figures are chained from HL's own discrete annual returns for Class I, refreshed weekly.",
       "dealing": {
         "tradeable": true,
         "blocked": [],
         "checked": "2026-11-26"
       },
-      "sedol": "BWX5D39"
+      "sedol": "BWX5D39",
+      "isin": "IE00BWX5D394",
+      "isinSource": "HL's listed class (SEDOL BWX5D39); ISIN derived as IE00+SEDOL+check digit, and Yahoo lists that ISIN as Polar Cptl Eurp Ex UK Inc I GBP Acc",
+      "navSymbolSource": "Exact HL share class, found on Yahoo by ISIN IE00BWX5D394 and pinned 26 Nov 2026. Yahoo quotes it but publishes no price history yet, so it prices nothing until it does; the daily run picks it up then. Replaced the GBP-hedged Class S, whose returns (1yr +19.8% against HL's +12.4% for Class I) are not what an HL holding earned."
     },
     {
       "id": "blackrock-continental-european-income",
@@ -13469,12 +13418,12 @@
         "perfAsAt": "2026-11-25",
         "perfAsAtSource": "period labels (cumulative table)",
         "perfBasis": "FID",
-        "nav1yr": "+3.08%",
-        "nav3yr": "+24.35%",
-        "nav5yr": "-4.93%",
-        "navAsAt": "2026-11-25",
-        "navPoints": 2460,
-        "navYtd": "+4.76%",
+        "nav1yr": "+6.91%",
+        "nav3yr": "+27.82%",
+        "nav5yr": "-4.16%",
+        "navAsAt": "2026-11-24",
+        "navPoints": 2459,
+        "navYtd": "+7.69%",
         "discreteAsAt": "2026-09-30",
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep",
@@ -13503,8 +13452,8 @@
           }
         ],
         "perfConfirmed": "2026-11-26",
-        "nav1w": "-3.82%",
-        "nav1m": "-6.53%"
+        "nav1w": "-0.72%",
+        "nav1m": "-3.92%"
       },
       "holdings": [
         {
@@ -25522,38 +25471,14 @@
       },
       "asAt": "26 Nov 2026 (factsheet refreshed from HL)",
       "performance": {
-        "nav1w": "-0.73%",
-        "nav1m": "+0.84%",
-        "nav1yr": "+15.16%",
-        "nav3yr": "+65.83%",
-        "nav5yr": "+86.58%",
-        "navYtd": "+9.43%",
+        "nav1w": "-0.71%",
+        "nav1m": "+0.88%",
+        "nav1yr": "+15.59%",
+        "navYtd": "+9.83%",
         "navAsAt": "2026-11-25",
-        "navPoints": 2068,
-        "navVol": "14.3%",
-        "navVolYears": 5,
-        "navYears": [
-          {
-            "year": "2025",
-            "fund": "+27.35%"
-          },
-          {
-            "year": "2024",
-            "fund": "+13.56%"
-          },
-          {
-            "year": "2023",
-            "fund": "+11.29%"
-          },
-          {
-            "year": "2022",
-            "fund": "+1.40%"
-          },
-          {
-            "year": "2021",
-            "fund": "+29.46%"
-          }
-        ],
+        "navPoints": 443,
+        "navVol": "13.7%",
+        "navVolYears": 1,
         "perfConfirmed": "2026-11-26",
         "cumulative": [
           {
@@ -25578,10 +25503,9 @@
         "discreteMissingYears": 0,
         "discreteBasis": "30 Sep"
       },
-      "navSymbol": "0P0000T364.L",
-      "navName": "Schroder Income Fd Z Acc",
+      "navSymbol": "0P0001UNFS.L",
+      "navName": "Schroder Income Q Acc GBP",
       "navMatch": "stored",
-      "navClassNote": "share class Z used, desk tracks Q",
       "oneMonth": {
         "value": "+0.84%",
         "note": "Total return over the 31 days to 25 Nov 2026, computed from this fund's own published NAV series - not a proxy and not an estimate. share class Z used, desk tracks Q Market context: FTSE 100 -0.72%, GBP/USD -1.80%.",
@@ -25598,12 +25522,12 @@
         "checked": "2026-11-26"
       },
       "risk": {
-        "maxDrawdown": "−16.8%",
-        "maxDrawdownPeriod": "Feb–Sep 2022",
-        "maxDrawdownWindow": "worst fall in the last 5 years",
+        "maxDrawdown": "−11.7%",
+        "maxDrawdownPeriod": "Feb–Mar 2026",
+        "maxDrawdownWindow": "worst fall in the last 1 years",
         "maxDrawdownSource": "computed from the fund's own NAV series",
         "maxDrawdownConfidence": "computed",
-        "maxDrawdownYears": 5,
+        "maxDrawdownYears": 1,
         "srri": "5",
         "srriConfidence": "confirmed",
         "srriNote": "Fidelity factsheet, collected SRRI dated 31 Oct 2026"
@@ -25611,7 +25535,8 @@
       "isin": "GB00BS0LFP83",
       "isinSource": "derived from HL SEDOL BS0LFP8, confirmed on Fidelity factsheet 8 Oct 2026",
       "benchmark": "FTSE AllSh TR GBP",
-      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026"
+      "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
+      "navSymbolSource": "Exact HL share class, found on Yahoo by ISIN GB00BS0LFP83 and pinned 26 Nov 2026 after its 1yr return to 25 Nov 2026 (+15.59%) matched HL's own discrete year for this class exactly. The class launched in Feb 2025, so there is no 3 or 5yr figure - HL shows n/a for those years too. Replaced Class Z, which was kept for its longer history."
     },
     {
       "id": "ninety-one-diversified-income-class-i",

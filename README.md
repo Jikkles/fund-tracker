@@ -437,16 +437,23 @@ python index_movers.py   --dry-run           # movers, writes nothing
 
 #### Coverage gaps
 
-- **2 priced funds use a substitute share class.** Another class of the same fund, with an
-  asterisk on the NAV chip naming the swap. Charges differ between classes, so the return
-  does too. Income and distributing classes are never substituted. Schroder Income prices
-  Class Z because Yahoo's Class Q line only starts in Feb 2025; switching would delete the
-  fund's 3- and 5-year record. Polar Capital European Income prices the GBP-hedged Class S
-  because Fidelity carries no page for the unhedged Class I that HL deals.
-  `fund_nav.py` searches each substitute's own ISIN every run and logs a `[hint]` line when
-  Yahoo lists the exact class. A switch is made by pinning `navSymbol`, and only after the new
-  line's 1/3/5yr returns match Fidelity's for that class. Three funds were switched that way on
-  26 Nov 2026.
+- **Every fund is priced on the share class HL deals.** HL is where the trading happens, so
+  HL's class is the reference and nothing substitutes another class's figures for it, even
+  with a longer history. Checked on 26 Nov 2026: every priced line's returns match the
+  discrete years published for HL's class to the hundredth of a point. Two consequences:
+  - Schroder Income's Class Q launched in Feb 2025, so it has a 1-year figure and no 3- or
+    5-year one. HL shows n/a for those years too.
+  - Polar Capital European Income's Class I has no free daily price series. Yahoo lists it
+    without history, and Fidelity has no page for it. So it carries no NAV figures: no
+    1-week/1-month, volatility or worst fall. Its 1/3/5yr row (basis `DRV`) is HL's own five
+    discrete years for Class I, chained by `hl_factsheet.py` each week. Once Yahoo publishes
+    bars for `0P0006DX15.L`, the daily run prices it with no change needed. The GBP-hedged
+    Class S it used to show had returned +19.8% in a year against Class I's +12.4%.
+  `fund_nav.py` still searches each substitute's own ISIN every run and logs a `[hint]` line
+  when Yahoo lists the exact class; none are substituted today.
+- **A young class shows only the years HL prints.** HL marks a year before the class existed
+  as `n/a`. The parser keeps the column alignment and drops those years, so Liontrust UK
+  Growth's I Acc shows HL's two years rather than five borrowed from its R Inc class.
 - **2 funds have too little NAV history for a 1-year figure.** Yahoo has no prices for either
   BlackRock European line between Dec 2019 and Jun 2026. The series is cut at the hole and
   the note on the NAV chip says so. Their 1/3/5yr figures come from Fidelity's table for the
