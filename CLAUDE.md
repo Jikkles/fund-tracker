@@ -49,9 +49,21 @@ Two consequences worth planning around:
   the list of files the page fetches, and the anonymisation gate on
   `funds.json` and `last_run.md`. A new file the page fetches is added there,
   once, not in a workflow.
+- **Committing a run's data** goes through `scripts/commit_data.sh`, in both
+  the daily and weekly runs. If a file the run is committing changed on
+  `main` after the run started, it refuses rather than overwriting it. So if
+  you push a hand fix to `data/` while a run is in flight, expect that run's
+  commit step to fail red on purpose. Your fix stands, and the next run
+  rebuilds the data on top of it.
 - **A push to `scripts/**`** runs `selftest.yml`: every script's `--selftest`
   plus a trial assemble. It deploys nothing. A new script with a parser or a
   guard gets a `--selftest` and a line in that workflow's list.
+- **A refresh that gets nothing writes nothing.** Every refresh script
+  refuses to replace good data with blanks: it writes nothing, exits
+  non-zero, and its step is marked `continue-on-error` so the rest of the run
+  still lands. The Shortlist, NAV, movers and chart scripts all do this. A
+  new refresh script follows the same pattern. An amber step in a green job
+  is one of these refusals, and its annotation says why.
 
 ## The schedules are best-effort. Three cloud routines back them up.
 
@@ -60,6 +72,12 @@ over the six days to 2026-08-31, the daily update started 6-12 hours late every
 day it ran and skipped one day entirely, and the hourly market refresh delivered
 11 runs against roughly 80 requested fires, including a two-day gap. The crons
 here are a hope, not a clock.
+
+One consequence is that the daily run normally runs **twice**: once from
+the 08:00 routine at about 09:00 UTC, and again when the late cron fires in
+the afternoon. That is kept deliberately (decided 2026-11-26). The second
+pass picks up NAVs published since the morning and the US session's movers.
+Two "Daily update" commits a day is normal, not a fault.
 
 Three Claude cloud routines top them up (the first two created 2026-08-31,
 the third 2026-10-08):
@@ -101,7 +119,16 @@ transaction costs, from Fidelity's factsheet. Fidelity's comparator is the
 Morningstar category average, not the IA sector. Every fund it refuses
 (wrong share class, 1yr off the desk's NAV, undatable table) is printed as
 `SKIP` with the reason and left untouched - so a fund still flagged stale in
-`last_run.md` is one to look up in that log, not a broken scraper.
+`last_run.md` is one to look up in that log, not a broken scraper. "No
+Fidelity page" now means a real 404. A timeout or a half-loaded page is
+retried once, slowly, and if it still fails it is reported as unreachable
+with its reason. Before that fix, on 22 Nov 2026, 15 timeouts were logged as
+"no page".
+
+The weekly run's four refresh steps each tolerate failure, so one crash no
+longer skips the others, the commit and the deploy. `last_factsheets.md` is
+only stamped when both the HL and Fidelity steps succeeded, so a failed week
+still gets Monday's top-up re-run.
 
 The same run also refreshes the Premium Bonds tab: `premium_bonds.py` reads
 NS&I's monthly prize allocation table and its Premium Bonds page (rate and

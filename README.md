@@ -85,9 +85,28 @@ nothing to configure, no secrets to add.
 
 | Workflow | Schedule | Does |
 |---|---|---|
-| `daily-update.yml` | Daily, **and on a push to `site/**`** | Prices every fund, rolls catalysts, deploys the page |
+| `daily-update.yml` | Daily, plus a manual dispatch; **a push to `site/**` only deploys** | Reads the Shortlist, prices every fund, ranks index movers, rolls catalysts, commits, deploys |
 | `hourly-market.yml` | Weekdays at 08:17, 13:17, 17:17 and 21:17 UTC | Refreshes the index chart and headlines |
-| `weekly-factsheets.yml` | Weekly | Re-scrapes HL factsheet depth |
+| `weekly-factsheets.yml` | Sundays | Re-reads HL factsheet depth, Fidelity's comparators/SRRI/costs, and NS&I's Premium Bonds figures |
+| `selftest.yml` | Every push to `scripts/**` | Runs every script's `--selftest` and a trial assemble. Deploys nothing |
+
+All three deploys build the site with `scripts/assemble_site.sh` (stamp, copy, anonymisation
+gate) and the two that commit go through `scripts/commit_data.sh`. Neither exists in more than
+one copy, because the copies drifted.
+
+**The daily run usually runs twice.** GitHub's scheduler fires the 06:23 cron 6-12 hours late,
+so a cloud routine dispatches the run at about 09:00 UTC when `last_run.md` is not yet dated
+today, and the late cron then fires anyway in the afternoon. That second pass is kept on
+purpose: by then more funds have published the previous day's NAV, and the movers reflect the
+US session. Two runs, both full, both committed.
+
+**A refresh that gets nothing writes nothing.** The Shortlist read (under 30 entries, or
+dropping over half the list at once), the NAV pricing (not one fund priced), the movers (no
+index ranked) and the chart (no index fetched) each refuse to write and fail their step rather
+than replace good data with blanks. Those steps are allowed to fail, so the rest of the run
+still lands; read the step annotations, not just the job colour. And if a person pushes a
+change to a data file while a run is working, the run refuses to commit over it - the next run
+regenerates the data on top.
 
 Weekly is deliberate for factsheets: holdings tables are republished monthly at best, and
 they are someone else's pages — asking once a week rather than seven times is basic courtesy.
@@ -346,33 +365,44 @@ cache-busting query, so neither the browser nor GitHub's CDN can serve yesterday
 
 | File | Does |
 |---|---|
-| `scripts/run_update.py` | Orchestrates the run |
+| `scripts/run_update.py` | Orchestrates the daily run: 1-month figures, catalysts, caveats, `last_run.md` |
+| `scripts/shortlist.py` | Sets each fund's Wealth Shortlist status from HL's published list |
 | `scripts/fund_nav.py` | Resolves each fund to a Yahoo NAV symbol and prices it — `--resolve-only` to check matches |
+| `scripts/index_movers.py` | Ranks each index's constituents for the movers panel, dated by the session they traded |
 | `scripts/hl_factsheet.py` | Refreshes depth from HL factsheets — `--dry-run`, `--only <id>`, `--new`, `--repair-text` |
+| `scripts/fid_factsheet.py` | Fidelity comparators, SRRI and transaction costs — `--dry-run`, `--only <id>` |
+| `scripts/premium_bonds.py` | NS&I prize allocation, rate and odds for the Premium Bonds tab |
 | `scripts/market_series.py` | Index chart series + per-index headlines — **edit `INDICES`** to change the tabs |
 | `scripts/market_data.py` | Yahoo prices for market context and tracker proxies, per-symbol failure |
 | `scripts/cb_calendar.py` | Reads the published Fed/BoE calendars |
 | `scripts/stat_calendar.py` | Reads the ONS release calendar for UK CPI / labour market / GDP |
-| `scripts/calendar_data.py` | Central bank dates + ONS releases + earnings lookup |
+| `scripts/calendar_data.py` | Central bank dates + ONS releases + earnings-date estimates |
 | `scripts/perf_dates.py` | Reads what the performance tables say they are measured to |
 | `scripts/proxies.py` | Fund → ETF mapping. **Edit this** if a proxy looks wrong |
+| `scripts/netfetch.py` | Every HTTP request: retry, backoff, per-host rate limit, failure reasons |
+| `scripts/datafile.py` | Every data-file write: atomic, UTF-8, LF |
 | `scripts/anonymise.py` | Strips personal references before publishing |
+| `scripts/assemble_site.sh` | Builds `_site/` for every deploy, gate included |
+| `scripts/commit_data.sh` | Commits a run's data, refusing to overwrite a mid-run hand edit |
 
 ### Check it locally — writes nothing
 
-```bash
-python scripts/market_data.py    --selftest   # endpoints reachable?
-python scripts/market_series.py  --selftest   # same, for the chart endpoint
-python scripts/cb_calendar.py    --selftest   # Fed/BoE calendar parsing, offline
-python scripts/stat_calendar.py  --selftest   # ONS release parsing + title guard, offline
-python scripts/calendar_data.py  --selftest   # date rollover + sort anchors, offline
-python scripts/fund_nav.py       --selftest   # resolution guards, volatility, calendar years, offline
-python scripts/hl_factsheet.py   --selftest   # scrape parsing + guards, offline
-python scripts/perf_dates.py                  # period-label date parsing, offline
+Every script with a parser or a guard has a `--selftest` (offline, except that `market_data`
+and `market_series` also try one live fetch). `selftest.yml` runs them all on every push to
+`scripts/**`; to run them yourself:
 
-python scripts/cb_calendar.py                 # what the calendars say today
-python scripts/run_update.py     --dry-run    # full run, writes nothing
-python scripts/market_series.py  --dry-run    # chart fetch, writes nothing
+```bash
+cd scripts
+for s in datafile netfetch market_data market_series fund_nav hl_factsheet fid_factsheet \
+         index_movers premium_bonds shortlist calendar_data cb_calendar stat_calendar; do
+  python $s.py --selftest || echo "FAILED: $s"
+done
+python perf_dates.py                         # its self-test needs no flag
+
+python cb_calendar.py                        # what the calendars say today
+python run_update.py     --dry-run           # full run, writes nothing
+python market_series.py  --dry-run           # chart fetch, writes nothing
+python index_movers.py   --dry-run           # movers, writes nothing
 ```
 
 ---
@@ -397,6 +427,10 @@ python scripts/market_series.py  --dry-run    # chart fetch, writes nothing
   hand-maintained behind it: a statistic that will not resolve simply carries no date, and
   the run warns which one. That is deliberate — a stale hardcoded release date is worse than
   a visibly undated catalyst.
+- **Earnings dates are estimates only.** Each is projected from the company's reporting
+  rhythm and labelled `estimated`. Yahoo's earnings calendar started refusing requests
+  without a session crumb, which is an access check, so the lookup was removed rather than
+  worked around. Only central bank and ONS dates can be `confirmed` or `provisional`.
 - **US macro prints are not covered.** `www.bls.gov` refuses GitHub Actions runner IPs with a
   403 on any user-agent, so US CPI and payrolls have no keyless route. BEA, Census and the
   Fed's own events calendar do respond, so PCE and GDP are reachable if that gap matters.

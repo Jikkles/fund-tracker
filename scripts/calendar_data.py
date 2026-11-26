@@ -15,12 +15,16 @@ Two kinds of event, handled differently because their reliability differs:
   that distinction is carried through to the label. A provisional date is
   not a confirmed one.
 
-  EARNINGS DATES are fetched live where possible. When a company has
-  confirmed its date the fetch returns it and we mark (confirmed). When it
-  has not, we fall back to a pattern estimate derived from the company's
-  historical reporting rhythm and mark (estimated). Never the other way
-  round: presenting an inferred date as confirmed is the specific failure
-  this module exists to prevent.
+  EARNINGS DATES are pattern estimates derived from each company's
+  historical reporting rhythm, and are always marked (estimated). There is
+  no live source for them. There was meant to be: a Yahoo quoteSummary call
+  was supposed to supply confirmed dates, but Yahoo began refusing it
+  without a session crumb (HTTP 401) and the call swallowed the refusal, so
+  for months every earnings date was an estimate while this docstring said
+  they were fetched live. The call was removed on 26 Nov 2026 rather than
+  worked around - Yahoo's crumb is an access check, not a format. A real
+  confirmed source can be added back in next_event(); until then nothing
+  here is labelled (confirmed) that a publisher did not confirm.
 
 Every resolved event also carries an ISO **sort anchor**. The displayed string
 is deliberately fuzzy where the date is - "~mid Oct 2026" is the honest form of
@@ -33,14 +37,10 @@ the month (early=5th, mid=15th, late=25th), not a claim of precision.
 
 from __future__ import annotations
 
-import json
-import urllib.error
-import urllib.request
 from datetime import date, timedelta
 
 import cb_calendar as cb
 import stat_calendar as sc
-from market_data import USER_AGENT, TIMEOUT
 
 # ---------------------------------------------------------------------------
 # Central bank calendar - a floor under the published calendars, not the
@@ -145,31 +145,10 @@ def calendar_health(today: date) -> list[str]:
 
 
 # ---------------------------------------------------------------------------
-# Earnings dates
+# Earnings dates - estimates only; see the module docstring for why
 # ---------------------------------------------------------------------------
-# Holding name (as it appears in funds.json) -> Yahoo ticker.
-HOLDING_TICKERS: dict[str, str] = {
-    "NVIDIA": "NVDA",
-    "TSMC": "TSM",
-    "Microsoft": "MSFT",
-    "Apple": "AAPL",
-    "Amazon": "AMZN",
-    "Alphabet": "GOOGL",
-    "Meta Platforms": "META",
-    "ASML": "ASML",
-    "Samsung Electronics": "005930.KS",
-    "SK Hynix": "000660.KS",
-    "Tencent": "0700.HK",
-    "Novo Nordisk": "NVO",
-    "TotalEnergies": "TTE",
-    "HDFC Bank": "HDB",
-    "SoftBank Group": "9984.T",
-    "Advantest": "6857.T",
-    "Sumitomo Mitsui Trust Group": "8309.T",
-}
-
-# Fallback reporting rhythm when no confirmed date is available: which months
-# the company reports in, and roughly where in the month.
+# Reporting rhythm: which months each company reports in, and roughly where
+# in the month.
 REPORTING_PATTERN: dict[str, tuple[list[int], str]] = {
     "NVIDIA":                      ([2, 5, 8, 11], "late"),
     "TSMC":                        ([1, 4, 7, 10], "mid"),
@@ -247,28 +226,6 @@ EVENT_NOTES: dict[str, str] = {
 }
 
 
-def fetch_earnings_date(ticker: str) -> date | None:
-    """Confirmed next earnings date from Yahoo, or None."""
-    url = (f"https://query1.finance.yahoo.com/v10/finance/quoteSummary/"
-           f"{ticker}?modules=calendarEvents")
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-            payload = json.loads(resp.read())
-    except (urllib.error.URLError, TimeoutError, OSError,
-            json.JSONDecodeError):
-        return None
-
-    try:
-        events = (payload["quoteSummary"]["result"][0]
-                  ["calendarEvents"]["earnings"]["earningsDate"])
-        if not events:
-            return None
-        return date.fromtimestamp(events[0]["raw"])
-    except (KeyError, IndexError, TypeError, ValueError):
-        return None
-
-
 # Where in the month a "early"/"mid"/"late" window is anchored for sorting.
 # Ordering needs a single day; the published string keeps the honest window.
 _ANCHOR_DAY = {"early": 5, "mid": 15, "late": 25}
@@ -331,28 +288,11 @@ def next_event(holding: str, today: date) -> tuple[str, str, str | None] | None:
         return None
 
     # Aggregate "cluster" entries track a reporting season, not one company.
-    # Anchor them to the earliest upcoming date among their constituents so
-    # the panel shows when the season actually starts.
+    # Anchor them to the earliest upcoming estimate among their constituents
+    # so the panel shows when the season starts. Sort by the anchor, not by
+    # list order - the members are listed by weight.
     if holding in CLUSTER_MEMBERS:
         members = CLUSTER_MEMBERS[holding]
-        dates: list[tuple[date, str]] = []
-        for member in members:
-            ticker = HOLDING_TICKERS.get(member)
-            if not ticker:
-                continue
-            confirmed = fetch_earnings_date(ticker)
-            if confirmed and today <= confirmed <= today + timedelta(days=200):
-                dates.append((confirmed, member))
-        if dates:
-            dates.sort()
-            first_date, first_member = dates[0]
-            return (f"{first_member} {fmt_date(first_date)} (confirmed), "
-                    f"then the wider cluster through "
-                    f"{_season_end(dates):%b %Y}",
-                    "Yahoo Finance calendar, earliest confirmed constituent",
-                    first_date.isoformat())
-        # Nothing confirmed: fall back to the earliest pattern estimate. Sort
-        # by the anchor, not by list order - the members are listed by weight.
         estimates = [e for e in (estimate_next(m, today) for m in members) if e]
         if estimates:
             label, anchor = min(estimates, key=lambda e: e[1])
@@ -370,18 +310,6 @@ def next_event(holding: str, today: date) -> tuple[str, str, str | None] | None:
                     anchor.isoformat())
         return None
 
-    ticker = HOLDING_TICKERS.get(holding)
-    if ticker:
-        confirmed = fetch_earnings_date(ticker)
-        # Sanity-check: a "confirmed" date in the past, or absurdly far out,
-        # is stale provider data, not a real confirmation.
-        if confirmed and today <= confirmed <= today + timedelta(days=200):
-            return (_with_note(holding,
-                               f"{fmt_date(confirmed, with_weekday=True)} "
-                               f"(confirmed)"),
-                    f"Yahoo Finance calendar ({ticker})",
-                    confirmed.isoformat())
-
     est = estimate_next(holding, today)
     if est:
         label, anchor = est
@@ -393,10 +321,6 @@ def next_event(holding: str, today: date) -> tuple[str, str, str | None] | None:
 def _with_note(holding: str, label: str) -> str:
     note = EVENT_NOTES.get(holding)
     return f"{label}; {note}" if note else label
-
-
-def _season_end(dates: list[tuple[date, str]]) -> date:
-    return max(d for d, _ in dates)
 
 
 def _selftest_offline() -> bool:

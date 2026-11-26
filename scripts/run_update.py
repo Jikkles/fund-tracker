@@ -620,6 +620,10 @@ def main() -> int:
            if cal_warnings else "")
         + (" RESEARCH STALE: " + " ".join(res_warnings)
            if res_warnings else "")
+        # The third health check. It reached last_run.md but not this trail,
+        # so a fund HL had closed to new money left no record here at all.
+        + (" DEALING: " + " ".join(deal_warnings)
+           if deal_warnings else "")
     )
     audit.setdefault("findings", []).append({
         "fundId": "ALL",
@@ -655,6 +659,16 @@ def main() -> int:
             "description": " ".join(res_warnings),
             "status": "flagged",
             "source": None,
+        })
+    if deal_warnings:
+        audit["findings"].append({
+            "fundId": "ALL",
+            "fundName": "Dealing availability",
+            "check": "DEALING",
+            "severity": "MEDIUM",
+            "description": " ".join(deal_warnings),
+            "status": "flagged",
+            "source": "HL factsheet dealing status",
         })
 
     # The findings list is an append-only trail and the page no longer renders
