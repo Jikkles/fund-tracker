@@ -4,3 +4,5 @@ __pycache__/
 data/last_response.txt
 _site/
 .claude/settings.local.json
+# datafile.py's temporary write file, left only if a process is killed hard
+data/.*.tmp

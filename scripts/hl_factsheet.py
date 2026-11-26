@@ -43,6 +43,7 @@ import time
 from datetime import date
 from pathlib import Path
 
+import datafile
 import netfetch
 import perf_dates
 
@@ -657,8 +658,7 @@ def main(argv: list[str]) -> int:
         if dry or not fixed:
             print("--dry-run: nothing written" if dry else "nothing to write")
             return 0
-        io.open(FUNDS, "w", encoding="utf-8", newline="\n").write(
-            json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+        datafile.write_json(FUNDS, doc)
         print(f"wrote {FUNDS}")
         return 0
     only = set()
@@ -731,8 +731,7 @@ def main(argv: list[str]) -> int:
     if dry:
         print("\n--dry-run: nothing written")
         return 0
-    io.open(FUNDS, "w", encoding="utf-8", newline="\n").write(
-        json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+    datafile.write_json(FUNDS, doc)
     print(f"\nwrote {FUNDS}")
     return 0
 

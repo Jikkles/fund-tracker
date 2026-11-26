@@ -42,6 +42,15 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    # A healthy run takes under a minute. Without a cap a stall runs to
+    # GitHub's six-hour limit while holding the fund-tracker-pages group, and
+    # the daily and weekly runs queue behind it the whole time - the daily
+    # run already learnt this on 2026-09-25. Ten minutes covers every index
+    # working through its full retry ladder.
+    timeout-minutes: 10
+    env:
+      # Unbuffered, so a stalled or killed step's log shows how far it got.
+      PYTHONUNBUFFERED: "1"
     steps:
       # ref: main, because the default is the commit this run was CREATED on.
       # This workflow commits nothing, but it does publish funds.json, so a run
@@ -70,35 +79,11 @@ jobs:
 
       # funds.json is whatever the daily run last committed; only the chart
       # data is regenerated here.
+      # Stamp, copy every file the page fetches, and run the anonymisation
+      # gate - one script shared by all three deploying workflows, so they
+      # cannot drift apart again. See scripts/assemble_site.sh.
       - name: Assemble site
-        run: |
-          mkdir -p _site
-          cp site/index.html _site/index.html
-          # Stamp the deployed copy with the commit it was built from. The page
-          # compares this against the served file to tell whether the copy the
-          # browser is holding has been superseded - see newBuildAvailable().
-          # Only _site is stamped; the repo keeps its placeholder, which is how
-          # the page knows it is being opened locally rather than served.
-          # HEAD rather than $GITHUB_SHA, which is only the commit the run was
-          # created on: a queued run building a newer index.html under that old
-          # stamp would tell a browser holding the old page nothing had changed.
-          sed -i "s/__BUILD__/$(git rev-parse HEAD)/" _site/index.html
-          # Every file index.html fetches, copied by one list in every
-          # workflow that deploys, and MISSING ONE IS A HARD FAILURE.
-          #
-          # This was three hand-written cp lines per workflow and they drifted:
-          # only the daily run copied movers.json, so each hourly or weekly
-          # deploy published a site without it. The panel 404ed and printed
-          # "the constituent rankings could not be loaded" until the next daily
-          # run happened to put the file back - a page that broke and healed on
-          # a schedule, from a one-line omission nothing checked for.
-          #
-          # constituents.json is deliberately not here: index_movers.py reads
-          # it to build movers.json, and the page never fetches it.
-          for f in funds.json market.json movers.json premium_bonds.json last_run.md; do
-            test -f "data/$f" || { echo "::error::data/$f missing - refusing to deploy a site without it"; exit 1; }
-            cp "data/$f" "_site/$f"
-          done
+        run: bash scripts/assemble_site.sh
 
       # v4 of this action stopped including dotfiles in the artifact, and does
       # so silently. Nothing here is hidden - the five files above are copied

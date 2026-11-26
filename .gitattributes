@@ -1,0 +1,11 @@
+# Store every text file with LF line endings, whatever machine commits it.
+#
+# Until this file existed, only a global core.autocrlf=true on the Windows
+# machine kept CRLF out of the repo - and Python's Path.write_text writes CRLF
+# on Windows, so a script run locally produced it. A session on another machine
+# or a phone, or a fresh clone without that setting, would have committed a
+# whole-file line-ending diff of funds.json. This makes the repository
+# enforce it rather than one machine's config.
+#
+# Working copies are unchanged: Windows checkouts still follow core.autocrlf.
+* text=auto

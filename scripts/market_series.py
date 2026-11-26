@@ -45,6 +45,7 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+import datafile
 import netfetch
 
 USER_AGENT = netfetch.UA_DESK
@@ -619,7 +620,7 @@ def main(argv: list[str]) -> int:
         print("[dry-run] nothing written")
         return 0
 
-    OUT.write_text(payload, encoding="utf-8")
+    datafile.write_text(OUT, payload)
     print(f"wrote {OUT}")
     return 0
 

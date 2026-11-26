@@ -65,6 +65,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from pathlib import Path
 
+import datafile
 import netfetch
 import perf_dates
 
@@ -414,8 +415,7 @@ def main(argv: list[str]) -> int:
     if dry:
         print("--dry-run: nothing written")
         return 0
-    io.open(FUNDS, "w", encoding="utf-8", newline="\n").write(
-        json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+    datafile.write_json(FUNDS, doc)
     print(f"wrote {FUNDS}")
     return 0
 

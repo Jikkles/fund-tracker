@@ -40,6 +40,19 @@ Two consequences worth planning around:
 - A push that touches `site/**` is a deploy to a live site. Get the change
   right before pushing rather than pushing to see what happens.
 
+## Shared plumbing: use it, don't copy it
+
+- **Writing a data file** goes through `scripts/datafile.py` (`write_json` /
+  `write_text`): atomic, UTF-8, LF, one JSON layout. Five scripts used to
+  write `funds.json` five slightly different ways.
+- **Every deploy** builds `_site/` with `scripts/assemble_site.sh` - the stamp,
+  the list of files the page fetches, and the anonymisation gate on
+  `funds.json` and `last_run.md`. A new file the page fetches is added there,
+  once, not in a workflow.
+- **A push to `scripts/**`** runs `selftest.yml`: every script's `--selftest`
+  plus a trial assemble. It deploys nothing. A new script with a parser or a
+  guard gets a `--selftest` and a line in that workflow's list.
+
 ## The schedules are best-effort. Three cloud routines back them up.
 
 GitHub's scheduled-workflow scheduler is not dependable for this repo. Measured

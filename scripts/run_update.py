@@ -29,6 +29,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import calendar_data as cal
+import datafile
 import market_data as md
 import perf_dates
 from proxies import CONTEXT_TICKERS, FUND_PROXIES, GROUP_CONTEXT
@@ -519,7 +520,7 @@ def write_report(stats, cat_stats, quotes, proxy_quotes, entries, warnings,
         "Hand-entered discrete and cumulative factsheet tables are NOT "
         "refreshed by this run and continue to age. Not investment advice.*",
     ]
-    REPORT.write_text("\n".join(lines), encoding="utf-8")
+    datafile.write_text(REPORT, "\n".join(lines))
 
 
 def main() -> int:
@@ -661,18 +662,21 @@ def main() -> int:
     # history nobody reads.
     audit["findings"] = audit["findings"][-AUDIT_TRAIL_MAX:]
 
-    navs = sum(1 for f in doc["funds"]
-               if (f.get("performance") or {}).get("nav1yr"))
+    # The count printed beside today's date must be funds priced from their
+    # own NAV as of today. It used to count any stored nav1yr, however old -
+    # so on a day Yahoo refused every fund it still claimed ~96 of 103 "priced
+    # from their own NAV" under today's date, from figures a week stale.
+    # stats["nav"] is the same age-gated count (NAV_MAX_AGE_DAYS) that the
+    # caveats and last_run.md already report, so the three now agree.
     doc["meta"]["asAt"] = (f"{stamp(today)} (automated deterministic run); "
-                           f"{navs} of {len(doc['funds'])} funds priced from "
-                           f"their own NAV")
+                           f"{stats['nav']} of {len(doc['funds'])} funds "
+                           f"priced from their own NAV")
     doc["meta"]["built"] = f"{stamp(today)} (automated daily run)"
     # Regenerated every run so the page's caveats describe this run's data
     # rather than whatever was true when someone last edited them by hand.
     doc["meta"]["caveats"] = build_caveats(doc, entries, stats, today)
 
-    FUNDS.write_text(json.dumps(doc, indent=2, ensure_ascii=False),
-                     encoding="utf-8")
+    datafile.write_json(FUNDS, doc)
     write_report(stats, cat_stats, quotes, proxy_quotes, entries, warnings,
                  today, window_start)
     print("\n[done] funds.json updated")

@@ -91,6 +91,7 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from statistics import median
 
+import datafile
 import netfetch
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -425,8 +426,7 @@ def load_constituents(today: date) -> dict:
                   f"{len(entry['tickers'])} cached from {fetched}")
         else:
             print(f"  [list] {label:12} unavailable and nothing cached")
-    CACHE.write_text(json.dumps(cache, indent=2, ensure_ascii=False) + "\n",
-                     encoding="utf-8")
+    datafile.write_json(CACHE, cache)
     return cache
 
 
@@ -848,8 +848,7 @@ def main(argv: list[str]) -> int:
         print(json.dumps({k: v["universe"] for k, v in out["indices"].items()},
                          indent=2))
         return 0
-    OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n",
-                   encoding="utf-8")
+    datafile.write_json(OUT, out)
     print(f"\nwrote {OUT} ({built} indices ranked, "
           f"{len(out['unsupported'])} explained as unsupported)")
     return 0

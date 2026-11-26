@@ -37,6 +37,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
+import datafile
 import netfetch
 
 FUNDS = Path(__file__).resolve().parent.parent / "data" / "funds.json"
@@ -161,8 +162,7 @@ def main(argv: list[str]) -> int:
     if dry:
         print("\n--dry-run: nothing written")
         return 0
-    io.open(FUNDS, "w", encoding="utf-8", newline="\n").write(
-        json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+    datafile.write_json(FUNDS, doc)
     print(f"\nwrote {FUNDS}")
     return 0
 

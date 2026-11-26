@@ -1,0 +1,66 @@
+name: Script self-tests
+
+# Every script on the desk carries a --selftest of its parsers and guards,
+# against captured fragments - the checks that stop a confident wrong figure
+# being written over a correct one. Until this workflow nothing ran them, so a
+# change that broke a parser surfaced as a bad Sunday run, not as a red tick on
+# the push that caused it.
+#
+# This deploys nothing, commits nothing and takes no part in the Pages
+# concurrency group, so it can never hold up or race a data run. market_data
+# and market_series also make one live Yahoo call after their offline tests;
+# they print LIVE FAILED and still exit 0 when it is refused, so a throttled
+# runner does not turn this red.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - ".github/workflows/selftest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      # Every suite runs even after one fails, so a single push shows every
+      # breakage at once rather than one per round trip.
+      - name: Run every script's self-test
+        working-directory: scripts
+        run: |
+          failed=""
+          for s in datafile netfetch market_data market_series fund_nav \
+                   hl_factsheet fid_factsheet index_movers premium_bonds \
+                   calendar_data cb_calendar stat_calendar; do
+            echo "::group::$s"
+            python "$s.py" --selftest || failed="$failed $s"
+            echo "::endgroup::"
+          done
+          # perf_dates runs its self-test with no flag - it has no other mode.
+          echo "::group::perf_dates"
+          python perf_dates.py || failed="$failed perf_dates"
+          echo "::endgroup::"
+          if [ -n "$failed" ]; then
+            echo "::error::self-test failed:$failed"
+            exit 1
+          fi
+          echo "all self-tests passed"
+
+      # The deploy step itself, run against the data on main without
+      # deploying: proves the assemble script runs and that every published
+      # file passes the anonymisation gate, before a scheduled run finds out.
+      - name: Trial assemble (no deploy)
+        run: bash scripts/assemble_site.sh

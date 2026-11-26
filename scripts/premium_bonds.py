@@ -59,6 +59,7 @@ from datetime import date, datetime
 from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import datafile  # noqa: E402
 import netfetch  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -265,9 +266,7 @@ def main(argv: list[str]) -> int:
           f"1 in {new['oddsPerBond']:,}, {new['totalPrizes']:,} prizes worth "
           f"£{new['totalValue']:,} - " + (", ".join(changes) if changes else "unchanged"))
     if not dry:
-        with io.open(OUT, "w", encoding="utf-8", newline="\n") as f:
-            json.dump(new, f, indent=2, ensure_ascii=False)
-            f.write("\n")
+        datafile.write_json(OUT, new)
     return 0
 
 

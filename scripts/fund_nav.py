@@ -39,6 +39,7 @@ import urllib.parse
 from datetime import date, datetime
 from pathlib import Path
 
+import datafile
 import netfetch
 
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -987,8 +988,7 @@ def main(argv: list[str]) -> int:
         return 0
 
     doc.setdefault("meta", {})["navRefreshed"] = today.isoformat()
-    FUNDS.write_text(json.dumps(doc, indent=2, ensure_ascii=False),
-                     encoding="utf-8")
+    datafile.write_json(FUNDS, doc)
     print(f"\nwrote {FUNDS}")
     return 0
 

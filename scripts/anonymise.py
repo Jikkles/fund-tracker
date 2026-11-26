@@ -20,6 +20,8 @@ import re
 import sys
 from pathlib import Path
 
+import datafile
+
 # Fund manager names containing the maintainer's first name as a substring.
 # These are public professional data and MUST be preserved verbatim.
 # Extend this list if a new manager with the same name is added.
@@ -125,12 +127,16 @@ def main() -> int:
                   file=sys.stderr)
             return 1
 
-    try:
-        json.loads(cleaned)
-    except json.JSONDecodeError as exc:
-        print(f"ERROR: anonymised output is not valid JSON: {exc}",
-              file=sys.stderr)
-        return 1
+    # Only a .json file is held to being JSON. The deploy step also runs this
+    # gate over last_run.md, which is published beside funds.json and built
+    # from the same notes, and has no JSON to validate.
+    if src.suffix.lower() == ".json":
+        try:
+            json.loads(cleaned)
+        except json.JSONDecodeError as exc:
+            print(f"ERROR: anonymised output is not valid JSON: {exc}",
+                  file=sys.stderr)
+            return 1
 
     # Report any surviving bare references, excluding protected names.
     probe = cleaned
@@ -153,7 +159,7 @@ def main() -> int:
             print(f"    ...{snippet}...", file=sys.stderr)
         return 1
 
-    dst.write_text(cleaned, encoding="utf-8")
+    datafile.write_text(dst, cleaned)
     print(f"Anonymised {count} reference(s) -> {dst}")
     print(f"Preserved manager names: {', '.join(PROTECTED_NAMES)}")
     return 0
