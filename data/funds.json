@@ -4352,8 +4352,8 @@
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "GB00BLH39230",
-      "navSymbol": "0P000024AF.L",
-      "navName": "Janus Henderson UK Responsible Inc Z Acc",
+      "navSymbol": "0P0001M1PK.L",
+      "navName": "Janus Henderson UK Responsible Inc I Acc",
       "navMatch": "stored",
       "navClassNote": "share class Z used, desk tracks I",
       "shortlist": true,
@@ -4364,7 +4364,8 @@
         "checked": "2026-11-26"
       },
       "sedol": "BLH3923",
-      "isinSource": "HL's listed class (SEDOL BLH3923), confirmed on Fidelity's factsheet 8 Oct 2026"
+      "isinSource": "HL's listed class (SEDOL BLH3923), confirmed on Fidelity's factsheet 8 Oct 2026",
+      "navSymbolSource": "Exact HL share class, found on Yahoo by ISIN GB00BLH39230 and pinned 26 Nov 2026 after its 1yr, 3yr and 5yr returns matched Fidelity's published figures for this class (within 0.5pp a year). Replaced a substitute class."
     },
     {
       "id": "janus-henderson-uk-equity-income-growth",
@@ -6381,8 +6382,8 @@
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isinNote": "multiple ISINs in entry text (GB00BGV53H32, GB00BPVBZ344) — confirm the HL share class",
-      "navSymbol": "0P00019MND.L",
-      "navName": "BNY Mellon US Equity Income GBP E Acc",
+      "navSymbol": "0P0001OI9W.L",
+      "navName": "BNY Mellon US Equity Income U Acc",
       "navMatch": "stored",
       "navClassNote": "share class E used, desk tracks U",
       "shortlist": true,
@@ -6395,7 +6396,8 @@
       "isin": "GB00BPVBZ344",
       "isinSource": "derived from HL SEDOL BPVBZ34, confirmed on Fidelity factsheet 8 Oct 2026",
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
-      "sedol": "BPVBZ34"
+      "sedol": "BPVBZ34",
+      "navSymbolSource": "Exact HL share class, found on Yahoo by ISIN GB00BPVBZ344 and pinned 26 Nov 2026 after its 1yr and 3yr returns matched Fidelity's published figures for this class (within 0.5pp a year; the class is too young for a 5yr figure). Replaced a substitute class."
     },
     {
       "id": "artemis-us-smaller-companies",
@@ -9524,8 +9526,8 @@
         "source": "Yahoo Finance (fund NAV series)"
       },
       "isin": "GB00BNBQX427",
-      "navSymbol": "0P0000X2GH.L",
-      "navName": "BNY Mellon Mlt-Asst Balanced Inst W Acc",
+      "navSymbol": "0P0001NR1N.L",
+      "navName": "BNY Mellon Mlt-Asst Balanced T Acc",
       "navMatch": "stored",
       "navClassNote": "share class W used, desk tracks T",
       "shortlist": true,
@@ -9537,7 +9539,8 @@
       },
       "benchmarkSource": "Fidelity factsheet (fund comparative index), read 8 Oct 2026",
       "sedol": "BNBQX42",
-      "isinSource": "HL's listed class (SEDOL BNBQX42), confirmed on Fidelity's factsheet 8 Oct 2026"
+      "isinSource": "HL's listed class (SEDOL BNBQX42), confirmed on Fidelity's factsheet 8 Oct 2026",
+      "navSymbolSource": "Exact HL share class, found on Yahoo by ISIN GB00BNBQX427 and pinned 26 Nov 2026 after its 1yr, 3yr and 5yr returns matched Fidelity's published figures for this class (within 0.5pp a year). Replaced a substitute class."
     },
     {
       "id": "bny-mellon-multi-asset-global-balanced",

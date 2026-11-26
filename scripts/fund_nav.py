@@ -409,28 +409,85 @@ def _window_bounds(end: int, days: int) -> tuple[int, int]:
     return cutoff - DAY_EDGE, cutoff + _slack(days) + DAY_EDGE
 
 
+# A step of exactly x100 either way, give or take one day's market move, is a
+# change of quoting UNIT - pence to pounds, or a 100:1 unit consolidation -
+# and both preserve value, so the history before it is the same holding
+# measured in a different unit. On 17 Dec 2024 Yahoo moved JPM Emerging
+# Markets (1102 -> 10.86), the L&G All Stocks Gilt tracker (189.4 -> 1.877)
+# and Trojan Ethical (132.94 -> 1.3274) from pence to pounds on the same day.
+# Cutting there cost each fund its 3- and 5-year figures; rescaled, all three
+# reproduce Fidelity's published 3yr and 5yr returns for the same share class
+# to within half a point a year (checked 26 Nov 2026). A step of any OTHER
+# size is still cut, because nothing says what it is.
+UNIT_STEP = 100.0
+UNIT_STEP_TOLERANCE = 0.03
+
+# Consecutive prices further apart than this are a hole in the feed, not a
+# market. Both BlackRock European lines jump from Dec 2019 straight to Jun
+# 2026 on Yahoo, and that 6.5-year hole was being labelled a "share-class
+# change" because the price had grown x50 across it. The longest gap in any
+# other fund's series is a holiday week; weekly-priced lines are 7 days.
+MAX_GAP_DAYS = 45
+
+
+def _unit_factor(prev: float, cur: float) -> float | None:
+    """1/100 or 100 when prev -> cur is a x100 unit change, else None."""
+    for factor in (1 / UNIT_STEP, UNIT_STEP):
+        expect = prev * factor
+        if abs(cur - expect) / expect <= UNIT_STEP_TOLERANCE:
+            return factor
+    return None
+
+
 def split_at_discontinuity(series: dict) -> tuple[dict, str]:
-    """Drop everything up to the last redenomination.
+    """Rescale across unit changes; cut at anything else that is not a return.
 
     A 100:1 share-class change is not a -99% return, but nor does it spoil
-    the data after it. Rather than refuse the fund outright, keep the clean
-    tail; the window-coverage check then declines any period reaching back
-    past the break, so nothing is reported that spans it.
+    the data after it. Where the step is exactly a unit change the earlier
+    prices are rescaled into the later unit and the history is kept. Any other
+    break - a step of some other size, or a hole in the feed - keeps only the
+    clean tail after the LAST such break; the window-coverage check then
+    declines any period reaching back past it, so nothing is reported that
+    spans it.
     """
-    closes, stamps = series["c"], series["t"]
-    cut, note = 0, ""
+    closes, stamps = list(series["c"]), series["t"]
+    cut, cut_note = 0, ""
+    units: list[tuple[int, float]] = []
     for i in range(1, len(closes)):
         prev, cur = closes[i - 1], closes[i]
         if not prev:
             continue
-        if abs(cur - prev) / prev > MAX_DAILY_STEP:
-            cut = i
-            note = (f"series restarts {date.fromtimestamp(stamps[i]).isoformat()} "
-                    f"after a {prev:g} -> {cur:g} share-class change")
-    if not cut:
+        gap = (stamps[i] - stamps[i - 1]) / 86400
+        if gap > MAX_GAP_DAYS:
+            cut, units = i, []
+            cut_note = (f"series restarts {date.fromtimestamp(stamps[i]).isoformat()}"
+                        f" - Yahoo has no prices from "
+                        f"{date.fromtimestamp(stamps[i - 1]).isoformat()} to then")
+        elif abs(cur - prev) / prev > MAX_DAILY_STEP:
+            factor = _unit_factor(prev, cur)
+            if factor is not None:
+                units.append((i, factor))
+            else:
+                cut, units = i, []
+                cut_note = (f"series restarts "
+                            f"{date.fromtimestamp(stamps[i]).isoformat()} after a "
+                            f"{prev:g} -> {cur:g} share-class change")
+
+    if not cut and not units:
         return series, ""
+    # Rescale from the latest unit change backwards, so every earlier price
+    # ends up in the unit the series is quoted in today.
+    for i, factor in reversed(units):
+        for j in range(cut, i):
+            closes[j] *= factor
+    notes = [cut_note] if cut_note else []
+    for i, factor in units:
+        unit = ("pence to pounds" if factor < 1 else "pounds to pence")
+        notes.append(f"earlier prices rescaled from {unit} at "
+                     f"{date.fromtimestamp(stamps[i]).isoformat()} (a x100 "
+                     f"change of quoting unit, not a return)")
     return {"t": stamps[cut:], "c": closes[cut:],
-            "currency": series.get("currency")}, note
+            "currency": series.get("currency")}, "; ".join(notes)
 
 
 def pct_over(series: dict, days: int) -> float | None:
@@ -964,6 +1021,26 @@ def main(argv: list[str]) -> int:
               f"ytd {fmt(vals['navYtd']) or '   n/a':>9}  "
               f"1yr {fmt(one) or '   n/a':>9}  5yr {fmt(five) or '   n/a':>9}")
 
+    # A stored symbol is never searched again, so a fund priced from a
+    # substitute class stayed on it after Yahoo began listing the class HL
+    # deals: three did, until 26 Nov 2026. One search per substitute, by the
+    # HL class's own ISIN, and a line in the log if the exact class has
+    # appeared. It only says so - switching is a pinned navSymbol, made after
+    # the new line's returns are checked against Fidelity's for that class.
+    if not only_resolve:
+        for fund in funds:
+            if not (fund.get("navClassNote") and fund.get("isin")):
+                continue
+            want = wanted_class(fund)
+            for hit in search(fund["isin"]):
+                label = _label(hit)
+                ok, note = class_verdict(label, want)
+                if ok and not note and hit.get("symbol") != fund.get("navSymbol"):
+                    print(f"  [hint] {fund['name'][:38]:40} exact class now on "
+                          f"Yahoo: {hit.get('symbol')} ({label}) - check it "
+                          f"against Fidelity, then pin navSymbol")
+                    break
+
     print(f"\n{resolved} resolved, {refused} refused, {priced} priced "
           f"of {len(funds)} funds"
           + (f" (+{partial} priced over short windows only - history too "
@@ -1122,11 +1199,41 @@ def _selftest_offline() -> bool:
     clean, note = split_at_discontinuity(_series([100.0] * 40))
     assert note == "" and len(clean["c"]) == 40, "steady series must be untouched"
 
-    split = _series([100.0] * 20 + [1.0] * 20)
+    # A step of any size other than x100 says nothing about what it is: cut.
+    split = _series([100.0] * 20 + [1.85] * 20)
     kept, note = split_at_discontinuity(split)
     assert note and "share-class change" in note, note
-    assert kept["c"] == [1.0] * 20, "must keep the clean tail, not the whole"
+    assert kept["c"] == [1.85] * 20, "must keep the clean tail, not the whole"
     assert len(kept["t"]) == len(kept["c"])
+
+    # Exactly x100 is a change of quoting unit and keeps its history, in the
+    # unit the series is quoted in today. 17 Dec 2024: JPM EM 1102 -> 10.86,
+    # a pence-to-pounds switch with a real -1.45% day folded into it.
+    unit = _series([1102.0] * 20 + [10.86] * 20)
+    kept, note = split_at_discontinuity(unit)
+    assert len(kept["c"]) == 40, "a unit change must keep the history"
+    assert abs(kept["c"][0] - 11.02) < 1e-9 and kept["c"][-1] == 10.86, kept["c"][:2]
+    assert "pence to pounds" in note and "not a return" in note, note
+    kept, note = split_at_discontinuity(_series([1.0] * 20 + [100.5] * 20))
+    assert len(kept["c"]) == 40 and abs(kept["c"][0] - 100.0) < 1e-9, note
+    assert "pounds to pence" in note
+    # Outside the tolerance it is not a unit change, whatever it is.
+    kept, note = split_at_discontinuity(_series([100.0] * 20 + [0.95] * 20))
+    assert len(kept["c"]) == 20 and "share-class change" in note, note
+    # A cut AFTER a unit change discards the rescaled part with everything
+    # else before the cut; a unit change after a cut is rescaled within the tail.
+    mixed = _series([5000.0] * 5 + [50.0] * 5 + [18.0] * 10 + [1800.0] * 10)
+    kept, note = split_at_discontinuity(mixed)
+    assert kept["c"] == [1800.0] * 20 and "share-class change" in note, (kept["c"], note)
+    assert "pounds to pence" in note and "pence to pounds" not in note, note
+    # A hole in the feed is a hole, not a share-class change - however much
+    # the price grew across it. BlackRock's Dec 2019 -> Jun 2026 on Yahoo.
+    gap = {"t": [1_576_454_400 + i * 86400 for i in range(20)]
+                + [1_781_481_600 + i * 86400 for i in range(20)],
+           "c": [224.9] * 20 + [4.139] * 20, "currency": "GBP"}
+    kept, note = split_at_discontinuity(gap)
+    assert len(kept["c"]) == 20 and "no prices from 2020-01-04" in note, note
+    assert "share-class" not in note, note
 
     # A real move, however violent, is a return and must survive. 2020 exists.
     kept, note = split_at_discontinuity(_series([100.0, 70.0, 90.0]))

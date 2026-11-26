@@ -437,13 +437,26 @@ python index_movers.py   --dry-run           # movers, writes nothing
 
 #### Coverage gaps
 
-- **10 priced funds use a substitute share class.** Another *accumulation* class of the same
-  fund, with an asterisk on the NAV chip naming the swap. Charges differ between classes, so
-  the return does too. Income and distributing classes are never substituted.
-- **1 fund has too little NAV history for a 1-year figure.** BlackRock Continental European
-  Income prices fine, but Yahoo carries only about two months of its series, so its 1yr number
-  is still the researched one and still ages. Data Health goes on flagging it as stale for
-  exactly that reason.
+- **2 priced funds use a substitute share class.** Another class of the same fund, with an
+  asterisk on the NAV chip naming the swap. Charges differ between classes, so the return
+  does too. Income and distributing classes are never substituted. Schroder Income prices
+  Class Z because Yahoo's Class Q line only starts in Feb 2025; switching would delete the
+  fund's 3- and 5-year record. Polar Capital European Income prices the GBP-hedged Class S
+  because Fidelity carries no page for the unhedged Class I that HL deals.
+  `fund_nav.py` searches each substitute's own ISIN every run and logs a `[hint]` line when
+  Yahoo lists the exact class. A switch is made by pinning `navSymbol`, and only after the new
+  line's 1/3/5yr returns match Fidelity's for that class. Three funds were switched that way on
+  26 Nov 2026.
+- **2 funds have too little NAV history for a 1-year figure.** Yahoo has no prices for either
+  BlackRock European line between Dec 2019 and Jun 2026. The series is cut at the hole and
+  the note on the NAV chip says so. Their 1/3/5yr figures come from Fidelity's table for the
+  same class, which the weekly run re-reads. FT carries the full daily history, but only
+  through an internal endpoint behind its own page, so the desk does not use it.
+- **A x100 step in a NAV series is rescaled, not cut.** A change of quoting unit, pence to
+  pounds or a 100:1 consolidation, preserves value. So the earlier prices are put into today's
+  unit and the history is kept, and the NAV chip notes it. On 17 Dec 2024 Yahoo moved three
+  lines from pence to pounds. Rescaled, their 3- and 5-year returns match Fidelity's for the
+  same class to within half a point a year. A step of any other size is still cut.
 - **An unmatched fund ages silently.** None are unmatched today, but the failure mode matters:
   the fund keeps its researched 1yr figure, which drives the Winning/Lagging panels. Storing a
   correct `isin` or `navSymbol` by hand fixes it — the resolver trusts a stored identifier.
