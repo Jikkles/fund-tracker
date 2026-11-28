@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T16:50:01+00:00",
+  "generated": "2026-11-28T09:03:49+00:00",
   "indices": {
     "ftse-100": {
       "label": "FTSE 100",
@@ -8,44 +8,44 @@
       "universe": "all 100 constituents",
       "top": [
         {
+          "name": "Fresnillo",
+          "symbol": "FRES",
+          "pct": 4.79
+        },
+        {
           "name": "Antofagasta plc",
           "symbol": "ANTO",
-          "pct": 4.9
+          "pct": 4.4
         },
         {
           "name": "Glencore plc",
           "symbol": "GLEN",
           "pct": 4.28
-        },
-        {
-          "name": "Anglo American Plc",
-          "symbol": "AAL",
-          "pct": 4.14
         }
       ],
       "bottom": [
+        {
+          "name": "Kingfisher",
+          "symbol": "KGF",
+          "pct": -1.81
+        },
         {
           "name": "Marks & Spencer Group plc",
           "symbol": "MKS",
           "pct": -1.71
         },
         {
-          "name": "Kingfisher",
-          "symbol": "KGF",
-          "pct": -1.49
-        },
-        {
           "name": "Associated British Foods plc",
           "symbol": "ABF",
-          "pct": -1.42
+          "pct": -1.51
         }
       ],
       "breadth": {
-        "up": 67,
-        "down": 30,
-        "flat": 3,
+        "up": 70,
+        "down": 28,
+        "flat": 2,
         "priced": 100,
-        "median": 0.69
+        "median": 0.77
       },
       "built": "100 rows from HL's own summary pages"
     },
@@ -58,40 +58,40 @@
         {
           "name": "Ceres Power Holdings",
           "symbol": "CWR",
-          "pct": 6.5
+          "pct": 5.98
         },
         {
           "name": "Raspberry Pi Holdings plc",
           "symbol": "RPI",
-          "pct": 6.2
+          "pct": 5.27
         },
         {
-          "name": "Meridian Mining Plc",
-          "symbol": "MNO",
-          "pct": 5.48
+          "name": "Amaroq Ltd",
+          "symbol": "AMRQ",
+          "pct": 5.06
         }
       ],
       "bottom": [
         {
+          "name": "ASOS plc",
+          "symbol": "ASC",
+          "pct": -3.18
+        },
+        {
+          "name": "Pets At Home Group PLC",
+          "symbol": "PETS",
+          "pct": -2.86
+        },
+        {
           "name": "Moonpig Group Plc",
           "symbol": "MOON",
           "pct": -2.56
-        },
-        {
-          "name": "Halfords",
-          "symbol": "HFD",
-          "pct": -2.3
-        },
-        {
-          "name": "ASOS plc",
-          "symbol": "ASC",
-          "pct": -2.26
         }
       ],
       "breadth": {
-        "up": 188,
-        "down": 55,
-        "flat": 8,
+        "up": 192,
+        "down": 52,
+        "flat": 7,
         "priced": 251,
         "median": 0.75
       },
@@ -106,39 +106,39 @@
         {
           "name": "Coherent Corp.",
           "symbol": "COHR",
-          "pct": 11.899179841070291
+          "pct": 14.06799046907068
         },
         {
-          "name": "Axon Enterprise, Inc.",
-          "symbol": "AXON",
-          "pct": 7.341494958394501
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 7.983973180287378
         },
         {
-          "name": "Skyworks Solutions, Inc.",
-          "symbol": "SWKS",
-          "pct": 7.0784052602911
+          "name": "Seagate Technology Holdings plc",
+          "symbol": "STX",
+          "pct": 7.9033764848915276
         }
       ],
       "bottom": [
         {
           "name": "Vertex Pharmaceuticals Incorporated",
           "symbol": "VRTX",
-          "pct": -5.591892360348484
-        },
-        {
-          "name": "Dollar Tree, Inc.",
-          "symbol": "DLTR",
-          "pct": -3.1271944971722467
+          "pct": -5.238245062884215
         },
         {
           "name": "Insulet Corporation",
           "symbol": "PODD",
-          "pct": -2.35141288180662
+          "pct": -2.6492843939839217
+        },
+        {
+          "name": "The J. M. Smucker Company",
+          "symbol": "SJM",
+          "pct": -2.460400590735477
         }
       ],
       "breadth": {
-        "up": 425,
-        "down": 76,
+        "up": 407,
+        "down": 94,
         "flat": 1,
         "priced": 502,
         "median": 0.91
@@ -152,44 +152,44 @@
       "universe": "100 of 101 constituents",
       "top": [
         {
+          "name": "Astera Labs, Inc.",
+          "symbol": "ALAB",
+          "pct": 8.668698285939483
+        },
+        {
           "name": "Rocket Lab Corporation",
           "symbol": "RKLB",
-          "pct": 7.475540951569815
+          "pct": 8.209273868082708
         },
         {
-          "name": "Axon Enterprise, Inc.",
-          "symbol": "AXON",
-          "pct": 7.341494958394501
-        },
-        {
-          "name": "Micron Technology, Inc.",
-          "symbol": "MU",
-          "pct": 7.011231483887734
+          "name": "Lumentum Holdings Inc.",
+          "symbol": "LITE",
+          "pct": 7.983973180287378
         }
       ],
       "bottom": [
         {
           "name": "Vertex Pharmaceuticals Incorporated",
           "symbol": "VRTX",
-          "pct": -5.591892360348484
-        },
-        {
-          "name": "O'Reilly Automotive, Inc.",
-          "symbol": "ORLY",
-          "pct": -0.9411558994021472
+          "pct": -5.238245062884215
         },
         {
           "name": "Alnylam Pharmaceuticals, Inc.",
           "symbol": "ALNY",
-          "pct": -0.5433066453496261
+          "pct": -1.232318844137204
+        },
+        {
+          "name": "Keurig Dr Pepper Inc.",
+          "symbol": "KDP",
+          "pct": -0.5051930950876701
         }
       ],
       "breadth": {
-        "up": 92,
-        "down": 8,
+        "up": 93,
+        "down": 7,
         "flat": 0,
         "priced": 100,
-        "median": 1.54
+        "median": 1.89
       },
       "built": "6 spark batches + 1 per-symbol"
     },
@@ -202,90 +202,90 @@
         {
           "name": "Amazon.com, Inc.",
           "symbol": "AMZN",
-          "pct": 3.9929673354656394
+          "pct": 3.9643262822739347
         },
         {
           "name": "Caterpillar Inc.",
           "symbol": "CAT",
-          "pct": 3.6629288634914707
+          "pct": 3.319904304275671
         },
         {
           "name": "Cisco Systems, Inc.",
           "symbol": "CSCO",
-          "pct": 2.5583903823622647
+          "pct": 3.0148663049804396
         }
       ],
       "bottom": [
         {
           "name": "McDonald's Corporation",
           "symbol": "MCD",
-          "pct": -0.41975394758597884
+          "pct": -0.31040736607142855
         },
         {
           "name": "The Procter & Gamble Company",
           "symbol": "PG",
-          "pct": -0.2539989910859884
+          "pct": -0.21358605686825657
         },
         {
-          "name": "NVIDIA Corporation",
-          "symbol": "NVDA",
-          "pct": -0.17415255211673536
+          "name": "The Coca-Cola Company",
+          "symbol": "KO",
+          "pct": -0.19468677030572928
         }
       ],
       "breadth": {
-        "up": 25,
-        "down": 5,
+        "up": 27,
+        "down": 3,
         "flat": 0,
         "priced": 30,
-        "median": 0.83
+        "median": 0.87
       },
       "built": "2 spark batches"
     },
     "hang-seng": {
       "label": "Hang Seng",
-      "asAt": "2026-11-26",
+      "asAt": "2026-11-27",
       "source": "Yahoo Finance daily closes",
       "universe": "all 85 constituents",
       "top": [
         {
-          "name": "Li Auto Inc.",
-          "symbol": "2015.HK",
-          "pct": 8.018862237791305
+          "name": "Semiconductor Manufacturing International Corporation",
+          "symbol": "0981.HK",
+          "pct": 16.39058474867772
         },
         {
-          "name": "ZTO Express (Cayman) Inc.",
-          "symbol": "2057.HK",
-          "pct": 4.457360310372438
+          "name": "Lenovo Group Limited",
+          "symbol": "0992.HK",
+          "pct": 8.993437994019173
         },
         {
-          "name": "PetroChina Company Limited",
-          "symbol": "0857.HK",
-          "pct": 4.378001681073786
+          "name": "Longfor Group Holdings Limited",
+          "symbol": "0960.HK",
+          "pct": 8.51063752693985
         }
       ],
       "bottom": [
         {
-          "name": "Trip.com Group Limited",
-          "symbol": "9961.HK",
-          "pct": -2.2973777376113382
+          "name": "China Shenhua Energy Company Limited",
+          "symbol": "1088.HK",
+          "pct": -5.281008647386674
         },
         {
-          "name": "China Mengniu Dairy Company Limited",
-          "symbol": "2319.HK",
-          "pct": -1.97308807965225
+          "name": "Tingyi (Cayman Islands) Holding Corp.",
+          "symbol": "0322.HK",
+          "pct": -4.501849459520045
         },
         {
-          "name": "BYD Company Limited",
-          "symbol": "1211.HK",
-          "pct": -1.811905475818473
+          "name": "China Construction Bank Corporation",
+          "symbol": "0939.HK",
+          "pct": -2.876320057114392
         }
       ],
       "breadth": {
-        "up": 68,
-        "down": 17,
-        "flat": 0,
+        "up": 60,
+        "down": 24,
+        "flat": 1,
         "priced": 85,
-        "median": 0.97
+        "median": 1.16
       },
       "built": "5 spark batches"
     },
@@ -339,49 +339,49 @@
     },
     "nikkei-225": {
       "label": "Nikkei 225",
-      "asAt": "2026-11-26",
+      "asAt": "2026-11-27",
       "source": "Yahoo Finance daily closes",
       "universe": "223 of 225 constituents",
       "top": [
         {
-          "name": "SoftBank Group Corp.",
-          "symbol": "9984.T",
-          "pct": 7.324309289820137
+          "name": "Socionext Inc.",
+          "symbol": "6526.T",
+          "pct": 12.563494751100576
         },
         {
-          "name": "Resonac Holdings Corporation",
-          "symbol": "4004.T",
-          "pct": 6.605504587155964
+          "name": "Mitsui Kinzoku Company, Limited",
+          "symbol": "5706.T",
+          "pct": 11.526339486717694
         },
         {
-          "name": "Sumco Corporation",
-          "symbol": "3436.T",
-          "pct": 6.248224936097699
+          "name": "Lasertec Corporation",
+          "symbol": "6920.T",
+          "pct": 9.983633387888707
         }
       ],
       "bottom": [
         {
-          "name": "Taisei Corporation",
-          "symbol": "1801.T",
-          "pct": -3.8666666666666667
+          "name": "Recruit Holdings Co., Ltd.",
+          "symbol": "6098.T",
+          "pct": -3.1603363293708324
         },
         {
-          "name": "Sharp Corporation",
-          "symbol": "6753.T",
-          "pct": -3.1645569620253164
+          "name": "Kikkoman Corporation",
+          "symbol": "2801.T",
+          "pct": -3.058186738836265
         },
         {
-          "name": "Japan Airlines Co., Ltd.",
-          "symbol": "9201.T",
-          "pct": -2.9338499861610847
+          "name": "Kirin Holdings Company, Limited",
+          "symbol": "2503.T",
+          "pct": -1.3282732447817838
         }
       ],
       "breadth": {
-        "up": 107,
-        "down": 114,
-        "flat": 2,
+        "up": 159,
+        "down": 63,
+        "flat": 1,
         "priced": 223,
-        "median": -0.04
+        "median": 1.73
       },
       "built": "12 spark batches"
     }
