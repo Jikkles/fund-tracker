@@ -28902,15 +28902,6 @@
     "findings": [
       {
         "fundId": "ALL",
-        "fundName": "Automated daily run",
-        "check": "oneMonth-fill-deterministic",
-        "severity": "INFO",
-        "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
-        "status": "corrected",
-        "source": "Yahoo Finance public endpoints; BoE and Fed published calendars"
-      },
-      {
-        "fundId": "ALL",
         "fundName": "Research maintenance",
         "check": "RESEARCH-STALE",
         "severity": "MEDIUM",
@@ -29131,6 +29122,15 @@
         "check": "oneMonth-fill-deterministic",
         "severity": "INFO",
         "description": "Priced 103 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 0 funds left unverified by design. 69 catalyst dates refreshed.",
+        "status": "corrected",
+        "source": "Yahoo Finance public endpoints; BoE and Fed published calendars"
+      },
+      {
+        "fundId": "ALL",
+        "fundName": "Automated daily run",
+        "check": "oneMonth-fill-deterministic",
+        "severity": "INFO",
+        "description": "Priced 102 funds from their own NAV series and 0 tracker figures from GBP ETF proxies over a 30-day window; 1 funds left unverified by design. 69 catalyst dates refreshed.",
         "status": "corrected",
         "source": "Yahoo Finance public endpoints; BoE and Fed published calendars"
       },
